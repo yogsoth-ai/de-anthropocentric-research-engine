@@ -25,6 +25,10 @@ CLAUDE.md
 .mcp.json
 .claude/
 
+# Skills (npx skills)
+skills-lock.json
+.agents/
+
 # Project
 TODO.md
 .mcp.json
