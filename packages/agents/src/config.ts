@@ -31,19 +31,34 @@ export function getConfiguredModel(): Model<Api> {
     || process.env.ANTHROPIC_MODEL
     || PROVIDER_DEFAULTS[provider]
     || 'z-ai/glm-5';
-  const model = getModel(provider as any, modelId as any);
-  // Only apply base URL override if explicitly set for dare-agents,
-  // or if using anthropic provider with ANTHROPIC_BASE_URL.
-  // Never let ANTHROPIC_BASE_URL leak into non-anthropic providers.
+  let model = getModel(provider as any, modelId as any);
+  if (!model) {
+    const apiMap: Record<string, Api> = {
+      openai: 'openai-completions',
+      openrouter: 'openai-completions',
+      anthropic: 'anthropic-messages',
+      groq: 'openai-completions',
+      cerebras: 'openai-completions',
+      mistral: 'openai-completions',
+    };
+    model = {
+      id: modelId,
+      name: modelId,
+      api: apiMap[provider] || 'openai-completions',
+      provider,
+      baseUrl: '',
+      reasoning: false,
+      input: ['text', 'image'],
+      cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 },
+      contextWindow: 128000,
+      maxTokens: 16384,
+    } as Model<Api>;
+  }
   const baseUrl = process.env.DARE_AGENTS_BASE_URL
     || (provider === 'anthropic' ? process.env.ANTHROPIC_BASE_URL : undefined);
   if (baseUrl) {
     model.baseUrl = baseUrl;
   }
-  // Reasoning models (e.g. GLM-5) use part of maxTokens for thinking.
-  // pi-ai's registry may set maxTokens too low (e.g. 4096 for z-ai/glm-5),
-  // causing the entire budget to be consumed by thinking with no content output.
-  // Env var override or a sensible floor of 16384 for reasoning models.
   const maxTokensOverride = process.env.DARE_AGENTS_MAX_TOKENS;
   if (maxTokensOverride) {
     model.maxTokens = parseInt(maxTokensOverride, 10);
