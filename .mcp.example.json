@@ -40,6 +40,13 @@
         "HF_TOKEN": "your-huggingface-token"
       }
     },
+    "dare-ss": {
+      "command": "npx",
+      "args": ["--prefix", "/absolute/path/to/dare/packages/ss", "tsx", "/absolute/path/to/dare/packages/ss/src/server.ts"],
+      "env": {
+        "SS_API_KEY": "your-semantic-scholar-api-key-or-remove-this-line"
+      }
+    },
     "apify": {
       "command": "npx",
       "args": ["-y", "@apify/actors-mcp-server", "--tools", "fetch-actor-details,get-actor-output,get-dataset-items,get-dataset-schema,marco.gullo/google-scholar-scraper,apify/rag-web-browser"],

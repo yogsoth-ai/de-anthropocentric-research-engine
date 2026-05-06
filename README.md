@@ -26,6 +26,18 @@ DARE is not a tool that helps you do research. It *is* the researcher. You set t
 
 ---
 
+## 🗺️ Roadmap
+
+Active development continues. Near-term priorities:
+
+- **🔬 Search pipeline overhaul** — major refactor of `dare-web` and `dare-scholar` search flows to better integrate with AlphaXiv MCP and upcoming Perplexity MCP, reducing redundancy and improving retrieval quality
+- **🧬 Method-evolve full loop (v3.2+)** — AlphaEvolve-inspired evolutionary improvement of DARE's own research methods. Core tools (mutate, crossover, evaluate) implemented; full autonomous Elo-tournament loop next
+- **📝 Paper-writing implementation (v3.1+)** — automated academic paper composition from research outputs. Strategy interface defined, implementation pending
+- **🔗 GitHub MCP integration** — native GitHub MCP adapter for issue tracking, PR-driven experiment workflows, and automated result reporting
+- **🌐 Perplexity MCP adapter** — leverage Perplexity's search-augmented generation as an additional web research backend
+
+---
+
 ## 🎯 Design Philosophy
 
 ### 🤔 Why "De-Anthropocentric"?
@@ -159,6 +171,7 @@ dare/
 ├── packages/
 │   ├── agents/           # dare-agents MCP — 49 LLM micro-agent tools (72 tests)
 │   ├── scholar/          # dare-scholar MCP — academic paper pipeline (5 tools)
+│   ├── ss/              # dare-ss MCP — Semantic Scholar API (8 tools, 75 tests)
 │   ├── web/              # dare-web MCP — web page fetching & caching (2 tools)
 │   └── session/          # dare-session — pod provisioning scripts
 ├── skills/
@@ -176,6 +189,7 @@ dare/
 | --- | --- | --- | --- |
 | **dare-agents** | `packages/agents` | 49 | LLM micro-agent tools (ideation, debate, insight, method-evolve) |
 | **dare-scholar** | `packages/scholar` | 5 | Academic paper pipeline — search, enrich, fetch, read, reference |
+| **dare-ss** | `packages/ss` | 8 | Semantic Scholar API — paper lookup, citations, references, recommendations, author info |
 | **dare-web** | `packages/web` | 2 | Web page fetching and markdown caching |
 | **dare-session** | `packages/session` | — | Git-based context transfer to remote GPU pods |
 | **apify** | `@apify/actors-mcp-server` | 2 | Google Scholar search + web page scraping |
@@ -228,6 +242,12 @@ npm install -g @apify/actors-mcp-server @brave/brave-search-mcp-server @runpod/m
 | `OPENAI_BASE_URL` | API base URL |
 | `OPENAI_MODEL` | Model name for paper reading agent |
 
+### dare-ss
+
+| Variable | Description |
+| --- | --- |
+| `SS_API_KEY` | [Semantic Scholar API key](https://www.semanticscholar.org/product/api) (optional — public API works without key at lower rate limits) |
+
 ### dare-web
 
 | Variable | Description |
@@ -262,12 +282,6 @@ npm install -g @apify/actors-mcp-server @brave/brave-search-mcp-server @runpod/m
 🎯 The end goal: a four-dimensional research engine combining **Deep Research + Adversarial Debate + Evolutionary Generation + Distributed Execution**. No other open-source system attempts this.
 
 ---
-
-## 🗺️ Roadmap
-
-- **🧬 Method-evolve full loop (v3.2+)** — AlphaEvolve-inspired evolutionary improvement of DARE's own research methods. The core tools (mutate, crossover, evaluate) are implemented; the full autonomous loop — where DARE continuously evolves its methodology, running Elo-style tournaments between method variants — is next.
-- **📝 Paper-writing implementation (v3.1+)** — automated academic paper composition from research outputs. Strategy interface defined, implementation pending.
-- **🧪 Experiment design strategy** — structured experiment planning from validated ideas to executable GPU workloads.
 
 ---
 
