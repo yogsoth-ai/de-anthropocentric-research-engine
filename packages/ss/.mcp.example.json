@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "dare-ss": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["tsx", "src/server.ts"],
+      "env": {
+        "SS_API_KEY": "<your-semantic-scholar-api-key-or-remove-this-line>"
+      }
+    }
+  }
+}
