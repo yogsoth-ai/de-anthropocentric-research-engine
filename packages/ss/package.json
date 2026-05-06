@@ -1,0 +1,21 @@
+{
+  "name": "@dare/ss",
+  "version": "0.2.0",
+  "description": "MCP server wrapping Semantic Scholar API — citation tracing, paper metadata, recommendations",
+  "type": "module",
+  "scripts": {
+    "mcp": "tsx src/server.ts",
+    "test": "vitest run",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.0"
+  }
+}

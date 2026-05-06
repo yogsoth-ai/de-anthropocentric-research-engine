@@ -1,0 +1,6 @@
+node_modules/
+dist/
+docs/
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
