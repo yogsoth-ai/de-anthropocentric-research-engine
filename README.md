@@ -1,6 +1,15 @@
-# 🧠 DARE — De-Anthropocentric Research Engine
+<!-- markdownlint-disable -->
+<p align="center">
+  <img src="assets/logo.png" width="240" />
+</p>
 
-> **Human-centered AI-assisted research can no longer sustain the next great leaps of our civilization. What we need is not just more tools, but an AI researcher that thinks and acts independently — a new entity to replace the human role in science. This is DARE.**
+<div align="center">
+
+> *Human-centered AI-assisted research can no longer sustain the next great leaps of our civilization. What we need is not just more tools, but an AI researcher that thinks and acts independently — a new entity to replace the human role in science. This is DARE.*
+
+</div>
+
+# 🧠 DARE — De-Anthropocentric Research Engine
 
 *🚧 Personal side project. Actively under development.*
 
@@ -50,9 +59,9 @@ This isn't about replacing researchers — it's about creating a parallel resear
 
 DARE's architecture follows a military command hierarchy — not because research is war, but because the decomposition pattern is remarkably effective:
 
-```
-General (Meta-Strategy)  →  "Take that hill"        →  WHAT to research
-Colonel (Strategy)       →  "Flank from the east"   →  WHEN and WHY
+```bash
+General (Meta-Strategy)  →  "Take that hill"         →  WHAT to research
+Colonel (Strategy)       →  "Flank from the east"    →  WHEN and WHY
 Captain (Tactic)         →  "Squad A cover, B move"  →  HOW to combine
 Sergeant (SOP)           →  "Fire, reload, advance"  →  HOW to execute
 ```
@@ -95,21 +104,21 @@ AI agents naturally take the path of least resistance — searching a handful of
 
 ---
 
-```text
+```bash
 You ask a question
     ↓
-┌─────────────────────────────────────────────────────────────┐
+┌────────────────────────────────────────────────────────────────┐
 │  Phase 0: Brainstorming (structured requirement clarification) │
-│  Phase 1: Intake (research brief)                            │
-│  Phase 2: Research Loop (Stages 1-3, up to 7 rounds)         │
-│    ├── Literature Survey (S:20 / M:40 / L:60+ papers)       │
-│    ├── Gap Analysis (S:10 / M:15 / L:25+ papers)            │
-│    ├── Insight (7-step pipeline)                             │
-│    ├── Ideation (cross-domain discovery → 31 methods × 5)   │
-│    └── Review → Selective Redo → Review (score ≥ 8/10)       │
-│  Phase 3: Experiment Design                                  │
-│  Phase 4: GPU Execution (remote pod, fully autonomous)       │
-└─────────────────────────────────────────────────────────────┘
+│  Phase 1: Intake (research brief)                              │
+│  Phase 2: Research Loop (Stages 1-3, up to 7 rounds)           │
+│    ├── Literature Survey (S:20 / M:40 / L:60+ papers)          │
+│    ├── Gap Analysis (S:10 / M:15 / L:25+ papers)               │
+│    ├── Insight (7-step pipeline)                               │
+│    ├── Ideation (cross-domain discovery → 31 methods × 5)      │
+│    └── Review → Selective Redo → Review (score ≥ 8/10)         │
+│  Phase 3: Experiment Design                                    │
+│  Phase 4: GPU Execution (remote pod, fully autonomous)         │
+└────────────────────────────────────────────────────────────────┘
     ↓
 Results returned via git
 ```
@@ -122,26 +131,26 @@ Each stage runs SEARCH → READ → REFLECT → EVALUATE cycles with autonomous 
 
 Four-layer skill hierarchy where each layer calls only the layer below:
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│  META-STRATEGY (/dare)                                       │
+```bash
+┌───────────────────────────────────────────────────────────────┐
+│  META-STRATEGY (/dare)                                        │
 │  Entry point — orchestrates the full research pipeline        │
-├──────────────────────────────────────────────────────────────┤
+├───────────────────────────────────────────────────────────────┤
 │  STRATEGY (8)                                                 │
 │  intake, lit-survey, gap-analysis, insight, ideation,         │
 │  round, paper-writing, method-evolve                          │
-├──────────────────────────────────────────────────────────────┤
+├───────────────────────────────────────────────────────────────┤
 │  TACTIC (15)                                                  │
 │  academic-research, web-research, insight, multiagent-debate, │
 │  review, idea-generation, idea-augmentation, scamper,         │
 │  component-surgery, cross-domain-collision, and more          │
-├──────────────────────────────────────────────────────────────┤
+├───────────────────────────────────────────────────────────────┤
 │  SOP (60)                                                     │
 │  Single-responsibility wrappers around dare-agents tools      │
-├──────────────────────────────────────────────────────────────┤
+├───────────────────────────────────────────────────────────────┤
 │  TOOL LAYER (MCP servers — atomic operations)                 │
-│  dare-agents, dare-scholar, dare-web, apify, brave, runpod   │
-└──────────────────────────────────────────────────────────────┘
+│  dare-agents, dare-scholar, dare-web, apify, brave, runpod    │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 - **Meta-Strategy** = WHAT to research (entry point, pipeline orchestration)
@@ -166,7 +175,7 @@ The core engine of v3. 49 tools built with [`pi-ai`](https://github.com/badlogic
 
 ### 📁 Monorepo Structure
 
-```text
+```bash
 dare/
 ├── packages/
 │   ├── agents/           # dare-agents MCP — 49 LLM micro-agent tools (72 tests)
@@ -263,25 +272,6 @@ npm install -g @apify/actors-mcp-server @brave/brave-search-mcp-server @runpod/m
 | `REMOTE_HOST` | SSH hostname/IP (for remote server targets) |
 | `REMOTE_USER` | SSH username (for remote server targets) |
 | `HF_TOKEN` | Hugging Face token (passed to pod for model downloads) |
-
----
-
-## 📊 Implementation Status
-
-| Phase | Component | Status |
-|-------|-----------|--------|
-| P0 | Core pipeline (intake, lit-survey, round, scholar SOPs, web SOPs) | ✅ Done |
-| P0.1 | Research depth enforcement (budgets, gates, ledgers, completeness probes, yield reports) | ✅ Done |
-| P1 | INSIGHT 7-step pipeline, multiagent debate, quality-diversity filtering | ✅ Done |
-| P2 | 31 ideation tools (SCAMPER, surgery, cross-domain, perspective, structural) | ✅ Done |
-| P3 | Paper-writing strategy (interface), method-evolve tools (mutate/crossover/evaluate) | ✅ Done |
-| — | Experiment design strategy | 🔜 Planned |
-| — | Paper-writing implementation (v3.1+) | 🔜 Planned |
-| — | Method-evolve full loop (v3.2+) | 🔜 Planned |
-
-🎯 The end goal: a four-dimensional research engine combining **Deep Research + Adversarial Debate + Evolutionary Generation + Distributed Execution**. No other open-source system attempts this.
-
----
 
 ---
 
