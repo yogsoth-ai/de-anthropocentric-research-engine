@@ -244,7 +244,7 @@ npm install -g @apify/actors-mcp-server @brave/brave-search-mcp-server @runpod/m
 
 | Variable | Description |
 | --- | --- |
-| `MINERU_TOKEN` | [MinerU](https://mineru.net/) API token for PDF → markdown conversion |
+| `APIFY_TOKEN` | [Apify](https://apify.com/) API token for PDF → markdown conversion |
 | `EMAIL` | Email for Unpaywall API (polite pool) |
 | `DARE_CACHE` | Cache directory (**must be an absolute path**) |
 | `OPENAI_API_KEY` | OpenAI-compatible API key for AI paper reading |

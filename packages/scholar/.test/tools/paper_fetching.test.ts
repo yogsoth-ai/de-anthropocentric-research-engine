@@ -3,7 +3,6 @@ import assert from "node:assert/strict";
 import { readFileSync, writeFileSync, unlinkSync, mkdirSync } from "fs";
 import { resolve } from "path";
 import "dotenv/config";
-import AdmZip from "adm-zip";
 import { saveMarkdown, saveMeta, loadMeta } from "../../src/utils/cache.js";
 import { paperFetching } from "../../src/tools/paper_fetching.js";
 import type { PaperMeta } from "../../src/types.js";
@@ -11,59 +10,41 @@ import type { PaperMeta } from "../../src/types.js";
 const originalFetch = global.fetch;
 const cacheDir = process.env.DARE_CACHE || ".cache";
 
-/** Build a ZIP buffer containing a single .md file with the given content. */
-function buildMdZip(mdContent: string): Buffer {
-  const zip = new AdmZip();
-  zip.addFile("paper.md", Buffer.from(mdContent, "utf-8"));
-  return zip.toBuffer();
-}
-
 /**
- * Create a mock fetch that simulates the full MinerU API flow:
- * 1. POST /file-urls/batch → batch_id + upload URL
- * 2. PUT upload URL → 200
- * 3. GET /extract-results/batch/:id → done + zip URL
- * 4. GET zip URL → ZIP with .md
+ * Mock fetch simulating the Apify clearpath~pdf-to-markdown-api flow:
+ * 1. POST /acts/clearpath~pdf-to-markdown-api/runs → run ID + dataset ID
+ * 2. GET /actor-runs/:id → status SUCCEEDED
+ * 3. GET /datasets/:id/items → [{markdown}]
  */
-function mockMineruFetch(mdContent: string): typeof global.fetch {
-  const zipBuf = buildMdZip(mdContent);
+function mockApifyFetch(mdContent: string): typeof global.fetch {
   return (async (url: any, init?: any) => {
     const urlStr = typeof url === "string" ? url : url.toString();
     const method = init?.method?.toUpperCase() ?? "GET";
 
-    if (urlStr.includes("/file-urls/batch") && method === "POST") {
+    if (
+      urlStr.includes("/acts/clearpath~pdf-to-markdown-api/runs") &&
+      method === "POST"
+    ) {
       return new Response(
         JSON.stringify({
-          code: 0,
-          data: {
-            batch_id: "mock-batch-123",
-            file_urls: ["https://mock-upload.example.com/upload"],
-          },
+          data: { id: "run_mock123", defaultDatasetId: "ds_mock456" },
         }),
+        { status: 201, headers: { "Content-Type": "application/json" } },
+      );
+    }
+
+    if (urlStr.includes("/actor-runs/run_mock123")) {
+      return new Response(
+        JSON.stringify({ data: { status: "SUCCEEDED" } }),
         { status: 200, headers: { "Content-Type": "application/json" } },
       );
     }
 
-    if (urlStr.includes("mock-upload.example.com") && method === "PUT") {
-      return new Response(null, { status: 200 });
-    }
-
-    if (urlStr.includes("/extract-results/batch/")) {
-      return new Response(
-        JSON.stringify({
-          code: 0,
-          data: {
-            extract_result: [
-              { state: "done", full_zip_url: "https://mock-zip.example.com/result.zip" },
-            ],
-          },
-        }),
-        { status: 200, headers: { "Content-Type": "application/json" } },
-      );
-    }
-
-    if (urlStr.includes("mock-zip.example.com")) {
-      return new Response(zipBuf, { status: 200 });
+    if (urlStr.includes("/datasets/ds_mock456/items")) {
+      return new Response(JSON.stringify([{ markdown: mdContent }]), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     return new Response(null, { status: 404 });
@@ -71,14 +52,13 @@ function mockMineruFetch(mdContent: string): typeof global.fetch {
 }
 
 describe("paper_fetching", () => {
-  const originalMineru = process.env.MINERU_TOKEN;
+  const originalApify = process.env.APIFY_TOKEN;
   const testTitles: string[] = [];
   const testFiles: string[] = [];
 
   afterEach(() => {
-    process.env.MINERU_TOKEN = originalMineru;
+    process.env.APIFY_TOKEN = originalApify;
     global.fetch = originalFetch;
-    // Clean up test markdown and meta files
     for (const nt of testTitles) {
       const mdPath = resolve(cacheDir, "markdown", `${nt}.md`);
       const metaPath = resolve(cacheDir, "paper", `${nt}.json`);
@@ -186,12 +166,13 @@ describe("paper_fetching", () => {
     });
   });
 
-  // ── MinerU PDF path ──────────────────────────────────────
+  // ── Apify PDF path ──────────────────────────────────────
 
-  describe("MinerU PDF fallback", () => {
-    it("falls through to MinerU when no arxivUrl but has oaPdfUrl", async () => {
+  describe("Apify PDF fallback", () => {
+    it("falls through to Apify when no arxivUrl but has oaPdfUrl", async () => {
       testTitles.push("zztest_pdf_only");
-      global.fetch = async () => new Response(null, { status: 404 });
+      process.env.APIFY_TOKEN = "test-token";
+      global.fetch = mockApifyFetch("# From Apify PDF");
 
       const result = await paperFetching({
         title: "zztest PDF Only",
@@ -199,8 +180,9 @@ describe("paper_fetching", () => {
         oaPdfUrl: "https://example.com/paper.pdf",
       });
 
-      assert.equal(result.markdownPath, undefined);
-      assert.equal(result.title, "zztest PDF Only");
+      assert.ok(result.markdownPath, "should have markdownPath from Apify");
+      const content = readFileSync(result.markdownPath!, "utf-8");
+      assert.ok(content.includes("From Apify PDF"));
     });
   });
 
@@ -263,7 +245,8 @@ describe("paper_fetching", () => {
 
     it("calls onProgress when fetching via oaPdfUrl", async () => {
       testTitles.push("zztest_pdf_progress");
-      global.fetch = async () => new Response(null, { status: 404 });
+      process.env.APIFY_TOKEN = "test-token";
+      global.fetch = mockApifyFetch("# Progress PDF");
 
       const messages: string[] = [];
       await paperFetching(
@@ -278,8 +261,8 @@ describe("paper_fetching", () => {
       );
 
       assert.ok(
-        messages.some((m) => m.includes("MinerU")),
-        "should report MinerU progress",
+        messages.some((m) => m.includes("Apify")),
+        "should report Apify progress",
       );
     });
   });
@@ -287,8 +270,8 @@ describe("paper_fetching", () => {
   // ── Local PDF path ─────────────────────────────────────
 
   describe("local PDF via pdfPath", () => {
-    it("converts local PDF via MinerU and caches result", async () => {
-      process.env.MINERU_TOKEN = "mock-token";
+    it("converts local PDF via Apify and caches result", async () => {
+      process.env.APIFY_TOKEN = "test-token";
 
       const pdfDir = resolve(cacheDir, "pdf");
       mkdirSync(pdfDir, { recursive: true });
@@ -298,7 +281,7 @@ describe("paper_fetching", () => {
       writeFileSync(pdfFile, Buffer.from("%PDF-1.4 fake pdf content"));
 
       const fakeMd = "# Local Paper\n\nConverted from local PDF";
-      global.fetch = mockMineruFetch(fakeMd);
+      global.fetch = mockApifyFetch(fakeMd);
 
       const result = await paperFetching({
         title: "zztest Local PDF Paper",
@@ -308,7 +291,7 @@ describe("paper_fetching", () => {
 
       assert.ok(result.markdownPath, "should have markdownPath after local PDF conversion");
       const content = readFileSync(result.markdownPath!, "utf-8");
-      assert.ok(content.includes("Local Paper"), "cached markdown should contain converted content");
+      assert.ok(content.includes("Local Paper"));
 
       assert.equal(result.normalizedTitle, "zztest_local_paper");
 
@@ -318,7 +301,7 @@ describe("paper_fetching", () => {
     });
 
     it("returns meta without markdownPath when local PDF file does not exist", async () => {
-      process.env.MINERU_TOKEN = "mock-token";
+      process.env.APIFY_TOKEN = "test-token";
       testTitles.push("zztest_missing_pdf");
 
       const result = await paperFetching({
@@ -332,7 +315,7 @@ describe("paper_fetching", () => {
     });
 
     it("pdfPath takes priority over arxivUrl and oaPdfUrl", async () => {
-      process.env.MINERU_TOKEN = "mock-token";
+      process.env.APIFY_TOKEN = "test-token";
 
       const pdfDir = resolve(cacheDir, "pdf");
       mkdirSync(pdfDir, { recursive: true });
@@ -342,7 +325,7 @@ describe("paper_fetching", () => {
       writeFileSync(pdfFile, Buffer.from("%PDF-1.4 fake"));
 
       const localMd = "# From Local PDF";
-      global.fetch = mockMineruFetch(localMd);
+      global.fetch = mockApifyFetch(localMd);
 
       const result = await paperFetching({
         title: "zztest Priority Paper",
@@ -361,7 +344,7 @@ describe("paper_fetching", () => {
     });
 
     it("calls onProgress when converting local PDF", async () => {
-      process.env.MINERU_TOKEN = "mock-token";
+      process.env.APIFY_TOKEN = "test-token";
 
       const pdfDir = resolve(cacheDir, "pdf");
       mkdirSync(pdfDir, { recursive: true });
@@ -370,7 +353,7 @@ describe("paper_fetching", () => {
       testTitles.push("zztest_progress_local");
       writeFileSync(pdfFile, Buffer.from("%PDF-1.4 fake"));
 
-      global.fetch = mockMineruFetch("# Progress Test");
+      global.fetch = mockApifyFetch("# Progress Test");
 
       const messages: string[] = [];
       await paperFetching(
@@ -385,7 +368,7 @@ describe("paper_fetching", () => {
       );
 
       assert.ok(
-        messages.some((m) => m.includes("local PDF via MinerU")),
+        messages.some((m) => m.includes("local PDF via Apify")),
         "should report local PDF progress",
       );
     });
@@ -395,7 +378,7 @@ describe("paper_fetching", () => {
 
   describe("simulation: batch fetching workflow", () => {
     it("simulates fetching 3 papers with mixed sources (cached, local PDF, arxivUrl)", async () => {
-      process.env.MINERU_TOKEN = "mock-token";
+      process.env.APIFY_TOKEN = "test-token";
 
       // Paper 1: already cached
       testTitles.push("zztest_already_cached");
@@ -413,7 +396,7 @@ describe("paper_fetching", () => {
       testTitles.push("zztest_fetchable_arxiv");
 
       const localMd = "# From Local PDF Sim\n\nLocal content";
-      const mineruFetch = mockMineruFetch(localMd);
+      const apifyFetch = mockApifyFetch(localMd);
 
       global.fetch = (async (url: any, init?: any) => {
         const urlStr = typeof url === "string" ? url : url.toString();
@@ -423,7 +406,7 @@ describe("paper_fetching", () => {
             { status: 200, headers: { "Content-Type": "application/json" } },
           );
         }
-        return mineruFetch(url, init);
+        return apifyFetch(url, init);
       }) as typeof global.fetch;
 
       const papers: PaperMeta[] = [

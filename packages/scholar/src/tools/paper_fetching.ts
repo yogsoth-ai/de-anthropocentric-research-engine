@@ -28,9 +28,9 @@ export async function paperFetching(
     return meta;
   }
 
-  // 2. Try local PDF via MinerU
+  // 2. Try local PDF via Apify
   if (meta.pdfPath) {
-    await onProgress?.({ message: `Converting local PDF via MinerU: ${meta.pdfPath}` });
+    await onProgress?.({ message: `Converting local PDF via Apify: ${meta.pdfPath}` });
     const md = await pdf.content(meta.pdfPath, onProgress);
     if (md) {
       meta.markdownPath = cache.saveMarkdown(meta.title, md);
@@ -49,10 +49,10 @@ export async function paperFetching(
       return meta;
     }
 
-    // 3.5 arxiv2md failed — fallback to arxiv PDF URL via MinerU
+    // 3.5 arxiv2md failed — fallback to arxiv PDF URL via Apify
     if (meta.arxivId) {
       const arxivPdfUrl = `https://arxiv.org/pdf/${meta.arxivId}`;
-      await onProgress?.({ message: `arxiv2md failed, fallback to arxiv PDF via MinerU: ${arxivPdfUrl}` });
+      await onProgress?.({ message: `arxiv2md failed, fallback to arxiv PDF via Apify: ${arxivPdfUrl}` });
       const md = await pdf.content(arxivPdfUrl, onProgress);
       if (md) {
         meta.markdownPath = cache.saveMarkdown(meta.title, md);
@@ -62,9 +62,9 @@ export async function paperFetching(
     }
   }
 
-  // 4. Try MinerU PDF conversion
+  // 4. Try Apify PDF conversion
   if (meta.oaPdfUrl) {
-    await onProgress?.({ message: `Fetching PDF via MinerU: ${meta.oaPdfUrl}` });
+    await onProgress?.({ message: `Fetching PDF via Apify: ${meta.oaPdfUrl}` });
     const md = await pdf.content(meta.oaPdfUrl, onProgress);
     if (md) {
       meta.markdownPath = cache.saveMarkdown(meta.title, md);

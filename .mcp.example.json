@@ -13,7 +13,7 @@
       "command": "npx",
       "args": ["--prefix", "/absolute/path/to/dare/packages/scholar", "tsx", "/absolute/path/to/dare/packages/scholar/src/mcp_server.ts"],
       "env": {
-        "MINERU_TOKEN": "your-mineru-token",
+        "APIFY_TOKEN": "your-apify-token",
         "EMAIL": "your-email@example.com",
         "DARE_CACHE": "/absolute/path/to/cache",
         "OPENAI_API_KEY": "your-openai-compatible-api-key",

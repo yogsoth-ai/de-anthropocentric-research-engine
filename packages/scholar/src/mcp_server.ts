@@ -58,7 +58,7 @@ server.tool(
 server.tool(
   "paper_fetching",
   "Fetch full paper as markdown. Cache-first. " +
-  "Tries arxiv2md for arxivUrl, MinerU for oaPdfUrl. When pdfPath is set, title is auto-derived from filename. " +
+  "Tries arxiv2md for arxivUrl, Apify for oaPdfUrl. When pdfPath is set, title is auto-derived from filename. " +
   "Returns PaperMeta with markdownPath.",
   {
     title: z.string().optional().describe("Paper title"),
