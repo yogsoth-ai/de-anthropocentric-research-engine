@@ -13,6 +13,8 @@
 
 *🚧 Personal side project. Actively under development.*
 
+> **⚠️ Major refactor incoming** — DARE is being restructured under the [NOESYNTH](https://github.com/NOESYNTH) org. The monorepo will be split into independent packages with significantly simplified architecture, making it easier to install and use. Stay tuned.
+
 DARE is not a tool that helps you do research. It *is* the researcher. You set the direction — DARE searches, reads, discovers gaps, generates ideas, designs experiments, and executes them on GPUs. Autonomously. Iteratively. Without asking for permission.
 
 ---
