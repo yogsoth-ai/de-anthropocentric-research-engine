@@ -75,6 +75,24 @@ Each layer has a single concern and calls only the layer directly below it. A St
 
 **SOPs** are atomic, single-responsibility operations. Each SOP wraps one conceptual action: run one search, score one hypothesis, extract one analogy. 600+ SOPs provide the granular building blocks that higher layers compose.
 
+### ⚔️ Arsenal, Not Pipeline
+
+Every existing autonomous research system — AI Scientist v2 (Sakana), AI-Researcher (HKUDS), Agent Laboratory, Dolphin, ARIS — implements a fixed pipeline: stages execute in a predetermined order, and the agent's autonomy is confined to local decisions within a single stage. Backtracking, when it exists at all, means retrying the current step — not returning from experiment design to literature review because the knowledge base turned out to be insufficient.
+
+DARE is not a pipeline. It is an arsenal — a strategy book that the AI reads, then decides how to act.
+
+**What this means concretely:**
+
+In a pipeline system, the workflow is hardcoded: `literature → gap → hypothesis → experiment`. The agent has no say in the order, cannot skip stages, and cannot go back. If the experiment phase reveals that the literature review missed a critical subfield, the system has no mechanism to return and fix it.
+
+In DARE, the Research Spec defines *backtrack conditions* for every stage — explicit rules like "if stress-test invalidates >50% of hypotheses, return to hypothesis-formation." The executing agent has full cross-stage routing authority: it reads the spec, assesses the current research state, and decides which campaign to invoke next, which strategies within that campaign to combine, and when the current path has failed hard enough to warrant retreat.
+
+Within each campaign, the agent faces not one method but many. A gap-analysis campaign offers 15+ detection methods (coverage mapping, white-space identification, boundary unfolding, niche analysis...). A creative-ideation campaign offers 31+ generation techniques (SCAMPER, TRIZ, biomimicry, morphological analysis, concept blending...). The agent selects and combines methods based on the research context — not because "more is better," but because different research problems demand different tools, and a system locked to one approach per phase cannot adapt.
+
+The human's role: approve the spec (including its backtrack conditions and recommended campaign combinations) before execution begins. After that, the agent navigates the research space autonomously within the ±10% deviation bounds defined in the spec. If it needs to deviate further — backtrack to an earlier stage, skip a stage entirely, or add one — it asks.
+
+This is the fundamental architectural difference. Pipelines assume the research process is predictable. Arsenals assume it is not.
+
 ### 📏 Executable Research Specs
 
 Traditional research plans are prose documents that humans interpret. DARE produces **Research Specs** — documents that are simultaneously human-readable and machine-executable:
@@ -285,6 +303,33 @@ cp mcp.example.json .mcp.json
 ```
 
 The orchestrator will guide you through North Star crystallization, then generate an executable Research Spec. To execute the spec later, invoke `/executing-specs`.
+
+### What a Session Looks Like
+
+```
+You: /de-anthropocentric-research-engine
+     "I'm interested in improving LLM reasoning faithfulness"
+
+Phase 1 — North Star Crystallization (warm-start)
+  → Dialogue to narrow scope, identify obstacles, decompose goals
+  → Output: "Develop methods to detect and correct unfaithful
+     chain-of-thought reasoning in LLMs, focusing on cases where
+     the stated reasoning diverges from the model's actual
+     decision process"
+
+Phase 2 — Research Spec Generation
+  → Structured questions: scope, campaign selection, constraints
+  → Pipeline outline presented for your approval
+  → Full Research Spec written, self-reviewed, saved to
+     docs/de-anthropocentric/specs/2026-05-19-cot-faithfulness-spec.md
+
+Later (new session):
+You: /executing-specs docs/de-anthropocentric/specs/2026-05-19-cot-faithfulness-spec.md
+  → Agent reads spec, executes stage by stage
+  → Context checkpoints after each strategy
+  → Backtrack if stress-test invalidates hypotheses
+  → Final output: complete research design document
+```
 
 ---
 
