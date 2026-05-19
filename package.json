@@ -1,0 +1,17 @@
+{
+  "name": "de-anthropocentric-research-engine",
+  "version": "3.0.0",
+  "description": "Complete research orchestration system — MCP dependencies for the yogsoth-ai research pipeline",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apify/actors-mcp-server": "^0.10.4",
+    "@brave/brave-search-mcp-server": "^2.0.82",
+    "@yogsoth-ai/semantic-scholar-mcp": "^1.0.0",
+    "@yogsoth-ai/wiki-vault": "^1.2.1"
+  }
+}

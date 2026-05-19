@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "alphaxiv": {
+      "type": "http",
+      "url": "https://api.alphaxiv.org/mcp/v1"
+    },
+    "semantic-scholar": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@yogsoth-ai/semantic-scholar-mcp"],
+      "env": {
+        "SS_API_KEY": "<your-semantic-scholar-api-key>"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@brave/brave-search-mcp-server@latest"],
+      "env": {
+        "BRAVE_API_KEY": "<your-brave-api-key>"
+      }
+    },
+    "wiki-vault": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@yogsoth-ai/wiki-vault"],
+      "env": {
+        "VAULT_ROOT": "<path-to-your-vault>"
+      }
+    },
+    "apify": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--tools",
+        "fetch-actor-details,get-actor-output,get-dataset-items,get-dataset-schema,apify/rag-web-browser"
+      ],
+      "env": {
+        "APIFY_TOKEN": "<your-apify-token>"
+      }
+    }
+  }
+}
