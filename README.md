@@ -58,7 +58,7 @@ For the full philosophical argument, see [`assets/DE-ANTHROPOCENTRIC.md`](assets
 
 DARE's architecture follows a military command hierarchy — not because research is war, but because the decomposition pattern is remarkably effective for autonomous multi-stage operations:
 
-```
+```bash
 Campaign (8)    →  "Take that hill"         →  WHAT to research (full research stage)
 Strategy (40+)  →  "Flank from the east"    →  WHEN and WHY (iteration loops, stopping conditions)
 Tactic (100+)   →  "Squad A cover, B move"  →  HOW to combine (orchestrates multiple SOPs)
@@ -128,22 +128,22 @@ This is a deliberate design choice. Skills are infinitely composable, require ze
 
 The orchestrator layer sits above the four-layer hierarchy. It does not conduct research — it manages the lifecycle of research campaigns:
 
-```
+```bash
 ┌────────────────────────────────────────────────────────────────────────┐
 │  ORCHESTRATOR (9 skills)                                               │
 │                                                                        │
-│  ┌─────────────────────────────────┐  ┌────────────────────────────┐  │
-│  │ de-anthropocentric-research-    │  │ writing-specs              │  │
-│  │ engine (entry point)            │  │ (spec generation)          │  │
-│  └─────────────────────────────────┘  └────────────────────────────┘  │
-│  ┌─────────────────────────────────┐  ┌────────────────────────────┐  │
-│  │ executing-specs                 │  │ research-catalog           │  │
-│  │ (spec execution loop)           │  │ (strategy book + index)    │  │
-│  └─────────────────────────────────┘  └────────────────────────────┘  │
-│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
-│  │ spec-self-   │ │ scope-       │ │ campaign-    │ │ constraint-  │ │
-│  │ review       │ │ clarification│ │ selection    │ │ elicitation  │ │
-│  └──────────────┘ └──────────────┘ └──────────────┘ └──────────────┘ │
+│  ┌─────────────────────────────────┐  ┌────────────────────────────┐   │
+│  │ de-anthropocentric-research-    │  │ writing-specs              │   │
+│  │ engine (entry point)            │  │ (spec generation)          │   │
+│  └─────────────────────────────────┘  └────────────────────────────┘   │
+│  ┌─────────────────────────────────┐  ┌────────────────────────────┐   │
+│  │ executing-specs                 │  │ research-catalog           │   │
+│  │ (spec execution loop)           │  │ (strategy book + index)    │   │
+│  └─────────────────────────────────┘  └────────────────────────────┘   │
+│  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐   │
+│  │ spec-self-   │ │ scope-       │ │ campaign-    │ │ constraint-  │   │
+│  │ review       │ │ clarification│ │ selection    │ │ elicitation  │   │
+│  └──────────────┘ └──────────────┘ └──────────────┘ └──────────────┘   │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -157,10 +157,10 @@ The orchestrator layer sits above the four-layer hierarchy. It does not conduct 
 
 Below the orchestrator, all 800+ skills are organized into exactly four layers. The rule is absolute: each layer calls only the layer directly below it. No exceptions.
 
-```
+```bash
 ┌────────────────────────────────────────────────────────────────────────┐
 │  CAMPAIGN (8)                                                          │
-│  Complete research phases with their own completion criteria            │
+│  Complete research phases with their own completion criteria           │
 │                                                                        │
 │  north-star-crystallization · knowledge-acquisition · deep-insight     │
 │  hypothesis-formation · creative-ideation · convergence                │
@@ -214,7 +214,7 @@ The MCP servers (`semantic-scholar-mcp`, `wiki-vault`, etc.) provide the externa
 
 ### 📁 Repository Structure
 
-```
+```bash
 de-anthropocentric-research-engine/
 ├── skills/                          # All skills live here (flat directories)
 │   ├── de-anthropocentric-research-engine/   # Entry point orchestrator
@@ -298,7 +298,7 @@ cp mcp.example.json .mcp.json
 
 4. Invoke the entry point:
 
-```
+```bash
 /de-anthropocentric-research-engine
 ```
 
@@ -306,7 +306,7 @@ The orchestrator will guide you through North Star crystallization, then generat
 
 ### What a Session Looks Like
 
-```
+```bash
 You: /de-anthropocentric-research-engine
      "I'm interested in improving LLM reasoning faithfulness"
 
