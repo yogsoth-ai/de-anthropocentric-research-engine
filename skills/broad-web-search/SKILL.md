@@ -13,9 +13,14 @@ Quick web scanning for landscape understanding.
 
 Import — strictly follow `web-browsing/web-search` skill protocol.
 
+## Provider Selection
+
+- If the `tavily-search` MCP server is configured and active, use `tavily_search` (with `max_results=10`) as the search provider.
+- Otherwise, fall back to `brave_web_search` (with `count=10`).
+
 ## Hard Constraints
 
-- Set `count=10` on every `brave_web_search` call
+- Set `count=10` (Brave) or `max_results=10` (Tavily) on every search call
 - Execute multiple calls with varied queries
 - Do not complete this SOP until at least 150 total search results have been gathered
 - This ensures broad coverage, not just the first page of one query

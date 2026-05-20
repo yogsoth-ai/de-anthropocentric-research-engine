@@ -19,6 +19,14 @@
         "BRAVE_API_KEY": "<your-brave-api-key>"
       }
     },
+    "tavily-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@latest"],
+      "env": {
+        "TAVILY_API_KEY": "<your-tavily-api-key>"
+      }
+    },
     "wiki-vault": {
       "type": "stdio",
       "command": "npx",
