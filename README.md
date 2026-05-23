@@ -38,7 +38,7 @@ This repository is the **single-clone distribution** of the entire [Yogsoth AI](
 - 🔬 **Convergence & synthesis** — multi-criteria scoring, Pareto frontier construction, pairwise ranking, structured consensus, dialectical synthesis across competing threads
 - 📏 **Executable Research Specs** — machine-readable documents with checkbox progress tracking, quantified completion criteria, backtrack conditions, and session recovery. Another CC instance picks up where you left off
 - 🧪 **Experiment design** — full experimental methodology generation (factor-level design, parameter screening, sensitivity analysis) ready for execution
-- 🌐 **5 MCP integrations** — Semantic Scholar, Brave Search, AlphaXiv, Apify web scraping, and Wiki Vault for persistent knowledge graphs
+- 🌐 **6 MCP integrations** — Semantic Scholar, Brave Search, Tavily, AlphaXiv, Apify web scraping, and Wiki Vault for persistent knowledge graphs
 
 ---
 
@@ -187,8 +187,8 @@ Below the orchestrator, all 800+ skills are organized into exactly four layers. 
 │  hypothesis-formulation · analogy-extraction · pairwise-comparison     │
 │  assumption-audit · falsifiability-check · monte-carlo-sampling · ...  │
 ├────────────────────────────────────────────────────────────────────────┤
-│  MCP LAYER (5 servers — external tool access)                          │
-│  semantic-scholar · brave-search · alphaxiv · apify · wiki-vault       │
+│  MCP LAYER (6 servers — external tool access)                          │
+│  semantic-scholar · brave-search · tavily · alphaxiv · apify · wiki-vault │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -245,6 +245,7 @@ de-anthropocentric-research-engine/
 | **semantic-scholar** | [`@yogsoth-ai/semantic-scholar-mcp`](https://github.com/yogsoth-ai/semantic-scholar-mcp) | stdio | Paper lookup, citations, references, recommendations, author info (8 tools) |
 | **wiki-vault** | [`@yogsoth-ai/wiki-vault`](https://github.com/yogsoth-ai/wiki-vault) | stdio | Research knowledge graph — BM25 search, typed edges, graph traversal (8 tools) |
 | **brave-search** | `@brave/brave-search-mcp-server` | stdio | Web search, news search, local search, LLM context |
+| **tavily-search** | `tavily-mcp` | stdio | Web search optimized for LLMs (opt-in alternative to Brave Search) |
 | **apify** | `@apify/actors-mcp-server` | stdio | Web scraping via RAG web browser, Google Scholar |
 | **alphaxiv** | — | http | arXiv paper search, Q&A, PDF queries, code exploration |
 
@@ -354,6 +355,12 @@ You: /executing-specs docs/de-anthropocentric/specs/2026-05-19-cot-faithfulness-
 | Variable | Description |
 |----------|-------------|
 | `BRAVE_API_KEY` | [Brave Search API key](https://brave.com/search/api/) |
+
+#### tavily-search (`tavily-mcp`) *(optional)*
+
+| Variable | Description |
+|----------|-------------|
+| `TAVILY_API_KEY` | [Tavily API key](https://app.tavily.com) — opt-in alternative to Brave Search for web search (1,000 free credits/month) |
 
 #### apify (`@apify/actors-mcp-server`)
 

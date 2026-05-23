@@ -17,9 +17,14 @@ Import — strictly follow `web-browsing/web-search` skill protocol.
 
 Snippets only — do not draw conclusions from search result snippets alone. Snippets provide leads for deeper investigation (web-research or paper-search).
 
+## Provider Selection
+
+- If the `tavily-search` MCP server is configured and active, use `tavily_search` (with `max_results=10`) as the search provider.
+- Otherwise, fall back to `brave_web_search` (with `count=10`).
+
 ## Budget
 
-Quantity target is set by the calling strategy's budget table. This SOP executes one unit = one brave_web_search call (count=10 results).
+Quantity target is set by the calling strategy's budget table. This SOP executes one unit = one search call (count=10 results).
 
 ## Import Source
 
