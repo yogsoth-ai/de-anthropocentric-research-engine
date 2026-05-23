@@ -265,78 +265,78 @@ Total skills in this distribution: 823
 
 | Skill | Description |
 |-------|-------------|
-| abductive-hypothesis-generation | "Strategy: 面对异常的最佳解释推理" |
-| ahp-weighting | "SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量" |
-| ahrq-picme-assessment | "SOP: 使用 AHRQ PiCMe 框架对研究 gap 进行 6 维度系统评估" |
-| anomaly-characterization | "SOP: 描述和分类无法被现有理论解释的异常现象" |
-| anomaly-driven-abduction | "Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序" |
-| answering-sequence-design | "SOP: 设计子问题的最优回答顺序" |
-| boundary-condition-specification | "SOP: 指定假设成立的边界条件" |
-| comparative-formulation | "Strategy: 构建对比性研究问题 — A vs B 的系统化比较" |
-| competing-hypothesis-construction | "Strategy: 为同一现象构建多个竞争假设" |
-| competing-hypothesis-generation | "SOP: 为同一现象生成机制上不同的竞争假设" |
-| competing-hypothesis-matrix | "Tactic: 多假设管理——生成竞争假设，设计区分性预测，构建结构化比较矩阵" |
-| consistency-check | "SOP: 检验 pairwise 判断矩阵的传递一致性，识别不一致项并建议修正" |
-| decomposition-formulation | "Strategy: 将复杂研究问题分解为可独立回答的子问题层级" |
-| deductive-hypothesis-generation | "Strategy: 从现有理论演绎推导假设" |
-| dependency-mapping | "SOP: 映射子问题间的依赖关系" |
-| discriminating-prediction-design | "SOP: 设计能区分竞争假设的关键预测和观察方案" |
-| eclipse-application | "SOP: 应用 ECLIPSE 框架结构化混合方法研究问题" |
-| evidence-based-prioritization | "Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级" |
-| explanation-generation | "SOP: 为异常现象生成候选解释列表" |
-| falsifiability-audit | "Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范" |
-| falsifiability-check | "SOP: 检验假设是否满足可证伪性标准" |
-| feasibility-constrained-formulation | "Strategy: 在资源约束下重塑研究问题 — pragmatic 调整保持核心价值" |
-| feasibility-scoring | "SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分" |
-| finer-criteria-check | "SOP: FINER 5 项标准逐项检验研究问题质量" |
-| framework-guided-formulation | "Strategy: 选择 RQ 框架（PICO/SPIDER/SPICE/ECLIPSE）并系统应用" |
-| framework-matching | "SOP: 根据研究类型匹配最适合的 RQ 框架" |
-| framework-selection-and-application | "Tactic: 选择最适合的 RQ 框架并系统应用" |
-| gap-normalization | "SOP: 统一不同来源的 gap 格式为标准 GapRecord" |
-| gap-pairwise-judgment | "SOP: 对两个 gap 进行逐标准相对优先级判断，输出偏好结果" |
+| abductive-hypothesis-generation | "Strategy: Inference to the best explanation for anomalies." |
+| ahp-weighting | "SOP: Use AHP to determine criterion weights and output a weight vector." |
+| ahrq-picme-assessment | "SOP: Use the AHRQ PiCMe framework to evaluate a research gap across six dimensions." |
+| anomaly-characterization | "SOP: Describe and classify anomalous phenomena that existing theories cannot explain." |
+| anomaly-driven-abduction | "Tactic: Inductive/abductive path — describe the anomaly, generate candidate explanations, and rank them by plausibility." |
+| answering-sequence-design | "SOP: Design the optimal answer order for sub-questions." |
+| boundary-condition-specification | "SOP: Specify the boundary conditions under which a hypothesis holds." |
+| comparative-formulation | "Strategy: Construct comparative research questions — a systematic comparison of A vs B." |
+| competing-hypothesis-construction | "Strategy: Construct multiple competing hypotheses for the same phenomenon." |
+| competing-hypothesis-generation | "SOP: Generate mechanism-level competing hypotheses for the same phenomenon." |
+| competing-hypothesis-matrix | "Tactic: Multi-hypothesis management — generate competing hypotheses, design discriminative predictions, and build a structured comparison matrix." |
+| consistency-check | "SOP: Check the transitive consistency of a pairwise judgment matrix, identify inconsistencies, and suggest corrections." |
+| decomposition-formulation | "Strategy: Decompose a complex research question into a hierarchy of independently answerable sub-questions." |
+| deductive-hypothesis-generation | "Strategy: Derive hypotheses deductively from existing theory." |
+| dependency-mapping | "SOP: Map dependency relationships among sub-questions." |
+| discriminating-prediction-design | "SOP: Design key predictions and observation plans that distinguish between competing hypotheses." |
+| eclipse-application | "SOP: Apply the ECLIPSE framework to structure mixed-method research questions." |
+| evidence-based-prioritization | "Strategy: Use evidence strength from the AHRQ PiCMe assessment to drive gap prioritization." |
+| explanation-generation | "SOP: Generate a list of candidate explanations for anomalous phenomena." |
+| falsifiability-audit | "Tactic: Hypothesis quality assurance — test falsifiability, repair inadequate hypotheses, and complete operationalization and boundary-condition specification." |
+| falsifiability-check | "SOP: Check whether a hypothesis meets the standard of falsifiability." |
+| feasibility-constrained-formulation | "Strategy: Reframe the research question under resource constraints while preserving its core value." |
+| feasibility-scoring | "SOP: Evaluate the attackability of a research gap, identify bottlenecks, and output a feasibility score." |
+| finer-criteria-check | "SOP: Evaluate the research question against the five FINER criteria one by one." |
+| framework-guided-formulation | "Strategy: Choose a research-question framework (PICO/SPIDER/SPICE/ECLIPSE) and apply it systematically." |
+| framework-matching | "SOP: Match the most appropriate research-question framework to the study type." |
+| framework-selection-and-application | "Tactic: Select the most appropriate research-question framework and apply it systematically." |
+| gap-normalization | "SOP: Normalize gaps from different sources into a standard GapRecord format." |
+| gap-pairwise-judgment | "SOP: Compare two gaps criterion by criterion and output a relative preference judgment." |
 | gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
-| hypothesis-comparison-matrix | "SOP: 构建竞争假设的多维度对比矩阵" |
-| hypothesis-formulation | "Campaign: 将 insight 和 gap 转化为结构化的可测试假设" |
-| hypothesis-operationalization | "Strategy: 将 working hypothesis 精确化为可测试形式" |
-| hypothesis-synthesis | "SOP: 综合所有中间产物，产出最终结构化假设集" |
-| impact-scoring | "SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分" |
-| importance-scoring | "SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据" |
-| inductive-hypothesis-generation | "Strategy: 从数据/观察归纳提炼假设" |
-| mechanism-extraction | "SOP: 从理论中提取因果机制链" |
-| multi-criteria-ranking | "Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表" |
-| novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
-| operationalization | "SOP: 将抽象概念操作化为可测量的指标和方法" |
-| pairwise-comparison | "Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景" |
+| hypothesis-comparison-matrix | "SOP: Build a multi-dimensional comparison matrix for competing hypotheses." |
+| hypothesis-formulation | "Campaign: Turn insights and gaps into structured, testable hypotheses." |
+| hypothesis-operationalization | "Strategy: Refine a working hypothesis into a testable form." |
+| hypothesis-synthesis | "SOP: Synthesize all intermediate outputs into a final structured hypothesis set." |
+| impact-scoring | "SOP: Evaluate the potential impact of a research gap, identify beneficiaries, and output an impact score." |
+| importance-scoring | "SOP: Evaluate the academic and practical importance of a research gap and output a 1-5 score with justification." |
+| inductive-hypothesis-generation | "Strategy: Induce hypotheses from data and observations." |
+| mechanism-extraction | "SOP: Extract a causal mechanism chain from theory." |
+| multi-criteria-ranking | "Strategy: Use weighted multi-criteria scoring to rank gaps after decomposing and recombining them into independent sub-problems." |
+| novelty-scoring | "SOP: Assess the novelty potential of a research gap, identify differentiation directions, and output a score." |
+| operationalization | "SOP: Operationalize abstract concepts into measurable indicators and methods." |
+| pairwise-comparison | "Tactic: Rank gaps through relative comparison rather than absolute scoring, suitable for hard-to-quantify scenarios." |
 | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
 | paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
 | paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
-| pico-application | "SOP: 应用 PICO/PICOTS 框架结构化研究问题" |
-| plausibility-ranking | "SOP: 对候选解释按合理性进行多维度加权排序" |
-| portfolio-optimization | "Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合" |
-| priority-sensitivity-testing | "Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性" |
-| priority-synthesis | "SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议" |
-| quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
-| question-refinement-loop | "Tactic: 迭代精化研究问题直到通过 FINER 5 项标准" |
-| question-synthesis | "SOP: 综合所有中间产物产出最终研究问题集" |
-| rapid-triage | "Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集" |
-| relationship-specification | "SOP: 指定变量间关系的方向与形式" |
-| research-question | "Campaign: 将假设细化为精确的、框架化的研究问题" |
+| pico-application | "SOP: Apply the PICO/PICOTS framework to structure a research question." |
+| plausibility-ranking | "SOP: Rank candidate explanations with a multi-dimensional weighted plausibility score." |
+| portfolio-optimization | "Strategy: Treat a gap set as an investment portfolio and select the best gap combination by optimizing risk, return, and diversity." |
+| priority-sensitivity-testing | "Tactic: Perturb scoring weights to test how robust gap ranking is to weight choices." |
+| priority-synthesis | "SOP: Synthesize all scoring data into a final prioritized gap list and recommended attack path." |
+| quality-gate-check | "Shared SOP: General quality gate check (format completeness and logical consistency)." |
+| question-refinement-loop | "Tactic: Iteratively refine the research question until it passes all five FINER criteria." |
+| question-synthesis | "SOP: Synthesize all intermediate outputs into a final set of research questions." |
+| rapid-triage | "Strategy: Fast coarse filtering — use two rounds of filtering to compress a large gap set into a shortlist for detailed ranking." |
+| relationship-specification | "SOP: Specify the direction and form of relationships among variables." |
+| research-question | "Campaign: Refine hypotheses into precise, framework-based research questions." |
 | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
-| scope-assessment | "SOP: 评估研究问题的范围是否合适（太宽/合适/太窄）" |
-| scope-calibration | "Strategy: 调整研究问题范围 — zoom in/out 直到范围合适" |
-| scoring-matrix-construction | "Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵" |
-| spice-application | "SOP: 应用 SPICE 框架结构化评估研究问题" |
-| spider-application | "SOP: 应用 SPIDER 框架结构化定性研究问题" |
-| stakeholder-weighted-ranking | "Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序" |
-| sub-question-decomposition | "Tactic: 将主问题分解为可独立回答的子问题层级" |
-| sub-question-generation | "SOP: 将主研究问题分解为可独立回答的子问题" |
-| success-criteria-definition | "SOP: 为研究问题定义可测量的成功标准" |
-| theory-identification | "SOP: 识别与研究gap相关的理论框架" |
-| theory-mechanism-extraction | "Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选" |
-| variable-identification | "SOP: 识别变量及其在假设中的角色" |
+| scope-assessment | "SOP: Assess whether the scope of the research question is appropriate (too broad / appropriate / too narrow)." |
+| scope-calibration | "Strategy: Adjust the scope of the research question — zoom in or out until the scope is appropriate." |
+| scoring-matrix-construction | "Tactic: Orchestrate multi-dimensional scoring SOPs to build a comprehensive evaluation matrix for all gaps." |
+| spice-application | "SOP: Apply the SPICE framework to structure an evaluative research question." |
+| spider-application | "SOP: Apply the SPIDER framework to structure a qualitative research question." |
+| stakeholder-weighted-ranking | "Strategy: Weight rankings by stakeholder perspective — the same gap can carry different weights under different viewpoints, with the final ranking based on consensus." |
+| sub-question-decomposition | "Tactic: Decompose the main question into a hierarchy of independently answerable sub-questions." |
+| sub-question-generation | "SOP: Decompose the main research question into independently answerable sub-questions." |
+| success-criteria-definition | "SOP: Define measurable success criteria for the research question." |
+| theory-identification | "SOP: Identify the theoretical frameworks relevant to the research gap." |
+| theory-mechanism-extraction | "Tactic: Core deductive path — start from theory, extract mechanisms, variables, and relationships, and generate candidate hypotheses." |
+| variable-identification | "SOP: Identify variables and their roles within the hypothesis." |
 | web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
 | web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
-| weight-perturbation | "SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定" |
+| weight-perturbation | "SOP: Perturb weights to test the stability of gap rankings and output a stability judgment." |
 
 ## creative-ideation (188 skills)
 
@@ -464,7 +464,7 @@ Total skills in this distribution: 823
 | movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
 | movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
 | multi-level-bisociation | Simultaneous concept collision at multiple abstraction levels |
-| novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
+| novelty-scoring | "SOP: Assess the novelty potential of a research gap, identify differentiation directions, and output a score." |
 | novice-perspective | Novice perspective — question the 'obvious' by adopting deliberate ignorance to reveal hidden complexity. |
 | organism-discovery | "Find organisms solving similar problems. Search across kingdoms for biological champions." |
 | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
@@ -619,7 +619,7 @@ Total skills in this distribution: 823
 | perspective-assignment | Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria. |
 | perspective-attack | Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives. |
 | portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
-| portfolio-optimization | "Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合" |
+| portfolio-optimization | "Strategy: Treat a gap set as an investment portfolio and select the best gap combination by optimizing risk, return, and diversity." |
 | portfolio-synthesis | Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance. |
 | radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |
 | rank-comparison | Compare multiple ranking results to assess agreement and identify divergent items. |
@@ -635,7 +635,7 @@ Total skills in this distribution: 823
 | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
 | scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
 | scenario-stress-testing | Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics. |
-| scoring-matrix-construction | "Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵" |
+| scoring-matrix-construction | "Tactic: Orchestrate multi-dimensional scoring SOPs to build a comprehensive evaluation matrix for all gaps." |
 | scoring-synthesis | Synthesize score matrix, rankings, and sensitivity analysis into a final recommendation. |
 | screening-then-scoring | First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods. |
 | selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
@@ -824,7 +824,7 @@ Total skills in this distribution: 823
 | plan-formatting | "Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions" |
 | plan-writing | "Format critical path and prerequisites into bite-sized executable plan following superpowers:writing-plans conventions" |
 | prerequisite-planning | "Identify obstacles blocking direct achievement and design intermediate objectives to overcome each" |
-| quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
+| quality-gate-check | "Shared SOP: General quality gate check (format completeness and logical consistency)." |
 | reproducibility-protocol | "Ensure experiment reproducibility through systematic environment and seed control" |
 | reproducibility-verification | "Verify result reproducibility via re-runs with different seeds and ICC comparison" |
 | resource-constraint | "Are resources sufficient? — Quantify compute, data, time, human, and financial resource constraints" |
