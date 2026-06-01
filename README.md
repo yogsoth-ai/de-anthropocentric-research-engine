@@ -385,6 +385,12 @@ Active development continues. Near-term priorities:
 
 ---
 
+## Acknowledgments
+
+- [tavily-integrations](https://github.com/tavily-integrations) — Tavily MCP provider integration (PR #14)
+
+---
+
 ## 📄 License
 
 [Apache-2.0](LICENSE)
