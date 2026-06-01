@@ -19,12 +19,12 @@ Snippets only — do not draw conclusions from search result snippets alone. Sni
 
 ## Provider Selection
 
-- If the `tavily-search` MCP server is configured and active, use `tavily_search` (with `max_results=10`) as the search provider.
-- Otherwise, fall back to `brave_web_search` (with `count=10`).
+Follow the imported skill's Provider Selection — use whichever web-search MCP
+is configured. Provider-specific parameters are defined there.
 
 ## Budget
 
-Quantity target is set by the calling strategy's budget table. This SOP executes one unit = one search call (count=10 results).
+Quantity target is set by the calling strategy's budget table. This SOP executes one unit = one search call (~10 results).
 
 ## Import Source
 
