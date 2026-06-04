@@ -8,7 +8,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'literature-engine']}"
+        "context-management",
+        "subagent-spawning",
+        "literature-engine"
       ],
       "tactics": [
         "anomaly-driven-abduction"
@@ -105,7 +107,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, facet-bisociation, analogical-transfer, forced-bridge-construction, design-by-analogy, domain-divergence"
+        "cross-domain-discovery",
+        "facet-bisociation",
+        "analogical-transfer",
+        "forced-bridge-construction",
+        "design-by-analogy",
+        "domain-divergence"
       ],
       "dependencies": [],
       "tactics": [],
@@ -119,7 +126,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, multi-level-bisociation"
+        "combinatorial-creativity",
+        "multi-level-bisociation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -147,7 +155,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, functional-analogy, biotriz-resolution, ecosystem-pattern, evolution-strategy, life-principles-application"
+        "biologize-and-discover",
+        "functional-analogy",
+        "biotriz-resolution",
+        "ecosystem-pattern",
+        "evolution-strategy",
+        "life-principles-application"
       ],
       "dependencies": [],
       "tactics": [],
@@ -319,7 +332,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -333,7 +346,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -419,7 +432,13 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, provocation-and-movement, random-entry, concept-fan, challenge-operation, six-hats-ideation, movement-extraction"
+        "lateral-thinking",
+        "provocation-and-movement",
+        "random-entry",
+        "concept-fan",
+        "challenge-operation",
+        "six-hats-ideation",
+        "movement-extraction"
       ],
       "dependencies": [],
       "tactics": [],
@@ -447,7 +466,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, direct-analogy, symbolic-analogy, compressed-conflict"
+        "synectics",
+        "direct-analogy",
+        "symbolic-analogy",
+        "compressed-conflict"
       ],
       "dependencies": [],
       "tactics": [],
@@ -461,7 +483,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, synectics, biomimicry"
+        "cross-domain-discovery",
+        "synectics",
+        "biomimicry"
       ],
       "dependencies": [],
       "tactics": [],
@@ -475,7 +499,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, bridge-validation, analogical-transfer, design-by-analogy, domain-divergence"
+        "cross-domain-discovery",
+        "bridge-validation",
+        "analogical-transfer",
+        "design-by-analogy",
+        "domain-divergence"
       ],
       "dependencies": [],
       "tactics": [],
@@ -502,7 +530,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -516,7 +544,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -534,7 +562,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -922,7 +950,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "insight, sensitivity-analysis, problem-reformulation"
+        "insight",
+        "sensitivity-analysis",
+        "problem-reformulation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1064,7 +1094,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "anti-benchmark, sacred-cow-hunting"
+        "anti-benchmark",
+        "sacred-cow-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1138,7 +1169,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biomimicry, biologize-and-discover, functional-analogy, biotriz-resolution"
+        "biomimicry",
+        "biologize-and-discover",
+        "functional-analogy",
+        "biotriz-resolution"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1152,7 +1186,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, functional-analogy, biotriz-resolution"
+        "biologize-and-discover",
+        "functional-analogy",
+        "biotriz-resolution"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1194,7 +1230,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, biotriz-resolution, functional-analogy, ecosystem-pattern, evolution-strategy"
+        "biologize-and-discover",
+        "biotriz-resolution",
+        "functional-analogy",
+        "ecosystem-pattern",
+        "evolution-strategy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1236,7 +1276,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, facet-bisociation"
+        "cross-domain-discovery",
+        "facet-bisociation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1250,7 +1291,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending"
+        "combinatorial-creativity",
+        "concept-blending"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1264,7 +1306,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1278,7 +1322,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation",
+        "emergent-property-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1292,7 +1339,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, emergent-property-hunting"
+        "combinatorial-creativity",
+        "concept-blending",
+        "emergent-property-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1335,7 +1384,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -1432,7 +1481,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy"
+        "cross-domain-discovery",
+        "facet-bisociation",
+        "analogical-transfer",
+        "random-stimulus-entry",
+        "forced-bridge-construction",
+        "design-by-analogy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1510,7 +1564,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "literature-survey, meta-analysis, baseline-establishment"
+        "literature-survey",
+        "meta-analysis",
+        "baseline-establishment"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1622,7 +1678,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, challenge-operation"
+        "lateral-thinking",
+        "challenge-operation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1650,7 +1707,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "literature-survey, patent-mining, baseline-establishment"
+        "literature-survey",
+        "patent-mining",
+        "baseline-establishment"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1781,7 +1840,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "root-cause-drilling, assumption-audit"
+        "root-cause-drilling",
+        "assumption-audit"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1849,7 +1909,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "white-space-identification, design-space-mapping, general-morphological-analysis"
+        "white-space-identification",
+        "design-space-mapping",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1863,7 +1925,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "morphological-exploration, combinatorial-creativity, structural-deconstruction, systematic-enumeration"
+        "morphological-exploration",
+        "combinatorial-creativity",
+        "structural-deconstruction",
+        "systematic-enumeration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1891,7 +1956,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation, design-space-exploration, function-combination, emergent-property-hunting"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation",
+        "design-space-exploration",
+        "function-combination",
+        "emergent-property-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -1920,7 +1990,8 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "framework-selection-and-application"
@@ -1978,7 +2049,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'literature-engine']}"
+        "context-management",
+        "subagent-spawning",
+        "literature-engine"
       ],
       "tactics": [
         "competing-hypothesis-matrix"
@@ -1999,7 +2072,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -2013,7 +2086,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -2071,7 +2144,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation"
+        "perspective-forcing",
+        "role-based-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2085,7 +2159,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, component-surgery, function-trimming, recombination-architecture"
+        "structural-deconstruction",
+        "component-surgery",
+        "function-trimming",
+        "recombination-architecture"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2113,7 +2190,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, symbolic-analogy, excursion-method"
+        "synectics",
+        "symbolic-analogy",
+        "excursion-method"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2169,7 +2248,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, concept-fan, concept-hierarchy"
+        "lateral-thinking",
+        "concept-fan",
+        "concept-hierarchy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2183,7 +2264,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, concept-fan, challenge-operation"
+        "lateral-thinking",
+        "concept-fan",
+        "challenge-operation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2400,7 +2483,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -2413,7 +2496,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "morphological-exploration, cross-consistency-analysis, general-morphological-analysis"
+        "morphological-exploration",
+        "cross-consistency-analysis",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2427,7 +2512,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "consistency-checking, cross-consistency-analysis, general-morphological-analysis, combination-mapping"
+        "consistency-checking",
+        "cross-consistency-analysis",
+        "general-morphological-analysis",
+        "combination-mapping"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2555,7 +2643,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, lateral-thinking, structural-deconstruction, morphological-exploration"
+        "perspective-forcing",
+        "lateral-thinking",
+        "structural-deconstruction",
+        "morphological-exploration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2583,7 +2674,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, constraint-driven-ideation, constraint-protocol"
+        "perspective-forcing",
+        "constraint-driven-ideation",
+        "constraint-protocol"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2639,7 +2732,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "inversion-protocol, axiom-negation, reverse-brainstorming, worst-method-inversion, anti-benchmark, sacred-cow-hunting"
+        "inversion-protocol",
+        "axiom-negation",
+        "reverse-brainstorming",
+        "worst-method-inversion",
+        "anti-benchmark",
+        "sacred-cow-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2719,7 +2817,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, triz-contradiction-resolution"
+        "structural-deconstruction",
+        "triz-contradiction-resolution"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2733,7 +2832,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, triz-contradiction-resolution, contradiction-identification"
+        "structural-deconstruction",
+        "triz-contradiction-resolution",
+        "contradiction-identification"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2918,7 +3019,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "systematic-enumeration, benchmark-sweep, method-problem-matrix, ablation-brainstorm"
+        "systematic-enumeration",
+        "benchmark-sweep",
+        "method-problem-matrix",
+        "ablation-brainstorm"
       ],
       "dependencies": [],
       "tactics": [],
@@ -2932,7 +3036,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-driven-generation, failure-taxonomy, factorial-ideation"
+        "gap-driven-generation",
+        "failure-taxonomy",
+        "factorial-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3076,7 +3182,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "uncertainty-propagation, decision-sensitivity"
+        "uncertainty-propagation",
+        "decision-sensitivity"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3167,7 +3274,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy"
+        "cross-domain-discovery",
+        "facet-bisociation",
+        "analogical-transfer",
+        "random-stimulus-entry",
+        "forced-bridge-construction",
+        "design-by-analogy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3378,7 +3490,8 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "sub-question-decomposition"
@@ -3413,7 +3526,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'literature-engine']}"
+        "context-management",
+        "subagent-spawning",
+        "literature-engine"
       ],
       "tactics": [
         "theory-mechanism-extraction",
@@ -3531,7 +3646,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -3663,7 +3778,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "axiom-negation, reverse-brainstorming, worst-method-inversion, anti-benchmark, sacred-cow-hunting"
+        "axiom-negation",
+        "reverse-brainstorming",
+        "worst-method-inversion",
+        "anti-benchmark",
+        "sacred-cow-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3775,7 +3894,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, direct-analogy, excursion-method"
+        "synectics",
+        "direct-analogy",
+        "excursion-method"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3872,7 +3993,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -3941,7 +4062,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy"
+        "cross-domain-discovery",
+        "facet-bisociation",
+        "analogical-transfer",
+        "random-stimulus-entry",
+        "forced-bridge-construction",
+        "design-by-analogy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -3955,7 +4081,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, biomimicry, synectics, combinatorial-creativity"
+        "cross-domain-discovery",
+        "biomimicry",
+        "synectics",
+        "combinatorial-creativity"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4040,7 +4169,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -4067,7 +4196,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "ecosystem-pattern, life-principles-application"
+        "ecosystem-pattern",
+        "life-principles-application"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4137,7 +4267,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-identification, gap-synthesis-strategy"
+        "gap-identification",
+        "gap-synthesis-strategy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4151,7 +4282,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting, function-combination"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation",
+        "emergent-property-hunting",
+        "function-combination"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4179,7 +4314,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, emergent-property-hunting, function-combination, design-space-exploration"
+        "combinatorial-creativity",
+        "emergent-property-hunting",
+        "function-combination",
+        "design-space-exploration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4193,7 +4331,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, functional-analogy, biotriz-resolution, ecosystem-pattern, evolution-strategy"
+        "biologize-and-discover",
+        "functional-analogy",
+        "biotriz-resolution",
+        "ecosystem-pattern",
+        "evolution-strategy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4207,7 +4349,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "systematic-enumeration, benchmark-sweep, method-problem-matrix, ablation-brainstorm, failure-taxonomy, factorial-ideation"
+        "systematic-enumeration",
+        "benchmark-sweep",
+        "method-problem-matrix",
+        "ablation-brainstorm",
+        "failure-taxonomy",
+        "factorial-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4235,7 +4382,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, concept-fan, challenge-operation, concept-hierarchy"
+        "lateral-thinking",
+        "concept-fan",
+        "challenge-operation",
+        "concept-hierarchy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4249,7 +4399,16 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, cross-domain-discovery, assumption-destruction, biomimicry, synectics, morphological-exploration, lateral-thinking, combinatorial-creativity, perspective-forcing, systematic-enumeration"
+        "structural-deconstruction",
+        "cross-domain-discovery",
+        "assumption-destruction",
+        "biomimicry",
+        "synectics",
+        "morphological-exploration",
+        "lateral-thinking",
+        "combinatorial-creativity",
+        "perspective-forcing",
+        "systematic-enumeration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4292,7 +4451,8 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "scoring-matrix-construction"
@@ -4311,7 +4471,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-identification, gap-prioritization"
+        "gap-identification",
+        "gap-prioritization"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4325,7 +4486,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-identification, gap-synthesis-strategy"
+        "gap-identification",
+        "gap-synthesis-strategy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4367,7 +4529,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-analysis, insight, boundary-analysis"
+        "gap-analysis",
+        "insight",
+        "boundary-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4409,7 +4573,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "evolution-strategy, life-principles-application"
+        "evolution-strategy",
+        "life-principles-application"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4437,7 +4602,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, excursion-method, excursion-orchestration"
+        "synectics",
+        "excursion-method",
+        "excursion-orchestration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4465,7 +4632,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, direct-analogy, excursion-method"
+        "synectics",
+        "direct-analogy",
+        "excursion-method"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4575,7 +4744,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -4673,7 +4842,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "factorial-ideation, gap-driven-generation"
+        "factorial-ideation",
+        "gap-driven-generation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4772,7 +4942,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "failure-taxonomy, gap-driven-generation"
+        "failure-taxonomy",
+        "gap-driven-generation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4857,7 +5028,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -4875,7 +5046,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -4902,7 +5073,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, fantasy-analogy"
+        "synectics",
+        "fantasy-analogy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -4943,7 +5115,8 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "question-refinement-loop"
@@ -4963,7 +5136,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5031,7 +5204,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5072,7 +5245,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, excursion-method, excursion-orchestration"
+        "synectics",
+        "excursion-method",
+        "excursion-orchestration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5100,7 +5275,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, forced-bridge-construction, random-stimulus-entry"
+        "cross-domain-discovery",
+        "forced-bridge-construction",
+        "random-stimulus-entry"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5126,7 +5303,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, concept-fan, concept-hierarchy"
+        "lateral-thinking",
+        "concept-fan",
+        "concept-hierarchy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5169,7 +5348,8 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "framework-selection-and-application",
@@ -5193,7 +5373,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5207,7 +5387,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -5268,7 +5448,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, contradiction-identification, component-decomposition, function-trimming"
+        "structural-deconstruction",
+        "contradiction-identification",
+        "component-decomposition",
+        "function-trimming"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5282,7 +5465,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, function-combination"
+        "combinatorial-creativity",
+        "function-combination"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5324,7 +5508,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "functional-analogy, biological-function-mapping"
+        "functional-analogy",
+        "biological-function-mapping"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5394,7 +5579,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "systematic-enumeration, failure-taxonomy, factorial-ideation"
+        "systematic-enumeration",
+        "failure-taxonomy",
+        "factorial-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5408,7 +5595,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "literature-survey, benchmark-archaeology, baseline-establishment"
+        "literature-survey",
+        "benchmark-archaeology",
+        "baseline-establishment"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5437,7 +5626,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5451,7 +5640,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5600,7 +5789,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5640,7 +5831,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, six-hats-ideation"
+        "lateral-thinking",
+        "six-hats-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5730,7 +5922,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5744,7 +5936,10 @@
       "campaign": null,
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'web-browsing', 'literature-engine'], 'mcp': ['brave-search', 'apify', 'alphaxiv', 'semantic-scholar']}"
+        "context-management",
+        "subagent-spawning",
+        "web-browsing",
+        "literature-engine"
       ],
       "tactics": [
         "theory-mechanism-extraction",
@@ -5763,7 +5958,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'literature-engine']}"
+        "context-management",
+        "subagent-spawning",
+        "literature-engine"
       ],
       "tactics": [
         "falsifiability-audit"
@@ -5784,7 +5981,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5797,7 +5994,16 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, cross-domain-discovery, assumption-destruction, biomimicry, synectics, morphological-exploration, lateral-thinking, combinatorial-creativity, perspective-forcing, systematic-enumeration"
+        "structural-deconstruction",
+        "cross-domain-discovery",
+        "assumption-destruction",
+        "biomimicry",
+        "synectics",
+        "morphological-exploration",
+        "lateral-thinking",
+        "combinatorial-creativity",
+        "perspective-forcing",
+        "systematic-enumeration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5824,7 +6030,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5870,7 +6076,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -5912,7 +6118,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'literature-engine']}"
+        "context-management",
+        "subagent-spawning",
+        "literature-engine"
       ],
       "tactics": [
         "anomaly-driven-abduction",
@@ -5934,7 +6142,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, design-space-exploration, function-combination"
+        "combinatorial-creativity",
+        "concept-blending",
+        "design-space-exploration",
+        "function-combination"
       ],
       "dependencies": [],
       "tactics": [],
@@ -5990,7 +6201,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "coverage-analysis, benchmark-sweep, method-problem-matrix"
+        "coverage-analysis",
+        "benchmark-sweep",
+        "method-problem-matrix"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6004,7 +6217,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "inversion-protocol, reverse-brainstorming, worst-method-inversion"
+        "inversion-protocol",
+        "reverse-brainstorming",
+        "worst-method-inversion"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6018,7 +6233,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "reverse-brainstorming, worst-method-inversion, sacred-cow-hunting, assumption-destruction"
+        "reverse-brainstorming",
+        "worst-method-inversion",
+        "sacred-cow-hunting",
+        "assumption-destruction"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6173,7 +6391,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, provocation-and-movement, random-entry, concept-fan, challenge-operation, six-hats-ideation"
+        "lateral-thinking",
+        "provocation-and-movement",
+        "random-entry",
+        "concept-fan",
+        "challenge-operation",
+        "six-hats-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6260,7 +6483,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biomimicry, ecosystem-pattern, evolution-strategy"
+        "biomimicry",
+        "ecosystem-pattern",
+        "evolution-strategy"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6338,7 +6563,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "zwicky-box-construction, general-morphological-analysis"
+        "zwicky-box-construction",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6381,7 +6607,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -6450,7 +6676,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "coverage-analysis, benchmark-sweep, method-problem-matrix"
+        "coverage-analysis",
+        "benchmark-sweep",
+        "method-problem-matrix"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6569,7 +6797,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "failure-anticipation, red-teaming, adversarial-stress-testing"
+        "failure-anticipation",
+        "red-teaming",
+        "adversarial-stress-testing"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6665,7 +6895,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "zwicky-box-construction, cross-consistency-analysis, general-morphological-analysis, design-space-mapping, parameter-variation"
+        "zwicky-box-construction",
+        "cross-consistency-analysis",
+        "general-morphological-analysis",
+        "design-space-mapping",
+        "parameter-variation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6693,7 +6927,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, provocation-and-movement, six-hats-ideation"
+        "lateral-thinking",
+        "provocation-and-movement",
+        "six-hats-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6707,7 +6943,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, provocation-and-movement, movement-extraction, six-hats-ideation"
+        "lateral-thinking",
+        "provocation-and-movement",
+        "movement-extraction",
+        "six-hats-ideation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -6722,7 +6961,8 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "scoring-matrix-construction",
@@ -6873,7 +7113,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "gap-analysis, insight, problem-reformulation"
+        "gap-analysis",
+        "insight",
+        "problem-reformulation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7110,7 +7352,9 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning', 'literature-engine', 'web-browsing']}"
+        "subagent-spawning",
+        "literature-engine",
+        "web-browsing"
       ],
       "tactics": [],
       "sops": [],
@@ -7123,7 +7367,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation, perspective-rotation"
+        "perspective-forcing",
+        "role-based-ideation",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7192,7 +7438,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -7219,7 +7465,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, functional-analogy, biological-function-mapping"
+        "biologize-and-discover",
+        "functional-analogy",
+        "biological-function-mapping"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7248,7 +7496,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -7334,7 +7582,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, morphological-exploration, combinatorial-creativity, systematic-enumeration"
+        "structural-deconstruction",
+        "morphological-exploration",
+        "combinatorial-creativity",
+        "systematic-enumeration"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7502,7 +7753,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "zwicky-box-construction, general-morphological-analysis, parameter-variation"
+        "zwicky-box-construction",
+        "general-morphological-analysis",
+        "parameter-variation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7572,7 +7825,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, personal-analogy, excursion-method"
+        "synectics",
+        "personal-analogy",
+        "excursion-method"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7656,7 +7911,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation, temporal-projection, stakeholder-simulation, constraint-driven-ideation, perspective-rotation"
+        "perspective-forcing",
+        "role-based-ideation",
+        "temporal-projection",
+        "stakeholder-simulation",
+        "constraint-driven-ideation",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7671,7 +7931,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -7731,7 +7991,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -7744,7 +8004,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "assumption-destruction, lateral-thinking, perspective-forcing"
+        "assumption-destruction",
+        "lateral-thinking",
+        "perspective-forcing"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7787,7 +8049,8 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "scoring-matrix-construction",
@@ -7824,7 +8087,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation, perspective-rotation"
+        "perspective-forcing",
+        "role-based-ideation",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -7920,7 +8185,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -7938,7 +8203,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -7993,7 +8258,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "biologize-and-discover, functional-analogy, biological-function-mapping"
+        "biologize-and-discover",
+        "functional-analogy",
+        "biological-function-mapping"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8208,7 +8475,7 @@
       "campaign": null,
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -8236,7 +8503,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -8268,7 +8535,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -8309,7 +8576,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, random-stimulus-entry, domain-divergence"
+        "cross-domain-discovery",
+        "random-stimulus-entry",
+        "domain-divergence"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8337,7 +8606,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, lateral-thinking, synectics"
+        "cross-domain-discovery",
+        "lateral-thinking",
+        "synectics"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8380,7 +8651,8 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "scoring-matrix-construction"
@@ -8456,7 +8728,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, recombination-architecture, scamper-transformation, component-surgery"
+        "structural-deconstruction",
+        "recombination-architecture",
+        "scamper-transformation",
+        "component-surgery"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8511,7 +8786,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -8608,7 +8883,10 @@
       "campaign": null,
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning', 'web-browsing', 'literature-engine'], 'mcp': ['brave-search', 'apify', 'alphaxiv', 'semantic-scholar']}"
+        "context-management",
+        "subagent-spawning",
+        "web-browsing",
+        "literature-engine"
       ],
       "tactics": [
         "framework-selection-and-application",
@@ -8737,7 +9015,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "inversion-protocol, reverse-brainstorming, axiom-negation, sacred-cow-hunting"
+        "inversion-protocol",
+        "reverse-brainstorming",
+        "axiom-negation",
+        "sacred-cow-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8765,7 +9046,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation, perspective-rotation"
+        "perspective-forcing",
+        "role-based-ideation",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -8944,7 +9227,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "assumption-enumeration, anti-benchmark, sacred-cow-hunting"
+        "assumption-enumeration",
+        "anti-benchmark",
+        "sacred-cow-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9001,7 +9286,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "literature-survey, patent-mining, benchmark-archaeology"
+        "literature-survey",
+        "patent-mining",
+        "benchmark-archaeology"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9052,7 +9339,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "failure-mode-analysis, scaling-frontier"
+        "failure-mode-analysis",
+        "scaling-frontier"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9066,7 +9354,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, scamper-transformation"
+        "structural-deconstruction",
+        "scamper-transformation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9194,7 +9483,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -9208,7 +9497,8 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "question-refinement-loop"
@@ -9284,7 +9574,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -9317,7 +9607,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "parameter-screening, variance-decomposition"
+        "parameter-screening",
+        "variance-decomposition"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9443,7 +9734,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, triz-contradiction-resolution, contradiction-identification"
+        "structural-deconstruction",
+        "triz-contradiction-resolution",
+        "contradiction-identification"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9583,7 +9876,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "consistency-checking, cross-consistency-analysis, general-morphological-analysis"
+        "consistency-checking",
+        "cross-consistency-analysis",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9616,7 +9911,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -9630,7 +9925,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -9643,7 +9938,14 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, direct-analogy, personal-analogy, symbolic-analogy, fantasy-analogy, excursion-method, excursion-orchestration, compressed-conflict"
+        "synectics",
+        "direct-analogy",
+        "personal-analogy",
+        "symbolic-analogy",
+        "fantasy-analogy",
+        "excursion-method",
+        "excursion-orchestration",
+        "compressed-conflict"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9728,7 +10030,8 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['context-management', 'subagent-spawning']}"
+        "context-management",
+        "subagent-spawning"
       ],
       "tactics": [
         "scoring-matrix-construction",
@@ -9808,7 +10111,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "lateral-thinking, provocation-and-movement, random-entry, movement-extraction"
+        "lateral-thinking",
+        "provocation-and-movement",
+        "random-entry",
+        "movement-extraction"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9889,7 +10195,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, analogical-transfer, design-by-analogy, bridge-validation"
+        "cross-domain-discovery",
+        "analogical-transfer",
+        "design-by-analogy",
+        "bridge-validation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9903,7 +10212,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, scamper-transformation, component-surgery, triz-contradiction-resolution, function-trimming, recombination-architecture"
+        "structural-deconstruction",
+        "scamper-transformation",
+        "component-surgery",
+        "triz-contradiction-resolution",
+        "function-trimming",
+        "recombination-architecture"
       ],
       "dependencies": [],
       "tactics": [],
@@ -9946,7 +10260,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -9964,7 +10278,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -9992,7 +10306,7 @@
       "campaign": "research-question",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -10019,7 +10333,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, component-surgery"
+        "structural-deconstruction",
+        "component-surgery"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10061,7 +10376,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, symbolic-analogy, excursion-method, compressed-conflict"
+        "synectics",
+        "symbolic-analogy",
+        "excursion-method",
+        "compressed-conflict"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10089,7 +10407,12 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "synectics, direct-analogy, personal-analogy, symbolic-analogy, fantasy-analogy, excursion-method"
+        "synectics",
+        "direct-analogy",
+        "personal-analogy",
+        "symbolic-analogy",
+        "fantasy-analogy",
+        "excursion-method"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10297,7 +10620,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, role-based-ideation, perspective-rotation"
+        "perspective-forcing",
+        "role-based-ideation",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10312,7 +10637,9 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning', 'literature-engine', 'web-browsing']}"
+        "subagent-spawning",
+        "literature-engine",
+        "web-browsing"
       ],
       "tactics": [],
       "sops": [],
@@ -10326,7 +10653,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [
@@ -10417,7 +10744,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "perspective-forcing, temporal-projection, perspective-rotation"
+        "perspective-forcing",
+        "temporal-projection",
+        "perspective-rotation"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10445,7 +10774,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "cross-domain-discovery, analogical-transfer, design-by-analogy, bridge-validation, forced-bridge-construction"
+        "cross-domain-discovery",
+        "analogical-transfer",
+        "design-by-analogy",
+        "bridge-validation",
+        "forced-bridge-construction"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10473,7 +10806,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, function-trimming, component-decomposition"
+        "structural-deconstruction",
+        "function-trimming",
+        "component-decomposition"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10501,7 +10836,8 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "structural-deconstruction, triz-contradiction-resolution"
+        "structural-deconstruction",
+        "triz-contradiction-resolution"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10611,7 +10947,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "zwicky-box-construction, general-morphological-analysis, parameter-variation, combination-mapping"
+        "zwicky-box-construction",
+        "general-morphological-analysis",
+        "parameter-variation",
+        "combination-mapping"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10640,7 +10979,7 @@
       "campaign": "hypothesis-formulation",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -10681,7 +11020,11 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "multiagent-debate, red-teaming, failure-anticipation, counterfactual-probing, adversarial-stress-testing"
+        "multiagent-debate",
+        "red-teaming",
+        "failure-anticipation",
+        "counterfactual-probing",
+        "adversarial-stress-testing"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10695,7 +11038,10 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting"
+        "combinatorial-creativity",
+        "concept-blending",
+        "multi-level-bisociation",
+        "emergent-property-hunting"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10721,7 +11067,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "multiagent-debate, red-teaming, adversarial-stress-testing"
+        "multiagent-debate",
+        "red-teaming",
+        "adversarial-stress-testing"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10788,7 +11136,7 @@
       "campaign": "gap-prioritization",
       "used_by": [],
       "dependencies": [
-        "{'skills': ['subagent-spawning']}"
+        "subagent-spawning"
       ],
       "tactics": [],
       "sops": [],
@@ -10805,7 +11153,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "white-space-identification, design-space-mapping, general-morphological-analysis"
+        "white-space-identification",
+        "design-space-mapping",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10819,7 +11169,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "morphological-exploration, design-space-mapping, general-morphological-analysis"
+        "morphological-exploration",
+        "design-space-mapping",
+        "general-morphological-analysis"
       ],
       "dependencies": [],
       "tactics": [],
@@ -10903,7 +11255,9 @@
       "category": null,
       "campaign": null,
       "used_by": [
-        "inversion-protocol, reverse-brainstorming, worst-method-inversion"
+        "inversion-protocol",
+        "reverse-brainstorming",
+        "worst-method-inversion"
       ],
       "dependencies": [],
       "tactics": [],

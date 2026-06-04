@@ -8,7 +8,10 @@ LIST_FIELDS = ("used_by", "tactics", "sops", "dependencies")
 def _norm_list(v):
     if v is None: return []
     if isinstance(v, list): return [str(x) for x in v]
-    return [str(v)]
+    # Real body: ~145 files write a list field as a comma-joined scalar
+    # (e.g. `used-by: a, b, c`). No skill name contains a comma, so splitting
+    # the scalar form is safe. List items are already discrete and never split.
+    return [p.strip() for p in str(v).split(",") if p.strip()]
 
 def parse_skill_file(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
@@ -27,6 +30,13 @@ def parse_skill_file(path: Path) -> dict:
         return {"name": name, "parse_error": "yaml-error"}
     if not isinstance(fm, dict):
         return {"name": name, "parse_error": "yaml-error"}
+    # 65 files write `dependencies` as a mapping {skills: [...], mcp: {...}}.
+    # Only skills: entries are skill-graph edges; mcp: names external servers.
+    raw_deps = fm.get("dependencies")
+    if isinstance(raw_deps, dict):
+        dep_value = raw_deps.get("skills")
+    else:
+        dep_value = raw_deps
     rec = {
         "name": fm.get("name", name),
         "execution": fm.get("execution"),
@@ -34,7 +44,7 @@ def parse_skill_file(path: Path) -> dict:
         "category": fm.get("category"),
         "campaign": fm.get("campaign"),
         "used_by": _norm_list(fm.get("used-by")),
-        "dependencies": _norm_list(fm.get("dependencies")),
+        "dependencies": _norm_list(dep_value),
         "tactics": _norm_list(fm.get("tactics")),
         "sops": _norm_list(fm.get("sops")),
         "parse_error": None,
