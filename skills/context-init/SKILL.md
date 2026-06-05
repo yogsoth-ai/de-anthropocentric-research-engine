@@ -48,11 +48,12 @@ Write the initial content:
 
 ## Plan Context
 
-<Plan excerpt for this Phase: objectives, expected outputs, constraints,
-relationship to other Phases in the pipeline>
+<Plan excerpt for this Phase: objectives, expected outputs, constraints, relationship to other Phases in the pipeline>
 ```
 
 The Plan Context section should contain the relevant plan excerpt describing this Phase's goals, expected deliverables, and how it connects to the broader research pipeline.
+
+**No mid-paragraph line breaks**: Write each prose paragraph as a single continuous line. Do not insert newlines inside a paragraph to wrap it at a column width. Newlines are only for separating paragraphs, list items, headings, and fenced code blocks. This applies to the Plan Context written here and to all content appended later by context-checkpoint.
 
 ### Step 4: Initialize or Update INDEX.md
 

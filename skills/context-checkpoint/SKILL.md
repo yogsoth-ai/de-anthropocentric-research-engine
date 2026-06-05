@@ -18,8 +18,9 @@ Typically triggered after each strategy completes or at key decision nodes.
 
 ## Hard Constraints
 
-1. **Minimum content volume**: Each checkpoint append MUST contain >=500 lines of markdown. This is non-negotiable. The purpose is to ensure sufficient information density for future reference.
+1. **Minimum content volume**: Each checkpoint append MUST contain >=500 lines of *substantive* markdown. This is non-negotiable. The 500 lines mean real content; inflating the count by hard-wrapping prose, padding, or repetition is gaming the constraint and is explicitly disallowed. The purpose is genuine information density for future reference.
 2. **Content scope**: Must record both PROCESS (what was done, searched, considered) and RESULTS (what was found, decided, what remains open).
+3. **No mid-paragraph line breaks**: Write each prose paragraph as a single continuous line. Do not insert newlines inside a paragraph to wrap it at a column width. Newlines are only for separating paragraphs, list items, headings, and fenced code blocks. (A paragraph being one long line does NOT count toward the 500-line minimum being met — write more substance, never more wrapping.)
 
 ## Execution Protocol
 
@@ -58,12 +59,10 @@ Append a new section to the context file:
 What this stage aimed to accomplish.
 
 ### Process Summary
-What was done — searches performed, papers read, methods applied,
-decisions made along the way.
+What was done — searches performed, papers read, methods applied, decisions made along the way.
 
 ### Key Findings
-The substantive results — discoveries, patterns, important papers,
-technical details.
+The substantive results — discoveries, patterns, important papers, technical details.
 
 ### Decisions Made
 Choices made during this stage and their rationale.
