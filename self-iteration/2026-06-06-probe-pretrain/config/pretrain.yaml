@@ -1,0 +1,18 @@
+# Pretrain 配置
+# F8 两段时长在 PT5 pilot（设备上）跑通后定死，下列为占位初值。
+n: 6                      # 插值器铺的用户档位数
+m: 8                      # 固定 topic 数
+
+f8:
+  pressure_turns: 10      # 占位，pilot 定死
+  closing_turns: 2        # 占位，pilot 定死
+
+loss2:
+  tau_min: 0.7            # 单调性闸
+  endpoint_repeats_K: 3   # 端点分离重复次数
+  endpoint_allowance: 0   # K 次中允许的倒挂数
+
+gate:
+  fidelity_batch_min: 0.90
+  topic_pass_ratio_min: 0.80
+  converge_consecutive: 3
