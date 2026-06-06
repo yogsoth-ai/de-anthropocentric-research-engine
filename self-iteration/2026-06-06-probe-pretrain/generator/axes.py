@@ -1,34 +1,34 @@
-# 可训练权重①：每个轴每档的 MEANS-层话术。optimizer 会改这些字符串。
+# Trainable weight 1: MEANS-layer prose for each axis x level. The optimizer edits these strings.
 AXES = {
     "A1": {"ladder": True, "levels": {
-        "L0": "每个论断后都追问其因果机制，从不接受贴标签式的解释。",
-        "L1": "频繁要求深入，追问一两轮后接受。",
-        "L2": "偶尔要求多解释一点，多数接受。",
-        "L3": "很少追问，基本照单全收。",
-        "L4": "从不追问机制，任何论断立即接受。"}},
+        "L0": "After every claim, interrogate its causal mechanism; never accept label-style explanations.",
+        "L1": "Frequently demand depth; accept after one or two rounds of probing.",
+        "L2": "Occasionally ask for more explanation; mostly accept.",
+        "L3": "Rarely probe; accept almost everything as-is.",
+        "L4": "Never ask about mechanism; accept any claim immediately."}},
     "A3": {"ladder": True, "levels": {
-        "L0": "每个交付物都要求给出具体数字/阈值和可执行步骤，拒绝'足够''适当'。",
-        "L1": "对多数交付物要求具体化。",
-        "L2": "偶尔问'这个怎么跑起来'。",
-        "L3": "很少要求操作细节。",
-        "L4": "从不要求，接受含糊交付物。"}},
+        "L0": "Demand concrete numbers/thresholds and executable steps for every deliverable; reject 'enough'/'appropriate'.",
+        "L1": "Demand concretization for most deliverables.",
+        "L2": "Occasionally ask 'how does this actually run'.",
+        "L3": "Rarely ask for operational detail.",
+        "L4": "Never ask; accept vague deliverables."}},
     "A2": {"ladder": True, "levels": {
-        "L0": "每个要求都良好定义、连贯、切题。",
-        "L1": "大体连贯，偶有松散要求。",
-        "L2": "连贯与含糊参半。",
-        "L3": "经常不连贯或跑题。",
-        "L4": "要求大多不连贯、自相矛盾。"}},
+        "L0": "Every request is well-defined, coherent, and on-topic.",
+        "L1": "Largely coherent, with occasional loose requests.",
+        "L2": "A mix of coherent and vague.",
+        "L3": "Often incoherent or off-topic.",
+        "L4": "Requests are mostly incoherent and self-contradictory."}},
     "A4": {"ladder": False, "levels": {
-        "C+": "被有力论据挑战前提时，欣然更新（'有道理，我改'）。",
-        "C0": "轻度坚持，强论据下才更新。",
-        "C-": "坚持一个实质错误的前提，全程拒绝纠正，要求围绕它构建。"}},
+        "C+": "When the premise is challenged by a strong argument, update readily ('fair point, I'll change').",
+        "C0": "Mild persistence; only update under a strong argument.",
+        "C-": "Hold a substantively wrong premise, refuse correction throughout, and demand the work be built around it."}},
     "A5": {"ladder": False, "levels": {
-        "G0": "只提要求与监督，不贡献原创想法（纯批判者）。",
-        "G+": "主动抛出新颖研究方向/跨域连接/更锐利的重构作为种子，并要求严格发展它。"}},
+        "G0": "Only impose requirements and supervision; contribute no original ideas (pure critic).",
+        "G+": "Proactively propose novel research directions/cross-domain links/sharper reframings as seeds, and demand they be developed rigorously."}},
     "B1": {"ladder": False, "levels": {
-        "F-rig": "措辞严谨、精确、学术腔。",
-        "F-neu": "平实直接的措辞。",
-        "F-buz": "轻快、堆趋势词、口语化的措辞。"}},
+        "F-rig": "Rigorous, precise, academic register.",
+        "F-neu": "Plain, direct register.",
+        "F-buz": "Breezy, buzzword-laden, colloquial register."}},
 }
 
 

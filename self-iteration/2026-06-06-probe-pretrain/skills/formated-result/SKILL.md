@@ -1,18 +1,22 @@
 ---
 name: formated-result
-description: 本实验专用 — 把 DARE 执行器的研究设计总结为干净的 research_result report，强制写回 formated-specs 生成的 spec 文件。
+description: Experiment-specific - summarize the DARE executor's research design into a clean research_result report, forced to write back into the spec file produced by formated-specs.
 ---
 
 # formated-result
 
-把你刚产出的研究设计总结成一个 **research_result** report，并写回当前 spec 文件
-（在 graph 块之后追加一个 fenced ```json result 块）。
+Summarize the research design you just produced into a **research_result** report, and
+write it back into the current spec file (append a fenced ```json result block after the
+graph block).
 
-## 产出 research_result
-- `document`: 研究设计文档的完整正文（设计本身，不是跑完的研究结果）。
-- 这是 32-check 将来要读的东西（假设可证伪性、问题真伪、决策设计等都是 *设计*
-  的属性），所以 probe-depth 一份设计文档即可，无需执行研究。
+## Emit research_result
+- `document`: the full body of the research design document (the design itself, not the
+  result of running the research).
+- This is what the 32-check probe will later read (assumption falsifiability, question
+  authenticity, decision design, etc. are all properties of the *design*), so a single
+  design document at probe-depth suffices; do not execute the research.
 
-## 硬约束
-- 只总结你已产出的设计，不新增研究内容。
-- 写回的 result 块必须与同文件的 graph 块对应同一次设计。
+## Hard constraints
+- Only summarize the design you already produced; do not add new research content.
+- The result block you write back must correspond to the same design as the graph block
+  in the same file.

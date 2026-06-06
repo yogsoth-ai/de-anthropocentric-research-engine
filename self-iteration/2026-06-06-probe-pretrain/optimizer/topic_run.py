@@ -4,8 +4,8 @@ from optimizer.gate import topic_passes
 
 def run_topic_ladder(cards, topic_id, dialogue_fn, loss1_fn, loss2_fn,
                      emitter=None, batch_id=""):
-    """跑一个 topic 的 n 档阶梯：forward 每档 → loss-1 每档 → loss-2 整条 → 判过闸。
-    emitter 可选：埋 topic_start/rung_start/rung_done/topic_done 观测事件。"""
+    """Run one topic's n-rung ladder: forward each rung -> loss-1 each rung -> loss-2 whole ladder -> gate.
+    emitter optional: emit topic_start/rung_start/rung_done/topic_done observability events."""
     if emitter:
         emitter.emit("topic_start", batch_id=batch_id, topic_id=topic_id,
                      intended_order=list(range(len(cards))))
@@ -54,7 +54,7 @@ def run_topic_ladder(cards, topic_id, dialogue_fn, loss1_fn, loss2_fn,
 
 
 def _call_dialogue(dialogue_fn, card, topic_id, emitter, sid):
-    """兼容两种签名：带/不带 emitter（旧 fake 不接受 emitter 关键字）。"""
+    """Compatible with two signatures: with/without emitter (old fakes don't accept the emitter kwarg)."""
     try:
         return dialogue_fn(card, topic_id, emitter=emitter, sample_id=sid)
     except TypeError:

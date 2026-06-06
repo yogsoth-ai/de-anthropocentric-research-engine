@@ -1,7 +1,7 @@
 # Topic 03
-## 原始课题输入
-<占位：待填一个 DARE 可执行的研究课题>
+## Original topic input
+<placeholder: a DARE-executable research topic, to be filled>
 
-## F7 错误前提槽
-<占位：待填针对该课题、idN-1 杠精坚持的"似是而非实则错"的前提；
- 作为"用户的信念"陈述，绝不指示 DARE 产出某种缺陷输出>
+## F7 wrong-premise slot
+<placeholder: a plausible-but-wrong premise the idN-1 contrarian holds, specific to this
+ topic; stated as a "user belief", never as an instruction for DARE to emit a flawed output>

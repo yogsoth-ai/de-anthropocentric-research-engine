@@ -1,16 +1,16 @@
 # probe-pretrain (self-iteration / 2026-06-06)
 
-DARE 探针数据集生成器 — Pretrain 阶段。三层 CC 嵌套生成带标签的
-(research_config, research_graph, research_result) 样本。范围：训练→冻结→落盘。
-Held-out 产出属阶段 B，另起 spec。做在本 DARE repo 的 self-iteration 子目录内，
-不另开 repo。
+DARE probe-dataset generator - Pretrain stage. A 3-layer CC nesting produces labeled
+(research_config, research_graph, research_result) samples. Scope: train -> freeze -> persist.
+Held-out production is stage B (separate spec). Built inside this DARE repo's self-iteration
+subdir; no separate repo.
 
-## 设计与计划
+## Design and plan
 
 - Spec: `docs/superpowers/specs/2026-06-06-dual-cc-pretrain-design.md`
 - Plan: `docs/superpowers/plans/2026-06-06-dual-cc-pretrain.md`
 
-## 跑测试
+## Run tests
 
 ```bash
 python3.12 -m venv .venv
@@ -19,9 +19,9 @@ pip install -r requirements.txt
 pytest -v
 ```
 
-## 硬约束
+## Hard constraints
 
-- **4 层不变式**：不编辑活体 DARE skill；本目录全是附加 probe-tooling。
-- **隐私红线**：读 session jsonl 的工具 `--logs-dir` 必填、无默认；落盘去标识。
-- **W5 check-blind**：两个 loss 评判 skill + 生成全程不见 32-check / 6-primitive。
-- **D1–D5 唯一质量标准**：禁用学术标准作判据。
+- **4-layer invariant**: do not edit live DARE skills; this subdir is all additive probe-tooling.
+- **Privacy red line**: tools that read session jsonl require `--logs-dir` (no default); persisted output is de-identified.
+- **W5 check-blind**: the two loss-judge skills and the whole generation path never see the 32-check / 6-primitive.
+- **D1-D5 sole quality standard**: academic standards are forbidden as judging criteria.

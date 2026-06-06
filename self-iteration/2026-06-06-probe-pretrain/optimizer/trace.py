@@ -3,8 +3,8 @@ from pathlib import Path
 
 
 class TraceEmitter:
-    """实时观测流。每次 emit append 一行 jsonl；transcript 全文单独落 .md。
-    设备本地、gitignore、不进提交物。隐私红线：只放相对路径。"""
+    """Real-time observability stream. Each emit appends a jsonl line; full transcript saved separately as .md.
+    Device-local, gitignored, never committed. Privacy red line: relative paths only."""
 
     def __init__(self, run_id, run_dir, clock=None):
         self.run_id = run_id
@@ -13,7 +13,7 @@ class TraceEmitter:
         (self.run_dir / "transcripts").mkdir(exist_ok=True)
         self._trace = self.run_dir / "trace.jsonl"
         self._seq = 0
-        # clock 可注入（脚本环境禁用 argless Date）；默认用 datetime
+        # clock injectable (script env forbids argless Date); defaults to datetime
         self._clock = clock or self._default_clock
 
     @staticmethod
@@ -31,7 +31,7 @@ class TraceEmitter:
         return rec
 
     def save_transcript(self, sample_id, text):
-        """落对话全文，返回相对路径（绝不返回绝对/含 log 的路径）。"""
+        """Save the full transcript; return a relative path (never absolute / never containing a log path)."""
         rel = f"transcripts/{sample_id}.md"
         (self.run_dir / rel).write_text(text, encoding="utf-8")
         return rel

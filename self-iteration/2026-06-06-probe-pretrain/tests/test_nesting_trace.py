@@ -27,10 +27,10 @@ def test_dialogue_emits_turn_events_and_saves_transcript():
                        topic="t", sim_fn=fake_sim, exec_fn=fake_exec,
                        emitter=em, sample_id="b0-t01-id0")
     turn_events = [e for e in em.events if e[0] == "dialogue_turn"]
-    # 2 施压 + 1 收尾 = 3 轮，每轮 user+assistant 2 个事件
+    # 2 pressure + 1 closing = 3 turns, each turn user+assistant = 2 events
     assert len(turn_events) == 6
     phases = [f["phase"] for _, f in turn_events]
     assert phases.count("pressure") == 4 and phases.count("closing") == 2
-    # transcript 被接回并落盘
+    # transcript reconnected and saved
     assert "b0-t01-id0" in em.transcripts
     assert res.transcript_path == "transcripts/b0-t01-id0.md"

@@ -2,7 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
-# 隐私红线：CC log 路径绝不入库
+# Privacy red line: CC log paths must never be committed
 *.session.jsonl
 logs/
 .env

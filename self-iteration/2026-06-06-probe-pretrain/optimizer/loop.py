@@ -3,9 +3,9 @@ from optimizer.gate import batch_pass_ratio, converged
 
 def pretrain(fake_batch_fn=None, run_batch_fn=None, weights=None,
              max_safety=1000, emitter=None, n=6, m=8):
-    """PT6 主循环。无迭代上限（max_safety 仅防失控）；只靠收敛闸停。
-    收敛后冻结（调用方负责落盘）。每 batch 样本累积入 dataset（pretrain-result-as-dataset）。
-    emitter 可选：埋 run_start/batch_start/batch_done/converged/run_end 观测事件。"""
+    """PT6 main loop. No iteration cap (max_safety only guards runaway); stops only on the convergence gate.
+    Freeze after convergence (caller persists). Each batch's samples accumulate into the dataset (pretrain-result-as-dataset).
+    emitter optional: emit run_start/batch_start/batch_done/converged/run_end observability events."""
     run = fake_batch_fn or run_batch_fn
     if emitter:
         emitter.emit("run_start", n=n, m=m)

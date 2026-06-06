@@ -5,8 +5,8 @@ REQUIRED_LOGS_DIR_MSG = "logs-dir is required (no default); privacy red line"
 
 
 def read_conversation(sample_id: str, logs_dir):
-    """读完整 session jsonl，返回去标识的对话轮次。
-    隐私红线：logs_dir 必填、无默认；返回内容不含任何 log 路径。"""
+    """Read the full session jsonl; return de-identified dialogue turns.
+    Privacy red line: logs_dir is required with no default; returned content contains no log path."""
     if not logs_dir:
         raise ValueError(REQUIRED_LOGS_DIR_MSG)
     path = Path(logs_dir) / f"{sample_id}.jsonl"

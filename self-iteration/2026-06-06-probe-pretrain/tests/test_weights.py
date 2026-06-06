@@ -12,10 +12,11 @@ def test_weights_roundtrip(tmp_path):
 
 def test_revise_axis_prose_records_reason():
     w = Weights.default()
-    w.revise(target="axis_prose", key="A1.L4", new_value="完全不追问", reason="loss-1 低: A1=L4 未演出")
-    assert w.axis_prose["A1.L4"] == "完全不追问"
+    w.revise(target="axis_prose", key="A1.L4", new_value="never probes at all",
+             reason="loss-1 low: A1=L4 not enacted")
+    assert w.axis_prose["A1.L4"] == "never probes at all"
     assert w.revision_log[-1]["target"] == "axis_prose"
-    # W5: 修改理由不得引用 check
+    # W5: revision reason must not reference a check
     assert "check" not in w.revision_log[-1]["reason"].lower()
 
 

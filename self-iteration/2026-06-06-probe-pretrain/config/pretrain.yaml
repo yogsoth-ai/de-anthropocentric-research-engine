@@ -1,16 +1,16 @@
-# Pretrain 配置
-# F8 两段时长在 PT5 pilot（设备上）跑通后定死，下列为占位初值。
-n: 6                      # 插值器铺的用户档位数
-m: 8                      # 固定 topic 数
+# Pretrain configuration
+# The two F8 phase budgets are pinned after the PT5 pilot (on-device); values below are placeholders.
+n: 6                      # number of user rungs the interpolator lays
+m: 8                      # number of fixed topics
 
 f8:
-  pressure_turns: 10      # 占位，pilot 定死
-  closing_turns: 2        # 占位，pilot 定死
+  pressure_turns: 10      # placeholder, pinned by pilot
+  closing_turns: 2        # placeholder, pinned by pilot
 
 loss2:
-  tau_min: 0.7            # 单调性闸
-  endpoint_repeats_K: 3   # 端点分离重复次数
-  endpoint_allowance: 0   # K 次中允许的倒挂数
+  tau_min: 0.7            # monotonicity gate
+  endpoint_repeats_K: 3   # endpoint separation repeats
+  endpoint_allowance: 0   # allowed inversions out of K
 
 gate:
   fidelity_batch_min: 0.90

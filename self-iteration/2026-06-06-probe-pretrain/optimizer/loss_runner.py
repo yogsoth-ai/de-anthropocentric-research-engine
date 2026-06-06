@@ -3,8 +3,8 @@ import subprocess
 
 
 def _default_codex(skill: str, payload: dict) -> str:
-    """真实现：call 出一个 codex session，load 指定 skill，喂 payload，取回 JSON。
-    （--task 入口与实际 codex 参数在设备上 PT 阶段对齐；此处给出骨架。）"""
+    """Real impl: spawn a codex session, load the given skill, feed payload, read back JSON.
+    (The --task entry and actual codex args are aligned on-device in the PT phase; this is the skeleton.)"""
     proc = subprocess.run(
         ["codex", "exec", "--skill", skill],
         input=json.dumps(payload, ensure_ascii=False),

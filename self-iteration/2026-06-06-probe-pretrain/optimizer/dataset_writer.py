@@ -9,8 +9,8 @@ _ALLOWED = set(SCHEMA["properties"].keys())
 
 
 def write_sample(out_path, sample: dict):
-    """落盘一条样本。隐私红线：剥掉任何不在 schema allow-list 的字段
-    （含 logs_dir / 任何路径），再 schema 校验，再 append。"""
+    """Persist one sample. Privacy red line: strip any field not in the schema allow-list
+    (incl. logs_dir / any path), then schema-validate, then append."""
     clean = {k: v for k, v in sample.items() if k in _ALLOWED}
     jsonschema.validate(clean, SCHEMA)
     with open(out_path, "a", encoding="utf-8") as f:

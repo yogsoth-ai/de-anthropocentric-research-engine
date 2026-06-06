@@ -1,19 +1,19 @@
-# 可训练权重②：路径铺设规则。optimizer 可改 level 映射与塌档扰动策略。
+# Trainable weight 2: path-laying rules. The optimizer may edit the level mapping and collapse-perturbation strategy.
 
 
 def ladder_levels(n: int):
-    """给定 n 档，返回每档的 {A1,A3,A2} 等级标签（梯子主轴）。"""
+    """Given n rungs, return each rung's {A1,A3,A2} level tags (the ladder spine)."""
     rungs = []
     for i in range(n):
         t = i / (n - 1)
-        lvl = round(t * 4)  # → 0..4
+        lvl = round(t * 4)  # -> 0..4
         tag = f"L{lvl}"
         rungs.append({"A1": tag, "A3": tag, "A2": tag, "t": t})
     return rungs
 
 
 def detect_collapse(rungs):
-    """返回相邻塌档的 (i, i+1) 对（A1 等级相同）。"""
+    """Return adjacent collapsed pairs (i, i+1) where the A1 level is identical."""
     out = []
     for i in range(len(rungs) - 1):
         if rungs[i]["A1"] == rungs[i + 1]["A1"]:
@@ -22,7 +22,7 @@ def detect_collapse(rungs):
 
 
 def secondary_perturbation(rung, bump: int):
-    """塌档补救：在同一等级内扰动二级旋钮（追问次数 bump），拉开相邻档。"""
+    """Collapse remedy: perturb a secondary knob (followup count bump) within the same level to separate adjacent rungs."""
     r = dict(rung)
     r["followup_bump"] = bump
     return r
@@ -30,3 +30,4 @@ def secondary_perturbation(rung, bump: int):
 
 def rung_count_default() -> int:
     return 6
+

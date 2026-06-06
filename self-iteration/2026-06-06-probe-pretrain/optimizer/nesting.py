@@ -6,7 +6,7 @@ class DialogueResult:
     spec_text: str
     transcript: list
     completability: str  # "ok" | "failed"
-    transcript_path: str = ""  # 观测流相对路径（无 emitter 时为空）
+    transcript_path: str = ""  # observability relative path (empty when no emitter)
 
 
 def _emit_turn(emitter, transcript, speaker, text, phase, turn_idx, sample_id):
@@ -18,17 +18,17 @@ def _emit_turn(emitter, transcript, speaker, text, phase, turn_idx, sample_id):
 
 
 def run_dialogue(card, topic, sim_fn, exec_fn, emitter=None, sample_id=""):
-    """三层嵌套的中间层：驱动 模拟器↔执行器 对话。F8 两段。
-    emitter 可选：给观测流逐轮发 dialogue_turn 并落 transcript 全文。"""
+    """Middle layer of the 3-level nesting: drive the simulator<->executor dialogue. Two-phase F8.
+    emitter optional: emit dialogue_turn per turn to the observability stream and save the full transcript."""
     history, transcript = [], []
-    # 施压段
+    # Pressure phase
     for i in range(card["f8_pressure_turns"]):
         u = sim_fn(history, "pressure")
         _emit_turn(emitter, transcript, "user", u, "pressure", i, sample_id)
         a = exec_fn(history + [u])
         _emit_turn(emitter, transcript, "assistant", a, "pressure", i, sample_id)
         history += [u, a]
-    # 收尾段：用户停止加新要求，执行器走 formated-specs→load formated-result
+    # Closing phase: user stops adding new demands; executor runs formated-specs -> load formated-result
     for i in range(card["f8_closing_turns"]):
         u = sim_fn(history, "closing")
         _emit_turn(emitter, transcript, "user", u, "closing", i, sample_id)

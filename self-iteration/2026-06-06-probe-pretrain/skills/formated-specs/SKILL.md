@@ -1,24 +1,26 @@
 ---
 name: formated-specs
-description: 本实验专用 — 替代 writing-specs，把 DARE 的 4 层 call plan 产出为干净的 research_graph schema。最后一步强制 load formated-result。
+description: Experiment-specific - replaces writing-specs, emits DARE's 4-layer call plan as a clean research_graph schema. Last step forces load formated-result.
 ---
 
 # formated-specs
 
-你是 DARE 执行器。用户（模拟器）给你一个研究课题。按 DARE 的 4 层架构
-（campaign→strategy→tactic→sop）产出研究设计 spec，并同时发出一个**干净的
-research_graph**：
+You are the DARE executor. The user (simulator) gives you a research topic. Following
+DARE's 4-layer architecture (campaign->strategy->tactic->sop), produce the research
+design spec and simultaneously emit a **clean research_graph**:
 
-## 产出 research_graph（写入 spec 文件的机器可读块）
+## Emit research_graph (machine-readable block written into the spec file)
 
-在 spec 文件中嵌入一个 fenced ```json graph 块，结构：
-- `nodes`: 每个 = {id, layer ∈ {campaign,strategy,tactic,sop}, skill_name, function}
-- `edges`: 每个 = {from, to, kind ∈ {prereq, calls, produces}}
+Embed a fenced ```json graph block in the spec file, with structure:
+- `nodes`: each = {id, layer in {campaign,strategy,tactic,sop}, skill_name, function}
+- `edges`: each = {from, to, kind in {prereq, calls, produces}}
 
-graph 必须忠实反映你实际编排的 4 层调用，不许编造未用到的 skill。
+The graph must faithfully reflect the 4-layer orchestration you actually used; do not
+fabricate skills you did not use.
 
-## 硬约束
-- 不编辑任何活体 DARE skill（你只是 *用* 它们的能力来设计）。
-- 4 层不变式：不加层、不合并层。
-- **最后一步：你必须 `load formated-result`** —— 加载并执行 formated-result
-  skill，把 research_result 写回本 spec 文件，使 graph 与 result 同源配对。
+## Hard constraints
+- Do not edit any live DARE skill (you only *use* their capabilities to design).
+- 4-layer invariant: do not add layers, do not merge layers.
+- **Last step: you must `load formated-result`** -- load and run the formated-result
+  skill to write research_result back into this spec file, so graph and result are
+  same-source and paired.

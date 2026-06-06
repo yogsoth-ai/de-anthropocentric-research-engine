@@ -2,7 +2,7 @@ from tools.w5_audit import audit_revision_log
 
 
 def test_clean_log_passes():
-    log = [{"target": "axis_prose", "reason": "loss-1 低: A1=L4 未演出"}]
+    log = [{"target": "axis_prose", "reason": "loss-1 low: A1=L4 not enacted"}]
     assert audit_revision_log(log)["clean"] is True
 
 

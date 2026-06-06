@@ -8,8 +8,8 @@ SCHEMA_DIR = Path(__file__).parent.parent / "schemas"
 
 
 def extract_blocks(spec_text):
-    """从 spec 文件抽出 ```json graph 与 ```json result 两个 fenced 块。
-    用 [\\s\\S] 贪婪匹配到 fence 收尾，能容纳嵌套对象。"""
+    """Extract the ```json graph and ```json result fenced blocks from a spec file.
+    Greedy [\\s\\S] match to the closing fence, so nested objects are tolerated."""
     graph = re.search(r"```json graph\s*([\s\S]*?)\s*```", spec_text)
     result = re.search(r"```json result\s*([\s\S]*?)\s*```", spec_text)
     if not graph or not result:

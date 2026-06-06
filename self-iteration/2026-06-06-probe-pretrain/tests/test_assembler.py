@@ -9,7 +9,7 @@ def test_ladder_mode_endpoints():
 
 
 def test_pg_overlay_sets_A4_negative_and_premise():
-    cards = build_batch(n=6, mode="pg-overlay", wrong_premise="只有方法X有效")
+    cards = build_batch(n=6, mode="pg-overlay", wrong_premise="only method X works")
     assert any(c.axis_levels.A4 == "C-" and c.f7_wrong_premise for c in cards)
 
 

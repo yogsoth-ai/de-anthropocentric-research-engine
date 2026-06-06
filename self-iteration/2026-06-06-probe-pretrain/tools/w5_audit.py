@@ -4,7 +4,7 @@ from optimizer.weights import CHECK_TOKENS
 
 
 def audit_revision_log(revision_log):
-    """W5 保险审计：扫描全部权重修改理由，确认无任何 check/primitive 引用。"""
+    """W5 assurance audit: scan all weight-revision reasons, confirm no check/primitive reference."""
     violations = []
     for i, entry in enumerate(revision_log):
         reason = entry.get("reason", "").lower()

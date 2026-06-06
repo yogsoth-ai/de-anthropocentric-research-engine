@@ -1,28 +1,32 @@
 ---
 name: ladder-quality-order
-description: loss-2 评判 — 对同一 topic 内 n 档样本做成对质量比较，判定单调性与端点分离。check-blind，只用 D1–D5。
+description: loss-2 judge - pairwise quality comparison across the n rungs within one topic; decide monotonicity and endpoint separation. check-blind, D1-D5 only.
 ---
 
 # ladder-quality-order (loss-2)
 
-你拿到：同一个 topic 下的 n 条样本，每条含 (research_graph, research_result)，
-外加它们的 intended_order（插值器给的 id 序，id0 应最好 → idN-1 应最差）。
+You receive: the n samples under one topic, each with (research_graph, research_result),
+plus their intended_order (the id order from the interpolator: id0 should be best ->
+idN-1 should be worst).
 
-## 任务（成对排序，不打绝对分）
-1. 枚举所有 i<j 对，对每对问：**在 D1–D5 意义上哪个研究设计更实在？**
-   （D1 更有意义 / D2 更有 skill-research 价值 / D3 更可用于 DARE /
-    D4 更守 4 层 / D5 前置更扎实）。输出 winner + 一句理由。
-2. 聚合成诱导序，算与 intended_order 的 Kendall τ。
-3. 端点：直接比 id0 vs idN-1，跨 K 次重复看 id0 是否稳定胜出。
+## Task (pairwise ranking, no absolute scores)
+1. Enumerate all i<j pairs; for each pair ask: **in the D1-D5 sense, which research design
+   is more substantive?** (D1 more meaningful / D2 more skill-research value / D3 more
+   usable to DARE / D4 better respects the 4 layers / D5 firmer prerequisites). Output
+   winner + a one-line reason.
+2. Aggregate into an induced order; compute Kendall tau against intended_order.
+3. Endpoints: directly compare id0 vs idN-1; across K repeats, check whether id0 wins stably.
 
-## 输出（JSON）
-{"tau": float, "monotonicity_pass": bool,   // τ≥0.7 且端点无倒挂
- "endpoint_separation_pass": bool,          // K 次中 id0 胜 ≥ K-allowance
- "rigor_floor_flag": bool,                  // 若 id0≈idN-1 端点塌（喂回风险册）
+## Output (JSON)
+{"tau": float, "monotonicity_pass": bool,   // tau>=0.7 and no endpoint inversion
+ "endpoint_separation_pass": bool,          // id0 wins >= K-allowance of K repeats
+ "rigor_floor_flag": bool,                  // if id0 ~ idN-1 endpoints collapse (feed risk register)
  "pairwise_log": [{i,j,winner,reason}]}
 
-## check-blind 契约（硬约束）
-- judge prompt **只准** D1–D5 措辞。
-- **禁用**：32-check 词汇、6-primitive、"pseudo-good/novel-good" 分类、任何检测特征。
-- z⊥C：在 B1 混淆三元组（同实质、异文风）上你的序**必须不变**；若随文风变 →
-  你被混淆带跑了，需收紧到 D1–D5 实质。
+## check-blind contract (hard constraint)
+- The judge prompt may use **only** D1-D5 wording.
+- **Forbidden**: 32-check vocabulary, 6-primitive, "pseudo-good/novel-good" categories,
+  any detection signature.
+- z-perp-C: on the B1 confound triplet (same substance, different framing) your order
+  **must stay invariant**; if it varies with framing -> you were dragged by the confound,
+  tighten back to D1-D5 substance.

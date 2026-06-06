@@ -5,8 +5,8 @@ CHECK_TOKENS = ["r13", "r14", "r16", "check fired", "32-check", "primitive", "p1
 
 
 class Weights:
-    """三类可训练权重：①axis_prose ②interp_params ③assembler_params。
-    无梯度；revise() 是 optimizer 坐标下降的唯一入口，强制 W5。"""
+    """Three trainable weight types: (1) axis_prose (2) interp_params (3) assembler_params.
+    No gradient; revise() is the sole entry for the optimizer's coordinate descent and enforces W5."""
 
     def __init__(self, axis_prose, interp_params, assembler_params, revision_log=None):
         self.axis_prose = axis_prose
@@ -16,7 +16,7 @@ class Weights:
 
     @classmethod
     def default(cls):
-        return cls(axis_prose={"A1.L4": "从不追问机制"},
+        return cls(axis_prose={"A1.L4": "never asks about mechanism"},
                    interp_params={"step": 1, "collapse_bump": 1},
                    assembler_params={"pressure_turns": 10, "closing_turns": 2})
 

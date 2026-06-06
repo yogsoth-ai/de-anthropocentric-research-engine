@@ -1,3 +1,3 @@
 # tests/fixtures/sample_topic.md
-## 原始课题输入
-设计一个评估 DARE skill 编排多样性的小型自分析实验。
+## Original topic input
+Design a small self-analysis experiment that evaluates the orchestration diversity of DARE skills.

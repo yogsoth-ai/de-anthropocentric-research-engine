@@ -1,4 +1,4 @@
-# deny-list：检测层词汇（32-check/6-primitive/检测特征）。卡片绝不能含。
+# deny-list: detection-layer vocabulary (32-check / 6-primitive / detection signatures). Cards must never contain these.
 DENY = [
     "deletable", "won't invoke", "wont invoke", "manipulable metric",
     "pseudo-question", "novel-good", "pseudo-good", "decorative mechanism",
@@ -8,6 +8,7 @@ DENY = [
 
 
 def leak_audit(card_text: str) -> bool:
-    """True = 干净（无 deny 词）；False = 命中 deny-list。"""
+    """True = clean (no deny term); False = a deny-list term was hit."""
     low = card_text.lower()
     return not any(term in low for term in DENY)
+
