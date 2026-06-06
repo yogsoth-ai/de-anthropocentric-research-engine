@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# 隐私红线：CC log 路径绝不入库
+*.session.jsonl
+logs/
+.env
