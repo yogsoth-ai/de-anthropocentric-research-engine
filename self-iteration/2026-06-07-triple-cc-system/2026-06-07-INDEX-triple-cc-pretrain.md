@@ -1,91 +1,91 @@
-# 索引 — Triple-CC 伪神经网络预训练(三拆 A/B/C)Implementation Plan Index
+# Index — Triple-CC Pseudo-Neural-Network Pretraining (three-way split A/B/C) Implementation Plan Index
 
-> **For agentic workers:** 本文件是**导航索引**,不含可执行步骤。三个具体 plan 各自用 superpowers:subagent-driven-development(推荐)或 superpowers:executing-plans 逐 Task 实现。**严格按 A→B→C 顺序**,前一拆全绿才进下一拆。
+> **For agentic workers:** This file is a **navigation index**; it contains no executable steps. Each of the three concrete plans is implemented Task-by-Task using superpowers:subagent-driven-development (recommended) or superpowers:executing-plans. **Strictly follow the A→B→C order**; only proceed to the next split once the previous one is fully green.
 
-**Goal:** 在租来的 RunPod 设备上,从裸机搭起一套「optimizer / sim / exec / loss 四 CC 身份协同」的伪神经网络预训练系统,跑到收敛、产出带标签的研究质量阶梯数据集。整套工程拆成三个各自可独立交付的 plan。
+**Goal:** On a rented RunPod machine, build from bare metal a pseudo-neural-network pretraining system in which **four CC identities (optimizer / sim / exec / loss) collaborate**, run it to convergence, and produce a labeled research-quality-ladder dataset. The whole project is split into three independently deliverable plans.
 
-**Architecture:** 三层 CC(optimizer 驱动 → sim 模拟用户 → exec 跑 DARE 研究)+ codex 算 loss(换模型族避同源偏置)。数据派三权重(话术①/插值②/组装③)是 JSON 数据段,`.py` 只读不改。optimizer 是 tmux 长驻 train.py;一个 epoch = 8 topic × 6 档 = 48 run;门控算术判过闸,backprop 是全系统唯一智能点。全程 check-blind(W5)+ 隐私红线(CC log 路径、key 值绝不进提交物)。
+**Architecture:** Three layers of CC (optimizer drives → sim simulates the user → exec runs DARE research) + codex computes the loss (a different model family, to avoid same-source bias). The data-faction three weights (prose ①/interpolation ②/assembly ③) are JSON data segments; the `.py` files are read-only and never modified. The optimizer is a tmux long-running train.py; one epoch = 8 topics × 6 rungs = 48 runs; the gate decides pass/fail by arithmetic, and backprop is the system's only point of intelligence. Everything is check-blind (W5) + the privacy red line (CC log paths and key values must NEVER enter any committed artifact).
 
-**Tech Stack:** Ubuntu 22.04 · Python 3.11 + pytest · 真 claude/codex CLI · tmux · node(装 /workspace)· 第三方代理 `api.ikuncode.cc`。
+**Tech Stack:** Ubuntu 22.04 · Python 3.11 + pytest · real claude/codex CLI · tmux · node (installed under /workspace) · third-party proxy `api.ikuncode.cc`.
 
 ---
 
-## 三个 plan(严格按序)
+## The three plans (strict order)
 
-| 拆 | Plan 文件 | 管什么 | 终点验收 |
+| Split | Plan file | Scope | Final acceptance |
 | --- | --- | --- | --- |
-| **A** | `2026-06-07-A-remote-env-from-scratch.md` | 远程环境从零搭:裸机 → 四身份可启动 + 重启不丢 | 冒烟 S1–S4 全过 + 真实纵向薄片 e2e E1–E5(1 run,全真 CC/codex) |
-| **B** | `2026-06-07-B-system-build.md` | 系统构建:三权重体 + 9 叶子脚本 + 2 codex loss skill + optimization-loop skill | 纯函数 pytest 全绿 + 单 topic 6 档 e2e(loss-2 单调 τ + 端点分离 + 门控算术) |
-| **C** | `2026-06-07-C-assemble-run-supervise.md` | 组装运转:PT5 pilot 硬闸 → 全量 LOOP-2 收敛 → 监督 → freeze + 全量数据集 | C1 pilot go/no-go + C2 收敛(F2 真改 + F1 前进)+ C3 freeze/coverage/dataset 齐 |
+| **A** | `2026-06-07-A-remote-env-from-scratch.md` | Remote environment from scratch: bare metal → four identities startable + survives restart | Smoke S1–S4 all pass + real vertical-slice e2e E1–E5 (1 run, all-real CC/codex) |
+| **B** | `2026-06-07-B-system-build.md` | System build: three weight bodies + 9 leaf scripts + 2 codex loss skills + optimization-loop skill | Pure-function pytest all green + single-topic 6-rung e2e (loss-2 monotone τ + endpoint separation + gate arithmetic) |
+| **C** | `2026-06-07-C-assemble-run-supervise.md` | Assemble & run: PT5 pilot hard gate → full LOOP-2 convergence → supervision → freeze + full dataset | C1 pilot go/no-go + C2 convergence (F2 real revise + F1 advance) + C3 freeze/coverage/dataset all present |
 
-## 依赖链(为何这个顺序)
+## Dependency chain (why this order)
 
 ```text
-A(环境)  ──►  B(组件)  ──►  C(组装运转)
+A(env)  ──►  B(components)  ──►  C(assemble & run)
   │              │              │
-  │              │              └─ 依赖 B 全绿:三权重+9叶子 pytest 过、B7 单topic 6档 e2e 真跑过;
-  │              │                 依赖 A 全绿:四身份可起、技能可见、薄片 E1–E5 过
-  │              └─ 依赖 A 全绿:四身份可起(B 的真模型 e2e 要起真 sim/exec/codex)
-  └─ 无前置(裸机起步)
+  │              │              └─ depends on B fully green: three weights + 9 leaves pytest pass, B7 single-topic 6-rung e2e really ran;
+  │              │                 depends on A fully green: four identities startable, skills visible, slice E1–E5 pass
+  │              └─ depends on A fully green: four identities startable (B's real-model e2e must start real sim/exec/codex)
+  └─ no prerequisite (starts from bare metal)
 ```
 
-- **A 先行**:B/C 的所有真模型组件(integration e2e)都要起真 sim/exec/codex,而四身份的起法、技能可见性、两组 key 隔离全靠 A 搭好。A 不绿,B 的 e2e 起不来。
-- **B 居中**:C 组装的"零件"(三权重、9 叶子、2 loss skill、optimization-loop skill)全由 B 造好并单测。C 不造零件,只组装。
-- **C 收尾**:把 B 的零件拼成自转整机,跑到收敛产出数据集。C1 pilot 是硬闸——不过即停回 B。
+- **A goes first**: all of B/C's real-model components (integration e2e) must start a real sim/exec/codex, and the way the four identities are started, skill visibility, and the isolation of the two key groups all rely on A being set up. If A is not green, B's e2e cannot start.
+- **B in the middle**: the "parts" that C assembles (three weights, 9 leaves, 2 loss skills, optimization-loop skill) are all built and unit-tested by B. C builds no parts; it only assembles.
+- **C closes it out**: assembles B's parts into a self-running whole machine, runs to convergence, and produces the dataset. C1 pilot is a hard gate — if it does not pass, stop and return to B.
 
-## 黄金合成样例(贯穿 A→C 的回归基线)
+## Golden synthetic sample (the regression baseline running through A→C)
 
-A 的薄片 e2e 用一条合成 config+topic,固定存档 `<proj>/fixtures/golden-slice/`,成为三拆共用回归场景,逐层加深、连续可比:
+A's slice e2e uses one synthetic config+topic, fixed and archived at `<proj>/fixtures/golden-slice/`, becoming the shared regression scenario across all three splits — deepened layer by layer, continuously comparable:
 
-| 拆 | 在黄金样例上验到哪 |
+| Split | What is verified on the golden sample |
 | --- | --- |
-| A | 1 run 纵向通路:注入→嵌套→真研究→真 loss→留痕(E1–E5) |
-| B | 长成组件成品:gen_configs 真造卡、6 档阶梯、loss-2 单调、门控算术(组件 integration + 6-run e2e) |
-| C | 长成全回路:48-run batch、连续 3 过闸收敛、backprop 改权重、实时监督(完整 e2e) |
+| A | 1-run vertical path: injection → nesting → real research → real loss → trace (E1–E5) |
+| B | Grown into finished components: gen_configs really builds cards, 6-rung ladder, loss-2 monotone, gate arithmetic (component integration + 6-run e2e) |
+| C | Grown into the full loop: 48-run batch, three-consecutive-pass convergence, backprop revises weights, real-time supervision (full e2e) |
 
-## 全程铁律(三拆共用,任何 Task 都适用)
+## Iron rules throughout (shared by all three splits, applies to every Task)
 
-1. **一切落 `/workspace`,绝不进 `/` 或 `~`**(`/` 仅 5G overlay 重启即抹;`/workspace` 851 TB 持久)。
-2. **两组 API key 物理隔离**(Claude 组给 optim/sim/exec;Codex 组给 loss),**key 值绝不进任何提交物**(脚本/spec/报告/commit),只按变量名引用、执行者手填。
-3. **从零全重写**:三层架构终稿只当设计规格;设备上旧 `2026-06-06-probe-pretrain/` 一行不看、不继承(避免旧 fake nesting / 脆弱解析 / A2-A3 撞档 bug 误导)。新代码全进 `self-iteration/2026-06-07-probe-pretrain/`,push 分支 `self-iteration/probe-pretrain`,**绝不推 main**。
-4. **数据派三权重**:`axes.py`①/`interpolator.py`②/`assembler.py`③ 是读 `weights/<batch>.json` 对应段的纯函数,**源码恒不动,改权重=改 JSON**。名次层+标签坐标层锁死在 `frozen_label`(无人写)。
-5. **W5 check-blind**:一切生成侧产物(config、话术、loss skill、topic)全文过 `leak_audit`,绝不含 32-check / 6-primitive / 检测签名词。loss 判"生成条件是否被忠实执行 / 阶梯单调不单调",不判"研究质量好不好"。
-6. **no-fake 铁律**:要真模型的组件(sim/exec/codex)必须真进程,合成的只有"输入 config+topic"。任何 fake-stub 凑绿不算通过(`feedback-no-e2e-shell`)。
-7. **隐私红线**:CC log 绝对路径绝不进任何提交物;读 log 只走 `--logs-dir` 必填脚本(`save_transcript`);`runs/` 设备本地 gitignore;dataset/coverage 落盘前过白名单校验,白名单外字段(log 路径、设备用户名、transcript 原文)→ 硬失败中断。
+1. **Everything lands in `/workspace`, never in `/` or `~`** (`/` is only a 5G overlay, wiped on restart; `/workspace` is 851 TB persistent).
+2. **The two API key groups are physically isolated** (Claude group for optim/sim/exec; Codex group for loss), and **key values must NEVER enter any committed artifact** (scripts/specs/reports/commits); reference them only by variable name, filled in by the operator.
+3. **Rewrite everything from scratch**: the three-layer-architecture final draft is treated only as a design spec; the old `2026-06-06-probe-pretrain/` on the machine is not read at all, not inherited (to avoid being misled by the old fake nesting / brittle parsing / A2-A3 collision bug). All new code goes into `self-iteration/2026-06-07-probe-pretrain/`, pushed to branch `self-iteration/probe-pretrain`, **never pushed to main**.
+4. **Data-faction three weights**: `axes.py`①/`interpolator.py`②/`assembler.py`③ are pure functions that read the corresponding segment of `weights/<batch>.json`; **the source code never changes — revising a weight means editing the JSON**. The rank layer + label-coordinate layer are locked in `frozen_label` (no one writes it).
+5. **W5 check-blind**: every generation-side artifact (config, prose, loss skill, topic) passes `leak_audit` in full, and must NEVER contain the 32-check / 6-primitive / detection signatures. Loss judges "whether the generating condition was faithfully executed / whether the ladder is monotone," not "whether the research quality is good."
+6. **No-fake iron rule**: components requiring real models (sim/exec/codex) must be real processes; the only synthetic part is the "input config+topic." Any fake-stub that fakes a green is not a pass (`feedback-no-e2e-shell`).
+7. **Privacy red line**: CC log absolute paths must NEVER enter any committed artifact; reading logs goes only through the `--logs-dir`-required script (`save_transcript`); `runs/` is gitignored locally on the machine; dataset/coverage pass a whitelist check before landing, and any field outside the whitelist (log path, machine username, raw transcript) → hard-fail abort.
 
-## 三拆边界(谁管什么,互不越界)
+## Three-split boundaries (who manages what, no crossing over)
 
-- **A 管环境**:装包、env.sh/bootstrap.sh、四 config-dir 预批、skill 复制机制、薄片 1-run。**不管**组件代码与 skill 内容、不管全回路。
-- **B 管零件 + 单 topic 6 档**:三权重、9 叶子、2 loss skill、optimization-loop skill 编写。**不管**多 batch、backprop 真改、tmux 长驻、pilot、监督、全量数据集(§backprop 段 B 写出但留 C 深验)。
-- **C 管组装运转**:pilot 硬闸、全量 LOOP-2、backprop 真改、长驻、监督、freeze + 全量产出 + 8 真 topic。**不造零件、不搭环境**。
+- **A manages the environment**: package install, env.sh/bootstrap.sh, four config-dir pre-approvals, skill-copy mechanism, slice 1-run. **Does not manage** component code or skill content; does not manage the full loop.
+- **B manages parts + single-topic 6-rung**: three weights, 9 leaves, 2 loss skills, optimization-loop skill authoring. **Does not manage** multi-batch, real backprop revise, tmux long-running, pilot, supervision, full dataset (the §backprop section is written by B but left for C to deep-verify).
+- **C manages assembly & operation**: pilot hard gate, full LOOP-2, real backprop revise, long-running, supervision, freeze + full output + 8 real topics. **Builds no parts, sets up no environment.**
 
-## 设备接入 + 凭证(★LOCAL-ONLY · 必须 gitignore · 绝不 push)
+## Machine access + credentials (★LOCAL-ONLY · MUST be gitignored · NEVER push)
 
-> ⚠️ **红线提醒**:本节含真 SSH 私钥路径与 API key 值,**违反全程铁律 2「key 值绝不进提交物」**。仅因用户显式要求登记于此,**严禁随本文件提交进 git**——执行者落地时应把本节抠出移入设备本地 `/workspace/env.sh`(A 的 Task 4),或在提交前删除本节 / 把本文件加入 `.gitignore`。git 历史一旦带 key 即永久泄漏,需轮换。
+> ⚠️ **Red-line reminder**: This section contains a real SSH private-key path and API key values, which **violates iron rule 2 "key values must never enter a committed artifact."** It is recorded here only at the user's explicit request; **it must NOT be committed to git along with this file** — when implementing, the operator should excise this section and move it into the machine-local `/workspace/env.sh` (A's Task 4), or delete this section before committing / add this file to `.gitignore`. Once a key enters git history it is permanently leaked and must be rotated.
 
-- **设备 SSH**:`ssh root@***** -p ***** -i ~/.ssh/id_ed25519`(IP/端口脱敏,执行者手填)
-- **Claude 组(给 optim / sim / exec)**:
-  - `ANTHROPIC_API_KEY=*****`(**用 `ANTHROPIC_API_KEY`,不是 `ANTHROPIC_AUTH_TOKEN`** — x-api-key 鉴权)
-  - `ANTHROPIC_BASE_URL=https://api.ikuncode.cc`(无后缀,CLI 自拼 `/v1/messages`)
+- **Machine SSH**: `ssh root@***** -p ***** -i ~/.ssh/id_ed25519` (IP/port redacted, operator fills in)
+- **Claude group (for optim / sim / exec)**:
+  - `ANTHROPIC_API_KEY=*****` (**use `ANTHROPIC_API_KEY`, not `ANTHROPIC_AUTH_TOKEN`** — x-api-key auth)
+  - `ANTHROPIC_BASE_URL=https://api.ikuncode.cc` (no suffix; the CLI appends `/v1/messages` itself)
   - `ANTHROPIC_MODEL=claude-opus-4-7`
-- **Codex 组(给 loss)**:
-  - `OPENAI_API_KEY=*****`(亦作 `IKUNCODE_KEY`)
-  - `OPENAI_BASE_URL=https://api.ikuncode.cc/v1`(带 `/v1`)
-  - `OPENAI_MODEL=gpt-5.5`,wire-api=`responses`
-- **★两组 key 物理隔离**:混用会让 claude 报 `model_not_found`(`.claude.json` 的 `customApiKeyResponses.approved` 写 Claude 组 key 尾段 `*****`)。
-- **git 提交身份**:`Pthahnix <Pthahnix@proton.me>`。
+- **Codex group (for loss)**:
+  - `OPENAI_API_KEY=*****` (also as `IKUNCODE_KEY`)
+  - `OPENAI_BASE_URL=https://api.ikuncode.cc/v1` (with `/v1`)
+  - `OPENAI_MODEL=gpt-5.5`, wire-api=`responses`
+- **★The two key groups are physically isolated**: mixing them makes claude report `model_not_found` (`.claude.json`'s `customApiKeyResponses.approved` holds the Claude-group key tail `*****`).
+- **git commit identity**: `Pthahnix <Pthahnix@proton.me>`.
 
-## 信息来源(本索引及三拆 plan 的唯一依据)
+## Information sources (the sole basis for this index and the three plans)
 
-- 设计规格:`docs/superpowers/specs/2026-06-07-remote-env-from-scratch-design.md`(A)、`...-system-build-design.md`(B)、`...-assemble-run-design.md`(C);三层架构终稿 `context/2026-06-06-20-18-triple-cc-architecture.md`(系统设计权威)。
-- 代码源:DARE repo(771 skill 复制源,`exec` 用);项目 skills/ 的 `formated-specs` / `formated-result`(B 只对接产出契约,不重写)。
+- Design specs: `docs/superpowers/specs/2026-06-07-remote-env-from-scratch-design.md` (A), `...-system-build-design.md` (B), `...-assemble-run-design.md` (C); three-layer-architecture final draft `context/2026-06-06-20-18-triple-cc-architecture.md` (system-design authority).
+- Code sources: DARE repo (771-skill copy source, used by `exec`); the project skills/ `formated-specs` / `formated-result` (B only interfaces with the output contract, does not rewrite them).
 
 ## Execution Handoff
 
-逐拆执行,每拆两选项:
+Execute split by split; each split has two options:
 
-**1. Subagent-Driven(推荐)** — 每 Task 派新 subagent,Task 间审查,快迭代。REQUIRED SUB-SKILL: superpowers:subagent-driven-development。
+**1. Subagent-Driven (recommended)** — dispatch a new subagent per Task, review between Tasks, fast iteration. REQUIRED SUB-SKILL: superpowers:subagent-driven-development.
 
-**2. Inline Execution** — 本会话内批量执行 + checkpoint 审查。REQUIRED SUB-SKILL: superpowers:executing-plans。
+**2. Inline Execution** — batch execution within this session + checkpoint review. REQUIRED SUB-SKILL: superpowers:executing-plans.
 
-**起点:Plan A。** A 全绿(S1–S4 + E1–E5)→ Plan B;B 全绿(pytest + B7 6 档 e2e)→ Plan C;C1 pilot 硬闸,no-go 即停回 B。
+**Starting point: Plan A.** A fully green (S1–S4 + E1–E5) → Plan B; B fully green (pytest + B7 6-rung e2e) → Plan C; C1 pilot hard gate, no-go means stop and return to B.

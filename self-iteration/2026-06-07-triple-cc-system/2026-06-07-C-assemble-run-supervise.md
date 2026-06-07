@@ -1,67 +1,67 @@
-# Plan C — 组装运转 + pilot 门控 + 实时监督 Implementation Plan
+# Plan C — assemble + run + pilot gating + live supervision Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. **C 阶段的"测试"主要是设备上可复跑的真模型校验命令**(pilot go/no-go、全量收敛、监督巡检),纯函数部分(topics schema、coverage_report 白名单)仍用 pytest。守 `feedback-no-e2e-shell` 铁律,sim/exec/codex 全真进程。
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking. **The "tests" in stage C are primarily on-device, repeatable real-model verification commands** (pilot go/no-go, full-batch convergence, supervision inspection); the pure-function parts (topics schema, coverage_report whitelist) still use pytest. Honor the `feedback-no-e2e-shell` iron rule — sim/exec/codex are all real processes.
 
-**Goal:** 把 B 造好的零件组装成能自转的整机 —— PT5 pilot 硬门控 → 全量 LOOP-2(48-run batch)循环到收敛 → claude 巡检监督 → freeze + 全量带标签数据集产出。跑通即三拆交付。
+**Goal:** Assemble the parts B built into a self-running whole machine — PT5 pilot hard gate → full LOOP-2 (48-run batch) loop to convergence → claude inspection supervision → freeze + full labeled dataset output. Once it runs end-to-end, the three-stage delivery is complete.
 
-**Architecture:** pilot 前置硬闸(2 端点样本不过 → 停回 B,绝不烧全量 token)。全量循环每 batch 末按 (`batch_passed` × `converged`) 两布尔交叉,落 T(收敛冻结)/ F1(过闸未收敛,原样拷权重前进)/ F2(未过闸,backprop 归因改一权重)三互斥路径。backprop 是全系统唯一智能点,在 C 真受检。监督 = 主(claude 定期 SSH 只读巡检)+ 辅(CHECKPOINT 产物自解释);人工干预 = HALT.json 显式落盘 + 巡检发现。
+**Architecture:** The pilot is a front-loaded hard gate (if the 2 endpoint samples don't pass → stop and return to B, never burn full-batch token). At the end of each full-loop batch, route on the (`batch_passed` × `converged`) two-boolean cross into three mutually exclusive paths: T (converged, freeze) / F1 (passed but not converged, byte-copy weights forward) / F2 (not passed, backprop attributes and revises one weight). backprop is the only intelligent point in the whole system, and is genuinely put to the test in C. Supervision = primary (claude periodically SSHes in for read-only inspection) + auxiliary (CHECKPOINT artifacts are self-explanatory); human intervention = explicit HALT.json on disk + inspection findings.
 
-**Tech Stack:** B 的全部组件(三权重 + 9 叶子 + 2 loss skill + optimization-loop skill)· tmux 长驻 optimizer · 真 claude/codex · `/compact` 跨 batch 状态恢复 · 第三方代理 `api.ikuncode.cc`。
+**Tech Stack:** All of B's components (three weights + 9 leaves + 2 loss skill + optimization-loop skill) · tmux long-running optimizer · real claude/codex · `/compact` cross-batch state recovery · third-party proxy `api.ikuncode.cc`.
 
 ---
 
-## 关键纪律(每个 Task 都适用,先读)
+## Key discipline (applies to every Task — read first)
 
-- **pilot 是硬闸**:C1(PT5 两样本端点 pilot)不过 → 落 HALT、停回 Spec B 改话术/端点坐标,**绝不进 C2 烧全量**。no-go 也是合法交付(它正确挡住了烧全量)。
-- **C 不造零件**:组件本身的构建与单测是 Spec B;环境搭建是 Spec A。C 只组装、运转、监督、产出。
-- **单变量受控 backprop**:全量循环里一个 batch 只改三权重中的一个,下一 batch 看这次改动的效果。先归因再动手(§backprop 决策表)。
-- **disk 是唯一真相**:optimizer 是 tmux 长驻 REPL,每 batch 末 `/compact`,compact 后从盘(weights/revision_log/trace 尾部)重建状态,绝不靠记忆。
-- **监督是观测不是控制台**:claude 巡检只读,绝不触发控制、不改权重。
-- **隐私红线**:CC log 绝对路径绝不进任何提交物;读 log 只走 `--logs-dir` 必填脚本;`runs/` 全部设备本地 gitignore;dataset/coverage 落盘前过白名单校验,白名单外字段(log 路径、设备用户名、transcript 原文)→ 硬失败;两组 API key 值绝不进任何提交物。
+- **The pilot is a hard gate**: if C1 (PT5 two-sample endpoint pilot) doesn't pass → write HALT, stop and return to Spec B to revise prose / endpoint coordinates, **never enter C2 and burn full-batch**. no-go is also a legitimate delivery (it correctly blocked burning full-batch).
+- **C builds no parts**: the construction and unit testing of the components themselves is Spec B; environment setup is Spec A. C only assembles, runs, supervises, and produces.
+- **Single-variable controlled backprop**: in the full loop, one batch revises only ONE of the three weights, and the next batch observes the effect of that change. Attribute-then-revise (§backprop decision table).
+- **disk is the only source of truth**: the optimizer is a tmux long-running REPL; it runs `/compact` at the end of each batch, and after compact rebuilds state from disk (weights/revision_log/trace tail), never relying on memory.
+- **Supervision is observation, not a control console**: claude inspection is read-only, and never triggers control or revises weights.
+- **Privacy red line**: the CC log absolute path never enters any committed artifact; reading logs goes only through the `--logs-dir`-required scripts; `runs/` is entirely device-local gitignore; dataset/coverage passes a whitelist check before being written to disk, and any field outside the whitelist (log path, device username, raw transcript) → hard failure; the values of the two API keys never enter any committed artifact.
 
-## 依赖前置(C 开工前必须真green)
+## Dependency prerequisites (must be genuinely green before C starts)
 
-- **Spec A 全绿**:四身份可起、技能可见、重启重连、薄片 E1–E5 过。
-- **Spec B 全绿**:三权重 + 9 叶子 pytest 全过;B7 单 topic 6 档 e2e 真跑过(loss-2 τ + 端点分离 + 门控算术验出)。
-- **`optimization-loop` skill 已写全**(B6);其 §backprop 段 B 阶段只写出未深验,**C 是它的真受检场**。
+- **Spec A all green**: the four identities can start, skills are visible, restart-reconnect works, thin-slice E1–E5 pass.
+- **Spec B all green**: three weights + 9 leaves pytest all pass; B7 single-topic 6-rung e2e genuinely ran (loss-2 τ + endpoint separation + gate arithmetic verified).
+- **`optimization-loop` skill fully written** (B6); its §backprop section was only written out, not deeply verified, in stage B — **C is its real testing ground**.
 
 ---
 
 ## File Structure
 
-C 阶段新建/修改的文件(`<proj> = self-iteration/2026-06-07-probe-pretrain/`):
+Files created/modified in stage C (`<proj> = self-iteration/2026-06-07-probe-pretrain/`):
 
 ```text
 <proj>/
-├── config/topics.json              # ★C 填 8 个真前沿 topic(B 只占位 1 个)
+├── config/topics.json              # ★C fills 8 real frontier topics (B holds just 1 placeholder)
 ├── skills/optimization-loop/
-│   ├── scripts/freeze.py           # 冻权重(NEW)
-│   ├── scripts/coverage_report.py  # 覆盖率报告(NEW,纯生成侧聚合,无 log 路径)
-│   └── references/                 # pilot 期实测填:F8/K/allowance/completability 阈值
+│   ├── scripts/freeze.py           # freeze weights (NEW)
+│   ├── scripts/coverage_report.py  # coverage report (NEW, pure generation-side aggregation, no log path)
+│   └── references/                 # measured during pilot: F8/K/allowance/completability thresholds
 ├── ops/
-│   ├── start_optimizer.sh          # tmux 点火 + 就绪探测 + 送开场 prompt(NEW,启动期一次)
-│   └── optimizer-opening-prompt.txt# optimizer 开场 prompt 全文(NEW)
+│   ├── start_optimizer.sh          # tmux ignition + readiness probe + send opening prompt (NEW, once at startup)
+│   └── optimizer-opening-prompt.txt# optimizer opening prompt full text (NEW)
 └── tests/
-    ├── test_topics.py              # P:8 topic schema 校验
-    ├── test_coverage_report.py     # P:白名单 + 无 log 路径
-    └── e2e/                        # R:C1 pilot / C2 全量 / 监督巡检 清单
+    ├── test_topics.py              # P: 8 topic schema validation
+    ├── test_coverage_report.py     # P: whitelist + no log path
+    └── e2e/                        # R: C1 pilot / C2 full-batch / supervision inspection checklists
 ```
 
-**测法标记**:P = 纯函数 pytest;R = 真模型 e2e;S = skill/脚本文件。
+**Test-method markers**: P = pure-function pytest; R = real-model e2e; S = skill/script file.
 
-**构建顺序**:C0 真 topic + 点火交付物 → C1 PT5 pilot 硬闸 → C2 全量 LOOP-2 收敛 → C3 freeze + 产出 → C4 监督接口。下面 Task 编号对齐此序。
+**Build order**: C0 real topics + ignition deliverables → C1 PT5 pilot hard gate → C2 full LOOP-2 convergence → C3 freeze + output → C4 supervision interface. The Task numbering below aligns to this order.
 
 ---
 
-### Task C0a: config/topics.json — 填 8 个真前沿 topic
+### Task C0a: config/topics.json — fill 8 real frontier topics
 
 **Files:**
-- Modify: `<proj>/config/topics.json` (B 的单占位 → 8 个真前沿 topic)
+- Modify: `<proj>/config/topics.json` (B's single placeholder → 8 real frontier topics)
 - Test: `<proj>/tests/test_topics.py` (P)
 
-C 是唯一跑全量 8 topic 的拆(A/B 用单占位)。8 topic 取材两准则:① 全是「设计一项研究/评估」的研究设计题,研究对象是**外部**前沿 DL/AI 现象(绝不让 exec 碰 DARE 自指/eval/check,W5 取材级防线);② 每题自带一个社区正在争论的 F7 前提(给 A4=C- premise-corrigibility 最干净着力点)。
+C is the only stage that runs the full 8 topics (A/B use a single placeholder). The 8 topics are chosen by two criteria: ① all are research-design questions of the form "design a study/evaluation", whose research object is an **external** frontier DL/AI phenomenon (never let exec touch DARE self-reference/eval/check — the W5 source-material-level defense line); ② each comes with an F7 prerequisite the community is currently debating (giving A4=C- premise-corrigibility the cleanest leverage point).
 
-- [ ] **Step 1: 写 topics schema 失败测试**
+- [ ] **Step 1: write the topics schema failing test**
 
 Create `<proj>/tests/test_topics.py`:
 ```python
@@ -72,63 +72,63 @@ REQUIRED = {"topic_id","title_short","full_text","F7_prerequisite"}
 
 def test_eight_topics_full_schema():
     topics = json.loads(Path("config/topics.json").read_text(encoding="utf-8"))
-    assert len(topics) == 8                                   # C 填满 8 个
+    assert len(topics) == 8                                   # C fills all 8
     ids = [t["topic_id"] for t in topics]
     assert ids == [f"topic-0{i}" for i in range(8)]           # topic-00..topic-07
     for t in topics:
-        assert REQUIRED <= set(t)                             # 四字段齐
-        assert len(t["full_text"]) > 200                      # 饱满研究简报,非一句梗概
-        assert t["F7_prerequisite"]                           # F7 非空
+        assert REQUIRED <= set(t)                             # four fields present
+        assert len(t["full_text"]) > 200                      # rich research brief, not a one-line synopsis
+        assert t["F7_prerequisite"]                           # F7 non-empty
 
 def test_topics_check_blind():
-    """W5 取材级防线:topic 文本不含检测签名词(题目只谈外部现象)。"""
+    """W5 source-material-level defense: topic text contains no detection-signature words (topics talk only about external phenomena)."""
     from generator.leak_audit import leak_audit
     topics = json.loads(Path("config/topics.json").read_text(encoding="utf-8"))
     for t in topics:
         leak_audit(t["full_text"]); leak_audit(t["F7_prerequisite"])
 ```
 
-- [ ] **Step 2: 跑红**
+- [ ] **Step 2: run red**
 
 Run: `cd <proj> && python -m pytest tests/test_topics.py -v`
-Expected: FAIL — 当前 topics.json 只 1 个占位 topic(B 留),len != 8。
+Expected: FAIL — the current topics.json has only 1 placeholder topic (left by B), len != 8.
 
-- [ ] **Step 3: 写 8 个真 topic(full_text 写成饱满研究简报)**
+- [ ] **Step 3: write the 8 real topics (full_text written as a rich research brief)**
 
-Modify `<proj>/config/topics.json` 为 8 元素数组。八题(title_short / full_text 三段:动机+研究问题+期望交付 / F7):
-- **topic-00 · CoT 忠实度** — 检验「模型输出的 CoT 文本是否忠实反映内部推理」;干预(扰动/截断/注入误导步)+ 与「CoT 仅事后合理化」零假设对照。F7:「CoT 文本忠实记录真实推理步骤」(被 latent-reasoning 挑战)。
-- **topic-01 · Agentic 长程可靠性** — 评估自主 agent 在多步长程真实任务的可靠性与失败模式;步数可控难度分层任务集 + 复合误差归因。F7:「给足工具记忆后成功率随步数近似线性外推」(忽视复合误差)。
-- **topic-02 · 多智能体 vs 单体** — 固定总算力下多智能体协作是否仍优于等预算单体;严格对齐「总计算预算」控制变量。F7:「多智能体辩论/协作必然提升推理质量」(等算力对照下常消失)。
-- **topic-03 · MoE 量化敏感度** — 评估 MoE 低比特量化质量损失分布 + 定位最敏感专家/层;统一 vs 混合精度对照。F7:「MoE 各专家可统一低比特量化质量近无损」(专家级敏感度差异显著)。
-- **topic-04 · 多模态 capability tax** — 检验统一多模态模型在单模态任务是否存在系统性能力损失;可比规模配对对照 + 模态间非对称。F7:「统一多模态在各单模态都不弱于专用模型」(capability tax 使常不成立)。
-- **topic-05 · AI for Science 假设新颖性** — 评估 LLM 生成科学假设是否真新颖可验证而非已知重组;可操作新颖性定义 + 专家盲评 + 文献核验。F7:「LLM 已能自主产出新颖且可验证的科学假设」(多为已知重组)。
-- **topic-06 · Agent 基准代表性** — 检验现有 agent 基准是否覆盖真实任务分布 +「路灯效应」审计;真实任务分布维度刻画 + 盲区探测。F7:「现有 agent 排行榜分数能代表真实世界能力」(基准覆盖偏窄)。
-- **topic-07 · 浅层对齐假说** — 区分对齐微调改的是底层倾向还是表层表达;分布偏移/越狱/内部表示探针/微调逆转 + 对照判据。F7:「对齐微调真正改变了模型内部价值倾向」(浅层对齐假说主张多在表层)。
+Modify `<proj>/config/topics.json` into an 8-element array. The eight topics (title_short / full_text in three parts: motivation + research question + expected deliverable / F7):
+- **topic-00 · CoT faithfulness** — test whether "the CoT text the model outputs faithfully reflects the internal reasoning"; intervention (perturb/truncate/inject a misleading step) + contrast with the "CoT is mere post-hoc rationalization" null hypothesis. F7: "the CoT text faithfully records the real reasoning steps" (challenged by latent-reasoning).
+- **topic-01 · Agentic long-horizon reliability** — evaluate the reliability and failure modes of an autonomous agent on multi-step long-horizon real tasks; a step-count-controllable difficulty-tiered task set + compound-error attribution. F7: "given enough tools and memory, success rate extrapolates roughly linearly with step count" (ignoring compound error).
+- **topic-02 · Multi-agent vs monolithic** — under fixed total compute, is multi-agent collaboration still better than an equal-budget monolith; strictly align the "total compute budget" control variable. F7: "multi-agent debate/collaboration necessarily improves reasoning quality" (often vanishes under equal-compute control).
+- **topic-03 · MoE quantization sensitivity** — evaluate the quality-loss distribution of low-bit MoE quantization + locate the most sensitive experts/layers; uniform vs mixed precision contrast. F7: "all MoE experts can be uniformly low-bit quantized with near-lossless quality" (expert-level sensitivity differs markedly).
+- **topic-04 · Multimodal capability tax** — test whether a unified multimodal model has a systematic capability loss on single-modality tasks; comparable-scale paired contrast + cross-modal asymmetry. F7: "unified multimodal is no weaker than specialized models on each single modality" (the capability tax often makes this false).
+- **topic-05 · AI for Science hypothesis novelty** — evaluate whether LLM-generated scientific hypotheses are genuinely novel and verifiable rather than recombinations of the known; an operationalizable novelty definition + expert blind review + literature verification. F7: "LLMs can already autonomously produce novel and verifiable scientific hypotheses" (mostly recombinations of the known).
+- **topic-06 · Agent benchmark representativeness** — test whether existing agent benchmarks cover the real task distribution + a "streetlight effect" audit; characterize the real-task-distribution dimensions + blind-spot probing. F7: "existing agent leaderboard scores represent real-world capability" (benchmark coverage is narrow).
+- **topic-07 · Shallow alignment hypothesis** — distinguish whether alignment fine-tuning changes the underlying disposition or the surface expression; distribution shift/jailbreak/internal-representation probe/fine-tuning reversal + a contrast criterion. F7: "alignment fine-tuning genuinely changes the model's internal value disposition" (the shallow alignment hypothesis claims much of it is on the surface).
 
-> **★full_text 落地**:每条 full_text 写成 Spec C §8.3 的完整三段研究简报(动机背景 + 核心研究问题 + 期望交付物),逐字落进 JSON 字符串(>200 字符)。八题方法学面各异(实证检验/长程评估/等预算对照/量化敏感度/多模态对照/新颖性判定/基准审计/深浅对齐探测),让阶梯不止考一种研究套路。
+> **★full_text grounding**: write each full_text as the complete three-part research brief of Spec C §8.3 (motivation/background + core research question + expected deliverable), landing it verbatim into the JSON string (>200 chars). The eight topics differ methodologically (empirical test / long-horizon evaluation / equal-budget contrast / quantization sensitivity / multimodal contrast / novelty determination / benchmark audit / deep-vs-shallow alignment probing), so the ladder doesn't test only one research routine.
 
-- [ ] **Step 4: 跑绿 + commit**
+- [ ] **Step 4: run green + commit**
 
 Run: `cd <proj> && python -m pytest tests/test_topics.py -v`
-Expected: 两条 PASS(8 topic 全 schema + check-blind)。
+Expected: two PASS (8 topics full schema + check-blind).
 ```bash
 git add config/topics.json tests/test_topics.py
-git commit -m "feat(C0): 8 个真前沿 topic(外部 DL 现象研究设计题 + 争议 F7 前提)"
+git commit -m "feat(C0): 8 real frontier topics (external DL phenomenon research-design questions + contested F7 prerequisites)"
 ```
 
 ---
 
-### Task C0b: optimizer 点火交付物 — 开场 prompt 全文 + start_optimizer.sh
+### Task C0b: optimizer ignition deliverables — opening prompt full text + start_optimizer.sh
 
 **Files:**
-- Create: `<proj>/ops/optimizer-opening-prompt.txt` (开场 prompt 全文,英文,绝不简化)
-- Create: `<proj>/ops/start_optimizer.sh` (tmux 点火 + 就绪探测 + 送 prompt,启动期一次)
+- Create: `<proj>/ops/optimizer-opening-prompt.txt` (opening prompt full text, English, never simplified)
+- Create: `<proj>/ops/start_optimizer.sh` (tmux ignition + readiness probe + send prompt, once at startup)
 
-C 是唯一点火 optimizer 的拆。开场 prompt 是 optimizer 长跑的「身份+纪律书」;就绪探测只在 optimizer 一处成立(唯一用 tmux send-keys 的层)。
+C is the only stage that ignites the optimizer. The opening prompt is the optimizer's "identity + discipline charter" for its long run; the readiness probe holds only at the optimizer's single location (the only layer that uses tmux send-keys).
 
-- [ ] **Step 1: 写开场 prompt 全文(Spec C §7.1 定稿,逐字落盘)**
+- [ ] **Step 1: write the opening prompt full text (Spec C §7.1 finalized, landed verbatim)**
 
-Create `<proj>/ops/optimizer-opening-prompt.txt`(英文全文,守锁死约束:无 `-p`/`--resume`/`--session-id`/`--allowedTools`):
+Create `<proj>/ops/optimizer-opening-prompt.txt` (full English text, honoring the locked constraints: no `-p`/`--resume`/`--session-id`/`--allowedTools`):
 ```text
 You are optimizer-cc — the host of a "pseudo-neural-network pretraining"
 training loop. Your role is equivalent to train.py in PyTorch. You are NOT
@@ -222,219 +222,219 @@ outcome, not a failure.
 Load the `optimization-loop` skill and start the epoch loop from cold start
 (batch-0, weights/batch-0.json from weights.dump_initial) now.
 ```
-Expected: 全文落盘;`grep -E -- '-p |--resume|--session-id|--allowedTools' ops/optimizer-opening-prompt.txt` 无命中(守锁死约束)。
+Expected: full text landed on disk; `grep -E -- '-p |--resume|--session-id|--allowedTools' ops/optimizer-opening-prompt.txt` returns no match (honors the locked constraints).
 
-- [ ] **Step 2: 写 start_optimizer.sh(tmux 点火 + 就绪探测 + 送 prompt)**
+- [ ] **Step 2: write start_optimizer.sh (tmux ignition + readiness probe + send prompt)**
 
 Create `<proj>/ops/start_optimizer.sh`:
 ```bash
 #!/usr/bin/env bash
-# C 的一次性启动脚本(非热路径)。tmux 长驻 optimizer + 就绪探测 + 送开场 prompt。
+# C's one-time startup script (not a hot path). tmux long-running optimizer + readiness probe + send opening prompt.
 set -euo pipefail
 PROMPT_FILE="$(dirname "$0")/optimizer-opening-prompt.txt"
-READY_MARKER='<REPL_READY_MARKER>'   # 落地实测填:claude 2.1.x 就绪屏特征串
+READY_MARKER='<REPL_READY_MARKER>'   # filled by measurement: the claude 2.1.x readiness-screen signature string
 
-# 1. 建 session + 备环境 + 设 optimizer 专属 config-dir
+# 1. create session + prepare environment + set the optimizer's dedicated config-dir
 tmux new-session -d -s opt
 tmux send-keys -t opt 'source /workspace/env.sh && source /workspace/bootstrap.sh' Enter
 tmux send-keys -t opt 'export CLAUDE_CONFIG_DIR=/workspace/home/optim/.claude' Enter
 
-# 2. 点火 optimizer 的 claude
+# 2. ignite the optimizer's claude
 tmux send-keys -t opt 'cd /workspace/work/optim && claude' Enter
 
-# 3. 轮询 capture-pane,直到 REPL 提示符稳定出现(≤0.5s 间隔,本地探测,仅启动一次)
+# 3. poll capture-pane until the REPL prompt appears stably (≤0.5s interval, local probe, only once at startup)
 until tmux capture-pane -p -t opt | tail -n 5 | grep -q "$READY_MARKER"; do
   sleep 0.5
 done
 
-# 4. 就绪后送开场 prompt 全文(多行:load 进 tmux buffer 再 paste,避免中途回车截断)
+# 4. once ready, send the opening prompt full text (multi-line: load into tmux buffer then paste, to avoid truncation by a mid-stream Enter)
 tmux load-buffer "$PROMPT_FILE"
 tmux paste-buffer -t opt
 tmux send-keys -t opt Enter
 ```
-Expected: 脚本可执行;就绪探测用 tmux 输出轮询(不用固定 sleep)。
+Expected: the script is executable; the readiness probe polls tmux output (no fixed sleep).
 
-> **落地三点**:① `<REPL_READY_MARKER>` 随 claude 版本实测定(写进脚本注释,不写死进 spec);② 多行 prompt 用 `load-buffer`+`paste-buffer` 整段送入,避免被中途回车截断;③ 此脚本仅 optimizer 冷启动跑一次,绝不进 batch 热路径。
+> **Three grounding points**: ① `<REPL_READY_MARKER>` is determined by measurement against the claude version (written into a script comment, not hard-coded into the spec); ② the multi-line prompt is sent as one block via `load-buffer`+`paste-buffer`, avoiding truncation by a mid-stream Enter; ③ this script runs only once at optimizer cold start, never on the batch hot path.
 
 - [ ] **Step 3: commit C0b**
 ```bash
 git add ops/optimizer-opening-prompt.txt ops/start_optimizer.sh
-git commit -m "feat(C0): optimizer 点火 — 开场prompt全文 + start_optimizer.sh(tmux就绪探测)"
+git commit -m "feat(C0): optimizer ignition — opening prompt full text + start_optimizer.sh (tmux readiness probe)"
 ```
 
 ---
 
-### Task C1: PT5 两样本端点 pilot(go/no-go 硬门控)
+### Task C1: PT5 two-sample endpoint pilot (go/no-go hard gate)
 
 **Files:**
-- Create: `<proj>/tests/e2e/test_pt5_pilot.md` (R,人工执行清单 + go/no-go 判据)
-- 产物落 `runs/<pilot-id>/`(设备本地、gitignore)
+- Create: `<proj>/tests/e2e/test_pt5_pilot.md` (R, manually-executed checklist + go/no-go criteria)
+- artifacts land in `runs/<pilot-id>/` (device-local, gitignore)
 
-只造 **2 个端点样本**:id0(天才,A5=G+ 生成性)/ id5(荒谬-抬杠,completability 地板)。真 CC/codex 全链跑,专验头号 kill-risk。**这是硬闸:不过 → 落 HALT 回 B,绝不进 C2。**
+Build only **2 endpoint samples**: id0 (genius, A5=G+ generativity) / id5 (absurd-contrarian, completability floor). Real CC/codex full-chain run, specifically verifying the #1 kill-risk. **This is the hard gate: not passing → write HALT and return to B, never enter C2.**
 
-- [ ] **Step 1: 写 PT5 pilot 执行清单 + 两探针判据**
+- [ ] **Step 1: write the PT5 pilot execution checklist + two-probe criteria**
 
 Create `<proj>/tests/e2e/test_pt5_pilot.md`:
 ```markdown
-# C1 PT5 pilot:2 端点样本(真 claude/codex,go/no-go 硬闸)
-前置:A 环境绿、B 组件绿(含 B7 单 topic 6 档跑过)。用 topic-00(或任一真 topic)的两端点。
+# C1 PT5 pilot: 2 endpoint samples (real claude/codex, go/no-go hard gate)
+Prerequisites: A environment green, B components green (incl. B7 single-topic 6-rung having run). Use the two endpoints of topic-00 (or any real topic).
 
-## 跑(只 2 run,不烧全量)
-1. new_run_id.py 建 runs/<pilot-id>/;weights.dump_initial 出 batch-0.json。
-2. gen_configs 只造 2 卡:id0(A1=L0 高实质/A5=G+ 生成)+ id5(A1=L4 低实质/抬杠/死守 F7)。
-3. 各跑全链:sim 真扮 → exec 真研究 → concat 三元组 → loss-1。
-4. run_codex_loss(loss-2)对 (id0,id5) 做 K 次成对判定 → endpoint_separation。
+## Run (only 2 runs, don't burn full-batch)
+1. new_run_id.py creates runs/<pilot-id>/; weights.dump_initial emits batch-0.json.
+2. gen_configs builds only 2 cards: id0 (A1=L0 high-substance/A5=G+ generative) + id5 (A1=L4 low-substance/contrarian/clinging to F7).
+3. run each full chain: sim really plays its role → exec really researches → concat the triple → loss-1.
+4. run_codex_loss (loss-2) does K pairwise judgments over (id0,id5) → endpoint_separation.
 
-## 两探针(头号 kill-risk)
-- **AS-1 探针(rigor floor 抗下压?)**:id5 能否被压得足够坏、与 id0 端点拉开?
-  判据:loss-2 `endpoint_separation_pass=true`(id0 在 K 次成对里赢 id5 ≥ K−allowance 次)。
-- **AS-4 探针(改铺陈 loss-2 会不会动?)**:改一次 `interp_params`(endpoint_spread 或 granularity_map),重跑两端点,看 loss-2 端点分离/τ 是否变化。
-  判据:改铺陈后 loss-2 **有可测变化**(纹丝不动 → interpolator 可训练性为空)。
+## Two probes (the #1 kill-risk)
+- **AS-1 probe (does the rigor floor resist downward pressure?)**: can id5 be pressured bad enough to separate from the id0 endpoint?
+  Criterion: loss-2 `endpoint_separation_pass=true` (id0 beats id5 ≥ K−allowance times across the K pairwise judgments).
+- **AS-4 probe (does revising the prose layer move loss-2?)**: revise `interp_params` once (endpoint_spread or granularity_map), rerun the two endpoints, observe whether loss-2 endpoint separation/τ changes.
+  Criterion: after revising the prose layer, loss-2 shows a **measurable change** (no movement at all → interpolator trainability is null).
 
-## 闸判定(决策已定)
-- **go(解锁 C2)**:端点拉开(AS-1 过)+ 改铺陈 loss-2 会动(AS-4 过)。
-- **no-go(落 HALT 回 B)**:端点拉不开 / 改铺陈 loss-2 不动 → 写 runs/<pilot-id>/HALT.json(cause=pilot_fail + 现场指针)→ 停回 Spec B 改话术或端点坐标。**no-go 也是合法交付**(它正确挡住了烧全量)。
+## Gate decision (already decided)
+- **go (unlock C2)**: endpoints separate (AS-1 passes) + revising the prose layer moves loss-2 (AS-4 passes).
+- **no-go (write HALT, return to B)**: endpoints don't separate / revising the prose layer doesn't move loss-2 → write runs/<pilot-id>/HALT.json (cause=pilot_fail + on-site pointers) → stop and return to Spec B to revise prose or endpoint coordinates. **no-go is also a legitimate delivery** (it correctly blocked burning full-batch).
 ```
 
-- [ ] **Step 2: 设备上真跑 PT5 pilot(2 run,全真)**
+- [ ] **Step 2: genuinely run PT5 pilot on device (2 runs, all real)**
 
-Run(设备上,两组 key 已配): 按清单跑 2 端点样本全链 + AS-4 改铺陈重跑。
-Expected: 产出 2 端点三元组 + loss-2 endpoint_separation + AS-4 改铺陈前后对比。
+Run (on device, both key sets configured): run the 2 endpoint samples full chain per the checklist + the AS-4 prose-layer-revision rerun.
+Expected: produce 2 endpoint triples + loss-2 endpoint_separation + AS-4 before/after prose-layer-revision comparison.
 
-- [ ] **Step 3: pilot 期实测填阈值(F8 / K / allowance / completability)**
+- [ ] **Step 3: fill measured thresholds during pilot (F8 / K / allowance / completability)**
 
-据 pilot 实测,把这些 pilot-tunable 阈值写进 `<proj>/skills/optimization-loop/references/gate-thresholds.md`(覆盖 B 的占位):
-- `turn_budget`(=F8):exec 跑一次 formated-specs 闭环的实测 pressure_turns / closing_turns。
-- loss-2 端点分离的 `K` / `allowance` 实测值(B 占位 K=5, allowance=1)。
-- completability 失败的单轮超时/轮数上限(子 CC 超 N 分钟无返回判失败)。
-Expected: gate-thresholds.md 的 pilot-tunable 值由占位换成实测值。
+From pilot measurements, write these pilot-tunable thresholds into `<proj>/skills/optimization-loop/references/gate-thresholds.md` (overriding B's placeholders):
+- `turn_budget` (=F8): the measured pressure_turns / closing_turns for exec running one formated-specs closed loop.
+- the measured `K` / `allowance` values for loss-2 endpoint separation (B placeholder K=5, allowance=1).
+- the per-run timeout / turn cap for completability failure (a child CC with no return for over N minutes is judged failed).
+Expected: the pilot-tunable values in gate-thresholds.md are switched from placeholders to measured values.
 
-- [ ] **Step 4: 闸判定 — go 进 C2,no-go 落 HALT 回 B**
+- [ ] **Step 4: gate decision — go enters C2, no-go writes HALT and returns to B**
 
-判定:
-- **go**:AS-1 过(端点拉开)+ AS-4 过(铺陈可动)→ 记录于 pilot 报告,解锁 C2。
-- **no-go**:落 `runs/<pilot-id>/HALT.json`:
+Decision:
+- **go**: AS-1 passes (endpoints separate) + AS-4 passes (prose layer is movable) → record in the pilot report, unlock C2.
+- **no-go**: write `runs/<pilot-id>/HALT.json`:
 ```json
-{"cause":"pilot_fail","detail":"端点拉不开 / 改铺陈 loss-2 不动","snapshot":{"weights":"weights/batch-0.json","loss2":"loss/<topic>.loss2.json"},"action":"回 Spec B 改话术或端点坐标"}
+{"cause":"pilot_fail","detail":"endpoints don't separate / revising prose layer doesn't move loss-2","snapshot":{"weights":"weights/batch-0.json","loss2":"loss/<topic>.loss2.json"},"action":"return to Spec B to revise prose or endpoint coordinates"}
 ```
-Expected: go 则进 C2;no-go 则停在 HALT,**绝不进 C2**(合法交付)。
+Expected: go → enter C2; no-go → stop at HALT, **never enter C2** (legitimate delivery).
 ```bash
 git add tests/e2e/test_pt5_pilot.md skills/optimization-loop/references/gate-thresholds.md
-git commit -m "feat(C1): PT5 两样本端点 pilot 硬闸(AS-1 端点分离 + AS-4 铺陈可训性)"
+git commit -m "feat(C1): PT5 two-sample endpoint pilot hard gate (AS-1 endpoint separation + AS-4 prose-layer trainability)"
 ```
 
-> **★C1 是 C 的硬闸**:它专挡"端点先天拉不开 / interpolator 可训练性为空"这两个 B 阶段没深验过的头号 kill-risk。pilot 不过就烧全量 = 把整批 token 喂给一个训不动的系统。no-go 正确挡住它,是设计的胜利不是失败。
+> **★C1 is C's hard gate**: it specifically blocks the two #1 kill-risks B never deeply verified — "the endpoints can't be separated by nature / interpolator trainability is null". Burning full-batch when the pilot doesn't pass = feeding the whole batch of token to a system that can't be trained. no-go correctly blocking it is a victory of the design, not a failure.
 
 ---
 
-### Task C2: 全量 LOOP-2 循环到收敛(backprop 智能点真受检)
+### Task C2: full LOOP-2 loop to convergence (the backprop intelligent point genuinely tested)
 
 **Files:**
-- Create: `<proj>/tests/e2e/test_full_loop.md` (R,全量循环执行 + 验收清单)
-- 产物落 `runs/<run-id>/`(设备本地、gitignore)
+- Create: `<proj>/tests/e2e/test_full_loop.md` (R, full-loop execution + acceptance checklist)
+- artifacts land in `runs/<run-id>/` (device-local, gitignore)
 
-pilot go 后才进。48-run batch(8 topic × 6 档)反复跑,每 batch 末 T/F1/F2 三分支路由,直到**连续 3 batch 过闸**。backprop 智能点③在此真改权重。tmux 长驻 optimizer + `/compact` 自恢复。
+Entered only after pilot go. The 48-run batch (8 topics × 6 rungs) runs repeatedly, routing through T/F1/F2 three branches at the end of each batch, until **3 consecutive batches pass the gate**. The backprop intelligent point ③ genuinely revises weights here. tmux long-running optimizer + `/compact` self-recovery.
 
-- [ ] **Step 1: 写全量循环执行 + 三分支路由验收清单**
+- [ ] **Step 1: write the full-loop execution + three-branch routing acceptance checklist**
 
 Create `<proj>/tests/e2e/test_full_loop.md`:
 ```markdown
-# C2 全量 LOOP-2(真 claude/codex,跑到收敛)
-前置:C1 pilot go;ops/start_optimizer.sh 就绪;optimization-loop skill 已复制进 optim config-dir。
+# C2 full LOOP-2 (real claude/codex, run to convergence)
+Prerequisites: C1 pilot go; ops/start_optimizer.sh ready; optimization-loop skill already copied into the optim config-dir.
 
-## 跑(tmux 长驻)
-1. bash ops/start_optimizer.sh → optimizer-CC 起、load skill、收开场 prompt。
-2. optimizer 按 §loop 自转:每 batch = 48 run(8 topic × 6 档),冷启动 batch-0(weights.dump_initial)。
-3. 每 batch 末按 (batch_passed × converged) 三分支:
-   - **T**(连续 3 batch 过闸):emit converged + run_end → 进 C3 freeze。
-   - **F1**(过闸未连 3):apply_weight_update --copy 原样拷 weights/<batch+1>.json(无 revision_log、无 weight_revised)→ batch_id+1 再跑。
-   - **F2**(未过闸):§backprop 先归因(读 batch_done.topic_pass_flags → 挂掉 topic 的 topic_done → 必要时 loss/*.json 判词)→ 改三权重之一(单变量)→ apply_weight_update 写 weights/<batch+1>.json + revision_log + weight_revised → /compact → 从盘恢复 → 下一 batch。
-4. optimizer 每 batch 末 /compact,compact 后从盘(weights/<batch+1>.json + revision_log + trace 尾部)重建状态。
+## Run (tmux long-running)
+1. bash ops/start_optimizer.sh → optimizer-CC starts, loads the skill, receives the opening prompt.
+2. optimizer self-runs per §loop: each batch = 48 runs (8 topics × 6 rungs), cold-start batch-0 (weights.dump_initial).
+3. at the end of each batch, three branches per (batch_passed × converged):
+   - **T** (3 consecutive batches passed): emit converged + run_end → enter C3 freeze.
+   - **F1** (passed but not 3 in a row): apply_weight_update --copy byte-copies weights/<batch+1>.json (no revision_log, no weight_revised) → batch_id+1 and run again.
+   - **F2** (not passed): §backprop attributes first (read batch_done.topic_pass_flags → the topic_done of the failed topic → if needed the loss/*.json verdict) → revise one of the three weights (single variable) → apply_weight_update writes weights/<batch+1>.json + revision_log + weight_revised → /compact → recover from disk → next batch.
+4. optimizer runs /compact at the end of each batch, and after compact rebuilds state from disk (weights/<batch+1>.json + revision_log + trace tail).
 
-## 验收(C2 核心)
-- [ ] 至少一次 **F2 backprop 真改权重**:revision_log.jsonl 出现一条 {target,key,old,new,reason};trace 出现 weight_revised;weights/<batch+1>.json 仅那一段一个 key 变(单变量受控)。
-- [ ] 至少一次 **F1 原样前进**:weights/<batch+1>.json 与 <batch>.json 逐字相同,无对应 revision_log 行、无 weight_revised。
-- [ ] **/compact 自恢复**:某 batch 末 /compact 后,optimizer 从盘读回正确 batch_id(weights 目录最大编号本身,不+1)+ recent_ratios,继续不乱。
-- [ ] **最终收敛**:trace 出现 converged(recent_ratios 末 3 全≥0.80)+ run_end。
-- [ ] **或落 HALT 暴露 AS-4**:若 backprop 反复改同一权重 loss 不降 → optimizer 落 HALT.json(训不动),也是合法的暴露(见 C4)。
-- [ ] **no-fake**:全程真 sim/exec/codex,合成的只有 config+topic。
+## Acceptance (C2 core)
+- [ ] At least one **F2 backprop genuinely revising a weight**: revision_log.jsonl gains one {target,key,old,new,reason}; trace gains weight_revised; weights/<batch+1>.json has only that one key in that one section changed (single-variable controlled).
+- [ ] At least one **F1 byte-copy forward**: weights/<batch+1>.json is byte-identical to <batch>.json, with no corresponding revision_log line, no weight_revised.
+- [ ] **/compact self-recovery**: after /compact at the end of some batch, the optimizer reads back the correct batch_id from disk (the highest-numbered weights file itself, not +1) + recent_ratios, and continues without confusion.
+- [ ] **Final convergence**: trace gains converged (the last 3 of recent_ratios all ≥0.80) + run_end.
+- [ ] **Or write HALT exposing AS-4**: if backprop repeatedly revises the same weight and loss doesn't drop → optimizer writes HALT.json (can't be trained), also a legitimate exposure (see C4).
+- [ ] **no-fake**: real sim/exec/codex throughout; the only synthesized things are config+topic.
 
-## 不验(已是终点)
-C2 是全系统终点循环;无更上层。
+## Not verified (already the endpoint)
+C2 is the whole-system terminal loop; there is no higher layer.
 ```
 
-- [ ] **Step 2: 设备上真跑全量 LOOP-2 至收敛(或落 HALT)**
+- [ ] **Step 2: genuinely run full LOOP-2 to convergence on device (or write HALT)**
 
-Run(设备上,tmux 长驻): `bash ops/start_optimizer.sh` 后 optimizer 自转。
-Expected: 出现 ≥1 次 F2 真改权重 + ≥1 次 F1 原样前进,最终连续 3 batch 过闸收敛;或落 HALT 暴露 AS-4 可训练性存疑(也是合法交付)。
+Run (on device, tmux long-running): `bash ops/start_optimizer.sh`, then the optimizer self-runs.
+Expected: ≥1 F2 genuine weight revision + ≥1 F1 byte-copy forward, finally 3 consecutive batches pass the gate and converge; or write HALT exposing AS-4 trainability doubt (also a legitimate delivery).
 
-- [ ] **Step 3: 验三分支路由 + batch_id 恢复不变式**
+- [ ] **Step 3: verify three-branch routing + batch_id recovery invariant**
 
-Run(设备上,只读检查):
+Run (on device, read-only check):
 ```bash
 RID=$(ls -t runs | head -1)
-# F2 痕迹
+# F2 traces
 grep -c weight_revised runs/$RID/trace.jsonl          # ≥1
-wc -l runs/$RID/revision_log.jsonl                    # ≥1(F2 改动史)
-# batch_id 恢复不变式:weights 目录最大编号 = 下一批
-ls runs/$RID/weights/                                  # batch-0.json .. batch-N.json 连续无洞
-# 收敛
-grep -c converged runs/$RID/trace.jsonl                # 1(若收敛)或看 HALT.json
+wc -l runs/$RID/revision_log.jsonl                    # ≥1 (F2 revision history)
+# batch_id recovery invariant: the highest-numbered weights file = the next batch
+ls runs/$RID/weights/                                  # batch-0.json .. batch-N.json contiguous, no gaps
+# convergence
+grep -c converged runs/$RID/trace.jsonl                # 1 (if converged) or check HALT.json
 ls runs/$RID/HALT.json 2>/dev/null && echo "HALTED" || echo "no halt"
 ```
-Expected: F2 痕迹齐;weights 编号连续(F1/F2 都预写下一批,印证「max 不+1」不变式);收敛 emit converged 或落 HALT 之一。
+Expected: F2 traces present; weights numbering contiguous (both F1/F2 pre-write the next batch, confirming the "max not +1" invariant); convergence emits converged, or one of them writes HALT.
 ```bash
 git add tests/e2e/test_full_loop.md
-git commit -m "feat(C2): 全量 LOOP-2 收敛(F2 backprop 真改 + F1 原样前进 + /compact 自恢复)"
+git commit -m "feat(C2): full LOOP-2 convergence (F2 backprop genuine revise + F1 byte-copy forward + /compact self-recovery)"
 ```
 
-> **★C 的最大风险点**:backprop 是终稿唯一智能点,B 阶段没深验过。C2 跑起来后,backprop 反复改同一权重也压不动(疑 AS-4 可训练性为空)→ 落 HALT(C4)。这是 C 必须现场盯的核心。
+> **★C's biggest risk point**: backprop is the only intelligent point in the final design, and stage B never deeply verified it. After C2 starts running, if backprop repeatedly revises the same weight and still can't move it (suspected AS-4 trainability null) → write HALT (C4). This is the core that C must watch on-site.
 
 ---
 
-### Task C3: freeze + coverage_report + 全量数据集产出
+### Task C3: freeze + coverage_report + full labeled dataset output
 
 **Files:**
 - Create: `<proj>/skills/optimization-loop/scripts/freeze.py` (NEW)
-- Create: `<proj>/skills/optimization-loop/scripts/coverage_report.py` (NEW,纯生成侧聚合,无 log 路径)
+- Create: `<proj>/skills/optimization-loop/scripts/coverage_report.py` (NEW, pure generation-side aggregation, no log path)
 - Test: `<proj>/tests/test_coverage_report.py` (P)
 
-收敛后冻权重 + 出覆盖率报告 + 全量带标签数据集落 `dataset/`。
+After convergence, freeze the weights + emit the coverage report + land the full labeled dataset in `dataset/`.
 
-- [ ] **Step 1: 实现 freeze.py(拷最后过闸 batch 权重为 frozen.json)**
+- [ ] **Step 1: implement freeze.py (copy the last gate-passing batch weights as frozen.json)**
 
 Create `<proj>/skills/optimization-loop/scripts/freeze.py`:
 ```python
 #!/usr/bin/env python3
-"""把最后过闸 batch 的 weights/<batch>.json 拷成 weights/frozen.json。历史快照全留(供复盘 backprop 轨迹)。"""
+"""Copy the last gate-passing batch's weights/<batch>.json into weights/frozen.json. All historical snapshots are kept (for replaying the backprop trajectory)."""
 import argparse, shutil
 from pathlib import Path
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--weights-dir", required=True)
-    ap.add_argument("--batch-id", required=True)     # 最后过闸 batch
+    ap.add_argument("--batch-id", required=True)     # the last gate-passing batch
     a = ap.parse_args()
     src = Path(a.weights_dir)/f"{a.batch_id}.json"
-    shutil.copy(src, Path(a.weights_dir)/"frozen.json")   # frozen 是定稿;batch-* 快照不删
+    shutil.copy(src, Path(a.weights_dir)/"frozen.json")   # frozen is the finalized version; batch-* snapshots are not deleted
 
 if __name__ == "__main__":
     main()
 ```
-Expected: frozen.json = 定稿三权重;全程 batch 快照保留。
+Expected: frozen.json = the finalized three weights; all batch snapshots retained.
 
-- [ ] **Step 2: coverage_report 写失败测试(白名单 + 无 log 路径)**
+- [ ] **Step 2: write the coverage_report failing test (whitelist + no log path)**
 
 Create `<proj>/tests/test_coverage_report.py`:
 ```python
 import json, subprocess, sys
 from pathlib import Path
 
-# 禁出现的探针侧/隐私字段(coverage 只放生成侧)
+# forbidden probe-side/privacy fields (coverage holds only generation-side)
 FORBIDDEN = ["PG","NG","GG","OB","/workspace/home", ".claude/projects", "--logs-dir"]
 
 def test_coverage_no_forbidden_fields(tmp_path):
-    # 造一个最小 dataset + trace
+    # build a minimal dataset + trace
     ds = tmp_path/"dataset"/"topic-00"; ds.mkdir(parents=True)
     (ds/"s.json").write_text(json.dumps({"sample_id":"batch-0-topic00-id0",
         "label":{"rung_id":0,"axis_levels":{"A1":"L0"}},"loss1_fidelity":1.0,"topic_pass":True}))
@@ -446,16 +446,16 @@ def test_coverage_no_forbidden_fields(tmp_path):
         "--dataset", str(tmp_path/"dataset"), "--trace", str(trace), "--out", str(out)])
     txt = out.read_text()
     for f in FORBIDDEN:
-        assert f not in txt           # 探针侧分布 + log 路径绝不进报告
-    assert "topic-00" in txt          # 生成侧覆盖确实统计了
+        assert f not in txt           # probe-side distribution + log path never enter the report
+    assert "topic-00" in txt          # generation-side coverage really was tallied
 ```
 
-- [ ] **Step 3: 跑红 → 实现 coverage_report.py → 跑绿**
+- [ ] **Step 3: run red → implement coverage_report.py → run green**
 
-Run → FAIL。Create `<proj>/skills/optimization-loop/scripts/coverage_report.py`:
+Run → FAIL. Create `<proj>/skills/optimization-loop/scripts/coverage_report.py`:
 ```python
 #!/usr/bin/env python3
-"""扫 dataset/ + trace,出 coverage_report.md。纯生成侧聚合,落盘前过白名单(无 PG/NG/GG/OB、无 log 路径)。"""
+"""Scan dataset/ + trace, emit coverage_report.md. Pure generation-side aggregation, passes a whitelist before writing to disk (no PG/NG/GG/OB, no log path)."""
 import argparse, json
 from pathlib import Path
 
@@ -466,7 +466,7 @@ def main():
     ap.add_argument("--dataset", required=True); ap.add_argument("--trace", required=True)
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
-    # 生成侧聚合:各轴各 level 计数 + 每 topic 样本数 + 过闸/产量
+    # generation-side aggregation: per-axis per-level counts + samples per topic + gate-pass/yield
     axis_counts, topic_counts = {}, {}
     for f in Path(a.dataset).rglob("*.json"):
         s = json.loads(f.read_text())
@@ -475,14 +475,14 @@ def main():
         for ax,lv in s.get("label",{}).get("axis_levels",{}).items():
             axis_counts.setdefault(ax,{}).setdefault(lv,0)
             axis_counts[ax][lv]+=1
-    lines = ["# Coverage Report (生成侧聚合,无 log 路径)", ""]
-    lines.append("## 每 topic 样本数")
+    lines = ["# Coverage Report (generation-side aggregation, no log path)", ""]
+    lines.append("## samples per topic")
     for t,c in sorted(topic_counts.items()): lines.append(f"- {t}: {c}")
-    lines.append("\n## 轴坐标覆盖(RR-2:让 monoculture 可见)")
+    lines.append("\n## axis-coordinate coverage (RR-2: make monoculture visible)")
     for ax,lvs in sorted(axis_counts.items()):
         lines.append(f"- {ax}: " + ", ".join(f"{lv}={n}" for lv,n in sorted(lvs.items())))
     report = "\n".join(lines)
-    # 落盘前白名单校验:命中禁词硬失败(隐私 + 探针侧不进)
+    # whitelist check before writing: hitting a forbidden word is a hard failure (privacy + no probe-side)
     for bad in FORBIDDEN:
         if bad in report:
             raise SystemExit(f"FATAL: coverage report contains forbidden token {bad!r}")
@@ -491,115 +491,115 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-Run → PASS。
+Run → PASS.
 ```bash
 git add skills/optimization-loop/scripts/freeze.py \
         skills/optimization-loop/scripts/coverage_report.py tests/test_coverage_report.py
-git commit -m "feat(C3): freeze.py(定稿+留快照) + coverage_report.py(生成侧聚合,白名单硬失败)"
+git commit -m "feat(C3): freeze.py (finalize + keep snapshots) + coverage_report.py (generation-side aggregation, whitelist hard failure)"
 ```
 
-- [ ] **Step 4: 设备上收敛后真跑 freeze + coverage**
+- [ ] **Step 4: genuinely run freeze + coverage on device after convergence**
 
-Run(设备上,收敛后):
+Run (on device, after convergence):
 ```bash
 RID=$(ls -t runs | head -1)
-python skills/optimization-loop/scripts/freeze.py --weights-dir runs/$RID/weights --batch-id <最后过闸batch>
+python skills/optimization-loop/scripts/freeze.py --weights-dir runs/$RID/weights --batch-id <last gate-passing batch>
 python skills/optimization-loop/scripts/coverage_report.py \
   --dataset runs/$RID/dataset --trace runs/$RID/trace.jsonl --out runs/$RID/coverage_report.md
 grep -rlE '/workspace/home|\.claude/projects' runs/$RID/dataset runs/$RID/coverage_report.md && echo LEAK || echo "NO LEAK"
 ```
-Expected: frozen.json + coverage_report.md 落齐;dataset/ 全量带标签样本齐;打印 `NO LEAK`。
+Expected: frozen.json + coverage_report.md both landed; dataset/ full labeled samples present; prints `NO LEAK`.
 
 ---
 
-### Task C4: 监督接口 — 主(claude 巡检)+ 辅(产物自解释)+ HALT.json
+### Task C4: supervision interface — primary (claude inspection) + auxiliary (self-explanatory artifacts) + HALT.json
 
 **Files:**
-- Create: `<proj>/tests/e2e/test_supervision.md` (R,巡检清单 + HALT 判据)
-- 不写 inspect.py(决策已定:巡检是现场只读手查,不固化成脚本)
+- Create: `<proj>/tests/e2e/test_supervision.md` (R, inspection checklist + HALT criteria)
+- do NOT write inspect.py (decided: inspection is on-site read-only manual checking, not solidified into a script)
 
-监督 = 主(claude 定期 SSH 只读巡检)+ 辅(CHECKPOINT 产物齐全自解释)。人工干预 = HALT.json 显式落盘 + 巡检发现。**只读,绝不触发控制、不改权重。**
+Supervision = primary (claude periodically SSHes in for read-only inspection) + auxiliary (CHECKPOINT artifacts are complete and self-explanatory). Human intervention = explicit HALT.json on disk + inspection findings. **Read-only, never triggers control, never revises weights.**
 
-- [ ] **Step 1: 写巡检清单(现场 Bash 只读手查,不固化)**
+- [ ] **Step 1: write the inspection checklist (on-site Bash read-only manual check, not solidified)**
 
 Create `<proj>/tests/e2e/test_supervision.md`:
 ```markdown
-# C4 监督:claude SSH 只读巡检(现场 Bash 手查,不写 inspect.py)
-用户定期叫我上 remote,我用现场只读命令判断进度健康度(RID=$(ls -t runs|head -1)):
+# C4 supervision: claude SSH read-only inspection (on-site Bash manual check, no inspect.py written)
+The user periodically calls me onto the remote, and I judge progress health with on-site read-only commands (RID=$(ls -t runs|head -1)):
 
-## 进度
-- tail -n 20 runs/$RID/trace.jsonl → 现在 batch/topic/rung 几、recent_ratios、连续过闸数。
+## Progress
+- tail -n 20 runs/$RID/trace.jsonl → which batch/topic/rung we're at now, recent_ratios, consecutive gate-passes.
 
-## 健康
-- rung 是否卡死:某 sample 的 dialogue_turn 长时间不增(对比 ts)。
-- completability 失败堆积:grep completability runs/$RID/trace.jsonl。
-- leak_audit 反复中断:看 optimizer 输出/HALT.json。
+## Health
+- whether a rung is stuck: some sample's dialogue_turn not increasing for a long time (compare ts).
+- completability failures piling up: grep completability runs/$RID/trace.jsonl.
+- leak_audit interrupting repeatedly: check optimizer output/HALT.json.
 
-## 轨迹
-- tail runs/$RID/revision_log.jsonl → 最近 weight_revised 改了哪个权重(看 backprop 在干嘛)。
+## Trajectory
+- tail runs/$RID/revision_log.jsonl → which weight the most recent weight_revised changed (see what backprop is doing).
 
-## 异常
-- loss schema 解析失败 / codex 报错 / trace seq 断裂(seq 应连续递增)。
+## Anomalies
+- loss schema parse failure / codex error / trace seq break (seq should increase contiguously).
 
 ## HALT
-- ls runs/$RID/HALT.json → 一眼定位 optimizer 自停原因(见下表)。
+- ls runs/$RID/HALT.json → locate the optimizer's self-stop cause at a glance (see table below).
 
-## 判断(只读,不控制)
-健康继续 / 卡住要清 / 跑偏叫停回 B。绝不触发控制、不改权重。
+## Judgment (read-only, no control)
+healthy → continue / stuck → needs clearing / off-track → stop and return to B. Never trigger control, never revise weights.
 ```
 
-- [ ] **Step 2: HALT.json 四停因约定(optimizer 自停 + 我巡检发现)**
+- [ ] **Step 2: HALT.json four-stop-cause convention (optimizer self-stop + my inspection findings)**
 
-optimizer 遇处理不了的情况,在 `runs/<run_id>/HALT.json` 落停因 + 现场快照指针,停在 tmux 不动,等巡检发现:
+When the optimizer hits a situation it can't handle, it writes the stop cause + on-site snapshot pointers to `runs/<run_id>/HALT.json`, stays put in tmux, and waits for an inspection to find it:
 
-| 停因 | 判据 | 处理 |
+| Stop cause | Criterion | Handling |
 | --- | --- | --- |
-| pilot 不过 | C1 端点拉不开 / 铺陈不动 | 回 Spec B 改话术或端点坐标 |
-| rung 卡死 | dialogue_turn 超时不增 / 子 CC 不返回 | 判该 run completability 失败,清掉重跑该 rung |
-| leak 硬中断 | leak_audit 连续 3 次仍命中 | 话术权重坏,回 B 查 axis_prose |
-| 训不动(疑 AS-4) | backprop 反复改同一权重 loss 不降 | 可训练性存疑,回 B 重审 interp_params / 端点坐标 |
+| pilot fails | C1 endpoints don't separate / prose layer doesn't move | return to Spec B to revise prose or endpoint coordinates |
+| rung stuck | dialogue_turn times out without increasing / child CC doesn't return | judge that run a completability failure, clear and rerun that rung |
+| leak hard interrupt | leak_audit still hits after 3 consecutive times | prose weight is broken, return to B to check axis_prose |
+| can't be trained (suspected AS-4) | backprop repeatedly revises the same weight and loss doesn't drop | trainability in doubt, return to B to re-review interp_params / endpoint coordinates |
 
-HALT.json schema(自解释 CHECKPOINT 产物):
+HALT.json schema (self-explanatory CHECKPOINT artifact):
 ```json
-{"cause":"<pilot_fail|rung_stuck|leak_hard|untrainable>","detail":"<人读说明>","snapshot":{"weights":"weights/<batch>.json","trace_tail_seq":<N>},"action":"<建议处理>"}
+{"cause":"<pilot_fail|rung_stuck|leak_hard|untrainable>","detail":"<human-readable explanation>","snapshot":{"weights":"weights/<batch>.json","trace_tail_seq":<N>},"action":"<suggested handling>"}
 ```
-Expected: 四停因约定写进 optimization-loop skill §state(B6 已写骨架,C 补 HALT 落法);巡检能一眼定位。
+Expected: the four-stop-cause convention is written into the optimization-loop skill §state (B6 wrote the skeleton, C adds the HALT-writing); inspection can locate it at a glance.
 
-- [ ] **Step 3: 验监督接口(产物可重建状态 + HALT 可定位)**
+- [ ] **Step 3: verify the supervision interface (artifacts can rebuild state + HALT is locatable)**
 
-Run(设备上,只读): 按 `test_supervision.md` 清单巡检一次运行中的(或已收敛的)run。
-Expected: 能从产物完整重建"现在到哪、健康否、改过啥";若有 HALT 能一眼定位停因。
+Run (on device, read-only): inspect a running (or already-converged) run once per the `test_supervision.md` checklist.
+Expected: can fully rebuild "where we are now, healthy or not, what was changed" from the artifacts; if there's a HALT, can locate the stop cause at a glance.
 
 - [ ] **Step 4: commit C4**
 ```bash
 git add tests/e2e/test_supervision.md
-git commit -m "feat(C4): 监督接口 — claude只读巡检清单 + HALT.json 四停因约定"
+git commit -m "feat(C4): supervision interface — claude read-only inspection checklist + HALT.json four-stop-cause convention"
 ```
 
-> **★HTML 可读窗口推迟**:等真跑起来有数据再对真数据调样式,不对空 runs/ 做。C 的监督责任收敛成一句"产物齐全、自解释、只读可查"。
+> **★HTML readable window deferred**: once it's genuinely running with data, tune the styling against real data, not against an empty runs/. C's supervision responsibility converges to one sentence: "artifacts are complete, self-explanatory, read-only inspectable".
 
 ---
 
-## 完成判定(Spec C = 三拆收尾)
+## Completion criteria (Spec C = three-stage wrap-up)
 
-- **C1 验收**:PT5 pilot 真 CC/codex 跑出 2 端点 → 明确 go(端点拉开 + 铺陈可动)或 no-go(落 HALT 回 B)。**no-go 也是合法交付**。
-- **C2 验收**:go 后全量 LOOP-2 真跑,出现 ≥1 次 F2 backprop 真改权重 + ≥1 次 F1 原样前进,最终连续 3 batch 过闸收敛(或落 HALT 暴露 AS-4)。
-- **C3 验收**:frozen.json + 全程 weights 快照 + coverage_report.md(纯生成侧、无 log 路径)+ dataset/ 带标签样本齐全。
-- **监督验收**:能从产物完整重建"现在到哪、健康否、改过啥";HALT 能一眼定位停因。
-- **隐私验收**:所有提交物无 CC log 路径、无 key 值;dataset/coverage 过白名单校验。
+- **C1 acceptance**: PT5 pilot real CC/codex produces 2 endpoints → clear go (endpoints separate + prose layer movable) or no-go (write HALT, return to B). **no-go is also a legitimate delivery**.
+- **C2 acceptance**: after go, full LOOP-2 genuinely runs, with ≥1 F2 backprop genuine weight revision + ≥1 F1 byte-copy forward, finally 3 consecutive batches pass the gate and converge (or write HALT exposing AS-4).
+- **C3 acceptance**: frozen.json + full weights snapshots + coverage_report.md (pure generation-side, no log path) + dataset/ labeled samples all present.
+- **Supervision acceptance**: can fully rebuild "where we are now, healthy or not, what was changed" from the artifacts; HALT can be located at a glance.
+- **Privacy acceptance**: no committed artifact has a CC log path or key value; dataset/coverage passes the whitelist check.
 
-## Self-Review(对照 Spec C 检查)
+## Self-Review (checking against Spec C)
 
-- **三阶段(§1)覆盖**:C1 PT5 pilot 硬闸(Task C1)、C2 全量 LOOP-2(Task C2)、C3 freeze+产出(Task C3),逐一有 Task。
-- **收敛路由 T/F1/F2(§2)覆盖**:Task C2 Step 1 三分支路由 + Step 3 batch_id「max 不+1」恢复不变式验证;F2 backprop 单变量、F1 原样拷贝均有验收项。
-- **监督主+辅(§3)覆盖**:Task C4 主(claude 只读巡检清单,不写 inspect.py)+ 辅(产物自解释);HTML 推迟已注明。
-- **HALT.json 四停因(§4)覆盖**:Task C4 Step 2 四停因表 + schema。
-- **点火交付物(§7)覆盖**:Task C0b 开场 prompt 全文(守锁死约束)+ start_optimizer.sh 就绪探测。
-- **8 真 topic(§8)覆盖**:Task C0a 八题 + schema 测 + check-blind 测。
-- **隐私红线(§6)覆盖**:coverage_report 白名单硬失败(C3 test)、dataset NO LEAK 扫描(C3 Step 4)、runs/ gitignore、key 不进提交物。
-- **类型一致性**:`apply_weight_update --copy`(F1)与 `--target/--key/--new/--reason`(F2)签名沿用 B6;`gate_eval` 三模式沿用 B5;trace 事件名(weight_revised/converged/run_end/batch_done)沿用 B 的 trace_emit;HALT.json schema 在 C1/C4 一致。
-- **placeholder 扫描**:`<REPL_READY_MARKER>`(claude 版本相关,落地实测填)、gate-thresholds 的 pilot-tunable 值(C1 Step 3 实测填)、8 topic full_text(C0a Step 3 按 §8.3 逐字落)均**有意延迟到落地/pilot**,已注明谁填、何时填,非计划缺口。
+- **Three stages (§1) covered**: C1 PT5 pilot hard gate (Task C1), C2 full LOOP-2 (Task C2), C3 freeze+output (Task C3) — each has a Task.
+- **Convergence routing T/F1/F2 (§2) covered**: Task C2 Step 1 three-branch routing + Step 3 batch_id "max not +1" recovery-invariant verification; F2 backprop single-variable, F1 byte-copy each have an acceptance item.
+- **Supervision primary+auxiliary (§3) covered**: Task C4 primary (claude read-only inspection checklist, no inspect.py written) + auxiliary (self-explanatory artifacts); HTML deferral noted.
+- **HALT.json four stop causes (§4) covered**: Task C4 Step 2 four-stop-cause table + schema.
+- **Ignition deliverables (§7) covered**: Task C0b opening prompt full text (honoring locked constraints) + start_optimizer.sh readiness probe.
+- **8 real topics (§8) covered**: Task C0a eight topics + schema test + check-blind test.
+- **Privacy red line (§6) covered**: coverage_report whitelist hard failure (C3 test), dataset NO LEAK scan (C3 Step 4), runs/ gitignore, keys don't enter committed artifacts.
+- **Type consistency**: `apply_weight_update --copy` (F1) and `--target/--key/--new/--reason` (F2) signatures follow B6; `gate_eval` three modes follow B5; trace event names (weight_revised/converged/run_end/batch_done) follow B's trace_emit; HALT.json schema is consistent across C1/C4.
+- **Placeholder scan**: `<REPL_READY_MARKER>` (claude-version-dependent, filled by measurement at grounding), the pilot-tunable values of gate-thresholds (filled by measurement at C1 Step 3), the 8 topic full_text (landed verbatim per §8.3 at C0a Step 3) are all **deliberately deferred to grounding/pilot**, with who fills and when noted — not plan gaps.
 
 ## Execution Handoff
 
-见索引 plan `2026-06-07-INDEX-triple-cc-pretrain.md`。C 依赖 A(环境)+ B(组件)全绿;C1 pilot 是硬闸,no-go 即停回 B。
+See the index plan `2026-06-07-INDEX-triple-cc-pretrain.md`. C depends on A (environment) + B (components) all green; the C1 pilot is the hard gate, no-go means stop and return to B.
