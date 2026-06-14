@@ -98,7 +98,15 @@ def build(files, links):
         nonlocal e_cnt
         if a == b or (a, b) in edgeset:
             return
-        net.add_edge(a, b, title=tip, arrows="to", color="#5b6172")
+        # Any edge touching an infra hub is drawn but EXCLUDED from the physics
+        # solver (physics=false). The 11 infra hubs are super-connected
+        # (spawn-agent alone has 364 incoming edges); letting their springs act
+        # makes total kinetic energy never decay, so the layout never settles.
+        # Excluding them lets each package cluster lay out by its own internal
+        # edges while the hub links stay visible as star spokes.
+        hub_edge = a.startswith("infra/") or b.startswith("infra/")
+        net.add_edge(a, b, title=tip, arrows="to", color="#5b6172",
+                     physics=not hub_edge)
         edgeset.add((a, b)); e_cnt += 1
 
     subagent_sops = links["subagent_sops"]
@@ -140,7 +148,9 @@ def build(files, links):
                     if cc in added:
                         link(cc, CTX_INIT, "campaign 启动时调 <b>context-init</b>（加载/创建 campaign context file）")
                         link(cc, CTX_CKPT, "每个 strategy 完成后调 <b>context-checkpoint</b>（硬性约束）")
-    net.set_options('{"physics":{"stabilization":{"iterations":150}},'
+    net.set_options('{"physics":{"stabilization":{"enabled":true,"iterations":1000,'
+                    '"updateInterval":50,"fit":true},"minVelocity":0.75,'
+                    '"barnesHut":{"avoidOverlap":0.2}},'
                     '"nodes":{"font":{"size":16,"strokeWidth":4,"strokeColor":"#191a1f"}},'
                     '"edges":{"width":1.5,"selectionWidth":2.5,'
                     '"smooth":{"type":"continuous","roundness":0.25},'
@@ -159,6 +169,16 @@ def main():
     links = load_links()
     net, nodes, edges = build(files, links)
     html = rg.strip_chrome(rg.strip_external_cdn(net.generate_html()))
+    # Freeze fallback: once the solver reports stabilization done, turn physics
+    # off so the canvas is guaranteed to come to rest even if residual jitter
+    # remains. Dragging a node still works; it just won't re-simulate the world.
+    freeze = ("""
+                  network.on('stabilizationIterationsDone', function(){
+                    network.setOptions({physics:false});
+                  });""")
+    html = html.replace(
+        "                  network.on('blurEdge', _hide);",
+        "                  network.on('blurEdge', _hide);" + freeze, 1)
     Path(a.out).write_text(html, encoding="utf-8")
     print(f"combined+collapsed: {nodes} nodes, {edges} edges, {len(files)} packages -> {Path(a.out).name}")
 
