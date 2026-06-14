@@ -1,0 +1,37 @@
+{
+  "name": "literature-engine",
+  "nodes": [
+    {
+      "id": "literature-overview",
+      "layer": "sop",
+      "desc": "<b>最浅一档:landscape 扫描定位。</b> 用 alphaxiv.discover_papers + ss.relevanceSearch 快速扫一个主题上<b>有哪些论文、谁是关键作者、引用量大致多少</b>。<b>只读摘要和元数据,不读全文。</b> 作用是 orientation —— 在投入深读之前先拿到鸟瞰图,判断哪些论文值得往下挖。HARD-GATE:禁止基于摘要对方法 / 结果 / 贡献下任何结论。"
+    },
+    {
+      "id": "literature-search",
+      "layer": "sop",
+      "desc": "<b>中等深度:读 AI 摘要报告。</b> 用 alphaxiv.get_paper_content(fullText: false)读每篇选中论文的<b>结构化 AI 摘要报告</b>,理解方法、贡献、发现以及彼此如何比较。适合做 literature survey、gap 分析、背景知识构建。HARD-GATE:每篇待分析论文都必须真正拉取摘要报告;但仍<b>不是</b>原始全文。"
+    },
+    {
+      "id": "literature-research",
+      "layer": "sop",
+      "desc": "<b>最深一档:读原始全文。</b> 用 alphaxiv.get_paper_content(fullText: true)+ answer_pdf_queries 读<b>论文原文</b>,做精确方法细节(方程 / 算法 / 架构)、实验设置(超参 / 数据集 / baseline)、技术级比较、实验设计、精确引用。这是<b>深度天花板</b> —— AI 摘要在这一档不可接受,必须读原文。"
+    }
+  ],
+  "edges": [
+    {
+      "from": "literature-overview",
+      "to": "literature-search",
+      "tip": "overview 完成 landscape 扫描、已识别出值得细读的论文,但 HARD-GATE 禁止基于摘要下方法 / 结果 / 贡献结论时,转交 search 去读这些论文的 <b>AI 摘要报告</b>(中等深度),做综述 / gap 分析 / 背景构建。"
+    },
+    {
+      "from": "literature-overview",
+      "to": "literature-research",
+      "tip": "overview 定位到的论文需要<b>最高深度</b>的严谨分析(精确方法细节、实验设置、技术级比较),摘要远不够时,<b>越过中间层</b>直接转交 research 去读原始全文。"
+    },
+    {
+      "from": "literature-search",
+      "to": "literature-research",
+      "tip": "search 读的 AI 摘要报告<b>不足以支撑严谨分析</b>(需要方程 / 算法 / 超参 / 数据集 / baseline 等只有原文才有的细节,用于实验设计或精确引用)时,转交 research 去读原始全文。"
+    }
+  ]
+}

@@ -334,7 +334,6 @@ function highlightFilter(filter) {
                   
 
 
-  // self-managed HTML tooltip: stash titles, clear vis native title, render on hover
   var _tip = document.createElement('div'); _tip.id = 'dare-tip'; document.body.appendChild(_tip);
   var _nt = {}, _et = {};
   nodes.forEach(function(n){ if(n.title){ _nt[n.id] = n.title; nodes.update({id:n.id, title:undefined}); } });

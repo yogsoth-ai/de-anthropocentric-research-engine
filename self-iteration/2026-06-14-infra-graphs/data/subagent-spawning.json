@@ -1,0 +1,11 @@
+{
+  "name": "subagent-spawning",
+  "nodes": [
+    {
+      "id": "spawn-agent",
+      "layer": "sop",
+      "desc": "<b>派生隔离的 subagent 执行任务并回收结构化输出。</b> DARE 体系里<b>被依赖最广</b>(blast-radius 最高)的基础设施 SOP —— 任何需要嵌套子代理编排的 skill 都依赖它。"
+    }
+  ],
+  "edges": []
+}
