@@ -149,6 +149,78 @@
       "wrapper": "web-search",
       "infra": "web-browsing",
       "skill": "web-search"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
     }
   ],
   "subagent_sops": {
@@ -707,66 +779,5 @@
       "campaign": "ontology-building"
     }
   ],
-  "broken_paper": [
-    {
-      "pkg": "hypothesis-formation",
-      "wrapper": "paper-overview",
-      "broken_source": "literature-engine"
-    },
-    {
-      "pkg": "hypothesis-formation",
-      "wrapper": "paper-research",
-      "broken_source": "literature-engine"
-    },
-    {
-      "pkg": "hypothesis-formation",
-      "wrapper": "paper-search",
-      "broken_source": "literature-engine"
-    },
-    {
-      "pkg": "convergence",
-      "wrapper": "paper-overview",
-      "broken_source": "literature-engine/paper-overview"
-    },
-    {
-      "pkg": "convergence",
-      "wrapper": "paper-research",
-      "broken_source": "literature-engine/paper-research"
-    },
-    {
-      "pkg": "convergence",
-      "wrapper": "paper-search",
-      "broken_source": "literature-engine/paper-search"
-    },
-    {
-      "pkg": "stress-test",
-      "wrapper": "paper-overview",
-      "broken_source": "literature-engine/skills/paper-overview/SKILL.md"
-    },
-    {
-      "pkg": "stress-test",
-      "wrapper": "paper-research",
-      "broken_source": "literature-engine/skills/paper-research/SKILL.md"
-    },
-    {
-      "pkg": "stress-test",
-      "wrapper": "paper-search",
-      "broken_source": "literature-engine/skills/paper-search/SKILL.md"
-    },
-    {
-      "pkg": "experiment-execution",
-      "wrapper": "paper-overview",
-      "broken_source": "literature-engine/paper-overview"
-    },
-    {
-      "pkg": "experiment-execution",
-      "wrapper": "paper-research",
-      "broken_source": "literature-engine/paper-research"
-    },
-    {
-      "pkg": "experiment-execution",
-      "wrapper": "paper-search",
-      "broken_source": "literature-engine/paper-search"
-    }
-  ]
+  "broken_paper": []
 }
