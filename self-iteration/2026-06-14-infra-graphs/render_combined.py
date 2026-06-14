@@ -1,20 +1,30 @@
-"""Combine all data/*.json package graphs into ONE offline interactive HTML.
+"""Combine all data/*.json package graphs into ONE offline interactive HTML,
+COLLAPSING shared infrastructure skills into single hub nodes so the 13 repos
+connect through them instead of staying disconnected.
 
-Each node id is namespaced as "<package>/<skill>" so the shared infra SOP names
-that recur across packages (web-search, paper-search, ...) do not collide. The
-node label stays the bare skill name; the hover tooltip names the owning
-package. NO cross-package edges are invented — every package keeps exactly its
-own edges, so the 13 repos appear as distinct clusters on one shared canvas.
+Connection model (driven by infra-links.json, derived from source frontmatter):
+  - import-SOP wrappers (web-search/web-research + the resolvable paper->literature
+    ones) are COLLAPSED onto one canonical `infra/<infra-pkg>/<skill>` hub node;
+    every edge that touched a package-local wrapper is redirected to the hub.
+  - each `execution: subagent` SOP gets an edge to `infra/subagent-spawning/spawn-agent`.
+  - each campaign gets edges to `infra/context-management/context-init` and
+    `.../context-checkpoint`.
+  - the 4 infra packages' OWN graphs (literature-engine, web-browsing,
+    subagent-spawning, context-management) are mapped onto the SAME hub ids, so a
+    package's wrapper and the infra repo's real skill become the one shared node.
 
-Styling (LAYER_COLORS, sizes, the self-managed #dare-tip hover layer, offline
-CDN strip) is imported from the repo-dependency-graph skill's render_graph.py,
-so the combined view is pixel-consistent with the 13 per-repo HTMLs.
+Deferred (NOT connected here): 12 paper-* wrappers whose source: pointers are
+broken (hypothesis-formation / convergence / experiment-execution / stress-test).
+They stay as package-local nodes until the recovery pass confirms their targets.
+
+Styling reused from the repo-dependency-graph skill renderer (LAYER_COLORS, sizes,
+#dare-tip hover layer, offline CDN strip) for visual consistency.
 
 Usage:
-  python render_combined.py                # -> all-graphs.html
+  python render_combined.py                 # -> all-graphs.html
   python render_combined.py --out foo.html
 """
-import argparse, glob, json, importlib.util
+import argparse, json, importlib.util
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -22,37 +32,114 @@ _RG = HERE / "repo-dependency-graph" / "scripts" / "render_graph.py"
 _spec = importlib.util.spec_from_file_location("rg", _RG)
 rg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(rg)
-
 from pyvis.network import Network
 
+# infra packages whose own graph nodes map directly onto the shared hub ids
+INFRA_PKGS = {"literature-engine", "web-browsing", "subagent-spawning", "context-management"}
+SPAWN_HUB = "infra/subagent-spawning/spawn-agent"
+CTX_INIT  = "infra/context-management/context-init"
+CTX_CKPT  = "infra/context-management/context-checkpoint"
 
-def build(files):
+
+def load_links():
+    return json.loads((HERE / "infra-links.json").read_text(encoding="utf-8"))
+
+
+def hub_id(infra_pkg, skill):
+    return f"infra/{infra_pkg}/{skill}"
+
+
+def build_remap(links):
+    """Map each package-local node id `<pkg>/<wrapper>` to its canonical hub id.
+    Also map the infra packages' own `<infra>/<skill>` nodes onto the same hub."""
+    remap = {}
+    for c in links["collapse"]:
+        remap[f"{c['pkg']}/{c['wrapper']}"] = hub_id(c["infra"], c["skill"])
+    # infra repos' own skills -> same hub id (so wrapper + real skill merge)
+    for ip in INFRA_PKGS:
+        # handled generically at node-add time (see build())
+        pass
+    return remap
+
+
+def canon(pkg, nid, remap):
+    """Canonical id for a node/edge endpoint after collapse."""
+    # infra repo's own skill -> hub id
+    if pkg in INFRA_PKGS:
+        return hub_id(pkg, nid)
+    # package-local wrapper that collapses onto a hub
+    return remap.get(f"{pkg}/{nid}", f"{pkg}/{nid}")
+
+
+def build(files, links):
     net = Network(height="100vh", width="100%", directed=True,
                   bgcolor="#191a1f", font_color="#eaeaea",
                   notebook=False, cdn_resources="in_line")
-    # lower central_gravity than the single-repo renderer so the many
-    # disconnected clusters spread out instead of piling at the centre.
     net.barnes_hut(gravity=-6000, central_gravity=0.12, spring_length=130,
                    spring_strength=0.04, damping=0.5)
-    nodes = edges = 0
-    for f in sorted(files):
+    remap = build_remap(links)
+    added = set()          # node ids already added
+    edgeset = set()        # (from,to) already added, dedup after collapse
+    n_cnt = e_cnt = 0
+
+    def ensure(nid, label, layer, title):
+        nonlocal n_cnt
+        if nid in added:
+            return
+        net.add_node(nid, label=label, group=layer,
+                     color=rg.LAYER_COLORS.get(layer, "#999999"),
+                     size=rg.LAYER_SIZE.get(layer, 16) + (8 if nid.startswith("infra/") else 0),
+                     borderWidth=2,
+                     shapeProperties={"borderDashes": layer == "references"},
+                     title=title)
+        added.add(nid); n_cnt += 1
+
+    def link(a, b, tip):
+        nonlocal e_cnt
+        if a == b or (a, b) in edgeset:
+            return
+        net.add_edge(a, b, title=tip, arrows="to", color="#5b6172")
+        edgeset.add((a, b)); e_cnt += 1
+
+    subagent_sops = links["subagent_sops"]
+    # process infra packages FIRST so the hub nodes (spawn-agent, context-*,
+    # literature-*, web-*) exist before any package edge redirects onto them.
+    ordered = sorted(files, key=lambda p: (Path(p).stem not in INFRA_PKGS, Path(p).stem))
+    for f in ordered:
         s = json.loads(Path(f).read_text(encoding="utf-8"))
         pkg = s["name"]
+        layer_of = {n["id"]: n["layer"] for n in s["nodes"]}
         for n in s["nodes"]:
+            cid = canon(pkg, n["id"], remap)
             layer = n["layer"]
-            title = f'<b>{n["id"]}</b> [{layer}] &middot; <i>{pkg}</i>'
-            if n.get("desc"):
-                title += f"<hr>{n['desc']}"
-            net.add_node(f"{pkg}/{n['id']}", label=n["id"], group=layer,
-                         color=rg.LAYER_COLORS.get(layer, "#999999"),
-                         size=rg.LAYER_SIZE.get(layer, 16), borderWidth=2,
-                         shapeProperties={"borderDashes": layer == "references"},
-                         title=title)
-            nodes += 1
+            if cid.startswith("infra/"):
+                label = cid.split("/")[-1]
+                title = f'<b>{label}</b> [{layer}] &middot; <i>infra hub</i>'
+                if n.get("desc"):
+                    title += f"<hr>{n['desc']}"
+                ensure(cid, label, layer, title)
+            else:
+                title = f'<b>{n["id"]}</b> [{layer}] &middot; <i>{pkg}</i>'
+                if n.get("desc"):
+                    title += f"<hr>{n['desc']}"
+                ensure(cid, n["id"], layer, title)
         for e in s["edges"]:
-            net.add_edge(f"{pkg}/{e['from']}", f"{pkg}/{e['to']}",
-                         title=e.get("tip", "use"), arrows="to", color="#5b6172")
-            edges += 1
+            a = canon(pkg, e["from"], remap)
+            b = canon(pkg, e["to"], remap)
+            link(a, b, e.get("tip", "use"))
+        # spawn-agent fan-in: each subagent SOP -> spawn hub
+        if pkg not in INFRA_PKGS:
+            for sop in subagent_sops.get(pkg, []):
+                src = canon(pkg, sop, remap)
+                if src in added:
+                    link(src, SPAWN_HUB, "execution: subagent &mdash; spawned via <b>subagent-spawning/spawn-agent</b>")
+            # campaign -> context-management
+            for c in links["campaigns"]:
+                if c["pkg"] == pkg:
+                    cc = canon(pkg, c["campaign"], remap)
+                    if cc in added:
+                        link(cc, CTX_INIT, "campaign 启动时调 <b>context-init</b>（加载/创建 campaign context file）")
+                        link(cc, CTX_CKPT, "每个 strategy 完成后调 <b>context-checkpoint</b>（硬性约束）")
     net.set_options('{"physics":{"stabilization":{"iterations":150}},'
                     '"nodes":{"font":{"size":16,"strokeWidth":4,"strokeColor":"#191a1f"}},'
                     '"edges":{"width":1.5,"selectionWidth":2.5,'
@@ -60,7 +147,7 @@ def build(files):
                     '"color":{"highlight":"#00f0ff","hover":"#00f0ff"}},'
                     '"interaction":{"hover":true,"tooltipDelay":80,'
                     '"navigationButtons":false,"keyboard":false}}')
-    return net, nodes, edges
+    return net, n_cnt, e_cnt
 
 
 def main():
@@ -69,11 +156,11 @@ def main():
     ap.add_argument("--out", default=str(HERE / "all-graphs.html"))
     a = ap.parse_args()
     files = sorted(Path(a.data_dir).glob("*.json"))
-    net, nodes, edges = build(files)
+    links = load_links()
+    net, nodes, edges = build(files, links)
     html = rg.strip_chrome(rg.strip_external_cdn(net.generate_html()))
-    out = Path(a.out)
-    out.write_text(html, encoding="utf-8")
-    print(f"combined: {nodes} nodes, {edges} edges, {len(files)} packages -> {out.name}")
+    Path(a.out).write_text(html, encoding="utf-8")
+    print(f"combined+collapsed: {nodes} nodes, {edges} edges, {len(files)} packages -> {Path(a.out).name}")
 
 
 if __name__ == "__main__":
