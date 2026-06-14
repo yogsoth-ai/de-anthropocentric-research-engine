@@ -204,6 +204,27 @@
 
     {"from": "sub-question-decomposition", "to": "sub-question-generation", "tip": "第一步必调:将主问题分解为子问题 + 独立性论证。"},
     {"from": "sub-question-decomposition", "to": "dependency-mapping", "tip": "子问题生成后:映射子问题间依赖关系 + 关键路径。"},
-    {"from": "sub-question-decomposition", "to": "answering-sequence-design", "tip": "依赖图完成后:设计最优回答顺序 + 并行机会。"}
+    {"from": "sub-question-decomposition", "to": "answering-sequence-design", "tip": "依赖图完成后:设计最优回答顺序 + 并行机会。"},
+
+    {"from": "gap-prioritization", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>shared: true</code> + <code>campaigns: gap-prioritization</code>。gap 优先级列表产出后做通用质量门检查(格式/逻辑/引用/可操作性)。"},
+    {"from": "hypothesis-formulation", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 hypothesis-formulation。假设集产出后做 PASS/FAIL 质量门检查。"},
+    {"from": "research-question", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 research-question。RQ 产出后做通用质量门检查。"},
+
+    {"from": "gap-prioritization", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>shared: true</code> + <code>campaigns: gap-prioritization</code>。迭代排序时判断是否已达信息饱和(SATURATED/NOT_SATURATED)。"},
+    {"from": "hypothesis-formulation", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 hypothesis-formulation。判断假设生成是否已饱和、决定是否继续迭代。"},
+    {"from": "research-question", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 research-question。判断 RQ 精化是否已饱和。"},
+
+    {"from": "hypothesis-formulation", "to": "hypothesis-synthesis", "tip": "<b>campaign 终局 SOP</b>:frontmatter <code>campaign: hypothesis-formulation</code>,SKILL 自述\"campaign 的最终输出步骤\"。收集 deductive/inductive/abductive 全路径假设 → 去重 → 排序 → 关系说明。"},
+
+    {"from": "research-question", "to": "question-synthesis", "tip": "<b>campaign 终局 SOP</b>:frontmatter <code>campaign: research-question</code>,SKILL 自述\"campaign 的最终输出步骤\"。综合框架应用/scope/FINER/子问题产出最终 RQ 集。"},
+
+    {"from": "theory-identification", "to": "paper-overview", "tip": "<b>sop→sop(import 能力)</b>:theory-identification Pipeline step3-5\"理论筛选(保留相关)+ 核心主张提取 + 适用性评估\"= 批量扫描候选理论文献的 abstract/metadata 做相关性判断,匹配 paper-overview 的\"批量扫描多篇论文 / 快速判断相关性\"。"},
+    {"from": "theory-identification", "to": "paper-search", "tip": "<b>sop→sop(import 能力)</b>:theory-identification Pipeline step2\"文献扫描:搜索与 gap 相关的理论文献(literature-engine + web-browsing)\"= 找到某主题相关论文集合,匹配 paper-search。"},
+    {"from": "theory-identification", "to": "web-search", "tip": "<b>sop→sop(import 能力)</b>:theory-identification step2 文献扫描显式列 <code>web-browsing</code>;快速 web 扫描理论框架,匹配 web-search 的\"快速了解某个概念/框架/方法\"。"},
+
+    {"from": "novelty-scoring", "to": "paper-search", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring Pipeline step2\"利用 literature-engine 和 web-browsing 检索与该 gap 直接相关的近期工作(近 3 年)\"= 找到相关论文集合,匹配 paper-search。"},
+    {"from": "novelty-scoring", "to": "paper-research", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2\"记录已有解法和部分解法\"需深度提取论文中已解决/部分解决的特定信息,匹配 paper-research 的\"提取特定信息 / 深度分析\"。"},
+    {"from": "novelty-scoring", "to": "web-search", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2 显式列 <code>web-browsing</code> 检索近期工作;初步 web 扫描相关工作,匹配 web-search。"},
+    {"from": "novelty-scoring", "to": "web-research", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2-3\"记录已有解法...对比现有工作与该 gap 的完整需求\"需全文抓取 + 多来源综合,匹配 web-research 的\"全文抓取 / 内容分析 / 多来源综合\"。"}
   ]
 }

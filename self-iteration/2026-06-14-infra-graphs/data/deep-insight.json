@@ -664,6 +664,11 @@
       "tip": "规模极限、scaling law、行为突变、容量 → scaling-frontier。"
     },
     {
+      "from": "boundary-analysis",
+      "to": "boundary-synthesis",
+      "tip": "campaign 收口:boundary-analysis 的 <b>Subagent (11)</b> SOP 之一,边界分析末尾收口。Compile all boundary analysis products into a coherent report —— validity envelopes / robustness / failure catalogs / scaling maps / safe operating conditions。"
+    },
+    {
       "from": "sensitivity-analysis",
       "to": "parameter-screening",
       "tip": "快速筛选、Morris 方法、OAT、初步排除 → parameter-screening。"
