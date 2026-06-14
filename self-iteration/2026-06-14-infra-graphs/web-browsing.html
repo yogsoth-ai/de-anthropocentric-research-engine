@@ -259,15 +259,18 @@ function highlightFilter(filter) {
   .card-body { padding:0 !important; }
   #mynetwork { width:100vw !important; height:100vh !important; border:0 !important;
                background:#191a1f !important; }
-  div.vis-tooltip {
-    background:rgba(13,13,18,0.97) !important; border:1px solid #00f0ff !important;
-    border-radius:10px !important; padding:12px 14px !important; max-width:380px !important;
-    white-space:normal !important; color:#e8eaf2 !important; font-size:13px !important;
-    line-height:1.7 !important; box-shadow:0 8px 28px rgba(0,0,0,0.6) !important;
-    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif !important;
+  div.vis-tooltip { display:none !important; }
+  #dare-tip {
+    position:fixed; z-index:9999; pointer-events:none; opacity:0;
+    transition:opacity .12s; max-width:380px;
+    background:rgba(13,13,18,0.97); border:1px solid #00f0ff; border-radius:10px;
+    padding:12px 14px; color:#e8eaf2; font-size:13px; line-height:1.7;
+    box-shadow:0 8px 28px rgba(0,0,0,0.6); white-space:normal;
+    font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
   }
-  div.vis-tooltip b { color:#00f0ff; }
-  div.vis-tooltip hr { border:0; border-top:1px solid #2c2f3a; margin:7px 0; }
+  #dare-tip.show { opacity:1; }
+  #dare-tip b { color:#00f0ff; }
+  #dare-tip hr { border:0; border-top:1px solid #2c2f3a; margin:7px 0; }
 </style>
 </head>
 
@@ -330,7 +333,26 @@ function highlightFilter(filter) {
 
                   
 
+
+  // self-managed HTML tooltip: stash titles, clear vis native title, render on hover
+  var _tip = document.createElement('div'); _tip.id = 'dare-tip'; document.body.appendChild(_tip);
+  var _nt = {}, _et = {};
+  nodes.forEach(function(n){ if(n.title){ _nt[n.id] = n.title; nodes.update({id:n.id, title:undefined}); } });
+  edges.forEach(function(e){ if(e.title){ _et[e.id] = e.title; edges.update({id:e.id, title:undefined}); } });
+  var _mx = 0, _my = 0;
+  document.addEventListener('mousemove', function(ev){ _mx = ev.clientX; _my = ev.clientY;
+    if(_tip.classList.contains('show')){ _place(); } });
+  function _place(){ var pad=16, w=_tip.offsetWidth, h=_tip.offsetHeight;
+    var x=_mx+pad, y=_my+pad;
+    if(x+w>innerWidth) x=_mx-w-pad; if(y+h>innerHeight) y=_my-h-pad;
+    _tip.style.left=x+'px'; _tip.style.top=y+'px'; }
+  function _show(html){ _tip.innerHTML=html; _tip.classList.add('show'); _place(); }
+  function _hide(){ _tip.classList.remove('show'); }
                   network = new vis.Network(container, data, options);
+                  network.on('hoverNode', function(p){ if(_nt[p.node]) _show(_nt[p.node]); });
+                  network.on('hoverEdge', function(p){ if(_et[p.edge]) _show(_et[p.edge]); });
+                  network.on('blurNode', _hide);
+                  network.on('blurEdge', _hide);
 
                   
 
