@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>literature-engine — use-dependency graph</title>
+<style>
+:root {
+  --c1: #0d0221;
+  --c2: #261447;
+  --c3: #2e2157;
+  --c4: #ff3864;
+  --c5: #00f0ff;
+  --c6: #f9c80e;
+  /* 5 vertex-type colors */
+  --campaign:   #ff3864;
+  --strategy:   #00f0ff;
+  --tactic:     #f9c80e;
+  --sop:        #9d7bff;
+  --references: #5a6988;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: radial-gradient(ellipse at top, var(--c3) 0%, var(--c1) 70%);
+  color: #e8e8ff;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  min-height: 100vh;
+  padding: 32px;
+}
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--c5);
+  text-shadow: 0 0 12px rgba(0,240,255,0.4);
+  margin-bottom: 4px;
+}
+.subtitle { font-size: 13px; color: #8a8ab0; margin-bottom: 24px; }
+.subtitle code { color: var(--c6); }
+
+.layout { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+.stage {
+  position: relative;
+  flex: 1 1 640px;
+  min-width: 560px;
+  background: rgba(13,2,33,0.5);
+  border: 1px solid var(--c3);
+  border-radius: 14px;
+  padding: 16px;
+}
+svg { width: 100%; height: 560px; display: block; }
+
+/* legend */
+.legend {
+  flex: 0 0 230px;
+  background: rgba(38,20,71,0.55);
+  border: 1px solid var(--c3);
+  border-radius: 14px;
+  padding: 18px 18px 8px;
+}
+.legend h2 { font-size: 13px; color: var(--c5); margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase; }
+.legend-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; font-size: 13px; }
+.swatch { width: 26px; height: 16px; border-radius: 4px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,0.25); }
+.legend-row .lbl b { display: block; font-size: 13px; }
+.legend-row .lbl span { font-size: 11px; color: #8a8ab0; }
+.legend .edge-note { font-size: 11px; color: #8a8ab0; line-height: 1.6; border-top: 1px solid var(--c3); padding-top: 12px; margin-top: 4px; }
+.legend .edge-note b { color: var(--c6); }
+
+/* tooltip */
+.tip {
+  position: fixed;
+  max-width: 360px;
+  background: rgba(13,2,33,0.97);
+  border: 1px solid var(--c5);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #e8e8ff;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 16px rgba(0,240,255,0.25);
+}
+.tip.show { opacity: 1; }
+.tip code { color: var(--c6); background: rgba(249,200,14,0.1); padding: 1px 5px; border-radius: 4px; font-size: 12px; }
+.tip b { color: var(--c5); }
+
+/* svg interactive */
+.node-shape { cursor: pointer; transition: filter 0.15s; }
+.node-shape:hover { filter: brightness(1.25) drop-shadow(0 0 10px currentColor); }
+.node-label { font-size: 14px; font-weight: 600; fill: #0d0221; pointer-events: none; text-anchor: middle; }
+.node-layer { font-size: 10px; fill: #0d0221; opacity: 0.65; pointer-events: none; text-anchor: middle; letter-spacing: 1px; }
+.edge-hit { stroke: transparent; stroke-width: 22; fill: none; cursor: pointer; }
+.edge-line { fill: none; transition: stroke-width 0.15s, filter 0.15s; }
+.edge-group:hover .edge-line { stroke-width: 7; filter: drop-shadow(0 0 6px var(--c5)); }
+.edge-lbl { font-size: 11px; fill: var(--c5); text-anchor: middle; pointer-events: none; font-style: italic; }
+</style>
+</head>
+<body>
+<h1>literature-engine &mdash; use-dependency graph</h1>
+<p class="subtitle">4-layer skill architecture · 5 vertex types · single edge type <code>use</code> · escalation = same-layer <code>sop&rarr;sop</code> handoff</p>
+
+<div class="layout">
+  <div class="stage" id="stage"><!-- SVG injected by script --></div>
+
+  <aside class="legend">
+    <h2>Vertex Types</h2>
+    <div class="legend-row"><div class="swatch" style="background:var(--campaign)"></div><div class="lbl"><b>campaign</b><span>端到端流水线编排</span></div></div>
+    <div class="legend-row"><div class="swatch" style="background:var(--strategy)"></div><div class="lbl"><b>strategy</b><span>编排嵌套 tactic</span></div></div>
+    <div class="legend-row"><div class="swatch" style="background:var(--tactic)"></div><div class="lbl"><b>tactic</b><span>串联 SOP 聚合输出</span></div></div>
+    <div class="legend-row"><div class="swatch" style="background:var(--sop)"></div><div class="lbl"><b>sop</b><span>直接调用工具的叶子</span></div></div>
+    <div class="legend-row"><div class="swatch" style="background:var(--references);border-style:dashed"></div><div class="lbl"><b>references</b><span>.py / .md 小型引用件</span></div></div>
+    <div class="edge-note"><b>use</b> 边 &mdash; 鼠标移到节点看 SKILL 说明,移到边看触发情景。本图三者皆 <b>sop</b>,边表达"深度触顶 &rarr; 升档"的转交。</div>
+  </aside>
+</div>
+
+<div id="tip" class="tip"></div>
+
+<script>
+const NODES = {
+  "literature-overview": {
+    layer: "sop", x: 300, y: 90,
+    desc: "<b>最浅一档:landscape 扫描定位。</b> 用 <code>alphaxiv.discover_papers</code> + <code>ss.relevanceSearch</code> 快速扫一个主题上<b>有哪些论文、谁是关键作者、引用量大致多少</b>。<b>只读摘要和元数据,不读全文。</b> 作用是 orientation —— 在投入深读之前先拿到鸟瞰图,判断哪些论文值得往下挖。HARD-GATE:禁止基于摘要对方法 / 结果 / 贡献下任何结论。"
+  },
+  "literature-search": {
+    layer: "sop", x: 120, y: 360,
+    desc: "<b>中等深度:读 AI 摘要报告。</b> 用 <code>alphaxiv.get_paper_content</code>(<code>fullText: false</code>)读每篇选中论文的<b>结构化 AI 摘要报告</b>,理解方法、贡献、发现以及彼此如何比较。适合做 literature survey、gap 分析、背景知识构建。HARD-GATE:不得只凭摘要或搜索片段下结论,每篇待分析论文都必须真正拉取摘要报告;但仍<b>不是</b>原始全文。"
+  },
+  "literature-research": {
+    layer: "sop", x: 480, y: 360,
+    desc: "<b>最深一档:读原始全文。</b> 用 <code>alphaxiv.get_paper_content</code>(<code>fullText: true</code>)+ <code>answer_pdf_queries</code> 读<b>论文原文</b>,做精确方法细节(方程 / 算法 / 架构)、实验设置(超参 / 数据集 / baseline)、技术级比较、实验设计、精确引用。这是<b>深度天花板</b> —— AI 摘要在这一档不可接受,必须读原文。"
+  }
+};
+
+const EDGES = [
+  { from: "literature-overview", to: "literature-search", label: "use",
+    tip: "<b>overview &rarr; search</b><br>当 overview 完成 landscape 扫描、已识别出值得细读的论文,但其 HARD-GATE 禁止基于摘要下任何方法 / 结果 / 贡献结论时,转交 search 去读这些论文的 <b>AI 摘要报告</b>(中等深度),以做文献综述、gap 分析或背景构建。" },
+  { from: "literature-overview", to: "literature-research", label: "use",
+    tip: "<b>overview &rarr; research</b><br>当 overview 定位到的论文需要的是<b>最高深度</b>的严谨分析(精确方法细节、实验设置、技术级比较),摘要远不够时,<b>越过中间层</b>直接转交 research 去读原始全文。" },
+  { from: "literature-search", to: "literature-research", label: "use",
+    tip: "<b>search &rarr; research</b><br>当 search 读的 AI 摘要报告<b>不足以支撑严谨分析</b>(需要方程 / 算法 / 超参 / 数据集 / baseline 等只有原文才有的细节,用于实验设计或精确引用)时,转交 research 去读原始全文。" }
+];
+
+const LAYER_COLOR = {
+  campaign: "#ff3864", strategy: "#00f0ff", tactic: "#f9c80e",
+  sop: "#9d7bff", references: "#5a6988"
+};
+const NW = 200, NH = 64; // node box size
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function cx(n){ return NODES[n].x; }
+function cy(n){ return NODES[n].y; }
+function el(tag, attrs){ const e = document.createElementNS(SVG_NS, tag); for(const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+// edge endpoint on box border, pointing from center A toward center B
+function border(a, b){
+  const ax = cx(a)+NW/2, ay = cy(a)+NH/2, bx = cx(b)+NW/2, by = cy(b)+NH/2;
+  const dx = bx-ax, dy = by-ay;
+  const hw = NW/2+4, hh = NH/2+4;
+  const sx = Math.abs(dx) < 1e-6 ? Infinity : hw/Math.abs(dx);
+  const sy = Math.abs(dy) < 1e-6 ? Infinity : hh/Math.abs(dy);
+  const t = Math.min(sx, sy);
+  return { x: ax + dx*t, y: ay + dy*t };
+}
+
+const tip = document.getElementById("tip");
+function showTip(html, ev){ tip.innerHTML = html; tip.classList.add("show"); moveTip(ev); }
+function moveTip(ev){
+  const pad = 16, w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = ev.clientX + pad, y = ev.clientY + pad;
+  if(x + w > innerWidth)  x = ev.clientX - w - pad;
+  if(y + h > innerHeight) y = ev.clientY - h - pad;
+  tip.style.left = x+"px"; tip.style.top = y+"px";
+}
+function hideTip(){ tip.classList.remove("show"); }
+
+const svg = el("svg", { viewBox: "0 0 600 460" });
+
+// arrow marker
+const defs = el("defs", {});
+const mk = el("marker", { id:"arrow", viewBox:"0 0 10 10", refX:"9", refY:"5",
+  markerWidth:"7", markerHeight:"7", orient:"auto-start-reverse" });
+mk.appendChild(el("path", { d:"M0,0 L10,5 L0,10 z", fill:"#00f0ff" }));
+defs.appendChild(mk); svg.appendChild(defs);
+
+// edges first (under nodes)
+EDGES.forEach(e => {
+  const p1 = border(e.from, e.to), p2 = border(e.to, e.from);
+  const g = el("g", { class:"edge-group" });
+  const d = `M${p1.x},${p1.y} L${p2.x},${p2.y}`;
+  const vis = el("path", { class:"edge-line", d, stroke:"#00f0ff", "stroke-width":"4",
+    "stroke-opacity":"0.85", "marker-end":"url(#arrow)" });
+  vis.style.color = "#00f0ff";
+  const hit = el("path", { class:"edge-hit", d });
+  const mx = (p1.x+p2.x)/2, my = (p1.y+p2.y)/2;
+  const lbl = el("text", { class:"edge-lbl", x:mx, y:my-6 }); lbl.textContent = e.label;
+  g.appendChild(vis); g.appendChild(hit); g.appendChild(lbl);
+  hit.addEventListener("mousemove", ev => showTip(e.tip, ev));
+  hit.addEventListener("mouseleave", hideTip);
+  svg.appendChild(g);
+});
+
+// nodes
+Object.entries(NODES).forEach(([name, n]) => {
+  const color = LAYER_COLOR[n.layer];
+  const g = el("g", {});
+  const rect = el("rect", { class:"node-shape", x:n.x, y:n.y, width:NW, height:NH,
+    rx:12, fill:color, stroke:"#0d0221", "stroke-width":"2" });
+  rect.style.color = color;
+  const t1 = el("text", { class:"node-label", x:n.x+NW/2, y:n.y+NH/2+1 }); t1.textContent = name;
+  const t2 = el("text", { class:"node-layer", x:n.x+NW/2, y:n.y+NH/2+18 }); t2.textContent = n.layer.toUpperCase();
+  g.appendChild(rect); g.appendChild(t1); g.appendChild(t2);
+  rect.addEventListener("mousemove", ev => showTip(`<b>${name}</b> &nbsp;<span style="color:${color}">[${n.layer}]</span><br>${n.desc}`, ev));
+  rect.addEventListener("mouseleave", hideTip);
+  svg.appendChild(g);
+});
+
+document.getElementById("stage").appendChild(svg);
+</script>
+</body>
+</html>
