@@ -1997,6 +1997,16 @@
       "from": "validity-envelope-mapping",
       "to": "validity-envelope-construction",
       "tip": "strategy \"Subagents\" 段列为本 strategy 编排中直接 dispatch 的 subagent。"
+    },
+    {
+      "from": "evidence-scout",
+      "to": "web-search",
+      "tip": "evidence-scout 的 prompt 第2步 <b>\"Execute searches — use web search and paper lookup\"</b> 的 web 检索入口:应路由到标准 web-search 档(brave_web_search,snippets-only HARD-GATE),而非裸调 MCP。"
+    },
+    {
+      "from": "evidence-scout",
+      "to": "paper-overview",
+      "tip": "evidence-scout 的 prompt 第2步 <b>\"use web search and paper lookup\"</b> 的文献检索入口:应路由到 paper-overview(discover/relevanceSearch landscape 扫描),再按需沿 paper-search→paper-research 阶梯深入,以落实 prompt 要求的 <b>\"prioritize peer-reviewed sources / a Nature paper outranks a preprint\"</b> 质量纪律。"
     }
   ]
 }
