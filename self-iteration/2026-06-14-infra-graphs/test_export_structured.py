@@ -56,3 +56,17 @@ def test_rename_count():
     d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
     renames = [n for n in d["nodes"] if n["update"].startswith("skill rename:")]
     assert len(renames) == 64 + 37, f"rename updates={len(renames)} (want 101)"
+
+
+def test_missing_edges_computed():
+    subprocess.run(["python","compute_missing_edges.py"], cwd=HERE, check=True)
+    mu = json.loads((HERE/"missing-updates.json").read_text(encoding="utf-8"))
+    eu = mu["edge_updates"]
+    # every missing edge endpoint must be a real correct-graph node name
+    d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
+    names = {n["name"] for n in d["nodes"]}
+    for e in eu:
+        assert e["from"] in names and e["to"] in names, f"ghost: {e['from']}->{e['to']}"
+        assert e["update"].startswith("缺失依赖 edge:"), e["update"][:40]
+        assert e["confidence"] == "high"
+    assert len(eu) > 0, "expected non-empty missing-edge set"
