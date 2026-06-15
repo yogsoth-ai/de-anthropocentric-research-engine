@@ -46,7 +46,7 @@ def build(html_path):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--html", default=str(HERE / "all-graphs.html"))
+    ap.add_argument("--html", default=str(HERE.parent / "all-graphs.html"))
     ap.add_argument("--out", default=str(HERE / "refactory_source.json"))
     a = ap.parse_args()
     data = build(a.html)
