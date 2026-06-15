@@ -81,7 +81,7 @@ def canon(pkg, nid, remap):
 
 def build(files, links, a_data_dir):
     net = Network(height="100vh", width="100%", directed=True,
-                  bgcolor="#191a1f", font_color="#eaeaea",
+                  bgcolor="#f8f9fa", font_color="#2b2f36",
                   notebook=False, cdn_resources="in_line")
     net.barnes_hut(gravity=-6000, central_gravity=0.12, spring_length=130,
                    spring_strength=0.04, damping=0.5)
@@ -116,7 +116,7 @@ def build(files, links, a_data_dir):
         hub_edge = (a.startswith("infra/") or b.startswith("infra/")
                     or a.startswith("research-catalog/ref/") or b.startswith("research-catalog/ref/")
                     or a == RESEARCH_CATALOG or b == RESEARCH_CATALOG)
-        net.add_edge(a, b, title=tip, arrows="to", color="#5b6172",
+        net.add_edge(a, b, title=tip, arrows="to", color="#7D8E9E",
                      physics=not hub_edge)
         edgeset.add((a, b)); e_cnt += 1
 
@@ -178,13 +178,29 @@ def build(files, links, a_data_dir):
     net.set_options('{"physics":{"stabilization":{"enabled":true,"iterations":1000,'
                     '"updateInterval":50,"fit":true},"minVelocity":0.75,'
                     '"barnesHut":{"avoidOverlap":0.2}},'
-                    '"nodes":{"font":{"size":16,"strokeWidth":4,"strokeColor":"#191a1f"}},'
-                    '"groups":{"entry":{"color":{"background":"#39ff14","border":"#0fae00",'
-                    '"highlight":{"background":"#7dff5e","border":"#39ff14"},'
-                    '"hover":{"background":"#7dff5e","border":"#39ff14"}}}},'
+                    '"nodes":{"font":{"size":16,"color":"#2b2f36","strokeWidth":4,"strokeColor":"#f8f9fa"}},'
+                    '"groups":{'
+                    '"entry":{"color":{"background":"#ffb7b2","border":"#e8857e",'
+                    '"highlight":{"background":"#ffc9c5","border":"#e8857e"},'
+                    '"hover":{"background":"#ffc9c5","border":"#e8857e"}}},'
+                    '"campaign":{"color":{"background":"#ffdac1","border":"#e6a878",'
+                    '"highlight":{"background":"#ffe7d6","border":"#e6a878"},'
+                    '"hover":{"background":"#ffe7d6","border":"#e6a878"}}},'
+                    '"strategy":{"color":{"background":"#e2f0cb","border":"#a8c878",'
+                    '"highlight":{"background":"#eef6e0","border":"#a8c878"},'
+                    '"hover":{"background":"#eef6e0","border":"#a8c878"}}},'
+                    '"tactic":{"color":{"background":"#b5ead7","border":"#6cc4a1",'
+                    '"highlight":{"background":"#cdf2e4","border":"#6cc4a1"},'
+                    '"hover":{"background":"#cdf2e4","border":"#6cc4a1"}}},'
+                    '"sop":{"color":{"background":"#c7ceea","border":"#8b97cf",'
+                    '"highlight":{"background":"#dadff2","border":"#8b97cf"},'
+                    '"hover":{"background":"#dadff2","border":"#8b97cf"}}},'
+                    '"references":{"color":{"background":"#FFFFBA","border":"#d6c84e",'
+                    '"highlight":{"background":"#ffffd6","border":"#d6c84e"},'
+                    '"hover":{"background":"#ffffd6","border":"#d6c84e"}}}},'
                     '"edges":{"width":1.5,"selectionWidth":2.5,'
                     '"smooth":{"type":"continuous","roundness":0.25},'
-                    '"color":{"highlight":"#00f0ff","hover":"#00f0ff"}},'
+                    '"color":{"highlight":"#8b97cf","hover":"#8b97cf"}},'
                     '"interaction":{"hover":true,"tooltipDelay":80,'
                     '"navigationButtons":false,"keyboard":false}}')
     return net, n_cnt, e_cnt
@@ -199,6 +215,16 @@ def main():
     links = load_links()
     net, nodes, edges = build(files, links, a.data_dir)
     html = rg.strip_chrome(rg.strip_external_cdn(net.generate_html()))
+    # Light-theme patch (combined file only — leaves the shared _CHROME_CSS and the
+    # per-package single graphs on their dark theme). Swap the dark canvas/tooltip
+    # tokens for the pastel palette: #f8f9fa background, dark tooltip -> light card.
+    html = html.replace("#191a1f", "#f8f9fa")          # canvas + card + body bg
+    html = (html
+            .replace("background:rgba(13,13,18,0.97)", "background:rgba(255,255,255,0.98)")
+            .replace("color:#e8eaf2", "color:#2b2f36")          # tooltip text
+            .replace("border:1px solid #00f0ff", "border:1px solid #8b97cf")  # tooltip border
+            .replace("#dare-tip b { color:#00f0ff; }", "#dare-tip b { color:#5b6aa8; }")
+            .replace("border-top:1px solid #2c2f3a", "border-top:1px solid #d4d8df"))
     # Freeze fallback: once the solver reports stabilization done, turn physics
     # off so the canvas is guaranteed to come to rest even if residual jitter
     # remains. Dragging a node still works; it just won't re-simulate the world.
