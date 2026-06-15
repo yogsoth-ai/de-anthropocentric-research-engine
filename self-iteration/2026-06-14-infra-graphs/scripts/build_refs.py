@@ -5,8 +5,8 @@ import json, re, argparse
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE / "data"
-CATALOG = HERE.parent.parent / "skills" / "research-catalog"
+DATA = HERE.parent / "data"
+CATALOG = HERE.parent.parent.parent / "skills" / "research-catalog"
 SKILL_INDEX = CATALOG / "skill-index.md"
 REF_DIR = CATALOG / "references"
 

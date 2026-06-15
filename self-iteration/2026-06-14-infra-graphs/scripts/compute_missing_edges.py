@@ -23,7 +23,7 @@ import json, re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-EMP = HERE.parent / "2026-06-04-empirical-floor" / "data" / "forward_graph.json"
+EMP = HERE.parent.parent / "2026-06-04-empirical-floor" / "data" / "forward_graph.json"
 REF_PREFIX = "ref/"
 SPAWN = "spawn-agent"
 CTX = {"context-init", "context-checkpoint"}

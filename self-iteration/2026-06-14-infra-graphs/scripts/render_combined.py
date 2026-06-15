@@ -32,7 +32,7 @@ import argparse, json, importlib.util
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-_RG = HERE / "repo-dependency-graph" / "scripts" / "render_graph.py"
+_RG = HERE.parent / "repo-dependency-graph" / "scripts" / "render_graph.py"
 _spec = importlib.util.spec_from_file_location("rg", _RG)
 rg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(rg)

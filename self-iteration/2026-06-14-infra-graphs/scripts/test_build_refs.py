@@ -24,7 +24,7 @@ def test_parse_descriptions_missing_source_is_empty():
 
 def test_rows_for_package_count_matches_json():
     for pkg in NINE:
-        nodes = json.loads((HERE/"data"/f"{pkg}.json").read_text(encoding="utf-8"))["nodes"]
+        nodes = json.loads((HERE.parent/"data"/f"{pkg}.json").read_text(encoding="utf-8"))["nodes"]
         rows = br.rows_for_package(pkg)
         assert len(rows) == len(nodes), f"{pkg}: {len(rows)} != {len(nodes)}"
 
