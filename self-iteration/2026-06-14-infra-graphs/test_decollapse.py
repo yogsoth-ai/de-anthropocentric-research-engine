@@ -45,3 +45,29 @@ def test_superconnected_edges_physics_false():
     for e in edges:
         if e["from"] in SC or e["to"] in SC:
             assert e.get("physics") is False, f"physics not false: {e['from']}->{e['to']}"
+
+def test_37_import_edges_present():
+    _, _, edges = _render()
+    eset = {(e["from"], e["to"]) for e in edges}
+    for pkg, w, tgt in _wrappers():
+        assert (f"{pkg}/{pkg}-{w}", tgt) in eset, f"missing import edge {pkg}-{w} -> {tgt}"
+
+def test_import_edge_targets_are_real_infra_skills():
+    valid = {"literature-engine/literature-overview","literature-engine/literature-search",
+             "literature-engine/literature-research","web-browsing/web-search",
+             "web-browsing/web-research"}
+    for _pkg, _w, tgt in _wrappers():
+        assert tgt in valid, f"unexpected import target {tgt}"
+
+def test_ref_structure_intact():
+    _, nodes, edges = _render()
+    nids = {n["id"] for n in nodes}
+    for p in ["north-star-crystallization","knowledge-acquisition","deep-insight",
+              "hypothesis-formation","creative-ideation","convergence","stress-test",
+              "experiment-execution","knowledge-structuring"]:
+        assert f"research-catalog/ref/{p}" in nids, p
+
+def test_edge_count_locked():
+    out, _, edges = _render()
+    EXPECT_EDGES = 3376   # observed from render_combined.py (3339 + 37 import edges)
+    assert len(edges) == EXPECT_EDGES, f"edges={len(edges)}, expected {EXPECT_EDGES}"

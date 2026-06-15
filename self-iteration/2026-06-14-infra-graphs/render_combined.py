@@ -164,6 +164,14 @@ def build(files, links, a_data_dir):
                     if cc in added:
                         link(cc, CTX_INIT, "campaign 启动时调 <b>context-init</b>（加载/创建 campaign context file）")
                         link(cc, CTX_CKPT, "每个 strategy 完成后调 <b>context-checkpoint</b>（硬性约束）")
+    # --- import-SOP edges: each renamed wrapper -> the real infra skill ---
+    # (de-collapse replacement: the wrapper is now its own node; this edge is the
+    # import-forward the collapse used to imply. Target nodes already exist because
+    # the 4 infra packages are processed first.)
+    for key, nid in rename.items():
+        tgt = target[key]
+        if nid in added and tgt in added:
+            link(nid, tgt, f"import-SOP 转发:<b>{nid.split('/')[-1]}</b> 调用真实 skill <b>{tgt}</b>")
     # --- research-catalog ref structure (U4) ---
     # research-catalog already added (engine-core). Add 9 ref nodes + fan-out.
     for pkg in NINE_PKGS:
