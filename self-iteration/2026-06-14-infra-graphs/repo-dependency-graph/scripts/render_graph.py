@@ -22,13 +22,14 @@ import argparse, json
 from pathlib import Path
 
 LAYER_COLORS = {
+    "entry":      "#39ff14",
     "campaign":   "#ff3864",
     "strategy":   "#00f0ff",
     "tactic":     "#f9c80e",
     "sop":        "#9d7bff",
     "references": "#5a6988",
 }
-LAYER_SIZE = {"campaign": 40, "strategy": 30, "tactic": 22, "sop": 16, "references": 12}
+LAYER_SIZE = {"entry": 48, "campaign": 40, "strategy": 30, "tactic": 22, "sop": 16, "references": 12}
 
 # Layer hierarchy used to sanity-check edges. use-edge legality:
 #   campaign -> {strategy, tactic, sop, references}
