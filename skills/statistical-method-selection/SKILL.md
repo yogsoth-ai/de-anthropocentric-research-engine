@@ -46,3 +46,16 @@ dependencies:
 - Are multiple comparison corrections applied when testing multiple hypotheses?
 - Is the effect size reported alongside p-values?
 - Is the significance threshold pre-registered (not chosen post-hoc)?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

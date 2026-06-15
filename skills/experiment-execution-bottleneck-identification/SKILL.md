@@ -65,3 +65,25 @@ Combined with Current Reality Tree (CRT) construction:
 | Subagent calls | ≤6 | 3 SOPs + synthesis |
 | Iterations | ≤2 | Re-trace if tree is incomplete |
 | Output size | ≤3000 tokens | Compressed tree + recommendation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| constraint-tree-building | Build Current Reality Tree from UDEs through causal chains to core conflicts |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-chain-tracing | Trace UDE to root cause via IF...THEN...BECAUSE logic chains |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| undesirable-effect-listing | List current Undesirable Effects (UDEs) — observable symptoms of system underperformance |
+
+<!-- END available-tables (generated) -->

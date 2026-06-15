@@ -59,3 +59,24 @@ Obstacles identified here feed back into the critical path:
 - Each IO becomes an activity in the network
 - IO dependencies become edges in the activity graph
 - This ensures the plan accounts for real-world blockers, not just ideal-path tasks
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| intermediate-objective-design | Design intermediate objectives to overcome each identified obstacle |
+| obstacle-identification | TOC Prerequisite Tree — list obstacles preventing direct achievement of the objective |
+
+<!-- END available-tables (generated) -->

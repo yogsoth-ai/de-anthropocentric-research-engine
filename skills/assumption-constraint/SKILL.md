@@ -62,3 +62,24 @@ Assumption categories:
 | Subagent calls | ≤5 | 2 SOPs + synthesis |
 | Iterations | ≤2 | Re-rank if new assumptions surface |
 | Output size | ≤3000 tokens | Ranked table + validation plan |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| resource-quantification | Quantify resource demand vs supply vs gap for each resource category |
+
+<!-- END available-tables (generated) -->

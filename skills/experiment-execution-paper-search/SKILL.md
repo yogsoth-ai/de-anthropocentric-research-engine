@@ -27,3 +27,15 @@ Available to all campaigns for quickly obtaining AI-generated paper summaries (m
 
 - alphaxiv: `get_paper_content`
 - semantic-scholar: `paper`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-search | Medium-depth literature search — read AI-summarized reports for every paper analyzed |
+
+<!-- END available-tables (generated) -->

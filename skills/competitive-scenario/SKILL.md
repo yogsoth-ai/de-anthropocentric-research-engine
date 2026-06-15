@@ -74,3 +74,28 @@ Key principles:
 | Impact assessment | 10K × N | Per competitive scenario |
 | Robustness scoring | 8K | Competitive positioning |
 | Synthesis | 12K | Strategy recommendations |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| competitive-move-prediction | Predict competitor progress, publications, and strategic moves |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+| timeline-projection | Extrapolate research landscape timelines using trend analysis and milestone projection |
+
+<!-- END available-tables (generated) -->

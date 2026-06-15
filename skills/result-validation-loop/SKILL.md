@@ -105,3 +105,18 @@ Before producing final synthesis:
 - [ ] At least 3 reproducibility re-runs completed
 - [ ] Limitations are explicitly stated
 - [ ] Next steps are actionable
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| execution-synthesis | Synthesize complete execution report from all results, tests, and reproducibility data |
+| reproducibility-verification | Verify result reproducibility via re-runs with different seeds and ICC comparison |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+| statistical-testing | Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results |
+
+<!-- END available-tables (generated) -->

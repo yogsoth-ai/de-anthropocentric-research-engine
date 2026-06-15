@@ -55,3 +55,16 @@ dependencies:
 - [ ] Pivot triggers are observable and measurable
 - [ ] Contingency actions are specific and feasible
 - [ ] Results distinguish between "adapt" and "abandon" thresholds
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+
+<!-- END available-tables (generated) -->

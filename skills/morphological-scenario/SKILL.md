@@ -85,3 +85,31 @@ Key principles:
 | Impact assessment | 10K × N | Per scenario |
 | Robustness scoring | 8K | Aggregation |
 | Synthesis | 12K | Final compilation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| cross-consistency-filtering | Orchestrates pairwise consistency evaluation and narrative construction to filter the morphological field |
+| parameter-space-construction | Orchestrates driver identification and parameter enumeration to build the complete morphological field |
+| strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| experiment-execution-consistency-pair-evaluation | Pairwise consistency assessment using Cross-Consistency Assessment (CCA) matrix |
+| parameter-enumeration | Enumerate possible values for each uncertainty driver using MECE principles |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+| scenario-narrative-construction | Build rich narratives for surviving morphological configurations using Shell method |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+
+<!-- END available-tables (generated) -->

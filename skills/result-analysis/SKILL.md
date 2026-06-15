@@ -71,3 +71,25 @@ Results feed back into:
 - Wiki vault (claims with evidence)
 - Future experiment design (what worked, what didn't)
 - North star progress tracking
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| result-validation-loop | Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| execution-synthesis | Synthesize complete execution report from all results, tests, and reproducibility data |
+| reproducibility-verification | Verify result reproducibility via re-runs with different seeds and ICC comparison |
+| statistical-testing | Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results |
+
+<!-- END available-tables (generated) -->

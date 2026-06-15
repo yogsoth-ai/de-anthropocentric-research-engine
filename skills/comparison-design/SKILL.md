@@ -55,3 +55,28 @@ dependencies:
 | Standard | 2-3 baselines | 2-3 | 5 | 30-45 |
 | Comprehensive | 4+ baselines | 3-5 | 5-10 | 100+ |
 | Publication-ready | All relevant | 5+ | 10+ | 200+ |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| reproducibility-protocol | Ensure experiment reproducibility through systematic environment and seed control |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| environment-specification | SOP: define complete experiment environment specification |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+| seed-protocol-design | SOP: design random seed strategy for reproducibility |
+
+<!-- END available-tables (generated) -->

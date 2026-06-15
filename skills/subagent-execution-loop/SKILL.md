@@ -113,3 +113,17 @@ END
 - Validation failure: Provide failure reason in retry prompt
 - Deadlock: Analyze dependency graph for unresolvable cycles
 - Budget exhaustion: Produce partial report with remaining task list
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->

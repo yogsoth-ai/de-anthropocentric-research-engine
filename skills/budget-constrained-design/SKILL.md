@@ -52,3 +52,17 @@ dependencies:
 - Is there a contingency plan if budget is cut mid-experiment?
 - Are early stopping criteria pre-defined (not post-hoc)?
 - Is the design balanced despite budget constraints?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+
+<!-- END available-tables (generated) -->

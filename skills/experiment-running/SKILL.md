@@ -78,3 +78,26 @@ END
 - **Retry policy**: Max 2 retries per task, then mark BLOCKED
 - **Parallel execution**: Independent tasks can run in parallel (respect resource limits)
 - **Abort condition**: If >50% of critical path tasks are BLOCKED, abort and report
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| checkpoint-and-recover | Checkpoint state before risky operations, detect anomalies, and recover gracefully |
+| subagent-execution-loop | Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->

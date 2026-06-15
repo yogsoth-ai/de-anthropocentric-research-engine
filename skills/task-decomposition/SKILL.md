@@ -62,3 +62,18 @@ END
 - If dependency-sequencing finds cycles: present cycle to user, ask for resolution
 - If duration-estimation lacks data: use conservative estimates (pessimistic × 1.5)
 - If plan-formatting produces placeholders: iterate with specific missing information
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| activity-listing | Enumerate all implementation activities from an experiment design |
+| dependency-sequencing | Determine task dependencies and execution order |
+| duration-estimation | Three-point PERT estimation for implementation activities |
+| plan-formatting | Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions |
+
+<!-- END available-tables (generated) -->

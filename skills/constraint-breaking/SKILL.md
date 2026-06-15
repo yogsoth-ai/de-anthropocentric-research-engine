@@ -54,3 +54,17 @@ dependencies:
 - **Success criterion**: At least one injection that resolves the conflict with ≤2 manageable side effects
 - **Failure criterion**: After 3 injection attempts, none resolve cleanly → flag as hard constraint
 - **Escalation**: If the constraint is a paradigm constraint (belief system), flag for human decision
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| future-reality-projection | Project solution effects using Future Reality Tree logic |
+
+<!-- END available-tables (generated) -->

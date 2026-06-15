@@ -52,3 +52,16 @@ dependencies:
 - [ ] Surviving configs span the parameter space (not clustered)
 - [ ] Each narrative is internally consistent with its configuration
 - [ ] Narratives are qualitatively distinct from each other
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| experiment-execution-consistency-pair-evaluation | Pairwise consistency assessment using Cross-Consistency Assessment (CCA) matrix |
+| scenario-narrative-construction | Build rich narratives for surviving morphological configurations using Shell method |
+
+<!-- END available-tables (generated) -->

@@ -85,3 +85,36 @@ A successful campaign produces at minimum:
 - Robustness score for the research approach (0-100)
 - At least 1 identified pivot trigger with threshold condition
 - Contingency action for each scenario where robustness < 50
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| competitive-scenario | What will competitors do? — Competitive method progress prediction and time window analysis |
+| morphological-scenario | What are all possible combinations? — Zwicky Box construction with CCA consistency filtering for systematic scenario enumeration |
+| narrative-scenario | What is the story of each future? — Shell method narrative construction for rich qualitative scenario understanding |
+| stress-scenario | What is the worst case? — Extreme condition construction and failure mode enumeration for risk preparedness |
+| temporal-scenario | How does it evolve over time? — Short/medium/long-term timeline projection with technology maturity curves |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| experiment-execution-paper-overview | Import SOP: paper landscape scan (from literature-engine skill) |
+| experiment-execution-paper-research | Import SOP: paper full-text reading (from literature-engine skill) |
+| experiment-execution-paper-search | Import SOP: paper AI summary reading (from literature-engine skill) |
+| experiment-execution-quality-gate-check | Shared SOP: verify quality gate criteria are met before proceeding |
+| experiment-execution-saturation-detection | Shared SOP: detect information saturation — know when to stop searching/analyzing |
+| experiment-execution-web-research | Import SOP: deep full-page content analysis (from web-browsing skill) |
+| experiment-execution-web-search | Import SOP: quick web scan discovery (from web-browsing skill) |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+
+<!-- END available-tables (generated) -->

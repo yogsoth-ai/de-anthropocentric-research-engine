@@ -56,3 +56,28 @@ dependencies:
 | Adversarial sweep | 1 attack | 5-10 epsilon | 5-10 | Adversarial robustness curve |
 | Comprehensive | 5+ types | 3-5 each | 50+ | Publication-ready robustness |
 | Cross-domain | N domains | 1 | N | Transfer evaluation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

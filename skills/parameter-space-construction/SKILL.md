@@ -50,3 +50,16 @@ dependencies:
 - [ ] Values within each driver are truly MECE
 - [ ] Total space is computationally tractable for CCA
 - [ ] Parameter space covers the planning horizon adequately
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| parameter-enumeration | Enumerate possible values for each uncertainty driver using MECE principles |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+
+<!-- END available-tables (generated) -->

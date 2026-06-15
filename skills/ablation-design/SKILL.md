@@ -49,3 +49,26 @@ dependencies:
 | Combinatorial (selected) | 4-6 | ~2N | Suspected interactions between components |
 | Combinatorial (full) | 3-4 | 2^N | Small systems, need complete picture |
 | Conditional | 3-6 | N * conditions | Context-dependent contributions |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ablation-component-mapping | Map system architecture to ablatable units for ablation studies |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

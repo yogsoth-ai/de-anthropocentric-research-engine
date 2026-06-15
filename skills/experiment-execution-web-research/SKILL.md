@@ -27,3 +27,15 @@ Available to all campaigns for in-depth reading and analysis of specific web pag
 
 - apify: `rag-web-browser`
 - brave-search: `brave_llm_context`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
+
+<!-- END available-tables (generated) -->

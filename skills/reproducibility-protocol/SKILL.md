@@ -42,3 +42,16 @@ dependencies:
 - Is the order of data loading controlled?
 - Are model initialization seeds separate from data shuffling seeds?
 - Is there a plan for cross-machine reproducibility testing?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| environment-specification | SOP: define complete experiment environment specification |
+| seed-protocol-design | SOP: design random seed strategy for reproducibility |
+
+<!-- END available-tables (generated) -->

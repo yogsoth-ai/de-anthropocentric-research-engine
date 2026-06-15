@@ -67,3 +67,27 @@ Key principles:
 | Impact assessment | 12K × N | Deeper analysis for stress |
 | Robustness scoring | 10K | Failure threshold mapping |
 | Synthesis | 12K | Risk mitigation report |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+| worst-case-construction | Construct extreme but plausible worst-case scenarios for stress testing |
+
+<!-- END available-tables (generated) -->

@@ -63,3 +63,26 @@ activity-listing
 - If critical path is too long: look for fast-tracking (parallel execution) or crashing (more resources)
 - If resource conflicts exist: prioritize critical path tasks over float tasks
 - Buffer size: typically 50% of critical chain duration (Goldratt's recommendation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| activity-listing | Enumerate all implementation activities from an experiment design |
+| critical-path-calculation | CPM forward/backward pass with float calculation to identify the critical path |
+| dependency-sequencing | Determine task dependencies and execution order |
+| duration-estimation | Three-point PERT estimation for implementation activities |
+
+<!-- END available-tables (generated) -->

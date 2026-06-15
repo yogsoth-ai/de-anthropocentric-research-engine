@@ -67,3 +67,25 @@ Resource categories:
 | Subagent calls | ≤6 | 3 SOPs + synthesis |
 | Iterations | ≤2 | Re-quantify if estimates change |
 | Output size | ≤3000 tokens | Gap table + recommendation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| buffer-sizing | Calculate project, feeding, and resource buffers — shared with implementation-planning |
+| critical-chain-identification | Identify the critical chain — longest path considering resource contention |
+| resource-quantification | Quantify resource demand vs supply vs gap for each resource category |
+
+<!-- END available-tables (generated) -->

@@ -70,3 +70,25 @@ Evaporating Cloud structure:
 | Subagent calls | ≤8 | 3 SOPs + injection generation + validation |
 | Iterations | ≤3 | May need multiple injection attempts |
 | Output size | ≤3000 tokens | EC + injection + FRT summary |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| constraint-breaking | Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| future-reality-projection | Project solution effects using Future Reality Tree logic |
+
+<!-- END available-tables (generated) -->

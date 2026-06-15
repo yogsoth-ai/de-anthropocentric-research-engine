@@ -57,3 +57,23 @@ A valid plan has:
 - [ ] Buffer tasks (non-critical) are identified with float values
 - [ ] No TBD/TODO/placeholder text anywhere
 - [ ] Estimated duration per task (from PERT)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| plan-formatting | Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions |
+
+<!-- END available-tables (generated) -->

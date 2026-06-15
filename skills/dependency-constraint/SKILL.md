@@ -64,3 +64,24 @@ Dependency categories:
 | Subagent calls | ≤5 | 2 SOPs + synthesis |
 | Iterations | ≤2 | Re-build if tasks change |
 | Output size | ≤3000 tokens | Graph summary + critical chain |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| critical-chain-identification | Identify the critical chain — longest path considering resource contention |
+| dependency-graph-construction | Build task dependency graph with predecessor/successor relationships |
+
+<!-- END available-tables (generated) -->

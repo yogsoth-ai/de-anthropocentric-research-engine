@@ -19,3 +19,15 @@ dependencies:
 Build a rich, internally consistent narrative for a given parameter configuration. The narrative should tell a coherent story of how this future comes to be, what it looks like, and what it means for the research approach.
 
 Subagent — spawned via subagent-spawning/spawn-agent skill.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

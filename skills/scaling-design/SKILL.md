@@ -54,3 +54,28 @@ dependencies:
 | Model scaling | 4-8 | 2-3 | 8-24 | High (different model sizes) |
 | Compute-optimal | 6-10 per iso-FLOP | 1-2 | 12-20 | Very high |
 | Inference scaling | 5-10 | 5 | 25-50 | Low (inference only) |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| budget-constrained-design | Optimize experiment design under compute and time budget constraints |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

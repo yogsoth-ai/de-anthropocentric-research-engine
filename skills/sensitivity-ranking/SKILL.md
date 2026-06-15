@@ -43,3 +43,17 @@ dependencies:
 - **When to skip**: If only 1-2 constraints exist, ranking is trivial
 - **Threshold**: Constraints with sensitivity score >2× the median are "binding"
 - **Output**: Ordered list with scores, used by parent strategy to focus effort
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| critical-chain-identification | Identify the critical chain — longest path considering resource contention |
+| resource-quantification | Quantify resource demand vs supply vs gap for each resource category |
+
+<!-- END available-tables (generated) -->

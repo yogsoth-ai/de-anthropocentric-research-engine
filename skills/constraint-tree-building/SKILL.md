@@ -41,3 +41,17 @@ dependencies:
 - **When to stop**: All UDEs connect to at most 3 root causes, and root causes are expressed as constraints or conflicts
 - **When to escalate**: If >10 UDEs found, prioritize top-5 by severity before tracing
 - **Quality gate**: Every causal link must have a BECAUSE clause (the underlying assumption)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-chain-tracing | Trace UDE to root cause via IF...THEN...BECAUSE logic chains |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| undesirable-effect-listing | List current Undesirable Effects (UDEs) — observable symptoms of system underperformance |
+
+<!-- END available-tables (generated) -->

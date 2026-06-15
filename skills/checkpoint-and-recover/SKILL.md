@@ -108,3 +108,16 @@ A checkpoint captures:
 2. **Retry with modification**: Same task, adjusted parameters (for NEEDS_CONTEXT)
 3. **Rollback and skip**: Restore state, mark task BLOCKED, continue
 4. **Rollback and escalate**: Restore state, report to orchestrator for human decision
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->
