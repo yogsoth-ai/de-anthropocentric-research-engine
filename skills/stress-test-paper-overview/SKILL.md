@@ -30,3 +30,17 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 ## Import Source
 
 `literature-engine` repo → `skills/paper-overview/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-overview | Quick landscape scan — discover papers on a topic without full-text reading |
+| stress-test-paper-research | Paper full text access via alphaxiv answer_pdf_queries or get_paper_content(fullText=true). Import of literature-engine/paper-research skill. Raw extracted text for precise claims. |
+| stress-test-paper-search | Paper AI summary report via alphaxiv get_paper_content. Import of literature-engine/paper-search skill. Structured AI-generated intermediate report. |
+
+<!-- END available-tables (generated) -->

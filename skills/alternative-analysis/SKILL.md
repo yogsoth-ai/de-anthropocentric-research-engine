@@ -58,3 +58,28 @@ threat-surface-mapping → [identify variable dimensions]
 - attack-vector-generation (discriminating test design)
 - probe-execution (alternative testing)
 - finding-aggregation (comparative synthesis)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| adversarial-roleplay | Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation. |
+| structured-attack-campaign | Tactic: Full attack lifecycle — threat surface enumeration, attack vector generation, systematic probing, and finding aggregation across all surfaces. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternative-futures | Generate 2-4 divergent scenarios from the same evidence base, each representing a plausible alternative to the artifact's conclusions. |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+| threat-surface-mapping | Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions. |
+
+<!-- END available-tables (generated) -->

@@ -44,3 +44,19 @@ Attack assumptions at their roots and trace how failures propagate through depen
 - Cascade found that invalidates >50% of conclusions (critical finding)
 - All assumptions survive attack (artifact resilient at assumption level)
 - Budget exhausted (report partial coverage)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assumption-cascade-tracer | Build assumption dependency graphs and trace cascade failures when root assumptions are invalidated. |
+| devils-advocacy | Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| key-assumptions-check | Military ACT: systematically enumerate all assumptions, classify by type, and evaluate evidence strength supporting each. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+
+<!-- END available-tables (generated) -->

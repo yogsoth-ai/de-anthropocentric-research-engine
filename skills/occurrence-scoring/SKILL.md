@@ -31,3 +31,15 @@ Occurrence estimation requires probabilistic reasoning isolated from severity an
 
 - **scores**: List of (failure_mode_id, occurrence_score, justification)
 - **uncertainty_flags**: Modes where occurrence is highly uncertain
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

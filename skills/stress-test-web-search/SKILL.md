@@ -30,3 +30,17 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 ## Import Source
 
 `web-browsing` repo → `skills/web-search/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| stress-test-paper-search | Paper AI summary report via alphaxiv get_paper_content. Import of literature-engine/paper-search skill. Structured AI-generated intermediate report. |
+| stress-test-web-research | Deep web full-text retrieval via Apify RAG browser. Import of web-browsing/web-research skill. Full page content for substantive analysis. |
+| web-search | Quick web scanning — discover pages, get snippets, find URLs. For orientation only, not substantive analysis. |
+
+<!-- END available-tables (generated) -->

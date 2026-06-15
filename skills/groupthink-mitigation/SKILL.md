@@ -58,3 +58,28 @@ persona-construction → [build 10th Man dissenter]
 - probe-execution (dissent testing)
 - key-assumptions-check (consensus assumption audit)
 - finding-aggregation (dissent documentation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| adversarial-roleplay | Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation. |
+| assumption-cascade | Tactic: Surface assumptions, sort by dependency, attack root assumptions first, then trace cascade failures through the dependency graph. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| devils-advocacy | Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| key-assumptions-check | Military ACT: systematically enumerate all assumptions, classify by type, and evaluate evidence strength supporting each. |
+| persona-construction | Build a detailed adversarial persona with background, motivation, expertise, blind spots, and preferred attack patterns. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+
+<!-- END available-tables (generated) -->

@@ -45,3 +45,18 @@ Deploy constructed hostile personas to attack the artifact from distinct motivat
 - Convergent vulnerability found by 2+ personas (high-confidence finding)
 - Single persona finds critical vulnerability (early report)
 - Budget exhausted (report per-persona findings separately)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| persona-construction | Build a detailed adversarial persona with background, motivation, expertise, blind spots, and preferred attack patterns. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+
+<!-- END available-tables (generated) -->

@@ -49,3 +49,26 @@ premortem-facilitation → failure-mode-extraction
 - premortem-facilitation (execute Klein protocol)
 - failure-mode-extraction (structure scenarios)
 - severity-scoring (rapid severity screen)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| failure-chain-tracing | Tactic: Trace upstream causes and downstream effects of each failure mode. Builds multi-level cause-mode-effect chains for systemic understanding. |
+| premortem-to-fmea-pipeline | Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA analysis. Bridges fast intuitive generation with systematic structured analysis. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| failure-mode-extraction | Extract structured failure mode list from raw scenarios or artifact analysis. Produces standardized failure mode records. |
+| premortem-facilitation | Execute Klein pre-mortem protocol — assume failure has occurred, generate plausible failure scenarios through prospective hindsight. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

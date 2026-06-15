@@ -51,3 +51,27 @@ dependencies:
 - extreme-value-generation
 - breakpoint-detection
 - validity-envelope-construction
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| boundary-probing | Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope. |
+| contradiction-derivation | Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| breakpoint-detection | Test a claim at extreme parameter values and detect the precise point where it breaks down. |
+| extreme-value-generation | Generate boundary and extreme test values for a given parameter dimension to stress-test claims. |
+| parameter-space-mapping | Identify all parameter dimensions along which a claim's validity might vary. |
+| stress-test-validity-envelope-construction | Synthesize breakpoints across dimensions into a coherent validity envelope for a claim. |
+
+<!-- END available-tables (generated) -->

@@ -78,3 +78,42 @@ Each subagent operates in isolated context. The debate-architect designs structu
 ## Output
 
 Produces `DebateVerdict` containing: survival assessment, key vulnerabilities, confidence score, debate transcript summary, and recommended mitigations.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| adversarial-escalation | Strategy: Progressive pressure escalation — starts with surface-level challenges and escalates to fundamental assumption attacks based on defender confidence decay. |
+| courtroom-structured | Strategy: Legal adversarial structure — prosecution presents case, defense responds, evidence is cross-examined, judge delivers verdict. Emphasizes evidence quality and procedural rigor. |
+| critic-defender-judge | Strategy: Classic triangular debate — Critic attacks, Defender responds, Judge adjudicates. Based on Irving AI Safety via Debate with Toulmin argumentation structure. |
+| multi-perspective-panel | Strategy: Multi-stakeholder review panel — diverse expert perspectives evaluate artifact simultaneously, then synthesize through structured deliberation. |
+| society-of-mind | Strategy: Multi-agent collaborative debate based on Du et al. Society of Mind. Agents share perspectives iteratively until convergence or divergence is detected. |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| evidence-tournament | Tactic: Evidence gathering, cross-examination, and quality judgment. External evidence is collected, presented, challenged, and scored for relevance and reliability. |
+| stress-test-dialectical-escalation | Tactic: Progressive debate escalation based on confidence thresholds. Each round increases attack sophistication until defender collapses or proves resilient. |
+| stress-test-perspective-rotation | Tactic: Sequential perspective evaluation with divergence aggregation. Each agent evaluates from a distinct viewpoint, then disagreements are surfaced and resolved. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| debate-transcript-analysis | Extracts key turning points, patterns, and insights from completed debate transcripts. Produces structured summary for verdict synthesis. |
+| stress-test-saturation-detection | Determines whether validation has reached saturation — no new weaknesses or failure modes being discovered. Used by all 5 campaigns as termination signal. |
+| verdict-synthesis | Synthesizes findings from a completed campaign into typed verdict reports. Produces DebateVerdict, RedTeamReport, FailureAnticipationReport, CounterfactualMap, or AdversarialStressReport depending on campaign. Also supports cross-campaign StressTestSummary. |
+| weakness-classification | Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic) with structured justification and exploitability assessment. |
+
+<!-- END available-tables (generated) -->

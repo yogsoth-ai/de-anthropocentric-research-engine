@@ -62,3 +62,29 @@ factor-enumeration → [rank by suspected importance]
 - fragility-measurement (degradation scoring)
 - load-bearing-identification (ranking)
 - flip-point-detection (dose-response, optional)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| minimal-change-search | Tactic: Generate candidate changes, detect flip-points where conclusion reverses, measure fragility as distance to nearest flip. |
+| systematic-factor-ablation | Tactic: List all factors, remove one at a time, assess conclusion stability, rank factors by load-bearing importance. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| counterfactual-scenario-construction | Construct precise, internally consistent counterfactual scenarios where specified factors are altered, then reason about the resulting conclusion. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| flip-point-detection | Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false. |
+| fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| single-factor-removal | Remove one specified factor from the artifact's support structure and reason about how the conclusion changes. |
+
+<!-- END available-tables (generated) -->

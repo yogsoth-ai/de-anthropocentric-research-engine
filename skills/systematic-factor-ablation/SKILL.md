@@ -47,3 +47,18 @@ Ablation methodology: remove factors individually and measure conclusion degrada
 - All factors within budget tested
 - Early termination if first load-bearing factor found and budget is S
 - Saturation: consecutive factors all score below 0.2
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| single-factor-removal | Remove one specified factor from the artifact's support structure and reason about how the conclusion changes. |
+
+<!-- END available-tables (generated) -->

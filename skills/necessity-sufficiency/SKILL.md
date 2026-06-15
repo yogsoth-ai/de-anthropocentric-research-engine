@@ -67,3 +67,29 @@ causal-claim-extraction → factor-enumeration
 - sufficiency-evaluation (PS scoring)
 - single-factor-removal (evidence generation)
 - load-bearing-identification (classification)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| causal-necessity-testing | Tactic: Extract causal claims, evaluate probability of necessity (PN) and sufficiency (PS) for each, classify into necessity-sufficiency quadrants. |
+| systematic-factor-ablation | Tactic: List all factors, remove one at a time, assess conclusion stability, rank factors by load-bearing importance. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| necessity-evaluation | Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent? |
+| single-factor-removal | Remove one specified factor from the artifact's support structure and reason about how the conclusion changes. |
+| sufficiency-evaluation | Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion? |
+
+<!-- END available-tables (generated) -->

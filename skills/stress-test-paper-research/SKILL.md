@@ -29,3 +29,15 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 ## Import Source
 
 `literature-engine` repo → `skills/paper-research/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
+
+<!-- END available-tables (generated) -->

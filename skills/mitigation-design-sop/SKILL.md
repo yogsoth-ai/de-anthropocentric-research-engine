@@ -33,3 +33,15 @@ Mitigation design requires creative problem-solving focused on solutions, isolat
 - **mitigations**: For each H-priority mode: prevention, detection, and response measures
 - **implementation_notes**: Feasibility and resource requirements
 - **residual_risk**: Expected risk remaining after mitigation
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

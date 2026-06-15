@@ -41,3 +41,17 @@ dependencies:
 - Claim refined to survive all counterexamples (success)
 - Claim collapses entirely under counterexamples (falsified)
 - Budget exhausted (report current state)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-refinement | Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation). |
+| counterexample-generation | Systematically generate counterexamples (monsters) to a given claim using diverse heuristic strategies. |
+| monster-barring-attempt | Attempt to exclude a counterexample as illegitimate by tightening definitions or preconditions (Lakatos monster-barring). |
+
+<!-- END available-tables (generated) -->

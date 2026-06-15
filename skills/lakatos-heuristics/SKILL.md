@@ -50,3 +50,27 @@ dependencies:
 - monster-barring-attempt
 - claim-refinement
 - contradiction-detection
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| contradiction-derivation | Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges. |
+| counterexample-heuristics | Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method). |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-refinement | Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation). |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| counterexample-generation | Systematically generate counterexamples (monsters) to a given claim using diverse heuristic strategies. |
+| monster-barring-attempt | Attempt to exclude a counterexample as illegitimate by tightening definitions or preconditions (Lakatos monster-barring). |
+
+<!-- END available-tables (generated) -->

@@ -80,3 +80,42 @@ dependencies:
 ## Output
 
 Produces `AdversarialStressReport` containing: identified breakpoints, validity envelope, surviving refined claims, and confidence assessment.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| assumption-negation | Classic reductio ad absurdum: negate the core claim, derive logical consequences, seek contradiction or absurdity. |
+| boundary-enumeration | Systematic Boundary Value Analysis: identify parameter boundaries, test at and beyond limits, detect breakpoints. |
+| critical-case-design | Flyvbjerg critical case methodology: select most-likely and least-likely cases to maximize inferential power. |
+| lakatos-heuristics | Proofs and Refutations method: generate counterexamples, attempt monster-barring, incorporate surviving counterexamples as lemma refinements. |
+| stress-test-validity-envelope-mapping | Map the complete validity envelope of a claim across all relevant dimensions, synthesizing breakpoints into a bounded region. |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| boundary-probing | Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope. |
+| contradiction-derivation | Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges. |
+| counterexample-heuristics | Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method). |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| mitigation-proposal | Proposes concrete mitigation strategies for identified weaknesses. Generates prevention, detection, and response measures with feasibility assessment. |
+| stress-test-saturation-detection | Determines whether validation has reached saturation — no new weaknesses or failure modes being discovered. Used by all 5 campaigns as termination signal. |
+| verdict-synthesis | Synthesizes findings from a completed campaign into typed verdict reports. Produces DebateVerdict, RedTeamReport, FailureAnticipationReport, CounterfactualMap, or AdversarialStressReport depending on campaign. Also supports cross-campaign StressTestSummary. |
+| weakness-classification | Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic) with structured justification and exploitability assessment. |
+
+<!-- END available-tables (generated) -->

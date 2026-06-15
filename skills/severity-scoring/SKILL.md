@@ -31,3 +31,15 @@ Severity assessment requires consistent calibration across all modes. Isolated c
 
 - **scores**: List of (failure_mode_id, severity_score, justification)
 - **calibration_notes**: Any scoring edge cases or assumptions
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

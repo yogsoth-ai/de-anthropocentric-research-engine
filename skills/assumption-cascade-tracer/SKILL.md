@@ -32,3 +32,15 @@ Cascade tracing requires systematic graph analysis without bias toward minimizin
 - **dependency_graph**: Directed graph of assumption dependencies
 - **cascade_paths**: For each failed root, the full list of downstream conclusions that collapse
 - **impact_scope**: Percentage of artifact conclusions affected by each cascade
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -44,3 +44,19 @@ Complete attack lifecycle from surface enumeration through probing to aggregated
 - All surfaces probed to at least depth 1
 - Critical vulnerability found (early termination with immediate report)
 - Diminishing returns: 3 consecutive probes yield no new findings
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| attack-resilience-scoring | Compute overall resilience score (0.0-1.0) based on attack results, coverage, and vulnerability severity distribution. |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+| threat-surface-mapping | Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions. |
+
+<!-- END available-tables (generated) -->

@@ -39,3 +39,17 @@ Evidence gathering requires web search and paper lookup in dedicated context. Is
 ## Budget
 
 One unit = one evidence gathering pass (multiple searches within budget).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+| stress-test-paper-overview | Paper landscape scan returning abstracts and metadata. Import of literature-engine/paper-overview skill. Abstracts only — no conclusions from abstracts. |
+| stress-test-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+
+<!-- END available-tables (generated) -->

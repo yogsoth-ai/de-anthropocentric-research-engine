@@ -42,3 +42,15 @@ Stop at proposal — do NOT modify the original artifact. Suggestions only.
 ## Budget
 
 One unit = one mitigation proposal per weakness. Focus on fatal and major findings.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

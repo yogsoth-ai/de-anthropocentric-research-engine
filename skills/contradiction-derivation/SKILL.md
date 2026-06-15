@@ -39,3 +39,17 @@ dependencies:
 - Maximum derivation depth reached (inconclusive)
 - Circular reasoning detected (abort with warning)
 - Budget exhausted (report partial results)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-negation | Formally negate the core claim, producing the logical complement for reductio testing. |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| deductive-chain | Derive logical consequences step by step from a given premise, building a traceable derivation chain. |
+
+<!-- END available-tables (generated) -->

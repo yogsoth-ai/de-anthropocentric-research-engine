@@ -48,3 +48,16 @@ Trace each failure mode both upstream (root causes) and downstream (cascading ef
 - Root cause reached (no further upstream cause identifiable)
 - End effect reached (stakeholder-level impact identified)
 - Circular dependency detected (flag and stop)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| failure-chain-construction | Build cause-mode-effect chains tracing upstream root causes and downstream cascading effects for each failure mode. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

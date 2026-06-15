@@ -62,3 +62,28 @@ persona-construction → [build N personas per budget]
 - probe-execution (persona attack execution)
 - finding-aggregation (cross-persona synthesis)
 - attack-resilience-scoring (convergent vulnerability scoring)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| adversarial-roleplay | Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation. |
+| structured-attack-campaign | Tactic: Full attack lifecycle — threat surface enumeration, attack vector generation, systematic probing, and finding aggregation across all surfaces. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| attack-resilience-scoring | Compute overall resilience score (0.0-1.0) based on attack results, coverage, and vulnerability severity distribution. |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| persona-construction | Build a detailed adversarial persona with background, motivation, expertise, blind spots, and preferred attack patterns. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+
+<!-- END available-tables (generated) -->

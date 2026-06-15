@@ -50,3 +50,19 @@ Find the smallest perturbation that flips the conclusion — closer flip-points 
 - All dimensions searched within budget
 - Flip-point found with distance < threshold (extremely fragile)
 - No flip-point found after maximum search depth (robust)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| counterfactual-scenario-construction | Construct precise, internally consistent counterfactual scenarios where specified factors are altered, then reason about the resulting conclusion. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| flip-point-detection | Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false. |
+| fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |
+
+<!-- END available-tables (generated) -->

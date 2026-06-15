@@ -50,3 +50,18 @@ PNS evaluation: for each causal claim, determine whether the cause is necessary,
 - All extracted claims evaluated within budget
 - Early termination if INUS condition found and budget is S
 - All claims score PN < 0.3 (no necessary factors found — conclusion may be overdetermined)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| necessity-evaluation | Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent? |
+| sufficiency-evaluation | Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion? |
+
+<!-- END available-tables (generated) -->
