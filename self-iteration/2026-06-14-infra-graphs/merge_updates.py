@@ -10,21 +10,28 @@ HERE = Path(__file__).resolve().parent
 RS = HERE / "refactory_source.json"
 
 def rename_map():
-    """(package, bare_new_name) -> update string."""
+    """(package, bare_new_name) -> update string. Collision groups share ONE
+    existing disk folder (<old>) but the graph has N renamed nodes; the rename
+    text is honest about that: keep one renamed, recreate the rest from it."""
     out = {}
     links = json.loads((HERE/"infra-links.json").read_text(encoding="utf-8"))
     for c in links["collapse"]:
         new = f'{c["pkg"]}-{c["wrapper"]}'
         out[(c["pkg"], new)] = (
-            f'skill rename: 重命名磁盘文件夹 {c["wrapper"]} → {new};'
+            f'skill rename: 源磁盘文件夹 skills/{c["wrapper"]}/ → 重命名为 {new};'
             f'本 skill 是 import wrapper,同时修正其 source: 指针 '
             f'(指向 {c["infra"]}/{c["skill"]})。')
     col = json.loads((HERE/"collision-links.json").read_text(encoding="utf-8"))["groups"]
+    from collections import Counter
+    grp = Counter(c["old"] for c in col)
     for c in col:
         new = f'{c["pkg"]}-{c["old"]}'
+        n = grp[c["old"]]
         out[(c["pkg"], new)] = (
-            f'skill rename: 重命名磁盘文件夹 {c["old"]} → {new}'
-            f'(裸名 {c["old"]} 跨 package 撞车,本 package 版独立成名)。')
+            f'skill rename: 源磁盘文件夹 skills/{c["old"]}/ → 本 package 版重命名为 {new}'
+            f'(裸名 {c["old"]} 跨 {n} 个 package 撞车,磁盘只有 1 个合并文件夹)。'
+            f'后续 refactory: 从本 package 语义提取正确版本放入 {new}/,'
+            f'撞车组全部新名建好后删除旧的合并文件夹 skills/{c["old"]}/。')
     return out
 
 def inject_rename(data):

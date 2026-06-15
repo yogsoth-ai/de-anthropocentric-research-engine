@@ -75,7 +75,7 @@
       "layer": "campaign",
       "package": "convergence",
       "description": "<b>convergence-multi-criteria-scoring</b> [campaign] &middot; <i>convergence</i><hr><b>Campaign:多准则加权打分。</b> AHP/BWM/TOPSIS/VIKOR/ELECTRE/PROMETHEE/MAUT。orchestrates 5 strategies(best-option-selection/full-ranking/category-sorting/non-compensatory-screening/weight-elicitation)→3 tactics→10 SOPs。输出 <b>RankedList[]</b>。",
-      "update": "skill rename: 重命名磁盘文件夹 multi-criteria-scoring → convergence-multi-criteria-scoring(裸名 multi-criteria-scoring 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/multi-criteria-scoring/ → 本 package 版重命名为 convergence-multi-criteria-scoring(裸名 multi-criteria-scoring 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-multi-criteria-scoring/,撞车组全部新名建好后删除旧的合并文件夹 skills/multi-criteria-scoring/。"
     },
     {
       "name": "pairwise-ranking",
@@ -103,7 +103,7 @@
       "layer": "campaign",
       "package": "convergence",
       "description": "<b>convergence-portfolio-optimization</b> [campaign] &middot; <i>convergence</i><hr><b>Campaign:组合优化选子集。</b> Markowitz/Knapsack/Pareto/Real-Options/MAP-Elites/minimax-regret。orchestrates 5 strategies(value-maximization/diversity-maximization/risk-balancing/temporal-sequencing/robustness-under-uncertainty)。输出 <b>Portfolio</b>。",
-      "update": "skill rename: 重命名磁盘文件夹 portfolio-optimization → convergence-portfolio-optimization(裸名 portfolio-optimization 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/portfolio-optimization/ → 本 package 版重命名为 convergence-portfolio-optimization(裸名 portfolio-optimization 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-portfolio-optimization/,撞车组全部新名建好后删除旧的合并文件夹 skills/portfolio-optimization/。"
     },
     {
       "name": "steel-manning",
@@ -327,7 +327,7 @@
       "layer": "tactic",
       "package": "convergence",
       "description": "<b>convergence-scoring-matrix-construction</b> [tactic] &middot; <i>convergence</i><hr><b>Tactic(execution: tactic)。</b> 标准 MCDA 流水线:定准则→赋权→打分→归一→敏感性。sequences SOPs criterion-definition/weight-elicitation-sop/alternative-scoring/normalization/scoring-synthesis。",
-      "update": "skill rename: 重命名磁盘文件夹 scoring-matrix-construction → convergence-scoring-matrix-construction(裸名 scoring-matrix-construction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/scoring-matrix-construction/ → 本 package 版重命名为 convergence-scoring-matrix-construction(裸名 scoring-matrix-construction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-scoring-matrix-construction/,撞车组全部新名建好后删除旧的合并文件夹 skills/scoring-matrix-construction/。"
     },
     {
       "name": "multi-method-triangulation",
@@ -670,7 +670,7 @@
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-bottleneck-identification</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent)。</b> 从雷达数据识别瓶颈维并按严重度排序。HARD-GATE:≥1 瓶颈+严重度排序+优先建议(高就绪也有相对瓶颈)。",
-      "update": "skill rename: 重命名磁盘文件夹 bottleneck-identification → convergence-bottleneck-identification(裸名 bottleneck-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/bottleneck-identification/ → 本 package 版重命名为 convergence-bottleneck-identification(裸名 bottleneck-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-bottleneck-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/bottleneck-identification/。"
     },
     {
       "name": "constraint-identification-sop",
@@ -817,14 +817,14 @@
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-assumption-extraction</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent)。</b> 系统性挖出决策下的隐含假设+置信度。HARD-GATE:≥5 个不同假设,各含置信度(H/M/L)+类别+理由。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-extraction → convergence-assumption-extraction(裸名 assumption-extraction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-extraction/ → 本 package 版重命名为 convergence-assumption-extraction(裸名 assumption-extraction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-assumption-extraction/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-extraction/。"
     },
     {
       "name": "convergence-assumption-challenge",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-assumption-challenge</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent)。</b> 对单个假设构造最强反驳+替代假设+若错的影响。HARD-GATE:含挑战论证+≥1 替代假设+影响评估+挑战本身的置信度。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-challenge → convergence-assumption-challenge(裸名 assumption-challenge 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-challenge/ → 本 package 版重命名为 convergence-assumption-challenge(裸名 assumption-challenge 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-assumption-challenge/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-challenge/。"
     },
     {
       "name": "conclusion-sensitivity",
@@ -859,56 +859,56 @@
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-sensitivity-analysis</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent;经 subagent-spawning/spawn-agent 派生;跨 scoring/portfolio/steel-manning 共享)。</b> 扰动参数测结论稳健性。HARD-GATE:须扰动≥3 参数,单参数不足以宣称稳健。",
-      "update": "skill rename: 重命名磁盘文件夹 sensitivity-analysis → convergence-sensitivity-analysis(裸名 sensitivity-analysis 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/sensitivity-analysis/ → 本 package 版重命名为 convergence-sensitivity-analysis(裸名 sensitivity-analysis 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-sensitivity-analysis/,撞车组全部新名建好后删除旧的合并文件夹 skills/sensitivity-analysis/。"
     },
     {
       "name": "convergence-saturation-detection",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-saturation-detection</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent;经 subagent-spawning/spawn-agent 派生;6 campaign 全共享)。</b> 判断迭代是否到边际递减该停。HARD-GATE:≥3 数据点方可宣称饱和。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → convergence-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 convergence-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "convergence-multi-stakeholder-simulation",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-multi-stakeholder-simulation</b> [sop] &middot; <i>convergence</i><hr><b>SOP(execution: subagent;经 subagent-spawning/spawn-agent 派生;steel-manning+consensus 共享)。</b> 模拟多利益相关者视角的异议/支持论证。HARD-GATE:须模拟≥3 个不同视角。",
-      "update": "skill rename: 重命名磁盘文件夹 multi-stakeholder-simulation → convergence-multi-stakeholder-simulation(裸名 multi-stakeholder-simulation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/multi-stakeholder-simulation/ → 本 package 版重命名为 convergence-multi-stakeholder-simulation(裸名 multi-stakeholder-simulation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 convergence-multi-stakeholder-simulation/,撞车组全部新名建好后删除旧的合并文件夹 skills/multi-stakeholder-simulation/。"
     },
     {
       "name": "convergence-web-search",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-web-search</b> [sop] &middot; <i>convergence</i><hr><b>Import SOP(execution: import,source: web-browsing/web-search)。</b> 快速 web 扫描发现相关页面(方法论参考/案例/最佳实践)。本地仅 stub,执行委托给 <b>web-browsing</b> 包(dangling cross-repo)。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → convergence-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 convergence-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "convergence-web-research",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-web-research</b> [sop] &middot; <i>convergence</i><hr><b>Import SOP(execution: import,source: web-browsing/web-research)。</b> 深度 web 研究+整页抽取(方法论指南/教程/实现参考)。委托给 <b>web-browsing</b> 包(dangling cross-repo)。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → convergence-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 convergence-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "convergence-paper-overview",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-paper-overview</b> [sop] &middot; <i>convergence</i><hr><b>Import SOP(execution: import,source: literature-engine/paper-overview)。</b> 摘要级论文 landscape 扫描(MCDA/投票理论/Delphi/优化方法论)。委托给 <b>literature-engine</b> 包(dangling cross-repo)。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → convergence-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 convergence-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "convergence-paper-search",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-paper-search</b> [sop] &middot; <i>convergence</i><hr><b>Import SOP(execution: import,source: literature-engine/paper-search)。</b> 读论文 AI 摘要报告(中等深度)。委托给 <b>literature-engine</b> 包(dangling cross-repo)。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → convergence-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 convergence-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "convergence-paper-research",
       "layer": "sop",
       "package": "convergence",
       "description": "<b>convergence-paper-research</b> [sop] &middot; <i>convergence</i><hr><b>Import SOP(execution: import,source: literature-engine/paper-research)。</b> 论文全文深读(算法/证明/实现细节)。委托给 <b>literature-engine</b> 包(dangling cross-repo)。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → convergence-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 convergence-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "creative-ideation",
@@ -1006,21 +1006,21 @@
       "layer": "tactic",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-assumption-enumeration</b> [tactic] &middot; <i>creative-ideation</i><hr><b>[战术 tactic]</b> Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. <b>编排</b>:2 sop。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-enumeration → creative-ideation-assumption-enumeration(裸名 assumption-enumeration 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-enumeration/ → 本 package 版重命名为 creative-ideation-assumption-enumeration(裸名 assumption-enumeration 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-assumption-enumeration/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-enumeration/。"
     },
     {
       "name": "creative-ideation-assumption-perturbation",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-assumption-perturbation</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-perturbation → creative-ideation-assumption-perturbation(裸名 assumption-perturbation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-perturbation/ → 本 package 版重命名为 creative-ideation-assumption-perturbation(裸名 assumption-perturbation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-assumption-perturbation/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-perturbation/。"
     },
     {
       "name": "creative-ideation-assumption-surfacing",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-assumption-surfacing</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Enumerate implicit assumptions in a problem statement or existing solution. Produces categorized assumption inventory (physical, social, temporal, economic, technical). subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-surfacing → creative-ideation-assumption-surfacing(裸名 assumption-surfacing 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-surfacing/ → 本 package 版重命名为 creative-ideation-assumption-surfacing(裸名 assumption-surfacing 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-assumption-surfacing/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-surfacing/。"
     },
     {
       "name": "axiom-negation",
@@ -1041,7 +1041,7 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-benchmark-inventory</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Catalog all known solutions/methods in a domain with performance, applicability, and limitations. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 benchmark-inventory → creative-ideation-benchmark-inventory(裸名 benchmark-inventory 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/benchmark-inventory/ → 本 package 版重命名为 creative-ideation-benchmark-inventory(裸名 benchmark-inventory 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-benchmark-inventory/,撞车组全部新名建好后删除旧的合并文件夹 skills/benchmark-inventory/。"
     },
     {
       "name": "benchmark-sweep",
@@ -1167,7 +1167,7 @@
       "layer": "tactic",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-combination-mapping</b> [tactic] &middot; <i>creative-ideation</i><hr><b>[战术 tactic]</b> Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. <b>编排</b>:2 sop。",
-      "update": "skill rename: 重命名磁盘文件夹 combination-mapping → creative-ideation-combination-mapping(裸名 combination-mapping 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/combination-mapping/ → 本 package 版重命名为 creative-ideation-combination-mapping(裸名 combination-mapping 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-combination-mapping/,撞车组全部新名建好后删除旧的合并文件夹 skills/combination-mapping/。"
     },
     {
       "name": "combinatorial-creativity",
@@ -1244,14 +1244,14 @@
       "layer": "tactic",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-consistency-checking</b> [tactic] &middot; <i>creative-ideation</i><hr><b>[战术 tactic]</b> Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. <b>编排</b>:2 sop。",
-      "update": "skill rename: 重命名磁盘文件夹 consistency-checking → creative-ideation-consistency-checking(裸名 consistency-checking 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/consistency-checking/ → 本 package 版重命名为 creative-ideation-consistency-checking(裸名 consistency-checking 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-consistency-checking/,撞车组全部新名建好后删除旧的合并文件夹 skills/consistency-checking/。"
     },
     {
       "name": "creative-ideation-consistency-pair-evaluation",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-consistency-pair-evaluation</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Evaluate pairwise value consistency (logical/empirical/normative) subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 consistency-pair-evaluation → creative-ideation-consistency-pair-evaluation(裸名 consistency-pair-evaluation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/consistency-pair-evaluation/ → 本 package 版重命名为 creative-ideation-consistency-pair-evaluation(裸名 consistency-pair-evaluation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-consistency-pair-evaluation/,撞车组全部新名建好后删除旧的合并文件夹 skills/consistency-pair-evaluation/。"
     },
     {
       "name": "constraint-driven-ideation",
@@ -1517,7 +1517,7 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-factor-level-design</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 factor-level-design → creative-ideation-factor-level-design(裸名 factor-level-design 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/factor-level-design/ → 本 package 版重命名为 creative-ideation-factor-level-design(裸名 factor-level-design 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-factor-level-design/,撞车组全部新名建好后删除旧的合并文件夹 skills/factor-level-design/。"
     },
     {
       "name": "factorial-ideation",
@@ -1538,7 +1538,7 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-failure-mode-cataloging</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Systematically catalog all failure modes in a domain or method, producing a classified failure taxonomy. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 failure-mode-cataloging → creative-ideation-failure-mode-cataloging(裸名 failure-mode-cataloging 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/failure-mode-cataloging/ → 本 package 版重命名为 creative-ideation-failure-mode-cataloging(裸名 failure-mode-cataloging 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-failure-mode-cataloging/,撞车组全部新名建好后删除旧的合并文件夹 skills/failure-mode-cataloging/。"
     },
     {
       "name": "failure-taxonomy",
@@ -1776,7 +1776,7 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-novelty-scoring</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 novelty-scoring → creative-ideation-novelty-scoring(裸名 novelty-scoring 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/novelty-scoring/ → 本 package 版重命名为 creative-ideation-novelty-scoring(裸名 novelty-scoring 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-novelty-scoring/,撞车组全部新名建好后删除旧的合并文件夹 skills/novelty-scoring/。"
     },
     {
       "name": "novice-perspective",
@@ -1797,21 +1797,21 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-paper-overview</b> [sop] &middot; <i>creative-ideation</i><hr><b>[import SOP · 来自 literature-engine]</b> Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. 跨包导入封装,真正协议在源包;所有 10 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → creative-ideation-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 creative-ideation-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "creative-ideation-paper-research",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-paper-research</b> [sop] &middot; <i>creative-ideation</i><hr><b>[import SOP · 来自 literature-engine]</b> Deep paper analysis with full text reading. Import of literature-engine/literature-research skill. Full text access — required for quoting results, verifying claims, extracting detailed methodology. 跨包导入封装,真正协议在源包;所有 10 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → creative-ideation-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 creative-ideation-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "creative-ideation-paper-search",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-paper-search</b> [sop] &middot; <i>creative-ideation</i><hr><b>[import SOP · 来自 literature-engine]</b> Mid-depth paper analysis via AI-generated summaries. Import of literature-engine/literature-search skill. Reads AI summary — sufficient for methodology understanding but not for quoting specific results. 跨包导入封装,真正协议在源包;所有 10 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → creative-ideation-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 creative-ideation-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "parameter-identification",
@@ -1860,7 +1860,7 @@
       "layer": "tactic",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-perspective-rotation</b> [tactic] &middot; <i>creative-ideation</i><hr><b>[战术 tactic]</b> Rotate through reviewer/practitioner/theorist/time-machine/novice perspectives systematically. Ensures comprehensive viewpoint coverage. <b>编排</b>:6 sop。",
-      "update": "skill rename: 重命名磁盘文件夹 perspective-rotation → creative-ideation-perspective-rotation(裸名 perspective-rotation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/perspective-rotation/ → 本 package 版重命名为 creative-ideation-perspective-rotation(裸名 perspective-rotation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-perspective-rotation/,撞车组全部新名建好后删除旧的合并文件夹 skills/perspective-rotation/。"
     },
     {
       "name": "perspective-synthesis",
@@ -1902,7 +1902,7 @@
       "layer": "tactic",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-provocation-generation</b> [tactic] &middot; <i>creative-ideation</i><hr><b>[战术 tactic]</b> Generate PO provocations and extract constructive movement. Orchestrates assumption surfacing → provocation creation → movement extraction → idea formation.",
-      "update": "skill rename: 重命名磁盘文件夹 provocation-generation → creative-ideation-provocation-generation(裸名 provocation-generation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/provocation-generation/ → 本 package 版重命名为 creative-ideation-provocation-generation(裸名 provocation-generation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-provocation-generation/,撞车组全部新名建好后删除旧的合并文件夹 skills/provocation-generation/。"
     },
     {
       "name": "random-entry",
@@ -1993,7 +1993,7 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-saturation-detection</b> [sop] &middot; <i>creative-ideation</i><hr><b>[SOP 叶子]</b> Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. subagent 叶子,经 spawn-agent 派生,无下游 use 边。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → creative-ideation-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 creative-ideation-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 creative-ideation-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "scamper-divergence",
@@ -2189,14 +2189,14 @@
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-web-research</b> [sop] &middot; <i>creative-ideation</i><hr><b>[import SOP · 来自 web-browsing]</b> Deep web page analysis with full content extraction. Import of web-browsing/web-research skill. Must fetch full page via apify — no shortcuts. 跨包导入封装,真正协议在源包;所有 10 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → creative-ideation-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 creative-ideation-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "creative-ideation-web-search",
       "layer": "sop",
       "package": "creative-ideation",
       "description": "<b>creative-ideation-web-search</b> [sop] &middot; <i>creative-ideation</i><hr><b>[import SOP · 来自 web-browsing]</b> Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. 跨包导入封装,真正协议在源包;所有 10 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → creative-ideation-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 creative-ideation-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "white-space-detection",
@@ -2266,7 +2266,7 @@
       "layer": "campaign",
       "package": "deep-insight",
       "description": "<b>deep-insight-sensitivity-analysis</b> [campaign] &middot; <i>deep-insight</i><hr><b>Campaign:哪些假设/参数最关键。</b> 按对结论的影响排序。编排 5 strategy(parameter-screening / variance-decomposition / assumption-criticality / uncertainty-propagation / decision-sensitivity)+ 3 tactic + 11 subagent SOP。",
-      "update": "skill rename: 重命名磁盘文件夹 sensitivity-analysis → deep-insight-sensitivity-analysis(裸名 sensitivity-analysis 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/sensitivity-analysis/ → 本 package 版重命名为 deep-insight-sensitivity-analysis(裸名 sensitivity-analysis 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-sensitivity-analysis/,撞车组全部新名建好后删除旧的合并文件夹 skills/sensitivity-analysis/。"
     },
     {
       "name": "problem-reformulation",
@@ -2280,7 +2280,7 @@
       "layer": "strategy",
       "package": "deep-insight",
       "description": "<b>deep-insight-gap-identification</b> [strategy] &middot; <i>deep-insight</i><hr><b>Strategy:搜索空白、识别缺失。</b> landscape 扫描 + gap-indicating 句式抽取 + concept matrix + EGM。经 evidence-mapping tactic,或直接调 gap-keyword-extraction / concept-matrix-construction / egm-construction。",
-      "update": "skill rename: 重命名磁盘文件夹 gap-identification → deep-insight-gap-identification(裸名 gap-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/gap-identification/ → 本 package 版重命名为 deep-insight-gap-identification(裸名 gap-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-gap-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/gap-identification/。"
     },
     {
       "name": "gap-classification",
@@ -2301,7 +2301,7 @@
       "layer": "strategy",
       "package": "deep-insight",
       "description": "<b>deep-insight-gap-prioritization</b> [strategy] &middot; <i>deep-insight</i><hr><b>Strategy:排序 gap 优先级。</b> importance×feasibility×novelty×urgency 多准则评分 + stakeholder 确认 + 敏感性。经 prioritization-scoring tactic,另直接调 evidence-grading + multi-stakeholder-simulation。",
-      "update": "skill rename: 重命名磁盘文件夹 gap-prioritization → deep-insight-gap-prioritization(裸名 gap-prioritization 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/gap-prioritization/ → 本 package 版重命名为 deep-insight-gap-prioritization(裸名 gap-prioritization 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-gap-prioritization/,撞车组全部新名建好后删除旧的合并文件夹 skills/gap-prioritization/。"
     },
     {
       "name": "gap-synthesis-strategy",
@@ -2350,7 +2350,7 @@
       "layer": "strategy",
       "package": "deep-insight",
       "description": "<b>deep-insight-validity-envelope-mapping</b> [strategy] &middot; <i>deep-insight</i><hr><b>Strategy:有效条件/适用范围。</b> 多轴扰动测退化曲线,构造多维 validity envelope。经 systematic-perturbation tactic。",
-      "update": "skill rename: 重命名磁盘文件夹 validity-envelope-mapping → deep-insight-validity-envelope-mapping(裸名 validity-envelope-mapping 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/validity-envelope-mapping/ → 本 package 版重命名为 deep-insight-validity-envelope-mapping(裸名 validity-envelope-mapping 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-validity-envelope-mapping/,撞车组全部新名建好后删除旧的合并文件夹 skills/validity-envelope-mapping/。"
     },
     {
       "name": "robustness-testing",
@@ -2518,7 +2518,7 @@
       "layer": "tactic",
       "package": "deep-insight",
       "description": "<b>deep-insight-failure-mode-cataloging</b> [tactic] &middot; <i>deep-insight</i><hr><b>Tactic:系统化失效分类。</b> edge-case-generation → failure-clustering → scaling-regime-detection;入料 web-search。",
-      "update": "skill rename: 重命名磁盘文件夹 failure-mode-cataloging → deep-insight-failure-mode-cataloging(裸名 failure-mode-cataloging 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/failure-mode-cataloging/ → 本 package 版重命名为 deep-insight-failure-mode-cataloging(裸名 failure-mode-cataloging 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-failure-mode-cataloging/,撞车组全部新名建好后删除旧的合并文件夹 skills/failure-mode-cataloging/。"
     },
     {
       "name": "screening-then-decomposition",
@@ -2532,7 +2532,7 @@
       "layer": "tactic",
       "package": "deep-insight",
       "description": "<b>deep-insight-assumption-perturbation</b> [tactic] &middot; <i>deep-insight</i><hr><b>Tactic:逐一假设否定与重推。</b> assumption-extraction → negation-definition → re-derivation → conclusion-sensitivity-measurement + (shared) assumption-surfacing;入料 paper-research。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-perturbation → deep-insight-assumption-perturbation(裸名 assumption-perturbation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-perturbation/ → 本 package 版重命名为 deep-insight-assumption-perturbation(裸名 assumption-perturbation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-assumption-perturbation/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-perturbation/。"
     },
     {
       "name": "uncertainty-cascade",
@@ -2560,42 +2560,42 @@
       "layer": "tactic",
       "package": "deep-insight",
       "description": "<b>deep-insight-dialectical-escalation</b> [tactic] &middot; <i>deep-insight</i><hr><b>Tactic:单环→双环学习升级。</b> governing-variable-surfacing → counter-assumption-generation → wickedness-scoring + (shared) assumption-surfacing。",
-      "update": "skill rename: 重命名磁盘文件夹 dialectical-escalation → deep-insight-dialectical-escalation(裸名 dialectical-escalation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/dialectical-escalation/ → 本 package 版重命名为 deep-insight-dialectical-escalation(裸名 dialectical-escalation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-dialectical-escalation/,撞车组全部新名建好后删除旧的合并文件夹 skills/dialectical-escalation/。"
     },
     {
       "name": "deep-insight-web-search",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-web-search</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(import,来自 web-browsing):</b> 快速 web 扫描定位 landscape。Snippets only —— 不可基于摘要片段下结论,只作深挖线索。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → deep-insight-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 deep-insight-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "deep-insight-web-research",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-web-research</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(import,来自 web-browsing):</b> Apify 全页抓取的深度 web 研究。必须 fetch 全页 —— 不可基于预览下结论。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → deep-insight-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 deep-insight-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "deep-insight-paper-overview",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-paper-overview</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(import,来自 literature-engine/literature-overview):</b> 论文元数据+摘要级鸟瞰。Abstracts only —— 未深读前不下实质结论。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → deep-insight-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 deep-insight-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "deep-insight-paper-search",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-paper-search</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(import,来自 literature-engine/literature-search):</b> AI 摘要级检索。引用须标 'AI-extracted' 而非 'paper states'。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → deep-insight-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 deep-insight-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "deep-insight-paper-research",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-paper-research</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(import,来自 literature-engine/literature-research):</b> 三遍 Keshav 法读全文。论文内容主张的权威来源。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → deep-insight-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 deep-insight-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "gap-keyword-extraction",
@@ -2658,7 +2658,7 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-multi-criteria-scoring</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP:</b> 多维 MCDA 评分 gap(重要/可行/新颖/紧迫/影响)加权。",
-      "update": "skill rename: 重命名磁盘文件夹 multi-criteria-scoring → deep-insight-multi-criteria-scoring(裸名 multi-criteria-scoring 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/multi-criteria-scoring/ → 本 package 版重命名为 deep-insight-multi-criteria-scoring(裸名 multi-criteria-scoring 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-multi-criteria-scoring/,撞车组全部新名建好后删除旧的合并文件夹 skills/multi-criteria-scoring/。"
     },
     {
       "name": "stakeholder-confirmation",
@@ -2777,7 +2777,7 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-assumption-enumeration</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP:</b> 系统识别方法/模型全部假设 —— 结构/参数/分布/范围。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-enumeration → deep-insight-assumption-enumeration(裸名 assumption-enumeration 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-enumeration/ → 本 package 版重命名为 deep-insight-assumption-enumeration(裸名 assumption-enumeration 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-assumption-enumeration/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-enumeration/。"
     },
     {
       "name": "alternative-model-generation",
@@ -2819,7 +2819,7 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-validity-envelope-construction</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP:</b> 合并多轴扰动数据为多维 validity 描述 + 边界条件 + 交互效应。",
-      "update": "skill rename: 重命名磁盘文件夹 validity-envelope-construction → deep-insight-validity-envelope-construction(裸名 validity-envelope-construction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/validity-envelope-construction/ → 本 package 版重命名为 deep-insight-validity-envelope-construction(裸名 validity-envelope-construction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-validity-envelope-construction/,撞车组全部新名建好后删除旧的合并文件夹 skills/validity-envelope-construction/。"
     },
     {
       "name": "edge-case-generation",
@@ -2875,7 +2875,7 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-assumption-extraction</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP:</b> 系统抽取方法/模型全部假设(陈述/隐含/边界/数学/实践)。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-extraction → deep-insight-assumption-extraction(裸名 assumption-extraction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-extraction/ → 本 package 版重命名为 deep-insight-assumption-extraction(裸名 assumption-extraction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-assumption-extraction/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-extraction/。"
     },
     {
       "name": "negation-definition",
@@ -2938,7 +2938,7 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-provocation-generation</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP:</b> 生成 de Bono 横向思维 provocation(逃逸/反转/夸张/扭曲)挑战主导观念。",
-      "update": "skill rename: 重命名磁盘文件夹 provocation-generation → deep-insight-provocation-generation(裸名 provocation-generation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/provocation-generation/ → 本 package 版重命名为 deep-insight-provocation-generation(裸名 provocation-generation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-provocation-generation/,撞车组全部新名建好后删除旧的合并文件夹 skills/provocation-generation/。"
     },
     {
       "name": "consequence-following",
@@ -3008,14 +3008,14 @@
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-multi-stakeholder-simulation</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(shared,跨 gap-analysis/insight/problem-reformulation):</b> 模拟多 stakeholder 视角评估 gap/方法/提案,识别单视角盲点。",
-      "update": "skill rename: 重命名磁盘文件夹 multi-stakeholder-simulation → deep-insight-multi-stakeholder-simulation(裸名 multi-stakeholder-simulation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/multi-stakeholder-simulation/ → 本 package 版重命名为 deep-insight-multi-stakeholder-simulation(裸名 multi-stakeholder-simulation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-multi-stakeholder-simulation/,撞车组全部新名建好后删除旧的合并文件夹 skills/multi-stakeholder-simulation/。"
     },
     {
       "name": "deep-insight-assumption-surfacing",
       "layer": "sop",
       "package": "deep-insight",
       "description": "<b>deep-insight-assumption-surfacing</b> [sop] &middot; <i>deep-insight</i><hr><b>SOP(shared,跨 insight/sensitivity/problem-reformulation):</b> 系统抽取方法/框架/论证中未经显式辩护就被默认的隐含假设。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-surfacing → deep-insight-assumption-surfacing(裸名 assumption-surfacing 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-surfacing/ → 本 package 版重命名为 deep-insight-assumption-surfacing(裸名 assumption-surfacing 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 deep-insight-assumption-surfacing/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-surfacing/。"
     },
     {
       "name": "de-anthropocentric-research-engine",
@@ -3106,7 +3106,7 @@
       "layer": "strategy",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-factor-level-design</b> [strategy] &middot; <i>experiment-execution</i><hr><b>Strategy(ED):哪些因子在哪些水平上组合测试?</b> Fisher 全因子/部分因子/Plackett-Burman/RSM/Taguchi。spawn SOPs {factor-identification, level-specification, design-matrix-construction, metric-specification, sample-size-estimation, experiment-config-generation} + tactics {budget-constrained-design, statistical-method-selection}。",
-      "update": "skill rename: 重命名磁盘文件夹 factor-level-design → experiment-execution-factor-level-design(裸名 factor-level-design 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/factor-level-design/ → 本 package 版重命名为 experiment-execution-factor-level-design(裸名 factor-level-design 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 experiment-execution-factor-level-design/,撞车组全部新名建好后删除旧的合并文件夹 skills/factor-level-design/。"
     },
     {
       "name": "ablation-design",
@@ -3141,7 +3141,7 @@
       "layer": "strategy",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-bottleneck-identification</b> [strategy] &middot; <i>experiment-execution</i><hr><b>Strategy(CA):系统瓶颈在哪?</b> TOC 5 Focusing Steps + Current Reality Tree。spawn SOPs {undesirable-effect-listing, causal-chain-tracing, core-conflict-extraction} + tactic {constraint-tree-building}。",
-      "update": "skill rename: 重命名磁盘文件夹 bottleneck-identification → experiment-execution-bottleneck-identification(裸名 bottleneck-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/bottleneck-identification/ → 本 package 版重命名为 experiment-execution-bottleneck-identification(裸名 bottleneck-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 experiment-execution-bottleneck-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/bottleneck-identification/。"
     },
     {
       "name": "resource-constraint",
@@ -3491,7 +3491,7 @@
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-consistency-pair-evaluation</b> [sop] &middot; <i>experiment-execution</i><hr><b>SOP:CCA 成对一致性评估。</b> 出 CCA 矩阵+幸存 config。subagent。",
-      "update": "skill rename: 重命名磁盘文件夹 consistency-pair-evaluation → experiment-execution-consistency-pair-evaluation(裸名 consistency-pair-evaluation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/consistency-pair-evaluation/ → 本 package 版重命名为 experiment-execution-consistency-pair-evaluation(裸名 consistency-pair-evaluation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 experiment-execution-consistency-pair-evaluation/,撞车组全部新名建好后删除旧的合并文件夹 skills/consistency-pair-evaluation/。"
     },
     {
       "name": "scenario-narrative-construction",
@@ -3645,56 +3645,56 @@
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-quality-gate-check</b> [sop] &middot; <i>experiment-execution</i><hr><b>Shared SOP:质量门校验(PASS/FAIL+gap list)。</b> 独立评估,免 producing agent 的沉没成本偏差。所有 campaign 可用。subagent。",
-      "update": "skill rename: 重命名磁盘文件夹 quality-gate-check → experiment-execution-quality-gate-check(裸名 quality-gate-check 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/quality-gate-check/ → 本 package 版重命名为 experiment-execution-quality-gate-check(裸名 quality-gate-check 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 experiment-execution-quality-gate-check/,撞车组全部新名建好后删除旧的合并文件夹 skills/quality-gate-check/。"
     },
     {
       "name": "experiment-execution-saturation-detection",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-saturation-detection</b> [sop] &middot; <i>experiment-execution</i><hr><b>Shared SOP:信息饱和检测——何时停止搜索/分析。</b> 独立评估边际信息增益。所有 campaign 可用。subagent。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → experiment-execution-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 experiment-execution-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 experiment-execution-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "experiment-execution-web-search",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-web-search</b> [sop] &middot; <i>experiment-execution</i><hr><b>Import SOP:快速 web 扫描发现(源自 web-browsing skill)。</b> 调用 brave_web_search/brave_news_search。所有 campaign 可用。<i>跨包导入,源 skill 不在本包。</i>",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → experiment-execution-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 experiment-execution-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "experiment-execution-web-research",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-web-research</b> [sop] &middot; <i>experiment-execution</i><hr><b>Import SOP:深度整页内容分析(源自 web-browsing skill)。</b> 调用 apify rag-web-browser / brave_llm_context。所有 campaign 可用。<i>跨包导入。</i>",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → experiment-execution-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 experiment-execution-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "experiment-execution-paper-overview",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-paper-overview</b> [sop] &middot; <i>experiment-execution</i><hr><b>Import SOP:论文 landscape 扫描(源自 literature-engine skill)。</b> 调用 semantic-scholar/alphaxiv。所有 campaign 可用。<i>跨包导入。</i>",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → experiment-execution-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 experiment-execution-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "experiment-execution-paper-search",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-paper-search</b> [sop] &middot; <i>experiment-execution</i><hr><b>Import SOP:读论文 AI 摘要(源自 literature-engine skill)。</b> 调用 alphaxiv get_paper_content / semantic-scholar。所有 campaign 可用。<i>跨包导入。</i>",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → experiment-execution-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 experiment-execution-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "experiment-execution-paper-research",
       "layer": "sop",
       "package": "experiment-execution",
       "description": "<b>experiment-execution-paper-research</b> [sop] &middot; <i>experiment-execution</i><hr><b>Import SOP:读论文原始全文(源自 literature-engine skill)。</b> 调用 alphaxiv answer_pdf_queries / get_paper_content(fullText)。所有 campaign 可用。<i>跨包导入。</i>",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → experiment-execution-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 experiment-execution-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "hypothesis-formation-gap-prioritization",
       "layer": "campaign",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-gap-prioritization</b> [campaign] &middot; <i>hypothesis-formation</i><hr><b>Campaign:哪些 gap 最值得攻击?</b> 将上游一批未排序 gaps 转化为带优先级的攻击列表(不发现新 gap,只对已有 gap 做决策)。编排 5 个 strategy(multi-criteria-ranking 默认 / evidence-based / stakeholder-weighted / portfolio-optimization / rapid-triage)+ pairwise-comparison tactic。<b>HARD-GATE:≥3 个已识别 gaps。</b>",
-      "update": "skill rename: 重命名磁盘文件夹 gap-prioritization → hypothesis-formation-gap-prioritization(裸名 gap-prioritization 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/gap-prioritization/ → 本 package 版重命名为 hypothesis-formation-gap-prioritization(裸名 gap-prioritization 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-gap-prioritization/,撞车组全部新名建好后删除旧的合并文件夹 skills/gap-prioritization/。"
     },
     {
       "name": "hypothesis-formulation",
@@ -3736,7 +3736,7 @@
       "layer": "strategy",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-portfolio-optimization</b> [strategy] &middot; <i>hypothesis-formation</i><hr><b>Strategy:gap 组合即投资组合。</b> Markowitz 式收益/风险/相关性/多样性分析,选有效前沿上的最优 gap 组合。适用 20+ 个 gap。编排 scoring-matrix-construction + priority-sensitivity-testing,直调 gap-normalization。",
-      "update": "skill rename: 重命名磁盘文件夹 portfolio-optimization → hypothesis-formation-portfolio-optimization(裸名 portfolio-optimization 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/portfolio-optimization/ → 本 package 版重命名为 hypothesis-formation-portfolio-optimization(裸名 portfolio-optimization 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-portfolio-optimization/,撞车组全部新名建好后删除旧的合并文件夹 skills/portfolio-optimization/。"
     },
     {
       "name": "rapid-triage",
@@ -3820,7 +3820,7 @@
       "layer": "tactic",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-scoring-matrix-construction</b> [tactic] &middot; <i>hypothesis-formation</i><hr><b>Tactic:构建多维度评分矩阵。</b> 并行/串行调用各评分 SOP,为所有 gap 构建 gaps × 维度综合评估矩阵。编排 importance/feasibility/novelty/impact-scoring + ahrq-picme-assessment 五 SOP。S=3 dims 并行 / M=4 dims / L=5 dims + PiCMe 串行。",
-      "update": "skill rename: 重命名磁盘文件夹 scoring-matrix-construction → hypothesis-formation-scoring-matrix-construction(裸名 scoring-matrix-construction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/scoring-matrix-construction/ → 本 package 版重命名为 hypothesis-formation-scoring-matrix-construction(裸名 scoring-matrix-construction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-scoring-matrix-construction/,撞车组全部新名建好后删除旧的合并文件夹 skills/scoring-matrix-construction/。"
     },
     {
       "name": "pairwise-comparison",
@@ -3911,7 +3911,7 @@
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-novelty-scoring</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>SOP:评估 gap 新颖性(1-5)+ 差异化方向。</b> 创新潜力+先进性两维。<b>用 literature-engine + web-browsing 检索近 3 年现有工作。</b>",
-      "update": "skill rename: 重命名磁盘文件夹 novelty-scoring → hypothesis-formation-novelty-scoring(裸名 novelty-scoring 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/novelty-scoring/ → 本 package 版重命名为 hypothesis-formation-novelty-scoring(裸名 novelty-scoring 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-novelty-scoring/,撞车组全部新名建好后删除旧的合并文件夹 skills/novelty-scoring/。"
     },
     {
       "name": "impact-scoring",
@@ -3967,14 +3967,14 @@
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-quality-gate-check</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Shared SOP:通用质量门检查。</b> 格式完整性/逻辑一致性/引用完整性/可操作性/无歧义性五维 PASS/FAIL。三 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 quality-gate-check → hypothesis-formation-quality-gate-check(裸名 quality-gate-check 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/quality-gate-check/ → 本 package 版重命名为 hypothesis-formation-quality-gate-check(裸名 quality-gate-check 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-quality-gate-check/,撞车组全部新名建好后删除旧的合并文件夹 skills/quality-gate-check/。"
     },
     {
       "name": "hypothesis-formation-saturation-detection",
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-saturation-detection</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Shared SOP:判断活动是否已达信息饱和。</b> 增量分析 + 收敛检测,判定 SATURATED/NOT_SATURATED 决定是否继续迭代。三 campaign 共享,需 ≥2 轮迭代数据。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → hypothesis-formation-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 hypothesis-formation-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "theory-identification",
@@ -3995,7 +3995,7 @@
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-variable-identification</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>SOP:从机制识别变量并标注角色。</b> IV/DV/mediator/moderator/control/confound + 操作化可能性评估,≥2 变量(1 IV+1 DV)。输入 mechanism-extraction 的机制链。",
-      "update": "skill rename: 重命名磁盘文件夹 variable-identification → hypothesis-formation-variable-identification(裸名 variable-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/variable-identification/ → 本 package 版重命名为 hypothesis-formation-variable-identification(裸名 variable-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 hypothesis-formation-variable-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/variable-identification/。"
     },
     {
       "name": "relationship-specification",
@@ -4163,35 +4163,35 @@
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-paper-overview</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Import SOP(来自 literature-engine):论文快速扫描。</b> abstract + metadata + 相关性判断。直接调用 literature-engine 的 paper-overview skill。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → hypothesis-formation-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 hypothesis-formation-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "hypothesis-formation-paper-search",
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-paper-search</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Import SOP(来自 literature-engine):中深度文献搜索。</b> 多源搜索 + AI 摘要报告 + 相关性排序。直接调用 literature-engine 的 paper-search skill。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → hypothesis-formation-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 hypothesis-formation-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "hypothesis-formation-paper-research",
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-paper-research</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Import SOP(来自 literature-engine):深度文献研究。</b> 原始全文 + PDF 问答(Keshav 三遍阅读法)。直接调用 literature-engine 的 paper-research skill。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → hypothesis-formation-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 hypothesis-formation-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "hypothesis-formation-web-search",
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-web-search</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Import SOP(来自 web-browsing):快速 web 扫描。</b> 发现 URL + snippet,初步信息收集。直接调用 web-browsing 的 web-search skill。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → hypothesis-formation-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 hypothesis-formation-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "hypothesis-formation-web-research",
       "layer": "sop",
       "package": "hypothesis-formation",
       "description": "<b>hypothesis-formation-web-research</b> [sop] &middot; <i>hypothesis-formation</i><hr><b>Import SOP(来自 web-browsing):深度 web 研究。</b> 全文抓取 + 内容分析 + 多来源综合。直接调用 web-browsing 的 web-research skill。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → hypothesis-formation-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 hypothesis-formation-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "knowledge-acquisition",
@@ -4338,7 +4338,7 @@
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-saturation-detection</b> [sop] &middot; <i>knowledge-acquisition</i><hr>判断继续/近饱和/已饱和(最新批 vs 既有 corpus)(subagent)。三 campaign 共享(lit/patent/benchmark)。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → knowledge-acquisition-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 knowledge-acquisition-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-acquisition-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "taxonomy-mapping",
@@ -4366,42 +4366,42 @@
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-gap-identification</b> [sop] &middot; <i>knowledge-acquisition</i><hr>识别文献<b>未</b>覆盖之处(缺失方法/未测组合/未解矛盾),对 negative space 推理(subagent)。三 campaign 共享(lit/benchmark/baseline)。",
-      "update": "skill rename: 重命名磁盘文件夹 gap-identification → knowledge-acquisition-gap-identification(裸名 gap-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/gap-identification/ → 本 package 版重命名为 knowledge-acquisition-gap-identification(裸名 gap-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-acquisition-gap-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/gap-identification/。"
     },
     {
       "name": "knowledge-acquisition-web-search",
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-web-search</b> [sop] &middot; <i>knowledge-acquisition</i><hr><b>import SOP</b>:快速 web 扫描(snippets only,不下结论)。源自 web-browsing/web-search(跨 repo 指针,非顶点)。5 campaign 共享。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → knowledge-acquisition-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 knowledge-acquisition-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "knowledge-acquisition-web-research",
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-web-research</b> [sop] &middot; <i>knowledge-acquisition</i><hr><b>import SOP</b>:全页 web 精读(apify 抓全页,非学术视角)。源自 web-browsing/web-research(跨 repo)。共享。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → knowledge-acquisition-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 knowledge-acquisition-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "knowledge-acquisition-paper-overview",
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-paper-overview</b> [sop] &middot; <i>knowledge-acquisition</i><hr><b>import SOP</b>:摘要级论文扫描。源自 literature-engine/literature-overview(跨 repo)。共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → knowledge-acquisition-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 knowledge-acquisition-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "knowledge-acquisition-paper-search",
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-paper-search</b> [sop] &middot; <i>knowledge-acquisition</i><hr><b>import SOP</b>:AI 摘要级论文阅读(get_paper_content)。源自 literature-engine/literature-search(跨 repo)。共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → knowledge-acquisition-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 knowledge-acquisition-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "knowledge-acquisition-paper-research",
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-paper-research</b> [sop] &middot; <i>knowledge-acquisition</i><hr><b>import SOP</b>:全文深读(fullText:true,抽方程/超参)。源自 literature-engine/literature-research(跨 repo)。共享。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → knowledge-acquisition-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 knowledge-acquisition-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "landscape-survey",
@@ -4457,7 +4457,7 @@
       "layer": "tactic",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-claim-decomposition</b> [tactic] &middot; <i>knowledge-acquisition</i><hr><b>权利要求结构分解</b> tactic:independent/dependent 识别 + element 抽取 + feature→技术域映射。",
-      "update": "skill rename: 重命名磁盘文件夹 claim-decomposition → knowledge-acquisition-claim-decomposition(裸名 claim-decomposition 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/claim-decomposition/ → 本 package 版重命名为 knowledge-acquisition-claim-decomposition(裸名 claim-decomposition 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-acquisition-claim-decomposition/,撞车组全部新名建好后删除旧的合并文件夹 skills/claim-decomposition/。"
     },
     {
       "name": "patent-query-formulation",
@@ -4590,7 +4590,7 @@
       "layer": "sop",
       "package": "knowledge-acquisition",
       "description": "<b>knowledge-acquisition-benchmark-inventory</b> [sop] &middot; <i>knowledge-acquisition</i><hr>识别并 catalog 目标域全部相关 benchmark(name/year/size/metric/SOTA/status)(subagent)。",
-      "update": "skill rename: 重命名磁盘文件夹 benchmark-inventory → knowledge-acquisition-benchmark-inventory(裸名 benchmark-inventory 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/benchmark-inventory/ → 本 package 版重命名为 knowledge-acquisition-benchmark-inventory(裸名 benchmark-inventory 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-acquisition-benchmark-inventory/,撞车组全部新名建好后删除旧的合并文件夹 skills/benchmark-inventory/。"
     },
     {
       "name": "metric-decomposition",
@@ -4968,7 +4968,7 @@
       "layer": "strategy",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-variable-identification</b> [strategy] &middot; <i>knowledge-structuring</i><hr><b>causal strategy①。</b> 在画任何因果边之前先穷尽并 type 所有变量、flag confounder。编排 tactic counterfactual-reasoning / evidence-weighing,直调 sop variable-page-creation。HARD-GATE: 80% budget + ledger。",
-      "update": "skill rename: 重命名磁盘文件夹 variable-identification → knowledge-structuring-variable-identification(裸名 variable-identification 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/variable-identification/ → 本 package 版重命名为 knowledge-structuring-variable-identification(裸名 variable-identification 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-variable-identification/,撞车组全部新名建好后删除旧的合并文件夹 skills/variable-identification/。"
     },
     {
       "name": "mechanism-mapping",
@@ -5010,14 +5010,14 @@
       "layer": "strategy",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-combination-mapping</b> [strategy] &middot; <i>knowledge-structuring</i><hr><b>dimensional strategy②。</b> 跨维度枚举组合,标 occupied / empty / impossible。编排 matrix-generation / axis-extraction。HARD-GATE: 80% budget + ledger。",
-      "update": "skill rename: 重命名磁盘文件夹 combination-mapping → knowledge-structuring-combination-mapping(裸名 combination-mapping 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/combination-mapping/ → 本 package 版重命名为 knowledge-structuring-combination-mapping(裸名 combination-mapping 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-combination-mapping/,撞车组全部新名建好后删除旧的合并文件夹 skills/combination-mapping/。"
     },
     {
       "name": "knowledge-structuring-gap-prioritization",
       "layer": "strategy",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-gap-prioritization</b> [strategy] &middot; <i>knowledge-structuring</i><hr><b>dimensional strategy③。</b> 按 novelty / feasibility / impact 给空白格排序。编排 matrix-generation / axis-extraction。HARD-GATE: 80% budget + ledger。",
-      "update": "skill rename: 重命名磁盘文件夹 gap-prioritization → knowledge-structuring-gap-prioritization(裸名 gap-prioritization 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/gap-prioritization/ → 本 package 版重命名为 knowledge-structuring-gap-prioritization(裸名 gap-prioritization 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-gap-prioritization/,撞车组全部新名建好后删除旧的合并文件夹 skills/gap-prioritization/。"
     },
     {
       "name": "claim-extraction",
@@ -5073,7 +5073,7 @@
       "layer": "tactic",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-consistency-checking</b> [tactic] &middot; <i>knowledge-structuring</i><hr><b>ontology tactic。</b> 查矛盾/环/orphan/类型违例。编排 sop gap-detection / merge-candidates(+域外 wiki-lint-fix / wiki-graph-query)。HARD-GATE: 每次 ≥1 inconsistency resolved,否则报 clean。",
-      "update": "skill rename: 重命名磁盘文件夹 consistency-checking → knowledge-structuring-consistency-checking(裸名 consistency-checking 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/consistency-checking/ → 本 package 版重命名为 knowledge-structuring-consistency-checking(裸名 consistency-checking 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-consistency-checking/,撞车组全部新名建好后删除旧的合并文件夹 skills/consistency-checking/。"
     },
     {
       "name": "counterfactual-reasoning",
@@ -5115,7 +5115,7 @@
       "layer": "tactic",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-claim-decomposition</b> [tactic] &middot; <i>knowledge-structuring</i><hr><b>argument tactic。</b> 把复合 claim 拆成原子可证伪命题、抽隐含假设。编排 sop claim-page-creation / rebuttal-documentation。HARD-GATE: 每个复合 claim ≥2 atomic claims。",
-      "update": "skill rename: 重命名磁盘文件夹 claim-decomposition → knowledge-structuring-claim-decomposition(裸名 claim-decomposition 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/claim-decomposition/ → 本 package 版重命名为 knowledge-structuring-claim-decomposition(裸名 claim-decomposition 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-claim-decomposition/,撞车组全部新名建好后删除旧的合并文件夹 skills/claim-decomposition/。"
     },
     {
       "name": "strength-assessment",
@@ -5339,7 +5339,7 @@
       "layer": "sop",
       "package": "knowledge-structuring",
       "description": "<b>knowledge-structuring-novelty-scoring</b> [sop] &middot; <i>knowledge-structuring</i><hr><b>dimensional sop。</b> 给空白格按 novelty(距离/可行/影响)打 0-10 分。HARD-GATE: 每分附显式 reasoning。",
-      "update": "skill rename: 重命名磁盘文件夹 novelty-scoring → knowledge-structuring-novelty-scoring(裸名 novelty-scoring 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/novelty-scoring/ → 本 package 版重命名为 knowledge-structuring-novelty-scoring(裸名 novelty-scoring 跨 3 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 knowledge-structuring-novelty-scoring/,撞车组全部新名建好后删除旧的合并文件夹 skills/novelty-scoring/。"
     },
     {
       "name": "question-generation",
@@ -5549,14 +5549,14 @@
       "layer": "sop",
       "package": "north-star-crystallization",
       "description": "<b>north-star-crystallization-broad-web-search</b> [sop] &middot; <i>north-star-crystallization</i><hr><b>SOP/import。</b> <code>execution: import</code>,严格套用外部 <b>web-browsing/web-search</b> 协议做宽网扫描。HARD-GATE:每次 brave_web_search count=10、合计 ≥150 条结果。source 指向另一 repo(跨 repo,不在本图建点)。",
-      "update": "skill rename: 重命名磁盘文件夹 broad-web-search → north-star-crystallization-broad-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/broad-web-search/ → 重命名为 north-star-crystallization-broad-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "north-star-crystallization-broad-paper-search",
       "layer": "sop",
       "package": "north-star-crystallization",
       "description": "<b>north-star-crystallization-broad-paper-search</b> [sop] &middot; <i>north-star-crystallization</i><hr><b>SOP/import。</b> <code>execution: import</code>,严格套用外部 <b>literature-engine/literature-overview</b> 协议做论文 landscape 扫描。HARD-GATE:≥80 篇。source 指向另一 repo(跨 repo,不在本图建点)。",
-      "update": "skill rename: 重命名磁盘文件夹 broad-paper-search → north-star-crystallization-broad-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/broad-paper-search/ → 重命名为 north-star-crystallization-broad-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "generate-candidate-fields",
@@ -5703,7 +5703,7 @@
       "layer": "strategy",
       "package": "stress-test",
       "description": "<b>stress-test-assumption-challenge</b> [strategy] &middot; <i>stress-test</i><hr><b>Strategy:军事级假设测试</b>(Key Assumptions Check + Devil's Advocacy + Team A/B)。编排 key-assumptions-check→devils-advocacy→probe-execution→assumption-cascade-tracer;tactics: assumption-cascade + structured-attack-campaign。",
-      "update": "skill rename: 重命名磁盘文件夹 assumption-challenge → stress-test-assumption-challenge(裸名 assumption-challenge 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/assumption-challenge/ → 本 package 版重命名为 stress-test-assumption-challenge(裸名 assumption-challenge 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-assumption-challenge/,撞车组全部新名建好后删除旧的合并文件夹 skills/assumption-challenge/。"
     },
     {
       "name": "alternative-analysis",
@@ -5836,21 +5836,21 @@
       "layer": "strategy",
       "package": "stress-test",
       "description": "<b>stress-test-validity-envelope-mapping</b> [strategy] &middot; <i>stress-test</i><hr><b>Strategy:有效性包络综合</b>。跨所有维度映射断言有效性边界并综合成有界区域,识别最弱维度。编排 parameter-space-mapping→extreme-value-generation→breakpoint-detection→validity-envelope-construction;tactics: boundary-probing + contradiction-derivation。",
-      "update": "skill rename: 重命名磁盘文件夹 validity-envelope-mapping → stress-test-validity-envelope-mapping(裸名 validity-envelope-mapping 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/validity-envelope-mapping/ → 本 package 版重命名为 stress-test-validity-envelope-mapping(裸名 validity-envelope-mapping 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-validity-envelope-mapping/,撞车组全部新名建好后删除旧的合并文件夹 skills/validity-envelope-mapping/。"
     },
     {
       "name": "stress-test-dialectical-escalation",
       "layer": "tactic",
       "package": "stress-test",
       "description": "<b>stress-test-dialectical-escalation</b> [tactic] &middot; <i>stress-test</i><hr><b>Tactic:辩证升级</b>。基于信心阈值逐轮提升攻击复杂度。编排 debate-critic→debate-defender→debate-judge→confidence-calibration(>0.7 升级/0.3-0.7 同级换角度/<0.3 崩溃)。被 critic-defender-judge + adversarial-escalation 复用。",
-      "update": "skill rename: 重命名磁盘文件夹 dialectical-escalation → stress-test-dialectical-escalation(裸名 dialectical-escalation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/dialectical-escalation/ → 本 package 版重命名为 stress-test-dialectical-escalation(裸名 dialectical-escalation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-dialectical-escalation/,撞车组全部新名建好后删除旧的合并文件夹 skills/dialectical-escalation/。"
     },
     {
       "name": "stress-test-perspective-rotation",
       "layer": "tactic",
       "package": "stress-test",
       "description": "<b>stress-test-perspective-rotation</b> [tactic] &middot; <i>stress-test</i><hr><b>Tactic:视角轮换</b>。序贯多视角评估 + 分歧聚合 + 审议。编排 debate-architect 分配视角→perspective-critic×N→divergence-detection→confidence-calibration。被 society-of-mind + multi-perspective-panel 复用。",
-      "update": "skill rename: 重命名磁盘文件夹 perspective-rotation → stress-test-perspective-rotation(裸名 perspective-rotation 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/perspective-rotation/ → 本 package 版重命名为 stress-test-perspective-rotation(裸名 perspective-rotation 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-perspective-rotation/,撞车组全部新名建好后删除旧的合并文件夹 skills/perspective-rotation/。"
     },
     {
       "name": "evidence-tournament",
@@ -5948,42 +5948,42 @@
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-web-search</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(import):快速 web 扫描</b>。import 自 web-browsing/web-search;一次 = 一次 brave_web_search(count=10)。<b>仅 snippets,不得据此下结论</b>。",
-      "update": "skill rename: 重命名磁盘文件夹 web-search → stress-test-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-search/ → 重命名为 stress-test-web-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-search)。"
     },
     {
       "name": "stress-test-web-research",
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-web-research</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(import):深度 web 全文检索</b>。import 自 web-browsing/web-research;一次 = 一次 apify/rag-web-browser。任何实质性论断需全文。",
-      "update": "skill rename: 重命名磁盘文件夹 web-research → stress-test-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/web-research/ → 重命名为 stress-test-web-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 web-browsing/web-research)。"
     },
     {
       "name": "stress-test-paper-overview",
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-paper-overview</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(import):论文 landscape 扫描</b>。import 自 literature-engine/paper-overview;仅摘要与元数据,<b>不得据摘要论方法/结果</b>。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-overview → stress-test-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-overview/ → 重命名为 stress-test-paper-overview;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-overview)。"
     },
     {
       "name": "stress-test-paper-search",
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-paper-search</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(import):论文 AI 摘要报告</b>。import 自 literature-engine/paper-search;一次 = 一次 get_paper_content;够方法/结果论断,精确引用需 paper-research。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-search → stress-test-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-search/ → 重命名为 stress-test-paper-search;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-search)。"
     },
     {
       "name": "stress-test-paper-research",
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-paper-research</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(import):论文原始全文</b>。import 自 literature-engine/paper-research;用于精确引用/方法细节/具体数字。<b>深度天花板</b>。",
-      "update": "skill rename: 重命名磁盘文件夹 paper-research → stress-test-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
+      "update": "skill rename: 源磁盘文件夹 skills/paper-research/ → 重命名为 stress-test-paper-research;本 skill 是 import wrapper,同时修正其 source: 指针 (指向 literature-engine/literature-research)。"
     },
     {
       "name": "stress-test-saturation-detection",
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-saturation-detection</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(subagent,跨 5 campaign 共享):饱和检测</b>。比较累积 findings 与最新迭代算新颖率,作终止信号。HARD:≥3 连续迭代 <10% 新颖 → saturated。",
-      "update": "skill rename: 重命名磁盘文件夹 saturation-detection → stress-test-saturation-detection(裸名 saturation-detection 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/saturation-detection/ → 本 package 版重命名为 stress-test-saturation-detection(裸名 saturation-detection 跨 6 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-saturation-detection/,撞车组全部新名建好后删除旧的合并文件夹 skills/saturation-detection/。"
     },
     {
       "name": "verdict-synthesis",
@@ -6347,7 +6347,7 @@
       "layer": "sop",
       "package": "stress-test",
       "description": "<b>stress-test-validity-envelope-construction</b> [sop] &middot; <i>stress-test</i><hr><b>SOP(subagent):有效性包络构造</b>。把多维 breakpoint 数据综合成多维有效性包络。",
-      "update": "skill rename: 重命名磁盘文件夹 validity-envelope-construction → stress-test-validity-envelope-construction(裸名 validity-envelope-construction 跨 package 撞车,本 package 版独立成名)。"
+      "update": "skill rename: 源磁盘文件夹 skills/validity-envelope-construction/ → 本 package 版重命名为 stress-test-validity-envelope-construction(裸名 validity-envelope-construction 跨 2 个 package 撞车,磁盘只有 1 个合并文件夹)。后续 refactory: 从本 package 语义提取正确版本放入 stress-test-validity-envelope-construction/,撞车组全部新名建好后删除旧的合并文件夹 skills/validity-envelope-construction/。"
     },
     {
       "name": "ref/north-star-crystallization",
