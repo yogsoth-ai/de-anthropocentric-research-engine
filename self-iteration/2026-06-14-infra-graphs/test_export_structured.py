@@ -70,3 +70,46 @@ def test_missing_edges_computed():
         assert e["update"].startswith("缺失依赖 edge:"), e["update"][:40]
         assert e["confidence"] == "high"
     assert len(eu) > 0, "expected non-empty missing-edge set"
+
+
+def test_update_values_classified():
+    d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
+    TAGS = ("skill rename:", "缺失依赖 edge:")   # 2 classes (缺失 skill node dropped)
+    for n in d["nodes"]:
+        assert n["update"] == "none" or n["update"].startswith(TAGS), n["update"][:40]
+    for e in d["edges"]:
+        assert e["update"] == "none" or e["update"].startswith(TAGS), e["update"][:40]
+
+def test_missing_edges_subset():
+    d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
+    names = {n["name"] for n in d["nodes"]}
+    for e in d["edges"]:
+        if e["update"].startswith("缺失依赖 edge:"):
+            assert e["from"] in names and e["to"] in names, f"ghost edge {e['from']}->{e['to']}"
+
+def test_no_low_confidence_in_output():
+    # low-confidence.json items must NOT appear as updates unless user-approved.
+    # (This round low is empty — user elected to add all missing edges.)
+    lc_path = HERE / "low-confidence.json"
+    if not lc_path.exists():
+        return
+    lc = json.loads(lc_path.read_text(encoding="utf-8"))
+    d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
+    approved = {(i.get("from"), i.get("to")) for i in lc.get("approved", [])}
+    out_edges = {(e["from"], e["to"]) for e in d["edges"]
+                 if e["update"].startswith("缺失依赖 edge:")}
+    for item in lc.get("edge_updates", []):
+        key = (item["from"], item["to"])
+        if key in out_edges:
+            assert key in approved, f"unapproved low-confidence edge in output: {key}"
+
+def test_injected_edge_count_matches_missing_updates():
+    # self-contained: run the full pipeline so injection state is deterministic
+    # regardless of test order (other tests re-export and reset update fields).
+    subprocess.run(["python","export_structured.py"], cwd=HERE, check=True)
+    subprocess.run(["python","compute_missing_edges.py"], cwd=HERE, check=True)
+    subprocess.run(["python","merge_updates.py"], cwd=HERE, check=True)
+    mu = json.loads((HERE/"missing-updates.json").read_text(encoding="utf-8"))["edge_updates"]
+    d = json.loads((HERE/"refactory_source.json").read_text(encoding="utf-8"))
+    injected = [e for e in d["edges"] if e["update"].startswith("缺失依赖 edge:")]
+    assert len(injected) == len(mu), f"injected={len(injected)} vs missing-updates={len(mu)}"
