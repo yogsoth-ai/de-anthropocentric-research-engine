@@ -206,3 +206,15 @@ alphaxiv.discover_papers(
 ss.citations(paper_id: "ARXIV:2210.17323", limit: 50)  # GPTQ
 ss.citations(paper_id: "ARXIV:2306.00978", limit: 50)  # AWQ
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
+
+<!-- END available-tables (generated) -->

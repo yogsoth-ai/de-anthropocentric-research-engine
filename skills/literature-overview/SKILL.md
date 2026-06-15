@@ -157,3 +157,16 @@ ss.relevanceSearch(
 ```
 
 **Expected output:** A list of 15-30 papers with titles, authors, years, and citation counts — enough to understand the landscape and pick papers for deeper reading.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
+| literature-search | Medium-depth literature search — read AI-summarized reports for every paper analyzed |
+
+<!-- END available-tables (generated) -->
