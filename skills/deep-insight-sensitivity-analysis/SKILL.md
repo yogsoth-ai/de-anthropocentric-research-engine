@@ -52,3 +52,28 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 ## Context Management
 
 context-checkpoint after each strategy completes.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| assumption-criticality | Measure how much conclusions change when each assumption is negated. Ranks assumptions by their impact on the final result. |
+| decision-sensitivity | Identify which uncertainties would actually change the research direction decision. Compute EVPI to prioritize uncertainty reduction. |
+| parameter-screening | Quick Morris method screening to identify which parameters have large effects and which can be safely ignored. |
+| uncertainty-propagation | Propagate input uncertainties through the model via Monte Carlo sampling. Identifies which input uncertainties contribute most to output uncertainty. |
+| variance-decomposition | Sobol variance decomposition — compute first-order and total-order sensitivity indices to quantify each parameter's contribution to output variance. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->

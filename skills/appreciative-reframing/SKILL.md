@@ -45,3 +45,16 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Find positive deviants (cases that succeed despite the general problem), identify their enabling conditions, reframe the problem as "how to create more of what already works."
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| appreciative-discovery | Search for positive deviants and extract transferable principles using Appreciative Inquiry. |
+| reformulation-synthesis | Compile all problem reformulation analyses into a coherent report with a recommended new problem definition. |
+
+<!-- END available-tables (generated) -->

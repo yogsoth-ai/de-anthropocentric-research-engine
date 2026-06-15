@@ -41,3 +41,18 @@ Focus on: which inputs, if resolved, would most reduce output uncertainty? This 
 - Critical path identified: >= 1 path with ranked inputs
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| critical-path-identification | Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization. |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| distribution-assignment | Assign probability distributions to uncertain parameters based on available evidence and domain knowledge. |
+| monte-carlo-sampling | Design and execute Monte Carlo sampling strategy for uncertainty propagation through a model. |
+
+<!-- END available-tables (generated) -->

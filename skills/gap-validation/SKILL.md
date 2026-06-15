@@ -63,3 +63,25 @@ For each classified gap: verify across multiple databases (Semantic Scholar, Goo
 ## Output Format
 
 Validated Gap List — each gap with: validation status (confirmed/partial/refuted), cross-database results, temporal trend, false-gap assessment.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| cross-validation | Multi-source cross-validation of gap authenticity — cross-database search, temporal sensitivity testing, false-gap filtering, stakeholder confirmation. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| cross-database-verification | Verify gap existence across multiple databases (Semantic Scholar, Google Scholar, arXiv, domain-specific). Distinguishes database-specific gaps from universal gaps. |
+| false-gap-filtering | Detect false gaps — search failures, already-solved gaps, and inherently unanswerable questions masquerading as research gaps. |
+| temporal-sensitivity-testing | Test whether a gap persists across different time windows (2/5/10 years). Determines if gap is narrowing, widening, or stable over time. |
+
+<!-- END available-tables (generated) -->

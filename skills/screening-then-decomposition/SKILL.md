@@ -43,3 +43,18 @@ Phase 3: Detect significant interaction pairs (STi - Si > threshold). Characteri
 - Interaction pairs identified: >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| interaction-detection | Detect and characterize significant parameter interactions from Sobol decomposition results. |
+| morris-screening | Morris method screening — compute elementary effects to quickly identify important vs unimportant parameters. |
+| sobol-decomposition | Sobol variance decomposition — compute first-order and total-order sensitivity indices for precise variance attribution. |
+
+<!-- END available-tables (generated) -->

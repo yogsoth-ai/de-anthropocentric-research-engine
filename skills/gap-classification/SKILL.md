@@ -56,3 +56,16 @@ For each gap candidate, apply Miles 7-type taxonomy (theoretical, methodological
 ## Output Format
 
 Classified Gap Table — each gap with: type label, AHRQ reason, confidence, supporting evidence.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ahrq-reason-classification | Classify gap root causes using AHRQ 4-reason framework (insufficient info, biased info, inconsistent info, not yet integrated). |
+| gap-typology-classification | Classify gaps using Miles 7-type taxonomy (theoretical, methodological, empirical, population, practical, knowledge void, evidence gap). |
+
+<!-- END available-tables (generated) -->

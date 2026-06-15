@@ -52,3 +52,25 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Assign probability distributions to uncertain inputs, propagate through the model via Monte Carlo sampling, analyze output distribution, identify which input uncertainties contribute most.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| uncertainty-cascade | Uncertainty cascade propagation — assign input distributions, sample via Monte Carlo, propagate through model, analyze output distribution, identify critical paths. Maps how input uncertainty flows to output uncertainty. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| critical-path-identification | Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization. |
+| distribution-assignment | Assign probability distributions to uncertain parameters based on available evidence and domain knowledge. |
+| monte-carlo-sampling | Design and execute Monte Carlo sampling strategy for uncertainty propagation through a model. |
+
+<!-- END available-tables (generated) -->

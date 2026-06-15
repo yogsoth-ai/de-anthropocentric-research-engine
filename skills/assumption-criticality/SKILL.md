@@ -53,3 +53,26 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Extract assumptions, define negation for each, re-derive conclusions under negated assumption, measure how much the conclusion changes. Rank by conclusion sensitivity.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| deep-insight-assumption-perturbation | One-at-a-time assumption perturbation — extract assumptions, define negations, re-derive conclusions under each negation, measure sensitivity. Identifies which assumptions are load-bearing. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| conclusion-sensitivity-measurement | Quantify how much conclusions change across all assumption negations and produce a sensitivity ranking. |
+| deep-insight-assumption-extraction | Systematically extract all assumptions (stated, implicit, boundary, mathematical, practical) from a method or model. |
+| negation-definition | Define strongest plausible alternatives (negations) for each assumption to enable perturbation analysis. |
+| re-derivation | Re-derive conclusions under a negated assumption, tracking where the derivation diverges from the original. |
+
+<!-- END available-tables (generated) -->

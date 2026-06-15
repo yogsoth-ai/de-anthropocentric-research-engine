@@ -44,3 +44,15 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Apply Rittel's 10 criteria for wicked problems, score the research problem on each, determine if the problem is tame (solvable with standard methods), complex (requires systems thinking), or wicked (requires ongoing management, not solution). Adjust research strategy accordingly.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| wickedness-scoring | Score a problem against Rittel's 10 criteria to determine if it is tame, complex, or wicked. |
+
+<!-- END available-tables (generated) -->

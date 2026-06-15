@@ -41,3 +41,18 @@ The goal is not to prove the dominant idea wrong — it is to escape its gravita
 - Viable new framings extracted: >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consequence-following | Follow a provocation's logical consequences step by step to extract viable insights and new research directions. |
+| deep-insight-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
+| deep-insight-web-research | Deep web research with full page fetching via Apify. Import of web-browsing/web-research skill. Must fetch full page — no conclusions from previews. |
+| dominant-idea-identification | Identify dominant paradigms and assumptions constraining thinking in a research field. |
+
+<!-- END available-tables (generated) -->

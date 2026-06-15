@@ -60,3 +60,24 @@ Identify opposing forces that keep the gap open. Use evaporating cloud to expose
 ## Output Format
 
 Tension Report — identified tensions, evaporating clouds, polarity maps, resolution strategies.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| dialectical-synthesis | Hegelian thesis-antithesis-synthesis cycle — propose position, generate opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud and polarity-mapping SOPs. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| evaporating-cloud | Model conflicts as Goldratt's Evaporating Cloud — expose hidden assumptions behind opposing needs to dissolve the conflict. |
+| polarity-mapping | Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative of each pole), early warnings, action steps for managing rather than solving. |
+
+<!-- END available-tables (generated) -->

@@ -53,3 +53,26 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Enumerate modeling assumptions, generate alternative models by relaxing each, compare results across alternatives, flag results that depend on specific assumptions (fragile).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| multi-model-convergence | Wimsatt-style multi-method cross-validation — enumerate assumptions, generate alternative models, compare results, flag divergences. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternative-model-generation | Generate alternative model formulations by relaxing, replacing, or generalizing specific assumptions. |
+| convergence-assessment | Compare results across multiple model variants — quantitative agreement metrics and qualitative conclusion stability. |
+| deep-insight-assumption-enumeration | Systematically identify all assumptions in a method/model — structural, parametric, distributional, and scope assumptions. |
+| fragility-flagging | Identify which specific assumption changes cause conclusion divergence. Rates fragility severity and plausibility of alternatives. |
+
+<!-- END available-tables (generated) -->

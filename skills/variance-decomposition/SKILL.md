@@ -51,3 +51,24 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 For parameters surviving screening, compute Sobol first-order (Si) and total-order (STi) indices. Si measures direct effect, STi-Si measures interaction contribution. Focus on parameters with high STi.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| screening-then-decomposition | Two-phase sensitivity — Morris quick screening to eliminate unimportant factors, then Sobol precise decomposition on survivors. Efficient allocation of analytical effort. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| interaction-detection | Detect and characterize significant parameter interactions from Sobol decomposition results. |
+| sobol-decomposition | Sobol variance decomposition — compute first-order and total-order sensitivity indices for precise variance attribution. |
+
+<!-- END available-tables (generated) -->

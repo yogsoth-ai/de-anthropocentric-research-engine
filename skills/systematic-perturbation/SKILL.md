@@ -37,3 +37,18 @@ Define orthogonal axes of variation (at least 3), perturb one axis at a time whi
 - validity envelope: >= 1 constructed
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| controlled-perturbation | Systematically vary parameters along defined axes, recording performance at each point to identify degradation thresholds. |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| deep-insight-validity-envelope-construction | Combine multi-axis perturbation data into a multi-dimensional validity description with boundary conditions and interaction effects. |
+| variation-axis-definition | Identify orthogonal axes along which a method's validity might vary. Ensures axes are independent, measurable, and span the relevant parameter space. |
+
+<!-- END available-tables (generated) -->

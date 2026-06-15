@@ -57,3 +57,17 @@ Compile all intermediate products (gap candidates, classifications, validations,
 ## Output Format
 
 Gap Analysis Report — executive summary, evidence gap map, classified gap inventory, prioritized research agenda, methodology notes.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| egm-construction | Build structured Evidence Gap Maps — define axes (intervention × outcome or method × domain), place gaps in cells, annotate with evidence density and quality. |
+| evidence-synthesis | Synthesize multi-source evidence into structured argumentation. Weaves findings from literature, web, and analysis into coherent evidence maps with explicit strength ratings. |
+| gap-synthesis | Compile all gap analysis intermediate products into a coherent final report with executive summary, detailed findings, and research agenda. |
+
+<!-- END available-tables (generated) -->

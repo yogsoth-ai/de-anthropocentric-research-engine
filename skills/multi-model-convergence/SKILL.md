@@ -39,3 +39,19 @@ For each key assumption, generate at least one alternative model. Run all models
 - fragility flags: assessed
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternative-model-generation | Generate alternative model formulations by relaxing, replacing, or generalizing specific assumptions. |
+| convergence-assessment | Compare results across multiple model variants — quantitative agreement metrics and qualitative conclusion stability. |
+| deep-insight-assumption-enumeration | Systematically identify all assumptions in a method/model — structural, parametric, distributional, and scope assumptions. |
+| deep-insight-paper-research | Full-text paper reading via three-pass Keshav method. Import of literature-engine/literature-research skill. Authoritative source for claims about paper content. |
+| fragility-flagging | Identify which specific assumption changes cause conclusion divergence. Rates fragility severity and plausibility of alternatives. |
+
+<!-- END available-tables (generated) -->

@@ -41,3 +41,18 @@ Key insight: the problem looks fundamentally different from each perspective. Th
 - Synthesis of cross-perspective insights: >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| appreciative-discovery | Search for positive deviants and extract transferable principles using Appreciative Inquiry. |
+| catwoe-analysis | Apply Checkland's CATWOE analysis from a specific stakeholder perspective to reveal how the problem looks from that viewpoint. |
+| deep-insight-multi-stakeholder-simulation | Simulate multiple stakeholder perspectives evaluating a research gap, method, or proposal. Identifies blind spots from single-perspective analysis. |
+| reframing-matrix | Reframe the problem from 4 professional perspectives to reveal what each discipline would focus on. |
+
+<!-- END available-tables (generated) -->

@@ -54,3 +54,17 @@ Use abstraction laddering to move between concrete and abstract framings. Genera
 ## Output Format
 
 Reformulated Questions — abstraction ladder, HMW set, Socratic challenges, recommended framing with reasoning.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-laddering | Move between concrete and abstract framings — 3 levels up (Why?) and 3 levels down (How?) to find the most productive research level. |
+| hmw-formulation | Generate "How Might We" questions at different scope levels (narrow, medium, broad). Ensures each is actionable without being prescriptive. |
+| socratic-probing | Apply 6 types of Socratic questions to test claims and assumptions. Exposes weaknesses and strengthens reasoning. |
+
+<!-- END available-tables (generated) -->

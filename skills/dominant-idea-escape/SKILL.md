@@ -52,3 +52,25 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Identify the dominant paradigm/assumption constraining the field, generate de Bono provocations (escape, reversal, exaggeration, distortion), follow consequences of each provocation to extract viable new framings.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| lateral-escape | de Bono lateral escape sequence — identify dominant idea, generate provocations (escape/reversal/exaggeration/distortion), follow consequences to extract new framings. Breaks paradigm lock-in. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consequence-following | Follow a provocation's logical consequences step by step to extract viable insights and new research directions. |
+| deep-insight-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
+| dominant-idea-identification | Identify dominant paradigms and assumptions constraining thinking in a research field. |
+
+<!-- END available-tables (generated) -->
