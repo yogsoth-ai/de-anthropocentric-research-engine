@@ -39,3 +39,17 @@ Focus within chosen field(s). Identify specific sub-directions and present ranke
 ## Output (Tactic-Level Aggregation)
 
 `RankedCandidates[] + user's selection`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| deep-web-search | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Spawns a subagent to read pages in isolated context. Hard constraint: at least 30 web pages read in full. |
+| north-star-crystallization-broad-paper-search | Paper landscape scan within selected field(s). Strict import of literature-engine/literature-overview skill. Hard constraint: at least 80 papers scanned. |
+| present-candidates | Analyze sub-directions within the user's chosen field and present ranked candidates. Combines sub-direction identification, skill-gap matching, and presentation into a single SOP. Depth scales by start mode: cold-start shows broad sub-directions, warm-start shows specific sub-problems, hot-start shows granular technical details. |
+
+<!-- END available-tables (generated) -->

@@ -28,3 +28,15 @@ Import — strictly follow `web-browsing/web-search` skill protocol.
 ## Import Source
 
 `web-browsing` repo → `skills/web-search/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-search | Quick web scanning — discover pages, get snippets, find URLs. For orientation only, not substantive analysis. |
+
+<!-- END available-tables (generated) -->

@@ -38,3 +38,18 @@ Broad, shallow field exploration. Understand the landscape of possibilities befo
 ## Output (Tactic-Level Aggregation)
 
 `FieldPanorama[] + user's selected 1-2 fields of interest`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| generate-candidate-fields | Propose 3-8 candidate research fields based on the full ActorProfile. When user wants to explore beyond their current stack, use other ActorProfile signals (intentionality, boundary) to determine exploration space. Free exploration within the boundary. |
+| landscape-synthesis | Evaluate each candidate research field on maturity, competition, entry barrier, and publication opportunity. Synthesizes broad-web-search results into a structured FieldPanorama. Must consider both niche approaches AND direct frontal competition in hot fields. |
+| north-star-crystallization-broad-web-search | Quick web scanning for field landscape understanding. Strict import of web-browsing/web-search skill. Hard constraint: brave_web_search count=10 per call, at least 150 total search results before completing. |
+| present-and-ask | Present the field panorama to the user and gather their preferences — which fields interest them, which they reject, and why. A dialogue SOP that bridges landscape-synthesis output to user decision. |
+
+<!-- END available-tables (generated) -->

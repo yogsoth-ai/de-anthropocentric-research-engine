@@ -53,3 +53,26 @@ Dialogue + investigation operations. See individual SOP directories for details.
 
 - Output: North Star Statement + ResearchBrief
 - Downstream: knowledge-acquisition campaigns consume the ResearchBrief
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| cold-start | Full crystallization strategy for users who have no research direction at all. Covers actor profiling, landscape reconnaissance, direction narrowing, obstacle analysis, goal decomposition, and north-star synthesis. Use when the user's first message reveals zero specificity about what they want to research. |
+| hot-start | Minimal crystallization strategy for users who already have a specific research topic or problem (e.g., "I want to improve CoT faithfulness in LLMs") and need structuring into a formal North Star. Heavily simplifies or skips exploration tactics, focusing on obstacle analysis, goal decomposition, and synthesis. Use when the user's first message reveals a specific, actionable research direction. |
+| warm-start | Simplified crystallization strategy for users who have a general research direction (e.g., "I'm interested in LLM reasoning") but lack specificity. Simplifies actor profiling and landscape reconnaissance, then proceeds through direction narrowing, obstacle analysis, goal decomposition, and north-star synthesis. Use when the user's first message reveals a general area but not a specific problem. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->

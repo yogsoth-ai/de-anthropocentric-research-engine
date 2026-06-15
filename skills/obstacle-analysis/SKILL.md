@@ -45,3 +45,18 @@ Identify barriers, assess severity, propose mitigations, get acceptance.
 ## Output (Tactic-Level Aggregation)
 
 `ObstacleReport { obstacles[], mitigations[], accepted: bool }`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ask-obstacle-acceptance | Present obstacles with their severity assessments and proposed mitigations to the user. Ask whether they can accept these obstacles. If unacceptable after 2 rounds, return to present-candidates. |
+| assess-obstacle-severity | Rate each identified obstacle's difficulty — overcomability, time cost, workaround existence. May optionally use search tools to validate assessments. |
+| identify-obstacles | Enumerate barriers to pursuing the chosen research direction — knowledge barriers, resource barriers, capability barriers, competition barriers. May optionally use search tools to discover obstacles the user hasn't mentioned. |
+| propose-mitigations | Propose concrete mitigation strategies for severe obstacles. MUST use search tools to validate that proposed mitigations are realistic — no armchair theorizing. Each mitigation must have evidence of feasibility. |
+
+<!-- END available-tables (generated) -->

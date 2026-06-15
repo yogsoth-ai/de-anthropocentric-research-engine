@@ -24,3 +24,15 @@ At least 80 papers scanned before completing this SOP.
 ## Import Source
 
 `literature-engine` repo → `skills/literature-overview/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-overview | Quick landscape scan — discover papers on a topic without full-text reading |
+
+<!-- END available-tables (generated) -->

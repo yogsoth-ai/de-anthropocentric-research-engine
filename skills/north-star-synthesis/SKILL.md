@@ -37,3 +37,17 @@ Converge all accumulated context into North Star + ResearchBrief.
 ## Output (Tactic-Level Aggregation, Presented to User)
 
 `North Star (one sentence) + ResearchBrief (structured context document)`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| crystallize-north-star | Fuse the GoalTree root node and user motivation into a single crystallized North Star statement. Format: '[verb] [specific goal], through [method/path], solving [what problem], ultimately [what impact]'. Quality checks: specific? ambitious? achievable? |
+| final-validation | Self-review the North Star + ResearchBrief for completeness, consistency, and clarity before presenting to user. If issues found, return to specific tactic/SOP for targeted fix. If passes, present final output to user for confirmation. |
+| generate-research-brief | Aggregate all accumulated context from the crystallization process into a structured ResearchBrief document. This is the final output artifact alongside the North Star — a comprehensive requirement context document for downstream research strategies. |
+
+<!-- END available-tables (generated) -->

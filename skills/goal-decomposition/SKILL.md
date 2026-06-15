@@ -36,3 +36,19 @@ KAOS-style recursive goal decomposition into a validated GoalTree.
 ## Output (Tactic-Level Aggregation)
 
 `GoalTree + user-confirmed priorities`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| and-or-decompose | KAOS-style recursive goal decomposition. AND decomposition for sub-goals that must ALL be satisfied. OR decomposition for alternative paths where any one suffices. Produces a GoalTree (DAG structure). |
+| ask-decomposition-validation | Present the GoalTree to the user for confirmation. Ask about reasonableness, missing elements, and priority ordering among sub-goals. |
+| feasibility-check | Cross-reference the GoalTree against ActorProfile (capabilities), ObstacleReport (known barriers), and timeline (deadline feasibility). Identify infeasible paths and suggest OR alternatives. |
+| formulate-top-goal | Express the user's chosen research direction as a formal goal statement in the format: 'Achieve [what], such that [effect], under [constraints]'. Confirm with user before proceeding to decomposition. |
+| validate-leaves | Quality check on leaf nodes of the GoalTree. Verify each leaf is specific enough, actionable, and that the set of leaves fully covers the top goal. Flag issues for further decomposition. |
+
+<!-- END available-tables (generated) -->

@@ -32,3 +32,15 @@ Optional — may use web-search, web-research, literature-overview, literature-s
 ## Output
 
 Categorized list of obstacles (knowledge / resource / capability / competition).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->
