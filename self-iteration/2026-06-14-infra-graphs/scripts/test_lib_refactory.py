@@ -35,3 +35,29 @@ def test_is_real_skill_node():
     assert lib.is_real_skill_node("convergence-saturation-detection", nodes) is True
     assert lib.is_real_skill_node("ref/convergence", nodes) is False   # references layer
     assert lib.is_real_skill_node("timestamp.py", nodes) is False      # references layer
+
+
+def test_read_frontmatter_repairs_unquoted_colon_in_description(tmp_path):
+    # source-repo defect: an unquoted ':' in the description value breaks YAML.
+    # read_frontmatter must repair (quote the description) and still parse.
+    md = tmp_path / "SKILL.md"
+    md.write_text(
+        "---\nname: spawn-agent\n"
+        "description: Spawn a CC subagent. Used by SOPs that declare execution: subagent.\n"
+        "execution: subagent\n---\nbody\n", encoding="utf-8")
+    fm, body = lib.read_frontmatter(md)
+    assert fm is not None, "repair failed: still unparseable"
+    assert fm["name"] == "spawn-agent"
+    assert "execution: subagent" in fm["description"]
+    assert fm["execution"] == "subagent"
+
+
+def test_read_frontmatter_repair_preserves_embedded_quotes(tmp_path):
+    md = tmp_path / "SKILL.md"
+    md.write_text(
+        '---\nname: foo\n'
+        'description: Reads "config.yaml": then runs. Budget: 5 calls.\n---\nbody\n',
+        encoding="utf-8")
+    fm, _ = lib.read_frontmatter(md)
+    assert fm is not None
+    assert "config.yaml" in fm["description"] and "Budget: 5" in fm["description"]

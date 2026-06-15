@@ -3,6 +3,7 @@ for: reading refactory_source.json, the 101-entry rename map (collision+wrapper)
 edge-target-layer -> dependencies sub-key mapping, wrapper->internal-body source
 pointers, and the new-format frontmatter read/write."""
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent          # .../scripts
@@ -59,8 +60,35 @@ def read_frontmatter(skill_md_path):
     try:
         fm = yaml.safe_load(parts[1]) or {}
     except yaml.YAMLError:
-        return None, text
+        repaired = _repair_frontmatter_block(parts[1])
+        try:
+            fm = yaml.safe_load(repaired) or {}
+        except yaml.YAMLError:
+            return None, text
     return (fm if isinstance(fm, dict) else None), parts[2]
+
+
+_KEY_RE = re.compile(r"^([A-Za-z_][\w-]*):[ \t](.*\S.*)$")
+
+
+def _repair_frontmatter_block(block):
+    """Repair the common source-repo defect: a top-level `key: value` scalar whose
+    value contains an unquoted ':' (e.g. 'description: ... execution: subagent.').
+    Double-quote such values so YAML parses them as plain strings. Lines that are
+    already quoted, are block/flow openers, or have no inner colon are left alone."""
+    out = []
+    for line in block.split("\n"):
+        m = _KEY_RE.match(line)
+        if m:
+            key, val = m.group(1), m.group(2)
+            v = val.strip()
+            quoted = (v[:1] in ("'", '"')) or v[:1] in ("[", "{", "|", ">", "&", "*")
+            if not quoted and ":" in v:
+                esc = v.replace('\\', '\\\\').replace('"', '\\"')
+                out.append(f'{key}: "{esc}"')
+                continue
+        out.append(line)
+    return "\n".join(out)
 
 
 def write_frontmatter(skill_md_path, fm, body):

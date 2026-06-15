@@ -19,7 +19,8 @@ WEB_BODIES = {"web-search": "web-browsing", "web-research": "web-browsing"}
 
 
 def build_plan():
-    """Compute (copies, deletes, scripts, wrapper_source_fixes, body_fixes) w/o writing."""
+    """Compute (copies, deletes, scripts, wrapper_source_fixes, body_fixes,
+    missing_nodes) without writing."""
     col = json.loads((lib.HERE / "collision-links.json").read_text(encoding="utf-8"))["groups"]
     links = json.loads((lib.HERE / "infra-links.json").read_text(encoding="utf-8"))["collapse"]
     copies, deletes = [], set()
@@ -47,9 +48,38 @@ def build_plan():
     ts_src = lib.SRC_ROOT / "context-management" / "scripts" / "timestamp.py"
     scripts = [{"src": str(ts_src), "dst": str(lib.SKILL_DIR / s / "scripts" / "timestamp.py")}
                for s in ("context-init", "context-checkpoint")]
+    missing_nodes = _missing_node_copies()
     return {"copies": copies, "deletes": sorted(deletes),
             "scripts": [s["dst"] for s in scripts], "_scripts": scripts,
-            "wrapper_source_fixes": wrapper_source_fixes, "body_fixes": body_fixes}
+            "wrapper_source_fixes": wrapper_source_fixes, "body_fixes": body_fixes,
+            "missing_nodes": missing_nodes}
+
+
+def _missing_node_copies():
+    """Graph nodes (refactory_source) that have NO folder in the flat skills/ body
+    and are not collision/wrapper rename targets: 65 knowledge-structuring unique
+    skills (sourced bare from the pkg repo) + 3 package-root campaigns (sourced from
+    each repo's ENTRY.md). Copying these closes the 149 edges that originate from them."""
+    d = lib.load_source()
+    on_disk = {p.name for p in lib.SKILL_DIR.iterdir() if (p / "SKILL.md").exists()}
+    rm = lib.rename_map()
+    new_names = set(rm.values())
+    out = []
+    for n in d["nodes"]:
+        name, pkg, layer = n["name"], n.get("package"), n["layer"]
+        if layer in ("references", "entry"):
+            continue
+        if name in on_disk or name in new_names:
+            continue
+        if name == pkg:                                   # package-root campaign
+            src = lib.SRC_ROOT / pkg / "ENTRY.md"
+            out.append({"src": str(src), "dst": str(lib.SKILL_DIR / name / "SKILL.md"),
+                        "is_entry": True})
+        else:                                             # bare skill folder
+            src = lib.SRC_ROOT / pkg / "skills" / name
+            out.append({"src": str(src), "dst": str(lib.SKILL_DIR / name),
+                        "is_entry": False})
+    return out
 
 
 def apply(plan):
@@ -57,6 +87,15 @@ def apply(plan):
         dst = Path(c["dst"])
         if dst.exists(): shutil.rmtree(dst)
         shutil.copytree(c["src"], dst)
+    # copy graph nodes that were entirely absent from the flat body
+    for m in plan["missing_nodes"]:
+        dst = Path(m["dst"])
+        if m.get("is_entry"):                  # ENTRY.md -> skills/<pkg>/SKILL.md
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(m["src"], dst)
+        else:                                  # bare skill folder
+            if dst.exists(): shutil.rmtree(dst)
+            shutil.copytree(m["src"], dst)
     # replace external-import web bodies with the real source-repo bodies
     for b in plan["body_fixes"]:
         dst = Path(b["dst"])
@@ -86,6 +125,7 @@ def main():
     plan = build_plan()
     print(f"copies={len(plan['copies'])} deletes={len(plan['deletes'])} "
           f"scripts={len(plan['scripts'])} body_fixes={len(plan['body_fixes'])} "
+          f"missing_nodes={len(plan['missing_nodes'])} "
           f"wrapper_source_fixes={len(plan['wrapper_source_fixes'])}")
     if a.apply:
         apply(plan); print("APPLIED")

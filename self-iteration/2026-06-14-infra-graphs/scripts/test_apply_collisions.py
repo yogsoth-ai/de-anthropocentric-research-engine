@@ -53,3 +53,47 @@ def test_orphans_are_deleted():
     # the kept infra bodies must NOT be deleted
     assert "web-search" not in deleted_names
     assert "web-research" not in deleted_names
+
+
+def _expected_missing():
+    """Graph skill nodes absent from the flat body and not rename targets — computed
+    the same way the script does, so the test is independent of whether apply already
+    ran (clean tree -> 68; post-apply -> 0; both correct)."""
+    d = lib.load_source()
+    on_disk = {p.name for p in lib.SKILL_DIR.iterdir() if (p / "SKILL.md").exists()}
+    new_names = set(lib.rename_map().values())
+    return {n["name"] for n in d["nodes"]
+            if n["layer"] not in ("references", "entry")
+            and n["name"] not in on_disk and n["name"] not in new_names}
+
+
+def test_missing_nodes_match_graph_gap():
+    # build_plan's missing_nodes must equal the graph-vs-disk gap (order/idempotent-safe)
+    p = ac.build_plan()
+    mn = p["missing_nodes"]
+    got = {Path(m["dst"]).parent.name if m.get("is_entry") else Path(m["dst"]).name
+           for m in mn}
+    assert got == _expected_missing()
+    # every planned source must exist; entry roots come from ENTRY.md
+    for m in mn:
+        assert Path(m["src"]).exists(), f"missing-node source absent: {m['src']}"
+        if m.get("is_entry"):
+            assert Path(m["src"]).name == "ENTRY.md"
+
+
+def test_missing_nodes_cover_68_on_clean_tree():
+    # On a pristine flat body (before any apply) the gap is exactly the 65
+    # knowledge-structuring uniques + 3 package-root campaigns. Skip once applied.
+    exp = _expected_missing()
+    if not exp:
+        import pytest
+        pytest.skip("flat body already populated (apply has run); gap closed")
+    assert len(exp) == 68, f"clean-tree gap={len(exp)}"
+    roots = exp & {"creative-ideation", "deep-insight", "knowledge-acquisition"}
+    assert roots == {"creative-ideation", "deep-insight", "knowledge-acquisition"}
+
+
+def test_missing_node_dst_inside_skills():
+    p = ac.build_plan()
+    for m in p["missing_nodes"]:
+        assert str(lib.SKILL_DIR) in str(Path(m["dst"]).resolve().parent)
