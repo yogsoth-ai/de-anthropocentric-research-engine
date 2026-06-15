@@ -26,3 +26,15 @@ Spawn a subagent that takes the question and list of perspectives, then generate
 ## HARD-GATE
 
 Output MUST contain: one judgment object per perspective, each with `perspective_id`, `response`, and `reasoning` fields. Missing any perspective fails the gate.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

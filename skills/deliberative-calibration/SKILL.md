@@ -77,3 +77,24 @@ consistency_ratio: 0.04
 total_comparisons: 28
 convergence_iterations: 3
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| adaptive-pair-selection | Iteratively select maximally informative pairs, execute comparisons, update ratings, and check convergence until ranking stabilizes. |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+
+<!-- END available-tables (generated) -->

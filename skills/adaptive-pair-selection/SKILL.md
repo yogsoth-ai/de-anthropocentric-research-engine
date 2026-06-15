@@ -47,3 +47,18 @@ Loop stages 1-4 until convergence or budget exhaustion.
 - Global ranking with confidence intervals for each position
 - Convergence curve showing stability score over iterations
 - Comparison log with all judgments made
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
+| convergence-check | Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics. |
+| pair-selector | Select the next comparison pairs that maximize information gain given current ratings and comparison history. |
+| rating-update | Incorporate a new judgment into the rating model and return updated ratings for all candidates. |
+
+<!-- END available-tables (generated) -->

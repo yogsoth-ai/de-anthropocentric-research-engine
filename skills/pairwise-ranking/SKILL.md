@@ -86,3 +86,29 @@ Produce global rankings from pairwise comparisons. This campaign orchestrates co
 - Each SOP receives only its required inputs (no full state leakage)
 - Convergence check gates iteration termination
 - Final synthesis produces the deliverable ranking artifact
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| coherence-diagnosis | Strategy for auditing preference consistency using Consistency Ratio, cycle enumeration, and mElo to detect and resolve intransitivities. |
+| collective-adjudication | Strategy for multi-judge ranking aggregation using Condorcet, Schulze, Borda, Kemeny-Young, and Copeland methods to produce consensus rankings from diverse perspectives. |
+| deliberative-calibration | Strategy for small-N complete pairwise comparison using Bradley-Terry, Thurstone, AHP, and Borda methods to produce calibrated rankings. |
+| dynamic-tracking | Strategy for continuous rating updates using Elo, Glicko-2, TrueSkill 2, and Whole-History Rating for live ranking systems and A/B testing. |
+| efficient-exploration | Strategy for large-N sparse pairwise comparison using TrueSkill, active learning, and rank centrality to rank 100+ candidates from limited comparisons. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+
+<!-- END available-tables (generated) -->

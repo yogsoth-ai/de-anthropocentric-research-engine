@@ -25,3 +25,15 @@ Synthesis requires integrating multiple scenario evaluations, identifying patter
 ## HARD-GATE
 
 Output must include a final portfolio recommendation, numeric robustness score (0-1), and specific actionable recommendations. The synthesis must reference findings from all evaluated scenarios.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

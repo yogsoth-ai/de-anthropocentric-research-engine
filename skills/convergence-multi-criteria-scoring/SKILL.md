@@ -97,3 +97,43 @@ Evaluate and rank candidate alternatives using multi-criteria weighted assessmen
 - Strategy layer maintains State Ledger to track progress
 - Score matrix is passed between SOPs as structured data
 - Sensitivity analysis results are aggregated into final synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| best-option-selection | Select the single best candidate from a set using WSM, TOPSIS, AHP, MAUT, or VIKOR methods. |
+| category-sorting | Classify candidates into predefined categories using ELECTRE-Tri, FlowSort, AHPSort, or DRSA methods. |
+| full-ranking | Produce a complete ordering of all candidates using PROMETHEE I/II, ELECTRE III, or MAVT methods. |
+| non-compensatory-screening | Eliminate non-qualifying candidates using conjunctive rules, dominance filtering, lexicographic ordering, or veto thresholds. |
+| weight-elicitation | Determine criteria weights using AHP, Swing, BWM, MACBETH, or Simos methods. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-paper-overview | Paper landscape scan at abstract level — discover MCDA, voting theory, Delphi, and optimization methodology papers. |
+| convergence-paper-research | Full-text deep reading of methodology papers — complete understanding of algorithms, proofs, and implementation details. |
+| convergence-paper-search | Paper AI summary reading — deeper understanding of specific methodology papers without full-text commitment. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+| convergence-sensitivity-analysis | Tests conclusion robustness by perturbing parameters and observing rank changes. Shared across scoring, portfolio, and steel-manning campaigns. |
+| convergence-web-research | Deep web research with full-page extraction — detailed methodology guides, tutorials, implementation references. |
+| convergence-web-search | Quick web scan to discover relevant pages — methodology references, case studies, best practices for convergence methods. |
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| pairwise-ranking | Pairwise Ranking Campaign — produce global rankings through pairwise comparisons and voting aggregation using Bradley-Terry, Elo, TrueSkill, Condorcet, Borda, Schulze methods. |
+
+<!-- END available-tables (generated) -->

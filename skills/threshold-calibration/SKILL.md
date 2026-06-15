@@ -40,3 +40,17 @@ Systematically vary the consensus threshold to understand the sensitivity of con
 
 - Threshold-consensus curve (threshold vs. number-of-consensus-items curve)
 - Classification results (classification at operating threshold: consensus items, dissensus items)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consensus-classification | Classify items as consensus or dissensus at a given threshold. |
+| consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |
+| threshold-sweep | Compute consensus status at multiple threshold levels to produce a threshold-consensus curve. |
+
+<!-- END available-tables (generated) -->

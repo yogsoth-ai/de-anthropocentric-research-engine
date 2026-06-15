@@ -94,3 +94,31 @@ The campaign maintains a **Challenge Ledger** tracking:
 - Surviving concerns requiring monitoring
 
 State is passed between strategies via the ledger. Each strategy updates it upon completion.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| counter-thesis-construction | Construct the strongest possible counter-argument to the convergence decision using Dialectical Inquiry and Thesis-Antithesis-Synthesis methods. |
+| criteria-interrogation | Challenge the evaluation criteria themselves using Assumption-based Planning, Critical Systems Heuristics, and Boundary Critique to ensure the framework is sound. |
+| resurrection-advocacy | Argue for rejected candidates using Devil's Advocacy, Dialectical Inquiry, and Adversarial Collaboration to ensure elimination was justified. |
+| stakeholder-objection-simulation | Simulate stakeholder objections through role-play and political feasibility analysis to test whether the decision survives real-world opposition. |
+| winner-stress-testing | Stress-test the winning candidate using Pre-mortem, Red Teaming, and Failure Mode Analysis to expose hidden weaknesses before commitment. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-multi-stakeholder-simulation | Simulates diverse stakeholder perspectives and their strongest objections/support arguments. Shared across steel-manning and consensus campaigns. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+| convergence-sensitivity-analysis | Tests conclusion robustness by perturbing parameters and observing rank changes. Shared across scoring, portfolio, and steel-manning campaigns. |
+
+<!-- END available-tables (generated) -->

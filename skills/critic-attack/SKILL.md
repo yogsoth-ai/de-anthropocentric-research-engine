@@ -30,3 +30,15 @@ Output must include:
 - Severity rating for each (HIGH/MEDIUM/LOW)
 - Evidence or reasoning for each attack
 - At least 1 attack targeting the advocate's strongest point
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

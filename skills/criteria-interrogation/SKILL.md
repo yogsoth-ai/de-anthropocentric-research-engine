@@ -73,3 +73,16 @@ sensitivity_result: ROBUST | FRAGILE
 verdict: CRITERIA_SOUND | CRITERIA_BIASED | REWEIGHT
 recommended_changes: []
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| assumption-excavation | Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs. |
+| multi-perspective-attack | Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment. |
+
+<!-- END available-tables (generated) -->

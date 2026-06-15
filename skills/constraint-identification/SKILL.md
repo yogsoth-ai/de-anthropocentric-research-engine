@@ -75,3 +75,15 @@ constraint_analysis:
   showstopper_verdict: <yes/no>
   showstopper_reason: <if yes>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| constraint-drilling | Identify constraints, classify them by type and severity, assess removability, and design removal paths for removable constraints. |
+
+<!-- END available-tables (generated) -->

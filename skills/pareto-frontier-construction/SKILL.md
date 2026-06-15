@@ -45,3 +45,18 @@ Systematically construct the set of non-dominated solutions across multiple obje
 - Pareto front with >=5 non-dominated points
 - Trade-off visualization showing objective tensions
 - Selected portfolio with explicit justification referencing frontier position
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| pareto-visualization | Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation. |
+| selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
+
+<!-- END available-tables (generated) -->

@@ -71,3 +71,15 @@ maturity_diagnosis:
   bottlenecks: [{dimension, severity, reason}]
   radar_summary: <text>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+
+<!-- END available-tables (generated) -->

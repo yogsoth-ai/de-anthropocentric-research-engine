@@ -25,3 +25,15 @@ Weight computation involves pairwise comparison matrices or ranking logic, requi
 ## HARD-GATE
 
 Weights must sum to 1.0 (allowing ±0.001 rounding error), and must pass the method's consistency check (e.g., AHP CR < 0.1).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

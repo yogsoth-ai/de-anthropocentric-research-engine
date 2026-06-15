@@ -45,3 +45,17 @@ Apply Stage-Gate methodology to evaluate a candidate at defined decision points.
 - Evidence supporting each verdict
 - Conditions for advancement (what would change a KILL to GO)
 - Final feasibility synthesis with recommendation
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+| gate-criteria-definition | Define gate criteria and pass thresholds for a specific stage in the Stage-Gate process. |
+| gate-judgment | Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE verdict with evidence. |
+
+<!-- END available-tables (generated) -->

@@ -89,3 +89,38 @@ Converge multiple independent perspectives into shared agreement through iterati
 - Feedback reports summarize prior round without exposing individual identities
 - Final synthesis aggregates all rounds into a single consensus report
 - Non-consensus items are explicitly documented with dissent rationale
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| appropriateness-bounding | Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols. |
+| argument-crystallization | Distill the strongest arguments from each perspective through Argument Delphi or Dialectical Delphi methods. |
+| convergence-distillation | Iterative convergence to a single answer through Classic Delphi, Modified Delphi, or Nominal Group Technique rounds. |
+| disagreement-cartography | Map the structure of disagreement across perspectives using Policy Delphi, Argument Delphi, or SAST methods. |
+| futures-calibration | Aggregate probability judgments across perspectives using Real-Time Delphi or prediction market mechanisms. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-multi-stakeholder-simulation | Simulates diverse stakeholder perspectives and their strongest objections/support arguments. Shared across steel-manning and consensus campaigns. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| convergence-multi-criteria-scoring | Multi-Criteria Scoring Campaign — evaluate and rank candidates against multiple weighted criteria using AHP, BWM, TOPSIS, VIKOR, ELECTRE, PROMETHEE, MAUT methods. |
+
+<!-- END available-tables (generated) -->

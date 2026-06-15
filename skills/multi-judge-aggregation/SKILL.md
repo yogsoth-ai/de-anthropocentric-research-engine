@@ -44,3 +44,17 @@ Collect independent ballots from multiple judges or perspectives, aggregate them
 - Disagreement heatmap: for each pair, what fraction of judges agree
 - Condorcet winner identification (or explicit statement of cycle)
 - Per-judge deviation from consensus (who disagrees most, on what)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| aggregation-method | Aggregate multiple ranking ballots into a consensus ranking using a specified social choice method. |
+| ballot-collection | Gather independent ranking ballots from multiple judges or perspectives for a given candidate set. |
+| cycle-detection | Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics. |
+
+<!-- END available-tables (generated) -->

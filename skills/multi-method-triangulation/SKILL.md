@@ -40,3 +40,17 @@ Score the same set of alternatives using 2-3 MCDA methods, compare ranking diffe
 ## Minimum Yield
 
 Ranking comparison across >=2 methods + difference analysis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
+| method-sensitivity-report | Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives. |
+| rank-comparison | Compare multiple ranking results to assess agreement and identify divergent items. |
+
+<!-- END available-tables (generated) -->

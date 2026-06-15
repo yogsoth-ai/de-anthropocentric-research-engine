@@ -89,3 +89,28 @@ vulnerable_scenarios:
     gap_to_best: <value>
 method_used: <minimax-regret|robust-optimization|info-gap>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+| scenario-stress-testing | Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
+| portfolio-synthesis | Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance. |
+| scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
+
+<!-- END available-tables (generated) -->

@@ -49,3 +49,22 @@ First eliminate non-qualifying alternatives using non-compensatory rules, then p
 ## Minimum Yield
 
 Elimination rationale + survivor ranking
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
+| conjunctive-filter | Apply conjunctive screening rules to eliminate candidates that fail any threshold. |
+| criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |
+| dominance-check | Identify dominated and non-dominated alternatives in a score matrix using Pareto dominance. |
+| normalization | Normalize a score matrix using a specified method to make scores comparable across criteria. |
+| scoring-synthesis | Synthesize score matrix, rankings, and sensitivity analysis into a final recommendation. |
+| threshold-setting | Define minimum acceptable thresholds for each criterion based on context and constraints. |
+| weight-elicitation-sop | Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos). |
+
+<!-- END available-tables (generated) -->

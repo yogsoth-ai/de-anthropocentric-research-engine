@@ -25,3 +25,15 @@ Mapping requires evaluating each candidate against each niche criterion — a sy
 ## HARD-GATE
 
 Output must include a complete coverage map (every candidate assessed against every niche) and identification of gaps where no candidate provides strong coverage.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

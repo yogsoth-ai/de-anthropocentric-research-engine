@@ -43,3 +43,17 @@ A three-phase tactic that surfaces hidden assumptions, challenges each one adver
 - Alternative assumption for each (what if the opposite is true?)
 - Sensitivity map showing which assumptions are critical
 - List of critical assumptions requiring mitigation
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| conclusion-sensitivity | Map which assumptions are load-bearing by assessing how the conclusion changes if each assumption fails. |
+| convergence-assumption-challenge | Construct the strongest counter-argument against a specific assumption and propose alternatives. |
+| convergence-assumption-extraction | Systematically surface hidden assumptions underlying a decision with confidence levels. |
+
+<!-- END available-tables (generated) -->

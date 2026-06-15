@@ -25,3 +25,15 @@ Sensitivity analysis requires systematic exploration of parameter space with fre
 ## HARD-GATE
 
 Must perturb ≥3 parameters. A single-parameter sensitivity check is insufficient for robustness claims.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

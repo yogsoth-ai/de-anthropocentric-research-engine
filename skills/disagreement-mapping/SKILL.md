@@ -44,3 +44,18 @@ Map the structure of disagreement rather than forcing convergence. Collect diver
 - Disagreement clusters (identified clusters with characterization)
 - Core arguments per cluster (core arguments per cluster, steel-manned)
 - Visualization (disagreement map showing topology and fault lines)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| argument-extraction | Extract and steel-man the core arguments supporting a given opinion cluster. |
+| cluster-analysis | Identify natural opinion clusters from collected judgments and characterize each cluster. |
+| disagreement-visualization | Produce a structured disagreement map showing clusters, arguments, and fault lines. |
+| judgment-collection | Collect independent judgments from all perspectives on a given question. |
+
+<!-- END available-tables (generated) -->

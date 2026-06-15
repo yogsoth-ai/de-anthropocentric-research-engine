@@ -79,3 +79,17 @@ verdict: ACCEPT | REJECT | REVISE
 conditions: []
 recommended_modifications: []
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| adversarial-debate-protocol | Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds. |
+| assumption-excavation | Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs. |
+| multi-perspective-attack | Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment. |
+
+<!-- END available-tables (generated) -->

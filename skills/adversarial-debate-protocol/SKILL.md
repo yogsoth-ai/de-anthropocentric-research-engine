@@ -44,3 +44,17 @@ A formal three-role debate structure ensuring decisions survive rigorous adversa
 - Judge verdict (ACCEPT/REJECT/REVISE) with point-by-point reasoning
 - Conditions for acceptance (if ACCEPT)
 - Required modifications (if REVISE)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| advocate-construction | Construct the strongest possible case for a rejected candidate or counter-position. |
+| critic-attack | Attack an advocate's case with multiple arguments rated by severity. |
+| judge-verdict | Render an impartial verdict on advocate case vs critic attacks with explicit reasoning. |
+
+<!-- END available-tables (generated) -->

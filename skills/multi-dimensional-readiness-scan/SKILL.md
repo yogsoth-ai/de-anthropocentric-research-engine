@@ -43,3 +43,17 @@ Systematically evaluate a candidate across all relevant feasibility dimensions, 
 - Complete radar with >= 5 dimensions scored
 - Bottleneck list with severity ranking
 - Overall readiness score (weighted average)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| convergence-bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
+| dimension-assessment | Score a single readiness dimension for a candidate with evidence and gap analysis. |
+| radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |
+
+<!-- END available-tables (generated) -->

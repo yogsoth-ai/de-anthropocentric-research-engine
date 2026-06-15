@@ -43,3 +43,17 @@ A structured approach to attacking a decision from multiple distinct viewpoints 
 - Synthesis across all attacks
 - Final verdict (ACCEPT/REJECT/REVISE) with surviving concerns
 - Recommended modifications addressing highest-severity cross-perspective concerns
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| perspective-assignment | Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria. |
+| perspective-attack | Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives. |
+| steel-manning-synthesis | Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications. |
+
+<!-- END available-tables (generated) -->

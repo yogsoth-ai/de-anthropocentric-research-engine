@@ -30,3 +30,15 @@ Output must include:
 - >= 3 supporting arguments with evidence
 - Reframing of at least 1 perceived weakness as a strength
 - Acknowledgment of genuine weaknesses (steel-manning, not straw-manning)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

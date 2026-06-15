@@ -47,3 +47,18 @@ Systematically discover all constraints blocking a candidate, classify them into
 - Classified constraint list with >= 3 constraints identified
 - Removability assessment for each non-trivial constraint
 - Removal paths for all constraints scoring removability > 0.3
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| constraint-classification | Classify constraints into hard constraints, soft constraints, and assumptions. |
+| constraint-identification-sop | Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem methods. |
+| removability-assessment | Assess how removable a constraint is with effort estimate and dependency analysis. |
+| removal-path | Design concrete removal steps for a constraint with timeline and resource needs. |
+
+<!-- END available-tables (generated) -->

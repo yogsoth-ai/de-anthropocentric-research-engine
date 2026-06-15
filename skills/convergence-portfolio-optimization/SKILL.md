@@ -88,3 +88,30 @@ Select balanced combinations from candidate sets by optimizing across multiple o
 - Pareto front data flows from optimization-run to visualization and selection
 - Scenario definitions are shared across all evaluation SOPs
 - Final synthesis aggregates all per-scenario evaluations
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| diversity-maximization | Maximize portfolio diversity and coverage using MAP-Elites, Niche coverage, Maximum dispersion, and Anti-clustering methods. |
+| risk-balancing | Balance portfolio risk and return using Markowitz mean-variance, CVaR, Risk parity, and Kelly criterion methods. |
+| robustness-under-uncertainty | Select portfolios that perform well across multiple future scenarios using Minimax regret, Robust optimization, Scenario planning, and Info-gap methods. |
+| temporal-sequencing | Determine optimal ordering and phasing of portfolio investments using Real Options, Critical path, Dependency graph, and Staged investment methods. |
+| value-maximization | Maximize total portfolio value within constraints using Knapsack, Linear programming, Cost-benefit analysis, and NPV ranking methods. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+| convergence-sensitivity-analysis | Tests conclusion robustness by perturbing parameters and observing rank changes. Shared across scoring, portfolio, and steel-manning campaigns. |
+
+<!-- END available-tables (generated) -->

@@ -76,3 +76,24 @@ disagreement_items: [{indication, reason}, ...]
 panel_size: <int>
 method: RAND/UCLA | Consensus Conference
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+| threshold-calibration | Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

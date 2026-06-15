@@ -66,3 +66,23 @@ consensus_score: <float>
 rounds_completed: <int>
 dissent_record: <items that did not converge>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

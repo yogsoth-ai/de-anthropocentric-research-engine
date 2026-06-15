@@ -67,3 +67,15 @@ fault_lines:
     nature: <empirical/value/definitional>
 bridging_possibilities: [...]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| disagreement-mapping | Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines. |
+
+<!-- END available-tables (generated) -->

@@ -30,3 +30,15 @@ Synthesis requires holistic analysis of the score pattern — identifying asymme
 ## HARD-GATE
 
 Output MUST include: radar_chart_data with all dimensions, overall_readiness score, and narrative summary. Reject if any dimension from input is missing in output.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

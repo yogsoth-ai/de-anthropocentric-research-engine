@@ -25,3 +25,15 @@ Dominance checking requires O(n^2 x m) pairwise comparisons, logic-intensive but
 ## HARD-GATE
 
 Each "dominated" determination must specify the dominating alternative, and verify the strict definition of dominance (no worse on all criteria + strictly better on at least one).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

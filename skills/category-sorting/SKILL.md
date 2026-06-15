@@ -80,3 +80,16 @@ result: null
 ### Borderline Cases
 [List alternatives near category boundaries and their sensitivity]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
+| screening-then-scoring | First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods. |
+
+<!-- END available-tables (generated) -->

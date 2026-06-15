@@ -42,3 +42,17 @@ Evaluate how a portfolio performs across multiple plausible future scenarios to 
 - Performance assessment across >=3 distinct scenarios
 - Vulnerability list identifying which portfolio elements fail under which conditions
 - Robustness verdict (robust / conditionally robust / fragile) with supporting evidence
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
+| portfolio-synthesis | Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance. |
+| scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
+
+<!-- END available-tables (generated) -->

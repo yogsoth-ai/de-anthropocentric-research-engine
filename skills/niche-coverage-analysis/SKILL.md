@@ -42,3 +42,17 @@ Systematically define the niches or capability areas that a portfolio should cov
 - Coverage map showing candidate-to-niche assignments
 - Gap analysis identifying uncovered or under-covered niches with severity ratings
 - Diversity score (0-1) summarizing overall portfolio coverage
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| coverage-scoring | Compute coverage completeness, redundancy, and gap severity scores from a coverage map. |
+| niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |
+| niche-mapping | Map each candidate to the niches it covers, indicating strength of coverage for each assignment. |
+
+<!-- END available-tables (generated) -->

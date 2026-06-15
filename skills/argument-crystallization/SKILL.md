@@ -77,3 +77,24 @@ irreducible_tensions:
     nature: <empirical/value/priority>
     why_irreducible: <explanation>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| disagreement-mapping | Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines. |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

@@ -27,3 +27,15 @@ Spawn a subagent that analyzes the judgments array, determines the appropriate c
 ## HARD-GATE
 
 Output MUST contain: `consensus_score` (numeric), `method_used` (string), `threshold_met` (boolean), and `interpretation` (string). Score must be computed, not estimated.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

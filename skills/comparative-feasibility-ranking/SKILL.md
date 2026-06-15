@@ -73,3 +73,25 @@ comparative_ranking:
   recommendation: <top candidate(s) with rationale>
   caveats: [...]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+| staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+| radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |
+
+<!-- END available-tables (generated) -->

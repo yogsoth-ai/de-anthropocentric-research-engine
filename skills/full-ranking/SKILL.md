@@ -84,3 +84,16 @@ result: null
 ### Robustness Notes
 [Sensitivity of ranking to weight changes]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
+| multi-method-triangulation | Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options. |
+
+<!-- END available-tables (generated) -->

@@ -78,3 +78,15 @@ result: null
 ### Sensitivity Notes
 [Impact of weight changes on the result]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
+
+<!-- END available-tables (generated) -->

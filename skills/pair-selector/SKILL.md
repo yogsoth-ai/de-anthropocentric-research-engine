@@ -25,3 +25,15 @@ Pair selection requires reasoning about the full rating landscape and comparison
 ## HARD-GATE
 
 Output MUST contain at least one pair. Each pair must reference exactly two distinct candidates that exist in the current_ratings input.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

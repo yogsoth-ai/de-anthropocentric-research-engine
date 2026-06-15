@@ -83,3 +83,27 @@ gaps_remaining:
     severity: <high|medium|low>
 method_used: <MAP-Elites|niche-coverage|max-dispersion>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| niche-coverage-analysis | Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention. |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| coverage-scoring | Compute coverage completeness, redundancy, and gap severity scores from a coverage map. |
+| niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |
+| niche-mapping | Map each candidate to the niches it covers, indicating strength of coverage for each assignment. |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+
+<!-- END available-tables (generated) -->

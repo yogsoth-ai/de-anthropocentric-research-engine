@@ -30,3 +30,15 @@ Each dimension assessment is independent and can run in parallel. The scoring re
 ## HARD-GATE
 
 Output MUST include: numeric score (1-9), at least 2 evidence items, and at least 1 identified gap. Reject outputs missing any of these.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

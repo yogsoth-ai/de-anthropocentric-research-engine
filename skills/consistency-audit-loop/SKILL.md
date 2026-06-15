@@ -47,3 +47,17 @@ Loop stages 1-3 until consistency threshold met or repair budget exhausted.
 - List of all cycles found (before and after repair)
 - Repair log: which pairs were re-evaluated, old vs new judgment
 - Final consistency status: pass/fail with metrics
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
+| cycle-detection | Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics. |
+| inconsistency-localization | Identify which specific comparison pairs are most responsible for preference cycles and inconsistencies. |
+
+<!-- END available-tables (generated) -->

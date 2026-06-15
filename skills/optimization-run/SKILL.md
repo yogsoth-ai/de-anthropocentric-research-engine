@@ -25,3 +25,15 @@ Optimization requires systematic enumeration or heuristic search across the comb
 ## HARD-GATE
 
 Output must contain at least 5 non-dominated solutions on the Pareto front. If the candidate set is too small or constraints too tight, report the maximum achievable frontier size with explanation.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

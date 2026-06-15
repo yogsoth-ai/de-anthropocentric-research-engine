@@ -83,3 +83,24 @@ final_weights: []
 ### Method Selection Rationale
 [Why the chosen method's weights are used as the final result]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| multi-method-triangulation | Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |
+| weight-elicitation-sop | Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos). |
+
+<!-- END available-tables (generated) -->

@@ -25,3 +25,15 @@ Normalization involves mathematical transformations and direction handling; inde
 ## HARD-GATE
 
 All normalized values must be in the [0, 1] range, with max-direction criteria having optimal value of 1, and min-direction criteria having optimal value of 1 (after inversion).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

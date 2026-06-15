@@ -89,3 +89,25 @@ maturation_pathway:
   critical_path: [<stage dependencies>]
   risk_factors: [{risk, mitigation, stage_affected}]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+| staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| dimension-assessment | Score a single readiness dimension for a candidate with evidence and gap analysis. |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+
+<!-- END available-tables (generated) -->

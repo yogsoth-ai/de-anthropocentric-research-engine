@@ -44,3 +44,18 @@ Execute one complete iteration of the Delphi convergence cycle: collect independ
 - Consensus items list (items that reached consensus)
 - Non-consensus items (items that did not converge, with reasons)
 - Round log (round-by-round progression of scores)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |
+| feedback-distribution | Create anonymized feedback report summarizing group judgment distribution for a given round. |
+| judgment-collection | Collect independent judgments from all perspectives on a given question. |
+| round-decision | Decide whether to continue iterating or stop based on consensus score, round number, and stability. |
+
+<!-- END available-tables (generated) -->

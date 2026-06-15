@@ -84,3 +84,26 @@ eliminated: []
 ### Surviving Alternatives
 [List, available for subsequent fine-grained scoring]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| screening-then-scoring | First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| conjunctive-filter | Apply conjunctive screening rules to eliminate candidates that fail any threshold. |
+| criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |
+| dominance-check | Identify dominated and non-dominated alternatives in a score matrix using Pareto dominance. |
+| threshold-setting | Define minimum acceptable thresholds for each criterion based on context and constraints. |
+
+<!-- END available-tables (generated) -->

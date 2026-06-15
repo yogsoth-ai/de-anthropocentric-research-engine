@@ -25,3 +25,15 @@ Comprehensive recommendation requires weighing multiple signals and making judgm
 ## HARD-GATE
 
 Final recommendation must include a clear recommended alternative, confidence assessment, key assumptions, and risk warnings; reports without conclusions are not allowed.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

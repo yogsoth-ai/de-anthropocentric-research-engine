@@ -81,3 +81,24 @@ disagreement_hotspots:
   - {pair: ["c", "d"], agreement: 0.4, split: "3:2"}
 cross_validation: {borda_agreement: 0.92, copeland_agreement: 0.96}
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+| multi-judge-aggregation | Collect independent rankings from multiple judges, aggregate using social choice methods, and identify disagreement hotspots. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+
+<!-- END available-tables (generated) -->

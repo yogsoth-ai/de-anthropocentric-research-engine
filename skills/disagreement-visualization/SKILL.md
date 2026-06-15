@@ -27,3 +27,15 @@ Spawn a subagent that takes clusters and their extracted arguments, then produce
 ## HARD-GATE
 
 Output MUST contain: `disagreement_map` with clusters, fault_lines (at least 1 if multiple clusters exist), and fault_line_types. Map must cover ALL input clusters.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->
