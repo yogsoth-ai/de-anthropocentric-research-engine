@@ -75,3 +75,25 @@ dependencies:
 - 提取的规律列表（规律陈述、支撑模式、例外情况）
 - 当前假设草稿集（含泛化边界声明）
 - 可证伪性状态 + 过度泛化风险评估
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| anomaly-driven-abduction | Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序 |
+| falsifiability-audit | Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| hypothesis-formation-variable-identification | SOP: 识别变量及其在假设中的角色 |
+| relationship-specification | SOP: 指定变量间关系的方向与形式 |
+
+<!-- END available-tables (generated) -->

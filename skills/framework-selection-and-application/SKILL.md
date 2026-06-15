@@ -64,3 +64,19 @@ dependencies:
 - 选定的框架及理由
 - 各组件填充完整度
 - 是否有组件因信息不足无法填充
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| eclipse-application | SOP: 应用 ECLIPSE 框架结构化混合方法研究问题 |
+| framework-matching | SOP: 根据研究类型匹配最适合的 RQ 框架 |
+| pico-application | SOP: 应用 PICO/PICOTS 框架结构化研究问题 |
+| spice-application | SOP: 应用 SPICE 框架结构化评估研究问题 |
+| spider-application | SOP: 应用 SPIDER 框架结构化定性研究问题 |
+
+<!-- END available-tables (generated) -->

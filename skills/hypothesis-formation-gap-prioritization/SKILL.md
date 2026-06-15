@@ -86,3 +86,46 @@ CC 根据 gap 数量、证据充分度、利益相关者复杂度自主选择 st
 2. 多维度评分矩阵（或等价的排序依据）
 3. 最终优先级排序
 4. 前 N 个 gap 的攻击路径建议（含方法方向、预期难度、所需资源）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| evidence-based-prioritization | Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级 |
+| hypothesis-formation-portfolio-optimization | Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合 |
+| multi-criteria-ranking | Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表 |
+| rapid-triage | Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集 |
+| stakeholder-weighted-ranking | Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序 |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| pairwise-comparison | Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| hypothesis-formation-quality-gate-check | Shared SOP: 通用质量门检查（格式完整性、逻辑一致性） |
+| hypothesis-formation-saturation-detection | Shared SOP: 判断当前活动是否已达信息饱和 |
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| hypothesis-formulation | Campaign: 将 insight 和 gap 转化为结构化的可测试假设 |
+
+<!-- END available-tables (generated) -->

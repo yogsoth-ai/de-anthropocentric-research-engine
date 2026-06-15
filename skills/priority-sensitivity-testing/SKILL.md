@@ -65,3 +65,17 @@ dependencies:
 - 扰动场景数量
 - 稳定性判定结论
 - 最不稳定的 gap（排名波动最大）及建议（是否需要补充证据再决策）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ahp-weighting | SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量 |
+| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+| weight-perturbation | SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定 |
+
+<!-- END available-tables (generated) -->

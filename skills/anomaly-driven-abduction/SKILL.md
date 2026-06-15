@@ -63,3 +63,17 @@ dependencies:
 - 生成候选解释数 / 排序完成数
 - 最高可信度解释（供 strategy 优先 formalize）
 - 可区分性：哪些解释可以通过单一实验区分（供后续实验设计参考）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| anomaly-characterization | SOP: 描述和分类无法被现有理论解释的异常现象 |
+| explanation-generation | SOP: 为异常现象生成候选解释列表 |
+| plausibility-ranking | SOP: 对候选解释按合理性进行多维度加权排序 |
+
+<!-- END available-tables (generated) -->

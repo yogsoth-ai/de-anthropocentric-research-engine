@@ -71,3 +71,23 @@ dependencies:
 - 区分性预测列表（每个预测能区分哪对假设）
 - 比较矩阵（假设×预测，标注支持/反对/中性）
 - 推荐的判决性实验方向
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| competing-hypothesis-matrix | Tactic: 多假设管理——生成竞争假设，设计区分性预测，构建结构化比较矩阵 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
+
+<!-- END available-tables (generated) -->

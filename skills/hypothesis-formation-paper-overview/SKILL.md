@@ -35,3 +35,15 @@ execution: import
 - 需要快速判断一篇论文是否相关
 - 需要获取论文的基本信息
 - 批量扫描多篇论文时
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-overview | Quick landscape scan — discover papers on a topic without full-text reading |
+
+<!-- END available-tables (generated) -->

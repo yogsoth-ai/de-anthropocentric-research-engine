@@ -35,3 +35,15 @@ execution: import
 - 需要深入了解某个框架/方法的完整细节
 - 需要从网页中提取结构化信息
 - 需要综合多个来源形成完整理解
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
+
+<!-- END available-tables (generated) -->

@@ -74,3 +74,16 @@ Strategy 完成后必须调用 context-checkpoint，记录:
 - 框架各组件的填充内容
 - FINER 检验结果
 - 最终 RQ 表述
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| framework-selection-and-application | Tactic: 选择最适合的 RQ 框架并系统应用 |
+| question-refinement-loop | Tactic: 迭代精化研究问题直到通过 FINER 5 项标准 |
+
+<!-- END available-tables (generated) -->

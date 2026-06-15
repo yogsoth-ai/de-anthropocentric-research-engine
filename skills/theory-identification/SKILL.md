@@ -47,3 +47,17 @@ dependencies:
 ]
 ```
 最少 3 条，最多 8 条（按 applicability 降序排列）。
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| hypothesis-formation-paper-overview | Import SOP: 论文快速扫描，返回 abstract 和 metadata（来自 literature-engine） |
+| hypothesis-formation-paper-search | Import SOP: 中深度文献搜索，AI 摘要报告（来自 literature-engine） |
+| hypothesis-formation-web-search | Import SOP: 快速 web 扫描，发现 URL 和 snippet（来自 web-browsing） |
+
+<!-- END available-tables (generated) -->

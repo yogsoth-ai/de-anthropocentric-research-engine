@@ -60,3 +60,17 @@ dependencies:
 - 每轮的 FINER 结果
 - 最终 RQ 表述
 - Success criteria
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
+| scope-assessment | SOP: 评估研究问题的范围是否合适（太宽/合适/太窄） |
+| success-criteria-definition | SOP: 为研究问题定义可测量的成功标准 |
+
+<!-- END available-tables (generated) -->

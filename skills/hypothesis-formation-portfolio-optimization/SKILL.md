@@ -79,3 +79,24 @@ dependencies:
 - 候选组合列表及其组合得分
 - 推荐组合（含选择理由）
 - 有效前沿描述（文字或表格）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+| priority-sensitivity-testing | Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| gap-normalization | SOP: 统一不同来源的 gap 格式为标准 GapRecord |
+
+<!-- END available-tables (generated) -->

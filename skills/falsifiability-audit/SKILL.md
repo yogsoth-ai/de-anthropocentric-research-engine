@@ -64,3 +64,17 @@ dependencies:
 - 最常见的可证伪性问题类型（供 upstream strategy 改进假设生成）
 - 操作化难度：哪些变量难以测量（需要特殊工具或数据集）
 - 边界条件覆盖：哪些假设的适用范围较窄（高风险，易被反例推翻）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| boundary-condition-specification | SOP: 指定假设成立的边界条件 |
+| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
+| operationalization | SOP: 将抽象概念操作化为可测量的指标和方法 |
+
+<!-- END available-tables (generated) -->

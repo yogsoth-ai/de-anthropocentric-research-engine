@@ -55,3 +55,17 @@ dependencies:
 - 依赖关系数量
 - 关键路径长度
 - 可并行的子问题组
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| answering-sequence-design | SOP: 设计子问题的最优回答顺序 |
+| dependency-mapping | SOP: 映射子问题间的依赖关系 |
+| sub-question-generation | SOP: 将主研究问题分解为可独立回答的子问题 |
+
+<!-- END available-tables (generated) -->

@@ -35,3 +35,15 @@ execution: import
 - 需要快速了解某个概念/框架/方法
 - 需要找到相关资源的 URL
 - 初步信息扫描（不需要深度阅读）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-search | Quick web scanning — discover pages, get snippets, find URLs. For orientation only, not substantive analysis. |
+
+<!-- END available-tables (generated) -->

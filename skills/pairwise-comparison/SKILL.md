@@ -66,3 +66,25 @@ dependencies:
 - 最终 CR 值
 - 排名前 3 的 gap 及其权重
 - 排名最不稳定的 gap（权重与相邻 gap 差距 < 0.05 的情况）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| consistency-check | SOP: 检验 pairwise 判断矩阵的传递一致性，识别不一致项并建议修正 |
+| gap-pairwise-judgment | SOP: 对两个 gap 进行逐标准相对优先级判断，输出偏好结果 |
+| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+
+<!-- END available-tables (generated) -->

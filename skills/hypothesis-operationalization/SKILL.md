@@ -75,3 +75,23 @@ dependencies:
 - 边界条件清单
 - Falsification scenarios
 - 操作化质量自评（是否有循环定义、测量-构念匹配度）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| falsifiability-audit | Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| hypothesis-formation-variable-identification | SOP: 识别变量及其在假设中的角色 |
+
+<!-- END available-tables (generated) -->

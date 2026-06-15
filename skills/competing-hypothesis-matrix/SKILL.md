@@ -61,3 +61,17 @@ dependencies:
 - 最有区分力的预测（能同时区分最多假设对）
 - 最难区分的假设对（预测几乎相同，需要极精细的实验设计）
 - 推荐优先测试的假设（最易被证伪 + 区分性最强）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| competing-hypothesis-generation | SOP: 为同一现象生成机制上不同的竞争假设 |
+| discriminating-prediction-design | SOP: 设计能区分竞争假设的关键预测和观察方案 |
+| hypothesis-comparison-matrix | SOP: 构建竞争假设的多维度对比矩阵 |
+
+<!-- END available-tables (generated) -->

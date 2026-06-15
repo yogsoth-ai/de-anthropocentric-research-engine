@@ -75,3 +75,24 @@ Strategy 完成后必须调用 context-checkpoint，记录:
 - 比较维度
 - 公平性论证
 - 最终对比性 RQ
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| framework-selection-and-application | Tactic: 选择最适合的 RQ 框架并系统应用 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
+| success-criteria-definition | SOP: 为研究问题定义可测量的成功标准 |
+
+<!-- END available-tables (generated) -->

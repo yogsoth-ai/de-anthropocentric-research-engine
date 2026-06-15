@@ -75,3 +75,23 @@ Strategy 完成后必须调用 context-checkpoint，记录:
 - 子问题列表 + 独立性论证
 - 依赖图
 - 建议回答序列
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| sub-question-decomposition | Tactic: 将主问题分解为可独立回答的子问题层级 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
+
+<!-- END available-tables (generated) -->

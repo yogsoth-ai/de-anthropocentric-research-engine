@@ -71,3 +71,19 @@ CC 根据 topic tier 选择覆盖维度数量；每个维度评分由专属 SOP 
 - 得分分布（最高/最低/中位数）
 - 评分差异最大的维度（供 sensitivity-testing 优先扰动）
 - 评分置信度：哪些 gap 证据充分，哪些需要补充文献
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ahrq-picme-assessment | SOP: 使用 AHRQ PiCMe 框架对研究 gap 进行 6 维度系统评估 |
+| feasibility-scoring | SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分 |
+| hypothesis-formation-novelty-scoring | SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分 |
+| impact-scoring | SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分 |
+| importance-scoring | SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据 |
+
+<!-- END available-tables (generated) -->

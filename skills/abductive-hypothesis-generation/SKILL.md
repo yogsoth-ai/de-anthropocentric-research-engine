@@ -72,3 +72,23 @@ dependencies:
 - 可信度排序结果（含排序依据）
 - 最佳解释假设 + 竞争假设列表
 - 区分性预测（什么实验能区分最佳解释与竞争解释）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| anomaly-driven-abduction | Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
+
+<!-- END available-tables (generated) -->

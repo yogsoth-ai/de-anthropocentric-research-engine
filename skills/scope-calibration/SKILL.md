@@ -76,3 +76,15 @@ Strategy 完成后必须调用 context-checkpoint，记录:
 - 调整方向和具体操作
 - 最终 RQ 及其 scope 判定
 - 调整理由
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| question-refinement-loop | Tactic: 迭代精化研究问题直到通过 FINER 5 项标准 |
+
+<!-- END available-tables (generated) -->

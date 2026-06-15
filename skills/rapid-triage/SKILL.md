@@ -80,3 +80,24 @@ dependencies:
 - 第二轮评分矩阵（幸存 gap × 2 维度）
 - 最终候选集（top-K gap 列表）
 - 建议的下一步策略（multi-criteria-ranking 或 portfolio-optimization）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| gap-normalization | SOP: 统一不同来源的 gap 格式为标准 GapRecord |
+| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+
+<!-- END available-tables (generated) -->

@@ -78,3 +78,16 @@ dependencies:
 - 提取的机制列表（每条机制标注来源理论）
 - 当前假设草稿集（含变量关系 + 边界条件）
 - 可证伪性状态（已通过 / 待审查 / 不可证伪需修改）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| falsifiability-audit | Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范 |
+| theory-mechanism-extraction | Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选 |
+
+<!-- END available-tables (generated) -->

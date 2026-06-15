@@ -71,3 +71,24 @@ AHRQ PiCMe 六维度评估框架：
 - 每个 gap 的支撑文献列表（含证据等级）
 - 证据充分度综合得分
 - 最终优先级排序（含得分公式）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| gap-normalization | SOP: 统一不同来源的 gap 格式为标准 GapRecord |
+| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+
+<!-- END available-tables (generated) -->

@@ -95,3 +95,39 @@ CC 根据假设特征和约束条件自主选择。常见组合: framework-guide
 2. FINER 5 项标准全部通过
 3. 明确的 success criteria（可衡量）
 4. Scope 声明（in/out of scope）
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| comparative-formulation | Strategy: 构建对比性研究问题 — A vs B 的系统化比较 |
+| decomposition-formulation | Strategy: 将复杂研究问题分解为可独立回答的子问题层级 |
+| feasibility-constrained-formulation | Strategy: 在资源约束下重塑研究问题 — pragmatic 调整保持核心价值 |
+| framework-guided-formulation | Strategy: 选择 RQ 框架（PICO/SPIDER/SPICE/ECLIPSE）并系统应用 |
+| scope-calibration | Strategy: 调整研究问题范围 — zoom in/out 直到范围合适 |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| hypothesis-formation-quality-gate-check | Shared SOP: 通用质量门检查（格式完整性、逻辑一致性） |
+| hypothesis-formation-saturation-detection | Shared SOP: 判断当前活动是否已达信息饱和 |
+| question-synthesis | SOP: 综合所有中间产物产出最终研究问题集 |
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| hypothesis-formulation | Campaign: 将 insight 和 gap 转化为结构化的可测试假设 |
+
+<!-- END available-tables (generated) -->

@@ -56,3 +56,18 @@ dependencies:
   "overall_rationale": "综合依据（2-4句）"
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| hypothesis-formation-paper-research | Import SOP: 深度文献研究，原始全文 + PDF 问答（来自 literature-engine） |
+| hypothesis-formation-paper-search | Import SOP: 中深度文献搜索，AI 摘要报告（来自 literature-engine） |
+| hypothesis-formation-web-research | Import SOP: 深度 web 研究，全文抓取分析（来自 web-browsing） |
+| hypothesis-formation-web-search | Import SOP: 快速 web 扫描，发现 URL 和 snippet（来自 web-browsing） |
+
+<!-- END available-tables (generated) -->

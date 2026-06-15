@@ -70,3 +70,18 @@ dependencies:
 - 理论覆盖范围（哪些理论被纳入，哪些被排除及原因）
 - 变量重叠情况（多个机制共享的变量，可能是关键调节变量）
 - 假设候选质量评估：哪些候选变量可操作性强，哪些需要进一步 operationalization
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| hypothesis-formation-variable-identification | SOP: 识别变量及其在假设中的角色 |
+| mechanism-extraction | SOP: 从理论中提取因果机制链 |
+| relationship-specification | SOP: 指定变量间关系的方向与形式 |
+| theory-identification | SOP: 识别与研究gap相关的理论框架 |
+
+<!-- END available-tables (generated) -->

@@ -35,3 +35,15 @@ execution: import
 - 需要找到某个主题的相关论文集合
 - 需要 AI 辅助的论文摘要
 - 需要在多个数据库中搜索
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| literature-search | Medium-depth literature search — read AI-summarized reports for every paper analyzed |
+
+<!-- END available-tables (generated) -->
