@@ -15,12 +15,12 @@ Phase 2: Research Spec Generation (writing-specs)
 
 Phase 3 (Spec Execution) is invoked separately by the user after reviewing the spec.
 
-## Skill Index (custom workflow routing)
+## Capability Menu (custom workflow routing)
 
 If the user's request is a customized workflow that does not follow the standard
 North Star → Spec pipeline (e.g., user specifies exact campaigns to run, provides
 their own spec, or requests a non-standard combination of research activities),
-invoke `skill-index` immediately to understand the full capability landscape and
+invoke `research-catalog` immediately to understand the full capability landscape and
 route accordingly.
 
 ## Phase 1: North Star Crystallization
@@ -44,10 +44,10 @@ Before anything else, you must establish a clear research direction.
 
 Once the North Star is confirmed, transition to spec generation:
 
-### Skill Index Loading
+### Capability Menu Loading
 
-Before invoking `writing-specs`, invoke `skill-index` to load the full skill
-hierarchy. This ensures the Research Spec leverages the complete arsenal of
+Before invoking `writing-specs`, invoke `research-catalog` to load the capability
+menu. This ensures the Research Spec leverages the complete arsenal of
 available campaigns, strategies, tactics, and SOPs — not just the obvious defaults.
 
 1. Invoke `writing-specs` strategy
