@@ -1,17 +1,21 @@
-"""Combine all data/*.json package graphs into ONE offline interactive HTML,
-COLLAPSING shared infrastructure skills into single hub nodes so the 13 repos
-connect through them instead of staying disconnected.
+"""Combine all data/*.json package graphs into ONE offline interactive HTML.
 
 Connection model (driven by infra-links.json, derived from source frontmatter):
   - import-SOP wrappers (web-search/web-research + the resolvable paper->literature
-    ones) are COLLAPSED onto one canonical `infra/<infra-pkg>/<skill>` hub node;
-    every edge that touched a package-local wrapper is redirected to the hub.
-  - each `execution: subagent` SOP gets an edge to `infra/subagent-spawning/spawn-agent`.
-  - each campaign gets edges to `infra/context-management/context-init` and
+    ones) are RE-MATERIALIZED as their own nodes, RENAMED to `<pkg>/<pkg>-<wrapper>`
+    (the on-disk target name), each wired by ONE import edge to the real underlying
+    infra skill (`literature-engine/literature-overview`, `web-browsing/web-search`,
+    …). The old collapse-onto-a-hub behavior is gone.
+  - each `execution: subagent` SOP gets an edge to `subagent-spawning/spawn-agent`.
+  - each campaign gets edges to `context-management/context-init` and
     `.../context-checkpoint`.
-  - the 4 infra packages' OWN graphs (literature-engine, web-browsing,
-    subagent-spawning, context-management) are mapped onto the SAME hub ids, so a
-    package's wrapper and the infra repo's real skill become the one shared node.
+  - the 4 infra packages (literature-engine, web-browsing, subagent-spawning,
+    context-management) render as ordinary `<pkg>/<skill>` SOP nodes — no `infra/`
+    prefix, no hub enlargement, no special styling.
+
+Each renamed wrapper node carries a RENAME directive in its hover desc: this graph
+is the executable spec for a LATER on-disk refactoring round that renames the skill
+directories and fixes their `source:` pointers. THIS module touches only the graph.
 
 Deferred (NOT connected here): 12 paper-* wrappers whose source: pointers are
 broken (hypothesis-formation / convergence / experiment-execution / stress-test).
@@ -34,11 +38,16 @@ rg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(rg)
 from pyvis.network import Network
 
-# infra packages whose own graph nodes map directly onto the shared hub ids
+# infra packages: still processed FIRST (so their real skills exist before any
+# import edge points at them) but no longer prefixed/enlarged — they render as
+# ordinary SOPs like every other package.
 INFRA_PKGS = {"literature-engine", "web-browsing", "subagent-spawning", "context-management"}
-SPAWN_HUB = "infra/subagent-spawning/spawn-agent"
-CTX_INIT  = "infra/context-management/context-init"
-CTX_CKPT  = "infra/context-management/context-checkpoint"
+SPAWN_HUB = "subagent-spawning/spawn-agent"
+CTX_INIT  = "context-management/context-init"
+CTX_CKPT  = "context-management/context-checkpoint"
+# super-connected skills kept OUT of the physics solver so the layout settles
+# (decoupled from the now-removed infra/ concept).
+SUPERCONNECTED = {SPAWN_HUB, CTX_INIT, CTX_CKPT}
 
 # research-catalog ref structure (U4): the catalog node lives in engine-core, so
 # canon() prefixes it "engine-core/". Its 9 ref nodes + skill fan-out are injected
@@ -53,30 +62,24 @@ def load_links():
     return json.loads((HERE / "infra-links.json").read_text(encoding="utf-8"))
 
 
-def hub_id(infra_pkg, skill):
-    return f"infra/{infra_pkg}/{skill}"
+def build_rename(links):
+    """wrapper `<pkg>/<wrapper>` -> renamed canonical id `<pkg>/<pkg>-<wrapper>`."""
+    return {f"{c['pkg']}/{c['wrapper']}": f"{c['pkg']}/{c['pkg']}-{c['wrapper']}"
+            for c in links["collapse"]}
 
 
-def build_remap(links):
-    """Map each package-local node id `<pkg>/<wrapper>` to its canonical hub id.
-    Also map the infra packages' own `<infra>/<skill>` nodes onto the same hub."""
-    remap = {}
-    for c in links["collapse"]:
-        remap[f"{c['pkg']}/{c['wrapper']}"] = hub_id(c["infra"], c["skill"])
-    # infra repos' own skills -> same hub id (so wrapper + real skill merge)
-    for ip in INFRA_PKGS:
-        # handled generically at node-add time (see build())
-        pass
-    return remap
+def build_target(links):
+    """wrapper `<pkg>/<wrapper>` -> real infra skill `<infra>/<skill>` it imports."""
+    return {f"{c['pkg']}/{c['wrapper']}": f"{c['infra']}/{c['skill']}"
+            for c in links["collapse"]}
 
 
-def canon(pkg, nid, remap):
-    """Canonical id for a node/edge endpoint after collapse."""
-    # infra repo's own skill -> hub id
-    if pkg in INFRA_PKGS:
-        return hub_id(pkg, nid)
-    # package-local wrapper that collapses onto a hub
-    return remap.get(f"{pkg}/{nid}", f"{pkg}/{nid}")
+def canon(pkg, nid, rename):
+    """Canonical id after de-collapse. Infra repos keep their plain <pkg>/<skill>
+    id (no infra/ prefix); a collapse wrapper is RENAMED to <pkg>/<pkg>-<wrapper>;
+    everything else stays <pkg>/<nid>."""
+    key = f"{pkg}/{nid}"
+    return rename.get(key, key)
 
 
 def build(files, links, a_data_dir):
@@ -85,9 +88,10 @@ def build(files, links, a_data_dir):
                   notebook=False, cdn_resources="in_line")
     net.barnes_hut(gravity=-6000, central_gravity=0.12, spring_length=130,
                    spring_strength=0.04, damping=0.5)
-    remap = build_remap(links)
+    rename = build_rename(links)
+    target = build_target(links)
     added = set()          # node ids already added
-    edgeset = set()        # (from,to) already added, dedup after collapse
+    edgeset = set()        # (from,to) already added, dedup after rename
     n_cnt = e_cnt = 0
 
     def ensure(nid, label, layer, title):
@@ -96,7 +100,7 @@ def build(files, links, a_data_dir):
             return
         net.add_node(nid, label=label, group=layer,
                      color=rg.LAYER_COLORS.get(layer, "#999999"),
-                     size=rg.LAYER_SIZE.get(layer, 16) + (8 if nid.startswith("infra/") else 0),
+                     size=rg.LAYER_SIZE.get(layer, 16),
                      borderWidth=2,
                      shapeProperties={"borderDashes": layer == "references"},
                      title=title)
@@ -106,14 +110,14 @@ def build(files, links, a_data_dir):
         nonlocal e_cnt
         if a == b or (a, b) in edgeset:
             return
-        # Any edge touching an infra hub OR the research-catalog ref structure is
-        # drawn but EXCLUDED from the physics solver (physics=false). The infra
-        # hubs and the catalog ref nodes are super-connected (a ref node fans to
-        # its whole package); letting their springs act makes total kinetic energy
-        # never decay, so the layout never settles. Excluding them lets each
-        # package cluster lay out by its own internal edges while the hub/ref links
-        # stay visible as star spokes.
-        hub_edge = (a.startswith("infra/") or b.startswith("infra/")
+        # Any edge touching a super-connected skill OR the research-catalog ref
+        # structure is drawn but EXCLUDED from the physics solver (physics=false).
+        # These nodes are super-connected (spawn-agent + context-* fan in from
+        # every package; a ref node fans to its whole package); letting their
+        # springs act makes total kinetic energy never decay, so the layout never
+        # settles. Excluding them lets each package cluster lay out by its own
+        # internal edges while the hub/ref links stay visible as star spokes.
+        hub_edge = (a in SUPERCONNECTED or b in SUPERCONNECTED
                     or a.startswith("research-catalog/ref/") or b.startswith("research-catalog/ref/")
                     or a == RESEARCH_CATALOG or b == RESEARCH_CATALOG)
         net.add_edge(a, b, title=tip, arrows="to", color="#7D8E9E",
@@ -121,41 +125,42 @@ def build(files, links, a_data_dir):
         edgeset.add((a, b)); e_cnt += 1
 
     subagent_sops = links["subagent_sops"]
-    # process infra packages FIRST so the hub nodes (spawn-agent, context-*,
-    # literature-*, web-*) exist before any package edge redirects onto them.
+    # process infra packages FIRST so the real skill nodes (spawn-agent, context-*,
+    # literature-*, web-*) exist before any import edge points at them.
     ordered = sorted(files, key=lambda p: (Path(p).stem not in INFRA_PKGS, Path(p).stem))
     for f in ordered:
         s = json.loads(Path(f).read_text(encoding="utf-8"))
         pkg = s["name"]
         layer_of = {n["id"]: n["layer"] for n in s["nodes"]}
         for n in s["nodes"]:
-            cid = canon(pkg, n["id"], remap)
+            key = f'{pkg}/{n["id"]}'
+            cid = canon(pkg, n["id"], rename)
             layer = n["layer"]
-            if cid.startswith("infra/"):
-                label = cid.split("/")[-1]
-                title = f'<b>{label}</b> [{layer}] &middot; <i>infra hub</i>'
-                if n.get("desc"):
-                    title += f"<hr>{n['desc']}"
-                ensure(cid, label, layer, title)
-            else:
-                title = f'<b>{n["id"]}</b> [{layer}] &middot; <i>{pkg}</i>'
-                if n.get("desc"):
-                    title += f"<hr>{n['desc']}"
-                ensure(cid, n["id"], layer, title)
+            label = cid.split("/")[-1]
+            title = f'<b>{label}</b> [{layer}] &middot; <i>{pkg}</i>'
+            if n.get("desc"):
+                title += f"<hr>{n['desc']}"
+            if key in rename:  # a renamed import wrapper
+                tgt = target[key]
+                title += (f'<hr><b>RENAME 计划:</b> 本地 wrapper <code>{key}</code> → '
+                          f'重命名为 <code>{cid.split("/")[-1]}</code>;import 自 '
+                          f'<code>{tgt}</code>。后续 refactory 轮据此重命名磁盘 skill '
+                          f'目录并修正其 <code>source:</code> 指针。')
+            ensure(cid, label, layer, title)
         for e in s["edges"]:
-            a = canon(pkg, e["from"], remap)
-            b = canon(pkg, e["to"], remap)
+            a = canon(pkg, e["from"], rename)
+            b = canon(pkg, e["to"], rename)
             link(a, b, e.get("tip", "use"))
         # spawn-agent fan-in: each subagent SOP -> spawn hub
         if pkg not in INFRA_PKGS:
             for sop in subagent_sops.get(pkg, []):
-                src = canon(pkg, sop, remap)
+                src = canon(pkg, sop, rename)
                 if src in added:
                     link(src, SPAWN_HUB, "execution: subagent &mdash; spawned via <b>subagent-spawning/spawn-agent</b>")
             # campaign -> context-management
             for c in links["campaigns"]:
                 if c["pkg"] == pkg:
-                    cc = canon(pkg, c["campaign"], remap)
+                    cc = canon(pkg, c["campaign"], rename)
                     if cc in added:
                         link(cc, CTX_INIT, "campaign 启动时调 <b>context-init</b>（加载/创建 campaign context file）")
                         link(cc, CTX_CKPT, "每个 strategy 完成后调 <b>context-checkpoint</b>（硬性约束）")
@@ -172,7 +177,7 @@ def build(files, links, a_data_dir):
         # ref -> every skill node of this package (canon'd ids)
         s = json.loads((Path(a_data_dir) / f"{pkg}.json").read_text(encoding="utf-8"))
         for n in s["nodes"]:
-            cid = canon(pkg, n["id"], remap)
+            cid = canon(pkg, n["id"], rename)
             if cid in added:
                 link(ref, cid, f"<b>{pkg}</b> 表中的一项:{n['id']}")
     net.set_options('{"physics":{"stabilization":{"enabled":true,"iterations":1000,'
