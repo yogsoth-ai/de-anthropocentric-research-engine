@@ -72,3 +72,17 @@ After the user reviews and approves the spec, they invoke `executing-specs` in a
 - Generate the spec yourself (delegate to writing-specs)
 - Skip North Star crystallization
 - Proceed without user confirmation at phase boundaries
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| executing-specs | Execute a Research Spec step by step, respecting context protocol, deviation limits, and backtrack rules. Supports multi-session recovery. |
+| research-catalog | Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
+| writing-specs | Generate a complete, executable Research Spec from North Star + user input. Strategy-level skill that orchestrates questioning, outline, and spec writing. |
+
+<!-- END available-tables (generated) -->

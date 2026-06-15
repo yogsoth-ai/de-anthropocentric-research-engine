@@ -102,3 +102,19 @@ Present the completed spec to the user for review. Wait for approval or change r
 Save the spec to: `docs/de-anthropocentric/specs/YYYY-MM-DD-<topic>-spec.md`
 
 Inform the user: "Spec complete. To execute, invoke `executing-specs` with the path to this spec file."
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| campaign-selection | Structured questioning SOP to determine which campaigns to include, emphasize, or skip. Used during spec generation. |
+| constraint-elicitation | Structured questioning SOP to identify practical constraints that shape the research spec. Used during spec generation. |
+| research-catalog | Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
+| scope-clarification | Structured questioning SOP to determine research boundaries, depth, and breadth. Used during spec generation. |
+| spec-self-review | Quality gate for Research Specs. Checks for placeholders, consistency, scope, ambiguity, context protocol, and quantification. Mandatory before user review. |
+
+<!-- END available-tables (generated) -->

@@ -168,3 +168,15 @@ Landscape scan:
 ```
 tavily_search(query="MCP server frameworks comparison 2025", max_results=10)
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
+
+<!-- END available-tables (generated) -->

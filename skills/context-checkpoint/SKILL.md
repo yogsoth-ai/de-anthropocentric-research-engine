@@ -100,3 +100,15 @@ The checkpoint is a detailed record for future reference. Write as if the reader
 - Open threads for future investigation
 
 The 500-line minimum exists because sparse checkpoints are useless for recovery. Write generously — this is a research log, not a summary.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->
