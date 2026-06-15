@@ -56,3 +56,24 @@ Max 2 extra iterations if gaps found.
 
 - **claim-page-creation** — create a claim page in the vault
 - **rebuttal-documentation** — document counter-claims and rebuttals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| knowledge-structuring-claim-decomposition | Tactic for decomposing compound claims into atomic propositions — identify logical structure, separate conjunctions, extract implicit assumptions. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-page-creation | SOP for creating a claim page in the vault — atomic proposition with type classification, source attribution, and initial confidence. |
+| rebuttal-documentation | SOP for documenting rebuttals and counter-claims — create rebuttal pages with typed contradiction edges and source attribution. |
+
+<!-- END available-tables (generated) -->

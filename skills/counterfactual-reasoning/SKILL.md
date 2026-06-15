@@ -32,3 +32,17 @@ Reason about what would happen if a variable were different. "If X had not occur
 <HARD-GATE>
 ≥1 counterfactual assessment with explicit mechanism and confidence score per invocation.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-chain-query | SOP for tracing causal chains — follow edges from cause to effect through intermediate variables. |
+| confidence-scoring | SOP for assigning calibrated confidence scores to causal claims based on evidence quality and quantity. |
+| contradiction-flagging | SOP for flagging contradictions in the causal model — identify conflicting evidence or mechanism claims. |
+
+<!-- END available-tables (generated) -->

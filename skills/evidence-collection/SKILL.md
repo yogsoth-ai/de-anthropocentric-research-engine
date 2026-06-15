@@ -46,3 +46,25 @@ CC should treat evidence collection as adversarial by default: for every support
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| counterfactual-reasoning | Tactic for reasoning about what would happen if variables were different — supports causal identification and intervention analysis. |
+| evidence-weighing | Tactic for assessing the strength and relevance of evidence for causal claims — distinguishes correlation from causation. |
+| feedback-loop-detection | Tactic for identifying circular causation — detect feedback loops, classify as reinforcing or balancing, document loop structure. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| evidence-linking | SOP for linking evidence pages to causal claims — creates supported_by or contradicts edges. |
+
+<!-- END available-tables (generated) -->

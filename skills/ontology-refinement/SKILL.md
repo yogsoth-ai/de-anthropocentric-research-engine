@@ -49,3 +49,28 @@ Refinement is where ontologies become useful. The first pass is always rough —
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| concept-decomposition | Tactic for breaking compound concepts into atomic parts — split over-broad concepts, identify sub-components, create child pages. |
+| knowledge-structuring-consistency-checking | Tactic for verifying ontology consistency — detect contradictions, cycles, orphans, and type violations. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alias-resolution | SOP for detecting and resolving concept aliases — merge duplicate pages, redirect edges. |
+| confidence-update | SOP for updating confidence scores on claims and evidence pages based on new information. |
+| gap-detection | SOP for finding structural gaps in the ontology — missing concepts, thin branches, disconnected clusters. |
+| merge-candidates | SOP for identifying near-duplicate concepts that should be merged. |
+| ontology-export | SOP for exporting ontology summary — generate a readable overview of the current ontology state. |
+
+<!-- END available-tables (generated) -->

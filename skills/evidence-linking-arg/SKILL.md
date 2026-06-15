@@ -57,3 +57,24 @@ Max 2 extra iterations if gaps found.
 
 - **evidence-attachment** — attach evidence to a claim with typed edge
 - **strength-scoring** — assign strength scores to claims based on evidence
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| strength-assessment | Tactic for assessing argument strength — evaluate evidence quality, count independent sources, check for defeaters, assign calibrated confidence scores. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| evidence-attachment | SOP for attaching evidence to a claim — create typed edge (supported_by, contradicts, qualifies) with evidence quality metadata. |
+| strength-scoring | SOP for assigning calibrated strength scores to claims — evaluate evidence weight, count independent sources, check defeaters, produce scored assessment. |
+
+<!-- END available-tables (generated) -->

@@ -33,3 +33,17 @@ Break compound or over-broad concepts into their atomic constituents. A concept 
 ≥2 child concepts created per decomposition invocation.
 If a concept cannot be meaningfully decomposed, report it as atomic and exit.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alias-resolution | SOP for detecting and resolving concept aliases — merge duplicate pages, redirect edges. |
+| concept-page-creation | SOP for creating a new concept page with proper frontmatter, content, and initial edges. |
+| edge-batch-creation | SOP for creating multiple edges in a batch — efficient bulk relationship creation. |
+
+<!-- END available-tables (generated) -->

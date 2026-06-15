@@ -33,3 +33,17 @@ Identify circular causation in the causal graph. Most real systems have feedback
 <HARD-GATE>
 ≥1 loop identified and classified (or explicit confirmation that no loops exist in the current subgraph) per invocation.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| causal-chain-query | SOP for tracing causal chains — follow edges from cause to effect through intermediate variables. |
+| loop-documentation | SOP for documenting a feedback loop — classify, describe dynamics, identify break points. |
+| mechanism-edge-creation | SOP for creating a causal mechanism edge — documents how one variable causes changes in another. |
+
+<!-- END available-tables (generated) -->

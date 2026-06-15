@@ -31,3 +31,16 @@ Systematically extract axes of variation from literature. Look for how authors c
 <HARD-GATE>
 ≥2 candidate axes identified per invocation with independence assessment.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| axis-validation | SOP for validating that candidate axes are independent and meaningful. |
+| dimension-page-creation | SOP for creating a dimension page — documents an axis of variation with its values and semantics. |
+
+<!-- END available-tables (generated) -->

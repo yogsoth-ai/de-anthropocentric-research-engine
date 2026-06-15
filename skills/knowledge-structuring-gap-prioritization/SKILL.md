@@ -47,3 +47,26 @@ An empty cell is only an opportunity if it's feasible and valuable. Rank gaps by
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| axis-extraction | Tactic for systematically extracting axes of variation from literature — identify how practitioners compare approaches. |
+| matrix-generation | Tactic for generating and populating combination matrices — cross dimensions to enumerate the design space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| knowledge-structuring-novelty-scoring | SOP for scoring empty cells by novelty potential — how surprising and valuable would this combination be? |
+| matrix-export | SOP for exporting the dimensional matrix as a readable document or structured data. |
+| question-generation | SOP for generating research questions from promising gaps in the design space. |
+
+<!-- END available-tables (generated) -->

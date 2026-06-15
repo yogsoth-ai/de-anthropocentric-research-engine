@@ -33,3 +33,16 @@ Verify the ontology is internally consistent. No contradictions, no cycles in hi
 ≥1 inconsistency identified and resolved per invocation.
 If vault_lint returns zero issues and graph inspection finds no problems, report clean state.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| gap-detection | SOP for finding structural gaps in the ontology — missing concepts, thin branches, disconnected clusters. |
+| merge-candidates | SOP for identifying near-duplicate concepts that should be merged. |
+
+<!-- END available-tables (generated) -->

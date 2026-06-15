@@ -36,3 +36,25 @@ Build taxonomic hierarchies using component_of and instance_of edges. Ensure hie
 ≥3 hierarchy edges created per invocation.
 If the hierarchy is already complete for the current scope, report and exit.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| knowledge-structuring-consistency-checking | Tactic for verifying ontology consistency — detect contradictions, cycles, orphans, and type violations. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| edge-batch-creation | SOP for creating multiple edges in a batch — efficient bulk relationship creation. |
+| gap-detection | SOP for finding structural gaps in the ontology — missing concepts, thin branches, disconnected clusters. |
+| hierarchy-visualization | SOP for inspecting the current hierarchy structure — query graph to display parent-child relationships. |
+
+<!-- END available-tables (generated) -->

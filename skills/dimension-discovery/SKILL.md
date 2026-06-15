@@ -45,3 +45,24 @@ Look for the axes that practitioners implicitly use when comparing approaches. "
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| axis-extraction | Tactic for systematically extracting axes of variation from literature — identify how practitioners compare approaches. |
+| matrix-generation | Tactic for generating and populating combination matrices — cross dimensions to enumerate the design space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| dimension-page-creation | SOP for creating a dimension page — documents an axis of variation with its values and semantics. |
+
+<!-- END available-tables (generated) -->

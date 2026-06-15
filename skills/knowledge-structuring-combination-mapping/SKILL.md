@@ -45,3 +45,24 @@ The matrix is the map. Populate it systematically — for each combination, dete
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| axis-extraction | Tactic for systematically extracting axes of variation from literature — identify how practitioners compare approaches. |
+| matrix-generation | Tactic for generating and populating combination matrices — cross dimensions to enumerate the design space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combination-enumeration | SOP for systematically enumerating combinations across dimensions. |
+
+<!-- END available-tables (generated) -->

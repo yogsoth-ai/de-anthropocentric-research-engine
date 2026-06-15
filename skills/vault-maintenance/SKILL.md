@@ -53,3 +53,19 @@ Typical flow (reference, not prescription):
 4. For orphans: search for connection candidates, add edges
 5. For near-duplicates: merge content into canonical page, update edges
 6. Re-run vault_lint to confirm resolution
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| wiki-add-edge | SOP wrapping vault_add_edge — create a typed relationship between two vault pages. |
+| wiki-edge-audit | SOP for auditing wikilink coverage — scans all edges and reports which source pages are missing [[dir/slug]] wikilinks to their targets. |
+| wiki-graph-query | SOP wrapping vault_query_graph — traverse knowledge graph from a node to explore its neighborhood and context. |
+| wiki-lint-fix | SOP wrapping vault_lint — run batch validation, report issues, optionally auto-fix safe problems. |
+| wiki-search | SOP wrapping vault_search — BM25 full-text search across vault pages. Returns ranked results with snippets. |
+
+<!-- END available-tables (generated) -->

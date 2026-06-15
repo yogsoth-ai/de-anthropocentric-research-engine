@@ -34,3 +34,18 @@ Generate combination matrices by crossing dimensions. Populate cells with existi
 <HARD-GATE>
 ≥1 matrix generated with ≥50% of cells classified (occupied/empty/impossible) per invocation.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combination-enumeration | SOP for systematically enumerating combinations across dimensions. |
+| knowledge-structuring-novelty-scoring | SOP for scoring empty cells by novelty potential — how surprising and valuable would this combination be? |
+| matrix-export | SOP for exporting the dimensional matrix as a readable document or structured data. |
+| question-generation | SOP for generating research questions from promising gaps in the design space. |
+
+<!-- END available-tables (generated) -->

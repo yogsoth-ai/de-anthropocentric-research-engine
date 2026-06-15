@@ -45,3 +45,24 @@ Extract concepts systematically from sources. Prefer precision over recall — i
 <HARD-GATE>
 Cannot exit until 80% of budget met. Print state ledger before each iteration decision.
 </HARD-GATE>
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| concept-decomposition | Tactic for breaking compound concepts into atomic parts — split over-broad concepts, identify sub-components, create child pages. |
+| knowledge-structuring-consistency-checking | Tactic for verifying ontology consistency — detect contradictions, cycles, orphans, and type violations. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| source-gathering | SOP for gathering source material relevant to the ontology domain — fetch papers and web pages into source pages. |
+
+<!-- END available-tables (generated) -->

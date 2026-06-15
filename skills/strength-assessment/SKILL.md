@@ -41,3 +41,16 @@ Must score ≥3 claims per invocation.
 ## Yield Report
 
 Returns: `{ claims_scored: number, strong_claims: number, weak_claims: number, defeaters_found: number }`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| evidence-attachment | SOP for attaching evidence to a claim — create typed edge (supported_by, contradicts, qualifies) with evidence quality metadata. |
+| strength-scoring | SOP for assigning calibrated strength scores to claims — evaluate evidence weight, count independent sources, check defeaters, produce scored assessment. |
+
+<!-- END available-tables (generated) -->

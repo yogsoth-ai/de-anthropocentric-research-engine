@@ -31,3 +31,15 @@ Must ingest ≥2 source pages per invocation.
 ## Yield
 
 Returns: `{ sources_ingested: number, paths: string[] }`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| wiki-ingest-source | SOP for source page creation — write immutable source page capturing raw material, then update search index. |
+
+<!-- END available-tables (generated) -->

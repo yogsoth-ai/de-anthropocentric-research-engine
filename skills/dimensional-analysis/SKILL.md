@@ -68,3 +68,36 @@ Map the design space of a research area by discovering its fundamental dimension
 - **Empty cells are opportunities.** An unexplored combination in a well-populated matrix is a research opportunity.
 - **Feasibility constrains.** Not all combinations are realizable. Mark impossible combinations explicitly.
 - **Cross-domain dimensions.** The most interesting dimensions often come from outside the domain.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| dimension-discovery | Strategy for identifying fundamental dimensions of variation in a design space. |
+| knowledge-structuring-combination-mapping | Strategy for enumerating meaningful combinations across dimensions and marking existing work. |
+| knowledge-structuring-gap-prioritization | Strategy for ranking unexplored combinations by novelty, feasibility, and potential impact. |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| axis-extraction | Tactic for systematically extracting axes of variation from literature — identify how practitioners compare approaches. |
+| knowledge-compilation | Tactic for compiling research findings into vault pages — orchestrates page creation, updates, edge linking, and index maintenance. Minimum yield ≥3 page operations per invocation. |
+| matrix-generation | Tactic for generating and populating combination matrices — cross dimensions to enumerate the design space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->
