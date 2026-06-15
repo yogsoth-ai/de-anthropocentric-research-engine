@@ -40,6 +40,14 @@ SPAWN_HUB = "infra/subagent-spawning/spawn-agent"
 CTX_INIT  = "infra/context-management/context-init"
 CTX_CKPT  = "infra/context-management/context-checkpoint"
 
+# research-catalog ref structure (U4): the catalog node lives in engine-core, so
+# canon() prefixes it "engine-core/". Its 9 ref nodes + skill fan-out are injected
+# programmatically (static json would be mangled by canon()).
+RESEARCH_CATALOG = "engine-core/research-catalog"
+NINE_PKGS = ["north-star-crystallization","knowledge-acquisition","deep-insight",
+             "hypothesis-formation","creative-ideation","convergence","stress-test",
+             "experiment-execution","knowledge-structuring"]
+
 
 def load_links():
     return json.loads((HERE / "infra-links.json").read_text(encoding="utf-8"))
@@ -71,7 +79,7 @@ def canon(pkg, nid, remap):
     return remap.get(f"{pkg}/{nid}", f"{pkg}/{nid}")
 
 
-def build(files, links):
+def build(files, links, a_data_dir):
     net = Network(height="100vh", width="100%", directed=True,
                   bgcolor="#191a1f", font_color="#eaeaea",
                   notebook=False, cdn_resources="in_line")
@@ -98,13 +106,16 @@ def build(files, links):
         nonlocal e_cnt
         if a == b or (a, b) in edgeset:
             return
-        # Any edge touching an infra hub is drawn but EXCLUDED from the physics
-        # solver (physics=false). The 11 infra hubs are super-connected
-        # (spawn-agent alone has 364 incoming edges); letting their springs act
-        # makes total kinetic energy never decay, so the layout never settles.
-        # Excluding them lets each package cluster lay out by its own internal
-        # edges while the hub links stay visible as star spokes.
-        hub_edge = a.startswith("infra/") or b.startswith("infra/")
+        # Any edge touching an infra hub OR the research-catalog ref structure is
+        # drawn but EXCLUDED from the physics solver (physics=false). The infra
+        # hubs and the catalog ref nodes are super-connected (a ref node fans to
+        # its whole package); letting their springs act makes total kinetic energy
+        # never decay, so the layout never settles. Excluding them lets each
+        # package cluster lay out by its own internal edges while the hub/ref links
+        # stay visible as star spokes.
+        hub_edge = (a.startswith("infra/") or b.startswith("infra/")
+                    or a.startswith("research-catalog/ref/") or b.startswith("research-catalog/ref/")
+                    or a == RESEARCH_CATALOG or b == RESEARCH_CATALOG)
         net.add_edge(a, b, title=tip, arrows="to", color="#5b6172",
                      physics=not hub_edge)
         edgeset.add((a, b)); e_cnt += 1
@@ -148,6 +159,22 @@ def build(files, links):
                     if cc in added:
                         link(cc, CTX_INIT, "campaign 启动时调 <b>context-init</b>（加载/创建 campaign context file）")
                         link(cc, CTX_CKPT, "每个 strategy 完成后调 <b>context-checkpoint</b>（硬性约束）")
+    # --- research-catalog ref structure (U4) ---
+    # research-catalog already added (engine-core). Add 9 ref nodes + fan-out.
+    for pkg in NINE_PKGS:
+        ref = f"research-catalog/ref/{pkg}"
+        ensure(ref, f"ref:{pkg}", "references",
+               f'<b>{pkg}</b> [references] &middot; <i>research-catalog ref table</i>'
+               f'<hr>该 package 的完整 skill 表(layer→name 排序)。catalog 选中此 package 后读它。')
+        # catalog -> ref
+        link(RESEARCH_CATALOG, ref,
+             f"读 research-catalog 后选中 <b>{pkg}</b>,打开其 skill 表")
+        # ref -> every skill node of this package (canon'd ids)
+        s = json.loads((Path(a_data_dir) / f"{pkg}.json").read_text(encoding="utf-8"))
+        for n in s["nodes"]:
+            cid = canon(pkg, n["id"], remap)
+            if cid in added:
+                link(ref, cid, f"<b>{pkg}</b> 表中的一项:{n['id']}")
     net.set_options('{"physics":{"stabilization":{"enabled":true,"iterations":1000,'
                     '"updateInterval":50,"fit":true},"minVelocity":0.75,'
                     '"barnesHut":{"avoidOverlap":0.2}},'
@@ -170,7 +197,7 @@ def main():
     a = ap.parse_args()
     files = sorted(Path(a.data_dir).glob("*.json"))
     links = load_links()
-    net, nodes, edges = build(files, links)
+    net, nodes, edges = build(files, links, a.data_dir)
     html = rg.strip_chrome(rg.strip_external_cdn(net.generate_html()))
     # Freeze fallback: once the solver reports stabilization done, turn physics
     # off so the canvas is guaranteed to come to rest even if residual jitter
