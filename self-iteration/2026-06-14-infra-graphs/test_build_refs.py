@@ -9,9 +9,18 @@ NINE = ["north-star-crystallization","knowledge-acquisition","deep-insight",
         "hypothesis-formation","creative-ideation","convergence","stress-test",
         "experiment-execution","knowledge-structuring"]
 
-def test_parse_descriptions_nonempty():
-    d = br.parse_descriptions(HERE.parent.parent / "skills/research-catalog/skill-index.md")
+def test_parse_descriptions_parses_table_rows():
+    # skill-index.md (the original 2-column description source) was split into the
+    # 9 ref files and removed; parse_descriptions must still parse a
+    # "| skill | description |" table. A small committed fixture preserves that
+    # exact format so the test stays meaningful without the deleted file.
+    d = br.parse_descriptions(HERE / "testdata_skill_table.md")
     assert d["actor-profiling"].startswith("Understand who the user is")
+
+def test_parse_descriptions_missing_source_is_empty():
+    # When the source file is gone, callers fall back to the json desc field, so
+    # parse_descriptions must degrade gracefully to an empty dict (not raise).
+    assert br.parse_descriptions(HERE / "does-not-exist.md") == {}
 
 def test_rows_for_package_count_matches_json():
     for pkg in NINE:

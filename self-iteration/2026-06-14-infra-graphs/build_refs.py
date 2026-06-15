@@ -17,7 +17,12 @@ LAYER_RANK = {"campaign":0,"strategy":1,"tactic":2,"sop":3,"references":4}
 
 
 def parse_descriptions(path=SKILL_INDEX):
-    """Parse the 887-line skill-index.md '| skill | description |' rows."""
+    """Parse '| skill | description |' rows from a markdown table file.
+    The original source (skill-index.md) was split into the 9 ref files and
+    removed; if the path is gone, return  and rely on the json `desc` field."""
+    path = Path(path)
+    if not path.exists():
+        return {}
     desc = {}
     for line in path.read_text(encoding="utf-8").splitlines():
         m = re.match(r"\|\s*([a-z0-9][a-z0-9-]*\.?[a-z]*)\s*\|\s*(.+?)\s*\|\s*$", line)
@@ -49,7 +54,17 @@ def render_table(pkg):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", default=str(REF_DIR))
+    ap.add_argument("--allow-degraded", action="store_true",
+                    help="run even though skill-index.md is gone (descriptions "
+                         "fall back to the sparser graph json desc field)")
     a = ap.parse_args()
+    if not SKILL_INDEX.exists() and not a.allow_degraded:
+        raise SystemExit(
+            f"refusing to run: {SKILL_INDEX.name} is gone, so descriptions would "
+            "degrade to the json desc field and OVERWRITE the committed ref files. "
+            "The 9 ref files were already generated from skill-index.md and committed; "
+            "regeneration is a one-time migration step, not idempotent. "
+            "Pass --allow-degraded only if you intend the sparser output.")
     od = Path(a.out_dir); od.mkdir(parents=True, exist_ok=True)
     for pkg in NINE:
         (od / f"{pkg}.md").write_text(render_table(pkg), encoding="utf-8")
