@@ -1,8 +1,12 @@
 ---
 name: component-decomposition
-description: Decompose system into functional components, identify dependencies, and surface trimming candidates.
+description: Decompose system into functional components, identify dependencies, and
+  surface trimming candidates.
 execution: tactic
-used-by: structural-deconstruction, component-surgery, function-trimming, recombination-architecture
+dependencies:
+  sops:
+  - function-model-construction
+  - trimming-execution
 ---
 
 # Component Decomposition

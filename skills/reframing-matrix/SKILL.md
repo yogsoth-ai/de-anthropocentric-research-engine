@@ -1,10 +1,13 @@
 ---
 name: reframing-matrix
-description: Reframe the problem from 4 professional perspectives to reveal what each discipline would focus on.
+description: Reframe the problem from 4 professional perspectives to reveal what each
+  discipline would focus on.
 execution: subagent
 prompt: ./prompt.md
 input: problem_statement
-used-by: multi-perspective-reframing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

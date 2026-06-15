@@ -4,7 +4,9 @@ description: Extract evaluation criteria from research goals and candidate alter
 execution: subagent
 prompt: ./prompt.md
 input: research_goal (string), candidates (string[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Criterion Definition

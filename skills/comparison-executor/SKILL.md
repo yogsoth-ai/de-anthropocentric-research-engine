@@ -1,10 +1,13 @@
 ---
 name: comparison-executor
-description: Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning.
+description: Execute a pairwise comparison between two candidates, producing a judgment
+  with winner, confidence, and reasoning.
 execution: subagent
 prompt: ./prompt.md
 input: pair(array), context(object)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Comparison Executor

@@ -1,10 +1,13 @@
 ---
 name: portfolio-evaluation-per-scenario
-description: Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario.
+description: Evaluate a specific portfolio's performance metrics and vulnerabilities
+  under a given scenario.
 execution: subagent
 prompt: ./prompt.md
 input: portfolio, scenario
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Portfolio Evaluation Per Scenario

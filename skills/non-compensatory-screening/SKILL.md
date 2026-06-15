@@ -1,7 +1,15 @@
 ---
 name: non-compensatory-screening
-description: Eliminate non-qualifying candidates using conjunctive rules, dominance filtering, lexicographic ordering, or veto thresholds.
-used-by: multi-criteria-scoring
+description: Eliminate non-qualifying candidates using conjunctive rules, dominance
+  filtering, lexicographic ordering, or veto thresholds.
+dependencies:
+  tactics:
+  - screening-then-scoring
+  sops:
+  - conjunctive-filter
+  - criterion-definition
+  - dominance-check
+  - threshold-setting
 ---
 
 # Non-Compensatory Screening

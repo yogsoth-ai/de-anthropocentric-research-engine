@@ -1,8 +1,20 @@
 ---
 name: gap-analysis
-description: Gap Analysis Campaign — identify, classify, validate, and prioritize research gaps via systematic evidence mapping. 5 strategies (gap-identification, gap-classification, gap-validation, gap-prioritization, gap-synthesis), 3 tactics, 12 subagent SOPs.
+description: Gap Analysis Campaign — identify, classify, validate, and prioritize
+  research gaps via systematic evidence mapping. 5 strategies (gap-identification,
+  gap-classification, gap-validation, gap-prioritization, gap-synthesis), 3 tactics,
+  12 subagent SOPs.
 execution: campaign
-used-by: deep-insight
+dependencies:
+  strategies:
+  - deep-insight-gap-identification
+  - deep-insight-gap-prioritization
+  - gap-classification
+  - gap-synthesis-strategy
+  - gap-validation
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Gap Analysis

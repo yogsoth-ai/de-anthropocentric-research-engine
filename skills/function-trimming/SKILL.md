@@ -1,8 +1,15 @@
 ---
 name: function-trimming
-description: Remove components while preserving function via TRIZ trimming methodology. Simplify systems by redistributing functions.
+description: Remove components while preserving function via TRIZ trimming methodology.
+  Simplify systems by redistributing functions.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - function-model-construction
+  - structural-synthesis
+  - trimming-execution
 ---
 
 # Function Trimming

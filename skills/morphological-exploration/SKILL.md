@@ -1,8 +1,28 @@
 ---
 name: morphological-exploration
-description: Morphological Exploration Campaign — systematic dimension-combination enumeration to discover unexplored solution spaces via Zwicky box, CCA, and GMA
+description: Morphological Exploration Campaign — systematic dimension-combination
+  enumeration to discover unexplored solution spaces via Zwicky box, CCA, and GMA
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  tactics:
+  - creative-ideation-combination-mapping
+  - creative-ideation-consistency-checking
+  - evaluation-filtering
+  - white-space-identification
+  sops:
+  - constraint-injection
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - idea-synthesis
+  - parameter-identification
+  strategies:
+  - cross-consistency-analysis
+  - design-space-mapping
+  - general-morphological-analysis
+  - parameter-variation
+  - zwicky-box-construction
 ---
 
 # Morphological Exploration

@@ -1,10 +1,14 @@
 ---
 name: thematic-coding
-description: Identify recurring themes across papers using qualitative coding methodology. Produces a codebook with theme definitions, supporting evidence, and frequency counts. Used by narrative-review.
+description: Identify recurring themes across papers using qualitative coding methodology.
+  Produces a codebook with theme definitions, supporting evidence, and frequency counts.
+  Used by narrative-review.
 execution: subagent
 prompt: ./prompt.md
 input: paper_notes (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Thematic Coding

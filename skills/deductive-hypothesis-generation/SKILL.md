@@ -1,26 +1,25 @@
 ---
 name: deductive-hypothesis-generation
-description: "Strategy: 从现有理论演绎推导假设"
+description: 'Strategy: 从现有理论演绎推导假设'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: hypothesis-formulation
 tactics:
-  - theory-mechanism-extraction
-  - falsifiability-audit
+- theory-mechanism-extraction
+- falsifiability-audit
 sops:
-  - theory-identification
-  - mechanism-extraction
-  - variable-identification
-  - relationship-specification
-  - boundary-condition-specification
-  - falsifiability-check
-  - operationalization
+- theory-identification
+- mechanism-extraction
+- variable-identification
+- relationship-specification
+- boundary-condition-specification
+- falsifiability-check
+- operationalization
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - literature-engine
+  tactics:
+  - falsifiability-audit
+  - theory-mechanism-extraction
 ---
 
 # Deductive Hypothesis Generation

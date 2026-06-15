@@ -1,8 +1,12 @@
-﻿---
+---
 name: leaderboard-harvesting
 description: Systematically collect performance data from platforms and papers
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - discrepancy-identification
+  - method-discovery
+  - score-extraction
 ---
 
 # Leaderboard Harvesting

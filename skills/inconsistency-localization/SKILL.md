@@ -1,10 +1,13 @@
 ---
 name: inconsistency-localization
-description: Identify which specific comparison pairs are most responsible for preference cycles and inconsistencies.
+description: Identify which specific comparison pairs are most responsible for preference
+  cycles and inconsistencies.
 execution: subagent
 prompt: ./prompt.md
 input: comparison_matrix(object), cycles(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Inconsistency Localization

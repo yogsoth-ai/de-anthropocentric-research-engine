@@ -1,10 +1,13 @@
 ---
 name: sensitivity-analysis-design
-description: Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks
+description: Design leave-one-out, influence diagnostics, subgroup analyses, and robustness
+  checks
 execution: subagent
 prompt: ./prompt.md
 input: included_studies, potential_outliers, subgroup_variables
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Sensitivity Analysis Design SOP

@@ -1,10 +1,13 @@
 ---
 name: reviewer2-hat
-description: Hostile reviewer perspective — find fatal flaws, logical gaps, and missing evidence in a solution.
+description: Hostile reviewer perspective — find fatal flaws, logical gaps, and missing
+  evidence in a solution.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string)
-used-by: perspective-forcing, role-based-ideation, perspective-rotation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Reviewer 2 Hat

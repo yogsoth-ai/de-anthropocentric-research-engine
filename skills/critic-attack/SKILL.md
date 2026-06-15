@@ -4,7 +4,9 @@ description: Attack an advocate's case with multiple arguments rated by severity
 execution: subagent
 prompt: ./prompt.md
 input: winner, advocate_case
-used-by: [steel-manning, validation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Critic Attack

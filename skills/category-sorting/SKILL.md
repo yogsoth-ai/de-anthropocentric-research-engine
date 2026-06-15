@@ -1,7 +1,11 @@
 ---
 name: category-sorting
-description: Classify candidates into predefined categories using ELECTRE-Tri, FlowSort, AHPSort, or DRSA methods.
-used-by: multi-criteria-scoring
+description: Classify candidates into predefined categories using ELECTRE-Tri, FlowSort,
+  AHPSort, or DRSA methods.
+dependencies:
+  tactics:
+  - convergence-scoring-matrix-construction
+  - screening-then-scoring
 ---
 
 # Category Sorting

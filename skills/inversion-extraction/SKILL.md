@@ -1,10 +1,13 @@
 ---
 name: inversion-extraction
-description: Extract constructive insights from worst solutions. Transform failure analysis into innovation directions.
+description: Extract constructive insights from worst solutions. Transform failure
+  analysis into innovation directions.
 execution: subagent
 prompt: ./prompt.md
 input: worst_solution (string), failure_analysis (string)
-used-by: inversion-protocol, reverse-brainstorming, worst-method-inversion
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Inversion Extraction

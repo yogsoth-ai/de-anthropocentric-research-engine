@@ -1,15 +1,15 @@
 ---
 name: relationship-specification
-description: "SOP: 指定变量间关系的方向与形式"
+description: 'SOP: 指定变量间关系的方向与形式'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "变量对列表（来自 variable-identification 输出）"
-output: "关系规格列表：方向 + 函数形式 + 理论依据"
+input: 变量对列表（来自 variable-identification 输出）
+output: 关系规格列表：方向 + 函数形式 + 理论依据
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Relationship Specification

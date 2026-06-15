@@ -1,8 +1,14 @@
 ---
 name: zwicky-box-construction
-description: "Classic Zwicky box: parameter identification → value enumeration → matrix construction"
+description: 'Classic Zwicky box: parameter identification → value enumeration → matrix
+  construction'
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  sops:
+  - matrix-construction
+  - morphological-synthesis
+  - path-generation
+  - value-enumeration
 ---
 
 # Zwicky Box Construction

@@ -1,10 +1,13 @@
 ---
 name: method-sensitivity-report
-description: Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives.
+description: Analyze how the choice of MCDA method affects final rankings and identify
+  method-sensitive alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: rankings (object[]), methods (string[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Method Sensitivity Report

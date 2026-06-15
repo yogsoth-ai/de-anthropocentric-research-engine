@@ -1,10 +1,13 @@
 ---
 name: coverage-gap-detection
-description: Detect uncovered regions in the solution space, producing a prioritized gap list.
+description: Detect uncovered regions in the solution space, producing a prioritized
+  gap list.
 execution: subagent
 prompt: ./prompt.md
 input: coverage_analysis (object)
-used-by: gap-driven-generation, failure-taxonomy, factorial-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Coverage Gap Detection

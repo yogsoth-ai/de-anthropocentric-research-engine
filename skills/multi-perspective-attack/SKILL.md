@@ -1,8 +1,13 @@
 ---
 name: multi-perspective-attack
-description: Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment.
+description: Assign distinct perspectives to attack a decision from multiple angles,
+  then synthesize findings into a unified assessment.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - perspective-assignment
+  - perspective-attack
+  - steel-manning-synthesis
 ---
 
 # Multi-Perspective Attack

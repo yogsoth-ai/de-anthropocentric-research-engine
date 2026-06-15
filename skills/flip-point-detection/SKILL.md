@@ -1,10 +1,13 @@
 ---
 name: flip-point-detection
-description: Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false.
+description: Find the minimal change magnitude along a dimension that causes the conclusion
+  to flip from true to false.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), dimension (string), conclusion (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Flip-Point Detection

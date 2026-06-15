@@ -1,7 +1,11 @@
 ---
 name: scaling-frontier
-description: Analyze behavior across scales — detect regime changes, identify capacity limits, fit scaling laws within regimes.
-used-by: boundary-analysis
+description: Analyze behavior across scales — detect regime changes, identify capacity
+  limits, fit scaling laws within regimes.
+dependencies:
+  sops:
+  - edge-case-generation
+  - scaling-regime-detection
 ---
 
 # Scaling Frontier

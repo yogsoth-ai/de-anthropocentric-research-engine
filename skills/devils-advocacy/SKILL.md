@@ -1,10 +1,13 @@
 ---
 name: devils-advocacy
-description: Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking.
+description: Construct the strongest possible counter-argument against a position,
+  steelmanning the opposition before attacking.
 execution: subagent
 prompt: ./prompt.md
 input: position (string), context (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Devil's Advocacy

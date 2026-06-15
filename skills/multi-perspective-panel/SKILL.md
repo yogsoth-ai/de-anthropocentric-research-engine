@@ -1,9 +1,18 @@
 ---
 name: multi-perspective-panel
-description: "Strategy: Multi-stakeholder review panel — diverse expert perspectives evaluate artifact simultaneously, then synthesize through structured deliberation."
+description: 'Strategy: Multi-stakeholder review panel — diverse expert perspectives
+  evaluate artifact simultaneously, then synthesize through structured deliberation.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [perspective-rotation]
+tactics:
+- perspective-rotation
+dependencies:
+  tactics:
+  - stress-test-perspective-rotation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - divergence-detection
+  - perspective-critic
 ---
 
 # Multi-Perspective Panel Strategy

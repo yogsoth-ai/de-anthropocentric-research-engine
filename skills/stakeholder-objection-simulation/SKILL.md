@@ -1,7 +1,11 @@
 ---
 name: stakeholder-objection-simulation
-description: Simulate stakeholder objections through role-play and political feasibility analysis to test whether the decision survives real-world opposition.
-used-by: steel-manning
+description: Simulate stakeholder objections through role-play and political feasibility
+  analysis to test whether the decision survives real-world opposition.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - multi-perspective-attack
 ---
 
 # Stakeholder Objection Simulation

@@ -1,7 +1,13 @@
 ---
 name: variance-decomposition
-description: Sobol variance decomposition — compute first-order and total-order sensitivity indices to quantify each parameter's contribution to output variance.
-used-by: sensitivity-analysis
+description: Sobol variance decomposition — compute first-order and total-order sensitivity
+  indices to quantify each parameter's contribution to output variance.
+dependencies:
+  tactics:
+  - screening-then-decomposition
+  sops:
+  - interaction-detection
+  - sobol-decomposition
 ---
 
 # Variance Decomposition

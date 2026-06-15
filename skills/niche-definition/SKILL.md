@@ -1,10 +1,13 @@
 ---
 name: niche-definition
-description: Define niches and capability areas that a portfolio should cover based on domain structure and objectives.
+description: Define niches and capability areas that a portfolio should cover based
+  on domain structure and objectives.
 execution: subagent
 prompt: ./prompt.md
 input: domain, objectives
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Niche Definition

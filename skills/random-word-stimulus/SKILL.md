@@ -1,10 +1,14 @@
 ---
 name: random-word-stimulus
-description: Use random word/concept injection as creative stimulus. Selects random concepts and forces connection to the problem space, generating unexpected solution paths.
+description: Use random word/concept injection as creative stimulus. Selects random
+  concepts and forces connection to the problem space, generating unexpected solution
+  paths.
 execution: subagent
 prompt: ./prompt.md
 input: problem_description (string), stimulus_count (string)
-used-by: cross-domain-discovery, lateral-thinking, synectics
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Random Word Stimulus

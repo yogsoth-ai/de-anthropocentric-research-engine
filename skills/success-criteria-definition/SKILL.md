@@ -1,15 +1,15 @@
 ---
 name: success-criteria-definition
-description: "SOP: 为研究问题定义可测量的成功标准"
+description: 'SOP: 为研究问题定义可测量的成功标准'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究问题（RQ）"
-output: "可测量的成功标准 + 阈值"
+input: 研究问题（RQ）
+output: 可测量的成功标准 + 阈值
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Success Criteria Definition

@@ -1,10 +1,13 @@
 ---
 name: cycle-detection
-description: Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics.
+description: Scan a pairwise comparison matrix for preference cycles and compute transitivity
+  metrics.
 execution: subagent
 prompt: ./prompt.md
 input: comparison_matrix(object)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Cycle Detection

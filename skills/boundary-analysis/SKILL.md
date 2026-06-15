@@ -1,8 +1,20 @@
 ---
 name: boundary-analysis
-description: Boundary Analysis Campaign — probe where methods fail, map validity envelopes, test robustness, catalog failure modes, detect scaling limits. 5 strategies, 3 tactics, 11 subagent SOPs.
+description: Boundary Analysis Campaign — probe where methods fail, map validity envelopes,
+  test robustness, catalog failure modes, detect scaling limits. 5 strategies, 3 tactics,
+  11 subagent SOPs.
 execution: campaign
-used-by: deep-insight
+dependencies:
+  strategies:
+  - boundary-critique
+  - deep-insight-validity-envelope-mapping
+  - failure-mode-analysis
+  - robustness-testing
+  - scaling-frontier
+  sops:
+  - boundary-synthesis
+  - context-checkpoint
+  - context-init
 ---
 
 # Boundary Analysis

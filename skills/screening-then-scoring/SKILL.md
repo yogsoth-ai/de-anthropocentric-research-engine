@@ -1,8 +1,18 @@
 ---
 name: screening-then-scoring
-description: First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods.
+description: First eliminate non-qualifying candidates with non-compensatory rules,
+  then score survivors with full MCDA methods.
 execution: tactic
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - alternative-scoring
+  - conjunctive-filter
+  - criterion-definition
+  - dominance-check
+  - normalization
+  - scoring-synthesis
+  - threshold-setting
+  - weight-elicitation-sop
 ---
 
 # Screening Then Scoring

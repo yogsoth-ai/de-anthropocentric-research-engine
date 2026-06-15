@@ -1,8 +1,13 @@
 ---
 name: staged-gate-evaluation
-description: Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence.
+description: Define gate criteria for each stage, evaluate candidates at each gate,
+  and render go/kill/recycle decisions with evidence.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - feasibility-synthesis
+  - gate-criteria-definition
+  - gate-judgment
 ---
 
 # Staged Gate Evaluation

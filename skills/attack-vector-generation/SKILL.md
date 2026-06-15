@@ -1,10 +1,13 @@
 ---
 name: attack-vector-generation
-description: Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed.
+description: Generate specific attack strategies for a given threat surface, producing
+  concrete probes that can be executed.
 execution: subagent
 prompt: ./prompt.md
 input: surface (string), artifact (string), prior_findings (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Attack Vector Generation

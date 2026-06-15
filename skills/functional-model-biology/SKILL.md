@@ -1,10 +1,13 @@
 ---
 name: functional-model-biology
-description: "Build biological system functional model. Map energy, matter, and information flows."
+description: Build biological system functional model. Map energy, matter, and information
+  flows.
 execution: subagent
 prompt: ./prompt.md
 input: biological_system (string)
-used-by: functional-analogy, biological-function-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Functional Model Biology

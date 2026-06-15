@@ -1,9 +1,37 @@
 ---
 name: multiagent-debate
-description: "Campaign: Multi-agent structured debate for adversarial validation. Core question: Can this artifact survive structured adversarial debate? Methods: Irving AI Safety via Debate, Du Society of Mind, Liang MAD, Toulmin Argumentation, D3 framework."
+description: 'Campaign: Multi-agent structured debate for adversarial validation.
+  Core question: Can this artifact survive structured adversarial debate? Methods:
+  Irving AI Safety via Debate, Du Society of Mind, Liang MAD, Toulmin Argumentation,
+  D3 framework.'
 type: campaign
 produces: DebateVerdict
-artifact-types: [gap, hypothesis, research-question, idea, approach, experiment-design, claim]
+artifact-types:
+- gap
+- hypothesis
+- research-question
+- idea
+- approach
+- experiment-design
+- claim
+dependencies:
+  strategies:
+  - adversarial-escalation
+  - courtroom-structured
+  - critic-defender-judge
+  - multi-perspective-panel
+  - society-of-mind
+  tactics:
+  - evidence-tournament
+  - stress-test-dialectical-escalation
+  - stress-test-perspective-rotation
+  sops:
+  - context-checkpoint
+  - context-init
+  - debate-transcript-analysis
+  - stress-test-saturation-detection
+  - verdict-synthesis
+  - weakness-classification
 ---
 
 # Multi-Agent Debate Campaign

@@ -1,7 +1,13 @@
-﻿---
+---
 name: discrepancy-analysis
-description: Identify discrepancies between reported and reproducible scores — 15 methods, 45 data points, 30 web searches budget
-used-by: baseline-establishment
+description: Identify discrepancies between reported and reproducible scores — 15
+  methods, 45 data points, 30 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - discrepancy-identification
+  - reproducibility-checklist-audit
 ---
 
 # Discrepancy Analysis

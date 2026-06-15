@@ -1,10 +1,13 @@
 ---
 name: threat-surface-mapping
-description: Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions.
+description: Enumerate all attackable surfaces of an artifact — logical, empirical,
+  methodological, social, and practical dimensions.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Threat Surface Mapping

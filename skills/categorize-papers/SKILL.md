@@ -1,10 +1,13 @@
 ---
 name: categorize-papers
-description: Cluster papers by theme, method, or timeline. Produces natural groupings from a paper collection. Used by scoping-survey and narrative-review.
+description: Cluster papers by theme, method, or timeline. Produces natural groupings
+  from a paper collection. Used by scoping-survey and narrative-review.
 execution: subagent
 prompt: ./prompt.md
 input: paper_list (string)
-used-by: literature-survey, meta-analysis, baseline-establishment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Categorize Papers

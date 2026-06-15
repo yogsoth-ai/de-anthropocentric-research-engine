@@ -1,11 +1,14 @@
 ---
 name: statistical-method-selection
-description: "Select appropriate statistical methods for experiment analysis"
+description: Select appropriate statistical methods for experiment analysis
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
+- metric-specification
+- sample-size-estimation
+dependencies:
+  sops:
   - metric-specification
   - sample-size-estimation
 ---

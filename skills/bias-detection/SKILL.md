@@ -1,7 +1,23 @@
 ---
 name: bias-detection
-description: Assess systematic biases in the evidence body — publication bias, reporting bias, and selective outcome reporting. Budget: 40 studies, 40 effect sizes, 40 web searches.
-used-by: meta-analysis
+description: 'Assess systematic biases in the evidence body — publication bias, reporting
+  bias, and selective outcome reporting. Budget: 40 studies, 40 effect sizes, 40 web
+  searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - heterogeneity-source-analysis
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Bias Detection Strategy

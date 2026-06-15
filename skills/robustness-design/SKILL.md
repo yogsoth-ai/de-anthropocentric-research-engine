@@ -1,18 +1,27 @@
 ---
 name: robustness-design
-description: "Design experiments to identify failure boundaries and robustness limits"
+description: Design experiments to identify failure boundaries and robustness limits
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- factor-identification
+- level-specification
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+- design-matrix-construction
+tactics:
+- statistical-method-selection
+dependencies:
+  sops:
+  - baseline-selection
+  - design-matrix-construction
   - factor-identification
   - level-specification
-  - baseline-selection
   - metric-specification
   - sample-size-estimation
-  - design-matrix-construction
-tactics:
+  tactics:
   - statistical-method-selection
 ---
 

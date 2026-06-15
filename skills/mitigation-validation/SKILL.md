@@ -1,9 +1,18 @@
 ---
 name: mitigation-validation
-description: "Tactic: Run mini-FMEA on proposed mitigations to verify they do not introduce new failure modes. Prevents mitigation-induced risks."
+description: 'Tactic: Run mini-FMEA on proposed mitigations to verify they do not
+  introduce new failure modes. Prevents mitigation-induced risks.'
 type: tactic
-used-by: [failure-anticipation]
-strategies: [design-fmea, process-fmea, mitigation-design]
+strategies:
+- design-fmea
+- process-fmea
+- mitigation-design
+dependencies:
+  sops:
+  - failure-mode-extraction
+  - mitigation-design-sop
+  - re-scoring
+  - severity-scoring
 ---
 
 # Mitigation Validation Tactic

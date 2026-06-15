@@ -4,7 +4,9 @@ description: Evaluate whether benchmark measures its claimed capability
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_name, claimed_capability, task_examples
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Construct Validity Assessment SOP

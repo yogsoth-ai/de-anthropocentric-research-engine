@@ -1,15 +1,15 @@
 ---
 name: ahrq-picme-assessment
-description: "SOP: 使用 AHRQ PiCMe 框架对研究 gap 进行 6 维度系统评估"
+description: 'SOP: 使用 AHRQ PiCMe 框架对研究 gap 进行 6 维度系统评估'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord — 单条标准化 gap 记录"
-output: "PiCMeAssessment — 6 维度独立评分、综合判定及研究问题草稿"
+input: GapRecord — 单条标准化 gap 记录
+output: PiCMeAssessment — 6 维度独立评分、综合判定及研究问题草稿
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # AHRQ PiCMe Assessment

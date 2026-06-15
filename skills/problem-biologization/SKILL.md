@@ -1,10 +1,13 @@
 ---
 name: problem-biologization
-description: "Restate technical problem as biological question. Translate engineering challenges into nature's language."
+description: Restate technical problem as biological question. Translate engineering
+  challenges into nature's language.
 execution: subagent
 prompt: ./prompt.md
 input: technical_problem (string)
-used-by: biologize-and-discover, functional-analogy, biological-function-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Problem Biologization

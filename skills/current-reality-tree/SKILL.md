@@ -1,10 +1,13 @@
 ---
 name: current-reality-tree
-description: Build TOC Current Reality Trees — connect Undesirable Effects via sufficient-cause logic to identify 1-3 root causes.
+description: Build TOC Current Reality Trees — connect Undesirable Effects via sufficient-cause
+  logic to identify 1-3 root causes.
 execution: subagent
 prompt: ./prompt.md
 input: undesirable_effects (string), context (string)
-used-by: root-cause-drilling
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Current Reality Tree

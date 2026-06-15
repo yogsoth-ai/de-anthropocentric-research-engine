@@ -1,20 +1,44 @@
 ---
 name: implementation-planning
-description: "Plan execution path, produce executable plan, dispatch subagents, collect and analyze results"
+description: Plan execution path, produce executable plan, dispatch subagents, collect
+  and analyze results
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - critical-path-planning
-  - prerequisite-planning
-  - plan-writing
-  - experiment-running
-  - result-analysis
+- critical-path-planning
+- prerequisite-planning
+- plan-writing
+- experiment-running
+- result-analysis
 tactics:
-  - task-decomposition
-  - subagent-execution-loop
+- task-decomposition
+- subagent-execution-loop
+- checkpoint-and-recover
+- result-validation-loop
+dependencies:
+  strategies:
+  - critical-path-planning
+  - experiment-running
+  - plan-writing
+  - prerequisite-planning
+  - result-analysis
+  tactics:
   - checkpoint-and-recover
   - result-validation-loop
+  - subagent-execution-loop
+  - task-decomposition
+  sops:
+  - context-checkpoint
+  - context-init
+  - execution-synthesis
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign 4: Implementation Planning

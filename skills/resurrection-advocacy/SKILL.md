@@ -1,7 +1,11 @@
 ---
 name: resurrection-advocacy
-description: Argue for rejected candidates using Devil's Advocacy, Dialectical Inquiry, and Adversarial Collaboration to ensure elimination was justified.
-used-by: steel-manning
+description: Argue for rejected candidates using Devil's Advocacy, Dialectical Inquiry,
+  and Adversarial Collaboration to ensure elimination was justified.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - multi-perspective-attack
 ---
 
 # Resurrection Advocacy

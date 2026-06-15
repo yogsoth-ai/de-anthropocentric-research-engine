@@ -1,9 +1,23 @@
 ---
 name: courtroom-structured
-description: "Strategy: Legal adversarial structure — prosecution presents case, defense responds, evidence is cross-examined, judge delivers verdict. Emphasizes evidence quality and procedural rigor."
+description: 'Strategy: Legal adversarial structure — prosecution presents case, defense
+  responds, evidence is cross-examined, judge delivers verdict. Emphasizes evidence
+  quality and procedural rigor.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [evidence-tournament, dialectical-escalation]
+tactics:
+- evidence-tournament
+- dialectical-escalation
+dependencies:
+  tactics:
+  - evidence-tournament
+  - stress-test-dialectical-escalation
+  sops:
+  - cross-examination
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
+  - evidence-scout
 ---
 
 # Courtroom-Structured Strategy

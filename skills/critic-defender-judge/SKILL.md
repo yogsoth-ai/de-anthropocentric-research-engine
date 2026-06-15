@@ -1,9 +1,23 @@
 ---
 name: critic-defender-judge
-description: "Strategy: Classic triangular debate — Critic attacks, Defender responds, Judge adjudicates. Based on Irving AI Safety via Debate with Toulmin argumentation structure."
+description: 'Strategy: Classic triangular debate — Critic attacks, Defender responds,
+  Judge adjudicates. Based on Irving AI Safety via Debate with Toulmin argumentation
+  structure.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [dialectical-escalation, evidence-tournament]
+tactics:
+- dialectical-escalation
+- evidence-tournament
+dependencies:
+  tactics:
+  - evidence-tournament
+  - stress-test-dialectical-escalation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
+  - evidence-scout
 ---
 
 # Critic-Defender-Judge Strategy

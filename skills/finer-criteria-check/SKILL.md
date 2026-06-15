@@ -1,15 +1,15 @@
 ---
 name: finer-criteria-check
-description: "SOP: FINER 5 项标准逐项检验研究问题质量"
+description: 'SOP: FINER 5 项标准逐项检验研究问题质量'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究问题（RQ）"
-output: "5 项逐项判定 + 未通过项的修正建议"
+input: 研究问题（RQ）
+output: 5 项逐项判定 + 未通过项的修正建议
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # FINER Criteria Check

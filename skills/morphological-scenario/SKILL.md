@@ -1,21 +1,34 @@
 ---
 name: morphological-scenario
-description: "What are all possible combinations? — Zwicky Box construction with CCA consistency filtering for systematic scenario enumeration"
+description: What are all possible combinations? — Zwicky Box construction with CCA
+  consistency filtering for systematic scenario enumeration
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - parameter-enumeration
-  - consistency-pair-evaluation
-  - scenario-narrative-construction
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- parameter-enumeration
+- consistency-pair-evaluation
+- scenario-narrative-construction
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
-  - parameter-space-construction
+- parameter-space-construction
+- cross-consistency-filtering
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - experiment-execution-consistency-pair-evaluation
+  - parameter-enumeration
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-narrative-construction
+  - scenario-synthesis
+  tactics:
   - cross-consistency-filtering
+  - parameter-space-construction
   - strategy-robustness-testing
 ---
 

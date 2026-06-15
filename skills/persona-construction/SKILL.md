@@ -1,10 +1,13 @@
 ---
 name: persona-construction
-description: Build a detailed adversarial persona with background, motivation, expertise, blind spots, and preferred attack patterns.
+description: Build a detailed adversarial persona with background, motivation, expertise,
+  blind spots, and preferred attack patterns.
 execution: subagent
 prompt: ./prompt.md
 input: persona_type (string), artifact_domain (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Persona Construction

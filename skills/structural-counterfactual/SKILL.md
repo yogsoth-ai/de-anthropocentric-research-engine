@@ -1,9 +1,24 @@
 ---
 name: structural-counterfactual
-description: "Strategy: Pearl Three-Step counterfactual — Abduction (fit model to evidence), Action (intervene on factor), Prediction (derive counterfactual outcome)."
+description: 'Strategy: Pearl Three-Step counterfactual — Abduction (fit model to
+  evidence), Action (intervene on factor), Prediction (derive counterfactual outcome).'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [systematic-factor-ablation, causal-necessity-testing]
+tactics:
+- systematic-factor-ablation
+- causal-necessity-testing
+dependencies:
+  tactics:
+  - causal-necessity-testing
+  - systematic-factor-ablation
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - fragility-measurement
+  - load-bearing-identification
+  - necessity-evaluation
+  - single-factor-removal
+  - sufficiency-evaluation
 ---
 
 # Structural Counterfactual Strategy

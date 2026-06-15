@@ -1,8 +1,16 @@
 ---
 name: benchmark-sweep
-description: Systematically scan all known solutions, identify gaps in coverage and unexplored regions of the solution space.
+description: Systematically scan all known solutions, identify gaps in coverage and
+  unexplored regions of the solution space.
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - creative-ideation-benchmark-inventory
+  - enumeration-synthesis
+  - intersection-evaluation
+  - method-problem-crossing
+  tactics:
+  - coverage-analysis
 ---
 
 # Benchmark Sweep

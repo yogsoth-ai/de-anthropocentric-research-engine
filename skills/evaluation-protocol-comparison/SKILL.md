@@ -2,7 +2,9 @@
 name: evaluation-protocol-comparison
 description: Compare implementation differences of same benchmark across papers
 execution: tactic
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - protocol-element-extraction
 ---
 
 # Evaluation Protocol Comparison Tactic

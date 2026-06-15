@@ -1,19 +1,41 @@
 ---
 name: experiment-design
-description: "Transform validated hypotheses into rigorous, executable experiment designs"
+description: Transform validated hypotheses into rigorous, executable experiment designs
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - factor-level-design
+- factor-level-design
+- ablation-design
+- comparison-design
+- scaling-design
+- robustness-design
+tactics:
+- statistical-method-selection
+- reproducibility-protocol
+- budget-constrained-design
+dependencies:
+  strategies:
   - ablation-design
   - comparison-design
-  - scaling-design
+  - experiment-execution-factor-level-design
   - robustness-design
-tactics:
-  - statistical-method-selection
-  - reproducibility-protocol
+  - scaling-design
+  tactics:
   - budget-constrained-design
+  - reproducibility-protocol
+  - statistical-method-selection
+  sops:
+  - context-checkpoint
+  - context-init
+  - design-synthesis
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign: Experiment Design

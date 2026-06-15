@@ -1,10 +1,14 @@
 ---
 name: idea-synthesis
-description: Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions.
+description: Synthesize diverse ideas into coherent solution concepts. Combines fragments
+  from multiple ideation passes into structured, actionable ideas with clear mechanism
+  descriptions.
 execution: subagent
 prompt: ./prompt.md
 input: raw_ideas (string), campaign_context (string)
-used-by: structural-deconstruction, cross-domain-discovery, assumption-destruction, biomimicry, synectics, morphological-exploration, lateral-thinking, combinatorial-creativity, perspective-forcing, systematic-enumeration
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Idea Synthesis

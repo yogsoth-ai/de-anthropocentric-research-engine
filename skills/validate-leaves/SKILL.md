@@ -1,9 +1,14 @@
 ---
 name: validate-leaves
-description: Quality check on leaf nodes of the GoalTree. Verify each leaf is specific enough, actionable, and that the set of leaves fully covers the top goal. Flag issues for further decomposition.
+description: Quality check on leaf nodes of the GoalTree. Verify each leaf is specific
+  enough, actionable, and that the set of leaves fully covers the top goal. Flag issues
+  for further decomposition.
 execution: subagent
 prompt: ./prompt.md
 input: goal_tree (string), top_goal (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Validate Leaves

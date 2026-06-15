@@ -1,8 +1,39 @@
 ---
 name: lateral-thinking
-description: Lateral Thinking Campaign — escape logical thinking tracks via PO/movement, random entry, concept fan, challenge, and six hats (de Bono)
+description: Lateral Thinking Campaign — escape logical thinking tracks via PO/movement,
+  random entry, concept fan, challenge, and six hats (de Bono)
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - alternatives-generation
+  - challenge-questioning
+  - concept-fan-expansion
+  - constraint-injection
+  - context-checkpoint
+  - context-init
+  - creative-ideation-assumption-surfacing
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - escape-technique
+  - fractionation
+  - green-hat-session
+  - idea-synthesis
+  - lateral-synthesis
+  - movement-operation
+  - po-provocation
+  - random-word-stimulus
+  - stepping-stone
+  strategies:
+  - challenge-operation
+  - concept-fan
+  - provocation-and-movement
+  - random-entry
+  - six-hats-ideation
+  tactics:
+  - concept-hierarchy
+  - creative-ideation-provocation-generation
+  - evaluation-filtering
+  - movement-extraction
 ---
 
 # Lateral Thinking

@@ -1,10 +1,13 @@
 ---
 name: gap-typology-classification
-description: Classify gaps using Miles 7-type taxonomy (theoretical, methodological, empirical, population, practical, knowledge void, evidence gap).
+description: Classify gaps using Miles 7-type taxonomy (theoretical, methodological,
+  empirical, population, practical, knowledge void, evidence gap).
 execution: subagent
 prompt: ./prompt.md
 input: gap_description (string), evidence (string)
-used-by: gap-classification
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Gap Typology Classification

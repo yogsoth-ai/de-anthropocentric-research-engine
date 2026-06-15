@@ -1,9 +1,12 @@
 ---
 name: parameter-space-mapping
-description: "Identify all parameter dimensions along which a claim's validity might vary."
+description: Identify all parameter dimensions along which a claim's validity might
+  vary.
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Parameter Space Mapping

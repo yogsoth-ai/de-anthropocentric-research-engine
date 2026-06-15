@@ -1,15 +1,17 @@
 ---
 name: buffer-sizing
-description: "Calculate project, feeding, and resource buffers — shared with implementation-planning"
+description: Calculate project, feeding, and resource buffers — shared with implementation-planning
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: resource-constraint
 input: critical chain with task durations (optimistic/likely/pessimistic)
 output: buffer sizes and placement recommendations
 shared: true
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Buffer Sizing

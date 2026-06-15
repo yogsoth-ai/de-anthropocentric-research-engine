@@ -1,10 +1,13 @@
 ---
 name: meta-analysis-synthesis
-description: Produce final meta-analysis protocol document assembling all planning outputs into PRISMA-compliant protocol
+description: Produce final meta-analysis protocol document assembling all planning
+  outputs into PRISMA-compliant protocol
 execution: subagent
 prompt: ./prompt.md
 input: all_planning_outputs
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Meta-Analysis Synthesis SOP

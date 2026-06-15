@@ -4,7 +4,9 @@ description: Analyze leaderboard score distributions, compression, selective rep
 execution: subagent
 prompt: ./prompt.md
 input: leaderboard_data (model, score, date)
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Leaderboard Dynamics Analysis SOP

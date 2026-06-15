@@ -1,10 +1,13 @@
 ---
 name: scenario-construction
-description: Construct distinct future scenarios spanning key uncertainties for portfolio stress testing.
+description: Construct distinct future scenarios spanning key uncertainties for portfolio
+  stress testing.
 execution: subagent
 prompt: ./prompt.md
 input: context, uncertainties
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Scenario Construction

@@ -1,10 +1,13 @@
 ---
 name: wickedness-scoring
-description: Score a problem against Rittel's 10 criteria to determine if it is tame, complex, or wicked.
+description: Score a problem against Rittel's 10 criteria to determine if it is tame,
+  complex, or wicked.
 execution: subagent
 prompt: ./prompt.md
 input: problem_description, context
-used-by: wickedness-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

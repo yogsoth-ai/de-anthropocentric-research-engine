@@ -1,14 +1,20 @@
 ---
 name: prerequisite-planning
-description: "Identify obstacles blocking direct achievement and design intermediate objectives to overcome each"
+description: Identify obstacles blocking direct achievement and design intermediate
+  objectives to overcome each
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - obstacle-identification
-  - intermediate-objective-design
+- obstacle-identification
+- intermediate-objective-design
 tactics:
+- task-decomposition
+dependencies:
+  sops:
+  - intermediate-objective-design
+  - obstacle-identification
+  tactics:
   - task-decomposition
 ---
 

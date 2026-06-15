@@ -1,8 +1,15 @@
 ---
 name: factorial-ideation
-description: "DOE thinking: identify factors, define levels, and explore combinations to systematically cover the design space."
+description: 'DOE thinking: identify factors, define levels, and explore combinations
+  to systematically cover the design space.'
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - coverage-gap-detection
+  - creative-ideation-factor-level-design
+  - enumeration-synthesis
+  tactics:
+  - gap-driven-generation
 ---
 
 # Factorial Ideation

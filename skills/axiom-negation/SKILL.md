@@ -1,8 +1,16 @@
 ---
 name: axiom-negation
-description: Identify and suspend fundamental assumptions via de Bono PO. Systematically negate axioms to reveal hidden solution spaces.
+description: Identify and suspend fundamental assumptions via de Bono PO. Systematically
+  negate axioms to reveal hidden solution spaces.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  sops:
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - reversal-generation
 ---
 
 # Axiom Negation

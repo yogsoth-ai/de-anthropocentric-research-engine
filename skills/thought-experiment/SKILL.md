@@ -1,9 +1,23 @@
 ---
 name: thought-experiment
-description: "Strategy: Williamson-style precise thought experiments — construct carefully specified counterfactual scenarios to test whether conclusions depend on contingent features."
+description: 'Strategy: Williamson-style precise thought experiments — construct carefully
+  specified counterfactual scenarios to test whether conclusions depend on contingent
+  features.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [minimal-change-search, causal-necessity-testing]
+tactics:
+- minimal-change-search
+- causal-necessity-testing
+dependencies:
+  tactics:
+  - causal-necessity-testing
+  - minimal-change-search
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - load-bearing-identification
+  - necessity-evaluation
 ---
 
 # Thought Experiment Strategy

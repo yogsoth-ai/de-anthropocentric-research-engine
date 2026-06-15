@@ -1,9 +1,34 @@
 ---
 name: counterfactual-probing
-description: "Campaign: Counterfactual reasoning to identify load-bearing factors. Core question: If key factors were different, would the conclusion still hold? Methods: Pearl SCM Three-Step, Lewis Possible Worlds, Tetlock & Belkin, PNS/PS."
+description: 'Campaign: Counterfactual reasoning to identify load-bearing factors.
+  Core question: If key factors were different, would the conclusion still hold? Methods:
+  Pearl SCM Three-Step, Lewis Possible Worlds, Tetlock & Belkin, PNS/PS.'
 type: campaign
 produces: CounterfactualMap
-artifact-types: [gap, hypothesis, research-question, idea, approach, experiment-design, claim]
+artifact-types:
+- gap
+- hypothesis
+- research-question
+- idea
+- approach
+- experiment-design
+- claim
+dependencies:
+  strategies:
+  - closest-worlds
+  - factor-removal
+  - necessity-sufficiency
+  - structural-counterfactual
+  - thought-experiment
+  tactics:
+  - causal-necessity-testing
+  - minimal-change-search
+  - systematic-factor-ablation
+  sops:
+  - context-checkpoint
+  - context-init
+  - stress-test-saturation-detection
+  - verdict-synthesis
 ---
 
 # Counterfactual Probing Campaign

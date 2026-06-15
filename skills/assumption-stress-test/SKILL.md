@@ -1,8 +1,15 @@
 ---
 name: assumption-stress-test
-description: Systematic stress testing of assumptions — surface, classify by vulnerability, attack, assess fragility. Combines assumption-surfacing (shared), abp-vulnerability-classification, and clr-validation SOPs.
+description: Systematic stress testing of assumptions — surface, classify by vulnerability,
+  attack, assess fragility. Combines assumption-surfacing (shared), abp-vulnerability-classification,
+  and clr-validation SOPs.
 execution: tactic
-used-by: assumption-audit
+dependencies:
+  sops:
+  - abp-vulnerability-classification
+  - clr-validation
+  - deep-insight-assumption-surfacing
+  - deep-insight-paper-research
 ---
 
 # Assumption Stress Test

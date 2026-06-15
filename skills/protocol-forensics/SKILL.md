@@ -1,7 +1,14 @@
 ---
 name: protocol-forensics
-description: Analyze evaluation protocol differences across papers for same benchmark — 5 benchmarks, 60 papers, 30 web searches
-used-by: benchmark-archaeology
+description: Analyze evaluation protocol differences across papers for same benchmark
+  — 5 benchmarks, 60 papers, 30 web searches
+dependencies:
+  tactics:
+  - evaluation-protocol-comparison
+  sops:
+  - benchmark-synthesis
+  - knowledge-acquisition-benchmark-inventory
+  - protocol-element-extraction
 ---
 
 # Protocol Forensics Strategy

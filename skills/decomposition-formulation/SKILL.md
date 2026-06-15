@@ -1,21 +1,22 @@
 ---
 name: decomposition-formulation
-description: "Strategy: 将复杂研究问题分解为可独立回答的子问题层级"
+description: 'Strategy: 将复杂研究问题分解为可独立回答的子问题层级'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: research-question
 tactics:
-  - sub-question-decomposition
+- sub-question-decomposition
 sops:
-  - sub-question-generation
-  - dependency-mapping
-  - answering-sequence-design
-  - finer-criteria-check
+- sub-question-generation
+- dependency-mapping
+- answering-sequence-design
+- finer-criteria-check
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - sub-question-decomposition
+  sops:
+  - finer-criteria-check
 ---
 
 # Decomposition Formulation

@@ -1,7 +1,14 @@
 ---
 name: maturation-pathway-design
-description: Design path to readiness using Stage-Gate, Technology Roadmapping, and milestone planning methods.
-used-by: feasibility-assessment
+description: Design path to readiness using Stage-Gate, Technology Roadmapping, and
+  milestone planning methods.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
+  sops:
+  - dimension-assessment
+  - feasibility-synthesis
 ---
 
 # Maturation Pathway Design

@@ -2,7 +2,6 @@
 name: artifact-detection
 description: Detect annotation artifacts and shortcuts in benchmarks
 execution: tactic
-used-by: benchmark-archaeology
 ---
 
 # Artifact Detection Tactic

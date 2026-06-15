@@ -4,7 +4,9 @@ description: Synthesize all combinatorial creativity outputs
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (object)
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation, design-space-exploration, function-combination, emergent-property-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Combinatorial Synthesis

@@ -1,9 +1,21 @@
 ---
 name: alternative-analysis
-description: "Strategy: What-If Analysis, Alternative Futures, and Four Ways of Seeing — generate competing explanations and scenarios to challenge the dominant narrative."
+description: 'Strategy: What-If Analysis, Alternative Futures, and Four Ways of Seeing
+  — generate competing explanations and scenarios to challenge the dominant narrative.'
 type: strategy
-used-by: [red-teaming]
-tactics: [structured-attack-campaign, adversarial-roleplay]
+tactics:
+- structured-attack-campaign
+- adversarial-roleplay
+dependencies:
+  tactics:
+  - adversarial-roleplay
+  - structured-attack-campaign
+  sops:
+  - alternative-futures
+  - attack-vector-generation
+  - finding-aggregation
+  - probe-execution
+  - threat-surface-mapping
 ---
 
 # Alternative Analysis Strategy

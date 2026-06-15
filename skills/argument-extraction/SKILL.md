@@ -4,7 +4,9 @@ description: Extract and steel-man the core arguments supporting a given opinion
 execution: subagent
 prompt: ./prompt.md
 input: cluster, judgments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Argument Extraction

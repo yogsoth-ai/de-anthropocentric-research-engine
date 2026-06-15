@@ -1,10 +1,13 @@
 ---
 name: theorist-hat
-description: Theorist perspective — assess theoretical foundations, formal rigor, and formalization opportunities.
+description: Theorist perspective — assess theoretical foundations, formal rigor,
+  and formalization opportunities.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string)
-used-by: perspective-forcing, role-based-ideation, perspective-rotation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Theorist Hat

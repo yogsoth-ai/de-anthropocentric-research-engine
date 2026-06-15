@@ -1,8 +1,16 @@
 ---
 name: cross-validation
-description: Multi-source cross-validation of gap authenticity — cross-database search, temporal sensitivity testing, false-gap filtering, stakeholder confirmation.
+description: Multi-source cross-validation of gap authenticity — cross-database search,
+  temporal sensitivity testing, false-gap filtering, stakeholder confirmation.
 execution: tactic
-used-by: gap-validation
+dependencies:
+  sops:
+  - cross-database-verification
+  - deep-insight-paper-search
+  - deep-insight-web-search
+  - false-gap-filtering
+  - stakeholder-confirmation
+  - temporal-sensitivity-testing
 ---
 
 # Cross-Validation

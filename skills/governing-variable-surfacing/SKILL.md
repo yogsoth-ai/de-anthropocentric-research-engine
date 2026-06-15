@@ -1,10 +1,13 @@
 ---
 name: governing-variable-surfacing
-description: Apply Argyris framework to identify governing variables — the unstated rules driving behavior in a research field.
+description: Apply Argyris framework to identify governing variables — the unstated
+  rules driving behavior in a research field.
 execution: subagent
 prompt: ./prompt.md
 input: observed_behavior_patterns
-used-by: dialectical-reformulation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

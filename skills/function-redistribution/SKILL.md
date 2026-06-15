@@ -4,7 +4,9 @@ description: Redistribute functions across different components
 execution: subagent
 prompt: ./prompt.md
 input: function_model (object)
-used-by: combinatorial-creativity, function-combination
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Function Redistribution

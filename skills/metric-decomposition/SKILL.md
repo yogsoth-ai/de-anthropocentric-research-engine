@@ -1,10 +1,13 @@
 ---
 name: metric-decomposition
-description: Decompose composite metrics into constituent signals, analyze polarity and ceiling effects
+description: Decompose composite metrics into constituent signals, analyze polarity
+  and ceiling effects
 execution: subagent
 prompt: ./prompt.md
 input: metric_name, metric_definition, score_distribution
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Metric Decomposition SOP

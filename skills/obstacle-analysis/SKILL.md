@@ -1,6 +1,14 @@
 ---
 name: obstacle-analysis
-description: Identify what blocks the user from pursuing their chosen direction, assess severity, propose mitigations with search-validated evidence, and get user acceptance. Use after direction-narrowing has identified a specific direction.
+description: Identify what blocks the user from pursuing their chosen direction, assess
+  severity, propose mitigations with search-validated evidence, and get user acceptance.
+  Use after direction-narrowing has identified a specific direction.
+dependencies:
+  sops:
+  - ask-obstacle-acceptance
+  - assess-obstacle-severity
+  - identify-obstacles
+  - propose-mitigations
 ---
 
 # Obstacle Analysis

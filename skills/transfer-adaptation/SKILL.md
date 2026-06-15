@@ -1,10 +1,13 @@
 ---
 name: transfer-adaptation
-description: Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles.
+description: Adapt transferred principle to target problem constraints. Produces concrete
+  adapted solutions from abstract principles.
 execution: subagent
 prompt: ./prompt.md
 input: abstract_principle (string), target_problem (string)
-used-by: cross-domain-discovery, analogical-transfer, design-by-analogy, bridge-validation, forced-bridge-construction
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Transfer Adaptation

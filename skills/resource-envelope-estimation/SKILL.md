@@ -1,7 +1,11 @@
 ---
 name: resource-envelope-estimation
-description: Estimate resources, budget, and timeline using parametric, analogous, and three-point (PERT) estimation methods.
-used-by: feasibility-assessment
+description: Estimate resources, budget, and timeline using parametric, analogous,
+  and three-point (PERT) estimation methods.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
 ---
 
 # Resource Envelope Estimation

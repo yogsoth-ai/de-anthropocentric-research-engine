@@ -1,7 +1,16 @@
 ---
 name: saturation-analysis
-description: Track score trajectories, detect saturation/failure points — 15 benchmarks, 50 papers, 60 web searches
-used-by: benchmark-archaeology
+description: Track score trajectories, detect saturation/failure points — 15 benchmarks,
+  50 papers, 60 web searches
+dependencies:
+  tactics:
+  - score-trajectory-analysis
+  sops:
+  - benchmark-synthesis
+  - knowledge-acquisition-benchmark-inventory
+  - knowledge-acquisition-saturation-detection
+  - leaderboard-dynamics-analysis
+  - metric-decomposition
 ---
 
 # Saturation Analysis Strategy

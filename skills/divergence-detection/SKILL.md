@@ -1,10 +1,13 @@
 ---
 name: divergence-detection
-description: Identifies agreement and disagreement patterns across multiple perspective evaluations. Maps consensus clusters and persistent divergence points.
+description: Identifies agreement and disagreement patterns across multiple perspective
+  evaluations. Maps consensus clusters and persistent divergence points.
 execution: subagent
 prompt: ./prompt.md
 input: perspective_outputs (string), round_number (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Divergence Detection

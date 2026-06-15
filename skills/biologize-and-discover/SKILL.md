@@ -1,8 +1,18 @@
 ---
 name: biologize-and-discover
-description: "Biomimicry Design Spiral: Define→Biologize→Discover→Abstract→Emulate. Translate technical challenges into biological questions and find nature's solutions."
+description: 'Biomimicry Design Spiral: Define→Biologize→Discover→Abstract→Emulate.
+  Translate technical challenges into biological questions and find nature''s solutions.'
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biological-strategy-extraction
+  - biomimicry-synthesis
+  - emulation-generation
+  - organism-discovery
+  - problem-biologization
+  tactics:
+  - biological-function-mapping
 ---
 
 # Biologize and Discover

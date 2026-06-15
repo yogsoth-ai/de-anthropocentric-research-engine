@@ -1,10 +1,13 @@
 ---
 name: threshold-sweep
-description: Compute consensus status at multiple threshold levels to produce a threshold-consensus curve.
+description: Compute consensus status at multiple threshold levels to produce a threshold-consensus
+  curve.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[], threshold_range
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Threshold Sweep

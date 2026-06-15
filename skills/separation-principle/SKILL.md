@@ -1,10 +1,13 @@
 ---
 name: separation-principle
-description: Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements.
+description: Apply time/space/condition/scale separation to resolve physical contradictions
+  where the same parameter must satisfy opposing requirements.
 execution: subagent
 prompt: ./prompt.md
 input: physical_contradiction (string)
-used-by: structural-deconstruction, triz-contradiction-resolution, contradiction-identification
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Separation Principle

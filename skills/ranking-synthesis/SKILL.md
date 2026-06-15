@@ -1,10 +1,13 @@
 ---
 name: ranking-synthesis
-description: Produce the final ranking artifact from converged ratings and consistency report.
+description: Produce the final ranking artifact from converged ratings and consistency
+  report.
 execution: subagent
 prompt: ./prompt.md
 input: ratings(object), consistency_report(object)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ranking Synthesis

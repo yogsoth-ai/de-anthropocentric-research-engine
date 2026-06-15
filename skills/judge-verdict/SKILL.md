@@ -1,10 +1,13 @@
 ---
 name: judge-verdict
-description: Render an impartial verdict on advocate case vs critic attacks with explicit reasoning.
+description: Render an impartial verdict on advocate case vs critic attacks with explicit
+  reasoning.
 execution: subagent
 prompt: ./prompt.md
 input: advocate_case, critic_attacks
-used-by: [steel-manning, validation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Judge Verdict

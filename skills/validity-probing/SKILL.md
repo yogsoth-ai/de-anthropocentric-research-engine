@@ -1,7 +1,16 @@
 ---
 name: validity-probing
-description: Challenge construct validity — does benchmark measure claimed capability? — 3 benchmarks, 40 papers, 30 web searches
-used-by: benchmark-archaeology
+description: Challenge construct validity — does benchmark measure claimed capability?
+  — 3 benchmarks, 40 papers, 30 web searches
+dependencies:
+  tactics:
+  - artifact-detection
+  - evaluation-protocol-comparison
+  sops:
+  - benchmark-synthesis
+  - construct-validity-assessment
+  - contamination-audit
+  - metric-decomposition
 ---
 
 # Validity Probing Strategy

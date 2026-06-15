@@ -1,8 +1,19 @@
 ---
 name: functional-analogy
-description: "Map technical functions to biological functions, find organisms solving equivalent problems. Deep functional matching across domains."
+description: Map technical functions to biological functions, find organisms solving
+  equivalent problems. Deep functional matching across domains.
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biological-strategy-extraction
+  - biomimicry-synthesis
+  - emulation-generation
+  - functional-model-biology
+  - organism-discovery
+  - problem-biologization
+  tactics:
+  - biological-function-mapping
 ---
 
 # Functional Analogy

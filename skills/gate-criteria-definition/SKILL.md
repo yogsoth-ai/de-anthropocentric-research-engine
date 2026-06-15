@@ -1,10 +1,13 @@
 ---
 name: gate-criteria-definition
-description: Define gate criteria and pass thresholds for a specific stage in the Stage-Gate process.
+description: Define gate criteria and pass thresholds for a specific stage in the
+  Stage-Gate process.
 execution: subagent
 prompt: ./prompt.md
 input: stage, context
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Gate Criteria Definition

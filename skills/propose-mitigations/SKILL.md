@@ -1,9 +1,14 @@
 ---
 name: propose-mitigations
-description: Propose concrete mitigation strategies for severe obstacles. MUST use search tools to validate that proposed mitigations are realistic — no armchair theorizing. Each mitigation must have evidence of feasibility.
+description: Propose concrete mitigation strategies for severe obstacles. MUST use
+  search tools to validate that proposed mitigations are realistic — no armchair theorizing.
+  Each mitigation must have evidence of feasibility.
 execution: subagent
 prompt: ./prompt.md
 input: obstacles_with_severity (string), actor_profile (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Propose Mitigations

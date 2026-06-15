@@ -2,7 +2,11 @@
 name: design-space-exploration
 description: Parametric variation + constraint satisfaction combinatorial search
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - input-space-construction
 ---
 
 # Design Space Exploration

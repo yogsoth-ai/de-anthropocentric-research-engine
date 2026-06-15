@@ -1,16 +1,23 @@
 ---
 name: ablation-design
-description: "Design ablation studies to isolate component contributions in ML systems"
+description: Design ablation studies to isolate component contributions in ML systems
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- ablation-component-mapping
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+tactics:
+- statistical-method-selection
+dependencies:
+  sops:
   - ablation-component-mapping
   - baseline-selection
   - metric-specification
   - sample-size-estimation
-tactics:
+  tactics:
   - statistical-method-selection
 ---
 

@@ -1,8 +1,19 @@
 ---
 name: baseline-establishment
-description: SOTA Performance Baseline Campaign — 5 strategies for systematically collecting, standardizing, and analyzing performance data across methods. Produces standardized comparison tables, progress curves, and headroom analysis.
+description: SOTA Performance Baseline Campaign — 5 strategies for systematically
+  collecting, standardizing, and analyzing performance data across methods. Produces
+  standardized comparison tables, progress curves, and headroom analysis.
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - condition-standardization
+  - discrepancy-analysis
+  - method-inventory
+  - performance-extraction
+  - progress-quantification
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Baseline Establishment

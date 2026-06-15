@@ -10,24 +10,24 @@
 | campaign | ontology-building | <b>本体构建 campaign。</b> 为一个研究域系统化建本体:按 strategy 序列 <b>domain-scoping → concept-extraction → relation-typing → taxonomy-validation → ontology-refinement</b> 编排,每条 strategy 后强制 <b>knowledge-compilation</b> 落盘(HARD-GATE: context-init / context-checkpoint / knowledge-compilation)。produces 一个 wiki vault 里的 concept hierarchy。 |
 | strategy | argument-synthesis | <b>argument strategy③。</b> 聚合证据、解矛盾、产出 synthesis(哪些 claim 经得起 scrutiny)。编排 claim-decomposition / strength-assessment,直列 argument-visualization / synthesis-report。HARD-GATE: ledger + 80% budget。 |
 | strategy | claim-extraction | <b>argument strategy①。</b> 从 source 抽 claim、拆复合句、分类、建 claim 页。编排 tactic claim-decomposition,直列 sop claim-page-creation / rebuttal-documentation。HARD-GATE: ledger + 80% budget + adversarial completeness probe。 |
-| strategy | combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
+| strategy | knowledge-structuring-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
 | strategy | concept-extraction | <b>ontology strategy②。</b> 从 source 挖 concept(precision>recall),编排 concept-decomposition / consistency-checking,直调 source-gathering 取材。HARD-GATE: 80% budget + ledger。 |
 | strategy | dimension-discovery | <b>dimensional strategy①。</b> 找设计空间里相互独立的根本变化轴。编排 tactic axis-extraction / matrix-generation。HARD-GATE: 80% budget + state ledger。 |
 | strategy | domain-scoping | <b>ontology strategy①。</b> 定本体边界 + seed concepts + 分类 topic 规模。编排 tactic concept-decomposition / hierarchy-construction,直调 sop seed-concept-search。HARD-GATE: 80% budget 才能退出 + 打印 state ledger。 |
 | strategy | evidence-collection | <b>causal strategy③。</b> 挂证据页,造 supported_by / contradicts 边,对抗式找反证。编排 evidence-weighing / counterfactual-reasoning / feedback-loop-detection,直调 evidence-linking。HARD-GATE: 80% budget。 |
 | strategy | evidence-linking-arg | <b>argument strategy②。</b> 以 typed edge 把证据挂到 claim、评质量、找矛盾/gap。编排 strength-assessment,直列 evidence-attachment / strength-scoring。HARD-GATE: ledger + 80% budget + confirmation-bias self-check。 |
-| strategy | gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
+| strategy | knowledge-structuring-gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
 | strategy | intervention-analysis | <b>causal strategy④。</b> do-calculus:切断入边、前向追踪、预测方向性结果。编排 counterfactual-reasoning / feedback-loop-detection / evidence-weighing,直调 intervention-page-creation。HARD-GATE: 80% budget。 |
 | strategy | mechanism-mapping | <b>causal strategy②。</b> 构建有向因果图,每条 mechanism edge = 带 pathway+falsifier+citation 的假设。编排 counterfactual-reasoning / evidence-weighing / feedback-loop-detection,直调 mechanism-edge-creation。HARD-GATE: 80% budget。 |
 | strategy | model-validation | <b>causal strategy⑤ (final quality gate)。</b> 以 skeptic 立场审环、解矛盾、重标定并传播 confidence。编排 feedback-loop-detection / evidence-weighing / counterfactual-reasoning,直调 model-gap-detection / validation-report。HARD-GATE: 80% budget。 |
 | strategy | ontology-refinement | <b>ontology strategy⑤。</b> 迭代精修:merge 近重复、补 gap、更新 confidence、剪枝。编排 concept-decomposition / consistency-checking,直调 confidence-update / ontology-export / gap-detection 等。HARD-GATE: 80% budget。 |
 | strategy | relation-typing | <b>ontology strategy③。</b> 识别并 type 概念间的边,要求每个 concept 至少连 2 个其它。编排 hierarchy-construction / consistency-checking,直调 edge-batch-creation。HARD-GATE: 80% budget。 |
 | strategy | taxonomy-validation | <b>ontology strategy④ (quality gate)。</b> 校验结构完整性(环 / orphan / 类型违例)。编排 consistency-checking / hierarchy-construction,直调 gap-detection / hierarchy-visualization / ontology-export。HARD-GATE: 80% budget。 |
-| strategy | variable-identification | "SOP: 识别变量及其在假设中的角色" |
+| strategy | knowledge-structuring-variable-identification | "SOP: 识别变量及其在假设中的角色" |
 | tactic | axis-extraction | <b>dimensional tactic。</b> 从文献系统抽变化轴(对比/trade-off/taxonomy)。编排 sop dimension-page-creation / axis-validation(+域外 wiki-search)。HARD-GATE: 每次 ≥2 candidate axes 带 independence assessment。 |
-| tactic | claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| tactic | knowledge-structuring-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
 | tactic | concept-decomposition | <b>ontology tactic。</b> 把复合/过宽概念拆成原子子概念。编排 sop concept-page-creation / edge-batch-creation / alias-resolution(+域外 wiki-search)。HARD-GATE: 每次 ≥2 child concepts,否则报 atomic 并退出。 |
-| tactic | consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
+| tactic | knowledge-structuring-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
 | tactic | counterfactual-reasoning | <b>causal tactic (因果识别金标准)。</b> 'if X had not occurred, would Y still happen?'。编排 sop causal-chain-query / contradiction-flagging / confidence-scoring。HARD-GATE: 每次 ≥1 counterfactual 带显式机制+confidence。 |
 | tactic | evidence-weighing | <b>causal tactic。</b> 按证据层级(RCT>observational>theoretical>anecdote)+ effect size + replication 排序。编排 sop evidence-linking / confidence-scoring / contradiction-flagging。HARD-GATE: 每次 ≥2 assessments 带 strength rating。 |
 | tactic | feedback-loop-detection | <b>causal tactic。</b> 找循环因果,分 reinforcing/balancing,记 delay/break point。编排 sop causal-chain-query / loop-documentation / mechanism-edge-creation。HARD-GATE: 每次 ≥1 loop 分类(或显式报无)。 |
@@ -58,7 +58,7 @@
 | sop | mechanism-edge-creation | <b>causal sop。</b> 建因果边(derived_from/component_of),weight=机制强度(1.0/0.5/0.2)。HARD-GATE: 每条边须陈述 HOW。 |
 | sop | merge-candidates | <b>ontology sop。</b> 标近重复 concept(score>7.0)。HARD-GATE: 扫 ≥10 concepts(或全部)。 |
 | sop | model-gap-detection | <b>causal sop。</b> 经 vault_graph_stats 找 orphan(度0)+ 弱链(<0.3)→ 可执行 gap。HARD-GATE: orphan 与 weak link 都查并给建议。 |
-| sop | novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
+| sop | knowledge-structuring-novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
 | sop | ontology-export | <b>ontology sop。</b> 产出可读 ontology summary。HARD-GATE: 含定量计数 + 定性层级。 |
 | sop | question-generation | <b>dimensional sop。</b> 从优先 gap 提可答研究问题,写 questions/<slug>.md。HARD-GATE: 问题须具体可答、不泛。 |
 | sop | rebuttal-documentation | <b>argument sop。</b> 写 counter-claim 页带 contradicts + derived_from 边。HARD-GATE: 须点名被反驳 claim + 矛盾类型。 |

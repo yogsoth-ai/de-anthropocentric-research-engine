@@ -1,9 +1,17 @@
 ---
 name: counterexample-heuristics
-description: "Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method)."
+description: Generate counterexamples (monsters), attempt monster-barring, incorporate
+  surviving counterexamples as lemma refinements (Lakatos method).
 type: tactic
-used-by: [adversarial-stress-testing]
-strategies: [lakatos-heuristics, assumption-negation, critical-case-design]
+strategies:
+- lakatos-heuristics
+- assumption-negation
+- critical-case-design
+dependencies:
+  sops:
+  - claim-refinement
+  - counterexample-generation
+  - monster-barring-attempt
 ---
 
 # Counterexample Heuristics

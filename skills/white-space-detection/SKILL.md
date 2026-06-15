@@ -4,7 +4,9 @@ description: Identify matrix regions not covered by existing methods
 execution: subagent
 prompt: ./prompt.md
 input: matrix (object), known_methods_mapping (object)
-used-by: white-space-identification, design-space-mapping, general-morphological-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # White Space Detection

@@ -1,10 +1,13 @@
 ---
 name: structural-synthesis
-description: Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking.
+description: Synthesize all structural transformation outputs into a coherent, ranked
+  idea report with lineage tracking.
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (string)
-used-by: structural-deconstruction, scamper-transformation, component-surgery, triz-contradiction-resolution, function-trimming, recombination-architecture
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Structural Synthesis

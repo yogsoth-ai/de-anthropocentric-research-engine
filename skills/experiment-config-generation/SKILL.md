@@ -1,17 +1,18 @@
 ---
 name: experiment-config-generation
-description: "SOP: generate executable experiment configuration files"
+description: 'SOP: generate executable experiment configuration files'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - factor-level-design
 shared:
-  - implementation-planning
-input: "Design matrix + environment spec + seed protocol + metric definitions"
-output: "Executable experiment configuration file set (YAML/JSON)"
+- implementation-planning
+input: Design matrix + environment spec + seed protocol + metric definitions
+output: Executable experiment configuration file set (YAML/JSON)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Experiment Config Generation

@@ -1,9 +1,14 @@
 ---
 name: identify-obstacles
-description: Enumerate barriers to pursuing the chosen research direction — knowledge barriers, resource barriers, capability barriers, competition barriers. May optionally use search tools to discover obstacles the user hasn't mentioned.
+description: Enumerate barriers to pursuing the chosen research direction — knowledge
+  barriers, resource barriers, capability barriers, competition barriers. May optionally
+  use search tools to discover obstacles the user hasn't mentioned.
 execution: subagent
 prompt: ./prompt.md
 input: chosen_direction (string), actor_profile (string), ranked_candidates (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Identify Obstacles

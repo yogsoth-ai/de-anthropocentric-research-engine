@@ -1,17 +1,19 @@
 ---
 name: sub-question-decomposition
-description: "Tactic: 将主问题分解为可独立回答的子问题层级"
+description: 'Tactic: 将主问题分解为可独立回答的子问题层级'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: research-question
 sops:
-  - sub-question-generation
-  - dependency-mapping
-  - answering-sequence-design
+- sub-question-generation
+- dependency-mapping
+- answering-sequence-design
 dependencies:
-  skills:
-    - subagent-spawning
+  sops:
+  - answering-sequence-design
+  - dependency-mapping
+  - sub-question-generation
 ---
 
 # Sub-Question Decomposition

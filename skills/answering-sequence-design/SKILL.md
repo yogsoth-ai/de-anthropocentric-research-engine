@@ -1,15 +1,15 @@
 ---
 name: answering-sequence-design
-description: "SOP: 设计子问题的最优回答顺序"
+description: 'SOP: 设计子问题的最优回答顺序'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "子问题列表 + 依赖图"
-output: "执行序列 + 理由 + 并行机会"
+input: 子问题列表 + 依赖图
+output: 执行序列 + 理由 + 并行机会
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Answering Sequence Design

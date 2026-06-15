@@ -4,7 +4,9 @@ description: Extract shared abstract structure from two input spaces
 execution: subagent
 prompt: ./prompt.md
 input: two_input_spaces (object)
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Generic Space Extraction

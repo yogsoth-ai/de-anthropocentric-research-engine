@@ -1,15 +1,15 @@
 ---
 name: consistency-check
-description: "SOP: 检验 pairwise 判断矩阵的传递一致性，识别不一致项并建议修正"
+description: 'SOP: 检验 pairwise 判断矩阵的传递一致性，识别不一致项并建议修正'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "n×n pairwise 判断矩阵（Saaty 标度值）+ 维度/gap 标签列表"
-output: "ConsistencyReport — CR 值、不一致项列表及修正建议"
+input: n×n pairwise 判断矩阵（Saaty 标度值）+ 维度/gap 标签列表
+output: ConsistencyReport — CR 值、不一致项列表及修正建议
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Consistency Check

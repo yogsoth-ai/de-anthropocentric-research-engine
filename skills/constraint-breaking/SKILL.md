@@ -1,13 +1,18 @@
 ---
 name: constraint-breaking
-description: "Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution"
+description: 'Orchestrate the full constraint-breaking cycle: extract conflict, challenge
+  assumptions, project resolution'
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: constraint-analysis
 orchestrates:
-  - core-conflict-extraction
+- core-conflict-extraction
+- assumption-challenging
+- future-reality-projection
+dependencies:
+  sops:
   - assumption-challenging
+  - core-conflict-extraction
   - future-reality-projection
 ---
 

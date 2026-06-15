@@ -1,10 +1,13 @@
 ---
 name: effect-size-planning
-description: Determine effect size types and calculation methods for meta-analytic synthesis
+description: Determine effect size types and calculation methods for meta-analytic
+  synthesis
 execution: subagent
 prompt: ./prompt.md
 input: outcome_measures, study_designs
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Effect Size Planning SOP

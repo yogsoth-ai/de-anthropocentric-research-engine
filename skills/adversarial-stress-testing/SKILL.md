@@ -1,9 +1,37 @@
 ---
 name: adversarial-stress-testing
-description: "Campaign: Logical extreme and boundary testing via reductio ad absurdum and edge-case analysis. Core question: Does this artifact collapse under logical limits and boundary conditions? Methods: Lakatos 1976, Dutilh Novaes 2016, BVA, Flyvbjerg Critical Case, Popper."
+description: 'Campaign: Logical extreme and boundary testing via reductio ad absurdum
+  and edge-case analysis. Core question: Does this artifact collapse under logical
+  limits and boundary conditions? Methods: Lakatos 1976, Dutilh Novaes 2016, BVA,
+  Flyvbjerg Critical Case, Popper.'
 type: campaign
 produces: AdversarialStressReport
-artifact-types: [gap, hypothesis, research-question, idea, approach, experiment-design, claim]
+artifact-types:
+- gap
+- hypothesis
+- research-question
+- idea
+- approach
+- experiment-design
+- claim
+dependencies:
+  strategies:
+  - assumption-negation
+  - boundary-enumeration
+  - critical-case-design
+  - lakatos-heuristics
+  - stress-test-validity-envelope-mapping
+  tactics:
+  - boundary-probing
+  - contradiction-derivation
+  - counterexample-heuristics
+  sops:
+  - context-checkpoint
+  - context-init
+  - mitigation-proposal
+  - stress-test-saturation-detection
+  - verdict-synthesis
+  - weakness-classification
 ---
 
 # Adversarial Stress Testing

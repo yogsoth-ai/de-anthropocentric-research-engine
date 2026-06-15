@@ -1,10 +1,13 @@
 ---
 name: negation-definition
-description: Define strongest plausible alternatives (negations) for each assumption to enable perturbation analysis.
+description: Define strongest plausible alternatives (negations) for each assumption
+  to enable perturbation analysis.
 execution: subagent
 prompt: ./prompt.md
 input: assumption_list
-used-by: assumption-criticality
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

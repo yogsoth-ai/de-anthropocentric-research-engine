@@ -1,8 +1,15 @@
 ---
 name: ablation-brainstorm
-description: Remove components one by one, observe system changes to reveal hidden dependencies and generate ideas from structural gaps.
+description: Remove components one by one, observe system changes to reveal hidden
+  dependencies and generate ideas from structural gaps.
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - ablation-execution
+  - dependency-identification
+  - enumeration-synthesis
+  tactics:
+  - coverage-analysis
 ---
 
 # Ablation Brainstorm

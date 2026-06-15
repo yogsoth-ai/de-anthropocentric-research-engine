@@ -1,8 +1,15 @@
 ---
 name: multi-model-convergence
-description: Wimsatt-style multi-method cross-validation — enumerate assumptions, generate alternative models, compare results, flag divergences.
+description: Wimsatt-style multi-method cross-validation — enumerate assumptions,
+  generate alternative models, compare results, flag divergences.
 execution: tactic
-used-by: robustness-testing
+dependencies:
+  sops:
+  - alternative-model-generation
+  - convergence-assessment
+  - deep-insight-assumption-enumeration
+  - deep-insight-paper-research
+  - fragility-flagging
 ---
 
 # Multi-Model Convergence

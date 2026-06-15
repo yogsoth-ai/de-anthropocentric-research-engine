@@ -1,8 +1,13 @@
 ---
 name: bridge-validation
-description: Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer.
+description: Validate analogy depth and transfer viability. Ensures only deep structural
+  analogies (not surface-level similarities) proceed to transfer.
 execution: tactic
-used-by: cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy
+dependencies:
+  sops:
+  - analogy-quality-assessment
+  - structural-mapping
+  - transfer-adaptation
 ---
 
 # Bridge Validation

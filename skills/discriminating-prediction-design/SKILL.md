@@ -1,15 +1,15 @@
 ---
 name: discriminating-prediction-design
-description: "SOP: 设计能区分竞争假设的关键预测和观察方案"
+description: 'SOP: 设计能区分竞争假设的关键预测和观察方案'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "竞争假设集（来自 competing-hypothesis-generation 输出）"
-output: "区分性预测列表 + 建议观察/实验方法"
+input: 竞争假设集（来自 competing-hypothesis-generation 输出）
+output: 区分性预测列表 + 建议观察/实验方法
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Discriminating Prediction Design

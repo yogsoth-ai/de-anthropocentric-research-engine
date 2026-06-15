@@ -1,10 +1,13 @@
 ---
 name: temporal-sensitivity-testing
-description: Test whether a gap persists across different time windows (2/5/10 years). Determines if gap is narrowing, widening, or stable over time.
+description: Test whether a gap persists across different time windows (2/5/10 years).
+  Determines if gap is narrowing, widening, or stable over time.
 execution: subagent
 prompt: ./prompt.md
 input: gap_description (string), time_parameters (string)
-used-by: gap-validation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Temporal Sensitivity Testing

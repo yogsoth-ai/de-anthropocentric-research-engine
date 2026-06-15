@@ -1,10 +1,13 @@
 ---
 name: quality-assessment
-description: Methodological rigor scoring for papers — evaluates bias risk, reproducibility, sample adequacy using established frameworks. Used by systematic-survey.
+description: Methodological rigor scoring for papers — evaluates bias risk, reproducibility,
+  sample adequacy using established frameworks. Used by systematic-survey.
 execution: subagent
 prompt: ./prompt.md
 input: paper_details (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Quality Assessment

@@ -1,10 +1,13 @@
 ---
 name: analogy-quality-assessment
-description: Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment.
+description: Assess analogy depth (surface/structural/systemic). Determines whether
+  an analogy warrants transfer investment.
 execution: subagent
 prompt: ./prompt.md
 input: analogy_mapping (string)
-used-by: cross-domain-discovery, bridge-validation, analogical-transfer, design-by-analogy, domain-divergence
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Analogy Quality Assessment

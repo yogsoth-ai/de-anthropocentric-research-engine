@@ -1,15 +1,15 @@
 ---
 name: explanation-generation
-description: "SOP: 为异常现象生成候选解释列表"
+description: 'SOP: 为异常现象生成候选解释列表'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "结构化异常描述（来自 anomaly-characterization 输出）"
-output: "候选解释列表 + 各自的可观察预测"
+input: 结构化异常描述（来自 anomaly-characterization 输出）
+output: 候选解释列表 + 各自的可观察预测
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Explanation Generation

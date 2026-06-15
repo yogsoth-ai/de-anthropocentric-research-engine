@@ -1,8 +1,17 @@
 ---
 name: evidence-mapping
-description: Systematic evidence map construction — search, classify, locate gaps, visualize. Combines concept-matrix-construction, gap-keyword-extraction, evidence-grading, and egm-construction SOPs.
+description: Systematic evidence map construction — search, classify, locate gaps,
+  visualize. Combines concept-matrix-construction, gap-keyword-extraction, evidence-grading,
+  and egm-construction SOPs.
 execution: tactic
-used-by: gap-identification, gap-synthesis-strategy
+dependencies:
+  sops:
+  - concept-matrix-construction
+  - deep-insight-paper-overview
+  - deep-insight-paper-search
+  - egm-construction
+  - evidence-grading
+  - gap-keyword-extraction
 ---
 
 # Evidence Mapping

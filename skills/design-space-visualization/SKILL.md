@@ -4,7 +4,9 @@ description: Generate structured description of design space
 execution: subagent
 prompt: ./prompt.md
 input: matrix (object), coverage_status (object)
-used-by: design-space-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Design Space Visualization

@@ -1,8 +1,13 @@
 ---
 name: contradiction-identification
-description: Identify technical and physical contradictions in a system through functional modeling and matrix analysis.
+description: Identify technical and physical contradictions in a system through functional
+  modeling and matrix analysis.
 execution: tactic
-used-by: structural-deconstruction, triz-contradiction-resolution
+dependencies:
+  sops:
+  - contradiction-matrix-lookup
+  - function-model-construction
+  - separation-principle
 ---
 
 # Contradiction Identification

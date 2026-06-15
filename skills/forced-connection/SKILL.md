@@ -1,10 +1,13 @@
 ---
 name: forced-connection
-description: Force connection between two unrelated concepts. Deliberately construct bridging paths where no natural connection exists.
+description: Force connection between two unrelated concepts. Deliberately construct
+  bridging paths where no natural connection exists.
 execution: subagent
 prompt: ./prompt.md
 input: concept_a (string), concept_b (string)
-used-by: cross-domain-discovery, forced-bridge-construction, random-stimulus-entry
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Forced Connection

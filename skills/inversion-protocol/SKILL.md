@@ -1,8 +1,14 @@
 ---
 name: inversion-protocol
-description: Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation.
+description: Reverse statements → extract insights → build constructive alternatives.
+  Systematic inversion pipeline from negation to innovation.
 execution: tactic
-used-by: reverse-brainstorming, worst-method-inversion, sacred-cow-hunting, assumption-destruction
+dependencies:
+  sops:
+  - constructive-rebellion
+  - inversion-extraction
+  - reversal-generation
+  - worst-case-design
 ---
 
 # Inversion Protocol

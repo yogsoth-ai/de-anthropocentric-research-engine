@@ -1,14 +1,16 @@
 ---
 name: future-reality-projection
-description: "Project solution effects using Future Reality Tree logic"
+description: Project solution effects using Future Reality Tree logic
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: conflict-resolution
 input: proposed injection/solution, current reality context, desired effects
 output: Future Reality Tree with positive effects, negative branches, and prerequisites
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Future Reality Projection

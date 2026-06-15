@@ -2,7 +2,12 @@
 name: patent-family-tracing
 description: Forward/backward patent citation and priority tracing until saturation
 execution: tactic
-used-by: patent-mining
+dependencies:
+  sops:
+  - citation-network-analysis
+  - knowledge-acquisition-saturation-detection
+  - legal-status-assessment
+  - patent-query-formulation
 ---
 
 # Patent Family Tracing

@@ -1,10 +1,13 @@
 ---
 name: counter-assumption-generation
-description: Generate dialectical opposites for governing variables — coherent alternative worldviews where the opposite is true.
+description: Generate dialectical opposites for governing variables — coherent alternative
+  worldviews where the opposite is true.
 execution: subagent
 prompt: ./prompt.md
 input: governing_variables
-used-by: dialectical-reformulation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

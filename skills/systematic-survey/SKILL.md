@@ -1,7 +1,26 @@
 ---
 name: systematic-survey
-description: Exhaustive PRISMA-style literature survey — comprehensive coverage of all related work on a specific question. Multi-stage screening, citation chaining, quality assessment, and structured data extraction. Use when the user needs to demonstrate complete literature coverage or conduct rigorous gap analysis.
-used-by: literature-survey
+description: Exhaustive PRISMA-style literature survey — comprehensive coverage of
+  all related work on a specific question. Multi-stage screening, citation chaining,
+  quality assessment, and structured data extraction. Use when the user needs to demonstrate
+  complete literature coverage or conduct rigorous gap analysis.
+dependencies:
+  tactics:
+  - citation-chaining
+  - prisma-screening
+  sops:
+  - define-search-protocol
+  - extract-data
+  - knowledge-acquisition-gap-identification
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-saturation-detection
+  - knowledge-acquisition-web-research
+  - knowledge-acquisition-web-search
+  - prisma-flowchart
+  - quality-assessment
+  - survey-synthesis
 ---
 
 # Systematic Survey

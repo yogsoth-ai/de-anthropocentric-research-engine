@@ -1,6 +1,12 @@
 ---
 name: context-checkpoint
-description: Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase.
+description: Append research process and results to the current Phase's context file.
+  Each append MUST contain >=500 lines of markdown covering both process and results.
+  Use this skill at plan-designated checkpoint points — typically after each strategy
+  completes or at key decision nodes within a research Phase.
+dependencies:
+  sops:
+  - context-init
 ---
 
 # Context Checkpoint

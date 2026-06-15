@@ -1,7 +1,15 @@
 ---
 name: value-maximization
-description: Maximize total portfolio value within constraints using Knapsack, Linear programming, Cost-benefit analysis, and NPV ranking methods.
-used-by: portfolio-optimization
+description: Maximize total portfolio value within constraints using Knapsack, Linear
+  programming, Cost-benefit analysis, and NPV ranking methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - selection-from-frontier
 ---
 
 # Value Maximization

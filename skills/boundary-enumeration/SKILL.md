@@ -1,8 +1,16 @@
 ---
 name: boundary-enumeration
-description: "Systematic Boundary Value Analysis: identify parameter boundaries, test at and beyond limits, detect breakpoints."
+description: 'Systematic Boundary Value Analysis: identify parameter boundaries, test
+  at and beyond limits, detect breakpoints.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - boundary-probing
+  sops:
+  - breakpoint-detection
+  - extreme-value-generation
+  - parameter-space-mapping
+  - stress-test-validity-envelope-construction
 ---
 
 # Boundary Enumeration

@@ -1,10 +1,13 @@
 ---
 name: benchmark-challenge
-description: Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces.
+description: Identify and negate benchmark assumptions. Deconstruct best practices
+  to reveal hidden constraints and open new spaces.
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_or_best_practice (string), domain_context (string)
-used-by: anti-benchmark, sacred-cow-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Benchmark Challenge

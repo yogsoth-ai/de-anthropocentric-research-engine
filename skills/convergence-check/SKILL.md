@@ -1,10 +1,13 @@
 ---
 name: convergence-check
-description: Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics.
+description: Evaluate whether the ranking has stabilized by analyzing rating history
+  and computing stability metrics.
 execution: subagent
 prompt: ./prompt.md
 input: rating_history(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Convergence Check

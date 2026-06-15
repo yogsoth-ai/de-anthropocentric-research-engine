@@ -1,8 +1,17 @@
 ---
 name: forced-bridge-construction
-description: Force connections between unrelated technologies. Deliberately construct bridges where none naturally exist to discover novel integration possibilities.
+description: Force connections between unrelated technologies. Deliberately construct
+  bridges where none naturally exist to discover novel integration possibilities.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - cross-domain-synthesis
+  - forced-connection
+  - transfer-adaptation
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Forced Bridge Construction

@@ -1,8 +1,15 @@
 ---
 name: prioritization-scoring
-description: Multi-dimensional gap scoring and ranking — define criteria, score, weight, rank, sensitivity-check. Combines multi-criteria-scoring, stakeholder-confirmation, and feasibility assessment.
+description: Multi-dimensional gap scoring and ranking — define criteria, score, weight,
+  rank, sensitivity-check. Combines multi-criteria-scoring, stakeholder-confirmation,
+  and feasibility assessment.
 execution: tactic
-used-by: gap-prioritization
+dependencies:
+  sops:
+  - deep-insight-multi-criteria-scoring
+  - deep-insight-web-research
+  - evidence-synthesis
+  - stakeholder-confirmation
 ---
 
 # Prioritization Scoring

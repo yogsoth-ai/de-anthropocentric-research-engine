@@ -1,7 +1,15 @@
 ---
 name: gap-validation
-description: Validate gap authenticity via cross-database verification, temporal sensitivity testing, and false-gap filtering. Ensures gaps are genuine absences, not search artifacts.
-used-by: gap-analysis
+description: Validate gap authenticity via cross-database verification, temporal sensitivity
+  testing, and false-gap filtering. Ensures gaps are genuine absences, not search
+  artifacts.
+dependencies:
+  tactics:
+  - cross-validation
+  sops:
+  - cross-database-verification
+  - false-gap-filtering
+  - temporal-sensitivity-testing
 ---
 
 # Gap Validation

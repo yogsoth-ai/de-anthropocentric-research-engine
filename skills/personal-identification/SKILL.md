@@ -1,10 +1,13 @@
 ---
 name: personal-identification
-description: First-person empathic identification with a system or component. Produces experience description and design insights from embodiment.
+description: First-person empathic identification with a system or component. Produces
+  experience description and design insights from embodiment.
 execution: subagent
 prompt: ./prompt.md
 input: system_or_component (string)
-used-by: synectics, personal-analogy, excursion-method
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Personal Identification

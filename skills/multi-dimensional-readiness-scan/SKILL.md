@@ -1,8 +1,13 @@
 ---
 name: multi-dimensional-readiness-scan
-description: Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions.
+description: Assess readiness across multiple dimensions, synthesize into radar visualization,
+  and identify bottleneck dimensions.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - convergence-bottleneck-identification
+  - dimension-assessment
+  - radar-synthesis
 ---
 
 # Multi-Dimensional Readiness Scan

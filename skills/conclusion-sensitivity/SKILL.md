@@ -1,10 +1,13 @@
 ---
 name: conclusion-sensitivity
-description: Map which assumptions are load-bearing by assessing how the conclusion changes if each assumption fails.
+description: Map which assumptions are load-bearing by assessing how the conclusion
+  changes if each assumption fails.
 execution: subagent
 prompt: ./prompt.md
 input: assumptions[], challenges[]
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Conclusion Sensitivity

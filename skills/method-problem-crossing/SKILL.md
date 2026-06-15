@@ -1,10 +1,13 @@
 ---
 name: method-problem-crossing
-description: Build method×problem cross-reference matrix showing which methods have been applied to which problems.
+description: Build method×problem cross-reference matrix showing which methods have
+  been applied to which problems.
 execution: subagent
 prompt: ./prompt.md
 input: method_list (array), problem_list (array)
-used-by: coverage-analysis, benchmark-sweep, method-problem-matrix
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Method-Problem Crossing

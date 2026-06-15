@@ -1,15 +1,15 @@
 ---
 name: feasibility-scoring
-description: "SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分"
+description: 'SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord — 单条标准化 gap 记录"
-output: "FeasibilityScore — 含维度分、综合分（1-5）、瓶颈列表及依据"
+input: GapRecord — 单条标准化 gap 记录
+output: FeasibilityScore — 含维度分、综合分（1-5）、瓶颈列表及依据
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Feasibility Scoring

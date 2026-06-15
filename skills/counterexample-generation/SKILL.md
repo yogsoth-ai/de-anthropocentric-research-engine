@@ -1,9 +1,12 @@
 ---
 name: counterexample-generation
-description: "Systematically generate counterexamples (monsters) to a given claim using diverse heuristic strategies."
+description: Systematically generate counterexamples (monsters) to a given claim using
+  diverse heuristic strategies.
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Counterexample Generation

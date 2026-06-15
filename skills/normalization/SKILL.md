@@ -1,10 +1,13 @@
 ---
 name: normalization
-description: Normalize a score matrix using a specified method to make scores comparable across criteria.
+description: Normalize a score matrix using a specified method to make scores comparable
+  across criteria.
 execution: subagent
 prompt: ./prompt.md
 input: score_matrix (object), method (string)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Normalization

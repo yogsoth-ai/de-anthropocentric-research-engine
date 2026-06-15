@@ -1,10 +1,13 @@
 ---
 name: optimization-run
-description: Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions.
+description: Execute multi-objective optimization on candidates to produce a Pareto
+  front of non-dominated solutions.
 execution: subagent
 prompt: ./prompt.md
 input: candidates, objectives, constraints
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Optimization Run

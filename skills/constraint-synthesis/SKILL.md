@@ -1,14 +1,16 @@
 ---
 name: constraint-synthesis
-description: "Synthesize constraint analysis into actionable report with priorities"
+description: Synthesize constraint analysis into actionable report with priorities
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: constraint-analysis
 input: outputs from constraint-tree-building, sensitivity-ranking, constraint-breaking
 output: integrated constraint report with prioritized actions and risk assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Constraint Synthesis

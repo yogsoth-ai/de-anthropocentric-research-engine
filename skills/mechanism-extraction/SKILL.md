@@ -1,15 +1,15 @@
 ---
 name: mechanism-extraction
-description: "SOP: 从理论中提取因果机制链"
+description: 'SOP: 从理论中提取因果机制链'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "理论描述（来自 theory-identification 输出）"
-output: "因果机制链列表 (X → mediator → Y) + 机制图"
+input: 理论描述（来自 theory-identification 输出）
+output: 因果机制链列表 (X → mediator → Y) + 机制图
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Mechanism Extraction

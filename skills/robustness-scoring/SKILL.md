@@ -1,15 +1,16 @@
 ---
 name: robustness-scoring
-description: "Compute robustness index across scenarios with sensitivity analysis"
+description: Compute robustness index across scenarios with sensitivity analysis
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - strategy-robustness-testing
 input: compiled impact assessment matrix, scenario probabilities, weighting preferences
 output: robustness index (0-100), sensitivity analysis, pivot triggers
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Robustness Scoring

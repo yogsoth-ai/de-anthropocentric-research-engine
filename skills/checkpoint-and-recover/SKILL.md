@@ -1,11 +1,15 @@
 ---
 name: checkpoint-and-recover
-description: "Checkpoint state before risky operations, detect anomalies, and recover gracefully"
+description: Checkpoint state before risky operations, detect anomalies, and recover
+  gracefully
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- execution-monitoring
+- result-collection
+dependencies:
+  sops:
   - execution-monitoring
   - result-collection
 ---

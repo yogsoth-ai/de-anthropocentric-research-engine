@@ -1,9 +1,14 @@
 ---
 name: and-or-decompose
-description: KAOS-style recursive goal decomposition. AND decomposition for sub-goals that must ALL be satisfied. OR decomposition for alternative paths where any one suffices. Produces a GoalTree (DAG structure).
+description: KAOS-style recursive goal decomposition. AND decomposition for sub-goals
+  that must ALL be satisfied. OR decomposition for alternative paths where any one
+  suffices. Produces a GoalTree (DAG structure).
 execution: subagent
 prompt: ./prompt.md
 input: top_goal (string), actor_profile (string), obstacle_report (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # AND/OR Decompose

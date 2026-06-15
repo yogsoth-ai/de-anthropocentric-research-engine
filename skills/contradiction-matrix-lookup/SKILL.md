@@ -1,10 +1,13 @@
 ---
 name: contradiction-matrix-lookup
-description: Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction.
+description: Query the 39x39 TRIZ contradiction matrix to find recommended inventive
+  principles for a given technical contradiction.
 execution: subagent
 prompt: ./prompt.md
 input: improving_parameter (string), worsening_parameter (string)
-used-by: structural-deconstruction, triz-contradiction-resolution, contradiction-identification
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Contradiction Matrix Lookup

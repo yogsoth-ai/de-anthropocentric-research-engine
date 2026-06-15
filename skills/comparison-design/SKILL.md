@@ -1,19 +1,28 @@
 ---
 name: comparison-design
-description: "Design fair comparison experiments against baselines and competing methods"
+description: Design fair comparison experiments against baselines and competing methods
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+- seed-protocol-design
+- environment-specification
+tactics:
+- statistical-method-selection
+- reproducibility-protocol
+dependencies:
+  sops:
   - baseline-selection
+  - environment-specification
   - metric-specification
   - sample-size-estimation
   - seed-protocol-design
-  - environment-specification
-tactics:
-  - statistical-method-selection
+  tactics:
   - reproducibility-protocol
+  - statistical-method-selection
 ---
 
 # Strategy: Comparison Design

@@ -1,14 +1,17 @@
 ---
 name: undesirable-effect-listing
-description: "List current Undesirable Effects (UDEs) — observable symptoms of system underperformance"
+description: List current Undesirable Effects (UDEs) — observable symptoms of system
+  underperformance
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: bottleneck-identification
 input: system description, observed problems, stakeholder complaints
 output: numbered UDE list with evidence and severity ratings
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Undesirable Effect Listing

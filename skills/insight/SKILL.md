@@ -1,8 +1,19 @@
 ---
 name: insight
-description: Insight Campaign — deep root-cause analysis of why research gaps persist. 5 strategies (root-cause-drilling, stakeholder-mapping, tension-mining, question-reformulation, assumption-audit), 4 tactics, 13 subagent SOPs.
+description: Insight Campaign — deep root-cause analysis of why research gaps persist.
+  5 strategies (root-cause-drilling, stakeholder-mapping, tension-mining, question-reformulation,
+  assumption-audit), 4 tactics, 13 subagent SOPs.
 execution: campaign
-used-by: deep-insight
+dependencies:
+  strategies:
+  - assumption-audit
+  - question-reformulation
+  - root-cause-drilling
+  - stakeholder-mapping
+  - tension-mining
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Insight

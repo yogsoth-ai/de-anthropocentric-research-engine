@@ -1,9 +1,37 @@
 ---
 name: red-teaming
-description: "Campaign: Systematic adversarial attack from military/intelligence/AI-safety traditions. Core question: Can systematic adversarial attacks find fatal flaws? Methods: UFMCS Red Team Handbook v9.0, CIA SAT, Anthropic Red Teaming, NIST AI RMF, Inie et al. 12-strategy taxonomy."
+description: 'Campaign: Systematic adversarial attack from military/intelligence/AI-safety
+  traditions. Core question: Can systematic adversarial attacks find fatal flaws?
+  Methods: UFMCS Red Team Handbook v9.0, CIA SAT, Anthropic Red Teaming, NIST AI RMF,
+  Inie et al. 12-strategy taxonomy.'
 type: campaign
 produces: RedTeamReport
-artifact-types: [gap, hypothesis, research-question, idea, approach, experiment-design, claim]
+artifact-types:
+- gap
+- hypothesis
+- research-question
+- idea
+- approach
+- experiment-design
+- claim
+dependencies:
+  strategies:
+  - adversarial-persona
+  - alternative-analysis
+  - groupthink-mitigation
+  - stress-test-assumption-challenge
+  - systematic-probing
+  tactics:
+  - adversarial-roleplay
+  - assumption-cascade
+  - structured-attack-campaign
+  sops:
+  - context-checkpoint
+  - context-init
+  - mitigation-proposal
+  - stress-test-saturation-detection
+  - verdict-synthesis
+  - weakness-classification
 ---
 
 # Red Teaming Campaign

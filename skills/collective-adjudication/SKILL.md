@@ -1,7 +1,14 @@
 ---
 name: collective-adjudication
-description: Strategy for multi-judge ranking aggregation using Condorcet, Schulze, Borda, Kemeny-Young, and Copeland methods to produce consensus rankings from diverse perspectives.
-used-by: pairwise-ranking
+description: Strategy for multi-judge ranking aggregation using Condorcet, Schulze,
+  Borda, Kemeny-Young, and Copeland methods to produce consensus rankings from diverse
+  perspectives.
+dependencies:
+  tactics:
+  - consistency-audit-loop
+  - multi-judge-aggregation
+  sops:
+  - ranking-synthesis
 ---
 
 # Collective Adjudication

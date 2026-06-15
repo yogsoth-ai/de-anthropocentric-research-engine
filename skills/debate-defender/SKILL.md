@@ -1,10 +1,13 @@
 ---
 name: debate-defender
-description: Responds to attacks with counter-evidence and counter-arguments. Defends artifact using evidence, clarification, and rebuttal while acknowledging valid criticisms.
+description: Responds to attacks with counter-evidence and counter-arguments. Defends
+  artifact using evidence, clarification, and rebuttal while acknowledging valid criticisms.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), attacks (string), previous_defenses (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Defender

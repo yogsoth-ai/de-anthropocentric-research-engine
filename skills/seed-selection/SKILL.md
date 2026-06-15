@@ -1,10 +1,14 @@
 ---
 name: seed-selection
-description: Validate and prioritize starting papers for snowball surveys. Evaluates which seeds will yield the richest citation traces based on citation count, recency, and network position.
+description: Validate and prioritize starting papers for snowball surveys. Evaluates
+  which seeds will yield the richest citation traces based on citation count, recency,
+  and network position.
 execution: subagent
 prompt: ./prompt.md
 input: seed_papers (string), context (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Seed Selection

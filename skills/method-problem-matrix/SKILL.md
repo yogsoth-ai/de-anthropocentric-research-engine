@@ -1,8 +1,16 @@
 ---
 name: method-problem-matrix
-description: Cross method×problem matrix, find unexplored intersections where known methods have not been applied to known problems.
+description: Cross method×problem matrix, find unexplored intersections where known
+  methods have not been applied to known problems.
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - creative-ideation-benchmark-inventory
+  - enumeration-synthesis
+  - intersection-evaluation
+  - method-problem-crossing
+  tactics:
+  - coverage-analysis
 ---
 
 # Method-Problem Matrix

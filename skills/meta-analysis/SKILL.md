@@ -1,8 +1,20 @@
 ---
 name: meta-analysis
-description: Cross-Study Statistical Synthesis Campaign — 5 strategies for systematic collection and methodological planning of multi-study evidence synthesis. Covers pairwise, network, cumulative meta-analysis, heterogeneity investigation, and bias detection. Stops at protocol design (no computation).
+description: Cross-Study Statistical Synthesis Campaign — 5 strategies for systematic
+  collection and methodological planning of multi-study evidence synthesis. Covers
+  pairwise, network, cumulative meta-analysis, heterogeneity investigation, and bias
+  detection. Stops at protocol design (no computation).
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - bias-detection
+  - cumulative-tracking
+  - heterogeneity-investigation
+  - network-comparison
+  - pairwise-synthesis
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Meta-Analysis Campaign

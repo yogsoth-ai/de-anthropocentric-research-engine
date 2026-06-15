@@ -1,15 +1,15 @@
 ---
 name: boundary-condition-specification
-description: "SOP: 指定假设成立的边界条件"
+description: 'SOP: 指定假设成立的边界条件'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "假设草案（含 statement + variables + mechanism）"
-output: "边界条件列表（时间/空间/人群/条件/排除）"
+input: 假设草案（含 statement + variables + mechanism）
+output: 边界条件列表（时间/空间/人群/条件/排除）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Boundary Condition Specification

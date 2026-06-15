@@ -1,9 +1,16 @@
 ---
 name: contradiction-derivation
-description: "Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges."
+description: Negate a claim, derive logical consequences step by step, detect whether
+  a genuine contradiction or absurdity emerges.
 type: tactic
-used-by: [adversarial-stress-testing]
-strategies: [assumption-negation, validity-envelope-mapping]
+strategies:
+- assumption-negation
+- validity-envelope-mapping
+dependencies:
+  sops:
+  - claim-negation
+  - contradiction-detection
+  - deductive-chain
 ---
 
 # Contradiction Derivation

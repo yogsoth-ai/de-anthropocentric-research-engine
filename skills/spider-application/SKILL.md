@@ -1,15 +1,15 @@
 ---
 name: spider-application
-description: "SOP: 应用 SPIDER 框架结构化定性研究问题"
+description: 'SOP: 应用 SPIDER 框架结构化定性研究问题'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究意图（定性研究方向）"
-output: "完整 SPIDER 填充 + RQ 表述"
+input: 研究意图（定性研究方向）
+output: 完整 SPIDER 填充 + RQ 表述
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # SPIDER Application

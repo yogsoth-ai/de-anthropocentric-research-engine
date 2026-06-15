@@ -1,10 +1,13 @@
 ---
 name: monte-carlo-sampling
-description: Design and execute Monte Carlo sampling strategy for uncertainty propagation through a model.
+description: Design and execute Monte Carlo sampling strategy for uncertainty propagation
+  through a model.
 execution: subagent
 prompt: ./prompt.md
 input: input_distributions, model_structure
-used-by: uncertainty-propagation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

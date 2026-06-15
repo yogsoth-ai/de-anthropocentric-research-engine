@@ -1,8 +1,13 @@
 ---
 name: biological-function-mapping
-description: "Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology."
+description: Map technical functions to biological systems. Orchestrates problem-biologization
+  → organism-discovery → functional-model-biology.
 execution: tactic
-used-by: biomimicry, biologize-and-discover, functional-analogy, biotriz-resolution
+dependencies:
+  sops:
+  - functional-model-biology
+  - organism-discovery
+  - problem-biologization
 ---
 
 # Biological Function Mapping

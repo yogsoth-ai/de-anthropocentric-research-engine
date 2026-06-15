@@ -1,13 +1,17 @@
 ---
 name: reproducibility-protocol
-description: "Ensure experiment reproducibility through systematic environment and seed control"
+description: Ensure experiment reproducibility through systematic environment and
+  seed control
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
-  - seed-protocol-design
+- seed-protocol-design
+- environment-specification
+dependencies:
+  sops:
   - environment-specification
+  - seed-protocol-design
 ---
 
 # Tactic: Reproducibility Protocol

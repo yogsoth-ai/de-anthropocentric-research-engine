@@ -2,7 +2,16 @@
 name: multi-level-bisociation
 description: Simultaneous concept collision at multiple abstraction levels
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - abstraction-ladder
+  - blend-composition
+  - combinatorial-synthesis
+  - generic-space-extraction
+  - vital-relation-mapping
+  tactics:
+  - blend-construction
+  - emergence-detection
 ---
 
 # Multi-Level Bisociation

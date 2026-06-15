@@ -1,15 +1,17 @@
 ---
 name: design-synthesis
-description: "SOP: synthesize complete experiment design report"
+description: 'SOP: synthesize complete experiment design report'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - experiment-design
-input: "All upstream SOP outputs (variables, levels, matrix, metrics, sample size, seeds, environment, config)"
-output: "Complete experiment design report + feasibility assessment + risk inventory"
+input: All upstream SOP outputs (variables, levels, matrix, metrics, sample size,
+  seeds, environment, config)
+output: Complete experiment design report + feasibility assessment + risk inventory
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Design Synthesis

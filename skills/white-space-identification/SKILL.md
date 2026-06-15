@@ -1,8 +1,12 @@
 ---
 name: white-space-identification
-description: Identify unexplored viable regions in the morphological matrix where no existing methods operate.
+description: Identify unexplored viable regions in the morphological matrix where
+  no existing methods operate.
 execution: tactic
-used-by: morphological-exploration, design-space-mapping, general-morphological-analysis
+dependencies:
+  sops:
+  - combination-evaluation
+  - white-space-detection
 ---
 
 # White Space Identification

@@ -1,10 +1,13 @@
 ---
 name: mitigation-proposal
-description: Proposes concrete mitigation strategies for identified weaknesses. Generates prevention, detection, and response measures with feasibility assessment.
+description: Proposes concrete mitigation strategies for identified weaknesses. Generates
+  prevention, detection, and response measures with feasibility assessment.
 execution: subagent
 prompt: ./prompt.md
 input: classified_weakness (string), artifact_context (string)
-used-by: failure-anticipation, red-teaming, adversarial-stress-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Mitigation Proposal

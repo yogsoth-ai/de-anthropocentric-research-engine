@@ -1,9 +1,20 @@
 ---
 name: adversarial-escalation
-description: "Strategy: Progressive pressure escalation — starts with surface-level challenges and escalates to fundamental assumption attacks based on defender confidence decay."
+description: 'Strategy: Progressive pressure escalation — starts with surface-level
+  challenges and escalates to fundamental assumption attacks based on defender confidence
+  decay.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [dialectical-escalation]
+tactics:
+- dialectical-escalation
+dependencies:
+  tactics:
+  - stress-test-dialectical-escalation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
 ---
 
 # Adversarial Escalation Strategy

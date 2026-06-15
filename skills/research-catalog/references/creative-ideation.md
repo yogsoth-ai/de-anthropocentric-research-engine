@@ -66,15 +66,15 @@
 | strategy | worst-method-inversion | Design worst possible solution → extract insights → invert. Deliberate failure design as creative catalyst. |
 | strategy | zwicky-box-construction | "Classic Zwicky box: parameter identification → value enumeration → matrix construction" |
 | tactic | analogy-extraction | Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation. |
-| tactic | assumption-enumeration | Systematically identify all assumptions in a method/model — structural, parametric, distributional, and scope assumptions. |
+| tactic | creative-ideation-assumption-enumeration | Systematically identify all assumptions in a method/model — structural, parametric, distributional, and scope assumptions. |
 | tactic | biological-function-mapping | "Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology." |
 | tactic | blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
 | tactic | bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
-| tactic | combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
+| tactic | creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
 | tactic | component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
 | tactic | compressed-conflict | Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension. |
 | tactic | concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
-| tactic | consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
+| tactic | creative-ideation-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
 | tactic | constraint-protocol | Inject constraints → force creative response → extract transferable principles. Orchestrates constraint injection, response generation, and principle extraction. |
 | tactic | contradiction-identification | Identify technical and physical contradictions in a system through functional modeling and matrix analysis. |
 | tactic | coverage-analysis | Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space. |
@@ -86,8 +86,8 @@
 | tactic | inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
 | tactic | life-principles-application | "Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design." |
 | tactic | movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
-| tactic | perspective-rotation | Rotate through reviewer/practitioner/theorist/time-machine/novice perspectives systematically. Ensures comprehensive viewpoint coverage. |
-| tactic | provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
+| tactic | creative-ideation-perspective-rotation | Rotate through reviewer/practitioner/theorist/time-machine/novice perspectives systematically. Ensures comprehensive viewpoint coverage. |
+| tactic | creative-ideation-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
 | tactic | white-space-identification | Identify unexplored viable regions in the morphological matrix where no existing methods operate. |
 | sop | ablation-execution | Remove components one by one from a system, record the response/impact of each removal. |
 | sop | abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
@@ -96,10 +96,10 @@
 | sop | alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
 | sop | analogy-chain | Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface. |
 | sop | analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
-| sop | assumption-perturbation | One-at-a-time assumption perturbation — extract assumptions, define negations, re-derive conclusions under each negation, measure sensitivity. Identifies which assumptions are load-bearing. |
-| sop | assumption-surfacing | Systematically extract implicit assumptions from methods, frameworks, or arguments. Identifies what is taken for granted without explicit justification. |
+| sop | creative-ideation-assumption-perturbation | One-at-a-time assumption perturbation — extract assumptions, define negations, re-derive conclusions under each negation, measure sensitivity. Identifies which assumptions are load-bearing. |
+| sop | creative-ideation-assumption-surfacing | Systematically extract implicit assumptions from methods, frameworks, or arguments. Identifies what is taken for granted without explicit justification. |
 | sop | benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
-| sop | benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| sop | creative-ideation-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
 | sop | biological-strategy-extraction | "Extract strategy principles from organisms. Identify mechanism-level details of how biological systems achieve their function." |
 | sop | biomimicry-synthesis | "Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions." |
 | sop | biotriz-principle-selection | "Select applicable BioTRIZ principles for a given contradiction. Map to biological cases." |
@@ -112,7 +112,7 @@
 | sop | combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
 | sop | competitor-simulation | Competitor perspective — design strategies to defeat this solution, then use attack vectors to improve it. |
 | sop | concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
-| sop | consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| sop | creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
 | sop | constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |
 | sop | constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
 | sop | constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
@@ -131,9 +131,9 @@
 | sop | escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
 | sop | evolution-mechanism-transfer | "Map evolution mechanisms to design operations. Translate selection, mutation, drift, radiation into design operators." |
 | sop | excursion-departure | Leave the problem entirely and explore an unrelated domain. Produces excursion domain discoveries for later force-fitting. |
-| sop | factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
+| sop | creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
 | sop | failure-driven-generation | Generate targeted solutions for each identified failure mode, ensuring every failure has at least one proposed mitigation. |
-| sop | failure-mode-cataloging | Systematic failure mode cataloging — generate boundary inputs, observe failures, cluster by mechanism, identify triggers, estimate frequency. |
+| sop | creative-ideation-failure-mode-cataloging | Systematic failure mode cataloging — generate boundary inputs, observe failures, cluster by mechanism, identify triggers, estimate frequency. |
 | sop | fantasy-wish | Unconstrained wish-fulfillment ideation. Ignore all physical laws to imagine the ideal solution, then identify realization directions. |
 | sop | force-fit | Force-fit excursion discoveries back to the original problem. Deliberately create connections between unrelated findings and the challenge. |
 | sop | forced-connection | Force connection between two unrelated concepts. Deliberately construct bridging paths where no natural connection exists. |
@@ -152,12 +152,12 @@
 | sop | method-problem-crossing | Build method×problem cross-reference matrix showing which methods have been applied to which problems. |
 | sop | morphological-synthesis | Synthesize all morphological exploration outputs |
 | sop | movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
-| sop | novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
+| sop | creative-ideation-novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
 | sop | novice-perspective | Novice perspective — question the 'obvious' by adopting deliberate ignorance to reveal hidden complexity. |
 | sop | organism-discovery | "Find organisms solving similar problems. Search across kingdoms for biological champions." |
-| sop | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | creative-ideation-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| sop | creative-ideation-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| sop | creative-ideation-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
 | sop | parameter-identification | Identify the key parameters/dimensions of a problem space. Produces a structured parameter list with value ranges for morphological analysis. |
 | sop | path-generation | Generate combination paths through consistent space |
 | sop | personal-identification | First-person empathic identification with a system or component. Produces experience description and design insights from embodiment. |
@@ -171,7 +171,7 @@
 | sop | reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
 | sop | reviewer2-hat | Hostile reviewer perspective — find fatal flaws, logical gaps, and missing evidence in a solution. |
 | sop | sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |
-| sop | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| sop | creative-ideation-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
 | sop | scamper-divergence | Execute SCAMPER 7 operators on a target solution. Subagent self-selects best 2-3 operators for deepest exploration. |
 | sop | separation-principle | Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements. |
 | sop | solution-space-reduction | Apply CCA to remove inconsistent combinations |
@@ -189,7 +189,7 @@
 | sop | triz-principle-application | Select inventive principles from the contradiction matrix and generate concrete solutions for identified contradictions. |
 | sop | value-enumeration | Enumerate 3-5 values per parameter including extremes |
 | sop | vital-relation-mapping | Map 15 vital relations between concepts |
-| sop | web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
-| sop | web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+| sop | creative-ideation-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| sop | creative-ideation-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
 | sop | white-space-detection | Identify matrix regions not covered by existing methods |
 | sop | worst-case-design | Design the worst possible solution. Deliberate failure engineering to reveal hidden constraints and inversion opportunities. |

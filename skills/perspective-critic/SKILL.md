@@ -1,10 +1,13 @@
 ---
 name: perspective-critic
-description: Evaluates artifact from a specific assigned perspective. Produces assessment grounded in that viewpoint's values, priorities, and expertise.
+description: Evaluates artifact from a specific assigned perspective. Produces assessment
+  grounded in that viewpoint's values, priorities, and expertise.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), perspective (string), other_perspectives_output (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Perspective Critic

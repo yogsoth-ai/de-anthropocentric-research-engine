@@ -1,15 +1,15 @@
 ---
 name: gap-pairwise-judgment
-description: "SOP: 对两个 gap 进行逐标准相对优先级判断，输出偏好结果"
+description: 'SOP: 对两个 gap 进行逐标准相对优先级判断，输出偏好结果'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord A + GapRecord B + 评分标准列表（含权重）"
-output: "PairwiseJudgment — 逐标准比较、综合偏好及 Saaty 标度值"
+input: GapRecord A + GapRecord B + 评分标准列表（含权重）
+output: PairwiseJudgment — 逐标准比较、综合偏好及 Saaty 标度值
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Gap Pairwise Judgment

@@ -1,10 +1,13 @@
 ---
 name: recombination-generation
-description: Reassemble decomposed system fragments into novel structural arrangements that create emergent value.
+description: Reassemble decomposed system fragments into novel structural arrangements
+  that create emergent value.
 execution: subagent
 prompt: ./prompt.md
 input: component_set (string)
-used-by: structural-deconstruction, recombination-architecture, scamper-transformation, component-surgery
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Recombination Generation

@@ -1,10 +1,13 @@
 ---
 name: alternatives-generation
-description: Generate alternatives for every known approach — ensure no approach goes unchallenged.
+description: Generate alternatives for every known approach — ensure no approach goes
+  unchallenged.
 execution: subagent
 prompt: ./prompt.md
 input: known_approaches (string)
-used-by: lateral-thinking, provocation-and-movement, random-entry, concept-fan, challenge-operation, six-hats-ideation, movement-extraction
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternatives Generation

@@ -1,10 +1,13 @@
 ---
 name: feasibility-synthesis
-description: Synthesize all assessments into a feasibility matrix, recommendation, and risk summary.
+description: Synthesize all assessments into a feasibility matrix, recommendation,
+  and risk summary.
 execution: subagent
 prompt: ./prompt.md
 input: all_assessments
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Feasibility Synthesis

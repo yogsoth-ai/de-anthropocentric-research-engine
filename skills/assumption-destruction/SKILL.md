@@ -1,8 +1,28 @@
 ---
 name: assumption-destruction
-description: Assumption Destruction Campaign — open new solution spaces by negating, reversing, and challenging fundamental assumptions.
+description: Assumption Destruction Campaign — open new solution spaces by negating,
+  reversing, and challenging fundamental assumptions.
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  strategies:
+  - anti-benchmark
+  - axiom-negation
+  - reverse-brainstorming
+  - sacred-cow-hunting
+  - worst-method-inversion
+  tactics:
+  - creative-ideation-assumption-enumeration
+  - creative-ideation-provocation-generation
+  - evaluation-filtering
+  - inversion-protocol
+  sops:
+  - context-checkpoint
+  - context-init
+  - creative-ideation-assumption-surfacing
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - idea-synthesis
+  - po-provocation
 ---
 
 # Assumption Destruction

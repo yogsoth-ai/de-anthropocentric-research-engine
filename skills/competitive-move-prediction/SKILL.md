@@ -1,15 +1,16 @@
 ---
 name: competitive-move-prediction
-description: "Predict competitor progress, publications, and strategic moves"
+description: Predict competitor progress, publications, and strategic moves
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - competitive-scenario
 input: competitor profile, publication history, resource level, research field context
 output: predicted actions, timelines, preemption risk assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Competitive Move Prediction

@@ -1,10 +1,13 @@
 ---
 name: claim-parsing
-description: Patent claim syntax parsing — independent/dependent relationships and element extraction
+description: Patent claim syntax parsing — independent/dependent relationships and
+  element extraction
 execution: subagent
 prompt: ./prompt.md
 input: claim_text
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Claim Parsing

@@ -1,10 +1,13 @@
 ---
 name: random-paper-entry
-description: Select random paper facet as creative stimulus. Uses genuine randomness in paper selection to break domain fixation.
+description: Select random paper facet as creative stimulus. Uses genuine randomness
+  in paper selection to break domain fixation.
 execution: subagent
 prompt: ./prompt.md
 input: none
-used-by: cross-domain-discovery, random-stimulus-entry, domain-divergence
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Random Paper Entry

@@ -1,10 +1,13 @@
 ---
 name: assignee-normalization
-description: Standardize assignee names and identify corporate group affiliations across patent offices
+description: Standardize assignee names and identify corporate group affiliations
+  across patent offices
 execution: subagent
 prompt: ./prompt.md
 input: raw_assignee_list
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Assignee Normalization

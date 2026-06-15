@@ -1,10 +1,13 @@
 ---
 name: abstraction-to-design
-description: "Abstract biological principle to design principle. Bridge from biology to engineering."
+description: Abstract biological principle to design principle. Bridge from biology
+  to engineering.
 execution: subagent
 prompt: ./prompt.md
 input: biological_strategy (string)
-used-by: biologize-and-discover, functional-analogy, biotriz-resolution, ecosystem-pattern, evolution-strategy, life-principles-application
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Abstraction to Design

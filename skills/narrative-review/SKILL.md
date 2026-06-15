@@ -1,7 +1,23 @@
 ---
 name: narrative-review
-description: Theory-driven literature review for building arguments and frameworks. Flexible, subjective, and narrative-focused — selects evidence strategically to support a thesis. High web-research budget for blogs, opinion pieces, and industry perspectives. Use when the user is writing a position paper, survey introduction, or constructing a coherent narrative around a research theme.
-used-by: literature-survey
+description: Theory-driven literature review for building arguments and frameworks.
+  Flexible, subjective, and narrative-focused — selects evidence strategically to
+  support a thesis. High web-research budget for blogs, opinion pieces, and industry
+  perspectives. Use when the user is writing a position paper, survey introduction,
+  or constructing a coherent narrative around a research theme.
+dependencies:
+  tactics:
+  - narrative-framing
+  sops:
+  - categorize-papers
+  - knowledge-acquisition-gap-identification
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-web-research
+  - knowledge-acquisition-web-search
+  - survey-synthesis
+  - thematic-coding
 ---
 
 # Narrative Review

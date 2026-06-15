@@ -1,10 +1,13 @@
 ---
 name: sobol-decomposition
-description: Sobol variance decomposition — compute first-order and total-order sensitivity indices for precise variance attribution.
+description: Sobol variance decomposition — compute first-order and total-order sensitivity
+  indices for precise variance attribution.
 execution: subagent
 prompt: ./prompt.md
 input: model_description, input_distributions, sample_size
-used-by: variance-decomposition
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

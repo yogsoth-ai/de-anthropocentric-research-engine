@@ -1,10 +1,14 @@
 ---
 name: taxonomy-mapping
-description: Construct a hierarchical field map from paper collection — multi-level taxonomy with parent/child relationships, paper counts per node, and maturity indicators. Used by scoping-survey.
+description: Construct a hierarchical field map from paper collection — multi-level
+  taxonomy with parent/child relationships, paper counts per node, and maturity indicators.
+  Used by scoping-survey.
 execution: subagent
 prompt: ./prompt.md
 input: paper_collection (string), field_context (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Taxonomy Mapping

@@ -1,9 +1,35 @@
 ---
 name: failure-anticipation
-description: "Campaign: Forward-looking failure analysis combining pre-mortem rapid screening with systematic FMEA deep-dive. Core question: If this artifact fails, how will it fail? Methods: Klein Pre-Mortem 2007, AIAG-VDA FMEA 2019, IEC 60812."
+description: 'Campaign: Forward-looking failure analysis combining pre-mortem rapid
+  screening with systematic FMEA deep-dive. Core question: If this artifact fails,
+  how will it fail? Methods: Klein Pre-Mortem 2007, AIAG-VDA FMEA 2019, IEC 60812.'
 type: campaign
 produces: FailureAnticipationReport
-artifact-types: [gap, hypothesis, research-question, idea, approach, experiment-design, claim]
+artifact-types:
+- gap
+- hypothesis
+- research-question
+- idea
+- approach
+- experiment-design
+- claim
+dependencies:
+  strategies:
+  - design-fmea
+  - mitigation-design
+  - process-fmea
+  - prospective-hindsight
+  - risk-prioritization
+  tactics:
+  - failure-chain-tracing
+  - mitigation-validation
+  - premortem-to-fmea-pipeline
+  sops:
+  - context-checkpoint
+  - context-init
+  - mitigation-proposal
+  - stress-test-saturation-detection
+  - verdict-synthesis
 ---
 
 # Failure Anticipation Campaign

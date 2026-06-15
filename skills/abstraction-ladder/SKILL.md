@@ -4,7 +4,9 @@ description: Perform bisociation at multiple abstraction levels
 execution: subagent
 prompt: ./prompt.md
 input: concept (string)
-used-by: combinatorial-creativity, multi-level-bisociation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Abstraction Ladder

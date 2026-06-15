@@ -1,8 +1,16 @@
 ---
 name: failure-taxonomy
-description: Catalog all failure modes in a domain, classify them systematically, and generate targeted solutions for each failure type.
+description: Catalog all failure modes in a domain, classify them systematically,
+  and generate targeted solutions for each failure type.
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - coverage-gap-detection
+  - creative-ideation-failure-mode-cataloging
+  - enumeration-synthesis
+  - failure-driven-generation
+  tactics:
+  - gap-driven-generation
 ---
 
 # Failure Taxonomy

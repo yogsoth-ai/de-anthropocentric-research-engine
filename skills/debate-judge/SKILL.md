@@ -1,10 +1,14 @@
 ---
 name: debate-judge
-description: Evaluates debate exchanges, adjudicates argument quality, and produces round verdicts with confidence scores and reasoning.
+description: Evaluates debate exchanges, adjudicates argument quality, and produces
+  round verdicts with confidence scores and reasoning.
 execution: subagent
 prompt: ./prompt.md
-input: attacks (string), defenses (string), round_number (string), judging_criteria (string)
-used-by: [multiagent-debate]
+input: attacks (string), defenses (string), round_number (string), judging_criteria
+  (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Judge

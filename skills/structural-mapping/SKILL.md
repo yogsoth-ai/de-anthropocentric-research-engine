@@ -1,10 +1,13 @@
 ---
 name: structural-mapping
-description: Map source→target structural correspondences. Identifies corresponding, missing, and extra elements between domains.
+description: Map source→target structural correspondences. Identifies corresponding,
+  missing, and extra elements between domains.
 execution: subagent
 prompt: ./prompt.md
 input: source_structure (string), target_domain (string)
-used-by: cross-domain-discovery, analogical-transfer, design-by-analogy, bridge-validation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Structural Mapping

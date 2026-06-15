@@ -1,9 +1,22 @@
 ---
 name: systematic-probing
-description: "Strategy: AI-safety systematic probing — enumerate all threat surfaces, generate attack vectors per surface, execute probes, and aggregate findings across the full attack space."
+description: 'Strategy: AI-safety systematic probing — enumerate all threat surfaces,
+  generate attack vectors per surface, execute probes, and aggregate findings across
+  the full attack space.'
 type: strategy
-used-by: [red-teaming]
-tactics: [structured-attack-campaign, assumption-cascade]
+tactics:
+- structured-attack-campaign
+- assumption-cascade
+dependencies:
+  tactics:
+  - assumption-cascade
+  - structured-attack-campaign
+  sops:
+  - attack-resilience-scoring
+  - attack-vector-generation
+  - finding-aggregation
+  - probe-execution
+  - threat-surface-mapping
 ---
 
 # Systematic Probing Strategy

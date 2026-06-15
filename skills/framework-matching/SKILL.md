@@ -1,15 +1,15 @@
 ---
 name: framework-matching
-description: "SOP: 根据研究类型匹配最适合的 RQ 框架"
+description: 'SOP: 根据研究类型匹配最适合的 RQ 框架'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究类型 + 领域 + 假设特征"
-output: "推荐框架 + 理由 + 候选框架对比"
+input: 研究类型 + 领域 + 假设特征
+output: 推荐框架 + 理由 + 候选框架对比
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Framework Matching

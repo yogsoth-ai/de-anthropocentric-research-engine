@@ -1,15 +1,15 @@
 ---
 name: operationalization
-description: "SOP: 将抽象概念操作化为可测量的指标和方法"
+description: 'SOP: 将抽象概念操作化为可测量的指标和方法'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "抽象变量描述（来自 variable-identification 输出）"
-output: "操作定义 + 测量方法 + 效度论证（内容/构念/标准）"
+input: 抽象变量描述（来自 variable-identification 输出）
+output: 操作定义 + 测量方法 + 效度论证（内容/构念/标准）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Operationalization

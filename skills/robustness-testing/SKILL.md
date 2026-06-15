@@ -1,7 +1,15 @@
 ---
 name: robustness-testing
-description: Test conclusion robustness via multi-model convergence — enumerate assumptions, generate alternatives, compare results, flag fragile conclusions.
-used-by: boundary-analysis
+description: Test conclusion robustness via multi-model convergence — enumerate assumptions,
+  generate alternatives, compare results, flag fragile conclusions.
+dependencies:
+  tactics:
+  - multi-model-convergence
+  sops:
+  - alternative-model-generation
+  - convergence-assessment
+  - deep-insight-assumption-enumeration
+  - fragility-flagging
 ---
 
 # Robustness Testing

@@ -1,15 +1,17 @@
 ---
 name: timeline-projection
-description: "Extrapolate research landscape timelines using trend analysis and milestone projection"
+description: Extrapolate research landscape timelines using trend analysis and milestone
+  projection
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - temporal-scenario
 input: current state assessment, trend data, milestone markers, planning horizon
 output: timeline with projected milestones, confidence intervals, and inflection points
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Timeline Projection

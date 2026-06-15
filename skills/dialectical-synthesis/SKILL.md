@@ -1,8 +1,15 @@
 ---
 name: dialectical-synthesis
-description: Hegelian thesis-antithesis-synthesis cycle — propose position, generate opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud and polarity-mapping SOPs.
+description: Hegelian thesis-antithesis-synthesis cycle — propose position, generate
+  opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud
+  and polarity-mapping SOPs.
 execution: tactic
-used-by: tension-mining
+dependencies:
+  sops:
+  - deep-insight-paper-search
+  - deep-insight-web-research
+  - evaporating-cloud
+  - polarity-mapping
 ---
 
 # Dialectical Synthesis

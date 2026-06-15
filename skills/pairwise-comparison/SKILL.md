@@ -1,17 +1,21 @@
 ---
 name: pairwise-comparison
-description: "Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景"
+description: 'Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: gap-prioritization
 sops:
-  - gap-pairwise-judgment
-  - consistency-check
-  - priority-synthesis
+- gap-pairwise-judgment
+- consistency-check
+- priority-synthesis
 dependencies:
-  skills:
-    - subagent-spawning
+  sops:
+  - consistency-check
+  - gap-pairwise-judgment
+  - priority-synthesis
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
 ---
 
 # Pairwise Comparison

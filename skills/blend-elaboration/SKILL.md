@@ -4,7 +4,9 @@ description: Run blend as mental simulation
 execution: subagent
 prompt: ./prompt.md
 input: completed_blend (object)
-used-by: combinatorial-creativity, concept-blending, emergent-property-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Blend Elaboration

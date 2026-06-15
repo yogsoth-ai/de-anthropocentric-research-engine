@@ -1,7 +1,10 @@
 ---
 name: disagreement-cartography
-description: Map the structure of disagreement across perspectives using Policy Delphi, Argument Delphi, or SAST methods.
-used-by: structured-consensus
+description: Map the structure of disagreement across perspectives using Policy Delphi,
+  Argument Delphi, or SAST methods.
+dependencies:
+  tactics:
+  - disagreement-mapping
 ---
 
 # Disagreement Cartography

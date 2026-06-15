@@ -1,7 +1,12 @@
-﻿---
+---
 name: method-inventory
-description: Comprehensively identify all relevant methods for a task — 50 methods, 60 web searches budget
-used-by: baseline-establishment
+description: Comprehensively identify all relevant methods for a task — 50 methods,
+  60 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - method-discovery
 ---
 
 # Method Inventory

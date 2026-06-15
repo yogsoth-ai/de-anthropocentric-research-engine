@@ -1,15 +1,16 @@
 ---
 name: priority-synthesis
-description: "SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议"
+description: 'SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "全部评分数据（ImportanceScore[] + FeasibilityScore[] + NoveltyScore[] + ImpactScore[]）+ AHP 权重向量"
-output: "PriorityList — 有序 gap 列表、加权综合分、前 N 个攻击路径建议"
+input: 全部评分数据（ImportanceScore[] + FeasibilityScore[] + NoveltyScore[] + ImpactScore[]）+
+  AHP 权重向量
+output: PriorityList — 有序 gap 列表、加权综合分、前 N 个攻击路径建议
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Priority Synthesis

@@ -1,8 +1,29 @@
 ---
 name: systematic-enumeration
-description: Systematic Enumeration Campaign — exhaustive coverage analysis to discover overlooked solution spaces via benchmark sweep, method-problem matrix, ablation, and failure taxonomy
+description: Systematic Enumeration Campaign — exhaustive coverage analysis to discover
+  overlooked solution spaces via benchmark sweep, method-problem matrix, ablation,
+  and failure taxonomy
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  strategies:
+  - ablation-brainstorm
+  - benchmark-sweep
+  - factorial-ideation
+  - failure-taxonomy
+  - method-problem-matrix
+  tactics:
+  - coverage-analysis
+  - creative-ideation-combination-mapping
+  - evaluation-filtering
+  - gap-driven-generation
+  sops:
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - enumeration-synthesis
+  - idea-synthesis
+  - parameter-identification
 ---
 
 # Systematic Enumeration

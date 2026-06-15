@@ -1,10 +1,13 @@
 ---
 name: direct-analogy-generation
-description: Find direct analogies from nature/tech/society that share structural properties with the problem. Produces analogy list with structural mappings.
+description: Find direct analogies from nature/tech/society that share structural
+  properties with the problem. Produces analogy list with structural mappings.
 execution: subagent
 prompt: ./prompt.md
 input: problem (string)
-used-by: synectics, direct-analogy, excursion-method
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Direct Analogy Generation

@@ -1,10 +1,13 @@
 ---
 name: analogy-chain
-description: Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface.
+description: Chain analogies to deeper levels (3-5 layers). Each layer reveals new
+  aspects and insights not visible at the surface.
 execution: subagent
 prompt: ./prompt.md
 input: initial_analogy (string)
-used-by: synectics, direct-analogy, symbolic-analogy, compressed-conflict
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Analogy Chain

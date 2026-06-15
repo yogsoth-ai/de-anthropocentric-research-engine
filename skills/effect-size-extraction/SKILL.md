@@ -1,8 +1,13 @@
 ---
 name: effect-size-extraction
-description: Systematically extract effect sizes and conditions from papers for meta-analytic synthesis
+description: Systematically extract effect sizes and conditions from papers for meta-analytic
+  synthesis
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - risk-of-bias-assessment
 ---
 
 # Effect Size Extraction Tactic

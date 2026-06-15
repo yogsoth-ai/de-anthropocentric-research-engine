@@ -1,10 +1,13 @@
 ---
 name: patent-synthesis
-description: Produce final structured patent intelligence report from all analysis results
+description: Produce final structured patent intelligence report from all analysis
+  results
 execution: subagent
 prompt: ./prompt.md
 input: all_analysis_results
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Patent Synthesis

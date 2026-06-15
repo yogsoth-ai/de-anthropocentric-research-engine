@@ -10,14 +10,14 @@
 | campaign | scenario-planning | "What might the future look like — construct multiple future scenarios, assess research approach robustness under different assumptions" |
 | strategy | ablation-design | "Design ablation studies to isolate component contributions in ML systems" |
 | strategy | assumption-constraint | "Which assumptions are most fragile? — Vulnerability ranking + impact assessment of experiment assumptions" |
-| strategy | bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
+| strategy | experiment-execution-bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
 | strategy | comparison-design | "Design fair comparison experiments against baselines and competing methods" |
 | strategy | competitive-scenario | "What will competitors do? — Competitive method progress prediction and time window analysis" |
 | strategy | conflict-resolution | "How do constraints conflict with each other? — Evaporating Cloud + assumption challenging + injection to resolve constraint conflicts" |
 | strategy | critical-path-planning | "Identify the shortest execution path via CPM forward/backward pass, resource leveling, and buffer insertion" |
 | strategy | dependency-constraint | "What must be completed first? — Dependency chain analysis + prerequisite graph construction" |
 | strategy | experiment-running | "Execute the plan by dispatching fresh subagents per task, monitoring status, and collecting results" |
-| strategy | factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
+| strategy | experiment-execution-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
 | strategy | morphological-scenario | "What are all possible combinations? — Zwicky Box construction with CCA consistency filtering for systematic scenario enumeration" |
 | strategy | narrative-scenario | "What is the story of each future? — Shell method narrative construction for rich qualitative scenario understanding" |
 | strategy | plan-writing | "Format critical path and prerequisites into bite-sized executable plan following superpowers:writing-plans conventions" |
@@ -48,7 +48,7 @@
 | sop | buffer-sizing | "Calculate project, feeding, and resource buffers — shared with implementation-planning" |
 | sop | causal-chain-tracing | "Trace UDE to root cause via IF...THEN...BECAUSE logic chains" |
 | sop | competitive-move-prediction | "Predict competitor progress, publications, and strategic moves" |
-| sop | consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| sop | experiment-execution-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
 | sop | constraint-synthesis | "Synthesize constraint analysis into actionable report with priorities" |
 | sop | core-conflict-extraction | "Extract core conflict in Evaporating Cloud format (A-B-C-D-D')" |
 | sop | critical-chain-identification | "Identify the critical chain — longest path considering resource contention" |
@@ -69,18 +69,18 @@
 | sop | level-specification | "Determine appropriate levels for each experimental factor" |
 | sop | metric-specification | "Define experiment metrics and significance standards" |
 | sop | obstacle-identification | "TOC Prerequisite Tree — list obstacles preventing direct achievement of the objective" |
-| sop | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | experiment-execution-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| sop | experiment-execution-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| sop | experiment-execution-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
 | sop | parameter-enumeration | "Enumerate possible values for each uncertainty driver using MECE principles" |
 | sop | plan-formatting | "Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions" |
-| sop | quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
+| sop | experiment-execution-quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
 | sop | reproducibility-verification | "Verify result reproducibility via re-runs with different seeds and ICC comparison" |
 | sop | resource-quantification | "Quantify resource demand vs supply vs gap for each resource category" |
 | sop | result-collection | "Collect experiment outputs — metrics, logs, artifacts — into structured result set" |
 | sop | robustness-scoring | "Compute robustness index across scenarios with sensitivity analysis" |
 | sop | sample-size-estimation | "SOP: power analysis and required experiment count estimation" |
-| sop | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| sop | experiment-execution-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
 | sop | scenario-driver-identification | "Identify key uncertainty drivers using PESTEL framework scanning" |
 | sop | scenario-impact-assessment | "Assess each scenario's impact on the research approach across multiple dimensions" |
 | sop | scenario-narrative-construction | "Build rich narratives for surviving morphological configurations using Shell method" |
@@ -89,6 +89,6 @@
 | sop | statistical-testing | "Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results" |
 | sop | timeline-projection | "Extrapolate research landscape timelines using trend analysis and milestone projection" |
 | sop | undesirable-effect-listing | "List current Undesirable Effects (UDEs) — observable symptoms of system underperformance" |
-| sop | web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
-| sop | web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+| sop | experiment-execution-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| sop | experiment-execution-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
 | sop | worst-case-construction | "Construct extreme but plausible worst-case scenarios for stress testing" |

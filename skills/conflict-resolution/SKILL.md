@@ -1,15 +1,22 @@
 ---
 name: conflict-resolution
-description: "How do constraints conflict with each other? — Evaporating Cloud + assumption challenging + injection to resolve constraint conflicts"
+description: How do constraints conflict with each other? — Evaporating Cloud + assumption
+  challenging + injection to resolve constraint conflicts
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - core-conflict-extraction
-  - assumption-challenging
-  - future-reality-projection
+- core-conflict-extraction
+- assumption-challenging
+- future-reality-projection
 tactics:
+- constraint-breaking
+dependencies:
+  sops:
+  - assumption-challenging
+  - core-conflict-extraction
+  - future-reality-projection
+  tactics:
   - constraint-breaking
 ---
 

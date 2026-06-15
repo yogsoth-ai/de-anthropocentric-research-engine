@@ -1,7 +1,12 @@
 ---
 name: boundary-critique
-description: Apply CSH boundary critique — what is included/excluded, who benefits/is harmed, what expertise is privileged/marginalized. Identifies opportunities at the boundaries.
-used-by: boundary-analysis
+description: Apply CSH boundary critique — what is included/excluded, who benefits/is
+  harmed, what expertise is privileged/marginalized. Identifies opportunities at the
+  boundaries.
+dependencies:
+  sops:
+  - csh-12-question
+  - deep-insight-assumption-surfacing
 ---
 
 # Boundary Critique

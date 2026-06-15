@@ -1,10 +1,13 @@
 ---
 name: pareto-visualization
-description: Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation.
+description: Create visual representation of the Pareto frontier showing trade-offs
+  between objectives with narrative explanation.
 execution: subagent
 prompt: ./prompt.md
 input: pareto_front
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Pareto Visualization

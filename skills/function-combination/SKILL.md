@@ -1,8 +1,15 @@
 ---
 name: function-combination
-description: "TRIZ function analysis: function-level recombination and redistribution"
+description: 'TRIZ function analysis: function-level recombination and redistribution'
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - function-redistribution
+  - input-space-construction
+  tactics:
+  - emergence-detection
 ---
 
 # Function Combination

@@ -1,9 +1,21 @@
 ---
 name: premortem-to-fmea-pipeline
-description: "Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA analysis. Bridges fast intuitive generation with systematic structured analysis."
+description: 'Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA
+  analysis. Bridges fast intuitive generation with systematic structured analysis.'
 type: tactic
-used-by: [failure-anticipation]
-strategies: [prospective-hindsight, risk-prioritization]
+strategies:
+- prospective-hindsight
+- risk-prioritization
+dependencies:
+  sops:
+  - action-priority-matrix
+  - detection-scoring
+  - failure-chain-construction
+  - failure-mode-extraction
+  - function-analysis
+  - occurrence-scoring
+  - premortem-facilitation
+  - severity-scoring
 ---
 
 # Pre-Mortem to FMEA Pipeline Tactic

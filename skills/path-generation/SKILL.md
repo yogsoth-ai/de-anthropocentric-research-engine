@@ -4,7 +4,9 @@ description: Generate combination paths through consistent space
 execution: subagent
 prompt: ./prompt.md
 input: reduced_space (object)
-used-by: zwicky-box-construction, general-morphological-analysis, parameter-variation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Path Generation

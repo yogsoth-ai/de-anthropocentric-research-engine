@@ -1,20 +1,19 @@
 ---
 name: feasibility-constrained-formulation
-description: "Strategy: 在资源约束下重塑研究问题 — pragmatic 调整保持核心价值"
+description: 'Strategy: 在资源约束下重塑研究问题 — pragmatic 调整保持核心价值'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: research-question
 tactics:
-  - question-refinement-loop
+- question-refinement-loop
 sops:
-  - scope-assessment
-  - finer-criteria-check
-  - success-criteria-definition
+- scope-assessment
+- finer-criteria-check
+- success-criteria-definition
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - question-refinement-loop
 ---
 
 # Feasibility-Constrained Formulation

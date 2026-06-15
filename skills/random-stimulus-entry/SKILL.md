@@ -1,8 +1,16 @@
 ---
 name: random-stimulus-entry
-description: Random word/paper/concept as thinking entry point. Use genuine randomness to escape fixation and open unexpected solution paths.
+description: Random word/paper/concept as thinking entry point. Use genuine randomness
+  to escape fixation and open unexpected solution paths.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  tactics:
+  - bridge-validation
+  - domain-divergence
+  sops:
+  - cross-domain-synthesis
+  - forced-connection
+  - random-paper-entry
 ---
 
 # Random Stimulus Entry

@@ -1,6 +1,8 @@
 ---
 name: final-validation
-description: Self-review the North Star + ResearchBrief for completeness, consistency, and clarity before presenting to user. If issues found, return to specific tactic/SOP for targeted fix. If passes, present final output to user for confirmation.
+description: Self-review the North Star + ResearchBrief for completeness, consistency,
+  and clarity before presenting to user. If issues found, return to specific tactic/SOP
+  for targeted fix. If passes, present final output to user for confirmation.
 execution: dialogue
 ---
 

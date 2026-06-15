@@ -1,8 +1,12 @@
-﻿---
+---
 name: condition-normalization
 description: Compare and standardize experimental conditions across papers
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - compute-normalization
+  - condition-cataloging
+  - performance-table-assembly
 ---
 
 # Condition Normalization

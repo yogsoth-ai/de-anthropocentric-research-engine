@@ -1,10 +1,13 @@
 ---
 name: controlled-perturbation
-description: Systematically vary parameters along defined axes, recording performance at each point to identify degradation thresholds.
+description: Systematically vary parameters along defined axes, recording performance
+  at each point to identify degradation thresholds.
 execution: subagent
 prompt: ./prompt.md
 input: method (string), variation_axis (string), range (string)
-used-by: validity-envelope-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Controlled Perturbation

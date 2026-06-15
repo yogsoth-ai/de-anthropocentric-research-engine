@@ -1,9 +1,19 @@
 ---
 name: society-of-mind
-description: "Strategy: Multi-agent collaborative debate based on Du et al. Society of Mind. Agents share perspectives iteratively until convergence or divergence is detected."
+description: 'Strategy: Multi-agent collaborative debate based on Du et al. Society
+  of Mind. Agents share perspectives iteratively until convergence or divergence is
+  detected.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [perspective-rotation]
+tactics:
+- perspective-rotation
+dependencies:
+  tactics:
+  - stress-test-perspective-rotation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - divergence-detection
+  - perspective-critic
 ---
 
 # Society of Mind Strategy

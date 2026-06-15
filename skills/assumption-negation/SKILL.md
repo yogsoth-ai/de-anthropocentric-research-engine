@@ -1,8 +1,17 @@
 ---
 name: assumption-negation
-description: "Classic reductio ad absurdum: negate the core claim, derive logical consequences, seek contradiction or absurdity."
+description: 'Classic reductio ad absurdum: negate the core claim, derive logical
+  consequences, seek contradiction or absurdity.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - contradiction-derivation
+  - counterexample-heuristics
+  sops:
+  - claim-negation
+  - claim-refinement
+  - contradiction-detection
+  - deductive-chain
 ---
 
 # Assumption Negation

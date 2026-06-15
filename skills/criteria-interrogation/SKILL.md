@@ -1,7 +1,11 @@
 ---
 name: criteria-interrogation
-description: Challenge the evaluation criteria themselves using Assumption-based Planning, Critical Systems Heuristics, and Boundary Critique to ensure the framework is sound.
-used-by: steel-manning
+description: Challenge the evaluation criteria themselves using Assumption-based Planning,
+  Critical Systems Heuristics, and Boundary Critique to ensure the framework is sound.
+dependencies:
+  tactics:
+  - assumption-excavation
+  - multi-perspective-attack
 ---
 
 # Criteria Interrogation

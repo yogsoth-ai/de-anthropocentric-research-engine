@@ -1,6 +1,14 @@
 ---
 name: landscape-reconnaissance
-description: Broad, shallow exploration of candidate research fields. Understand what's out there before narrowing. Use when the user needs to discover which fields are available to them — especially in cold-start and warm-start scenarios.
+description: Broad, shallow exploration of candidate research fields. Understand what's
+  out there before narrowing. Use when the user needs to discover which fields are
+  available to them — especially in cold-start and warm-start scenarios.
+dependencies:
+  sops:
+  - generate-candidate-fields
+  - landscape-synthesis
+  - north-star-crystallization-broad-web-search
+  - present-and-ask
 ---
 
 # Landscape Reconnaissance

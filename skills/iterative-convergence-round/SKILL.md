@@ -1,8 +1,14 @@
 ---
 name: iterative-convergence-round
-description: Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue.
+description: Execute one full Delphi round — collect judgments, distribute anonymous
+  feedback, measure consensus, decide whether to continue.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - consensus-measurement
+  - feedback-distribution
+  - judgment-collection
+  - round-decision
 ---
 
 # Iterative Convergence Round

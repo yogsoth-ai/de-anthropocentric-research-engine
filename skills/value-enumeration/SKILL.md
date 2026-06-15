@@ -4,7 +4,9 @@ description: Enumerate 3-5 values per parameter including extremes
 execution: subagent
 prompt: ./prompt.md
 input: parameter_list (array)
-used-by: zwicky-box-construction, general-morphological-analysis, parameter-variation, combination-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Value Enumeration

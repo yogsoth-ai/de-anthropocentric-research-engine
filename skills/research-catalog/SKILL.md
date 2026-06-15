@@ -1,6 +1,9 @@
 ---
 name: research-catalog
-description: Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map).
+description: Capability menu for the research engine. Lists the 9 freely-composable
+  research packages, what each does, when to reach for it, and a pointer to its full
+  skill table. Read this after north-star crystallization to decide which packages
+  to use — no fixed order. Also serves as the skill-index (capability map).
 execution: reference
 ---
 

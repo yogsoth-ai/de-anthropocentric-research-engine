@@ -1,7 +1,15 @@
 ---
 name: coverage-mapping
-description: Map evaluation coverage, identify untested capability dimensions — 20 benchmarks, 30 papers, 50 web searches
-used-by: benchmark-archaeology
+description: Map evaluation coverage, identify untested capability dimensions — 20
+  benchmarks, 30 papers, 50 web searches
+dependencies:
+  tactics:
+  - score-trajectory-analysis
+  sops:
+  - benchmark-synthesis
+  - capability-taxonomy-mapping
+  - knowledge-acquisition-benchmark-inventory
+  - metric-decomposition
 ---
 
 # Coverage Mapping Strategy

@@ -1,18 +1,28 @@
 ---
 name: competitive-scenario
-description: "What will competitors do? — Competitive method progress prediction and time window analysis"
+description: What will competitors do? — Competitive method progress prediction and
+  time window analysis
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - competitive-move-prediction
-  - timeline-projection
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- competitive-move-prediction
+- timeline-projection
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - competitive-move-prediction
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-synthesis
+  - timeline-projection
+  tactics:
   - strategy-robustness-testing
 ---
 

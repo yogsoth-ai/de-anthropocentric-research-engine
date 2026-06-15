@@ -1,6 +1,13 @@
 ---
 name: direction-narrowing
-description: Focus within the user's chosen field(s). Identify specific sub-directions through deep paper and web research, then present ranked candidates. Use after landscape-reconnaissance has identified fields of interest.
+description: Focus within the user's chosen field(s). Identify specific sub-directions
+  through deep paper and web research, then present ranked candidates. Use after landscape-reconnaissance
+  has identified fields of interest.
+dependencies:
+  sops:
+  - deep-web-search
+  - north-star-crystallization-broad-paper-search
+  - present-candidates
 ---
 
 # Direction Narrowing

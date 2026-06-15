@@ -1,10 +1,13 @@
 ---
 name: debate-transcript-analysis
-description: Extracts key turning points, patterns, and insights from completed debate transcripts. Produces structured summary for verdict synthesis.
+description: Extracts key turning points, patterns, and insights from completed debate
+  transcripts. Produces structured summary for verdict synthesis.
 execution: subagent
 prompt: ./prompt.md
 input: full_transcript (string), round_verdicts (string), final_confidence (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Transcript Analysis

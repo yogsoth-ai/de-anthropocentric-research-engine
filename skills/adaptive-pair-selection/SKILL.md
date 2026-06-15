@@ -1,8 +1,14 @@
 ---
 name: adaptive-pair-selection
-description: Iteratively select maximally informative pairs, execute comparisons, update ratings, and check convergence until ranking stabilizes.
+description: Iteratively select maximally informative pairs, execute comparisons,
+  update ratings, and check convergence until ranking stabilizes.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - comparison-executor
+  - convergence-check
+  - pair-selector
+  - rating-update
 ---
 
 # Adaptive Pair Selection

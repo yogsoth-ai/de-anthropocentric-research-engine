@@ -1,10 +1,13 @@
 ---
 name: constraint-identification-sop
-description: Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem methods.
+description: Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem
+  methods.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, context
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Constraint Identification SOP

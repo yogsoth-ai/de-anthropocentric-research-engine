@@ -1,10 +1,13 @@
 ---
 name: critical-path-identification
-description: Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization.
+description: Identify which input uncertainties contribute most to output uncertainty
+  and compute EVPI for research prioritization.
 execution: subagent
 prompt: ./prompt.md
 input: propagation_results, input_output_relationships
-used-by: uncertainty-propagation, decision-sensitivity
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

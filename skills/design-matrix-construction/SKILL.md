@@ -1,18 +1,16 @@
 ---
 name: design-matrix-construction
-description: "Build the experiment design matrix with proper orthogonality and balance"
+description: Build the experiment design matrix with proper orthogonality and balance
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - factor-level-design
-  - scaling-design
-  - robustness-design
-  - budget-constrained-design
 input: factors with levels, design type, budget constraint
 output: complete design matrix with run order
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Design Matrix Construction

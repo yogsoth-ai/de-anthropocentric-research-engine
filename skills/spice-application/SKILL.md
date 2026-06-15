@@ -1,15 +1,15 @@
 ---
 name: spice-application
-description: "SOP: 应用 SPICE 框架结构化评估研究问题"
+description: 'SOP: 应用 SPICE 框架结构化评估研究问题'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究意图（评估研究方向）"
-output: "完整 SPICE 填充 + RQ 表述"
+input: 研究意图（评估研究方向）
+output: 完整 SPICE 填充 + RQ 表述
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # SPICE Application

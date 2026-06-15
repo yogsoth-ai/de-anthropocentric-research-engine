@@ -1,15 +1,16 @@
 ---
 name: ablation-component-mapping
-description: "Map system architecture to ablatable units for ablation studies"
+description: Map system architecture to ablatable units for ablation studies
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - ablation-design
 input: system architecture description, component list
 output: ablation map with dependencies and removal strategies
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Ablation Component Mapping

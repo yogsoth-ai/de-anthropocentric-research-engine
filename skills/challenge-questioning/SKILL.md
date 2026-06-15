@@ -1,10 +1,13 @@
 ---
 name: challenge-questioning
-description: "Non-threatening 'Why?' questioning of current practices to reveal historical accidents vs. genuine constraints."
+description: Non-threatening 'Why?' questioning of current practices to reveal historical
+  accidents vs. genuine constraints.
 execution: subagent
 prompt: ./prompt.md
 input: current_practices (string)
-used-by: lateral-thinking, challenge-operation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Challenge Questioning

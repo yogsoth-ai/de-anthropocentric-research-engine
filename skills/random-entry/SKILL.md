@@ -1,8 +1,12 @@
 ---
 name: random-entry
-description: "Random word/concept as thinking entry point (de Bono Random Entry)"
+description: Random word/concept as thinking entry point (de Bono Random Entry)
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - lateral-synthesis
+  - stepping-stone
 ---
 
 # Random Entry

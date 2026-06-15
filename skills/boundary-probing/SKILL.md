@@ -1,9 +1,18 @@
 ---
 name: boundary-probing
-description: "Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope."
+description: Map parameter space, generate extreme values, test at boundaries, detect
+  breakpoints, synthesize validity envelope.
 type: tactic
-used-by: [adversarial-stress-testing]
-strategies: [boundary-enumeration, validity-envelope-mapping, critical-case-design]
+strategies:
+- boundary-enumeration
+- validity-envelope-mapping
+- critical-case-design
+dependencies:
+  sops:
+  - breakpoint-detection
+  - extreme-value-generation
+  - parameter-space-mapping
+  - stress-test-validity-envelope-construction
 ---
 
 # Boundary Probing

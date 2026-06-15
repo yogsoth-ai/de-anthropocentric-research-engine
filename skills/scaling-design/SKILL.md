@@ -1,19 +1,28 @@
 ---
 name: scaling-design
-description: "Design scaling experiments to characterize performance-resource relationships"
+description: Design scaling experiments to characterize performance-resource relationships
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- factor-identification
+- level-specification
+- metric-specification
+- sample-size-estimation
+- design-matrix-construction
+tactics:
+- statistical-method-selection
+- budget-constrained-design
+dependencies:
+  sops:
+  - design-matrix-construction
   - factor-identification
   - level-specification
   - metric-specification
   - sample-size-estimation
-  - design-matrix-construction
-tactics:
-  - statistical-method-selection
+  tactics:
   - budget-constrained-design
+  - statistical-method-selection
 ---
 
 # Strategy: Scaling Design

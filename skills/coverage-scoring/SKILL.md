@@ -1,10 +1,13 @@
 ---
 name: coverage-scoring
-description: Compute coverage completeness, redundancy, and gap severity scores from a coverage map.
+description: Compute coverage completeness, redundancy, and gap severity scores from
+  a coverage map.
 execution: subagent
 prompt: ./prompt.md
 input: coverage_map
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Coverage Scoring

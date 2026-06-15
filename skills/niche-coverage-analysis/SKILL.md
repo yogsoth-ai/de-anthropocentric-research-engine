@@ -1,8 +1,13 @@
 ---
 name: niche-coverage-analysis
-description: Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention.
+description: Define niches within the solution space, map candidates to niches, score
+  coverage completeness, and identify gaps requiring attention.
 execution: tactic
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - coverage-scoring
+  - niche-definition
+  - niche-mapping
 ---
 
 # Niche Coverage Analysis

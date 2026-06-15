@@ -1,7 +1,14 @@
 ---
 name: assumption-audit
-description: Surface all assumptions, classify by vulnerability (load-bearing × likely-false), validate causal logic. Focus on dangerous assumptions — high load-bearing + non-explicit.
-used-by: insight
+description: Surface all assumptions, classify by vulnerability (load-bearing × likely-false),
+  validate causal logic. Focus on dangerous assumptions — high load-bearing + non-explicit.
+dependencies:
+  tactics:
+  - assumption-stress-test
+  sops:
+  - abp-vulnerability-classification
+  - clr-validation
+  - deep-insight-assumption-surfacing
 ---
 
 # Assumption Audit

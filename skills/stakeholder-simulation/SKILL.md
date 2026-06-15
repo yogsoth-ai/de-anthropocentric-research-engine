@@ -1,8 +1,11 @@
 ---
 name: stakeholder-simulation
-description: Simulate user/engineer/investor/regulator/society perspectives to surface hidden requirements and opportunities.
+description: Simulate user/engineer/investor/regulator/society perspectives to surface
+  hidden requirements and opportunities.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - perspective-synthesis
 ---
 
 # Stakeholder Simulation

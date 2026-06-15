@@ -1,8 +1,8 @@
 ---
 name: analogy-extraction
-description: Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation.
+description: Extract transferable structural principles from source domains. Orchestrates
+  source identification → abstraction → structural mapping → transfer validation.
 execution: tactic
-used-by: cross-domain-discovery, synectics, biomimicry
 ---
 
 # Analogy Extraction

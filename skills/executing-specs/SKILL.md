@@ -1,8 +1,8 @@
 ---
 name: executing-specs
-description: Execute a Research Spec step by step, respecting context protocol, deviation limits, and backtrack rules. Supports multi-session recovery.
+description: Execute a Research Spec step by step, respecting context protocol, deviation
+  limits, and backtrack rules. Supports multi-session recovery.
 execution: sequential
-used-by: de-anthropocentric-research-engine
 ---
 
 # Executing Specs

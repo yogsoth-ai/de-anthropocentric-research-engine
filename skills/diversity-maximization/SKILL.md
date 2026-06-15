@@ -1,7 +1,16 @@
 ---
 name: diversity-maximization
-description: Maximize portfolio diversity and coverage using MAP-Elites, Niche coverage, Maximum dispersion, and Anti-clustering methods.
-used-by: portfolio-optimization
+description: Maximize portfolio diversity and coverage using MAP-Elites, Niche coverage,
+  Maximum dispersion, and Anti-clustering methods.
+dependencies:
+  tactics:
+  - niche-coverage-analysis
+  - pareto-frontier-construction
+  sops:
+  - coverage-scoring
+  - niche-definition
+  - niche-mapping
+  - objective-definition
 ---
 
 # Diversity Maximization

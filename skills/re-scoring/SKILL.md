@@ -1,10 +1,13 @@
 ---
 name: re-scoring
-description: Re-evaluate S/O/D scores after mitigation measures are in place. Validates that mitigations actually reduce risk as expected.
+description: Re-evaluate S/O/D scores after mitigation measures are in place. Validates
+  that mitigations actually reduce risk as expected.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), mitigations (string), original_scores (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Re-Scoring

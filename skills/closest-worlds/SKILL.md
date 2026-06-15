@@ -1,9 +1,23 @@
 ---
 name: closest-worlds
-description: "Strategy: Lewis Possible Worlds — find the minimal change to reality that would flip the conclusion, measuring how close the nearest world where the conclusion fails."
+description: 'Strategy: Lewis Possible Worlds — find the minimal change to reality
+  that would flip the conclusion, measuring how close the nearest world where the
+  conclusion fails.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [minimal-change-search, systematic-factor-ablation]
+tactics:
+- minimal-change-search
+- systematic-factor-ablation
+dependencies:
+  tactics:
+  - minimal-change-search
+  - systematic-factor-ablation
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - fragility-measurement
+  - load-bearing-identification
 ---
 
 # Closest Worlds Strategy

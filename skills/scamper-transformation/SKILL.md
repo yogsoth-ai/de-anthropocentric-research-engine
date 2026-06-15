@@ -1,8 +1,13 @@
 ---
 name: scamper-transformation
-description: 7 operators (Substitute/Combine/Adapt/Modify/Put/Eliminate/Reverse) for systematic transformation of existing solutions.
+description: 7 operators (Substitute/Combine/Adapt/Modify/Put/Eliminate/Reverse) for
+  systematic transformation of existing solutions.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  sops:
+  - recombination-generation
+  - scamper-divergence
+  - structural-synthesis
 ---
 
 # SCAMPER Transformation

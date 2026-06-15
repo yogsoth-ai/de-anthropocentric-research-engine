@@ -1,7 +1,13 @@
-﻿---
+---
 name: performance-extraction
-description: Systematically extract performance data and conditions from papers — 30 methods, 150 data points, 40 web searches budget
-used-by: baseline-establishment
+description: Systematically extract performance data and conditions from papers —
+  30 methods, 150 data points, 40 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - condition-cataloging
+  - score-extraction
 ---
 
 # Performance Extraction

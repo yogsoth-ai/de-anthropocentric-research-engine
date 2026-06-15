@@ -1,7 +1,14 @@
 ---
 name: comparative-feasibility-ranking
-description: Compare feasibility across multiple candidates using multi-dimensional radar and weighted feasibility index.
-used-by: feasibility-assessment
+description: Compare feasibility across multiple candidates using multi-dimensional
+  radar and weighted feasibility index.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
+  sops:
+  - feasibility-synthesis
+  - radar-synthesis
 ---
 
 # Comparative Feasibility Ranking

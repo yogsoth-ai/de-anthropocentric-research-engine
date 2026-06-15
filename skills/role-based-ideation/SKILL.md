@@ -1,8 +1,16 @@
 ---
 name: role-based-ideation
-description: Role-play as reviewer/practitioner/theorist/novice/competitor to generate diverse perspectives on a solution.
+description: Role-play as reviewer/practitioner/theorist/novice/competitor to generate
+  diverse perspectives on a solution.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - competitor-simulation
+  - novice-perspective
+  - perspective-synthesis
+  - practitioner-hat
+  - reviewer2-hat
+  - theorist-hat
 ---
 
 # Role-Based Ideation

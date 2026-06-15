@@ -1,8 +1,12 @@
 ---
 name: constraint-driven-ideation
-description: Inject extreme constraints to force innovation — impossibility breeds creativity.
+description: Inject extreme constraints to force innovation — impossibility breeds
+  creativity.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - constraint-response
+  - perspective-synthesis
 ---
 
 # Constraint-Driven Ideation

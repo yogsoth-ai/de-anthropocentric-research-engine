@@ -1,15 +1,15 @@
 ---
 name: dependency-mapping
-description: "SOP: 映射子问题间的依赖关系"
+description: 'SOP: 映射子问题间的依赖关系'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "子问题列表"
-output: "依赖图 + 关键路径 + 建议回答顺序"
+input: 子问题列表
+output: 依赖图 + 关键路径 + 建议回答顺序
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Dependency Mapping

@@ -2,7 +2,11 @@
 name: parameter-variation
 description: Systematic one-factor-at-a-time parameter sweep
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  sops:
+  - morphological-synthesis
+  - path-generation
+  - value-enumeration
 ---
 
 # Parameter Variation

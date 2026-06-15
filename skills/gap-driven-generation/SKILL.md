@@ -1,8 +1,14 @@
 ---
 name: gap-driven-generation
-description: Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments.
+description: Generate solutions targeting specific coverage gaps — detect gaps, generate
+  failure-driven solutions, and design factor-level experiments.
 execution: tactic
-used-by: systematic-enumeration, failure-taxonomy, factorial-ideation
+dependencies:
+  sops:
+  - coverage-gap-detection
+  - creative-ideation-factor-level-design
+  - creative-ideation-failure-mode-cataloging
+  - failure-driven-generation
 ---
 
 # Gap-Driven Generation

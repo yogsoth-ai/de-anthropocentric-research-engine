@@ -1,17 +1,25 @@
 ---
 name: experiment-running
-description: "Execute the plan by dispatching fresh subagents per task, monitoring status, and collecting results"
+description: Execute the plan by dispatching fresh subagents per task, monitoring
+  status, and collecting results
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - implementer-dispatch
-  - execution-monitoring
-  - result-collection
+- implementer-dispatch
+- execution-monitoring
+- result-collection
 tactics:
-  - subagent-execution-loop
+- subagent-execution-loop
+- checkpoint-and-recover
+dependencies:
+  sops:
+  - execution-monitoring
+  - implementer-dispatch
+  - result-collection
+  tactics:
   - checkpoint-and-recover
+  - subagent-execution-loop
 ---
 
 # Strategy: Experiment Running

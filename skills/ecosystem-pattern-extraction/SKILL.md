@@ -1,10 +1,13 @@
 ---
 name: ecosystem-pattern-extraction
-description: "Extract ecosystem-level organization patterns (symbiosis, emergence, cycles, resilience)."
+description: Extract ecosystem-level organization patterns (symbiosis, emergence,
+  cycles, resilience).
 execution: subagent
 prompt: ./prompt.md
 input: ecosystem (string)
-used-by: ecosystem-pattern, life-principles-application
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ecosystem Pattern Extraction

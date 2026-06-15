@@ -1,8 +1,17 @@
 ---
 name: critical-case-design
-description: "Flyvbjerg critical case methodology: select most-likely and least-likely cases to maximize inferential power."
+description: 'Flyvbjerg critical case methodology: select most-likely and least-likely
+  cases to maximize inferential power.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - boundary-probing
+  - counterexample-heuristics
+  sops:
+  - breakpoint-detection
+  - contradiction-detection
+  - extreme-value-generation
+  - parameter-space-mapping
 ---
 
 # Critical Case Design

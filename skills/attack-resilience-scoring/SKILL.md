@@ -1,10 +1,13 @@
 ---
 name: attack-resilience-scoring
-description: Compute overall resilience score (0.0-1.0) based on attack results, coverage, and vulnerability severity distribution.
+description: Compute overall resilience score (0.0-1.0) based on attack results, coverage,
+  and vulnerability severity distribution.
 execution: subagent
 prompt: ./prompt.md
 input: aggregated_findings (string), coverage_data (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Attack Resilience Scoring

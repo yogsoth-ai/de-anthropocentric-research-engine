@@ -1,18 +1,17 @@
 ---
 name: assumption-challenging
-description: "Challenge each assumption's validity — shared cross-repo SOP"
+description: Challenge each assumption's validity — shared cross-repo SOP
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - assumption-constraint
-  - conflict-resolution
-  - constraint-breaking
 shared: true
 input: list of assumptions with context
 output: validity assessment with confidence scores and evidence
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Assumption Challenging

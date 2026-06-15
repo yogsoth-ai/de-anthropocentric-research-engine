@@ -1,8 +1,12 @@
 ---
 name: quality-assessment-protocol
-description: Methodological quality and bias risk assessment of included studies using validated tools
+description: Methodological quality and bias risk assessment of included studies using
+  validated tools
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Quality Assessment Protocol Tactic

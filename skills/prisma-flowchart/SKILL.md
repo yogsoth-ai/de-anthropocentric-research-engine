@@ -1,10 +1,14 @@
 ---
 name: prisma-flowchart
-description: Generate PRISMA-compliant flow data documenting the screening funnel — counts at each stage (identification, screening, eligibility, inclusion) with exclusion reasons. Used by systematic-survey via prisma-screening tactic.
+description: Generate PRISMA-compliant flow data documenting the screening funnel
+  — counts at each stage (identification, screening, eligibility, inclusion) with
+  exclusion reasons. Used by systematic-survey via prisma-screening tactic.
 execution: subagent
 prompt: ./prompt.md
 input: screening_data (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # PRISMA Flowchart

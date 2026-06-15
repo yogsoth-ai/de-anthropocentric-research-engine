@@ -1,15 +1,15 @@
 ---
 name: weight-perturbation
-description: "SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定"
+description: 'SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "基准权重向量 + gap 评分矩阵（gap × 维度）"
-output: "PerturbationReport — 扰动方案、排序变化幅度及稳定性判定"
+input: 基准权重向量 + gap 评分矩阵（gap × 维度）
+output: PerturbationReport — 扰动方案、排序变化幅度及稳定性判定
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Weight Perturbation

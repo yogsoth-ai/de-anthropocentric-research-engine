@@ -1,7 +1,14 @@
-﻿---
+---
 name: condition-standardization
-description: Standardize evaluation condition differences across papers — 20 methods, 60 data points, 30 web searches budget
-used-by: baseline-establishment
+description: Standardize evaluation condition differences across papers — 20 methods,
+  60 data points, 30 web searches budget
+dependencies:
+  tactics:
+  - condition-normalization
+  sops:
+  - compute-normalization
+  - condition-cataloging
+  - performance-table-assembly
 ---
 
 # Condition Standardization

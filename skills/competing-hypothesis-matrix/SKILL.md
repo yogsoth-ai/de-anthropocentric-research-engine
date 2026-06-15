@@ -1,17 +1,19 @@
 ---
 name: competing-hypothesis-matrix
-description: "Tactic: 多假设管理——生成竞争假设，设计区分性预测，构建结构化比较矩阵"
+description: 'Tactic: 多假设管理——生成竞争假设，设计区分性预测，构建结构化比较矩阵'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: hypothesis-formulation
 sops:
+- competing-hypothesis-generation
+- discriminating-prediction-design
+- hypothesis-comparison-matrix
+dependencies:
+  sops:
   - competing-hypothesis-generation
   - discriminating-prediction-design
   - hypothesis-comparison-matrix
-dependencies:
-  skills:
-    - subagent-spawning
 ---
 
 # Competing Hypothesis Matrix

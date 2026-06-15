@@ -4,7 +4,9 @@ description: Detect train-test data leakage and memorization artifacts
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_name, training_data_sources, test_set_metadata
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Contamination Audit SOP

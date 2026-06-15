@@ -1,6 +1,7 @@
 ---
 name: spawn-agent
-description: Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent.
+description: 'Spawn a customized CC subagent with full MCP tool access. Used by SOPs
+  that declare execution: subagent.'
 type: sop
 layer: sop
 ---

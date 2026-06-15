@@ -1,8 +1,19 @@
 ---
 name: benchmark-archaeology
-description: Evaluation Methodology Archaeology Campaign — 5 strategies for systematic analysis of AI/ML benchmarks, metrics, and leaderboards. Reveals construct validity issues, saturation, data contamination, and evaluation protocol inconsistencies.
+description: Evaluation Methodology Archaeology Campaign — 5 strategies for systematic
+  analysis of AI/ML benchmarks, metrics, and leaderboards. Reveals construct validity
+  issues, saturation, data contamination, and evaluation protocol inconsistencies.
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - benchmark-audit
+  - coverage-mapping
+  - protocol-forensics
+  - saturation-analysis
+  - validity-probing
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Benchmark Archaeology

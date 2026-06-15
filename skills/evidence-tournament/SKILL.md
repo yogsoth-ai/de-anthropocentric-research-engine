@@ -1,9 +1,19 @@
 ---
 name: evidence-tournament
-description: "Tactic: Evidence gathering, cross-examination, and quality judgment. External evidence is collected, presented, challenged, and scored for relevance and reliability."
+description: 'Tactic: Evidence gathering, cross-examination, and quality judgment.
+  External evidence is collected, presented, challenged, and scored for relevance
+  and reliability.'
 type: tactic
-used-by: [multiagent-debate]
-strategies: [courtroom-structured, critic-defender-judge]
+strategies:
+- courtroom-structured
+- critic-defender-judge
+dependencies:
+  sops:
+  - cross-examination
+  - debate-critic
+  - debate-defender
+  - debate-judge
+  - evidence-scout
 ---
 
 # Evidence Tournament Tactic

@@ -1,8 +1,17 @@
 ---
 name: north-star-crystallization
-description: Goal-Driven Requirement Refinement Engine for Research. Crystallize a user's fuzzy research intent into a North Star statement and structured ResearchBrief through adaptive dialogue and on-demand investigation.
+description: Goal-Driven Requirement Refinement Engine for Research. Crystallize a
+  user's fuzzy research intent into a North Star statement and structured ResearchBrief
+  through adaptive dialogue and on-demand investigation.
 execution: campaign
-used-by: knowledge-acquisition (pre-condition)
+dependencies:
+  strategies:
+  - cold-start
+  - hot-start
+  - warm-start
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # North Star Crystallization

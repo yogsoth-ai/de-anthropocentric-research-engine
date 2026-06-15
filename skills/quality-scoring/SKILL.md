@@ -1,10 +1,13 @@
 ---
 name: quality-scoring
-description: Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth
+description: Multi-dimensional patent quality assessment — forward citations, family
+  size, claim count, geographic breadth
 execution: subagent
 prompt: ./prompt.md
 input: patent_metadata
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Quality Scoring

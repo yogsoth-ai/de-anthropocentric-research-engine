@@ -1,10 +1,13 @@
 ---
 name: movement-operation
-description: Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects).
+description: Extract constructive directions from PO provocations using 4 movement
+  types (moment-to-moment, principle, focus difference, positive aspects).
 execution: subagent
 prompt: ./prompt.md
 input: po_provocations (string)
-used-by: lateral-thinking, provocation-and-movement, movement-extraction, six-hats-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Movement Operation

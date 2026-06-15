@@ -1,19 +1,42 @@
 ---
 name: constraint-analysis
-description: "What limits us — identify bottlenecks, quantify constraints, analyze dependencies, resolve conflicts before experiment execution"
+description: What limits us — identify bottlenecks, quantify constraints, analyze
+  dependencies, resolve conflicts before experiment execution
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - bottleneck-identification
-  - resource-constraint
-  - assumption-constraint
-  - dependency-constraint
-  - conflict-resolution
+- bottleneck-identification
+- resource-constraint
+- assumption-constraint
+- dependency-constraint
+- conflict-resolution
 tactics:
+- constraint-tree-building
+- sensitivity-ranking
+- constraint-breaking
+dependencies:
+  strategies:
+  - assumption-constraint
+  - conflict-resolution
+  - dependency-constraint
+  - experiment-execution-bottleneck-identification
+  - resource-constraint
+  tactics:
+  - constraint-breaking
   - constraint-tree-building
   - sensitivity-ranking
-  - constraint-breaking
+  sops:
+  - constraint-synthesis
+  - context-checkpoint
+  - context-init
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign 2: Constraint Analysis

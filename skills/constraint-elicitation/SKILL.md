@@ -1,8 +1,8 @@
 ---
 name: constraint-elicitation
-description: Structured questioning SOP to identify practical constraints that shape the research spec. Used during spec generation.
+description: Structured questioning SOP to identify practical constraints that shape
+  the research spec. Used during spec generation.
 execution: sequential
-used-by: writing-specs
 ---
 
 # Constraint Elicitation

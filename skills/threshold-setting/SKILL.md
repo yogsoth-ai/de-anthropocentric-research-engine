@@ -1,10 +1,13 @@
 ---
 name: threshold-setting
-description: Define minimum acceptable thresholds for each criterion based on context and constraints.
+description: Define minimum acceptable thresholds for each criterion based on context
+  and constraints.
 execution: subagent
 prompt: ./prompt.md
 input: criteria (string[]), context (string)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Threshold Setting

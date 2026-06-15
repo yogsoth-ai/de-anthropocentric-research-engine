@@ -1,9 +1,12 @@
 ---
 name: claim-negation
-description: "Formally negate the core claim, producing the logical complement for reductio testing."
+description: Formally negate the core claim, producing the logical complement for
+  reductio testing.
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Claim Negation

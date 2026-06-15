@@ -1,7 +1,12 @@
 ---
 name: question-reformulation
-description: Reframe research questions using abstraction laddering, HMW formulation, and Socratic probing. Find the most productive level and framing for investigation.
-used-by: insight
+description: Reframe research questions using abstraction laddering, HMW formulation,
+  and Socratic probing. Find the most productive level and framing for investigation.
+dependencies:
+  sops:
+  - abstraction-laddering
+  - hmw-formulation
+  - socratic-probing
 ---
 
 # Question Reformulation

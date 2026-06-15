@@ -1,7 +1,17 @@
 ---
 name: robustness-under-uncertainty
-description: Select portfolios that perform well across multiple future scenarios using Minimax regret, Robust optimization, Scenario planning, and Info-gap methods.
-used-by: portfolio-optimization
+description: Select portfolios that perform well across multiple future scenarios
+  using Minimax regret, Robust optimization, Scenario planning, and Info-gap methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  - scenario-stress-testing
+  sops:
+  - objective-definition
+  - optimization-run
+  - portfolio-evaluation-per-scenario
+  - portfolio-synthesis
+  - scenario-construction
 ---
 
 # Robustness Under Uncertainty

@@ -1,10 +1,13 @@
 ---
 name: convergence-assessment
-description: Compare results across multiple model variants — quantitative agreement metrics and qualitative conclusion stability.
+description: Compare results across multiple model variants — quantitative agreement
+  metrics and qualitative conclusion stability.
 execution: subagent
 prompt: ./prompt.md
 input: model_outputs (string), comparison_criteria (string)
-used-by: robustness-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Convergence Assessment

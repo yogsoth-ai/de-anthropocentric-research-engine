@@ -1,10 +1,13 @@
 ---
 name: stepping-stone
-description: Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique).
+description: Use impractical ideas as stepping stones to reach practical solutions
+  (de Bono Stepping Stone technique).
 execution: subagent
 prompt: ./prompt.md
 input: impractical_ideas (string)
-used-by: lateral-thinking, provocation-and-movement, random-entry, movement-extraction
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Stepping Stone

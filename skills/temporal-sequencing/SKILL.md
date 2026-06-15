@@ -1,7 +1,17 @@
 ---
 name: temporal-sequencing
-description: Determine optimal ordering and phasing of portfolio investments using Real Options, Critical path, Dependency graph, and Staged investment methods.
-used-by: portfolio-optimization
+description: Determine optimal ordering and phasing of portfolio investments using
+  Real Options, Critical path, Dependency graph, and Staged investment methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  - scenario-stress-testing
+  sops:
+  - objective-definition
+  - optimization-run
+  - portfolio-evaluation-per-scenario
+  - portfolio-synthesis
+  - scenario-construction
 ---
 
 # Temporal Sequencing

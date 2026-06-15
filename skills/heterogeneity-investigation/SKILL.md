@@ -1,7 +1,22 @@
 ---
 name: heterogeneity-investigation
-description: Explain why different studies reach different conclusions — heterogeneity investigation protocol. Budget: 30 studies, 30 effect sizes, 50 web searches.
-used-by: meta-analysis
+description: 'Explain why different studies reach different conclusions — heterogeneity
+  investigation protocol. Budget: 30 studies, 30 effect sizes, 50 web searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - heterogeneity-source-analysis
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Heterogeneity Investigation Strategy

@@ -1,10 +1,13 @@
 ---
 name: patent-query-formulation
-description: Construct keyword + IPC/CPC + assignee combination search strategies for patent databases
+description: Construct keyword + IPC/CPC + assignee combination search strategies
+  for patent databases
 execution: subagent
 prompt: ./prompt.md
 input: research_question, target_technology, known_assignees
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Patent Query Formulation

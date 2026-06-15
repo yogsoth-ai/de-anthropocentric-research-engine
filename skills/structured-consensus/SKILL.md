@@ -1,8 +1,23 @@
 ---
 name: structured-consensus
-description: Structured Consensus Campaign — converge multiple perspectives into shared agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA, Consensus Conference methods.
+description: Structured Consensus Campaign — converge multiple perspectives into shared
+  agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA,
+  Consensus Conference methods.
 execution: campaign
-used-by: convergence
+dependencies:
+  strategies:
+  - appropriateness-bounding
+  - argument-crystallization
+  - convergence-distillation
+  - disagreement-cartography
+  - futures-calibration
+  campaigns:
+  - convergence-multi-criteria-scoring
+  sops:
+  - context-checkpoint
+  - context-init
+  - convergence-multi-stakeholder-simulation
+  - convergence-saturation-detection
 ---
 
 # Structured Consensus

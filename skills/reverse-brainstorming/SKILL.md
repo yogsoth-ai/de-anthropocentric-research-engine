@@ -1,8 +1,17 @@
 ---
 name: reverse-brainstorming
-description: How to make it worse? → reverse for solutions. Generate anti-solutions then invert to discover novel approaches.
+description: How to make it worse? → reverse for solutions. Generate anti-solutions
+  then invert to discover novel approaches.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  sops:
+  - constructive-rebellion
+  - destruction-synthesis
+  - inversion-extraction
+  - reversal-generation
+  - worst-case-design
+  tactics:
+  - inversion-protocol
 ---
 
 # Reverse Brainstorming

@@ -1,8 +1,8 @@
 ---
 name: spec-self-review
-description: Quality gate for Research Specs. Checks for placeholders, consistency, scope, ambiguity, context protocol, and quantification. Mandatory before user review.
+description: Quality gate for Research Specs. Checks for placeholders, consistency,
+  scope, ambiguity, context protocol, and quantification. Mandatory before user review.
 execution: sequential
-used-by: writing-specs
 ---
 
 # Spec Self-Review

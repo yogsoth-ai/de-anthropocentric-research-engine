@@ -1,8 +1,8 @@
 ---
 name: campaign-selection
-description: Structured questioning SOP to determine which campaigns to include, emphasize, or skip. Used during spec generation.
+description: Structured questioning SOP to determine which campaigns to include, emphasize,
+  or skip. Used during spec generation.
 execution: sequential
-used-by: writing-specs
 ---
 
 # Campaign Selection

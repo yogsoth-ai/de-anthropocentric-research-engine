@@ -1,10 +1,13 @@
 ---
 name: sacred-cow-identification
-description: Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation.
+description: Find domain's unquestioned beliefs. Systematic identification of dogma
+  that constrains innovation.
 execution: subagent
 prompt: ./prompt.md
 input: domain_description (string), known_practices (string)
-used-by: assumption-enumeration, anti-benchmark, sacred-cow-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Sacred Cow Identification

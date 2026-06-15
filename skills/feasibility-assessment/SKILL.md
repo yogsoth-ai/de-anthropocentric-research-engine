@@ -1,8 +1,22 @@
 ---
 name: feasibility-assessment
-description: Feasibility Assessment Campaign — evaluate whether selected candidates can actually be implemented using TRL, NASSS, Stage-Gate, TRIZ, TOC, and parametric estimation methods.
+description: Feasibility Assessment Campaign — evaluate whether selected candidates
+  can actually be implemented using TRL, NASSS, Stage-Gate, TRIZ, TOC, and parametric
+  estimation methods.
 execution: campaign
-used-by: convergence
+dependencies:
+  strategies:
+  - comparative-feasibility-ranking
+  - constraint-identification
+  - maturation-pathway-design
+  - maturity-diagnosis
+  - resource-envelope-estimation
+  sops:
+  - context-checkpoint
+  - context-init
+  - convergence-paper-research
+  - convergence-paper-search
+  - convergence-saturation-detection
 ---
 
 # Feasibility Assessment

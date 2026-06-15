@@ -1,7 +1,15 @@
 ---
 name: assumption-criticality
-description: Measure how much conclusions change when each assumption is negated. Ranks assumptions by their impact on the final result.
-used-by: sensitivity-analysis
+description: Measure how much conclusions change when each assumption is negated.
+  Ranks assumptions by their impact on the final result.
+dependencies:
+  tactics:
+  - deep-insight-assumption-perturbation
+  sops:
+  - conclusion-sensitivity-measurement
+  - deep-insight-assumption-extraction
+  - negation-definition
+  - re-derivation
 ---
 
 # Assumption Criticality

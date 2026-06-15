@@ -1,8 +1,13 @@
 ---
 name: adversarial-debate-protocol
-description: Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds.
+description: Structured debate protocol that constructs an advocate, deploys critic
+  attacks, and renders a judge verdict through iterative rounds.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - advocate-construction
+  - critic-attack
+  - judge-verdict
 ---
 
 # Adversarial Debate Protocol

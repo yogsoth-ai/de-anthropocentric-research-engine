@@ -1,10 +1,13 @@
 ---
 name: perspective-assignment
-description: Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria.
+description: Define distinct stakeholder or analytical perspectives with their values,
+  concerns, and evaluation criteria.
 execution: subagent
 prompt: ./prompt.md
 input: decision, stakeholders
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Perspective Assignment

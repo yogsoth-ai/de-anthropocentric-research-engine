@@ -4,7 +4,9 @@ description: Assess documentation completeness against BetterBench/Datasheets st
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_documentation
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Documentation Audit SOP

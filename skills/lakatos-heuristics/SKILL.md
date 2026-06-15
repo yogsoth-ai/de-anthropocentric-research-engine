@@ -1,8 +1,17 @@
 ---
 name: lakatos-heuristics
-description: "Proofs and Refutations method: generate counterexamples, attempt monster-barring, incorporate surviving counterexamples as lemma refinements."
+description: 'Proofs and Refutations method: generate counterexamples, attempt monster-barring,
+  incorporate surviving counterexamples as lemma refinements.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - contradiction-derivation
+  - counterexample-heuristics
+  sops:
+  - claim-refinement
+  - contradiction-detection
+  - counterexample-generation
+  - monster-barring-attempt
 ---
 
 # Lakatos Heuristics

@@ -4,7 +4,9 @@ description: Build n-dimensional morphological matrix
 execution: subagent
 prompt: ./prompt.md
 input: parameters (array), values (object)
-used-by: zwicky-box-construction, general-morphological-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Matrix Construction

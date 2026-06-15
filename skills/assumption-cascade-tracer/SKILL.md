@@ -1,10 +1,13 @@
 ---
 name: assumption-cascade-tracer
-description: Build assumption dependency graphs and trace cascade failures when root assumptions are invalidated.
+description: Build assumption dependency graphs and trace cascade failures when root
+  assumptions are invalidated.
 execution: subagent
 prompt: ./prompt.md
 input: assumptions (string), attack_results (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Assumption Cascade Tracer

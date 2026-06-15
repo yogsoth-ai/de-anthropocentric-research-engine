@@ -1,7 +1,13 @@
 ---
 name: argument-crystallization
-description: Distill the strongest arguments from each perspective through Argument Delphi or Dialectical Delphi methods.
-used-by: structured-consensus
+description: Distill the strongest arguments from each perspective through Argument
+  Delphi or Dialectical Delphi methods.
+dependencies:
+  tactics:
+  - disagreement-mapping
+  - iterative-convergence-round
+  sops:
+  - consensus-synthesis
 ---
 
 # Argument Crystallization

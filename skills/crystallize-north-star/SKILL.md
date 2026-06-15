@@ -1,6 +1,9 @@
 ---
 name: crystallize-north-star
-description: "Fuse the GoalTree root node and user motivation into a single crystallized North Star statement. Format: '[verb] [specific goal], through [method/path], solving [what problem], ultimately [what impact]'. Quality checks: specific? ambitious? achievable?"
+description: 'Fuse the GoalTree root node and user motivation into a single crystallized
+  North Star statement. Format: ''[verb] [specific goal], through [method/path], solving
+  [what problem], ultimately [what impact]''. Quality checks: specific? ambitious?
+  achievable?'
 execution: dialogue
 ---
 

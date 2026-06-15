@@ -1,10 +1,13 @@
 ---
 name: time-machine
-description: Temporal projection — view a solution from future/past time horizons to generate temporally-informed insights.
+description: Temporal projection — view a solution from future/past time horizons
+  to generate temporally-informed insights.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string), time_scale (string)
-used-by: perspective-forcing, temporal-projection, perspective-rotation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Time Machine

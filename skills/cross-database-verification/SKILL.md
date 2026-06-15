@@ -1,10 +1,14 @@
 ---
 name: cross-database-verification
-description: Verify gap existence across multiple databases (Semantic Scholar, Google Scholar, arXiv, domain-specific). Distinguishes database-specific gaps from universal gaps.
+description: Verify gap existence across multiple databases (Semantic Scholar, Google
+  Scholar, arXiv, domain-specific). Distinguishes database-specific gaps from universal
+  gaps.
 execution: subagent
 prompt: ./prompt.md
 input: gap_description (string), databases_to_check (string)
-used-by: gap-validation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Cross-Database Verification

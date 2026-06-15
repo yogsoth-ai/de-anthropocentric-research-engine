@@ -1,7 +1,16 @@
 ---
 name: benchmark-audit
-description: Systematic quality assessment using BetterBench 46-criterion framework — 5 benchmarks, 30 papers, 40 web searches
-used-by: benchmark-archaeology
+description: Systematic quality assessment using BetterBench 46-criterion framework
+  — 5 benchmarks, 30 papers, 40 web searches
+dependencies:
+  tactics:
+  - artifact-detection
+  sops:
+  - benchmark-synthesis
+  - contamination-audit
+  - documentation-audit
+  - knowledge-acquisition-benchmark-inventory
+  - metric-decomposition
 ---
 
 # Benchmark Audit Strategy

@@ -1,10 +1,13 @@
 ---
 name: conjunctive-filter
-description: Apply conjunctive screening rules to eliminate candidates that fail any threshold.
+description: Apply conjunctive screening rules to eliminate candidates that fail any
+  threshold.
 execution: subagent
 prompt: ./prompt.md
 input: candidates (string[]), thresholds (object[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Conjunctive Filter

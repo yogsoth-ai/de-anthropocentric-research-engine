@@ -1,8 +1,13 @@
 ---
 name: evidence-synthesis-planning
-description: Plan the statistical synthesis approach — model selection, heterogeneity strategy, and reporting
+description: Plan the statistical synthesis approach — model selection, heterogeneity
+  strategy, and reporting
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - effect-size-planning
+  - heterogeneity-source-analysis
+  - sensitivity-analysis-design
 ---
 
 # Evidence Synthesis Planning Tactic

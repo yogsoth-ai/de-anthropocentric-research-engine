@@ -1,10 +1,13 @@
 ---
 name: springboard-launch
-description: Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms.
+description: Convert analogy insights into concrete feasible solutions. Transform
+  abstract connections into actionable mechanisms.
 execution: subagent
 prompt: ./prompt.md
 input: analogy_insights (string)
-used-by: synectics, direct-analogy, personal-analogy, symbolic-analogy, fantasy-analogy, excursion-method, excursion-orchestration, compressed-conflict
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Springboard Launch

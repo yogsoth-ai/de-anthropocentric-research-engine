@@ -1,7 +1,19 @@
 ---
 name: scoping-survey
-description: Broad landscape mapping strategy — quickly understand what exists in a field. Prioritizes breadth over depth with high paper-overview volume and minimal deep reading. Use when entering a new field or needing orientation before committing to deeper investigation.
-used-by: literature-survey
+description: Broad landscape mapping strategy — quickly understand what exists in
+  a field. Prioritizes breadth over depth with high paper-overview volume and minimal
+  deep reading. Use when entering a new field or needing orientation before committing
+  to deeper investigation.
+dependencies:
+  sops:
+  - categorize-papers
+  - knowledge-acquisition-gap-identification
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-web-research
+  - knowledge-acquisition-web-search
+  - survey-synthesis
+  - taxonomy-mapping
 ---
 
 # Scoping Survey

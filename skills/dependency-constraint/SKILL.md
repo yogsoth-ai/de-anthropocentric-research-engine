@@ -1,14 +1,20 @@
 ---
 name: dependency-constraint
-description: "What must be completed first? — Dependency chain analysis + prerequisite graph construction"
+description: What must be completed first? — Dependency chain analysis + prerequisite
+  graph construction
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - dependency-graph-construction
-  - critical-chain-identification
+- dependency-graph-construction
+- critical-chain-identification
 tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
+  - critical-chain-identification
+  - dependency-graph-construction
+  tactics:
   - sensitivity-ranking
 ---
 

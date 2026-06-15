@@ -1,10 +1,15 @@
 ---
 name: verdict-synthesis
-description: Synthesizes findings from a completed campaign into typed verdict reports. Produces DebateVerdict, RedTeamReport, FailureAnticipationReport, CounterfactualMap, or AdversarialStressReport depending on campaign. Also supports cross-campaign StressTestSummary.
+description: Synthesizes findings from a completed campaign into typed verdict reports.
+  Produces DebateVerdict, RedTeamReport, FailureAnticipationReport, CounterfactualMap,
+  or AdversarialStressReport depending on campaign. Also supports cross-campaign StressTestSummary.
 execution: subagent
 prompt: ./prompt.md
-input: campaign_name (string), strategy_outputs (string), weakness_classifications (string)
-used-by: multiagent-debate, red-teaming, failure-anticipation, counterfactual-probing, adversarial-stress-testing
+input: campaign_name (string), strategy_outputs (string), weakness_classifications
+  (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Verdict Synthesis

@@ -1,10 +1,13 @@
 ---
 name: heterogeneity-source-analysis
-description: Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical)
+description: Identify and classify sources of between-study heterogeneity (clinical,
+  methodological, statistical)
 execution: subagent
 prompt: ./prompt.md
 input: study_characteristics, effect_sizes, moderator_candidates
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Heterogeneity Source Analysis SOP

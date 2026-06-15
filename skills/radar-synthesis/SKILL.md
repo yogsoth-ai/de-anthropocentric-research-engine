@@ -1,10 +1,13 @@
 ---
 name: radar-synthesis
-description: Synthesize multiple dimension scores into radar chart data and compute overall readiness.
+description: Synthesize multiple dimension scores into radar chart data and compute
+  overall readiness.
 execution: subagent
 prompt: ./prompt.md
 input: dimension_scores[]
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Radar Synthesis

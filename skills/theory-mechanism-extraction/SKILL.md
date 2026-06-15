@@ -1,18 +1,21 @@
 ---
 name: theory-mechanism-extraction
-description: "Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选"
+description: 'Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: hypothesis-formulation
 sops:
-  - theory-identification
-  - mechanism-extraction
-  - variable-identification
-  - relationship-specification
+- theory-identification
+- mechanism-extraction
+- variable-identification
+- relationship-specification
 dependencies:
-  skills:
-    - subagent-spawning
+  sops:
+  - hypothesis-formation-variable-identification
+  - mechanism-extraction
+  - relationship-specification
+  - theory-identification
 ---
 
 # Theory Mechanism Extraction

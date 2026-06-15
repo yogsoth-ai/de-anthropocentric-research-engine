@@ -1,10 +1,13 @@
 ---
 name: finding-aggregation
-description: Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report.
+description: Aggregate, deduplicate, and classify findings from multiple probes into
+  a coherent vulnerability report.
 execution: subagent
 prompt: ./prompt.md
 input: findings (string), attack_metadata (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Finding Aggregation

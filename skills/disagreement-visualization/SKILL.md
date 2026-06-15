@@ -1,10 +1,13 @@
 ---
 name: disagreement-visualization
-description: Produce a structured disagreement map showing clusters, arguments, and fault lines.
+description: Produce a structured disagreement map showing clusters, arguments, and
+  fault lines.
 execution: subagent
 prompt: ./prompt.md
 input: clusters[], arguments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Disagreement Visualization

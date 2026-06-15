@@ -1,14 +1,17 @@
 ---
 name: critical-path-calculation
-description: "CPM forward/backward pass with float calculation to identify the critical path"
+description: CPM forward/backward pass with float calculation to identify the critical
+  path
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: critical-path-planning
 input: activity list with dependencies and PERT duration estimates
 output: critical path, float table, earliest/latest start-finish times
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Critical Path Calculation

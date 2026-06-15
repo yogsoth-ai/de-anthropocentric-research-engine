@@ -1,10 +1,10 @@
-﻿---
+---
 name: method-discovery
-description: Identify all relevant methods via literature, leaderboards, citation chains
+description: Identify all relevant methods via literature, leaderboards, citation
+  chains
 execution: subagent
 prompt: ./prompt.md
 input: task_name, domain, known_methods
-used-by: baseline-establishment
 ---
 
 # Method Discovery

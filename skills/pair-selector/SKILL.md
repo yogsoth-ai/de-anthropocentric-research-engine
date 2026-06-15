@@ -1,10 +1,13 @@
 ---
 name: pair-selector
-description: Select the next comparison pairs that maximize information gain given current ratings and comparison history.
+description: Select the next comparison pairs that maximize information gain given
+  current ratings and comparison history.
 execution: subagent
 prompt: ./prompt.md
 input: current_ratings(object), comparison_history(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Pair Selector

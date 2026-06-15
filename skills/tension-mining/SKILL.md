@@ -1,7 +1,14 @@
 ---
 name: tension-mining
-description: Identify opposing forces that keep gaps open. Uses evaporating cloud to expose hidden assumptions behind conflicts and polarity mapping for unresolvable tensions.
-used-by: insight
+description: Identify opposing forces that keep gaps open. Uses evaporating cloud
+  to expose hidden assumptions behind conflicts and polarity mapping for unresolvable
+  tensions.
+dependencies:
+  tactics:
+  - dialectical-synthesis
+  sops:
+  - evaporating-cloud
+  - polarity-mapping
 ---
 
 # Tension Mining

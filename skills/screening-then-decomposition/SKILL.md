@@ -1,8 +1,15 @@
 ---
 name: screening-then-decomposition
-description: Two-phase sensitivity — Morris quick screening to eliminate unimportant factors, then Sobol precise decomposition on survivors. Efficient allocation of analytical effort.
+description: Two-phase sensitivity — Morris quick screening to eliminate unimportant
+  factors, then Sobol precise decomposition on survivors. Efficient allocation of
+  analytical effort.
 execution: tactic
-used-by: parameter-screening, variance-decomposition
+dependencies:
+  sops:
+  - deep-insight-paper-search
+  - interaction-detection
+  - morris-screening
+  - sobol-decomposition
 ---
 
 # Screening Then Decomposition

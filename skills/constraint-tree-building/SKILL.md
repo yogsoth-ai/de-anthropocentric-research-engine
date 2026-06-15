@@ -1,14 +1,18 @@
 ---
 name: constraint-tree-building
-description: "Build Current Reality Tree from UDEs through causal chains to core conflicts"
+description: Build Current Reality Tree from UDEs through causal chains to core conflicts
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: constraint-analysis
 orchestrates:
-  - undesirable-effect-listing
+- undesirable-effect-listing
+- causal-chain-tracing
+- core-conflict-extraction
+dependencies:
+  sops:
   - causal-chain-tracing
   - core-conflict-extraction
+  - undesirable-effect-listing
 ---
 
 # Tactic: Constraint Tree Building

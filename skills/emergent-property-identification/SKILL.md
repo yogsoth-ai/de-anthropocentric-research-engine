@@ -4,7 +4,9 @@ description: Identify non-additive properties from combinations
 execution: subagent
 prompt: ./prompt.md
 input: combination_proposal (object)
-used-by: combinatorial-creativity, emergent-property-hunting, function-combination, design-space-exploration
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Emergent Property Identification

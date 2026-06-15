@@ -1,15 +1,15 @@
 ---
 name: scope-assessment
-description: "SOP: 评估研究问题的范围是否合适（太宽/合适/太窄）"
+description: 'SOP: 评估研究问题的范围是否合适（太宽/合适/太窄）'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究问题（RQ）"
-output: "范围判定 + 调整建议"
+input: 研究问题（RQ）
+output: 范围判定 + 调整建议
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Scope Assessment

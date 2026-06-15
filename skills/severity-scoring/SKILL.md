@@ -1,10 +1,13 @@
 ---
 name: severity-scoring
-description: Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts.
+description: Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA
+  severity scale calibrated for research artifacts.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), chains (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Severity Scoring

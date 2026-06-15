@@ -1,10 +1,13 @@
 ---
 name: citation-network-analysis
-description: Build and analyze patent citation networks — main path analysis, PageRank, cluster detection
+description: Build and analyze patent citation networks — main path analysis, PageRank,
+  cluster detection
 execution: subagent
 prompt: ./prompt.md
 input: patent_citation_pairs
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Citation Network Analysis

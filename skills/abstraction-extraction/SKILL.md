@@ -1,10 +1,13 @@
 ---
 name: abstraction-extraction
-description: Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms.
+description: Extract abstract principles from concrete domain cases. Strips domain-specific
+  details to reveal transferable mechanisms.
 execution: subagent
 prompt: ./prompt.md
 input: source_domain_case (string)
-used-by: cross-domain-discovery, facet-bisociation, analogical-transfer, forced-bridge-construction, design-by-analogy, domain-divergence
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Abstraction Extraction

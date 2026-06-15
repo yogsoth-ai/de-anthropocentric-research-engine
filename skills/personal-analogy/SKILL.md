@@ -1,8 +1,13 @@
 ---
 name: personal-analogy
-description: Empathic identification — become the system/component. First-person embodiment to discover hidden constraints and opportunities.
+description: Empathic identification — become the system/component. First-person embodiment
+  to discover hidden constraints and opportunities.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - personal-identification
+  - springboard-launch
+  - synectics-synthesis
 ---
 
 # Personal Analogy

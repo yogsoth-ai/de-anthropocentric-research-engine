@@ -1,7 +1,14 @@
 ---
 name: root-cause-drilling
-description: Drill from surface symptoms to root causes via 5 Whys, Ishikawa decomposition, and Current Reality Trees. Validates each causal link with literature evidence.
-used-by: insight
+description: Drill from surface symptoms to root causes via 5 Whys, Ishikawa decomposition,
+  and Current Reality Trees. Validates each causal link with literature evidence.
+dependencies:
+  tactics:
+  - causal-tree-building
+  sops:
+  - current-reality-tree
+  - five-whys-drilling
+  - ishikawa-decomposition
 ---
 
 # Root-Cause Drilling

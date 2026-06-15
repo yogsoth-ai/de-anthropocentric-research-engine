@@ -1,8 +1,13 @@
 ---
 name: threshold-calibration
-description: Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve.
+description: Systematically sweep consensus thresholds to observe which items achieve
+  consensus at what level, producing a threshold-consensus curve.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - consensus-classification
+  - consensus-measurement
+  - threshold-sweep
 ---
 
 # Threshold Calibration

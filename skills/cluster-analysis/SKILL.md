@@ -1,10 +1,13 @@
 ---
 name: cluster-analysis
-description: Identify natural opinion clusters from collected judgments and characterize each cluster.
+description: Identify natural opinion clusters from collected judgments and characterize
+  each cluster.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Cluster Analysis

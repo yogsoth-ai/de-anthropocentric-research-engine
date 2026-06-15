@@ -1,8 +1,17 @@
 ---
 name: biotriz-resolution
-description: "BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve technical contradictions using biological inventive principles."
+description: 'BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve
+  technical contradictions using biological inventive principles.'
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biological-strategy-extraction
+  - biomimicry-synthesis
+  - biotriz-principle-selection
+  - emulation-generation
+  tactics:
+  - biological-function-mapping
 ---
 
 # BioTRIZ Resolution

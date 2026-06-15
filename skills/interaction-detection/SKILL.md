@@ -1,10 +1,13 @@
 ---
 name: interaction-detection
-description: Detect and characterize significant parameter interactions from Sobol decomposition results.
+description: Detect and characterize significant parameter interactions from Sobol
+  decomposition results.
 execution: subagent
 prompt: ./prompt.md
 input: sobol_results
-used-by: variance-decomposition
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

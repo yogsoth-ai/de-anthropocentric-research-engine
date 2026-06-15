@@ -1,8 +1,14 @@
 ---
 name: recombination-architecture
-description: Reassemble decomposed fragments into novel structures through systematic recombination of components.
+description: Reassemble decomposed fragments into novel structures through systematic
+  recombination of components.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - recombination-generation
+  - structural-synthesis
 ---
 
 # Recombination Architecture

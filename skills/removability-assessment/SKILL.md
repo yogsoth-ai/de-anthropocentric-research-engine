@@ -1,10 +1,13 @@
 ---
 name: removability-assessment
-description: Assess how removable a constraint is with effort estimate and dependency analysis.
+description: Assess how removable a constraint is with effort estimate and dependency
+  analysis.
 execution: subagent
 prompt: ./prompt.md
 input: constraint
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Removability Assessment

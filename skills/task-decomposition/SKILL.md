@@ -1,11 +1,17 @@
 ---
 name: task-decomposition
-description: "Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan"
+description: Orchestrate the breakdown of experiment design into sequenced, estimated,
+  and formatted task plan
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- activity-listing
+- dependency-sequencing
+- duration-estimation
+- plan-formatting
+dependencies:
+  sops:
   - activity-listing
   - dependency-sequencing
   - duration-estimation

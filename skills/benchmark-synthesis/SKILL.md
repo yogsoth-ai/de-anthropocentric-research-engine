@@ -4,7 +4,9 @@ description: Produce final structured audit report
 execution: subagent
 prompt: ./prompt.md
 input: all_analysis_results
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Benchmark Synthesis SOP

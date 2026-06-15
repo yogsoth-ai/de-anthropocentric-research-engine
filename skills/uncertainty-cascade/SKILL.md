@@ -1,8 +1,15 @@
 ---
 name: uncertainty-cascade
-description: Uncertainty cascade propagation — assign input distributions, sample via Monte Carlo, propagate through model, analyze output distribution, identify critical paths. Maps how input uncertainty flows to output uncertainty.
+description: Uncertainty cascade propagation — assign input distributions, sample
+  via Monte Carlo, propagate through model, analyze output distribution, identify
+  critical paths. Maps how input uncertainty flows to output uncertainty.
 execution: tactic
-used-by: uncertainty-propagation
+dependencies:
+  sops:
+  - critical-path-identification
+  - deep-insight-paper-search
+  - distribution-assignment
+  - monte-carlo-sampling
 ---
 
 # Uncertainty Cascade

@@ -1,8 +1,37 @@
 ---
 name: perspective-forcing
-description: Perspective Forcing Campaign — discover hidden solutions by systematically switching viewpoints via roles, six hats, temporal projection, and constraint injection
+description: Perspective Forcing Campaign — discover hidden solutions by systematically
+  switching viewpoints via roles, six hats, temporal projection, and constraint injection
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - competitor-simulation
+  - constraint-injection
+  - constraint-response
+  - context-checkpoint
+  - context-init
+  - creative-ideation-assumption-surfacing
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - idea-synthesis
+  - novice-perspective
+  - perspective-synthesis
+  - po-provocation
+  - practitioner-hat
+  - reviewer2-hat
+  - theorist-hat
+  - time-machine
+  strategies:
+  - constraint-driven-ideation
+  - role-based-ideation
+  - six-hats-rotation
+  - stakeholder-simulation
+  - temporal-projection
+  tactics:
+  - constraint-protocol
+  - creative-ideation-perspective-rotation
+  - creative-ideation-provocation-generation
+  - evaluation-filtering
 ---
 
 # Perspective Forcing

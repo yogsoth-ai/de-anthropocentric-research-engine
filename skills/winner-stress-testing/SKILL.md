@@ -1,7 +1,12 @@
 ---
 name: winner-stress-testing
-description: Stress-test the winning candidate using Pre-mortem, Red Teaming, and Failure Mode Analysis to expose hidden weaknesses before commitment.
-used-by: steel-manning
+description: Stress-test the winning candidate using Pre-mortem, Red Teaming, and
+  Failure Mode Analysis to expose hidden weaknesses before commitment.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - assumption-excavation
+  - multi-perspective-attack
 ---
 
 # Winner Stress-Testing

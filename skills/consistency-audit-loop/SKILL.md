@@ -1,8 +1,13 @@
 ---
 name: consistency-audit-loop
-description: Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met.
+description: Detect preference cycles, localize inconsistent judgments, request corrections,
+  and recompute ratings until consistency threshold is met.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - comparison-executor
+  - cycle-detection
+  - inconsistency-localization
 ---
 
 # Consistency Audit Loop

@@ -1,7 +1,11 @@
 ---
 name: full-ranking
-description: Produce a complete ordering of all candidates using PROMETHEE I/II, ELECTRE III, or MAVT methods.
-used-by: multi-criteria-scoring
+description: Produce a complete ordering of all candidates using PROMETHEE I/II, ELECTRE
+  III, or MAVT methods.
+dependencies:
+  tactics:
+  - convergence-scoring-matrix-construction
+  - multi-method-triangulation
 ---
 
 # Full Ranking

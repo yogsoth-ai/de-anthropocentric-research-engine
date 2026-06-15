@@ -1,8 +1,23 @@
 ---
 name: steel-manning
-description: Steel-Manning Campaign — adversarial verification of convergence decisions through resurrection advocacy, winner stress-testing, criteria interrogation, and multi-perspective attack using Devil's Advocacy, Pre-mortem, Red Teaming, Dialectical Inquiry methods.
+description: Steel-Manning Campaign — adversarial verification of convergence decisions
+  through resurrection advocacy, winner stress-testing, criteria interrogation, and
+  multi-perspective attack using Devil's Advocacy, Pre-mortem, Red Teaming, Dialectical
+  Inquiry methods.
 execution: campaign
-used-by: convergence
+dependencies:
+  strategies:
+  - counter-thesis-construction
+  - criteria-interrogation
+  - resurrection-advocacy
+  - stakeholder-objection-simulation
+  - winner-stress-testing
+  sops:
+  - context-checkpoint
+  - context-init
+  - convergence-multi-stakeholder-simulation
+  - convergence-saturation-detection
+  - convergence-sensitivity-analysis
 ---
 
 # Steel-Manning

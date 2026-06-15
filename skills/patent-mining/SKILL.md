@@ -1,8 +1,19 @@
 ---
 name: patent-mining
-description: Systematic Patent Analysis Campaign — 5 strategies for patent landscape analysis, prior art search, white space identification, competitive intelligence, and claim analysis. Produces structured patent intelligence reports.
+description: Systematic Patent Analysis Campaign — 5 strategies for patent landscape
+  analysis, prior art search, white space identification, competitive intelligence,
+  and claim analysis. Produces structured patent intelligence reports.
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - claim-analysis
+  - competitive-intelligence
+  - landscape-survey
+  - prior-art-search
+  - white-space-analysis
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Patent Mining

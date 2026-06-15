@@ -1,17 +1,19 @@
 ---
 name: priority-sensitivity-testing
-description: "Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性"
+description: 'Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: gap-prioritization
 sops:
-  - ahp-weighting
-  - weight-perturbation
-  - priority-synthesis
+- ahp-weighting
+- weight-perturbation
+- priority-synthesis
 dependencies:
-  skills:
-    - subagent-spawning
+  sops:
+  - ahp-weighting
+  - priority-synthesis
+  - weight-perturbation
 ---
 
 # Priority Sensitivity Testing

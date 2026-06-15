@@ -1,9 +1,20 @@
 ---
 name: structured-attack-campaign
-description: "Tactic: Full attack lifecycle — threat surface enumeration, attack vector generation, systematic probing, and finding aggregation across all surfaces."
+description: 'Tactic: Full attack lifecycle — threat surface enumeration, attack vector
+  generation, systematic probing, and finding aggregation across all surfaces.'
 type: tactic
-used-by: [red-teaming]
-strategies: [systematic-probing, assumption-challenge, adversarial-persona, alternative-analysis]
+strategies:
+- systematic-probing
+- assumption-challenge
+- adversarial-persona
+- alternative-analysis
+dependencies:
+  sops:
+  - attack-resilience-scoring
+  - attack-vector-generation
+  - finding-aggregation
+  - probe-execution
+  - threat-surface-mapping
 ---
 
 # Structured Attack Campaign Tactic

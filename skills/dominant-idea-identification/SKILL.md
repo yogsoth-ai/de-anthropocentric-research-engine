@@ -1,10 +1,13 @@
 ---
 name: dominant-idea-identification
-description: Identify dominant paradigms and assumptions constraining thinking in a research field.
+description: Identify dominant paradigms and assumptions constraining thinking in
+  a research field.
 execution: subagent
 prompt: ./prompt.md
 input: research_domain_description
-used-by: dominant-idea-escape
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

@@ -1,10 +1,13 @@
 ---
 name: excursion-departure
-description: Leave the problem entirely and explore an unrelated domain. Produces excursion domain discoveries for later force-fitting.
+description: Leave the problem entirely and explore an unrelated domain. Produces
+  excursion domain discoveries for later force-fitting.
 execution: subagent
 prompt: ./prompt.md
 input: problem (string)
-used-by: synectics, excursion-method, excursion-orchestration
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Excursion Departure

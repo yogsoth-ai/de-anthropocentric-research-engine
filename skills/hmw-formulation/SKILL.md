@@ -1,10 +1,13 @@
 ---
 name: hmw-formulation
-description: Generate "How Might We" questions at different scope levels (narrow, medium, broad). Ensures each is actionable without being prescriptive.
+description: Generate "How Might We" questions at different scope levels (narrow,
+  medium, broad). Ensures each is actionable without being prescriptive.
 execution: subagent
 prompt: ./prompt.md
 input: insight_or_tension (string), context (string)
-used-by: question-reformulation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # HMW Formulation

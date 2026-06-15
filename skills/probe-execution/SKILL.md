@@ -1,10 +1,13 @@
 ---
 name: probe-execution
-description: Execute a single attack probe against an artifact, record the result with evidence and severity classification.
+description: Execute a single attack probe against an artifact, record the result
+  with evidence and severity classification.
 execution: subagent
 prompt: ./prompt.md
 input: vector (string), artifact (string), persona (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Probe Execution

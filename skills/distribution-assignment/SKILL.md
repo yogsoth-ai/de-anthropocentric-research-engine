@@ -1,10 +1,13 @@
 ---
 name: distribution-assignment
-description: Assign probability distributions to uncertain parameters based on available evidence and domain knowledge.
+description: Assign probability distributions to uncertain parameters based on available
+  evidence and domain knowledge.
 execution: subagent
 prompt: ./prompt.md
 input: parameter_list, available_evidence
-used-by: uncertainty-propagation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

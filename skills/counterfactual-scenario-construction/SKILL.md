@@ -1,10 +1,13 @@
 ---
 name: counterfactual-scenario-construction
-description: Construct precise, internally consistent counterfactual scenarios where specified factors are altered, then reason about the resulting conclusion.
+description: Construct precise, internally consistent counterfactual scenarios where
+  specified factors are altered, then reason about the resulting conclusion.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), factor_to_change (string), change_specification (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Counterfactual Scenario Construction

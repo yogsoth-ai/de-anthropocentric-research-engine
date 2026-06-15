@@ -1,10 +1,13 @@
 ---
 name: failure-chain-construction
-description: Build cause-mode-effect chains tracing upstream root causes and downstream cascading effects for each failure mode.
+description: Build cause-mode-effect chains tracing upstream root causes and downstream
+  cascading effects for each failure mode.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), function_tree (string), depth (number)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Failure Chain Construction

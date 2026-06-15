@@ -1,8 +1,13 @@
 ---
 name: domain-divergence
-description: Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential.
+description: Scan and select maximally diverse source domains. Ensures creative search
+  covers genuinely unrelated fields with high transfer potential.
 execution: tactic
-used-by: cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy
+dependencies:
+  sops:
+  - abstraction-extraction
+  - analogy-quality-assessment
+  - random-paper-entry
 ---
 
 # Domain Divergence

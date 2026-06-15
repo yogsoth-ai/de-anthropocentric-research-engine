@@ -1,8 +1,13 @@
 ---
 name: life-principles-application
-description: "Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design."
+description: Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction
+  → evolution-mechanism-transfer → abstraction-to-design.
 execution: tactic
-used-by: biomimicry, ecosystem-pattern, evolution-strategy
+dependencies:
+  sops:
+  - abstraction-to-design
+  - ecosystem-pattern-extraction
+  - evolution-mechanism-transfer
 ---
 
 # Life Principles Application

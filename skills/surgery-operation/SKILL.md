@@ -1,10 +1,13 @@
 ---
 name: surgery-operation
-description: Execute component surgery operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking.
+description: Execute component surgery operations (subtract/multiply/divide/unify/redirect)
+  from Systematic Inventive Thinking.
 execution: subagent
 prompt: ./prompt.md
 input: component_analysis (string)
-used-by: structural-deconstruction, component-surgery
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Surgery Operation

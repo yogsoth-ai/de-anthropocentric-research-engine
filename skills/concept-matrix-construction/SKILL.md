@@ -1,10 +1,13 @@
 ---
 name: concept-matrix-construction
-description: Build articles × concepts coverage matrix to visualize research landscape and identify empty cells as gap candidates.
+description: Build articles × concepts coverage matrix to visualize research landscape
+  and identify empty cells as gap candidates.
 execution: subagent
 prompt: ./prompt.md
 input: paper_collection (string), concept_list (string)
-used-by: gap-identification
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Concept Matrix Construction

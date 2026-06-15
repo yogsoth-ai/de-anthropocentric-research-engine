@@ -1,8 +1,37 @@
 ---
 name: cross-domain-discovery
-description: Cross-Domain Discovery Campaign — find transferable mechanisms from unrelated fields via bisociation, analogical transfer, random stimulus, and forced bridging
+description: Cross-Domain Discovery Campaign — find transferable mechanisms from unrelated
+  fields via bisociation, analogical transfer, random stimulus, and forced bridging
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - abstraction-extraction
+  - analogy-quality-assessment
+  - bisociation-network-construction
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - cross-domain-synthesis
+  - domain-scanning
+  - forced-connection
+  - idea-synthesis
+  - random-paper-entry
+  - random-word-stimulus
+  - structural-mapping
+  - transfer-adaptation
+  strategies:
+  - analogical-transfer
+  - design-by-analogy
+  - facet-bisociation
+  - forced-bridge-construction
+  - random-stimulus-entry
+  tactics:
+  - analogy-extraction
+  - bridge-validation
+  - creative-ideation-provocation-generation
+  - domain-divergence
+  - evaluation-filtering
 ---
 
 # Cross-Domain Discovery

@@ -1,10 +1,13 @@
 ---
 name: salience-classification
-description: Classify stakeholders by Mitchell et al. framework (Power, Legitimacy, Urgency). Assigns salience category and identifies systematically excluded parties.
+description: Classify stakeholders by Mitchell et al. framework (Power, Legitimacy,
+  Urgency). Assigns salience category and identifies systematically excluded parties.
 execution: subagent
 prompt: ./prompt.md
 input: stakeholder_list (string), context (string)
-used-by: stakeholder-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Salience Classification

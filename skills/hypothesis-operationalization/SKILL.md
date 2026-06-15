@@ -1,22 +1,22 @@
 ---
 name: hypothesis-operationalization
-description: "Strategy: 将 working hypothesis 精确化为可测试形式"
+description: 'Strategy: 将 working hypothesis 精确化为可测试形式'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: hypothesis-formulation
 tactics:
-  - falsifiability-audit
+- falsifiability-audit
 sops:
-  - operationalization
-  - falsifiability-check
-  - boundary-condition-specification
-  - variable-identification
+- operationalization
+- falsifiability-check
+- boundary-condition-specification
+- variable-identification
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - literature-engine
+  tactics:
+  - falsifiability-audit
+  sops:
+  - hypothesis-formation-variable-identification
 ---
 
 # Hypothesis Operationalization

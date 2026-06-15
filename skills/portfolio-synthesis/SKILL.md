@@ -1,10 +1,13 @@
 ---
 name: portfolio-synthesis
-description: Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance.
+description: Synthesize all per-scenario evaluations into a final portfolio recommendation
+  with robustness score and actionable guidance.
 execution: subagent
 prompt: ./prompt.md
 input: all_evaluations
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Portfolio Synthesis

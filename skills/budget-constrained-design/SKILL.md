@@ -1,14 +1,18 @@
 ---
 name: budget-constrained-design
-description: "Optimize experiment design under compute and time budget constraints"
+description: Optimize experiment design under compute and time budget constraints
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
+- factor-identification
+- level-specification
+- design-matrix-construction
+dependencies:
+  sops:
+  - design-matrix-construction
   - factor-identification
   - level-specification
-  - design-matrix-construction
 ---
 
 # Tactic: Budget-Constrained Design

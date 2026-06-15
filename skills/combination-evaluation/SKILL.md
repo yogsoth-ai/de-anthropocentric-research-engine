@@ -4,7 +4,9 @@ description: Evaluate new combinations for feasibility and novelty
 execution: subagent
 prompt: ./prompt.md
 input: combination_proposals (array)
-used-by: white-space-identification, design-space-mapping, general-morphological-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Combination Evaluation

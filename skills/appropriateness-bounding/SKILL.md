@@ -1,7 +1,13 @@
 ---
 name: appropriateness-bounding
-description: Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols.
-used-by: structured-consensus
+description: Establish acceptability standards through RAND/UCLA Appropriateness Method
+  or Consensus Conference protocols.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  - threshold-calibration
+  sops:
+  - consensus-synthesis
 ---
 
 # Appropriateness Bounding

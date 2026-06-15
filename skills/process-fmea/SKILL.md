@@ -1,9 +1,24 @@
 ---
 name: process-fmea
-description: "Strategy: Research execution process FMEA — analyzes how the research process itself can fail during execution, distinct from design-level failures."
+description: 'Strategy: Research execution process FMEA — analyzes how the research
+  process itself can fail during execution, distinct from design-level failures.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [failure-chain-tracing, mitigation-validation]
+tactics:
+- failure-chain-tracing
+- mitigation-validation
+dependencies:
+  tactics:
+  - failure-chain-tracing
+  - mitigation-validation
+  sops:
+  - action-priority-matrix
+  - detection-scoring
+  - failure-chain-construction
+  - failure-mode-extraction
+  - function-analysis
+  - mitigation-design-sop
+  - occurrence-scoring
+  - severity-scoring
 ---
 
 # Process FMEA Strategy

@@ -1,10 +1,13 @@
 ---
 name: clr-validation
-description: Apply Goldratt's 8 Categories of Legitimate Reservation to validate causal claims. Tests clarity, existence, sufficiency, and logical integrity.
+description: Apply Goldratt's 8 Categories of Legitimate Reservation to validate causal
+  claims. Tests clarity, existence, sufficiency, and logical integrity.
 execution: subagent
 prompt: ./prompt.md
 input: causal_claim (string), context (string)
-used-by: root-cause-drilling, assumption-audit
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # CLR Validation

@@ -1,10 +1,13 @@
 ---
 name: failure-mode-extraction
-description: Extract structured failure mode list from raw scenarios or artifact analysis. Produces standardized failure mode records.
+description: Extract structured failure mode list from raw scenarios or artifact analysis.
+  Produces standardized failure mode records.
 execution: subagent
 prompt: ./prompt.md
 input: scenarios (string), artifact (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Failure Mode Extraction

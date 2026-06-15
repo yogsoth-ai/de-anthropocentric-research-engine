@@ -1,10 +1,13 @@
 ---
 name: green-hat-session
-description: Structured creative thinking in Six Hats Green Hat mode — pure creative output with judgment suspended.
+description: Structured creative thinking in Six Hats Green Hat mode — pure creative
+  output with judgment suspended.
 execution: subagent
 prompt: ./prompt.md
 input: problem (string)
-used-by: lateral-thinking, six-hats-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Green Hat Session

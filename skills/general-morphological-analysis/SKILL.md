@@ -1,8 +1,20 @@
 ---
 name: general-morphological-analysis
-description: "Ritchey GMA: complete iterative morphological process"
+description: 'Ritchey GMA: complete iterative morphological process'
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  sops:
+  - combination-evaluation
+  - creative-ideation-consistency-pair-evaluation
+  - matrix-construction
+  - morphological-synthesis
+  - path-generation
+  - solution-space-reduction
+  - value-enumeration
+  - white-space-detection
+  tactics:
+  - creative-ideation-consistency-checking
+  - white-space-identification
 ---
 
 # General Morphological Analysis

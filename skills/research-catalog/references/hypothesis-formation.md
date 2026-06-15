@@ -4,7 +4,7 @@
 
 | Layer | Skill | Description |
 | --- | --- | --- |
-| campaign | gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
+| campaign | hypothesis-formation-gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
 | campaign | hypothesis-formulation | "Campaign: 将 insight 和 gap 转化为结构化的可测试假设" |
 | campaign | research-question | "Campaign: 将假设细化为精确的、框架化的研究问题" |
 | strategy | abductive-hypothesis-generation | "Strategy: 面对异常的最佳解释推理" |
@@ -18,7 +18,7 @@
 | strategy | hypothesis-operationalization | "Strategy: 将 working hypothesis 精确化为可测试形式" |
 | strategy | inductive-hypothesis-generation | "Strategy: 从数据/观察归纳提炼假设" |
 | strategy | multi-criteria-ranking | "Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表" |
-| strategy | portfolio-optimization | "Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合" |
+| strategy | hypothesis-formation-portfolio-optimization | "Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合" |
 | strategy | rapid-triage | "Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集" |
 | strategy | scope-calibration | "Strategy: 调整研究问题范围 — zoom in/out 直到范围合适" |
 | strategy | stakeholder-weighted-ranking | "Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序" |
@@ -29,7 +29,7 @@
 | tactic | pairwise-comparison | "Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景" |
 | tactic | priority-sensitivity-testing | "Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性" |
 | tactic | question-refinement-loop | "Tactic: 迭代精化研究问题直到通过 FINER 5 项标准" |
-| tactic | scoring-matrix-construction | "Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵" |
+| tactic | hypothesis-formation-scoring-matrix-construction | "Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵" |
 | tactic | sub-question-decomposition | "Tactic: 将主问题分解为可独立回答的子问题层级" |
 | tactic | theory-mechanism-extraction | "Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选" |
 | sop | ahp-weighting | "SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量" |
@@ -54,25 +54,25 @@
 | sop | impact-scoring | "SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分" |
 | sop | importance-scoring | "SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据" |
 | sop | mechanism-extraction | "SOP: 从理论中提取因果机制链" |
-| sop | novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
+| sop | hypothesis-formation-novelty-scoring | "SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分" |
 | sop | operationalization | "SOP: 将抽象概念操作化为可测量的指标和方法" |
-| sop | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | hypothesis-formation-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| sop | hypothesis-formation-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| sop | hypothesis-formation-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
 | sop | pico-application | "SOP: 应用 PICO/PICOTS 框架结构化研究问题" |
 | sop | plausibility-ranking | "SOP: 对候选解释按合理性进行多维度加权排序" |
 | sop | priority-synthesis | "SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议" |
-| sop | quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
+| sop | hypothesis-formation-quality-gate-check | "Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）" |
 | sop | question-synthesis | "SOP: 综合所有中间产物产出最终研究问题集" |
 | sop | relationship-specification | "SOP: 指定变量间关系的方向与形式" |
-| sop | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| sop | hypothesis-formation-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
 | sop | scope-assessment | "SOP: 评估研究问题的范围是否合适（太宽/合适/太窄）" |
 | sop | spice-application | "SOP: 应用 SPICE 框架结构化评估研究问题" |
 | sop | spider-application | "SOP: 应用 SPIDER 框架结构化定性研究问题" |
 | sop | sub-question-generation | "SOP: 将主研究问题分解为可独立回答的子问题" |
 | sop | success-criteria-definition | "SOP: 为研究问题定义可测量的成功标准" |
 | sop | theory-identification | "SOP: 识别与研究gap相关的理论框架" |
-| sop | variable-identification | "SOP: 识别变量及其在假设中的角色" |
-| sop | web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
-| sop | web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+| sop | hypothesis-formation-variable-identification | "SOP: 识别变量及其在假设中的角色" |
+| sop | hypothesis-formation-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| sop | hypothesis-formation-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
 | sop | weight-perturbation | "SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定" |

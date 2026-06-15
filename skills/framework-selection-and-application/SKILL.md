@@ -1,19 +1,23 @@
 ---
 name: framework-selection-and-application
-description: "Tactic: 选择最适合的 RQ 框架并系统应用"
+description: 'Tactic: 选择最适合的 RQ 框架并系统应用'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: research-question
 sops:
+- framework-matching
+- pico-application
+- spider-application
+- spice-application
+- eclipse-application
+dependencies:
+  sops:
+  - eclipse-application
   - framework-matching
   - pico-application
-  - spider-application
   - spice-application
-  - eclipse-application
-dependencies:
-  skills:
-    - subagent-spawning
+  - spider-application
 ---
 
 # Framework Selection and Application

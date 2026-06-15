@@ -1,8 +1,17 @@
 ---
 name: concept-fan
-description: "Expand from purpose to concepts to directions to ideas (de Bono Concept Fan)"
+description: Expand from purpose to concepts to directions to ideas (de Bono Concept
+  Fan)
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - concept-fan-expansion
+  - escape-technique
+  - fractionation
+  - lateral-synthesis
+  tactics:
+  - concept-hierarchy
 ---
 
 # Concept Fan

@@ -1,8 +1,13 @@
 ---
 name: movement-extraction
-description: Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects).
+description: Extract constructive directions from provocations via 4 movement types
+  (moment-to-moment, principle, focus difference, positive aspects).
 execution: tactic
-used-by: lateral-thinking, provocation-and-movement, six-hats-ideation
+dependencies:
+  sops:
+  - alternatives-generation
+  - movement-operation
+  - stepping-stone
 ---
 
 # Movement Extraction

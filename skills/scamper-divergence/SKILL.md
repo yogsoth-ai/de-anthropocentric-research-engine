@@ -1,10 +1,13 @@
 ---
 name: scamper-divergence
-description: Execute SCAMPER 7 operators on a target solution. Subagent self-selects best 2-3 operators for deepest exploration.
+description: Execute SCAMPER 7 operators on a target solution. Subagent self-selects
+  best 2-3 operators for deepest exploration.
 execution: subagent
 prompt: ./prompt.md
 input: existing_solution (string)
-used-by: structural-deconstruction, scamper-transformation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SCAMPER Divergence

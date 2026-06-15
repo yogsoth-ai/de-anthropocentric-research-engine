@@ -1,10 +1,13 @@
 ---
 name: synectics-synthesis
-description: Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes.
+description: Synthesize all synectics outputs into a structured idea report. Combines
+  results from all analogy types and excursion processes.
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (string)
-used-by: synectics, direct-analogy, personal-analogy, symbolic-analogy, fantasy-analogy, excursion-method
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Synectics Synthesis

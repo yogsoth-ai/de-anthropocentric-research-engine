@@ -1,24 +1,26 @@
 ---
 name: stakeholder-weighted-ranking
-description: "Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序"
+description: 'Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
-  - priority-sensitivity-testing
+- scoring-matrix-construction
+- priority-sensitivity-testing
 sops:
-  - importance-scoring
-  - feasibility-scoring
-  - novelty-scoring
-  - impact-scoring
-  - ahp-weighting
-  - priority-synthesis
+- importance-scoring
+- feasibility-scoring
+- novelty-scoring
+- impact-scoring
+- ahp-weighting
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  - priority-sensitivity-testing
+  sops:
+  - gap-normalization
 ---
 
 # Stakeholder-Weighted Ranking

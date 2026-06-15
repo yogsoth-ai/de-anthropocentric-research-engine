@@ -1,14 +1,17 @@
 ---
 name: plan-formatting
-description: "Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions"
+description: Format task plan as bite-sized executable tasks following superpowers:writing-plans
+  conventions
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: plan-writing
 input: estimated and sequenced activity list with IOs
 output: executable plan document with no TBD/TODO (HARD-GATE)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Plan Formatting

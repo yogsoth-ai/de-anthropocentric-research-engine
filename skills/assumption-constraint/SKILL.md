@@ -1,14 +1,20 @@
 ---
 name: assumption-constraint
-description: "Which assumptions are most fragile? — Vulnerability ranking + impact assessment of experiment assumptions"
+description: Which assumptions are most fragile? — Vulnerability ranking + impact
+  assessment of experiment assumptions
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
+- assumption-challenging
+- resource-quantification
+tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
   - assumption-challenging
   - resource-quantification
-tactics:
+  tactics:
   - sensitivity-ranking
 ---
 

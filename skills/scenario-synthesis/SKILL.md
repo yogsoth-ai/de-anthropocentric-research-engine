@@ -1,15 +1,16 @@
 ---
 name: scenario-synthesis
-description: "Comprehensive scenario analysis report synthesizing all scenario work"
+description: Comprehensive scenario analysis report synthesizing all scenario work
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - scenario-planning
 input: all scenario narratives, impact assessments, robustness scores, pivot triggers
 output: comprehensive scenario portfolio report with strategic recommendations
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Scenario Synthesis

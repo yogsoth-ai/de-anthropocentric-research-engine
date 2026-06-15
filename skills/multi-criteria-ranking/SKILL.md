@@ -1,24 +1,26 @@
 ---
 name: multi-criteria-ranking
-description: "Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表"
+description: 'Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
-  - priority-sensitivity-testing
+- scoring-matrix-construction
+- priority-sensitivity-testing
 sops:
-  - importance-scoring
-  - feasibility-scoring
-  - novelty-scoring
-  - impact-scoring
-  - ahp-weighting
-  - priority-synthesis
+- importance-scoring
+- feasibility-scoring
+- novelty-scoring
+- impact-scoring
+- ahp-weighting
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  - priority-sensitivity-testing
+  sops:
+  - gap-normalization
 ---
 
 # Multi-Criteria Ranking

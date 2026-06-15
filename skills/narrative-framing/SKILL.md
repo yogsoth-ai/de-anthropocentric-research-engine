@@ -1,8 +1,16 @@
 ---
 name: narrative-framing
-description: Theory-driven reading tactic — define a theoretical framework first, then guide reading to fill it with evidence. Five stages (theme identification, argument construction, evidence collection, counter-evidence, synthesis). The most intellectually demanding tactic.
+description: Theory-driven reading tactic — define a theoretical framework first,
+  then guide reading to fill it with evidence. Five stages (theme identification,
+  argument construction, evidence collection, counter-evidence, synthesis). The most
+  intellectually demanding tactic.
 execution: tactic
-used-by: literature-survey
+dependencies:
+  sops:
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-web-research
+  - thematic-coding
 ---
 
 # Narrative Framing

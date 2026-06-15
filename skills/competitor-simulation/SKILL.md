@@ -1,10 +1,13 @@
 ---
 name: competitor-simulation
-description: Competitor perspective — design strategies to defeat this solution, then use attack vectors to improve it.
+description: Competitor perspective — design strategies to defeat this solution, then
+  use attack vectors to improve it.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string)
-used-by: perspective-forcing, role-based-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Competitor Simulation

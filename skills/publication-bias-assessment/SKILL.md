@@ -1,10 +1,13 @@
 ---
 name: publication-bias-assessment
-description: Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection model analyses for publication bias
+description: Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection
+  model analyses for publication bias
 execution: subagent
 prompt: ./prompt.md
 input: effect_size_distribution, study_count
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Publication Bias Assessment SOP

@@ -1,10 +1,13 @@
 ---
 name: reversal-generation
-description: Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations.
+description: Systematically reverse positive statements to generate creative inversions.
+  Produces reversed statements with initial associations.
 execution: subagent
 prompt: ./prompt.md
 input: statement_list (array), reversal_depth (string)
-used-by: inversion-protocol, reverse-brainstorming, axiom-negation, sacred-cow-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Reversal Generation

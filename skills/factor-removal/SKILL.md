@@ -1,9 +1,22 @@
 ---
 name: factor-removal
-description: "Strategy: Systematic factor removal — remove factors one at a time and observe whether the conclusion remains stable, identifying which factors are load-bearing."
+description: 'Strategy: Systematic factor removal — remove factors one at a time and
+  observe whether the conclusion remains stable, identifying which factors are load-bearing.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [systematic-factor-ablation, minimal-change-search]
+tactics:
+- systematic-factor-ablation
+- minimal-change-search
+dependencies:
+  tactics:
+  - minimal-change-search
+  - systematic-factor-ablation
+  sops:
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - fragility-measurement
+  - load-bearing-identification
+  - single-factor-removal
 ---
 
 # Factor Removal Strategy

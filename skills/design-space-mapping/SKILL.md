@@ -2,7 +2,14 @@
 name: design-space-mapping
 description: Visualize explored/unexplored regions of solution space
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  sops:
+  - combination-evaluation
+  - design-space-visualization
+  - morphological-synthesis
+  - white-space-detection
+  tactics:
+  - white-space-identification
 ---
 
 # Design Space Mapping

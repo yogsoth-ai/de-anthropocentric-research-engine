@@ -1,13 +1,17 @@
 ---
 name: strategy-robustness-testing
-description: "Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios"
+description: Orchestrates impact assessment and robustness scoring to evaluate research
+  approach resilience across scenarios
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: scenario-planning
 orchestrates:
-  - scenario-impact-assessment
+- scenario-impact-assessment
+- robustness-scoring
+dependencies:
+  sops:
   - robustness-scoring
+  - scenario-impact-assessment
 ---
 
 # Tactic: Strategy Robustness Testing

@@ -1,10 +1,13 @@
 ---
 name: parameter-identification
-description: Identify the key parameters/dimensions of a problem space. Produces a structured parameter list with value ranges for morphological analysis.
+description: Identify the key parameters/dimensions of a problem space. Produces a
+  structured parameter list with value ranges for morphological analysis.
 execution: subagent
 prompt: ./prompt.md
 input: system_description (string)
-used-by: structural-deconstruction, morphological-exploration, combinatorial-creativity, systematic-enumeration
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Parameter Identification

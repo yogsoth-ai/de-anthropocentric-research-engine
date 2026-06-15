@@ -1,10 +1,13 @@
 ---
 name: round-decision
-description: Decide whether to continue iterating or stop based on consensus score, round number, and stability.
+description: Decide whether to continue iterating or stop based on consensus score,
+  round number, and stability.
 execution: subagent
 prompt: ./prompt.md
 input: consensus_score, round_n, stability
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Round Decision

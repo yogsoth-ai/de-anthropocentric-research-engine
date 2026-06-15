@@ -1,7 +1,12 @@
 ---
 name: gap-classification
-description: Classify identified gaps using Miles 7-type taxonomy and AHRQ 4-reason framework. Determines gap type (theoretical, methodological, empirical, etc.) and root cause of gap existence.
-used-by: gap-analysis
+description: Classify identified gaps using Miles 7-type taxonomy and AHRQ 4-reason
+  framework. Determines gap type (theoretical, methodological, empirical, etc.) and
+  root cause of gap existence.
+dependencies:
+  sops:
+  - ahrq-reason-classification
+  - gap-typology-classification
 ---
 
 # Gap Classification

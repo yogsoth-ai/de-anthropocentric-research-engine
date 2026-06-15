@@ -1,9 +1,24 @@
 ---
 name: design-fmea
-description: "Strategy: Research design-level FMEA — function analysis, failure mode identification, severity/occurrence/detection scoring per AIAG-VDA 2019."
+description: 'Strategy: Research design-level FMEA — function analysis, failure mode
+  identification, severity/occurrence/detection scoring per AIAG-VDA 2019.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [failure-chain-tracing, mitigation-validation]
+tactics:
+- failure-chain-tracing
+- mitigation-validation
+dependencies:
+  tactics:
+  - failure-chain-tracing
+  - mitigation-validation
+  sops:
+  - action-priority-matrix
+  - detection-scoring
+  - failure-chain-construction
+  - failure-mode-extraction
+  - function-analysis
+  - mitigation-design-sop
+  - occurrence-scoring
+  - severity-scoring
 ---
 
 # Design FMEA Strategy

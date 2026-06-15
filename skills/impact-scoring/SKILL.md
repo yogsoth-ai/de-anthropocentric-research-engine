@@ -1,15 +1,15 @@
 ---
 name: impact-scoring
-description: "SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分"
+description: 'SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord — 单条标准化 gap 记录"
-output: "ImpactScore — 含维度分、综合分（1-5）、受益方分析及依据"
+input: GapRecord — 单条标准化 gap 记录
+output: ImpactScore — 含维度分、综合分（1-5）、受益方分析及依据
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Impact Scoring

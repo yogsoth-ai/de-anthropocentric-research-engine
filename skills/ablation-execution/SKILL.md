@@ -1,10 +1,13 @@
 ---
 name: ablation-execution
-description: Remove components one by one from a system, record the response/impact of each removal.
+description: Remove components one by one from a system, record the response/impact
+  of each removal.
 execution: subagent
 prompt: ./prompt.md
 input: system (string)
-used-by: ablation-brainstorm
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ablation Execution

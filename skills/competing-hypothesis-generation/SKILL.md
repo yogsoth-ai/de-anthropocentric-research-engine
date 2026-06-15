@@ -1,15 +1,15 @@
 ---
 name: competing-hypothesis-generation
-description: "SOP: 为同一现象生成机制上不同的竞争假设"
+description: 'SOP: 为同一现象生成机制上不同的竞争假设'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "现象描述 + 主假设（来自上游产出）"
-output: "竞争假设列表（机制上不同，非主假设的变体）"
+input: 现象描述 + 主假设（来自上游产出）
+output: 竞争假设列表（机制上不同，非主假设的变体）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Competing Hypothesis Generation

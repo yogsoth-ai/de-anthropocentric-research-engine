@@ -4,7 +4,9 @@ description: Construct PICO/PECO framework for the meta-analysis research questi
 execution: subagent
 prompt: ./prompt.md
 input: research_question, domain
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # PICO Formulation SOP

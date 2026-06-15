@@ -4,7 +4,9 @@ description: Apply CCA to remove inconsistent combinations
 execution: subagent
 prompt: ./prompt.md
 input: matrix (object), consistency_judgments (array)
-used-by: consistency-checking, cross-consistency-analysis, general-morphological-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Solution Space Reduction

@@ -1,8 +1,13 @@
 ---
 name: multi-method-triangulation
-description: Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options.
+description: Apply 2-3 MCDA methods to the same candidates, compare rankings, and
+  identify method-sensitive options.
 execution: tactic
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - alternative-scoring
+  - method-sensitivity-report
+  - rank-comparison
 ---
 
 # Multi-Method Triangulation

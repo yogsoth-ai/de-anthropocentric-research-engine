@@ -1,7 +1,13 @@
 ---
 name: dialectical-reformulation
-description: Surface Argyris governing variables and test whether the problem dissolves under alternative governing variables (double-loop learning).
-used-by: problem-reformulation
+description: Surface Argyris governing variables and test whether the problem dissolves
+  under alternative governing variables (double-loop learning).
+dependencies:
+  tactics:
+  - deep-insight-dialectical-escalation
+  sops:
+  - counter-assumption-generation
+  - governing-variable-surfacing
 ---
 
 # Dialectical Reformulation

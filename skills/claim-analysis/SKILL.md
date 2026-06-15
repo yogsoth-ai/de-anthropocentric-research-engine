@@ -1,8 +1,21 @@
 ---
 name: claim-analysis
-description: Deep claim scope analysis — decompose independent/dependent claims and assess protection scope breadth. Budget: 30 patent families, 30 claim parses, 20 web searches.
+description: 'Deep claim scope analysis — decompose independent/dependent claims and
+  assess protection scope breadth. Budget: 30 patent families, 30 claim parses, 20
+  web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - citation-network-analysis
+  - claim-parsing
+  - legal-status-assessment
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
 ---
 
 # Claim Analysis

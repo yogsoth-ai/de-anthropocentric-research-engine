@@ -1,10 +1,13 @@
 ---
 name: biological-strategy-extraction
-description: "Extract strategy principles from organisms. Identify mechanism-level details of how biological systems achieve their function."
+description: Extract strategy principles from organisms. Identify mechanism-level
+  details of how biological systems achieve their function.
 execution: subagent
 prompt: ./prompt.md
 input: organism (string)
-used-by: biologize-and-discover, functional-analogy, biotriz-resolution
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Biological Strategy Extraction

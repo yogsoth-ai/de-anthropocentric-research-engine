@@ -1,7 +1,22 @@
 ---
 name: cumulative-tracking
-description: Track evidence accumulation over time — cumulative meta-analysis protocol design. Budget: 40 studies, 40 effect sizes, 30 web searches.
-used-by: meta-analysis
+description: 'Track evidence accumulation over time — cumulative meta-analysis protocol
+  design. Budget: 40 studies, 40 effect sizes, 30 web searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - heterogeneity-source-analysis
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Cumulative Tracking Strategy

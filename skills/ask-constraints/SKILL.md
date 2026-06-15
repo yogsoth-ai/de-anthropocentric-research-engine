@@ -1,6 +1,8 @@
 ---
 name: ask-constraints
-description: Understand hard boundaries on the user's research — target venues, methodology preferences, areas to avoid, advisor/team requirements. Not limited to ML/AI — works for any research domain.
+description: Understand hard boundaries on the user's research — target venues, methodology
+  preferences, areas to avoid, advisor/team requirements. Not limited to ML/AI — works
+  for any research domain.
 execution: dialogue
 ---
 

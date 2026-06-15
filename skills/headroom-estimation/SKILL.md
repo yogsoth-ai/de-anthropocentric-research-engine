@@ -1,10 +1,9 @@
-﻿---
+---
 name: headroom-estimation
 description: Estimate theoretical/practical ceiling vs current SOTA gap
 execution: subagent
 prompt: ./prompt.md
 input: task_name, current_sota, human_performance, theoretical_bounds
-used-by: baseline-establishment
 ---
 
 # Headroom Estimation

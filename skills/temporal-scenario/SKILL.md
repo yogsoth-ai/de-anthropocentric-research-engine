@@ -1,18 +1,28 @@
 ---
 name: temporal-scenario
-description: "How does it evolve over time? — Short/medium/long-term timeline projection with technology maturity curves"
+description: How does it evolve over time? — Short/medium/long-term timeline projection
+  with technology maturity curves
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - timeline-projection
-  - scenario-narrative-construction
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- timeline-projection
+- scenario-narrative-construction
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-narrative-construction
+  - scenario-synthesis
+  - timeline-projection
+  tactics:
   - strategy-robustness-testing
 ---
 

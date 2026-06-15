@@ -1,6 +1,9 @@
 ---
 name: skill-index
-description: Full capability landscape of the DARE skill ecosystem — 823 skills across 8 research phases. Read this to understand what campaigns, strategies, tactics, and SOPs are available. Invoke this skill whenever you need to understand the complete arsenal before generating a Research Spec or routing a customized workflow.
+description: Full capability landscape of the DARE skill ecosystem — 823 skills across
+  8 research phases. Read this to understand what campaigns, strategies, tactics,
+  and SOPs are available. Invoke this skill whenever you need to understand the complete
+  arsenal before generating a Research Spec or routing a customized workflow.
 ---
 
 # Skill Index

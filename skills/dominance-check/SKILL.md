@@ -1,10 +1,13 @@
 ---
 name: dominance-check
-description: Identify dominated and non-dominated alternatives in a score matrix using Pareto dominance.
+description: Identify dominated and non-dominated alternatives in a score matrix using
+  Pareto dominance.
 execution: subagent
 prompt: ./prompt.md
 input: score_matrix (object)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dominance Check

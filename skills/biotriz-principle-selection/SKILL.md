@@ -1,10 +1,13 @@
 ---
 name: biotriz-principle-selection
-description: "Select applicable BioTRIZ principles for a given contradiction. Map to biological cases."
+description: Select applicable BioTRIZ principles for a given contradiction. Map to
+  biological cases.
 execution: subagent
 prompt: ./prompt.md
 input: contradiction_description (string)
-used-by: biotriz-resolution
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # BioTRIZ Principle Selection

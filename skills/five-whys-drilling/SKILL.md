@@ -1,10 +1,13 @@
 ---
 name: five-whys-drilling
-description: Iterative "Why?" questioning (5+ levels) to drill from surface phenomenon to actionable root cause. Each level verified against evidence.
+description: Iterative "Why?" questioning (5+ levels) to drill from surface phenomenon
+  to actionable root cause. Each level verified against evidence.
 execution: subagent
 prompt: ./prompt.md
 input: surface_phenomenon (string), context (string)
-used-by: root-cause-drilling
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Five Whys Drilling

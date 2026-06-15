@@ -1,9 +1,16 @@
 ---
 name: failure-chain-tracing
-description: "Tactic: Trace upstream causes and downstream effects of each failure mode. Builds multi-level cause-mode-effect chains for systemic understanding."
+description: 'Tactic: Trace upstream causes and downstream effects of each failure
+  mode. Builds multi-level cause-mode-effect chains for systemic understanding.'
 type: tactic
-used-by: [failure-anticipation]
-strategies: [prospective-hindsight, design-fmea, process-fmea]
+strategies:
+- prospective-hindsight
+- design-fmea
+- process-fmea
+dependencies:
+  sops:
+  - failure-chain-construction
+  - severity-scoring
 ---
 
 # Failure Chain Tracing Tactic

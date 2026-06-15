@@ -1,15 +1,21 @@
 ---
 name: result-validation-loop
-description: "Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis"
+description: Validate results through statistical testing, ROPE judgment, reproducibility
+  re-runs, and final synthesis
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- result-collection
+- statistical-testing
+- reproducibility-verification
+- execution-synthesis
+dependencies:
+  sops:
+  - execution-synthesis
+  - reproducibility-verification
   - result-collection
   - statistical-testing
-  - reproducibility-verification
-  - execution-synthesis
 ---
 
 # Tactic: Result Validation Loop

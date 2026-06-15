@@ -1,6 +1,18 @@
 ---
 name: warm-start
-description: Simplified crystallization strategy for users who have a general research direction (e.g., "I'm interested in LLM reasoning") but lack specificity. Simplifies actor profiling and landscape reconnaissance, then proceeds through direction narrowing, obstacle analysis, goal decomposition, and north-star synthesis. Use when the user's first message reveals a general area but not a specific problem.
+description: Simplified crystallization strategy for users who have a general research
+  direction (e.g., "I'm interested in LLM reasoning") but lack specificity. Simplifies
+  actor profiling and landscape reconnaissance, then proceeds through direction narrowing,
+  obstacle analysis, goal decomposition, and north-star synthesis. Use when the user's
+  first message reveals a general area but not a specific problem.
+dependencies:
+  tactics:
+  - actor-profiling
+  - direction-narrowing
+  - goal-decomposition
+  - landscape-reconnaissance
+  - north-star-synthesis
+  - obstacle-analysis
 ---
 
 # Warm Start Strategy

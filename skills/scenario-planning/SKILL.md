@@ -1,15 +1,34 @@
 ---
 name: scenario-planning
-description: "What might the future look like — construct multiple future scenarios, assess research approach robustness under different assumptions"
+description: What might the future look like — construct multiple future scenarios,
+  assess research approach robustness under different assumptions
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
+- morphological-scenario
+- narrative-scenario
+- stress-scenario
+- competitive-scenario
+- temporal-scenario
+dependencies:
+  strategies:
+  - competitive-scenario
   - morphological-scenario
   - narrative-scenario
   - stress-scenario
-  - competitive-scenario
   - temporal-scenario
+  sops:
+  - context-checkpoint
+  - context-init
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
+  - scenario-synthesis
 ---
 
 # Campaign: Scenario Planning

@@ -1,8 +1,38 @@
 ---
 name: combinatorial-creativity
-description: Combinatorial Creativity Campaign — produce emergent concepts via concept blending, multi-level bisociation, and function combination (Fauconnier-Turner)
+description: Combinatorial Creativity Campaign — produce emergent concepts via concept
+  blending, multi-level bisociation, and function combination (Fauconnier-Turner)
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - abstraction-ladder
+  - blend-completion
+  - blend-composition
+  - blend-elaboration
+  - combinatorial-synthesis
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - domain-scanning
+  - emergent-property-identification
+  - function-redistribution
+  - generic-space-extraction
+  - idea-synthesis
+  - input-space-construction
+  - parameter-identification
+  - vital-relation-mapping
+  tactics:
+  - blend-construction
+  - creative-ideation-combination-mapping
+  - emergence-detection
+  - evaluation-filtering
+  strategies:
+  - concept-blending
+  - design-space-exploration
+  - emergent-property-hunting
+  - function-combination
+  - multi-level-bisociation
 ---
 
 # Combinatorial Creativity

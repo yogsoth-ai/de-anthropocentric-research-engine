@@ -1,9 +1,14 @@
 ---
 name: deep-web-search
-description: Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Spawns a subagent to read pages in isolated context. Hard constraint: at least 30 web pages read in full.
+description: 'Full-page web reading for non-academic perspectives — blogs, tech reports,
+  product pages, industry analysis. Spawns a subagent to read pages in isolated context.
+  Hard constraint: at least 30 web pages read in full.'
 execution: subagent
 prompt: ./prompt.md
 input: search_queries (string), field_context (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Deep Web Search

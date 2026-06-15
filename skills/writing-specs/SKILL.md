@@ -1,8 +1,15 @@
 ---
 name: writing-specs
-description: Generate a complete, executable Research Spec from North Star + user input. Strategy-level skill that orchestrates questioning, outline, and spec writing.
+description: Generate a complete, executable Research Spec from North Star + user
+  input. Strategy-level skill that orchestrates questioning, outline, and spec writing.
 execution: sequential
-used-by: de-anthropocentric-research-engine
+dependencies:
+  sops:
+  - campaign-selection
+  - constraint-elicitation
+  - research-catalog
+  - scope-clarification
+  - spec-self-review
 ---
 
 # Writing Specs

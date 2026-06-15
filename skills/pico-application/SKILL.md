@@ -1,15 +1,15 @@
 ---
 name: pico-application
-description: "SOP: 应用 PICO/PICOTS 框架结构化研究问题"
+description: 'SOP: 应用 PICO/PICOTS 框架结构化研究问题'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究意图 + 假设"
-output: "完整 PICO 填充 + RQ 表述"
+input: 研究意图 + 假设
+output: 完整 PICO 填充 + RQ 表述
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # PICO Application

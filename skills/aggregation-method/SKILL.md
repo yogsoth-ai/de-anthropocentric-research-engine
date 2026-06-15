@@ -1,10 +1,13 @@
 ---
 name: aggregation-method
-description: Aggregate multiple ranking ballots into a consensus ranking using a specified social choice method.
+description: Aggregate multiple ranking ballots into a consensus ranking using a specified
+  social choice method.
 execution: subagent
 prompt: ./prompt.md
 input: ballots(array), method(string)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Aggregation Method

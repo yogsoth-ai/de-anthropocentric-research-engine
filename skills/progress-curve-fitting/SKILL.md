@@ -1,10 +1,9 @@
-﻿---
+---
 name: progress-curve-fitting
 description: Construct performance-over-time visualization data
 execution: subagent
 prompt: ./prompt.md
 input: historical_scores (method, score, date)
-used-by: baseline-establishment
 ---
 
 # Progress Curve Fitting

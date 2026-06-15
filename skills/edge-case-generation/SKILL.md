@@ -1,10 +1,13 @@
 ---
 name: edge-case-generation
-description: Systematically generate boundary inputs — boundary values, adversarial constructions, distribution shifts, rare combinations, scale extremes.
+description: Systematically generate boundary inputs — boundary values, adversarial
+  constructions, distribution shifts, rare combinations, scale extremes.
 execution: subagent
 prompt: ./prompt.md
 input: method_description (string), domain (string)
-used-by: failure-mode-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Edge Case Generation

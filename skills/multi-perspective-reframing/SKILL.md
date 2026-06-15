@@ -1,7 +1,14 @@
 ---
 name: multi-perspective-reframing
-description: Apply CATWOE from multiple stakeholder viewpoints and reframing matrix to reveal aspects invisible from the dominant perspective.
-used-by: problem-reformulation
+description: Apply CATWOE from multiple stakeholder viewpoints and reframing matrix
+  to reveal aspects invisible from the dominant perspective.
+dependencies:
+  tactics:
+  - multi-worldview-comparison
+  sops:
+  - catwoe-analysis
+  - deep-insight-multi-stakeholder-simulation
+  - reframing-matrix
 ---
 
 # Multi-Perspective Reframing

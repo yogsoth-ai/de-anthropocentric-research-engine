@@ -1,10 +1,13 @@
 ---
 name: symbolic-compression
-description: Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons with interpretation directions for each.
+description: Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons
+  with interpretation directions for each.
 execution: subagent
 prompt: ./prompt.md
 input: problem_contradiction (string)
-used-by: synectics, symbolic-analogy, excursion-method, compressed-conflict
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Symbolic Compression

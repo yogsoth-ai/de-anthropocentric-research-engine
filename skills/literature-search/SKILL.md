@@ -1,14 +1,27 @@
 ---
 name: Literature Search
-description: Medium-depth literature search — read AI-summarized reports for every paper analyzed
+description: Medium-depth literature search — read AI-summarized reports for every
+  paper analyzed
 type: sop
 layer: sop
-agents: [alphaxiv, semantic-scholar]
+agents:
+- alphaxiv
+- semantic-scholar
 tools:
-  alphaxiv: [discover_papers, get_paper_content]
-  semantic-scholar: [relevanceSearch, paper, paperBatch, citations, references]
+  alphaxiv:
+  - discover_papers
+  - get_paper_content
+  semantic-scholar:
+  - relevanceSearch
+  - paper
+  - paperBatch
+  - citations
+  - references
 input: query (string), scope (survey | gap-analysis | background)
 output: PaperAnalysis[] with metadata + AI summary content
+dependencies:
+  sops:
+  - literature-research
 ---
 
 # Literature Search SOP

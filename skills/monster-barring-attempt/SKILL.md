@@ -1,9 +1,12 @@
 ---
 name: monster-barring-attempt
-description: "Attempt to exclude a counterexample as illegitimate by tightening definitions or preconditions (Lakatos monster-barring)."
+description: Attempt to exclude a counterexample as illegitimate by tightening definitions
+  or preconditions (Lakatos monster-barring).
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Monster-Barring Attempt

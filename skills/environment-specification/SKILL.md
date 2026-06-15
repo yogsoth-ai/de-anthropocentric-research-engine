@@ -1,17 +1,18 @@
 ---
 name: environment-specification
-description: "SOP: define complete experiment environment specification"
+description: 'SOP: define complete experiment environment specification'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - reproducibility-protocol
 shared:
-  - implementation-planning
-input: "Experiment design + hardware requirements + software dependencies"
-output: "Complete environment spec (hardware/software/data/configuration)"
+- implementation-planning
+input: Experiment design + hardware requirements + software dependencies
+output: Complete environment spec (hardware/software/data/configuration)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Environment Specification

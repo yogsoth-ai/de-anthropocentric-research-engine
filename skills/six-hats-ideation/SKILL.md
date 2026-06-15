@@ -1,8 +1,15 @@
 ---
 name: six-hats-ideation
-description: "Green Hat focused creative thinking within Six Hats framework"
+description: Green Hat focused creative thinking within Six Hats framework
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - green-hat-session
+  - lateral-synthesis
+  - movement-operation
+  tactics:
+  - movement-extraction
 ---
 
 # Six Hats Ideation

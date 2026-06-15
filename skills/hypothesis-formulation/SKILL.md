@@ -1,33 +1,37 @@
 ---
 name: hypothesis-formulation
-description: "Campaign: 将 insight 和 gap 转化为结构化的可测试假设"
+description: 'Campaign: 将 insight 和 gap 转化为结构化的可测试假设'
 version: 1.0.0
 category: hypothesis-formation
 type: campaign
-input: "排序后的 gaps + insights + tensions（来自 gap-prioritization 或上游 repo）"
-output: "结构化假设集 + falsifiability criteria + boundary conditions"
+input: 排序后的 gaps + insights + tensions（来自 gap-prioritization 或上游 repo）
+output: 结构化假设集 + falsifiability criteria + boundary conditions
 strategies:
-  - deductive-hypothesis-generation
-  - inductive-hypothesis-generation
+- deductive-hypothesis-generation
+- inductive-hypothesis-generation
+- abductive-hypothesis-generation
+- competing-hypothesis-construction
+- hypothesis-operationalization
+tactics:
+- theory-mechanism-extraction
+- anomaly-driven-abduction
+- falsifiability-audit
+- competing-hypothesis-matrix
+dependencies:
+  campaigns:
+  - research-question
+  strategies:
   - abductive-hypothesis-generation
   - competing-hypothesis-construction
+  - deductive-hypothesis-generation
   - hypothesis-operationalization
-tactics:
-  - theory-mechanism-extraction
-  - anomaly-driven-abduction
-  - falsifiability-audit
-  - competing-hypothesis-matrix
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - web-browsing
-    - literature-engine
-  mcp:
-    - brave-search
-    - apify
-    - alphaxiv
-    - semantic-scholar
+  - inductive-hypothesis-generation
+  sops:
+  - context-checkpoint
+  - context-init
+  - hypothesis-formation-quality-gate-check
+  - hypothesis-formation-saturation-detection
+  - hypothesis-synthesis
 ---
 
 # Hypothesis Formulation

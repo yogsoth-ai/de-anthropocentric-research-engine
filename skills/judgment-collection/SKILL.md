@@ -4,7 +4,9 @@ description: Collect independent judgments from all perspectives on a given ques
 execution: subagent
 prompt: ./prompt.md
 input: question, perspectives[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Judgment Collection

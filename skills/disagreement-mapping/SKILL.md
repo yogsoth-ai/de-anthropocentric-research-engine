@@ -1,8 +1,14 @@
 ---
 name: disagreement-mapping
-description: Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines.
+description: Map disagreement structure by collecting judgments, clustering opinions,
+  extracting arguments per cluster, and visualizing fault lines.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - argument-extraction
+  - cluster-analysis
+  - disagreement-visualization
+  - judgment-collection
 ---
 
 # Disagreement Mapping

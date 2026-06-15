@@ -1,7 +1,18 @@
 ---
 name: risk-balancing
-description: Balance portfolio risk and return using Markowitz mean-variance, CVaR, Risk parity, and Kelly criterion methods.
-used-by: portfolio-optimization
+description: Balance portfolio risk and return using Markowitz mean-variance, CVaR,
+  Risk parity, and Kelly criterion methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  - scenario-stress-testing
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - portfolio-evaluation-per-scenario
+  - scenario-construction
+  - selection-from-frontier
 ---
 
 # Risk Balancing

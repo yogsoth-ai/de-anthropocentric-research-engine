@@ -1,8 +1,22 @@
 ---
 name: prior-art-search
-description: Evaluate novelty of specific invention — find relevant prior art across patents, publications, and products. Budget: 80 patent families, 20 claim parses, 50 web searches.
+description: 'Evaluate novelty of specific invention — find relevant prior art across
+  patents, publications, and products. Budget: 80 patent families, 20 claim parses,
+  50 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - citation-network-analysis
+  - claim-parsing
+  - knowledge-acquisition-saturation-detection
+  - legal-status-assessment
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
 ---
 
 # Prior Art Search

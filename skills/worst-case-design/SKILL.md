@@ -1,10 +1,13 @@
 ---
 name: worst-case-design
-description: Design the worst possible solution. Deliberate failure engineering to reveal hidden constraints and inversion opportunities.
+description: Design the worst possible solution. Deliberate failure engineering to
+  reveal hidden constraints and inversion opportunities.
 execution: subagent
 prompt: ./prompt.md
 input: problem (string), constraints (string)
-used-by: inversion-protocol, reverse-brainstorming, worst-method-inversion
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Worst-Case Design

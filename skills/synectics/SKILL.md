@@ -1,8 +1,37 @@
 ---
 name: synectics
-description: Synectics Campaign — systematic use of analogy and metaphor for breakthrough associations via Gordon's 4 analogy types and excursion method.
+description: Synectics Campaign — systematic use of analogy and metaphor for breakthrough
+  associations via Gordon's 4 analogy types and excursion method.
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - analogy-chain
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - direct-analogy-generation
+  - domain-scanning
+  - excursion-departure
+  - fantasy-wish
+  - force-fit
+  - idea-synthesis
+  - personal-identification
+  - random-word-stimulus
+  - springboard-launch
+  - symbolic-compression
+  - synectics-synthesis
+  tactics:
+  - analogy-extraction
+  - compressed-conflict
+  - evaluation-filtering
+  - excursion-orchestration
+  strategies:
+  - direct-analogy
+  - excursion-method
+  - fantasy-analogy
+  - personal-analogy
+  - symbolic-analogy
 ---
 
 # Synectics

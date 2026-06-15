@@ -1,7 +1,13 @@
 ---
 name: futures-calibration
-description: Aggregate probability judgments across perspectives using Real-Time Delphi or prediction market mechanisms.
-used-by: structured-consensus
+description: Aggregate probability judgments across perspectives using Real-Time Delphi
+  or prediction market mechanisms.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  - threshold-calibration
+  sops:
+  - consensus-synthesis
 ---
 
 # Futures Calibration

@@ -1,9 +1,12 @@
 ---
 name: contradiction-detection
-description: "Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state."
+description: Evaluate whether a derivation chain has reached a genuine contradiction,
+  absurdity, or inconclusive state.
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Contradiction Detection

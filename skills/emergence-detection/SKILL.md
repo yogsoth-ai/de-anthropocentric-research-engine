@@ -1,8 +1,8 @@
 ---
 name: emergence-detection
-description: Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration.
+description: Detect and validate emergent properties from combinations. Orchestrates
+  emergent-property-identification → blend-elaboration.
 execution: tactic
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting, function-combination
 ---
 
 # Emergence Detection

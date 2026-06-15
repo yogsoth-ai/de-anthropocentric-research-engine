@@ -1,8 +1,13 @@
 ---
 name: excursion-orchestration
-description: Orchestrate the excursion sequence — departure into unrelated domain, force-fit discoveries back to problem, launch springboard ideas.
+description: Orchestrate the excursion sequence — departure into unrelated domain,
+  force-fit discoveries back to problem, launch springboard ideas.
 execution: tactic
-used-by: synectics, direct-analogy, excursion-method
+dependencies:
+  sops:
+  - excursion-departure
+  - force-fit
+  - springboard-launch
 ---
 
 # Excursion Orchestration

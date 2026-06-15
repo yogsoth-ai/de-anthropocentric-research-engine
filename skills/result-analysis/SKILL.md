@@ -1,15 +1,22 @@
 ---
 name: result-analysis
-description: "Statistically analyze collected results, verify reproducibility, and synthesize findings"
+description: Statistically analyze collected results, verify reproducibility, and
+  synthesize findings
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - statistical-testing
-  - reproducibility-verification
-  - execution-synthesis
+- statistical-testing
+- reproducibility-verification
+- execution-synthesis
 tactics:
+- result-validation-loop
+dependencies:
+  sops:
+  - execution-synthesis
+  - reproducibility-verification
+  - statistical-testing
+  tactics:
   - result-validation-loop
 ---
 

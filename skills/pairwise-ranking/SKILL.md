@@ -1,8 +1,20 @@
 ---
 name: pairwise-ranking
-description: Pairwise Ranking Campaign — produce global rankings through pairwise comparisons and voting aggregation using Bradley-Terry, Elo, TrueSkill, Condorcet, Borda, Schulze methods.
+description: Pairwise Ranking Campaign — produce global rankings through pairwise
+  comparisons and voting aggregation using Bradley-Terry, Elo, TrueSkill, Condorcet,
+  Borda, Schulze methods.
 execution: campaign
-used-by: convergence
+dependencies:
+  strategies:
+  - coherence-diagnosis
+  - collective-adjudication
+  - deliberative-calibration
+  - dynamic-tracking
+  - efficient-exploration
+  sops:
+  - context-checkpoint
+  - context-init
+  - convergence-saturation-detection
 ---
 
 # Pairwise Ranking

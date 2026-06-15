@@ -4,7 +4,9 @@ description: Map 15 vital relations between concepts
 execution: subagent
 prompt: ./prompt.md
 input: concept_pair (string)
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Vital Relation Mapping

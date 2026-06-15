@@ -1,10 +1,13 @@
 ---
 name: confidence-calibration
-description: Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence.
+description: Calibrates confidence scores based on debate progression. Determines
+  whether to escalate, continue, or terminate based on cumulative evidence.
 execution: subagent
 prompt: ./prompt.md
 input: round_verdicts (string), confidence_history (string), budget_remaining (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Confidence Calibration

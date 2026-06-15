@@ -1,10 +1,13 @@
 ---
 name: ishikawa-decomposition
-description: Decompose problems into 6M categories (Methodology, Data, Theory, Measurement, Researchers, Environment) via fishbone diagram analysis.
+description: Decompose problems into 6M categories (Methodology, Data, Theory, Measurement,
+  Researchers, Environment) via fishbone diagram analysis.
 execution: subagent
 prompt: ./prompt.md
 input: problem_statement (string), context (string)
-used-by: root-cause-drilling
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ishikawa Decomposition

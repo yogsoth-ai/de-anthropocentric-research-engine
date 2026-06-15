@@ -1,8 +1,16 @@
 ---
 name: symbolic-analogy
-description: Compress core contradiction into poetic imagery/oxymoron. Use compressed conflicts to reveal hidden solution directions.
+description: Compress core contradiction into poetic imagery/oxymoron. Use compressed
+  conflicts to reveal hidden solution directions.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - analogy-chain
+  - springboard-launch
+  - symbolic-compression
+  - synectics-synthesis
+  tactics:
+  - compressed-conflict
 ---
 
 # Symbolic Analogy

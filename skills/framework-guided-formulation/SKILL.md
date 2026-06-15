@@ -1,24 +1,24 @@
 ---
 name: framework-guided-formulation
-description: "Strategy: 选择 RQ 框架（PICO/SPIDER/SPICE/ECLIPSE）并系统应用"
+description: 'Strategy: 选择 RQ 框架（PICO/SPIDER/SPICE/ECLIPSE）并系统应用'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: research-question
 tactics:
+- framework-selection-and-application
+- question-refinement-loop
+sops:
+- framework-matching
+- pico-application
+- spider-application
+- spice-application
+- eclipse-application
+- finer-criteria-check
+dependencies:
+  tactics:
   - framework-selection-and-application
   - question-refinement-loop
-sops:
-  - framework-matching
-  - pico-application
-  - spider-application
-  - spice-application
-  - eclipse-application
-  - finer-criteria-check
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
 ---
 
 # Framework-Guided Formulation

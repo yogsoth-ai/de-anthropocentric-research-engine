@@ -1,7 +1,11 @@
 ---
 name: decision-sensitivity
-description: Identify which uncertainties would actually change the research direction decision. Compute EVPI to prioritize uncertainty reduction.
-used-by: sensitivity-analysis
+description: Identify which uncertainties would actually change the research direction
+  decision. Compute EVPI to prioritize uncertainty reduction.
+dependencies:
+  sops:
+  - critical-path-identification
+  - sensitivity-synthesis
 ---
 
 # Decision Sensitivity

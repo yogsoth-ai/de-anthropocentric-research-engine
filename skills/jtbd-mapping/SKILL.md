@@ -1,10 +1,13 @@
 ---
 name: jtbd-mapping
-description: Map stakeholder Jobs-to-be-Done — functional, emotional, and social jobs for each affected party. Identifies unserved jobs as opportunity signals.
+description: Map stakeholder Jobs-to-be-Done — functional, emotional, and social jobs
+  for each affected party. Identifies unserved jobs as opportunity signals.
 execution: subagent
 prompt: ./prompt.md
 input: research_domain (string), stakeholder_list (string)
-used-by: stakeholder-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # JTBD Mapping

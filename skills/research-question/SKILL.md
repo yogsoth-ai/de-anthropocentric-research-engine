@@ -1,32 +1,36 @@
 ---
 name: research-question
-description: "Campaign: 将假设细化为精确的、框架化的研究问题"
+description: 'Campaign: 将假设细化为精确的、框架化的研究问题'
 version: 1.0.0
 category: hypothesis-formation
 type: campaign
-input: "假设 + 领域约束（来自 hypothesis-formulation 或用户提供）"
-output: "框架化的研究问题 + scope + success criteria + sub-questions"
+input: 假设 + 领域约束（来自 hypothesis-formulation 或用户提供）
+output: 框架化的研究问题 + scope + success criteria + sub-questions
 strategies:
+- framework-guided-formulation
+- scope-calibration
+- decomposition-formulation
+- comparative-formulation
+- feasibility-constrained-formulation
+tactics:
+- framework-selection-and-application
+- question-refinement-loop
+- sub-question-decomposition
+dependencies:
+  campaigns:
+  - hypothesis-formulation
+  strategies:
+  - comparative-formulation
+  - decomposition-formulation
+  - feasibility-constrained-formulation
   - framework-guided-formulation
   - scope-calibration
-  - decomposition-formulation
-  - comparative-formulation
-  - feasibility-constrained-formulation
-tactics:
-  - framework-selection-and-application
-  - question-refinement-loop
-  - sub-question-decomposition
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - web-browsing
-    - literature-engine
-  mcp:
-    - brave-search
-    - apify
-    - alphaxiv
-    - semantic-scholar
+  sops:
+  - context-checkpoint
+  - context-init
+  - hypothesis-formation-quality-gate-check
+  - hypothesis-formation-saturation-detection
+  - question-synthesis
 ---
 
 # Research Question Formulation

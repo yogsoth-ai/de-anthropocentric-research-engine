@@ -1,9 +1,14 @@
 ---
 name: feasibility-check
-description: Cross-reference the GoalTree against ActorProfile (capabilities), ObstacleReport (known barriers), and timeline (deadline feasibility). Identify infeasible paths and suggest OR alternatives.
+description: Cross-reference the GoalTree against ActorProfile (capabilities), ObstacleReport
+  (known barriers), and timeline (deadline feasibility). Identify infeasible paths
+  and suggest OR alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: goal_tree (string), actor_profile (string), obstacle_report (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Feasibility Check

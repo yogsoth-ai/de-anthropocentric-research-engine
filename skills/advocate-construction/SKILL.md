@@ -4,7 +4,9 @@ description: Construct the strongest possible case for a rejected candidate or c
 execution: subagent
 prompt: ./prompt.md
 input: rejected_candidate, context
-used-by: [steel-manning, validation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Advocate Construction

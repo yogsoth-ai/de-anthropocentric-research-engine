@@ -1,7 +1,12 @@
 ---
 name: weight-elicitation
 description: Determine criteria weights using AHP, Swing, BWM, MACBETH, or Simos methods.
-used-by: multi-criteria-scoring
+dependencies:
+  tactics:
+  - multi-method-triangulation
+  sops:
+  - criterion-definition
+  - weight-elicitation-sop
 ---
 
 # Weight Elicitation

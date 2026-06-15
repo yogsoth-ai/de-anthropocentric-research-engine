@@ -1,17 +1,17 @@
 ---
 name: theory-identification
-description: "SOP: 识别与研究gap相关的理论框架"
+description: 'SOP: 识别与研究gap相关的理论框架'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "研究 gap 描述 + 领域标签"
-output: "相关理论框架列表 [{name, source, core_claim, relevance, applicability}]"
+input: 研究 gap 描述 + 领域标签
+output: 相关理论框架列表 [{name, source, core_claim, relevance, applicability}]
 dependencies:
-  skills:
-    - subagent-spawning
-    - literature-engine
-    - web-browsing
+  sops:
+  - hypothesis-formation-paper-overview
+  - hypothesis-formation-paper-search
+  - hypothesis-formation-web-search
 ---
 
 # Theory Identification

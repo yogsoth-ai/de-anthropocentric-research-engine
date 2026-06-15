@@ -1,8 +1,16 @@
 ---
 name: triz-contradiction-resolution
-description: Resolve technical and physical contradictions via TRIZ 40 inventive principles and separation methods.
+description: Resolve technical and physical contradictions via TRIZ 40 inventive principles
+  and separation methods.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - contradiction-identification
+  sops:
+  - contradiction-matrix-lookup
+  - separation-principle
+  - structural-synthesis
+  - triz-principle-application
 ---
 
 # TRIZ Contradiction Resolution

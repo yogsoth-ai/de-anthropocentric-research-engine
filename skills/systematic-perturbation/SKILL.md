@@ -1,8 +1,14 @@
 ---
 name: systematic-perturbation
-description: Multi-axis systematic perturbation — define variation axes, perturb along each, measure degradation, construct validity envelope.
+description: Multi-axis systematic perturbation — define variation axes, perturb along
+  each, measure degradation, construct validity envelope.
 execution: tactic
-used-by: validity-envelope-mapping
+dependencies:
+  sops:
+  - controlled-perturbation
+  - deep-insight-paper-search
+  - deep-insight-validity-envelope-construction
+  - variation-axis-definition
 ---
 
 # Systematic Perturbation

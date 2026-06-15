@@ -1,9 +1,17 @@
 ---
 name: generate-research-brief
-description: Aggregate all accumulated context from the crystallization process into a structured ResearchBrief document. This is the final output artifact alongside the North Star — a comprehensive requirement context document for downstream research strategies.
+description: Aggregate all accumulated context from the crystallization process into
+  a structured ResearchBrief document. This is the final output artifact alongside
+  the North Star — a comprehensive requirement context document for downstream research
+  strategies.
 execution: subagent
 prompt: ./prompt.md
-input: actor_profile (string), field_panorama (string), ranked_candidates (string), obstacle_report (string), goal_tree (string), north_star (string), key_references (string)
+input: actor_profile (string), field_panorama (string), ranked_candidates (string),
+  obstacle_report (string), goal_tree (string), north_star (string), key_references
+  (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Generate Research Brief

@@ -1,15 +1,15 @@
 ---
 name: hypothesis-synthesis
-description: "SOP: 综合所有中间产物，产出最终结构化假设集"
+description: 'SOP: 综合所有中间产物，产出最终结构化假设集'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "所有中间产物（理论、机制、变量、关系、边界条件、可证伪性、竞争假设、对比矩阵）"
-output: "最终假设文档（完整 6 组件结构 + 排序 + 关系说明）"
+input: 所有中间产物（理论、机制、变量、关系、边界条件、可证伪性、竞争假设、对比矩阵）
+output: 最终假设文档（完整 6 组件结构 + 排序 + 关系说明）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Hypothesis Synthesis

@@ -1,15 +1,15 @@
 ---
 name: gap-normalization
-description: "SOP: 统一不同来源的 gap 格式为标准 GapRecord"
+description: 'SOP: 统一不同来源的 gap 格式为标准 GapRecord'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "来自不同来源的原始 gap 条目（字符串列表、结构化对象、或混合格式）"
-output: "GapRecord[] — 标准化的 gap 记录数组"
+input: 来自不同来源的原始 gap 条目（字符串列表、结构化对象、或混合格式）
+output: GapRecord[] — 标准化的 gap 记录数组
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Gap Normalization

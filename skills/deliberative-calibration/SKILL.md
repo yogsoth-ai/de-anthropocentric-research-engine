@@ -1,7 +1,13 @@
 ---
 name: deliberative-calibration
-description: Strategy for small-N complete pairwise comparison using Bradley-Terry, Thurstone, AHP, and Borda methods to produce calibrated rankings.
-used-by: pairwise-ranking
+description: Strategy for small-N complete pairwise comparison using Bradley-Terry,
+  Thurstone, AHP, and Borda methods to produce calibrated rankings.
+dependencies:
+  tactics:
+  - adaptive-pair-selection
+  - consistency-audit-loop
+  sops:
+  - ranking-synthesis
 ---
 
 # Deliberative Calibration

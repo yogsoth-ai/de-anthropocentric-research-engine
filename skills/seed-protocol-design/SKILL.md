@@ -1,15 +1,16 @@
 ---
 name: seed-protocol-design
-description: "SOP: design random seed strategy for reproducibility"
+description: 'SOP: design random seed strategy for reproducibility'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - reproducibility-protocol
-input: "Experiment design + list of randomness sources + repetition requirements"
-output: "Seed allocation strategy + seed value table + reproducibility guarantee plan"
+input: Experiment design + list of randomness sources + repetition requirements
+output: Seed allocation strategy + seed value table + reproducibility guarantee plan
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Seed Protocol Design

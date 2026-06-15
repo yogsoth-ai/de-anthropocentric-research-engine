@@ -1,9 +1,12 @@
 ---
 name: claim-refinement
-description: "Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation)."
+description: Propose a refined claim that survives counterexamples while preserving
+  maximum explanatory power (Lakatos lemma-incorporation).
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Claim Refinement

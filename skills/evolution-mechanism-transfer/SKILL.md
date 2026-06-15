@@ -1,10 +1,13 @@
 ---
 name: evolution-mechanism-transfer
-description: "Map evolution mechanisms to design operations. Translate selection, mutation, drift, radiation into design operators."
+description: Map evolution mechanisms to design operations. Translate selection, mutation,
+  drift, radiation into design operators.
 execution: subagent
 prompt: ./prompt.md
 input: evolution_mechanism (string)
-used-by: evolution-strategy, life-principles-application
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Evolution Mechanism Transfer

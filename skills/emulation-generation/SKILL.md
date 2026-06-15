@@ -1,10 +1,13 @@
 ---
 name: emulation-generation
-description: "Generate technical solutions emulating biological strategies. Bridge from design principle to concrete implementation."
+description: Generate technical solutions emulating biological strategies. Bridge
+  from design principle to concrete implementation.
 execution: subagent
 prompt: ./prompt.md
 input: design_principle (string)
-used-by: biologize-and-discover, functional-analogy, biotriz-resolution, ecosystem-pattern, evolution-strategy
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Emulation Generation

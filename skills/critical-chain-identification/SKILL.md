@@ -1,15 +1,17 @@
 ---
 name: critical-chain-identification
-description: "Identify the critical chain — longest path considering resource contention"
+description: Identify the critical chain — longest path considering resource contention
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: dependency-constraint
 input: dependency graph, resource assignments, duration estimates
 output: critical chain with resource conflicts resolved, feeding chains identified
 shared: true
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Critical Chain Identification

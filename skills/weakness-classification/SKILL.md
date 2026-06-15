@@ -1,10 +1,13 @@
 ---
 name: weakness-classification
-description: Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic) with structured justification and exploitability assessment.
+description: Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic)
+  with structured justification and exploitability assessment.
 execution: subagent
 prompt: ./prompt.md
 input: raw_finding (string), artifact_context (string)
-used-by: multiagent-debate, red-teaming, adversarial-stress-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Weakness Classification

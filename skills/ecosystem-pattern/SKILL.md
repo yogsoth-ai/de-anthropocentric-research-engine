@@ -1,8 +1,16 @@
 ---
 name: ecosystem-pattern
-description: "Extract ecosystem-level organization patterns (symbiosis, emergence, resilience) as design templates for complex systems."
+description: Extract ecosystem-level organization patterns (symbiosis, emergence,
+  resilience) as design templates for complex systems.
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biomimicry-synthesis
+  - ecosystem-pattern-extraction
+  - emulation-generation
+  tactics:
+  - life-principles-application
 ---
 
 # Ecosystem Pattern

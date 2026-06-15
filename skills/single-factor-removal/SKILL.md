@@ -1,10 +1,13 @@
 ---
 name: single-factor-removal
-description: Remove one specified factor from the artifact's support structure and reason about how the conclusion changes.
+description: Remove one specified factor from the artifact's support structure and
+  reason about how the conclusion changes.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), factor_to_remove (string), factors_list (list)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Single Factor Removal

@@ -1,10 +1,13 @@
 ---
 name: practitioner-hat
-description: Engineer perspective — assess buildability, cost, timeline, and integration challenges.
+description: Engineer perspective — assess buildability, cost, timeline, and integration
+  challenges.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string)
-used-by: perspective-forcing, role-based-ideation, perspective-rotation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Practitioner Hat

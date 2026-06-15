@@ -1,21 +1,23 @@
 ---
 name: rapid-triage
-description: "Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集"
+description: 'Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
+- scoring-matrix-construction
 sops:
-  - gap-normalization
-  - importance-scoring
-  - feasibility-scoring
-  - priority-synthesis
+- gap-normalization
+- importance-scoring
+- feasibility-scoring
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  sops:
+  - gap-normalization
+  - priority-synthesis
 ---
 
 # Rapid Triage

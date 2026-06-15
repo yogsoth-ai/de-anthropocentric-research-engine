@@ -1,8 +1,15 @@
 ---
 name: citation-chaining
-description: Forward and backward citation tracing tactic — expand paper coverage by tracing citation networks in both directions from seed/key papers. Alternates forward (who cited this) and backward (what this cited) passes until saturation.
+description: Forward and backward citation tracing tactic — expand paper coverage
+  by tracing citation networks in both directions from seed/key papers. Alternates
+  forward (who cited this) and backward (what this cited) passes until saturation.
 execution: tactic
-used-by: literature-survey, patent-mining, baseline-establishment
+dependencies:
+  sops:
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-saturation-detection
 ---
 
 # Citation Chaining

@@ -1,10 +1,13 @@
 ---
 name: ballot-collection
-description: Gather independent ranking ballots from multiple judges or perspectives for a given candidate set.
+description: Gather independent ranking ballots from multiple judges or perspectives
+  for a given candidate set.
 execution: subagent
 prompt: ./prompt.md
 input: candidates(array), perspectives(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ballot Collection

@@ -4,7 +4,9 @@ description: Identify dominant thinking pattern and escape it via deliberate pat
 execution: subagent
 prompt: ./prompt.md
 input: current_thinking (string)
-used-by: lateral-thinking, concept-fan, challenge-operation, concept-hierarchy
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Escape Technique

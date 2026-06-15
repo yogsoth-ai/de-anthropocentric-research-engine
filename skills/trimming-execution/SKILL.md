@@ -1,10 +1,13 @@
 ---
 name: trimming-execution
-description: Progressively remove components from a system while verifying function preservation through redistribution.
+description: Progressively remove components from a system while verifying function
+  preservation through redistribution.
 execution: subagent
 prompt: ./prompt.md
 input: function_model (string)
-used-by: structural-deconstruction, function-trimming, component-decomposition
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Trimming Execution

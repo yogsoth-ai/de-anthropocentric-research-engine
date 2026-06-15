@@ -1,8 +1,13 @@
 ---
 name: assumption-excavation
-description: Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs.
+description: Systematic extraction, challenge, and sensitivity analysis of assumptions
+  underlying a decision to identify load-bearing beliefs.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - conclusion-sensitivity
+  - convergence-assumption-challenge
+  - convergence-assumption-extraction
 ---
 
 # Assumption Excavation

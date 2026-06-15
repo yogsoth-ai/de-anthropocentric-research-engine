@@ -1,10 +1,13 @@
 ---
 name: alternative-model-generation
-description: Generate alternative model formulations by relaxing, replacing, or generalizing specific assumptions.
+description: Generate alternative model formulations by relaxing, replacing, or generalizing
+  specific assumptions.
 execution: subagent
 prompt: ./prompt.md
 input: original_model (string), assumption_to_relax (string)
-used-by: robustness-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternative Model Generation

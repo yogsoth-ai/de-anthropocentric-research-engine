@@ -1,8 +1,16 @@
 ---
 name: direct-analogy
-description: Find structurally similar systems in nature/technology/society. Map structural parallels to generate transferable solution principles.
+description: Find structurally similar systems in nature/technology/society. Map structural
+  parallels to generate transferable solution principles.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - analogy-chain
+  - direct-analogy-generation
+  - springboard-launch
+  - synectics-synthesis
+  tactics:
+  - excursion-orchestration
 ---
 
 # Direct Analogy

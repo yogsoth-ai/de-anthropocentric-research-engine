@@ -1,10 +1,14 @@
 ---
 name: survey-synthesis
-description: Final synthesis step — weave all gathered evidence (reading notes, extracted data, categorizations) into a coherent structured output appropriate to the strategy type. Used by all 5 strategies as the final step.
+description: Final synthesis step — weave all gathered evidence (reading notes, extracted
+  data, categorizations) into a coherent structured output appropriate to the strategy
+  type. Used by all 5 strategies as the final step.
 execution: subagent
 prompt: ./prompt.md
 input: strategy_type (string), accumulated_notes (string), extracted_data (string)
-used-by: literature-survey
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Survey Synthesis

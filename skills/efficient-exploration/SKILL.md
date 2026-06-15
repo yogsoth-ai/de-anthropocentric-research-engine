@@ -1,7 +1,13 @@
 ---
 name: efficient-exploration
-description: Strategy for large-N sparse pairwise comparison using TrueSkill, active learning, and rank centrality to rank 100+ candidates from limited comparisons.
-used-by: pairwise-ranking
+description: Strategy for large-N sparse pairwise comparison using TrueSkill, active
+  learning, and rank centrality to rank 100+ candidates from limited comparisons.
+dependencies:
+  tactics:
+  - adaptive-pair-selection
+  - consistency-audit-loop
+  sops:
+  - ranking-synthesis
 ---
 
 # Efficient Exploration

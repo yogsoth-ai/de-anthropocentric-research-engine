@@ -1,10 +1,13 @@
 ---
 name: lateral-synthesis
-description: Synthesize all lateral thinking intermediate outputs into a structured idea report.
+description: Synthesize all lateral thinking intermediate outputs into a structured
+  idea report.
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (string)
-used-by: lateral-thinking, provocation-and-movement, random-entry, concept-fan, challenge-operation, six-hats-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Lateral Synthesis

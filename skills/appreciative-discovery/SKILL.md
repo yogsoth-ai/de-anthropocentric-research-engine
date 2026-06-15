@@ -1,10 +1,13 @@
 ---
 name: appreciative-discovery
-description: Search for positive deviants and extract transferable principles using Appreciative Inquiry.
+description: Search for positive deviants and extract transferable principles using
+  Appreciative Inquiry.
 execution: subagent
 prompt: ./prompt.md
 input: problem_domain
-used-by: appreciative-reframing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

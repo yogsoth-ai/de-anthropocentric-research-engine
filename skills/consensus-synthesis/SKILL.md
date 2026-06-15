@@ -1,10 +1,13 @@
 ---
 name: consensus-synthesis
-description: Synthesize all rounds into a final consensus report documenting agreements, dissent, and process.
+description: Synthesize all rounds into a final consensus report documenting agreements,
+  dissent, and process.
 execution: subagent
 prompt: ./prompt.md
 input: rounds_history, final_judgments
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Consensus Synthesis

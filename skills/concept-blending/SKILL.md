@@ -1,8 +1,20 @@
 ---
 name: concept-blending
-description: "Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended Space"
+description: 'Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended
+  Space'
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - blend-completion
+  - blend-composition
+  - blend-elaboration
+  - combinatorial-synthesis
+  - generic-space-extraction
+  - input-space-construction
+  - vital-relation-mapping
+  tactics:
+  - blend-construction
+  - emergence-detection
 ---
 
 # Concept Blending

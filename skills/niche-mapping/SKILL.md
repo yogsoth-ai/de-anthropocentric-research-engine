@@ -1,10 +1,13 @@
 ---
 name: niche-mapping
-description: Map each candidate to the niches it covers, indicating strength of coverage for each assignment.
+description: Map each candidate to the niches it covers, indicating strength of coverage
+  for each assignment.
 execution: subagent
 prompt: ./prompt.md
 input: candidates, niches
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Niche Mapping

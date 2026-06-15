@@ -4,7 +4,9 @@ description: Build capability taxonomy, map existing benchmark coverage
 execution: subagent
 prompt: ./prompt.md
 input: domain, existing_benchmarks
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Capability Taxonomy Mapping SOP

@@ -1,10 +1,9 @@
-﻿---
+---
 name: compute-normalization
 description: Normalize results by compute budget (Pareto analysis)
 execution: subagent
 prompt: ./prompt.md
 input: method_scores, compute_costs
-used-by: baseline-establishment
 ---
 
 # Compute Normalization

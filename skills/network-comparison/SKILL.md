@@ -1,7 +1,23 @@
 ---
 name: network-comparison
-description: Compare N methods simultaneously including indirect evidence — network meta-analysis protocol design. Budget: 50 studies, 80 effect sizes, 60 web searches.
-used-by: meta-analysis
+description: 'Compare N methods simultaneously including indirect evidence — network
+  meta-analysis protocol design. Budget: 50 studies, 80 effect sizes, 60 web searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - evidence-network-construction
+  - heterogeneity-source-analysis
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Network Comparison Strategy

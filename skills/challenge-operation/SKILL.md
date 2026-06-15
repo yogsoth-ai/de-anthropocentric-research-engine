@@ -1,8 +1,15 @@
 ---
 name: challenge-operation
-description: "Non-threatening 'Why?' questioning of current practices (de Bono Challenge)"
+description: Non-threatening 'Why?' questioning of current practices (de Bono Challenge)
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - challenge-questioning
+  - escape-technique
+  - lateral-synthesis
+  tactics:
+  - concept-hierarchy
 ---
 
 # Challenge Operation

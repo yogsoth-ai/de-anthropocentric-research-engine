@@ -1,7 +1,12 @@
 ---
 name: convergence-distillation
-description: Iterative convergence to a single answer through Classic Delphi, Modified Delphi, or Nominal Group Technique rounds.
-used-by: structured-consensus
+description: Iterative convergence to a single answer through Classic Delphi, Modified
+  Delphi, or Nominal Group Technique rounds.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  sops:
+  - consensus-synthesis
 ---
 
 # Convergence Distillation

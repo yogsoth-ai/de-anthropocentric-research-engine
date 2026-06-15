@@ -1,17 +1,19 @@
 ---
 name: question-refinement-loop
-description: "Tactic: 迭代精化研究问题直到通过 FINER 5 项标准"
+description: 'Tactic: 迭代精化研究问题直到通过 FINER 5 项标准'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: research-question
 sops:
+- finer-criteria-check
+- scope-assessment
+- success-criteria-definition
+dependencies:
+  sops:
   - finer-criteria-check
   - scope-assessment
   - success-criteria-definition
-dependencies:
-  skills:
-    - subagent-spawning
 ---
 
 # Question Refinement Loop

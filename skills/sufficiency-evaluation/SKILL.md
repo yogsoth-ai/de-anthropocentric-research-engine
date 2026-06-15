@@ -1,10 +1,13 @@
 ---
 name: sufficiency-evaluation
-description: Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion?
+description: Evaluate the probability of sufficiency (PS) for a causal factor — would
+  this factor alone be enough to produce the conclusion?
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), factor (string), conclusion (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Sufficiency Evaluation

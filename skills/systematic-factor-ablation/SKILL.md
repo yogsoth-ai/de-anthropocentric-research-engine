@@ -1,9 +1,18 @@
 ---
 name: systematic-factor-ablation
-description: "Tactic: List all factors, remove one at a time, assess conclusion stability, rank factors by load-bearing importance."
+description: 'Tactic: List all factors, remove one at a time, assess conclusion stability,
+  rank factors by load-bearing importance.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [factor-removal, structural-counterfactual, necessity-sufficiency]
+strategies:
+- factor-removal
+- structural-counterfactual
+- necessity-sufficiency
+dependencies:
+  sops:
+  - factor-enumeration
+  - fragility-measurement
+  - load-bearing-identification
+  - single-factor-removal
 ---
 
 # Systematic Factor Ablation Tactic

@@ -1,10 +1,13 @@
 ---
 name: organism-discovery
-description: "Find organisms solving similar problems. Search across kingdoms for biological champions."
+description: Find organisms solving similar problems. Search across kingdoms for biological
+  champions.
 execution: subagent
 prompt: ./prompt.md
 input: biological_function_need (string)
-used-by: biologize-and-discover, functional-analogy, biological-function-mapping
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Organism Discovery

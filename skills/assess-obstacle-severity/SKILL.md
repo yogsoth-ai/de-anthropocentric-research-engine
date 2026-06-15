@@ -1,9 +1,13 @@
 ---
 name: assess-obstacle-severity
-description: Rate each identified obstacle's difficulty — overcomability, time cost, workaround existence. May optionally use search tools to validate assessments.
+description: Rate each identified obstacle's difficulty — overcomability, time cost,
+  workaround existence. May optionally use search tools to validate assessments.
 execution: subagent
 prompt: ./prompt.md
 input: obstacles (string), actor_profile (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Assess Obstacle Severity

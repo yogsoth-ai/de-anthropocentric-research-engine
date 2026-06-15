@@ -1,10 +1,13 @@
 ---
 name: trend-analysis
-description: Patent filing volume time-series, technology lifecycle stage, and S-curve analysis
+description: Patent filing volume time-series, technology lifecycle stage, and S-curve
+  analysis
 execution: subagent
 prompt: ./prompt.md
 input: patent_filing_data
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Trend Analysis

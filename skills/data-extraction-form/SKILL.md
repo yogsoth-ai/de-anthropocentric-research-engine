@@ -1,10 +1,13 @@
 ---
 name: data-extraction-form
-description: Design structured data extraction form for systematic meta-analysis data collection
+description: Design structured data extraction form for systematic meta-analysis data
+  collection
 execution: subagent
 prompt: ./prompt.md
 input: pico_framework, effect_size_type, moderator_variables
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Data Extraction Form SOP

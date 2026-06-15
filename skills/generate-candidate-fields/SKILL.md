@@ -1,9 +1,15 @@
 ---
 name: generate-candidate-fields
-description: Propose 3-8 candidate research fields based on the full ActorProfile. When user wants to explore beyond their current stack, use other ActorProfile signals (intentionality, boundary) to determine exploration space. Free exploration within the boundary.
+description: Propose 3-8 candidate research fields based on the full ActorProfile.
+  When user wants to explore beyond their current stack, use other ActorProfile signals
+  (intentionality, boundary) to determine exploration space. Free exploration within
+  the boundary.
 execution: subagent
 prompt: ./prompt.md
 input: actor_profile (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Generate Candidate Fields

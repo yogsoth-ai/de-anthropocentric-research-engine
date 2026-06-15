@@ -1,8 +1,13 @@
 ---
 name: fantasy-analogy
-description: Wish-fulfillment thinking — ignore physical laws for ideal solution. Use unconstrained imagination to reveal what the problem truly needs.
+description: Wish-fulfillment thinking — ignore physical laws for ideal solution.
+  Use unconstrained imagination to reveal what the problem truly needs.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - fantasy-wish
+  - springboard-launch
+  - synectics-synthesis
 ---
 
 # Fantasy Analogy

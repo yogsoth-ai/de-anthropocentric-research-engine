@@ -1,10 +1,13 @@
 ---
 name: alternative-scoring
-description: Score each candidate alternative against all criteria to produce a score matrix.
+description: Score each candidate alternative against all criteria to produce a score
+  matrix.
 execution: subagent
 prompt: ./prompt.md
 input: candidates (string[]), criteria (string[]), weights (number[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternative Scoring

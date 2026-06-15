@@ -1,10 +1,13 @@
 ---
 name: rating-update
-description: Incorporate a new judgment into the rating model and return updated ratings for all candidates.
+description: Incorporate a new judgment into the rating model and return updated ratings
+  for all candidates.
 execution: subagent
 prompt: ./prompt.md
 input: judgment(object), current_ratings(object), method(string)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Rating Update

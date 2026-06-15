@@ -1,7 +1,11 @@
 ---
 name: appreciative-reframing
-description: Find positive deviants and reframe the problem from deficit-based to asset-based using Appreciative Inquiry.
-used-by: problem-reformulation
+description: Find positive deviants and reframe the problem from deficit-based to
+  asset-based using Appreciative Inquiry.
+dependencies:
+  sops:
+  - appreciative-discovery
+  - reformulation-synthesis
 ---
 
 # Appreciative Reframing

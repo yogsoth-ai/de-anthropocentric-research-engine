@@ -1,8 +1,13 @@
 ---
 name: coverage-analysis
-description: Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space.
+description: Systematic coverage evaluation pipeline — benchmark inventory, method-problem
+  crossing, and intersection evaluation to map explored vs unexplored solution space.
 execution: tactic
-used-by: systematic-enumeration, benchmark-sweep, method-problem-matrix, ablation-brainstorm
+dependencies:
+  sops:
+  - creative-ideation-benchmark-inventory
+  - intersection-evaluation
+  - method-problem-crossing
 ---
 
 # Coverage Analysis

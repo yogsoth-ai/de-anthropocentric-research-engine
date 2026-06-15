@@ -1,7 +1,10 @@
 ---
 name: wickedness-assessment
-description: Apply Rittel's 10 criteria to determine if the problem is tame, complex, or wicked, and adjust research strategy accordingly.
-used-by: problem-reformulation
+description: Apply Rittel's 10 criteria to determine if the problem is tame, complex,
+  or wicked, and adjust research strategy accordingly.
+dependencies:
+  sops:
+  - wickedness-scoring
 ---
 
 # Wickedness Assessment

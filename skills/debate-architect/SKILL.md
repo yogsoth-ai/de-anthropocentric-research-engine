@@ -1,10 +1,13 @@
 ---
 name: debate-architect
-description: Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters.
+description: Designs debate structure based on artifact type — selects attack vectors,
+  assigns perspectives, determines escalation ladder, and configures round parameters.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string), budget_size (string), strategy (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Architect

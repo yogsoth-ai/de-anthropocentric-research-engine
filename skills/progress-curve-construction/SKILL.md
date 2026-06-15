@@ -1,8 +1,12 @@
-﻿---
+---
 name: progress-curve-construction
 description: Build performance-over-time progress curves with inflection detection
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - baseline-synthesis
+  - headroom-estimation
+  - progress-curve-fitting
 ---
 
 # Progress Curve Construction

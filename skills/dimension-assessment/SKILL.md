@@ -1,10 +1,13 @@
 ---
 name: dimension-assessment
-description: Score a single readiness dimension for a candidate with evidence and gap analysis.
+description: Score a single readiness dimension for a candidate with evidence and
+  gap analysis.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, dimension
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dimension Assessment

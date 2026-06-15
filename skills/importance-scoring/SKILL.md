@@ -1,15 +1,15 @@
 ---
 name: importance-scoring
-description: "SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据"
+description: 'SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord — 单条标准化 gap 记录"
-output: "ImportanceScore — 含维度分、综合分（1-5）及文字依据"
+input: GapRecord — 单条标准化 gap 记录
+output: ImportanceScore — 含维度分、综合分（1-5）及文字依据
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Importance Scoring

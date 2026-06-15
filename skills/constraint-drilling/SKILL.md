@@ -1,8 +1,14 @@
 ---
 name: constraint-drilling
-description: Identify constraints, classify them by type and severity, assess removability, and design removal paths for removable constraints.
+description: Identify constraints, classify them by type and severity, assess removability,
+  and design removal paths for removable constraints.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - constraint-classification
+  - constraint-identification-sop
+  - removability-assessment
+  - removal-path
 ---
 
 # Constraint Drilling

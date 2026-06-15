@@ -1,10 +1,13 @@
 ---
 name: objective-definition
-description: Define optimization objectives, constraints, and trade-off preferences from context and candidate information.
+description: Define optimization objectives, constraints, and trade-off preferences
+  from context and candidate information.
 execution: subagent
 prompt: ./prompt.md
 input: context, candidates
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Objective Definition

@@ -1,8 +1,18 @@
 ---
 name: design-by-analogy
-description: "Complete DBA process: problem reframe → source search → map → transfer → adapt. Full Design-by-Analogy methodology for systematic analogical design."
+description: 'Complete DBA process: problem reframe → source search → map → transfer
+  → adapt. Full Design-by-Analogy methodology for systematic analogical design.'
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - analogy-quality-assessment
+  - cross-domain-synthesis
+  - structural-mapping
+  - transfer-adaptation
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Design by Analogy

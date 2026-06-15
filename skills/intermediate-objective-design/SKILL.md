@@ -1,14 +1,16 @@
 ---
 name: intermediate-objective-design
-description: "Design intermediate objectives to overcome each identified obstacle"
+description: Design intermediate objectives to overcome each identified obstacle
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: prerequisite-planning
 input: categorized obstacle list
 output: intermediate objectives with verification criteria and dependency sequence
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Intermediate Objective Design

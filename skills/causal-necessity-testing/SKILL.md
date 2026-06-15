@@ -1,9 +1,18 @@
 ---
 name: causal-necessity-testing
-description: "Tactic: Extract causal claims, evaluate probability of necessity (PN) and sufficiency (PS) for each, classify into necessity-sufficiency quadrants."
+description: 'Tactic: Extract causal claims, evaluate probability of necessity (PN)
+  and sufficiency (PS) for each, classify into necessity-sufficiency quadrants.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [necessity-sufficiency, structural-counterfactual, thought-experiment]
+strategies:
+- necessity-sufficiency
+- structural-counterfactual
+- thought-experiment
+dependencies:
+  sops:
+  - causal-claim-extraction
+  - load-bearing-identification
+  - necessity-evaluation
+  - sufficiency-evaluation
 ---
 
 # Causal Necessity Testing Tactic

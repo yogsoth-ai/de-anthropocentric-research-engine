@@ -1,8 +1,16 @@
 ---
 name: causal-tree-building
-description: Build logical causal trees from symptoms to root causes — list UDEs, connect causal chains, validate logic, locate root causes. Combines ishikawa-decomposition, current-reality-tree, and clr-validation SOPs.
+description: Build logical causal trees from symptoms to root causes — list UDEs,
+  connect causal chains, validate logic, locate root causes. Combines ishikawa-decomposition,
+  current-reality-tree, and clr-validation SOPs.
 execution: tactic
-used-by: root-cause-drilling
+dependencies:
+  sops:
+  - clr-validation
+  - current-reality-tree
+  - deep-insight-paper-search
+  - five-whys-drilling
+  - ishikawa-decomposition
 ---
 
 # Causal Tree Building

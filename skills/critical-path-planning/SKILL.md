@@ -1,16 +1,24 @@
 ---
 name: critical-path-planning
-description: "Identify the shortest execution path via CPM forward/backward pass, resource leveling, and buffer insertion"
+description: Identify the shortest execution path via CPM forward/backward pass, resource
+  leveling, and buffer insertion
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
+- activity-listing
+- dependency-sequencing
+- duration-estimation
+- critical-path-calculation
+tactics:
+- task-decomposition
+dependencies:
+  sops:
   - activity-listing
+  - critical-path-calculation
   - dependency-sequencing
   - duration-estimation
-  - critical-path-calculation
-tactics:
+  tactics:
   - task-decomposition
 ---
 

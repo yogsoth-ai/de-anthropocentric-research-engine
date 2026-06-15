@@ -1,8 +1,16 @@
 ---
 name: evolution-strategy
-description: "Use evolution mechanisms (selection, mutation, radiation) as design operators for generating and refining solution populations."
+description: Use evolution mechanisms (selection, mutation, radiation) as design operators
+  for generating and refining solution populations.
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biomimicry-synthesis
+  - emulation-generation
+  - evolution-mechanism-transfer
+  tactics:
+  - life-principles-application
 ---
 
 # Evolution Strategy

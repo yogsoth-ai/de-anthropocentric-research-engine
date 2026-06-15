@@ -1,8 +1,15 @@
 ---
 name: boundary-unfolding
-description: Systematically expose hidden system boundaries — CSH 12-question is/ought comparison, identify excluded stakeholders, reveal blind spots. Combines csh-12-question, jtbd-mapping, and salience-classification SOPs.
+description: Systematically expose hidden system boundaries — CSH 12-question is/ought
+  comparison, identify excluded stakeholders, reveal blind spots. Combines csh-12-question,
+  jtbd-mapping, and salience-classification SOPs.
 execution: tactic
-used-by: stakeholder-mapping
+dependencies:
+  sops:
+  - csh-12-question
+  - deep-insight-multi-stakeholder-simulation
+  - jtbd-mapping
+  - salience-classification
 ---
 
 # Boundary Unfolding

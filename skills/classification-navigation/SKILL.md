@@ -2,7 +2,11 @@
 name: classification-navigation
 description: IPC/CPC hierarchy drill-down and lateral expansion for patent discovery
 execution: tactic
-used-by: patent-mining
+dependencies:
+  sops:
+  - knowledge-acquisition-saturation-detection
+  - patent-categorization
+  - patent-query-formulation
 ---
 
 # Classification Navigation

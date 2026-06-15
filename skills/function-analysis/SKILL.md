@@ -1,10 +1,13 @@
 ---
 name: function-analysis
-description: "FMEA Step 3: Decompose artifact into function tree — identify what each component is supposed to do before analyzing how it can fail."
+description: 'FMEA Step 3: Decompose artifact into function tree — identify what each
+  component is supposed to do before analyzing how it can fail.'
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string), analysis_mode (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Function Analysis

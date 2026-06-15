@@ -1,10 +1,13 @@
 ---
 name: bisociation-network-construction
-description: Build multi-domain bridging concept network. Creates a network of collision points between multiple thinking matrices.
+description: Build multi-domain bridging concept network. Creates a network of collision
+  points between multiple thinking matrices.
 execution: subagent
 prompt: ./prompt.md
 input: multiple_source_domains (string)
-used-by: cross-domain-discovery, facet-bisociation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Bisociation Network Construction

@@ -1,8 +1,13 @@
 ---
 name: concept-hierarchy
-description: Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level.
+description: Build concept levels from purpose through concepts to ideas, with escape
+  and fractionation at each level.
 execution: tactic
-used-by: lateral-thinking, concept-fan, challenge-operation
+dependencies:
+  sops:
+  - concept-fan-expansion
+  - escape-technique
+  - fractionation
 ---
 
 # Concept Hierarchy

@@ -1,10 +1,9 @@
-﻿---
+---
 name: performance-table-assembly
 description: Assemble unified comparison table with confidence interval annotations
 execution: subagent
 prompt: ./prompt.md
 input: extracted_scores, condition_metadata
-used-by: baseline-establishment
 ---
 
 # Performance Table Assembly

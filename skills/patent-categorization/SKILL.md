@@ -1,10 +1,13 @@
 ---
 name: patent-categorization
-description: Classify patents by tech subdomain, application scenario, and value chain position
+description: Classify patents by tech subdomain, application scenario, and value chain
+  position
 execution: subagent
 prompt: ./prompt.md
 input: patent_list
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Patent Categorization

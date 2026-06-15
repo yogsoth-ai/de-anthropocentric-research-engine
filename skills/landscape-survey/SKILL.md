@@ -1,8 +1,21 @@
 ---
 name: landscape-survey
-description: Patent landscape full-scan — maps technology domain via assignee ranking, IPC/CPC classification, filing trends. Budget: 200 patent families, 0 claim parses, 80 web searches.
+description: 'Patent landscape full-scan — maps technology domain via assignee ranking,
+  IPC/CPC classification, filing trends. Budget: 200 patent families, 0 claim parses,
+  80 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - patent-family-tracing
+  sops:
+  - assignee-normalization
+  - knowledge-acquisition-saturation-detection
+  - patent-categorization
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
+  - trend-analysis
 ---
 
 # Landscape Survey

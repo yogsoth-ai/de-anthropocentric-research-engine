@@ -1,22 +1,22 @@
 ---
 name: competing-hypothesis-construction
-description: "Strategy: 为同一现象构建多个竞争假设"
+description: 'Strategy: 为同一现象构建多个竞争假设'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: hypothesis-formulation
 tactics:
-  - competing-hypothesis-matrix
+- competing-hypothesis-matrix
 sops:
-  - competing-hypothesis-generation
-  - discriminating-prediction-design
-  - hypothesis-comparison-matrix
-  - falsifiability-check
+- competing-hypothesis-generation
+- discriminating-prediction-design
+- hypothesis-comparison-matrix
+- falsifiability-check
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - literature-engine
+  tactics:
+  - competing-hypothesis-matrix
+  sops:
+  - falsifiability-check
 ---
 
 # Competing Hypothesis Construction

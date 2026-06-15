@@ -1,15 +1,17 @@
 ---
 name: dependency-graph-construction
-description: "Build task dependency graph with predecessor/successor relationships"
+description: Build task dependency graph with predecessor/successor relationships
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by: dependency-constraint
 input: task list with descriptions, resource assignments, duration estimates
 output: dependency graph (adjacency list) with critical path candidates
 shared: true
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Dependency Graph Construction

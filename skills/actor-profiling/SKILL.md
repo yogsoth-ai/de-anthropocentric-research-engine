@@ -1,6 +1,15 @@
 ---
 name: actor-profiling
-description: Understand who the user is — background, resources, constraints, and deep motivations. Produces an ActorProfile that informs all downstream decisions. Use this tactic at the start of any crystallization process to build a model of the user's capabilities, limitations, and intent.
+description: Understand who the user is — background, resources, constraints, and
+  deep motivations. Produces an ActorProfile that informs all downstream decisions.
+  Use this tactic at the start of any crystallization process to build a model of
+  the user's capabilities, limitations, and intent.
+dependencies:
+  sops:
+  - ask-constraints
+  - ask-intentionality
+  - clarify-resources
+  - explore-resume
 ---
 
 # Actor Profiling

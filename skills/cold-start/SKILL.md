@@ -1,6 +1,17 @@
 ---
 name: cold-start
-description: Full crystallization strategy for users who have no research direction at all. Covers actor profiling, landscape reconnaissance, direction narrowing, obstacle analysis, goal decomposition, and north-star synthesis. Use when the user's first message reveals zero specificity about what they want to research.
+description: Full crystallization strategy for users who have no research direction
+  at all. Covers actor profiling, landscape reconnaissance, direction narrowing, obstacle
+  analysis, goal decomposition, and north-star synthesis. Use when the user's first
+  message reveals zero specificity about what they want to research.
+dependencies:
+  tactics:
+  - actor-profiling
+  - direction-narrowing
+  - goal-decomposition
+  - landscape-reconnaissance
+  - north-star-synthesis
+  - obstacle-analysis
 ---
 
 # Cold Start Strategy

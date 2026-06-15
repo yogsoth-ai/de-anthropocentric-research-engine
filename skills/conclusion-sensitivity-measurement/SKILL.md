@@ -1,10 +1,13 @@
 ---
 name: conclusion-sensitivity-measurement
-description: Quantify how much conclusions change across all assumption negations and produce a sensitivity ranking.
+description: Quantify how much conclusions change across all assumption negations
+  and produce a sensitivity ranking.
 execution: subagent
 prompt: ./prompt.md
 input: original_conclusion, re_derived_conclusions
-used-by: assumption-criticality
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 ## Execution

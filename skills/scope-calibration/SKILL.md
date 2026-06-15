@@ -1,20 +1,19 @@
 ---
 name: scope-calibration
-description: "Strategy: 调整研究问题范围 — zoom in/out 直到范围合适"
+description: 'Strategy: 调整研究问题范围 — zoom in/out 直到范围合适'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: research-question
 tactics:
-  - question-refinement-loop
+- question-refinement-loop
 sops:
-  - scope-assessment
-  - finer-criteria-check
-  - success-criteria-definition
+- scope-assessment
+- finer-criteria-check
+- success-criteria-definition
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - question-refinement-loop
 ---
 
 # Scope Calibration

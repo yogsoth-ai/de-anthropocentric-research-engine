@@ -1,9 +1,18 @@
 ---
 name: adversarial-roleplay
-description: "Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation."
+description: 'Tactic: Construct detailed hostile persona, attack artifact from that
+  persona''s perspective, record successful attack paths for aggregation.'
 type: tactic
-used-by: [red-teaming]
-strategies: [adversarial-persona, groupthink-mitigation, alternative-analysis]
+strategies:
+- adversarial-persona
+- groupthink-mitigation
+- alternative-analysis
+dependencies:
+  sops:
+  - attack-vector-generation
+  - finding-aggregation
+  - persona-construction
+  - probe-execution
 ---
 
 # Adversarial Roleplay Tactic

@@ -1,10 +1,13 @@
 ---
 name: ahrq-reason-classification
-description: Classify gap root causes using AHRQ 4-reason framework (insufficient info, biased info, inconsistent info, not yet integrated).
+description: Classify gap root causes using AHRQ 4-reason framework (insufficient
+  info, biased info, inconsistent info, not yet integrated).
 execution: subagent
 prompt: ./prompt.md
 input: gap_description (string), surrounding_evidence (string)
-used-by: gap-classification
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # AHRQ Reason Classification

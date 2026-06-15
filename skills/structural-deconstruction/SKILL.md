@@ -1,8 +1,39 @@
 ---
 name: structural-deconstruction
-description: Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and recombination. Campaign orchestrating 5 strategies for systematic structural transformation.
+description: Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ,
+  and recombination. Campaign orchestrating 5 strategies for systematic structural
+  transformation.
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  sops:
+  - constraint-injection
+  - context-checkpoint
+  - context-init
+  - contradiction-matrix-lookup
+  - creative-ideation-assumption-surfacing
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - function-model-construction
+  - idea-synthesis
+  - parameter-identification
+  - recombination-generation
+  - scamper-divergence
+  - separation-principle
+  - structural-synthesis
+  - surgery-operation
+  - trimming-execution
+  - triz-principle-application
+  tactics:
+  - component-decomposition
+  - contradiction-identification
+  - creative-ideation-combination-mapping
+  - evaluation-filtering
+  strategies:
+  - component-surgery
+  - function-trimming
+  - recombination-architecture
+  - scamper-transformation
+  - triz-contradiction-resolution
 ---
 
 # Structural Deconstruction

@@ -1,10 +1,13 @@
 ---
 name: alternative-futures
-description: Generate 2-4 divergent scenarios from the same evidence base, each representing a plausible alternative to the artifact's conclusions.
+description: Generate 2-4 divergent scenarios from the same evidence base, each representing
+  a plausible alternative to the artifact's conclusions.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), evidence_base (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternative Futures

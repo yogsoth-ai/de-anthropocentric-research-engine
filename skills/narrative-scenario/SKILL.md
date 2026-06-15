@@ -1,17 +1,27 @@
 ---
 name: narrative-scenario
-description: "What is the story of each future? — Shell method narrative construction for rich qualitative scenario understanding"
+description: What is the story of each future? — Shell method narrative construction
+  for rich qualitative scenario understanding
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - scenario-narrative-construction
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- scenario-narrative-construction
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
+- cross-consistency-filtering
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-narrative-construction
+  - scenario-synthesis
+  tactics:
   - cross-consistency-filtering
   - strategy-robustness-testing
 ---

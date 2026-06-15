@@ -1,15 +1,22 @@
 ---
 name: resource-constraint
-description: "Are resources sufficient? — Quantify compute, data, time, human, and financial resource constraints"
+description: Are resources sufficient? — Quantify compute, data, time, human, and
+  financial resource constraints
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - resource-quantification
-  - critical-chain-identification
-  - buffer-sizing
+- resource-quantification
+- critical-chain-identification
+- buffer-sizing
 tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
+  - buffer-sizing
+  - critical-chain-identification
+  - resource-quantification
+  tactics:
   - sensitivity-ranking
 ---
 

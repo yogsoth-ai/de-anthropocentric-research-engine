@@ -1,10 +1,13 @@
 ---
 name: mitigation-design-sop
-description: Design prevention, detection, and response measures for high-priority failure modes. Produces actionable countermeasure specifications.
+description: Design prevention, detection, and response measures for high-priority
+  failure modes. Produces actionable countermeasure specifications.
 execution: subagent
 prompt: ./prompt.md
 input: high_priority_modes (string), chains (string), function_tree (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Mitigation Design SOP

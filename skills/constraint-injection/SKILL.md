@@ -1,10 +1,14 @@
 ---
 name: constraint-injection
-description: Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants.
+description: Inject artificial constraints to force creative divergence. Generates
+  and applies constraints (resource, time, material, audience, scale) to existing
+  ideas to produce variants.
 execution: subagent
 prompt: ./prompt.md
 input: problem_or_idea (string), constraint_type (string)
-used-by: perspective-forcing, lateral-thinking, structural-deconstruction, morphological-exploration
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Constraint Injection

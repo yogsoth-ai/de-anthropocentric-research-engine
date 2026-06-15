@@ -2,7 +2,15 @@
 name: emergent-property-hunting
 description: Seek properties that emerge from combination (non-additive)
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  tactics:
+  - blend-construction
+  - emergence-detection
+  sops:
+  - blend-elaboration
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - vital-relation-mapping
 ---
 
 # Emergent Property Hunting

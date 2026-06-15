@@ -4,7 +4,9 @@ description: Complete blend with background knowledge
 execution: subagent
 prompt: ./prompt.md
 input: initial_blend (object)
-used-by: combinatorial-creativity, concept-blending
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Blend Completion

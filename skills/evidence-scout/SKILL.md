@@ -1,10 +1,15 @@
 ---
 name: evidence-scout
-description: Searches for external evidence supporting or opposing specific claims. Returns structured evidence with source assessment and relevance scoring.
+description: Searches for external evidence supporting or opposing specific claims.
+  Returns structured evidence with source assessment and relevance scoring.
 execution: subagent
 prompt: ./prompt.md
 input: claims_to_evidence (string), stance (string), search_budget (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
+  - stress-test-paper-overview
+  - stress-test-web-search
 ---
 
 # Evidence Scout

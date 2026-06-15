@@ -1,6 +1,18 @@
 ---
 name: hot-start
-description: Minimal crystallization strategy for users who already have a specific research topic or problem (e.g., "I want to improve CoT faithfulness in LLMs") and need structuring into a formal North Star. Heavily simplifies or skips exploration tactics, focusing on obstacle analysis, goal decomposition, and synthesis. Use when the user's first message reveals a specific, actionable research direction.
+description: Minimal crystallization strategy for users who already have a specific
+  research topic or problem (e.g., "I want to improve CoT faithfulness in LLMs") and
+  need structuring into a formal North Star. Heavily simplifies or skips exploration
+  tactics, focusing on obstacle analysis, goal decomposition, and synthesis. Use when
+  the user's first message reveals a specific, actionable research direction.
+dependencies:
+  tactics:
+  - actor-profiling
+  - direction-narrowing
+  - goal-decomposition
+  - landscape-reconnaissance
+  - north-star-synthesis
+  - obstacle-analysis
 ---
 
 # Hot Start Strategy

@@ -4,7 +4,9 @@ description: Extract evaluation protocol parameters from papers
 execution: subagent
 prompt: ./prompt.md
 input: paper_content, benchmark_name
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Protocol Element Extraction SOP

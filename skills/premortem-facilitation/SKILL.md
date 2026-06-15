@@ -1,10 +1,13 @@
 ---
 name: premortem-facilitation
-description: Execute Klein pre-mortem protocol — assume failure has occurred, generate plausible failure scenarios through prospective hindsight.
+description: Execute Klein pre-mortem protocol — assume failure has occurred, generate
+  plausible failure scenarios through prospective hindsight.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string), budget (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Pre-Mortem Facilitation

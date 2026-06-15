@@ -1,8 +1,19 @@
 ---
 name: literature-survey
-description: Autonomous Literature Survey Campaign — 5 research paradigms (scoping, systematic, deep, narrative, snowball) with quantitative budget enforcement. Selects and executes the right survey paradigm based on research intent.
+description: Autonomous Literature Survey Campaign — 5 research paradigms (scoping,
+  systematic, deep, narrative, snowball) with quantitative budget enforcement. Selects
+  and executes the right survey paradigm based on research intent.
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - deep-survey
+  - narrative-review
+  - scoping-survey
+  - snowball
+  - systematic-survey
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Literature Survey

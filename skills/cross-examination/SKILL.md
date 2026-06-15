@@ -1,10 +1,13 @@
 ---
 name: cross-examination
-description: Probes defender responses for inconsistencies, logical gaps, and unsupported claims. Acts as follow-up interrogation after initial defense.
+description: Probes defender responses for inconsistencies, logical gaps, and unsupported
+  claims. Acts as follow-up interrogation after initial defense.
 execution: subagent
 prompt: ./prompt.md
 input: defenses (string), attacks (string), artifact (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Cross-Examination

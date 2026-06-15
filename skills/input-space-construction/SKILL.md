@@ -4,7 +4,9 @@ description: Build input spaces for two source concepts
 execution: subagent
 prompt: ./prompt.md
 input: two_concepts (string)
-used-by: combinatorial-creativity, concept-blending, design-space-exploration, function-combination
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Input Space Construction

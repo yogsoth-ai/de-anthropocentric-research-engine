@@ -1,8 +1,14 @@
 ---
 name: pareto-frontier-construction
-description: Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions.
+description: Build the Pareto frontier from multi-objective optimization, visualize
+  trade-offs, and select a portfolio from non-dominated solutions.
 execution: tactic
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - selection-from-frontier
 ---
 
 # Pareto Frontier Construction

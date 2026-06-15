@@ -1,8 +1,16 @@
 ---
 name: worst-method-inversion
-description: Design worst possible solution → extract insights → invert. Deliberate failure design as creative catalyst.
+description: Design worst possible solution → extract insights → invert. Deliberate
+  failure design as creative catalyst.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  sops:
+  - constructive-rebellion
+  - destruction-synthesis
+  - inversion-extraction
+  - worst-case-design
+  tactics:
+  - inversion-protocol
 ---
 
 # Worst Method Inversion

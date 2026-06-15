@@ -1,8 +1,16 @@
 ---
 name: provocation-and-movement
-description: "PO + Movement: generate provocations then extract useful directions (4 movement types)"
+description: 'PO + Movement: generate provocations then extract useful directions
+  (4 movement types)'
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - lateral-synthesis
+  - movement-operation
+  - stepping-stone
+  tactics:
+  - movement-extraction
 ---
 
 # Provocation and Movement

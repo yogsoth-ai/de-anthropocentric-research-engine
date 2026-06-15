@@ -1,12 +1,16 @@
 ---
 name: cross-consistency-filtering
-description: "Orchestrates pairwise consistency evaluation and narrative construction to filter the morphological field"
+description: Orchestrates pairwise consistency evaluation and narrative construction
+  to filter the morphological field
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: scenario-planning
 orchestrates:
-  - consistency-pair-evaluation
+- consistency-pair-evaluation
+- scenario-narrative-construction
+dependencies:
+  sops:
+  - experiment-execution-consistency-pair-evaluation
   - scenario-narrative-construction
 ---
 

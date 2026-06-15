@@ -1,10 +1,13 @@
 ---
 name: gate-judgment
-description: Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE verdict with evidence.
+description: Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE
+  verdict with evidence.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, gate_criteria
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Gate Judgment

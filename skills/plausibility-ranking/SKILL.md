@@ -1,15 +1,15 @@
 ---
 name: plausibility-ranking
-description: "SOP: 对候选解释按合理性进行多维度加权排序"
+description: 'SOP: 对候选解释按合理性进行多维度加权排序'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "候选解释列表 + 相关证据（来自 explanation-generation 输出）"
-output: "合理性排序列表 + 各维度评分 + 排序理由"
+input: 候选解释列表 + 相关证据（来自 explanation-generation 输出）
+output: 合理性排序列表 + 各维度评分 + 排序理由
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Plausibility Ranking

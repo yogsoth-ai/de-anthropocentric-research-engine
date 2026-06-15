@@ -1,10 +1,13 @@
 ---
 name: polarity-mapping
-description: Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative of each pole), early warnings, action steps for managing rather than solving.
+description: Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative
+  of each pole), early warnings, action steps for managing rather than solving.
 execution: subagent
 prompt: ./prompt.md
 input: tension_pair (string), context (string)
-used-by: tension-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Polarity Mapping

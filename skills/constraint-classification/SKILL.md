@@ -4,7 +4,9 @@ description: Classify constraints into hard constraints, soft constraints, and a
 execution: subagent
 prompt: ./prompt.md
 input: constraints[]
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Constraint Classification

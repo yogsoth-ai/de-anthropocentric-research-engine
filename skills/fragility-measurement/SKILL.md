@@ -1,10 +1,13 @@
 ---
 name: fragility-measurement
-description: Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is.
+description: Compute a fragility index from flip-point distances and degradation scores,
+  summarizing how robust the conclusion is.
 execution: subagent
 prompt: ./prompt.md
 input: flip_points (list), degradation_scores (list), factor_count (number)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Fragility Measurement

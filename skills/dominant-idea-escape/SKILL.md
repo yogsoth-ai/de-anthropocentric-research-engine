@@ -1,7 +1,14 @@
 ---
 name: dominant-idea-escape
-description: Identify dominant paradigms constraining the field and use de Bono lateral thinking provocations to escape them.
-used-by: problem-reformulation
+description: Identify dominant paradigms constraining the field and use de Bono lateral
+  thinking provocations to escape them.
+dependencies:
+  tactics:
+  - lateral-escape
+  sops:
+  - consequence-following
+  - deep-insight-provocation-generation
+  - dominant-idea-identification
 ---
 
 # Dominant Idea Escape

@@ -1,7 +1,14 @@
 ---
 name: failure-mode-analysis
-description: Systematically catalog failure modes — generate edge cases, observe failures, cluster by mechanism, identify triggers and frequency.
-used-by: boundary-analysis
+description: Systematically catalog failure modes — generate edge cases, observe failures,
+  cluster by mechanism, identify triggers and frequency.
+dependencies:
+  tactics:
+  - deep-insight-failure-mode-cataloging
+  sops:
+  - edge-case-generation
+  - failure-clustering
+  - scaling-regime-detection
 ---
 
 # Failure Mode Analysis

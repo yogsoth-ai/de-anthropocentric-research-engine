@@ -1,9 +1,22 @@
 ---
 name: adversarial-persona
-description: "Strategy: Role-play attacks from hostile personas — competing lab researcher, hostile reviewer, funding skeptic, domain outsider — each with distinct attack motivations and blind spots."
+description: 'Strategy: Role-play attacks from hostile personas — competing lab researcher,
+  hostile reviewer, funding skeptic, domain outsider — each with distinct attack motivations
+  and blind spots.'
 type: strategy
-used-by: [red-teaming]
-tactics: [adversarial-roleplay, structured-attack-campaign]
+tactics:
+- adversarial-roleplay
+- structured-attack-campaign
+dependencies:
+  tactics:
+  - adversarial-roleplay
+  - structured-attack-campaign
+  sops:
+  - attack-resilience-scoring
+  - attack-vector-generation
+  - finding-aggregation
+  - persona-construction
+  - probe-execution
 ---
 
 # Adversarial Persona Strategy

@@ -1,15 +1,15 @@
 ---
 name: anomaly-characterization
-description: "SOP: 描述和分类无法被现有理论解释的异常现象"
+description: 'SOP: 描述和分类无法被现有理论解释的异常现象'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "异常观察描述（数据、实验结果、文献矛盾）"
-output: "结构化异常描述（现象 + 偏差量化 + 分类 + 排除已知解释）"
+input: 异常观察描述（数据、实验结果、文献矛盾）
+output: 结构化异常描述（现象 + 偏差量化 + 分类 + 排除已知解释）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Anomaly Characterization

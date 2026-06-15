@@ -1,8 +1,24 @@
 ---
 name: competitive-intelligence
-description: Analyze competitor IP portfolios — comparative patent portfolio reports with strategy inference. Budget: 120 patent families, 15 claim parses, 40 web searches.
+description: 'Analyze competitor IP portfolios — comparative patent portfolio reports
+  with strategy inference. Budget: 120 patent families, 15 claim parses, 40 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - assignee-normalization
+  - citation-network-analysis
+  - claim-parsing
+  - knowledge-acquisition-saturation-detection
+  - legal-status-assessment
+  - patent-categorization
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
+  - trend-analysis
 ---
 
 # Competitive Intelligence

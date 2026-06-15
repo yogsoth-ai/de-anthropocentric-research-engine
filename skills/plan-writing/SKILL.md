@@ -1,13 +1,18 @@
 ---
 name: plan-writing
-description: "Format critical path and prerequisites into bite-sized executable plan following superpowers:writing-plans conventions"
+description: Format critical path and prerequisites into bite-sized executable plan
+  following superpowers:writing-plans conventions
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - plan-formatting
+- plan-formatting
 tactics:
+- task-decomposition
+dependencies:
+  sops:
+  - plan-formatting
+  tactics:
   - task-decomposition
 ---
 

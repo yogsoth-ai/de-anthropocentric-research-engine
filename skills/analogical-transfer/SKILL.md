@@ -1,8 +1,18 @@
 ---
 name: analogical-transfer
-description: Systematic structure-mapping from source to target domain (Gentner). Identify relational correspondences and transfer higher-order constraints.
+description: Systematic structure-mapping from source to target domain (Gentner).
+  Identify relational correspondences and transfer higher-order constraints.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - analogy-quality-assessment
+  - cross-domain-synthesis
+  - structural-mapping
+  - transfer-adaptation
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Analogical Transfer

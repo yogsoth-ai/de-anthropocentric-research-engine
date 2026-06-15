@@ -1,10 +1,13 @@
 ---
 name: detection-scoring
-description: "Rate detectability 1-10 (inverted: 10 = hardest to detect). Estimates how likely current controls would catch the failure before impact."
+description: 'Rate detectability 1-10 (inverted: 10 = hardest to detect). Estimates
+  how likely current controls would catch the failure before impact.'
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), chains (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Detection Scoring

@@ -1,8 +1,15 @@
 ---
 name: lateral-escape
-description: de Bono lateral escape sequence — identify dominant idea, generate provocations (escape/reversal/exaggeration/distortion), follow consequences to extract new framings. Breaks paradigm lock-in.
+description: de Bono lateral escape sequence — identify dominant idea, generate provocations
+  (escape/reversal/exaggeration/distortion), follow consequences to extract new framings.
+  Breaks paradigm lock-in.
 execution: tactic
-used-by: dominant-idea-escape
+dependencies:
+  sops:
+  - consequence-following
+  - deep-insight-provocation-generation
+  - deep-insight-web-research
+  - dominant-idea-identification
 ---
 
 # Lateral Escape

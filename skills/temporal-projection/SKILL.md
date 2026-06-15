@@ -1,8 +1,12 @@
 ---
 name: temporal-projection
-description: View problem from 5yr/50yr/500yr future, backcast to generate temporally-informed creative solutions.
+description: View problem from 5yr/50yr/500yr future, backcast to generate temporally-informed
+  creative solutions.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - perspective-synthesis
+  - time-machine
 ---
 
 # Temporal Projection

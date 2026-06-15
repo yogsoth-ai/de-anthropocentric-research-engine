@@ -1,10 +1,13 @@
 ---
 name: causal-claim-extraction
-description: Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs.
+description: Extract all causal claims (X causes Y, X leads to Y, X enables Y) from
+  an artifact, producing a structured list of cause-effect pairs.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Causal Claim Extraction

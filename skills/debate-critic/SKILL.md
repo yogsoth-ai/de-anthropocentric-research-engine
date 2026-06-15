@@ -1,10 +1,13 @@
 ---
 name: debate-critic
-description: Generates structured criticism from attack stance using Toulmin model. Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses.
+description: Generates structured criticism from attack stance using Toulmin model.
+  Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), escalation_level (string), attack_vectors (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Critic

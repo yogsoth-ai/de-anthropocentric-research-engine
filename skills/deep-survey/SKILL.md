@@ -1,7 +1,19 @@
 ---
 name: deep-survey
-description: Precise, targeted investigation of a specific sub-problem — few papers, all read in full depth. High paper-research ratio (50% deep-read rate). Use when the user knows exactly what they need to understand and requires detailed technical analysis with equations, hyperparameters, and specific claims extracted.
-used-by: literature-survey
+description: Precise, targeted investigation of a specific sub-problem — few papers,
+  all read in full depth. High paper-research ratio (50% deep-read rate). Use when
+  the user knows exactly what they need to understand and requires detailed technical
+  analysis with equations, hyperparameters, and specific claims extracted.
+dependencies:
+  sops:
+  - extract-data
+  - knowledge-acquisition-gap-identification
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-web-research
+  - knowledge-acquisition-web-search
+  - survey-synthesis
 ---
 
 # Deep Survey

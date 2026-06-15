@@ -1,8 +1,28 @@
 ---
 name: biomimicry
-description: Biomimicry Campaign — discover transferable solutions from biological systems via Design Spiral, BioTRIZ, functional analogy, ecosystem patterns, and evolution strategies.
+description: Biomimicry Campaign — discover transferable solutions from biological
+  systems via Design Spiral, BioTRIZ, functional analogy, ecosystem patterns, and
+  evolution strategies.
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  tactics:
+  - analogy-extraction
+  - biological-function-mapping
+  - evaluation-filtering
+  - life-principles-application
+  strategies:
+  - biologize-and-discover
+  - biotriz-resolution
+  - ecosystem-pattern
+  - evolution-strategy
+  - functional-analogy
+  sops:
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - domain-scanning
+  - idea-synthesis
 ---
 
 # Biomimicry

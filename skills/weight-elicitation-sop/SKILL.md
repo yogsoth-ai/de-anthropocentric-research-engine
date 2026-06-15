@@ -1,10 +1,13 @@
 ---
 name: weight-elicitation-sop
-description: Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos).
+description: Compute criteria weights using a specified elicitation method (AHP, Swing,
+  BWM, MACBETH, or Simos).
 execution: subagent
 prompt: ./prompt.md
 input: criteria (string[]), method (string)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Weight Elicitation SOP

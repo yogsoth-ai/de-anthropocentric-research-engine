@@ -1,13 +1,18 @@
 ---
 name: subagent-execution-loop
-description: "Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection"
+description: Orchestrate task execution via fresh subagents with dispatch, monitoring,
+  and result collection
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
-  - implementer-dispatch
+- implementer-dispatch
+- execution-monitoring
+- result-collection
+dependencies:
+  sops:
   - execution-monitoring
+  - implementer-dispatch
   - result-collection
 ---
 

@@ -1,10 +1,13 @@
 ---
 name: occurrence-scoring
-description: Rate failure mode occurrence probability 1-10. Estimates how likely each failure mode is to manifest during research execution.
+description: Rate failure mode occurrence probability 1-10. Estimates how likely each
+  failure mode is to manifest during research execution.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), chains (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Occurrence Scoring

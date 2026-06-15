@@ -1,8 +1,13 @@
 ---
 name: multi-judge-aggregation
-description: Collect independent rankings from multiple judges, aggregate using social choice methods, and identify disagreement hotspots.
+description: Collect independent rankings from multiple judges, aggregate using social
+  choice methods, and identify disagreement hotspots.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - aggregation-method
+  - ballot-collection
+  - cycle-detection
 ---
 
 # Multi-Judge Aggregation

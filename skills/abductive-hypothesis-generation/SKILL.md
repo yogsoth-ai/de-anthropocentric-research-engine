@@ -1,22 +1,22 @@
 ---
 name: abductive-hypothesis-generation
-description: "Strategy: 面对异常的最佳解释推理"
+description: 'Strategy: 面对异常的最佳解释推理'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: hypothesis-formulation
 tactics:
-  - anomaly-driven-abduction
+- anomaly-driven-abduction
 sops:
-  - anomaly-characterization
-  - explanation-generation
-  - plausibility-ranking
-  - falsifiability-check
+- anomaly-characterization
+- explanation-generation
+- plausibility-ranking
+- falsifiability-check
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - literature-engine
+  tactics:
+  - anomaly-driven-abduction
+  sops:
+  - falsifiability-check
 ---
 
 # Abductive Hypothesis Generation

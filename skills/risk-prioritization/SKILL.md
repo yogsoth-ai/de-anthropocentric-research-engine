@@ -1,9 +1,16 @@
 ---
 name: risk-prioritization
-description: "Strategy: Action Priority matrix — classifies failure modes into H/M/L priority using severity-weighted scoring per AIAG-VDA 2019 Action Priority tables."
+description: 'Strategy: Action Priority matrix — classifies failure modes into H/M/L
+  priority using severity-weighted scoring per AIAG-VDA 2019 Action Priority tables.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [premortem-to-fmea-pipeline]
+tactics:
+- premortem-to-fmea-pipeline
+dependencies:
+  tactics:
+  - premortem-to-fmea-pipeline
+  sops:
+  - action-priority-matrix
+  - severity-scoring
 ---
 
 # Risk Prioritization Strategy

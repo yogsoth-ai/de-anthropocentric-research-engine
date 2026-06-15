@@ -1,10 +1,13 @@
 ---
 name: risk-of-bias-assessment
-description: Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools
+description: Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated
+  tools
 execution: subagent
 prompt: ./prompt.md
 input: study_metadata, study_design
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Risk of Bias Assessment SOP

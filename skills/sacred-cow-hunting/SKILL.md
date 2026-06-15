@@ -1,8 +1,19 @@
 ---
 name: sacred-cow-hunting
-description: Find and challenge domain's unquestioned beliefs. Systematic identification and productive violation of dogma.
+description: Find and challenge domain's unquestioned beliefs. Systematic identification
+  and productive violation of dogma.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  - inversion-protocol
+  sops:
+  - benchmark-challenge
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - reversal-generation
+  - sacred-cow-identification
 ---
 
 # Sacred Cow Hunting

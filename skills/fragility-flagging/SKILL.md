@@ -1,10 +1,13 @@
 ---
 name: fragility-flagging
-description: Identify which specific assumption changes cause conclusion divergence. Rates fragility severity and plausibility of alternatives.
+description: Identify which specific assumption changes cause conclusion divergence.
+  Rates fragility severity and plausibility of alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: convergence_results (string), context (string)
-used-by: robustness-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Fragility Flagging

@@ -4,7 +4,9 @@ description: Synthesize all morphological exploration outputs
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (object)
-used-by: zwicky-box-construction, cross-consistency-analysis, general-morphological-analysis, design-space-mapping, parameter-variation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Morphological Synthesis

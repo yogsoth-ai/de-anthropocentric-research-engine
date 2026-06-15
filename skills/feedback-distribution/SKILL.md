@@ -1,10 +1,13 @@
 ---
 name: feedback-distribution
-description: Create anonymized feedback report summarizing group judgment distribution for a given round.
+description: Create anonymized feedback report summarizing group judgment distribution
+  for a given round.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[], round_n
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Feedback Distribution

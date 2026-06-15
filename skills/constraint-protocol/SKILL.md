@@ -1,8 +1,11 @@
 ---
 name: constraint-protocol
-description: Inject constraints → force creative response → extract transferable principles. Orchestrates constraint injection, response generation, and principle extraction.
+description: Inject constraints → force creative response → extract transferable principles.
+  Orchestrates constraint injection, response generation, and principle extraction.
 execution: tactic
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - constraint-response
 ---
 
 # Constraint Protocol

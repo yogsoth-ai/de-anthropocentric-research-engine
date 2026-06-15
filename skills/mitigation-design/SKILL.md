@@ -1,9 +1,17 @@
 ---
 name: mitigation-design
-description: "Strategy: Design prevention, detection, and response measures for high-priority failure modes. Produces actionable countermeasures validated via re-scoring."
+description: 'Strategy: Design prevention, detection, and response measures for high-priority
+  failure modes. Produces actionable countermeasures validated via re-scoring.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [mitigation-validation]
+tactics:
+- mitigation-validation
+dependencies:
+  tactics:
+  - mitigation-validation
+  sops:
+  - action-priority-matrix
+  - mitigation-design-sop
+  - re-scoring
 ---
 
 # Mitigation Design Strategy

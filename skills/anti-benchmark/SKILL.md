@@ -1,8 +1,17 @@
 ---
 name: anti-benchmark
-description: Challenge industry best practices' hidden assumptions. Deconstruct benchmarks to reveal unexamined constraints.
+description: Challenge industry best practices' hidden assumptions. Deconstruct benchmarks
+  to reveal unexamined constraints.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  sops:
+  - benchmark-challenge
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - sacred-cow-identification
 ---
 
 # Anti-Benchmark

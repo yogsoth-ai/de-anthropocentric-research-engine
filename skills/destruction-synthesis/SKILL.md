@@ -1,10 +1,13 @@
 ---
 name: destruction-synthesis
-description: Synthesize all assumption destruction outputs into structured destructive innovation report.
+description: Synthesize all assumption destruction outputs into structured destructive
+  innovation report.
 execution: subagent
 prompt: ./prompt.md
 input: all_intermediate_outputs (string), campaign_context (string)
-used-by: axiom-negation, reverse-brainstorming, worst-method-inversion, anti-benchmark, sacred-cow-hunting
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Destruction Synthesis

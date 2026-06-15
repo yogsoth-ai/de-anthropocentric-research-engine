@@ -1,8 +1,8 @@
 ---
 name: blend-construction
-description: Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition.
+description: Construct complete 4-space blends with emergent structure. Orchestrates
+  input-space-construction → generic-space-extraction → blend-composition.
 execution: tactic
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation, emergent-property-hunting
 ---
 
 # Blend Construction

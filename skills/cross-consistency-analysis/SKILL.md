@@ -1,8 +1,14 @@
 ---
 name: cross-consistency-analysis
-description: "CCA: pairwise consistency checking to reduce solution space 90-99%"
+description: 'CCA: pairwise consistency checking to reduce solution space 90-99%'
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  tactics:
+  - creative-ideation-consistency-checking
+  sops:
+  - creative-ideation-consistency-pair-evaluation
+  - morphological-synthesis
+  - solution-space-reduction
 ---
 
 # Cross-Consistency Analysis

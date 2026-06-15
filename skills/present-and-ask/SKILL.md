@@ -1,6 +1,8 @@
 ---
 name: present-and-ask
-description: Present the field panorama to the user and gather their preferences — which fields interest them, which they reject, and why. A dialogue SOP that bridges landscape-synthesis output to user decision.
+description: Present the field panorama to the user and gather their preferences —
+  which fields interest them, which they reject, and why. A dialogue SOP that bridges
+  landscape-synthesis output to user decision.
 execution: dialogue
 ---
 

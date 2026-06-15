@@ -1,8 +1,22 @@
 ---
 name: white-space-analysis
-description: Identify patent coverage gaps — feature cross-matrix blank areas revealing unprotected technology combinations. Budget: 150 patent families, 10 claim parses, 60 web searches.
+description: 'Identify patent coverage gaps — feature cross-matrix blank areas revealing
+  unprotected technology combinations. Budget: 150 patent families, 10 claim parses,
+  60 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - claim-parsing
+  - knowledge-acquisition-saturation-detection
+  - patent-categorization
+  - patent-query-formulation
+  - patent-synthesis
+  - trend-analysis
+  - white-space-mapping
 ---
 
 # White Space Analysis

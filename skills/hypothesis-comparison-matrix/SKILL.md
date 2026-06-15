@@ -1,15 +1,15 @@
 ---
 name: hypothesis-comparison-matrix
-description: "SOP: 构建竞争假设的多维度对比矩阵"
+description: 'SOP: 构建竞争假设的多维度对比矩阵'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "竞争假设集 + 区分性预测（来自上游输出）"
-output: "结构化对比矩阵（表格 + 综合评估）"
+input: 竞争假设集 + 区分性预测（来自上游输出）
+output: 结构化对比矩阵（表格 + 综合评估）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Hypothesis Comparison Matrix

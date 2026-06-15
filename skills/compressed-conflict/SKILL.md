@@ -1,8 +1,13 @@
 ---
 name: compressed-conflict
-description: Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension.
+description: Generate compressed conflicts (oxymorons) from problem contradictions
+  and extract concrete idea directions from the symbolic tension.
 execution: tactic
-used-by: synectics, symbolic-analogy, excursion-method
+dependencies:
+  sops:
+  - analogy-chain
+  - springboard-launch
+  - symbolic-compression
 ---
 
 # Compressed Conflict

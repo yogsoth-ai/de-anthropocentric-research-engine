@@ -1,6 +1,15 @@
 ---
 name: goal-decomposition
-description: Structure the user's chosen direction into a formal goal tree using KAOS-style AND/OR decomposition. Validate feasibility against ActorProfile and ObstacleReport. Use after obstacle-analysis confirms the direction is viable.
+description: Structure the user's chosen direction into a formal goal tree using KAOS-style
+  AND/OR decomposition. Validate feasibility against ActorProfile and ObstacleReport.
+  Use after obstacle-analysis confirms the direction is viable.
+dependencies:
+  sops:
+  - and-or-decompose
+  - ask-decomposition-validation
+  - feasibility-check
+  - formulate-top-goal
+  - validate-leaves
 ---
 
 # Goal Decomposition

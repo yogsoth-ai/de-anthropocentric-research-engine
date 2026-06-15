@@ -1,10 +1,13 @@
 ---
 name: dependency-identification
-description: Identify critical dependencies from ablation results, producing a dependency graph and highlighting critical components.
+description: Identify critical dependencies from ablation results, producing a dependency
+  graph and highlighting critical components.
 execution: subagent
 prompt: ./prompt.md
 input: ablation_results (object)
-used-by: ablation-brainstorm
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dependency Identification

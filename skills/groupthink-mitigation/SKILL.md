@@ -1,9 +1,21 @@
 ---
 name: groupthink-mitigation
-description: "Strategy: 10th Man Rule and Liberating Structures — institutionalized dissent to prevent premature consensus and expose suppressed objections."
+description: 'Strategy: 10th Man Rule and Liberating Structures — institutionalized
+  dissent to prevent premature consensus and expose suppressed objections.'
 type: strategy
-used-by: [red-teaming]
-tactics: [adversarial-roleplay, assumption-cascade]
+tactics:
+- adversarial-roleplay
+- assumption-cascade
+dependencies:
+  tactics:
+  - adversarial-roleplay
+  - assumption-cascade
+  sops:
+  - devils-advocacy
+  - finding-aggregation
+  - key-assumptions-check
+  - persona-construction
+  - probe-execution
 ---
 
 # Groupthink Mitigation Strategy

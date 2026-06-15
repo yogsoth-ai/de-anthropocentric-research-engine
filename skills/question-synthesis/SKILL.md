@@ -1,15 +1,15 @@
 ---
 name: question-synthesis
-description: "SOP: 综合所有中间产物产出最终研究问题集"
+description: 'SOP: 综合所有中间产物产出最终研究问题集'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "所有中间产物（框架应用、FINER 结果、子问题等）"
-output: "最终 RQ 文档（完整结构化）"
+input: 所有中间产物（框架应用、FINER 结果、子问题等）
+output: 最终 RQ 文档（完整结构化）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Question Synthesis

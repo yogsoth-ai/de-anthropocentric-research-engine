@@ -1,8 +1,15 @@
 ---
 name: component-surgery
-description: Component-level surgical operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking (SIT).
+description: Component-level surgical operations (subtract/multiply/divide/unify/redirect)
+  from Systematic Inventive Thinking (SIT).
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - recombination-generation
+  - structural-synthesis
+  - surgery-operation
 ---
 
 # Component Surgery

@@ -1,20 +1,16 @@
 ---
 name: metric-specification
-description: "Define experiment metrics and significance standards"
+description: Define experiment metrics and significance standards
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - factor-level-design
-  - ablation-design
-  - comparison-design
-  - scaling-design
-  - robustness-design
-  - statistical-method-selection
 input: hypothesis, task domain, evaluation requirements
 output: metric definitions with significance thresholds
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Metric Specification

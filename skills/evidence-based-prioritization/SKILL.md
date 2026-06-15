@@ -1,20 +1,22 @@
 ---
 name: evidence-based-prioritization
-description: "Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级"
+description: 'Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
+- scoring-matrix-construction
 sops:
-  - ahrq-picme-assessment
-  - importance-scoring
-  - priority-synthesis
+- ahrq-picme-assessment
+- importance-scoring
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  sops:
+  - gap-normalization
+  - priority-synthesis
 ---
 
 # Evidence-Based Prioritization

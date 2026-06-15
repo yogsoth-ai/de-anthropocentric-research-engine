@@ -1,10 +1,13 @@
 ---
 name: triz-principle-application
-description: Select inventive principles from the contradiction matrix and generate concrete solutions for identified contradictions.
+description: Select inventive principles from the contradiction matrix and generate
+  concrete solutions for identified contradictions.
 execution: subagent
 prompt: ./prompt.md
 input: contradiction_description (string)
-used-by: structural-deconstruction, triz-contradiction-resolution
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # TRIZ Principle Application

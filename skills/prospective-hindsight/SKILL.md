@@ -1,9 +1,19 @@
 ---
 name: prospective-hindsight
-description: "Strategy: Klein pre-mortem — assume the artifact has failed, then retrospect plausible causes. Generates rapid failure scenario catalog."
+description: 'Strategy: Klein pre-mortem — assume the artifact has failed, then retrospect
+  plausible causes. Generates rapid failure scenario catalog.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [premortem-to-fmea-pipeline, failure-chain-tracing]
+tactics:
+- premortem-to-fmea-pipeline
+- failure-chain-tracing
+dependencies:
+  tactics:
+  - failure-chain-tracing
+  - premortem-to-fmea-pipeline
+  sops:
+  - failure-mode-extraction
+  - premortem-facilitation
+  - severity-scoring
 ---
 
 # Prospective Hindsight Strategy

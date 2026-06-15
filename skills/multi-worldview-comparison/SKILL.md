@@ -1,8 +1,15 @@
 ---
 name: multi-worldview-comparison
-description: Multi-worldview comparison — CATWOE from multiple perspectives, reframing matrix across professional lenses, identify overlooked framings. Reveals what single-perspective analysis misses.
+description: Multi-worldview comparison — CATWOE from multiple perspectives, reframing
+  matrix across professional lenses, identify overlooked framings. Reveals what single-perspective
+  analysis misses.
 execution: tactic
-used-by: multi-perspective-reframing
+dependencies:
+  sops:
+  - appreciative-discovery
+  - catwoe-analysis
+  - deep-insight-multi-stakeholder-simulation
+  - reframing-matrix
 ---
 
 # Multi-Worldview Comparison

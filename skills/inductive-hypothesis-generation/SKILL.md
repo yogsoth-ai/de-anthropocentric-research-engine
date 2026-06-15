@@ -1,24 +1,26 @@
 ---
 name: inductive-hypothesis-generation
-description: "Strategy: 从数据/观察归纳提炼假设"
+description: 'Strategy: 从数据/观察归纳提炼假设'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: hypothesis-formulation
 tactics:
+- anomaly-driven-abduction
+- falsifiability-audit
+sops:
+- anomaly-characterization
+- explanation-generation
+- variable-identification
+- relationship-specification
+- falsifiability-check
+dependencies:
+  tactics:
   - anomaly-driven-abduction
   - falsifiability-audit
-sops:
-  - anomaly-characterization
-  - explanation-generation
-  - variable-identification
+  sops:
+  - hypothesis-formation-variable-identification
   - relationship-specification
-  - falsifiability-check
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - literature-engine
 ---
 
 # Inductive Hypothesis Generation

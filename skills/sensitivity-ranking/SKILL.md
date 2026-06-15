@@ -1,14 +1,19 @@
 ---
 name: sensitivity-ranking
-description: "Rank constraints by sensitivity — which ones most impact the outcome if they shift"
+description: Rank constraints by sensitivity — which ones most impact the outcome
+  if they shift
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: constraint-analysis
 orchestrates:
-  - resource-quantification
+- resource-quantification
+- assumption-challenging
+- critical-chain-identification
+dependencies:
+  sops:
   - assumption-challenging
   - critical-chain-identification
+  - resource-quantification
 ---
 
 # Tactic: Sensitivity Ranking

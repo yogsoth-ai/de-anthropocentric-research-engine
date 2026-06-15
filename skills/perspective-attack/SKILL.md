@@ -1,10 +1,13 @@
 ---
 name: perspective-attack
-description: Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives.
+description: Attack a decision from a specific assigned perspective, producing rated
+  arguments and constructive alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: decision, perspective_brief
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Perspective Attack

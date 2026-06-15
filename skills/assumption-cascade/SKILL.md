@@ -1,9 +1,19 @@
 ---
 name: assumption-cascade
-description: "Tactic: Surface assumptions, sort by dependency, attack root assumptions first, then trace cascade failures through the dependency graph."
+description: 'Tactic: Surface assumptions, sort by dependency, attack root assumptions
+  first, then trace cascade failures through the dependency graph.'
 type: tactic
-used-by: [red-teaming]
-strategies: [assumption-challenge, systematic-probing, groupthink-mitigation]
+strategies:
+- assumption-challenge
+- systematic-probing
+- groupthink-mitigation
+dependencies:
+  sops:
+  - assumption-cascade-tracer
+  - devils-advocacy
+  - finding-aggregation
+  - key-assumptions-check
+  - probe-execution
 ---
 
 # Assumption Cascade Tactic

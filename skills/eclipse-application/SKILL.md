@@ -1,15 +1,15 @@
 ---
 name: eclipse-application
-description: "SOP: 应用 ECLIPSE 框架结构化混合方法研究问题"
+description: 'SOP: 应用 ECLIPSE 框架结构化混合方法研究问题'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究意图（混合方法研究方向）"
-output: "完整 ECLIPSE 填充 + RQ 表述"
+input: 研究意图（混合方法研究方向）
+output: 完整 ECLIPSE 填充 + RQ 表述
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # ECLIPSE Application

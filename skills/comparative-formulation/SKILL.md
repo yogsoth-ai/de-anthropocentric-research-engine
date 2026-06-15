@@ -1,21 +1,23 @@
 ---
 name: comparative-formulation
-description: "Strategy: 构建对比性研究问题 — A vs B 的系统化比较"
+description: 'Strategy: 构建对比性研究问题 — A vs B 的系统化比较'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: research-question
 tactics:
-  - framework-selection-and-application
+- framework-selection-and-application
 sops:
-  - framework-matching
-  - pico-application
+- framework-matching
+- pico-application
+- finer-criteria-check
+- success-criteria-definition
+dependencies:
+  tactics:
+  - framework-selection-and-application
+  sops:
   - finer-criteria-check
   - success-criteria-definition
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
 ---
 
 # Comparative Formulation

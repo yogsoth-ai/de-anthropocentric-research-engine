@@ -1,10 +1,13 @@
 ---
 name: evidence-network-construction
-description: Build evidence network graph for network meta-analysis — nodes, edges, geometry assessment
+description: Build evidence network graph for network meta-analysis — nodes, edges,
+  geometry assessment
 execution: subagent
 prompt: ./prompt.md
 input: treatment_comparisons, study_arms
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Evidence Network Construction SOP

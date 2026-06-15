@@ -1,10 +1,13 @@
 ---
 name: removal-path
-description: Design concrete removal steps for a constraint with timeline and resource needs.
+description: Design concrete removal steps for a constraint with timeline and resource
+  needs.
 execution: subagent
 prompt: ./prompt.md
 input: constraint, removability_data
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Removal Path

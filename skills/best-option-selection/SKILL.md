@@ -1,7 +1,10 @@
 ---
 name: best-option-selection
-description: Select the single best candidate from a set using WSM, TOPSIS, AHP, MAUT, or VIKOR methods.
-used-by: multi-criteria-scoring
+description: Select the single best candidate from a set using WSM, TOPSIS, AHP, MAUT,
+  or VIKOR methods.
+dependencies:
+  tactics:
+  - convergence-scoring-matrix-construction
 ---
 
 # Best-Option Selection

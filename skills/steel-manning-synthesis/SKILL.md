@@ -1,10 +1,13 @@
 ---
 name: steel-manning-synthesis
-description: Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications.
+description: Synthesize all attacks and verdicts into a final unified assessment with
+  surviving concerns and recommended modifications.
 execution: subagent
 prompt: ./prompt.md
 input: all_attacks, all_verdicts
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Steel-Manning Synthesis

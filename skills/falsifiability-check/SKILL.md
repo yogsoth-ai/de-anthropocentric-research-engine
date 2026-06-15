@@ -1,15 +1,15 @@
 ---
 name: falsifiability-check
-description: "SOP: 检验假设是否满足可证伪性标准"
+description: 'SOP: 检验假设是否满足可证伪性标准'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "假设陈述（含 statement + variables + mechanism）"
-output: "可证伪性判定 + falsification scenario + 修改建议（如不可证伪）"
+input: 假设陈述（含 statement + variables + mechanism）
+output: 可证伪性判定 + falsification scenario + 修改建议（如不可证伪）
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Falsifiability Check

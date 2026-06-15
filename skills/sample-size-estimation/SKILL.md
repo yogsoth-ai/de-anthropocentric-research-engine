@@ -1,16 +1,17 @@
 ---
 name: sample-size-estimation
-description: "SOP: power analysis and required experiment count estimation"
+description: 'SOP: power analysis and required experiment count estimation'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - factor-level-design
-  - comparison-design
-input: "Effect size estimate + significance level + statistical power requirement + experiment design type"
-output: "Required sample size/repetition count + power analysis report"
+input: Effect size estimate + significance level + statistical power requirement +
+  experiment design type
+output: Required sample size/repetition count + power analysis report
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Sample Size Estimation

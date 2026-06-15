@@ -4,7 +4,9 @@ description: Classify items as consensus or dissensus at a given threshold.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[], threshold
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Consensus Classification

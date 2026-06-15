@@ -1,7 +1,12 @@
 ---
 name: gap-synthesis-strategy
-description: Compile all gap analysis products into a coherent final report with evidence gap maps, research agenda, and concept matrices.
-used-by: gap-analysis
+description: Compile all gap analysis products into a coherent final report with evidence
+  gap maps, research agenda, and concept matrices.
+dependencies:
+  sops:
+  - egm-construction
+  - evidence-synthesis
+  - gap-synthesis
 ---
 
 # Gap Synthesis

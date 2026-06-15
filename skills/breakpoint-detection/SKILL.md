@@ -1,9 +1,12 @@
 ---
 name: breakpoint-detection
-description: "Test a claim at extreme parameter values and detect the precise point where it breaks down."
+description: Test a claim at extreme parameter values and detect the precise point
+  where it breaks down.
 execution: subagent
 prompt: ./prompt.md
-used-by: [adversarial-stress-testing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Breakpoint Detection

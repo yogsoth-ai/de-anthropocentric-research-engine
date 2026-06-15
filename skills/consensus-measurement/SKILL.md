@@ -1,10 +1,13 @@
 ---
 name: consensus-measurement
-description: Compute consensus score from collected judgments using the appropriate statistical method.
+description: Compute consensus score from collected judgments using the appropriate
+  statistical method.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Consensus Measurement

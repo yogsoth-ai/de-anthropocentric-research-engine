@@ -1,10 +1,13 @@
 ---
 name: rank-comparison
-description: Compare multiple ranking results to assess agreement and identify divergent items.
+description: Compare multiple ranking results to assess agreement and identify divergent
+  items.
 execution: subagent
 prompt: ./prompt.md
 input: rankings (object[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Rank Comparison

@@ -1,7 +1,23 @@
 ---
 name: snowball
-description: Citation-chain-driven literature survey starting from seed papers. Traces research lineage in both forward (who cited this) and backward (what this cited) directions until saturation. High deep-read ratio (67%). Use when the user already has key papers and wants to find everything connected to them — ancestors, descendants, and branch points.
-used-by: literature-survey
+description: Citation-chain-driven literature survey starting from seed papers. Traces
+  research lineage in both forward (who cited this) and backward (what this cited)
+  directions until saturation. High deep-read ratio (67%). Use when the user already
+  has key papers and wants to find everything connected to them — ancestors, descendants,
+  and branch points.
+dependencies:
+  tactics:
+  - citation-chaining
+  sops:
+  - knowledge-acquisition-gap-identification
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-saturation-detection
+  - knowledge-acquisition-web-research
+  - knowledge-acquisition-web-search
+  - seed-selection
+  - survey-synthesis
 ---
 
 # Snowball

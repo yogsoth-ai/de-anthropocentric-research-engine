@@ -1,9 +1,19 @@
 ---
 name: minimal-change-search
-description: "Tactic: Generate candidate changes, detect flip-points where conclusion reverses, measure fragility as distance to nearest flip."
+description: 'Tactic: Generate candidate changes, detect flip-points where conclusion
+  reverses, measure fragility as distance to nearest flip.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [closest-worlds, thought-experiment, factor-removal]
+strategies:
+- closest-worlds
+- thought-experiment
+- factor-removal
+dependencies:
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - fragility-measurement
 ---
 
 # Minimal Change Search Tactic

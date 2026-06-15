@@ -1,10 +1,13 @@
 ---
 name: legal-status-assessment
-description: Determine patent legal status — active, expired, pending, lapsed, or revoked
+description: Determine patent legal status — active, expired, pending, lapsed, or
+  revoked
 execution: subagent
 prompt: ./prompt.md
 input: patent_identifiers
-used-by: patent-mining
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Legal Status Assessment

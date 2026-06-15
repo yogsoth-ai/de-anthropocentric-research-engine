@@ -1,7 +1,12 @@
 ---
 name: parameter-screening
-description: Quick Morris method screening to identify which parameters have large effects and which can be safely ignored.
-used-by: sensitivity-analysis
+description: Quick Morris method screening to identify which parameters have large
+  effects and which can be safely ignored.
+dependencies:
+  tactics:
+  - screening-then-decomposition
+  sops:
+  - morris-screening
 ---
 
 # Parameter Screening

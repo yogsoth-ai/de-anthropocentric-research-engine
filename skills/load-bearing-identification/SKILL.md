@@ -1,10 +1,13 @@
 ---
 name: load-bearing-identification
-description: Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion.
+description: Identify which factors are "load-bearing walls" — factors whose removal
+  would collapse the conclusion.
 execution: subagent
 prompt: ./prompt.md
 input: ablation_results (list), necessity_scores (list), sufficiency_scores (list)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Load-Bearing Identification

@@ -1,15 +1,15 @@
 ---
 name: sub-question-generation
-description: "SOP: 将主研究问题分解为可独立回答的子问题"
+description: 'SOP: 将主研究问题分解为可独立回答的子问题'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "主研究问题（RQ）"
-output: "子问题列表 + 独立性论证"
+input: 主研究问题（RQ）
+output: 子问题列表 + 独立性论证
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Sub-Question Generation

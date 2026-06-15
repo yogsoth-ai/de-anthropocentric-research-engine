@@ -1,7 +1,14 @@
 ---
 name: coherence-diagnosis
-description: Strategy for auditing preference consistency using Consistency Ratio, cycle enumeration, and mElo to detect and resolve intransitivities.
-used-by: pairwise-ranking
+description: Strategy for auditing preference consistency using Consistency Ratio,
+  cycle enumeration, and mElo to detect and resolve intransitivities.
+dependencies:
+  tactics:
+  - consistency-audit-loop
+  sops:
+  - convergence-check
+  - ranking-synthesis
+  - rating-update
 ---
 
 # Coherence Diagnosis

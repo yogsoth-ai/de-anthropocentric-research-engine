@@ -1,10 +1,14 @@
 ---
 name: po-provocation
-description: Generate PO (Provocative Operation) statements per de Bono's lateral thinking. Creates deliberately illogical provocations to escape dominant thinking patterns.
+description: Generate PO (Provocative Operation) statements per de Bono's lateral
+  thinking. Creates deliberately illogical provocations to escape dominant thinking
+  patterns.
 execution: subagent
 prompt: ./prompt.md
 input: target_statement (string), provocation_types (string)
-used-by: assumption-destruction, lateral-thinking, perspective-forcing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # PO Provocation

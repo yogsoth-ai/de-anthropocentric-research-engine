@@ -1,10 +1,10 @@
-﻿---
+---
 name: condition-cataloging
-description: Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper
+description: Record evaluation conditions (data splits, hyperparams, hardware, seeds)
+  from a paper
 execution: subagent
 prompt: ./prompt.md
 input: paper_content, method_name
-used-by: baseline-establishment
 ---
 
 # Condition Cataloging

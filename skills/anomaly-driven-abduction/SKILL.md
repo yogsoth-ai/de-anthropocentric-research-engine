@@ -1,17 +1,19 @@
 ---
 name: anomaly-driven-abduction
-description: "Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序"
+description: 'Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: hypothesis-formulation
 sops:
+- anomaly-characterization
+- explanation-generation
+- plausibility-ranking
+dependencies:
+  sops:
   - anomaly-characterization
   - explanation-generation
   - plausibility-ranking
-dependencies:
-  skills:
-    - subagent-spawning
 ---
 
 # Anomaly Driven Abduction

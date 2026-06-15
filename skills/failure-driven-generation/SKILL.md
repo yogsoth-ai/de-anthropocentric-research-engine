@@ -1,10 +1,13 @@
 ---
 name: failure-driven-generation
-description: Generate targeted solutions for each identified failure mode, ensuring every failure has at least one proposed mitigation.
+description: Generate targeted solutions for each identified failure mode, ensuring
+  every failure has at least one proposed mitigation.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (array)
-used-by: failure-taxonomy, gap-driven-generation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Failure-Driven Generation

@@ -1,10 +1,13 @@
 ---
 name: factor-enumeration
-description: List all key factors, conditions, and assumptions that support or enable the artifact's conclusion.
+description: List all key factors, conditions, and assumptions that support or enable
+  the artifact's conclusion.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), causal_claims (list)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Factor Enumeration

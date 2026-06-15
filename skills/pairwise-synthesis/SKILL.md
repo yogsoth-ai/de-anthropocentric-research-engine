@@ -1,7 +1,21 @@
 ---
 name: pairwise-synthesis
-description: Compare two methods across multiple studies — paired meta-analysis protocol design. Budget: 30 studies, 30 effect sizes, 40 web searches.
-used-by: meta-analysis
+description: 'Compare two methods across multiple studies — paired meta-analysis protocol
+  design. Budget: 30 studies, 30 effect sizes, 40 web searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Pairwise Synthesis Strategy

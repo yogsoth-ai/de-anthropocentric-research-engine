@@ -1,7 +1,14 @@
 ---
 name: uncertainty-propagation
-description: Propagate input uncertainties through the model via Monte Carlo sampling. Identifies which input uncertainties contribute most to output uncertainty.
-used-by: sensitivity-analysis
+description: Propagate input uncertainties through the model via Monte Carlo sampling.
+  Identifies which input uncertainties contribute most to output uncertainty.
+dependencies:
+  tactics:
+  - uncertainty-cascade
+  sops:
+  - critical-path-identification
+  - distribution-assignment
+  - monte-carlo-sampling
 ---
 
 # Uncertainty Propagation

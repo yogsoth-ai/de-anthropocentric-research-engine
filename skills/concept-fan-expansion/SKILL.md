@@ -1,10 +1,13 @@
 ---
 name: concept-fan-expansion
-description: Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan).
+description: Expand concept fan from purpose through concepts to directions to ideas
+  (de Bono Concept Fan).
 execution: subagent
 prompt: ./prompt.md
 input: purpose_statement (string)
-used-by: lateral-thinking, concept-fan, concept-hierarchy
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Concept Fan Expansion

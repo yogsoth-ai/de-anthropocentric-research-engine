@@ -1,8 +1,16 @@
 ---
 name: facet-bisociation
-description: Bridge two unrelated thinking matrices via Koestler bisociation. Identify independent frames of reference and force collision to produce creative insight.
+description: Bridge two unrelated thinking matrices via Koestler bisociation. Identify
+  independent frames of reference and force collision to produce creative insight.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - bisociation-network-construction
+  - cross-domain-synthesis
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Facet Bisociation

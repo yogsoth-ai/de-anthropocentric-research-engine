@@ -1,7 +1,13 @@
 ---
 name: dynamic-tracking
-description: Strategy for continuous rating updates using Elo, Glicko-2, TrueSkill 2, and Whole-History Rating for live ranking systems and A/B testing.
-used-by: pairwise-ranking
+description: Strategy for continuous rating updates using Elo, Glicko-2, TrueSkill
+  2, and Whole-History Rating for live ranking systems and A/B testing.
+dependencies:
+  tactics:
+  - adaptive-pair-selection
+  - consistency-audit-loop
+  sops:
+  - ranking-synthesis
 ---
 
 # Dynamic Tracking

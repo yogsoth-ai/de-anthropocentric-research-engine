@@ -1,10 +1,13 @@
 ---
 name: key-assumptions-check
-description: "Military ACT: systematically enumerate all assumptions, classify by type, and evaluate evidence strength supporting each."
+description: 'Military ACT: systematically enumerate all assumptions, classify by
+  type, and evaluate evidence strength supporting each.'
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Key Assumptions Check

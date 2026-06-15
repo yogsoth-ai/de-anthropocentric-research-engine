@@ -1,8 +1,16 @@
 ---
 name: prisma-screening
-description: Multi-stage PRISMA screening tactic — progressively filter papers from a large candidate pool to a focused set for deep reading. Four stages (identification, title/abstract screening, full-text screening, inclusion) with documented counts at each stage.
+description: Multi-stage PRISMA screening tactic — progressively filter papers from
+  a large candidate pool to a focused set for deep reading. Four stages (identification,
+  title/abstract screening, full-text screening, inclusion) with documented counts
+  at each stage.
 execution: tactic
-used-by: literature-survey
+dependencies:
+  sops:
+  - knowledge-acquisition-paper-overview
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - prisma-flowchart
 ---
 
 # PRISMA Screening

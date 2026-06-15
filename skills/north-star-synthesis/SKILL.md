@@ -1,6 +1,13 @@
 ---
 name: north-star-synthesis
-description: Converge all accumulated context into a crystallized North Star statement and structured ResearchBrief. Performs self-review before presenting to user. Use as the final tactic in any start mode — this is where everything comes together.
+description: Converge all accumulated context into a crystallized North Star statement
+  and structured ResearchBrief. Performs self-review before presenting to user. Use
+  as the final tactic in any start mode — this is where everything comes together.
+dependencies:
+  sops:
+  - crystallize-north-star
+  - final-validation
+  - generate-research-brief
 ---
 
 # North Star Synthesis

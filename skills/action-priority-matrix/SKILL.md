@@ -1,10 +1,13 @@
 ---
 name: action-priority-matrix
-description: Compute Risk Priority Number (RPN = S x O x D), classify failure modes into H/M/L action priority per AIAG-VDA tables.
+description: Compute Risk Priority Number (RPN = S x O x D), classify failure modes
+  into H/M/L action priority per AIAG-VDA tables.
 execution: subagent
 prompt: ./prompt.md
 input: severity_scores (string), occurrence_scores (string), detection_scores (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Action Priority Matrix

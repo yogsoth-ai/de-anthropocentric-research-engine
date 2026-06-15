@@ -4,7 +4,9 @@ description: Compose new connections in blended space
 execution: subagent
 prompt: ./prompt.md
 input: input_spaces (object), generic_space (object)
-used-by: combinatorial-creativity, concept-blending, multi-level-bisociation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Blend Composition

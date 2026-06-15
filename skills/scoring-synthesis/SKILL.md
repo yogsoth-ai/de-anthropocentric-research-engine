@@ -1,10 +1,13 @@
 ---
 name: scoring-synthesis
-description: Synthesize score matrix, rankings, and sensitivity analysis into a final recommendation.
+description: Synthesize score matrix, rankings, and sensitivity analysis into a final
+  recommendation.
 execution: subagent
 prompt: ./prompt.md
 input: score_matrix (object), rankings (object), sensitivity (object)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Scoring Synthesis

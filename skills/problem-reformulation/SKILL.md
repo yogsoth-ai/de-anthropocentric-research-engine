@@ -1,8 +1,20 @@
 ---
 name: problem-reformulation
-description: Problem Reformulation Campaign — question the problem itself. Escape dominant ideas, reframe from multiple perspectives, apply dialectical inquiry, assess wickedness, discover appreciative alternatives. 5 strategies, 3 tactics, 10 subagent SOPs.
+description: Problem Reformulation Campaign — question the problem itself. Escape
+  dominant ideas, reframe from multiple perspectives, apply dialectical inquiry, assess
+  wickedness, discover appreciative alternatives. 5 strategies, 3 tactics, 10 subagent
+  SOPs.
 execution: campaign
-used-by: deep-insight
+dependencies:
+  strategies:
+  - appreciative-reframing
+  - dialectical-reformulation
+  - dominant-idea-escape
+  - multi-perspective-reframing
+  - wickedness-assessment
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Problem Reformulation

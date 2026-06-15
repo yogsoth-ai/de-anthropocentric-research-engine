@@ -1,9 +1,23 @@
 ---
 name: necessity-sufficiency
-description: "Strategy: Probability of Necessity and Sufficiency (PNS/PS) — systematically evaluate whether each factor is necessary, sufficient, both, or neither for the conclusion."
+description: 'Strategy: Probability of Necessity and Sufficiency (PNS/PS) — systematically
+  evaluate whether each factor is necessary, sufficient, both, or neither for the
+  conclusion.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [causal-necessity-testing, systematic-factor-ablation]
+tactics:
+- causal-necessity-testing
+- systematic-factor-ablation
+dependencies:
+  tactics:
+  - causal-necessity-testing
+  - systematic-factor-ablation
+  sops:
+  - causal-claim-extraction
+  - factor-enumeration
+  - load-bearing-identification
+  - necessity-evaluation
+  - single-factor-removal
+  - sufficiency-evaluation
 ---
 
 # Necessity-Sufficiency Strategy

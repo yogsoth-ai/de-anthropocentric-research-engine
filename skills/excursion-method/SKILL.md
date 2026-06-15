@@ -1,8 +1,20 @@
 ---
 name: excursion-method
-description: Full 8-stage Gordon-Prince excursion process. Deliberate departure from the problem into unrelated domains, then force-fit discoveries back.
+description: Full 8-stage Gordon-Prince excursion process. Deliberate departure from
+  the problem into unrelated domains, then force-fit discoveries back.
 execution: strategy
-used-by: synectics
+dependencies:
+  tactics:
+  - compressed-conflict
+  - excursion-orchestration
+  sops:
+  - direct-analogy-generation
+  - excursion-departure
+  - force-fit
+  - personal-identification
+  - springboard-launch
+  - symbolic-compression
+  - synectics-synthesis
 ---
 
 # Excursion Method

@@ -1,10 +1,13 @@
 ---
 name: false-gap-filtering
-description: Detect false gaps — search failures, already-solved gaps, and inherently unanswerable questions masquerading as research gaps.
+description: Detect false gaps — search failures, already-solved gaps, and inherently
+  unanswerable questions masquerading as research gaps.
 execution: subagent
 prompt: ./prompt.md
 input: gap_candidate (string), search_results (string)
-used-by: gap-validation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # False Gap Filtering

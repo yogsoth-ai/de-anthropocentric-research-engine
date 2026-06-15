@@ -1,15 +1,15 @@
 ---
 name: ahp-weighting
-description: "SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量"
+description: 'SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "维度列表（字符串数组）+ 可选的两两比较偏好矩阵"
-output: "AHPWeights — 权重向量、一致性比率（CR）及判断矩阵"
+input: 维度列表（字符串数组）+ 可选的两两比较偏好矩阵
+output: AHPWeights — 权重向量、一致性比率（CR）及判断矩阵
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # AHP Weighting

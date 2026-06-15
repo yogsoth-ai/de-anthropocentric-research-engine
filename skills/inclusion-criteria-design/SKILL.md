@@ -1,10 +1,13 @@
 ---
 name: inclusion-criteria-design
-description: Define inclusion/exclusion criteria for systematic study selection in meta-analysis
+description: Define inclusion/exclusion criteria for systematic study selection in
+  meta-analysis
 execution: subagent
 prompt: ./prompt.md
 input: pico_framework, study_types
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Inclusion Criteria Design SOP

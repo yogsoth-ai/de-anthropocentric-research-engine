@@ -1,7 +1,13 @@
 ---
 name: de-anthropocentric-research-engine
-description: Top-level orchestrator for the yogsoth-ai research ecosystem. Drives the full research lifecycle from direction crystallization through experiment design.
+description: Top-level orchestrator for the yogsoth-ai research ecosystem. Drives
+  the full research lifecycle from direction crystallization through experiment design.
 execution: sequential
+dependencies:
+  sops:
+  - executing-specs
+  - research-catalog
+  - writing-specs
 ---
 
 # De-Anthropocentric Research Engine

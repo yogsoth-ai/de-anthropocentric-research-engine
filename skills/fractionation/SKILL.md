@@ -1,10 +1,13 @@
 ---
 name: fractionation
-description: Split concepts into smaller units and recombine them differently to produce novel structures.
+description: Split concepts into smaller units and recombine them differently to produce
+  novel structures.
 execution: subagent
 prompt: ./prompt.md
 input: concept (string)
-used-by: lateral-thinking, concept-fan, concept-hierarchy
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Fractionation

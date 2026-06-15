@@ -1,10 +1,13 @@
 ---
 name: selection-from-frontier
-description: Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria.
+description: Select the final portfolio from the Pareto front by applying stakeholder
+  preferences and decision criteria.
 execution: subagent
 prompt: ./prompt.md
 input: pareto_front, preferences
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Selection from Frontier

@@ -1,7 +1,15 @@
 ---
 name: stakeholder-mapping
-description: Map all affected parties using CSH 12-question framework, identify jobs-to-be-done, classify by salience. Reveals whose perspective is systematically excluded.
-used-by: insight
+description: Map all affected parties using CSH 12-question framework, identify jobs-to-be-done,
+  classify by salience. Reveals whose perspective is systematically excluded.
+dependencies:
+  tactics:
+  - boundary-unfolding
+  sops:
+  - csh-12-question
+  - deep-insight-multi-stakeholder-simulation
+  - jtbd-mapping
+  - salience-classification
 ---
 
 # Stakeholder Mapping

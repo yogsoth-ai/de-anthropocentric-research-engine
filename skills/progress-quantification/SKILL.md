@@ -1,7 +1,15 @@
-﻿---
+---
 name: progress-quantification
-description: Track performance progress over time, quantify remaining headroom — 30 methods, 100 data points, 40 web searches budget
-used-by: baseline-establishment
+description: Track performance progress over time, quantify remaining headroom — 30
+  methods, 100 data points, 40 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  - progress-curve-construction
+  sops:
+  - baseline-synthesis
+  - headroom-estimation
+  - progress-curve-fitting
 ---
 
 # Progress Quantification

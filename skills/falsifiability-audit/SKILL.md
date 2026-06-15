@@ -1,17 +1,19 @@
 ---
 name: falsifiability-audit
-description: "Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范"
+description: 'Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
 campaign: hypothesis-formulation
 sops:
+- falsifiability-check
+- operationalization
+- boundary-condition-specification
+dependencies:
+  sops:
+  - boundary-condition-specification
   - falsifiability-check
   - operationalization
-  - boundary-condition-specification
-dependencies:
-  skills:
-    - subagent-spawning
 ---
 
 # Falsifiability Audit

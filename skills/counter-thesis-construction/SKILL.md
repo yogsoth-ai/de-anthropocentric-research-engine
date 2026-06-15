@@ -1,7 +1,13 @@
 ---
 name: counter-thesis-construction
-description: Construct the strongest possible counter-argument to the convergence decision using Dialectical Inquiry and Thesis-Antithesis-Synthesis methods.
-used-by: steel-manning
+description: Construct the strongest possible counter-argument to the convergence
+  decision using Dialectical Inquiry and Thesis-Antithesis-Synthesis methods.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - assumption-excavation
+  sops:
+  - steel-manning-synthesis
 ---
 
 # Counter-Thesis Construction

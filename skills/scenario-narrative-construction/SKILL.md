@@ -1,16 +1,17 @@
 ---
 name: scenario-narrative-construction
-description: "Build rich narratives for surviving morphological configurations using Shell method"
+description: Build rich narratives for surviving morphological configurations using
+  Shell method
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - narrative-scenario
-  - cross-consistency-filtering
 input: parameter configuration, consistency context, research approach description
 output: rich scenario narrative with causal logic, signposts, and implications
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Scenario Narrative Construction
