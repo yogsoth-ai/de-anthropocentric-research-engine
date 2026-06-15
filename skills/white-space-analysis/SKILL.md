@@ -100,3 +100,31 @@ Map the patent coverage landscape as a multi-dimensional feature matrix and iden
 ## Recommendations
 [Prioritized list of filing opportunities]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
+| knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-parsing | Patent claim syntax parsing — independent/dependent relationships and element extraction |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+| patent-synthesis | Produce final structured patent intelligence report from all analysis results |
+| trend-analysis | Patent filing volume time-series, technology lifecycle stage, and S-curve analysis |
+| white-space-mapping | Feature cross-matrix construction and blank area identification for patent opportunity mapping |
+
+<!-- END available-tables (generated) -->

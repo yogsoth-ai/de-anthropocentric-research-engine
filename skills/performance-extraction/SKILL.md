@@ -97,3 +97,24 @@ Cannot exit until data_points >= 120 (80% of target).
   }
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
+| score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |
+
+<!-- END available-tables (generated) -->

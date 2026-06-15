@@ -83,3 +83,16 @@ quality_assessment:
     low_risk_only: [study list]
     excluding_high_risk: [study list]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

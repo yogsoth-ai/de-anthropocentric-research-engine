@@ -71,3 +71,17 @@ Apply normalization to produce fair comparison subsets:
 - condition-cataloging (for Stage 1)
 - compute-normalization (for Stage 3)
 - performance-table-assembly (for Stage 4)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| compute-normalization | Normalize results by compute budget (Pareto analysis) |
+| condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
+| performance-table-assembly | Assemble unified comparison table with confidence interval annotations |
+
+<!-- END available-tables (generated) -->

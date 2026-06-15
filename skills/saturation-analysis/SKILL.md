@@ -90,3 +90,27 @@ saturation_report:
   remaining_hard_subsets: list[string]
   successor_benchmarks: list[string]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| leaderboard-dynamics-analysis | Analyze leaderboard score distributions, compression, selective reporting |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

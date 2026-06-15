@@ -58,3 +58,17 @@ Report to calling strategy after each execution:
 - New relevant codes discovered
 - Patent count per classification code
 - Coverage assessment (% of relevant classification space explored)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+
+<!-- END available-tables (generated) -->

@@ -59,3 +59,17 @@ Report to calling strategy after each execution:
 - Total elements extracted
 - Claim tree depth (max dependency chain)
 - Feature categories identified
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| claim-parsing | Patent claim syntax parsing — independent/dependent relationships and element extraction |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
+
+<!-- END available-tables (generated) -->

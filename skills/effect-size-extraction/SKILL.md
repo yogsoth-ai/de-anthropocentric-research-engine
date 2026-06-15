@@ -95,3 +95,17 @@ extractions:
     quality: [high/medium/low confidence]
     notes: [calculation method, assumptions]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| data-extraction-form | Design structured data extraction form for systematic meta-analysis data collection |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+
+<!-- END available-tables (generated) -->

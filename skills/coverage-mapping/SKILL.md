@@ -103,3 +103,26 @@ coverage_map:
     none: int
     coverage_ratio: float
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| capability-taxonomy-mapping | Build capability taxonomy, map existing benchmark coverage |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

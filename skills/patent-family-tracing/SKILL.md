@@ -65,3 +65,18 @@ Report to calling strategy after each execution:
 - Total frontier size
 - Saturation percentage
 - Depth reached (citation generations)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| legal-status-assessment | Determine patent legal status — active, expired, pending, lapsed, or revoked |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+
+<!-- END available-tables (generated) -->

@@ -38,3 +38,18 @@ Multi-stage screening following PRISMA methodology. Progressively filter papers 
 - CC decides exact thresholds for each stage based on inclusion/exclusion criteria from define-search-protocol
 - Typical funnel: 60 identified → 40 title-screened → 30 deep-read
 - Document exclusion reasons at each stage (e.g., "off-topic", "wrong population", "not empirical")
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| knowledge-acquisition-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| knowledge-acquisition-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| knowledge-acquisition-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| prisma-flowchart | Generate PRISMA-compliant flow data documenting the screening funnel — counts at each stage (identification, screening, eligibility, inclusion) with exclusion reasons. Used by systematic-survey via prisma-screening tactic. |
+
+<!-- END available-tables (generated) -->

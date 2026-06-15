@@ -75,3 +75,19 @@ The orchestrator decides composition based on the crystallized North Star statem
 | literature-engine | literature-overview + literature-search + literature-research |
 | subagent-spawning | Subagent dispatch conventions |
 | context-management | Checkpoint protocol |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| baseline-establishment | SOTA Performance Baseline Campaign — 5 strategies for systematically collecting, standardizing, and analyzing performance data across methods. Produces standardized comparison tables, progress curves, and headroom analysis. |
+| benchmark-archaeology | Evaluation Methodology Archaeology Campaign — 5 strategies for systematic analysis of AI/ML benchmarks, metrics, and leaderboards. Reveals construct validity issues, saturation, data contamination, and evaluation protocol inconsistencies. |
+| literature-survey | Autonomous Literature Survey Campaign — 5 research paradigms (scoping, systematic, deep, narrative, snowball) with quantitative budget enforcement. Selects and executes the right survey paradigm based on research intent. |
+| meta-analysis | Cross-Study Statistical Synthesis Campaign — 5 strategies for systematic collection and methodological planning of multi-study evidence synthesis. Covers pairwise, network, cumulative meta-analysis, heterogeneity investigation, and bias detection. Stops at protocol design (no computation). |
+| patent-mining | Systematic Patent Analysis Campaign — 5 strategies for patent landscape analysis, prior art search, white space identification, competitive intelligence, and claim analysis. Produces structured patent intelligence reports. |
+
+<!-- END available-tables (generated) -->

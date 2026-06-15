@@ -94,3 +94,15 @@ protocol_comparison:
 | Protocol elements extracted per paper | 10 |
 | High-variance elements identified | 2 |
 | Impact estimates produced | 3 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| protocol-element-extraction | Extract evaluation protocol parameters from papers |
+
+<!-- END available-tables (generated) -->

@@ -101,3 +101,26 @@ Cannot exit until historical_data_points >= 80 (80% of target).
   ]
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+| progress-curve-construction | Build performance-over-time progress curves with inflection detection |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| baseline-synthesis | Produce final structured baseline report integrating all analysis results |
+| headroom-estimation | Estimate theoretical/practical ceiling vs current SOTA gap |
+| progress-curve-fitting | Construct performance-over-time visualization data |
+
+<!-- END available-tables (generated) -->

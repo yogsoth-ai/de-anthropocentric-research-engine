@@ -69,3 +69,17 @@ Consolidate all sources into a single canonical dataset:
 - method-discovery (for finding methods on leaderboards)
 - score-extraction (for paper-based extraction)
 - discrepancy-identification (for cross-validation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| discrepancy-identification | Compare same-method scores across sources, flag significant deviations |
+| method-discovery | Identify all relevant methods via literature, leaderboards, citation chains |
+| score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |
+
+<!-- END available-tables (generated) -->

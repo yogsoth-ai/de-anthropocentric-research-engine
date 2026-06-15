@@ -73,3 +73,17 @@ Quantify remaining improvement potential:
 - progress-curve-fitting (for Stages 2-3)
 - headroom-estimation (for Stage 4)
 - baseline-synthesis (for final integration)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| baseline-synthesis | Produce final structured baseline report integrating all analysis results |
+| headroom-estimation | Estimate theoretical/practical ceiling vs current SOTA gap |
+| progress-curve-fitting | Construct performance-over-time visualization data |
+
+<!-- END available-tables (generated) -->

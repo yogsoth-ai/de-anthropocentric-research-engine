@@ -90,3 +90,27 @@ benchmark_audit:
   key_findings: list[string]
   recommendations: list[string]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| contamination-audit | Detect train-test data leakage and memorization artifacts |
+| documentation-audit | Assess documentation completeness against BetterBench/Datasheets standards |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

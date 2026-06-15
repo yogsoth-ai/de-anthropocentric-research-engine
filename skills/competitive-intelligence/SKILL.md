@@ -115,3 +115,34 @@ Profile competitor IP portfolios to understand their technology focus, filing st
 ## Recommendations
 [Positioning strategy relative to competitors]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
+| knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| assignee-normalization | Standardize assignee names and identify corporate group affiliations across patent offices |
+| citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |
+| claim-parsing | Patent claim syntax parsing — independent/dependent relationships and element extraction |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| legal-status-assessment | Determine patent legal status — active, expired, pending, lapsed, or revoked |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+| patent-synthesis | Produce final structured patent intelligence report from all analysis results |
+| quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
+| trend-analysis | Patent filing volume time-series, technology lifecycle stage, and S-curve analysis |
+
+<!-- END available-tables (generated) -->

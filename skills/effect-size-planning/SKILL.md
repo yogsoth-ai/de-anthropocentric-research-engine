@@ -28,3 +28,15 @@ Determine the appropriate effect size metric, calculation methods, and conversio
 ## Output
 
 Complete effect size specification including primary metric, calculation formulas for each reporting format, and conversion procedures.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

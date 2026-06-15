@@ -29,3 +29,15 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 ## Import Source
 
 `web-browsing` repo → `skills/web-research/SKILL.md`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
+
+<!-- END available-tables (generated) -->

@@ -112,3 +112,34 @@ protocol:
   bias_assessment_plan: [comparison-adjusted funnel, small-study effects]
   reporting: PRISMA-NMA extension
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| effect-size-extraction | Systematically extract effect sizes and conditions from papers for meta-analytic synthesis |
+| evidence-synthesis-planning | Plan the statistical synthesis approach — model selection, heterogeneity strategy, and reporting |
+| quality-assessment-protocol | Methodological quality and bias risk assessment of included studies using validated tools |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| data-extraction-form | Design structured data extraction form for systematic meta-analysis data collection |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| evidence-network-construction | Build evidence network graph for network meta-analysis — nodes, edges, geometry assessment |
+| heterogeneity-source-analysis | Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical) |
+| inclusion-criteria-design | Define inclusion/exclusion criteria for systematic study selection in meta-analysis |
+| meta-analysis-synthesis | Produce final meta-analysis protocol document assembling all planning outputs into PRISMA-compliant protocol |
+| pico-formulation | Construct PICO/PECO framework for the meta-analysis research question |
+| publication-bias-assessment | Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection model analyses for publication bias |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

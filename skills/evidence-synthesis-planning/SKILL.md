@@ -116,3 +116,17 @@ synthesis_plan:
     registration: [PROSPERO ID or plan]
     grade_domains: [risk_of_bias, inconsistency, indirectness, imprecision, publication_bias]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| heterogeneity-source-analysis | Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical) |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

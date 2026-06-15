@@ -100,3 +100,25 @@ protocol_forensics:
     - recommendation: string
       priority: high|medium|low
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| evaluation-protocol-comparison | Compare implementation differences of same benchmark across papers |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| protocol-element-extraction | Extract evaluation protocol parameters from papers |
+
+<!-- END available-tables (generated) -->
