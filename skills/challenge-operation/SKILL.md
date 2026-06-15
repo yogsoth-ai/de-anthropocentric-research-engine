@@ -53,3 +53,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Escape**: For historical accidents, use escape-technique to find alternatives
 5. **Generate alternatives**: Produce concrete alternatives to challenged practices
 6. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| challenge-questioning | Non-threatening 'Why?' questioning of current practices to reveal historical accidents vs. genuine constraints. |
+| escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+
+<!-- END available-tables (generated) -->

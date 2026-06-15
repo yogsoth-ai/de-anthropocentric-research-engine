@@ -54,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Abstract**: Use abstraction-to-design for generalizable design operators
 4. **Apply**: Use emulation-generation to apply operators to solution populations
 5. **Synthesize**: Produce structured evolution-inspired design report
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| life-principles-application | Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| biomimicry-synthesis | Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions. |
+| emulation-generation | Generate technical solutions emulating biological strategies. Bridge from design principle to concrete implementation. |
+| evolution-mechanism-transfer | Map evolution mechanisms to design operations. Translate selection, mutation, drift, radiation into design operators. |
+
+<!-- END available-tables (generated) -->

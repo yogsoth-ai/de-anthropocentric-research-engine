@@ -45,3 +45,17 @@ For physical contradictions (same parameter must be both X and not-X), identify 
 | contradiction-matrix-lookup | Stage 2 — query matrix for principles |
 | separation-principle | Stage 3 — resolve physical contradictions |
 | triz-principle-application | Post — apply selected principles |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| contradiction-matrix-lookup | Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction. |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| separation-principle | Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements. |
+
+<!-- END available-tables (generated) -->

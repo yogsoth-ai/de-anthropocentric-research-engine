@@ -56,3 +56,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Invert**: Use inversion-extraction to flip each anti-solution into insight
 5. **Build**: Use constructive-rebellion to form viable solutions from inversions
 6. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| inversion-extraction | Extract constructive insights from worst solutions. Transform failure analysis into innovation directions. |
+| reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
+| worst-case-design | Design the worst possible solution. Deliberate failure engineering to reveal hidden constraints and inversion opportunities. |
+
+<!-- END available-tables (generated) -->

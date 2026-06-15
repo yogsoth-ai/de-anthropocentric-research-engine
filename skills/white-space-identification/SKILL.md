@@ -37,3 +37,16 @@ Evaluate identified white-space combinations for feasibility and novelty using c
 |-----|------|
 | white-space-detection | Stage 1 — detect uncovered matrix regions |
 | combination-evaluation | Stage 2 — evaluate feasibility and novelty |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combination-evaluation | Evaluate new combinations for feasibility and novelty |
+| white-space-detection | Identify matrix regions not covered by existing methods |
+
+<!-- END available-tables (generated) -->

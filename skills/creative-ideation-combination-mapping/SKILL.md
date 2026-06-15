@@ -58,3 +58,16 @@ Evaluate generated combinations for novelty and feasibility. Synthesize into str
 | novelty-scoring | Stage 5 — score combinations |
 | idea-synthesis | Stage 5 — synthesize into concepts |
 | saturation-detection | Post — check if space is exhausted |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| value-enumeration | Enumerate 3-5 values per parameter including extremes |
+
+<!-- END available-tables (generated) -->

@@ -56,3 +56,15 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Unique requirements surfaced | ≥3 per stakeholder |
 | Conflict points identified | ≥3 |
 | Multi-stakeholder solutions | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+
+<!-- END available-tables (generated) -->

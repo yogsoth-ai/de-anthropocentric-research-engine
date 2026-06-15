@@ -57,3 +57,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Research alternatives**: Search for domains that succeed WITHOUT these benchmarks
 6. **Build**: Use constructive-rebellion to form solutions that violate conventions productively
 7. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |
+
+<!-- END available-tables (generated) -->

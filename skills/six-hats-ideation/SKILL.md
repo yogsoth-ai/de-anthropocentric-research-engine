@@ -54,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Red Hat**: Gut feelings about which ideas resonate
 6. **Blue Hat**: Organize and select — process control
 7. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| green-hat-session | Structured creative thinking in Six Hats Green Hat mode — pure creative output with judgment suspended. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+<!-- END available-tables (generated) -->

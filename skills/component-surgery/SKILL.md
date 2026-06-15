@@ -53,3 +53,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Operate**: Apply surgery-operation SOP with selected operators
 4. **Verify**: Check that modified system retains core function
 5. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| surgery-operation | Execute component surgery operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking. |
+
+<!-- END available-tables (generated) -->

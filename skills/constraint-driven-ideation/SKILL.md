@@ -57,3 +57,16 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Forced solutions generated | ≥5 |
 | Transferable principles extracted | ≥3 |
 | Novel unconstrained solutions | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+
+<!-- END available-tables (generated) -->

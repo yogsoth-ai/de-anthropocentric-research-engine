@@ -55,3 +55,17 @@ Verify the adapted transfer maintains structural consistency:
 | transfer-adaptation | Stage 2 — test and adapt transfer |
 | structural-mapping | Stage 3 — verify structural consistency |
 | abstraction-extraction | Support — re-abstract if mapping fails |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
+| structural-mapping | Map source→target structural correspondences. Identifies corresponding, missing, and extra elements between domains. |
+| transfer-adaptation | Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles. |
+
+<!-- END available-tables (generated) -->

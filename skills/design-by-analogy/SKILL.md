@@ -63,3 +63,28 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 7. **Adapt**: Use transfer-adaptation to fit principles to target constraints and physics
 8. **Validate**: Confirm adapted solution is feasible in target domain
 9. **Synthesize**: Produce structured DBA design report via cross-domain-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
+| domain-divergence | Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
+| cross-domain-synthesis | Synthesize all cross-domain findings into a structured idea report. Integrates outputs from all strategies and SOPs. |
+| structural-mapping | Map source→target structural correspondences. Identifies corresponding, missing, and extra elements between domains. |
+| transfer-adaptation | Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles. |
+
+<!-- END available-tables (generated) -->

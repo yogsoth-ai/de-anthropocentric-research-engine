@@ -55,3 +55,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Generate**: For each gap, brainstorm potential solutions
 5. **Filter**: Apply evaluation-filtering to rank gap-filling ideas
 6. **Synthesize**: Produce final report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| coverage-analysis | Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-benchmark-inventory | Catalog all known solutions/methods in a domain with performance, applicability, and limitations. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+| intersection-evaluation | Evaluate exploration status of each cell in a method×problem matrix, annotating as explored, partial, or unexplored. |
+| method-problem-crossing | Build method×problem cross-reference matrix showing which methods have been applied to which problems. |
+
+<!-- END available-tables (generated) -->

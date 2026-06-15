@@ -42,3 +42,15 @@ From each constrained solution, extract the underlying principle that made it wo
 | constraint-response | Stage 2 — generate solutions under constraints |
 | perspective-synthesis | Stage 3 — synthesize principles into report |
 | novelty-scoring | Post — score novelty of extracted principles |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
+
+<!-- END available-tables (generated) -->

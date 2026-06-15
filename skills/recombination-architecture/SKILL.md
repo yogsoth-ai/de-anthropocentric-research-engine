@@ -52,3 +52,24 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Generate**: Apply recombination-generation SOP for novel structures
 5. **Evaluate**: Score recombinations for coherence, novelty, feasibility
 6. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+
+<!-- END available-tables (generated) -->

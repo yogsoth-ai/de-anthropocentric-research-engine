@@ -64,3 +64,31 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Solution exploration**: Generate paths through consistent space, identify white spaces
 5. **Iteration**: Refine parameters/values based on findings, repeat CCA
 6. **Synthesis**: Produce comprehensive GMA report via morphological-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| creative-ideation-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
+| white-space-identification | Identify unexplored viable regions in the morphological matrix where no existing methods operate. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combination-evaluation | Evaluate new combinations for feasibility and novelty |
+| creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| matrix-construction | Build n-dimensional morphological matrix |
+| morphological-synthesis | Synthesize all morphological exploration outputs |
+| path-generation | Generate combination paths through consistent space |
+| solution-space-reduction | Apply CCA to remove inconsistent combinations |
+| value-enumeration | Enumerate 3-5 values per parameter including extremes |
+| white-space-detection | Identify matrix regions not covered by existing methods |
+
+<!-- END available-tables (generated) -->

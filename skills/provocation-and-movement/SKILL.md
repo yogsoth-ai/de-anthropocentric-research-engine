@@ -54,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Stepping stones**: For impractical but interesting directions, use stepping-stone SOP
 4. **Alternatives**: Generate concrete alternatives from movement directions
 5. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

@@ -64,3 +64,30 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Compose Blend**: Use blend-composition to selectively project and create new connections
 6. **Complete Blend**: Use blend-completion to recruit background knowledge
 7. **Elaborate Blend**: Use blend-elaboration to run the blend as simulation and discover emergent structure
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| blend-completion | Complete blend with background knowledge |
+| blend-composition | Compose new connections in blended space |
+| blend-elaboration | Run blend as mental simulation |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| generic-space-extraction | Extract shared abstract structure from two input spaces |
+| input-space-construction | Build input spaces for two source concepts |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

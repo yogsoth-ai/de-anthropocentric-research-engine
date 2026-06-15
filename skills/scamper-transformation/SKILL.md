@@ -49,3 +49,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Evaluate variants**: Score each variant for novelty and feasibility
 4. **Combine**: Use combination-mapping to find multi-operator combinations
 5. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| scamper-divergence | Execute SCAMPER 7 operators on a target solution. Subagent self-selects best 2-3 operators for deepest exploration. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+
+<!-- END available-tables (generated) -->

@@ -62,3 +62,29 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 6. **Reverse**: Use reversal-generation to create formal negations
 7. **Build**: Use constructive-rebellion to form productive violations
 8. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+| inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
+| sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |
+
+<!-- END available-tables (generated) -->

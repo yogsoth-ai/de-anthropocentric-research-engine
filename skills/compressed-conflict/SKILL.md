@@ -45,3 +45,17 @@ Extract concrete idea directions from the symbolic tensions. Each oxymoron shoul
 | analogy-chain | Stage 2 — deepen oxymorons through layers |
 | springboard-launch | Stage 3 — convert symbolic insights to solutions |
 | synectics-synthesis | Post — synthesize compressed conflict outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| analogy-chain | Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| symbolic-compression | Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons with interpretation directions for each. |
+
+<!-- END available-tables (generated) -->

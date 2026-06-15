@@ -50,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Approximate**: What real mechanisms come closest to the fantasy?
 5. **Bridge**: Design feasible solutions that capture the fantasy's essence
 6. **Validate**: Ensure the bridge solutions address the original need
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| fantasy-wish | Unconstrained wish-fulfillment ideation. Ignore all physical laws to imagine the ideal solution, then identify realization directions. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

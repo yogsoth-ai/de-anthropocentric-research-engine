@@ -136,3 +136,54 @@ Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and rec
 | recombination-generation | Fragment reassembly |
 | structural-synthesis | Final output synthesis |
 | contradiction-matrix-lookup | 39x39 matrix query |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| component-surgery | Component-level surgical operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking (SIT). |
+| function-trimming | Remove components while preserving function via TRIZ trimming methodology. Simplify systems by redistributing functions. |
+| recombination-architecture | Reassemble decomposed fragments into novel structures through systematic recombination of components. |
+| scamper-transformation | 7 operators (Substitute/Combine/Adapt/Modify/Put/Eliminate/Reverse) for systematic transformation of existing solutions. |
+| triz-contradiction-resolution | Resolve technical and physical contradictions via TRIZ 40 inventive principles and separation methods. |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+| contradiction-identification | Identify technical and physical contradictions in a system through functional modeling and matrix analysis. |
+| creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| contradiction-matrix-lookup | Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction. |
+| creative-ideation-assumption-surfacing | Enumerate implicit assumptions in a problem statement or existing solution. Produces categorized assumption inventory (physical, social, temporal, economic, technical). |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+| parameter-identification | Identify the key parameters/dimensions of a problem space. Produces a structured parameter list with value ranges for morphological analysis. |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| scamper-divergence | Execute SCAMPER 7 operators on a target solution. Subagent self-selects best 2-3 operators for deepest exploration. |
+| separation-principle | Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| surgery-operation | Execute component surgery operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking. |
+| trimming-execution | Progressively remove components from a system while verifying function preservation through redistribution. |
+| triz-principle-application | Select inventive principles from the contradiction matrix and generate concrete solutions for identified contradictions. |
+
+<!-- END available-tables (generated) -->

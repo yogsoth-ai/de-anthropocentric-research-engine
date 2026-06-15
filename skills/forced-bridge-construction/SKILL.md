@@ -59,3 +59,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Iterate endpoints**: Try ≥4 different endpoint pairs
 6. **Extract solutions**: From validated bridges, derive concrete solution ideas
 7. **Synthesize**: Combine bridge-derived ideas into coherent proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
+| domain-divergence | Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| cross-domain-synthesis | Synthesize all cross-domain findings into a structured idea report. Integrates outputs from all strategies and SOPs. |
+| forced-connection | Force connection between two unrelated concepts. Deliberately construct bridging paths where no natural connection exists. |
+| transfer-adaptation | Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles. |
+
+<!-- END available-tables (generated) -->

@@ -62,3 +62,20 @@ Combine all perspective outputs into integrated multi-perspective assessment. Id
 | time-machine | Stage 4 — temporal projection |
 | novice-perspective | Stage 5 — novice questioning |
 | perspective-synthesis | Stage 6 — synthesize all outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| novice-perspective | Novice perspective — question the 'obvious' by adopting deliberate ignorance to reveal hidden complexity. |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+| practitioner-hat | Engineer perspective — assess buildability, cost, timeline, and integration challenges. |
+| reviewer2-hat | Hostile reviewer perspective — find fatal flaws, logical gaps, and missing evidence in a solution. |
+| theorist-hat | Theorist perspective — assess theoretical foundations, formal rigor, and formalization opportunities. |
+| time-machine | Temporal projection — view a solution from future/past time horizons to generate temporally-informed insights. |
+
+<!-- END available-tables (generated) -->

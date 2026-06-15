@@ -48,3 +48,17 @@ From the movement directions, generate concrete alternative approaches using alt
 | movement-operation | Stage 1 — apply 4 movement types |
 | stepping-stone | Stage 2 — bridge impractical to practical |
 | alternatives-generation | Stage 3 — generate concrete alternatives |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

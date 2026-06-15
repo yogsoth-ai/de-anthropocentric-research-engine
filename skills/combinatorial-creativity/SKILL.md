@@ -138,3 +138,54 @@ Produce emergent concepts via concept blending, multi-level bisociation, and fun
 | function-redistribution | Redistribute functions across different components |
 | emergent-property-identification | Identify non-additive properties from combinations |
 | combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| concept-blending | Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended Space |
+| design-space-exploration | Parametric variation + constraint satisfaction combinatorial search |
+| emergent-property-hunting | Seek properties that emerge from combination (non-additive) |
+| function-combination | TRIZ function analysis: function-level recombination and redistribution |
+| multi-level-bisociation | Simultaneous concept collision at multiple abstraction levels |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-ladder | Perform bisociation at multiple abstraction levels |
+| blend-completion | Complete blend with background knowledge |
+| blend-composition | Compose new connections in blended space |
+| blend-elaboration | Run blend as mental simulation |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| domain-scanning | Scan distant domains for transferable principles. Uses web-search and paper-overview to identify analogous solutions in unrelated fields. |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| function-redistribution | Redistribute functions across different components |
+| generic-space-extraction | Extract shared abstract structure from two input spaces |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+| input-space-construction | Build input spaces for two source concepts |
+| parameter-identification | Identify the key parameters/dimensions of a problem space. Produces a structured parameter list with value ranges for morphological analysis. |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

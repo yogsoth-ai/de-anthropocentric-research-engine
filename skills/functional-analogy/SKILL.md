@@ -62,3 +62,29 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Extract**: Use biological-strategy-extraction for transferable strategies
 6. **Abstract**: Use abstraction-to-design for design principles
 7. **Emulate**: Use emulation-generation for technical solutions
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| biological-function-mapping | Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| biological-strategy-extraction | Extract strategy principles from organisms. Identify mechanism-level details of how biological systems achieve their function. |
+| biomimicry-synthesis | Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions. |
+| emulation-generation | Generate technical solutions emulating biological strategies. Bridge from design principle to concrete implementation. |
+| functional-model-biology | Build biological system functional model. Map energy, matter, and information flows. |
+| organism-discovery | Find organisms solving similar problems. Search across kingdoms for biological champions. |
+| problem-biologization | Restate technical problem as biological question. Translate engineering challenges into nature's language. |
+
+<!-- END available-tables (generated) -->

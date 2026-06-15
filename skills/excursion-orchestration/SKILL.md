@@ -46,3 +46,17 @@ Convert the force-fitted connections into "I wish..." or "How to..." springboard
 | springboard-launch | Stage 3 — convert to concrete solutions |
 | direct-analogy-generation | Support — find analogies in excursion domain |
 | synectics-synthesis | Post — synthesize excursion outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| excursion-departure | Leave the problem entirely and explore an unrelated domain. Produces excursion domain discoveries for later force-fitting. |
+| force-fit | Force-fit excursion discoveries back to the original problem. Deliberately create connections between unrelated findings and the challenge. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+
+<!-- END available-tables (generated) -->

@@ -147,3 +147,36 @@ It does NOT:
 | combination-mapping | morphological-exploration, combinatorial-creativity, structural-deconstruction, systematic-enumeration |
 | provocation-generation | lateral-thinking, assumption-destruction, perspective-forcing |
 | evaluation-filtering | All 10 campaigns |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| creative-ideation-paper-research | Deep paper analysis with full text reading. Import of literature-engine/literature-research skill. Full text access — required for quoting results, verifying claims, extracting detailed methodology. |
+| creative-ideation-paper-search | Mid-depth paper analysis via AI-generated summaries. Import of literature-engine/literature-search skill. Reads AI summary — sufficient for methodology understanding but not for quoting specific results. |
+| creative-ideation-web-research | Deep web page analysis with full content extraction. Import of web-browsing/web-research skill. Must fetch full page via apify — no shortcuts. |
+| creative-ideation-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+
+## Available Campaigns
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Campaign | 何时用 |
+| --- | --- |
+| assumption-destruction | Assumption Destruction Campaign — open new solution spaces by negating, reversing, and challenging fundamental assumptions. |
+| biomimicry | Biomimicry Campaign — discover transferable solutions from biological systems via Design Spiral, BioTRIZ, functional analogy, ecosystem patterns, and evolution strategies. |
+| combinatorial-creativity | Combinatorial Creativity Campaign — produce emergent concepts via concept blending, multi-level bisociation, and function combination (Fauconnier-Turner) |
+| cross-domain-discovery | Cross-Domain Discovery Campaign — find transferable mechanisms from unrelated fields via bisociation, analogical transfer, random stimulus, and forced bridging |
+| lateral-thinking | Lateral Thinking Campaign — escape logical thinking tracks via PO/movement, random entry, concept fan, challenge, and six hats (de Bono) |
+| morphological-exploration | Morphological Exploration Campaign — systematic dimension-combination enumeration to discover unexplored solution spaces via Zwicky box, CCA, and GMA |
+| perspective-forcing | Perspective Forcing Campaign — discover hidden solutions by systematically switching viewpoints via roles, six hats, temporal projection, and constraint injection |
+| structural-deconstruction | Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and recombination. Campaign orchestrating 5 strategies for systematic structural transformation. |
+| synectics | Synectics Campaign — systematic use of analogy and metaphor for breakthrough associations via Gordon's 4 analogy types and excursion method. |
+| systematic-enumeration | Systematic Enumeration Campaign — exhaustive coverage analysis to discover overlooked solution spaces via benchmark sweep, method-problem matrix, ablation, and failure taxonomy |
+
+<!-- END available-tables (generated) -->

@@ -45,3 +45,17 @@ Run intersection-evaluation SOP to annotate each matrix cell as explored, partia
 | benchmark-inventory | Stage 1 — catalog all known solutions |
 | method-problem-crossing | Stage 2 — build cross-reference matrix |
 | intersection-evaluation | Stage 3 — annotate exploration status |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-benchmark-inventory | Catalog all known solutions/methods in a domain with performance, applicability, and limitations. |
+| intersection-evaluation | Evaluate exploration status of each cell in a method×problem matrix, annotating as explored, partial, or unexplored. |
+| method-problem-crossing | Build method×problem cross-reference matrix showing which methods have been applied to which problems. |
+
+<!-- END available-tables (generated) -->

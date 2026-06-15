@@ -50,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Discover**: Identify constraints and desires invisible from outside
 5. **Extract**: Convert embodiment insights into design principles
 6. **Iterate**: Embody different components for multiple perspectives
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| personal-identification | First-person empathic identification with a system or component. Produces experience description and design insights from embodiment. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

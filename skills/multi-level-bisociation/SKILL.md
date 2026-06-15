@@ -58,3 +58,28 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Map Cross-Level Effects**: Identify how collision at one level creates opportunities at another
 5. **Extract Insights**: Derive novel mechanisms from the multi-level collision pattern
 6. **Validate Depth**: Confirm insights are structural, not surface-level puns
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-ladder | Perform bisociation at multiple abstraction levels |
+| blend-composition | Compose new connections in blended space |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| generic-space-extraction | Extract shared abstract structure from two input spaces |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

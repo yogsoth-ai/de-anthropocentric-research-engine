@@ -47,3 +47,17 @@ For each promising organism, build a functional model (energy/matter/information
 | biological-strategy-extraction | Post — extract transferable strategies |
 | web-search | Support — search for biological solutions |
 | paper-overview | Support — find academic biology sources |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| functional-model-biology | Build biological system functional model. Map energy, matter, and information flows. |
+| organism-discovery | Find organisms solving similar problems. Search across kingdoms for biological champions. |
+| problem-biologization | Restate technical problem as biological question. Translate engineering challenges into nature's language. |
+
+<!-- END available-tables (generated) -->

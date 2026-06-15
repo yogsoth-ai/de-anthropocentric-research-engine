@@ -57,3 +57,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Validate**: Confirm emergent properties are genuine (not just overlooked additive properties)
 6. **Characterize**: Describe the mechanism by which emergence occurs (interaction effects, threshold effects, structural effects)
 7. **Rank**: Prioritize emergent properties by novelty and utility
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| blend-elaboration | Run blend as mental simulation |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

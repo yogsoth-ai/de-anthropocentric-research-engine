@@ -50,3 +50,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Classify inconsistencies**: Tag as logical, empirical, or normative
 4. **Reduce space**: Apply solution-space-reduction to eliminate inconsistent configurations
 5. **Report**: Document reduction ratio and remaining viable space
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| creative-ideation-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| morphological-synthesis | Synthesize all morphological exploration outputs |
+| solution-space-reduction | Apply CCA to remove inconsistent combinations |
+
+<!-- END available-tables (generated) -->

@@ -50,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Movement**: Apply movement-operation to extract useful directions
 5. **Develop**: Use stepping-stone to bridge impractical connections to practical ideas
 6. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

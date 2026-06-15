@@ -44,3 +44,16 @@ Evaluate each component for trimming potential via trimming-execution SOP criter
 | parameter-identification | Stage 2 — extract component parameters |
 | trimming-execution | Stage 3 — evaluate trimming feasibility |
 | surgery-operation | Post — apply surgical operations to candidates |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| trimming-execution | Progressively remove components from a system while verifying function preservation through redistribution. |
+
+<!-- END available-tables (generated) -->

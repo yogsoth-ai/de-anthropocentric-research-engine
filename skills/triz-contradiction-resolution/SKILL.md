@@ -56,3 +56,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Resolve technical**: Use contradiction-matrix-lookup → triz-principle-application
 5. **Resolve physical**: Use separation-principle for physical contradictions
 6. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| contradiction-identification | Identify technical and physical contradictions in a system through functional modeling and matrix analysis. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| contradiction-matrix-lookup | Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction. |
+| separation-principle | Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| triz-principle-application | Select inventive principles from the contradiction matrix and generate concrete solutions for identified contradictions. |
+
+<!-- END available-tables (generated) -->

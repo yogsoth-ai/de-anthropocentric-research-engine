@@ -55,3 +55,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Generate**: Propose solutions for high-priority unexplored combinations
 6. **Filter**: Apply evaluation-filtering to rank generated ideas
 7. **Synthesize**: Produce structured report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| gap-driven-generation | Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
+| creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+
+<!-- END available-tables (generated) -->

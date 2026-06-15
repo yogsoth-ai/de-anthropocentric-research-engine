@@ -56,3 +56,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Abstract**: Use abstraction-to-design for design principles
 5. **Generate**: Use emulation-generation for system-level designs
 6. **Synthesize**: Produce structured ecosystem-inspired design report
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| life-principles-application | Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| biomimicry-synthesis | Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions. |
+| ecosystem-pattern-extraction | Extract ecosystem-level organization patterns (symbiosis, emergence, cycles, resilience). |
+| emulation-generation | Generate technical solutions emulating biological strategies. Bridge from design principle to concrete implementation. |
+
+<!-- END available-tables (generated) -->

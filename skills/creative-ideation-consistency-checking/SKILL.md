@@ -37,3 +37,16 @@ Apply CCA reduction rules via solution-space-reduction SOP. Remove all configura
 |-----|------|
 | consistency-pair-evaluation | Stage 1 — evaluate pairwise consistency |
 | solution-space-reduction | Stage 2 — apply CCA reduction |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| solution-space-reduction | Apply CCA to remove inconsistent combinations |
+
+<!-- END available-tables (generated) -->

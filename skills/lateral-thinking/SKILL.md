@@ -136,3 +136,55 @@ Escape logical thinking tracks via PO/movement, random entry, concept fan, chall
 | fractionation | Split and recombine concepts |
 | alternatives-generation | Generate alternatives per approach |
 | lateral-synthesis | Final output synthesis |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| challenge-operation | Non-threatening 'Why?' questioning of current practices (de Bono Challenge) |
+| concept-fan | Expand from purpose to concepts to directions to ideas (de Bono Concept Fan) |
+| provocation-and-movement | PO + Movement: generate provocations then extract useful directions (4 movement types) |
+| random-entry | Random word/concept as thinking entry point (de Bono Random Entry) |
+| six-hats-ideation | Green Hat focused creative thinking within Six Hats framework |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
+| creative-ideation-provocation-generation | Generate PO provocations and extract constructive movement. Orchestrates assumption surfacing → provocation creation → movement extraction → idea formation. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+| movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| challenge-questioning | Non-threatening 'Why?' questioning of current practices to reveal historical accidents vs. genuine constraints. |
+| concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
+| constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| creative-ideation-assumption-surfacing | Enumerate implicit assumptions in a problem statement or existing solution. Produces categorized assumption inventory (physical, social, temporal, economic, technical). |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
+| fractionation | Split concepts into smaller units and recombine them differently to produce novel structures. |
+| green-hat-session | Structured creative thinking in Six Hats Green Hat mode — pure creative output with judgment suspended. |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+| po-provocation | Generate PO (Provocative Operation) statements per de Bono's lateral thinking. Creates deliberately illogical provocations to escape dominant thinking patterns. |
+| random-word-stimulus | Use random word/concept injection as creative stimulus. Selects random concepts and forces connection to the problem space, generating unexpected solution paths. |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

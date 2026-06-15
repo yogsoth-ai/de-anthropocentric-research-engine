@@ -56,3 +56,16 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Backcast paths generated | ≥3 |
 | Novel present-day actions identified | ≥5 |
 | Paradigm shift insights | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+| time-machine | Temporal projection — view a solution from future/past time horizons to generate temporally-informed insights. |
+
+<!-- END available-tables (generated) -->

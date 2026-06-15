@@ -57,3 +57,20 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Novice**: Become deliberate novice — question every "obvious" assumption
 5. **Competitor**: Become competitor — design strategies to defeat the solution
 6. **Synthesize**: Combine all perspectives into integrated improvement plan
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| competitor-simulation | Competitor perspective — design strategies to defeat this solution, then use attack vectors to improve it. |
+| novice-perspective | Novice perspective — question the 'obvious' by adopting deliberate ignorance to reveal hidden complexity. |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+| practitioner-hat | Engineer perspective — assess buildability, cost, timeline, and integration challenges. |
+| reviewer2-hat | Hostile reviewer perspective — find fatal flaws, logical gaps, and missing evidence in a solution. |
+| theorist-hat | Theorist perspective — assess theoretical foundations, formal rigor, and formalization opportunities. |
+
+<!-- END available-tables (generated) -->

@@ -53,3 +53,17 @@ Assess the collected domains for genuine diversity:
 | random-word-stimulus | Stage 3 — random word as domain pointer |
 | abstraction-extraction | Stage 4 — verify transfer potential via abstraction |
 | analogy-quality-assessment | Stage 4 — assess structural similarity depth |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
+| random-paper-entry | Select random paper facet as creative stimulus. Uses genuine randomness in paper selection to break domain fixation. |
+
+<!-- END available-tables (generated) -->

@@ -55,3 +55,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Generate**: Run failure-driven-generation for each unaddressed failure
 5. **Filter**: Apply evaluation-filtering to rank solutions
 6. **Synthesize**: Produce structured report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| gap-driven-generation | Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
+| creative-ideation-failure-mode-cataloging | Systematically catalog all failure modes in a domain or method, producing a classified failure taxonomy. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+| failure-driven-generation | Generate targeted solutions for each identified failure mode, ensuring every failure has at least one proposed mitigation. |
+
+<!-- END available-tables (generated) -->

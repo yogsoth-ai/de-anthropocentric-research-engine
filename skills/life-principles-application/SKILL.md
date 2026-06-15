@@ -47,3 +47,17 @@ Abstract extracted patterns and mechanisms into actionable design constraints us
 | emulation-generation | Post — generate solutions within constraints |
 | web-search | Support — search for life principles literature |
 | paper-overview | Support — find biomimicry principles research |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| ecosystem-pattern-extraction | Extract ecosystem-level organization patterns (symbiosis, emergence, cycles, resilience). |
+| evolution-mechanism-transfer | Map evolution mechanisms to design operations. Translate selection, mutation, drift, radiation into design operators. |
+
+<!-- END available-tables (generated) -->

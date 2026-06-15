@@ -52,3 +52,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Explore White Space**: Focus on unexplored regions of the feasible space
 6. **Evaluate Emergence**: Check novel configurations for emergent properties
 7. **Synthesize**: Compile viable novel configurations into structured proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| input-space-construction | Build input spaces for two source concepts |
+
+<!-- END available-tables (generated) -->

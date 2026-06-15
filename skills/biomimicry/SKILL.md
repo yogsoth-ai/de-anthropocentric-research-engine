@@ -112,3 +112,43 @@ Discover transferable solutions from biological systems via Design Spiral, BioTR
 | analogy-extraction | Extract transferable structural principles (shared, from cross-domain-discovery) |
 | biological-function-mapping | Map technical functions to biological systems |
 | life-principles-application | Apply life's principles as design constraints |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Strategy | 何时用 |
+| --- | --- |
+| biologize-and-discover | Biomimicry Design Spiral: Define→Biologize→Discover→Abstract→Emulate. Translate technical challenges into biological questions and find nature's solutions. |
+| biotriz-resolution | BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve technical contradictions using biological inventive principles. |
+| ecosystem-pattern | Extract ecosystem-level organization patterns (symbiosis, emergence, resilience) as design templates for complex systems. |
+| evolution-strategy | Use evolution mechanisms (selection, mutation, radiation) as design operators for generating and refining solution populations. |
+| functional-analogy | Map technical functions to biological functions, find organisms solving equivalent problems. Deep functional matching across domains. |
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| analogy-extraction | Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation. |
+| biological-function-mapping | Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+| life-principles-application | Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| domain-scanning | Scan distant domains for transferable principles. Uses web-search and paper-overview to identify analogous solutions in unrelated fields. |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+
+<!-- END available-tables (generated) -->

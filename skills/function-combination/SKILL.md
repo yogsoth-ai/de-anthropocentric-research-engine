@@ -54,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Evaluate Combinations**: Assess each redistribution for feasibility and novelty
 5. **Check Emergence**: Use emergence-detection to find non-additive capabilities
 6. **Synthesize**: Compile viable function recombinations into proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| function-redistribution | Redistribute functions across different components |
+| input-space-construction | Build input spaces for two source concepts |
+
+<!-- END available-tables (generated) -->

@@ -54,3 +54,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Trim**: Execute trimming-execution SOP progressively
 5. **Redistribute**: Assign orphaned functions to remaining components
 6. **Synthesize**: Produce simplified system via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| trimming-execution | Progressively remove components from a system while verifying function preservation through redistribution. |
+
+<!-- END available-tables (generated) -->

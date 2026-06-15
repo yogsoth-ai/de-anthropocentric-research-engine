@@ -53,3 +53,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Ideate**: For each critical dependency, ask "what if this were replaced/eliminated/redesigned?"
 5. **Filter**: Apply evaluation-filtering to rank generated ideas
 6. **Synthesize**: Produce structured report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| Tactic | 何时用 |
+| --- | --- |
+| coverage-analysis | Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space. |
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| ablation-execution | Remove components one by one from a system, record the response/impact of each removal. |
+| dependency-identification | Identify critical dependencies from ablation results, producing a dependency graph and highlighting critical components. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+
+<!-- END available-tables (generated) -->

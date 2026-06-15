@@ -52,3 +52,18 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Matrix construction**: Build n-dimensional matrix via matrix-construction SOP
 4. **Combination generation**: Generate paths through the matrix via path-generation
 5. **Synthesis**: Produce structured output via morphological-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| matrix-construction | Build n-dimensional morphological matrix |
+| morphological-synthesis | Synthesize all morphological exploration outputs |
+| path-generation | Generate combination paths through consistent space |
+| value-enumeration | Enumerate 3-5 values per parameter including extremes |
+
+<!-- END available-tables (generated) -->

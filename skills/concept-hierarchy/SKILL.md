@@ -48,3 +48,17 @@ Use fractionation SOP to split broad concepts into finer units, enabling recombi
 | concept-fan-expansion | Stage 1 — build concept hierarchy |
 | escape-technique | Stage 2 — escape dominant patterns per level |
 | fractionation | Stage 3 — split and recombine concepts |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+可选,无固定顺序;最终叶子终为 sop。
+
+| SOP | 何时用 |
+| --- | --- |
+| concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
+| escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
+| fractionation | Split concepts into smaller units and recombine them differently to produce novel structures. |
+
+<!-- END available-tables (generated) -->
