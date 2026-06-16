@@ -1,12 +1,12 @@
 ---
 name: spice-application
-description: 'SOP: 应用 SPICE 框架结构化评估研究问题'
+description: 'SOP: Apply the SPICE framework to structure an evaluation research question'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: 研究意图（评估研究方向）
-output: 完整 SPICE 填充 + RQ 表述
+input: Research intent (evaluation research direction)
+output: Complete SPICE fill-in + RQ statement
 dependencies:
   skills:
   - subagent-spawning
@@ -14,33 +14,33 @@ dependencies:
 
 # SPICE Application
 
-应用 SPICE 框架 — 适用于评估研究。
+Apply the SPICE framework — suitable for evaluation research.
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: 明确的评估研究意图（评估某干预/项目/服务的效果）。
+Input must contain: a clear evaluation research intent (assessing the effect of an intervention / program / service).
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 确认研究适合 SPICE 框架
-2. **S (Setting)**: 定义研究场景
-3. **P (Perspective)**: 定义评估视角（谁的视角？）
-4. **I (Intervention)**: 定义被评估的干预/项目
-5. **C (Comparison)**: 定义比较对象
-6. **E (Evaluation)**: 定义评估指标和方法
-7. **组装**: 将各组件组装为完整 RQ 句子
-8. **输出**: SPICE 填充表 + RQ 表述
+1. **Precheck**: Confirm the research is suitable for the SPICE framework
+2. **S (Setting)**: Define the research setting
+3. **P (Perspective)**: Define the evaluation perspective (whose perspective?)
+4. **I (Intervention)**: Define the intervention / program being evaluated
+5. **C (Comparison)**: Define the comparison object
+6. **E (Evaluation)**: Define the evaluation metrics and methods
+7. **Assembly**: Assemble the components into a complete RQ sentence
+8. **Output**: SPICE fill-in table + RQ statement
 
 ## Output Format
 
 ```
-S: [研究场景]
-P: [评估视角]
-I: [被评估的干预]
-C: [比较对象]
-E: [评估指标和方法]
+S: [research setting]
+P: [evaluation perspective]
+I: [intervention being evaluated]
+C: [comparison object]
+E: [evaluation metrics and methods]
 
 RQ: "In [S], from [P]'s perspective, how does [I] compare to [C] in terms of [E]?"
 ```

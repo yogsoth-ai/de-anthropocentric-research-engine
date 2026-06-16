@@ -1,6 +1,6 @@
 ---
 name: scope-calibration
-description: 'Strategy: 调整研究问题范围 — zoom in/out 直到范围合适'
+description: 'Strategy: Adjust research question scope — zoom in/out until the scope is appropriate'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -18,64 +18,64 @@ dependencies:
 
 # Scope Calibration
 
-调整研究问题范围 — 当问题太宽或太窄时，通过系统化的 zoom in/out 找到合适粒度。
+Adjust research question scope — when a question is too broad or too narrow, find the right granularity through systematic zoom in/out.
 
-## 适用场景
+## When to Use
 
-- 初始 RQ 太宽泛（无法在合理时间内回答）
-- 初始 RQ 太狭窄（答案 trivial 或缺乏意义）
-- 需要在 ambition 和 feasibility 之间找平衡
+- The initial RQ is too broad (cannot be answered within a reasonable time)
+- The initial RQ is too narrow (the answer is trivial or lacks significance)
+- A balance between ambition and feasibility is needed
 
-## 思维框架
+## Thinking Framework
 
-核心逻辑: 好的研究问题有"金发姑娘"特征 — 不太宽、不太窄、刚刚好。
+Core logic: a good research question has "Goldilocks" characteristics — not too broad, not too narrow, just right.
 
-### Zoom In（问题太宽时）
+### Zoom In (when the question is too broad)
 
-添加约束来缩小范围:
-- 时间约束: "在过去 5 年内..."
-- 地点约束: "在中国高校中..."
-- 人群约束: "对于初学者..."
-- 方法约束: "使用 transformer 架构..."
-- 现象约束: "特别是在 X 场景下..."
+Add constraints to narrow the scope:
+- Time constraint: "within the past 5 years..."
+- Place constraint: "among Chinese universities..."
+- Population constraint: "for beginners..."
+- Method constraint: "using a transformer architecture..."
+- Phenomenon constraint: "especially under scenario X..."
 
-### Zoom Out（问题太窄时）
+### Zoom Out (when the question is too narrow)
 
-放松约束来扩大范围:
-- 提升抽象层级: 从具体实例到一般原则
-- 移除不必要的限定词
-- 扩展适用范围
+Relax constraints to widen the scope:
+- Raise the level of abstraction: from concrete instance to general principle
+- Remove unnecessary qualifiers
+- Extend the scope of applicability
 
-### 判断标准
+### Judgment Criteria
 
-- 太宽: 需要一本书来回答 / 无法设计单一实验
-- 合适: 一篇论文可以回答 / 可以设计明确的研究方案
-- 太窄: 答案显而易见 / 缺乏理论贡献
+- Too broad: requires a book to answer / cannot be answered by a single experiment
+- Appropriate: answerable by one paper / a clear study design can be specified
+- Too narrow: answer is self-evident / lacks theoretical contribution
 
 ## Budget Gate
 
-| Tier | 迭代轮次 | 产出 |
+| Tier | Iteration rounds | Output |
 |------|---------|------|
-| S | ≥1 轮 scope 调整 | 范围合适的 RQ |
-| M | ≥2 轮 scope 调整 + 对比 | 调整前后对比 + 最终 RQ |
-| L | ≥3 轮 + 多方向探索 | 多个粒度版本 + 最优选择理由 |
+| S | ≥1 round of scope adjustment | Appropriately scoped RQ |
+| M | ≥2 rounds of scope adjustment + comparison | Before/after comparison + final RQ |
+| L | ≥3 rounds + multi-direction exploration | Multiple granularity versions + rationale for the optimal choice |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 对当前 RQ 进行 scope-assessment
-2. 根据判定结果（太宽/太窄）选择 zoom 方向
-3. 应用约束调整
-4. 重新评估 scope
-5. 迭代直到"合适"
-6. FINER 检验确认
+1. Run scope-assessment on the current RQ
+2. Choose the zoom direction based on the verdict (too broad / too narrow)
+3. Apply constraint adjustments
+4. Re-assess scope
+5. Iterate until "appropriate"
+6. Confirm with the FINER check
 
 ## context-checkpoint
 
-Strategy 完成后必须调用 context-checkpoint，记录:
-- 原始 RQ 及其 scope 判定
-- 调整方向和具体操作
-- 最终 RQ 及其 scope 判定
-- 调整理由
+After the strategy completes, context-checkpoint must be called, recording:
+- The original RQ and its scope verdict
+- The adjustment direction and concrete operations
+- The final RQ and its scope verdict
+- The adjustment rationale
 
 <!-- BEGIN available-tables (generated) -->
 

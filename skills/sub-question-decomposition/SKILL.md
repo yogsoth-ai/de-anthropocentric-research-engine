@@ -1,6 +1,6 @@
 ---
 name: sub-question-decomposition
-description: 'Tactic: 将主问题分解为可独立回答的子问题层级'
+description: 'Tactic: Decompose a main question into a hierarchy of independently answerable sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -18,43 +18,43 @@ dependencies:
 
 # Sub-Question Decomposition
 
-将主问题分解为可独立回答的子问题层级 — 当问题太复杂无法一次回答时。
+Decompose a main question into a hierarchy of independently answerable sub-questions — when the question is too complex to answer in one pass.
 
-## 编排意图
+## Orchestration Intent
 
-将"分解复杂问题"结构化为：生成子问题 → 映射依赖 → 设计回答顺序。三步依次执行，每步产出是下步输入。
+Structure "decomposing a complex question" as: generate sub-questions → map dependencies → design answering order. The three steps run sequentially, each step's output being the next step's input.
 
-## 可用 SOPs
+## Available SOPs
 
-| SOP | 职责 | 何时调用 |
+| SOP | Responsibility | When to call |
 |-----|------|---------|
-| sub-question-generation | 将主问题分解为子问题 | 第一步，必调 |
-| dependency-mapping | 映射子问题间的依赖关系 | 子问题生成后 |
-| answering-sequence-design | 设计最优回答顺序 | 依赖图完成后 |
+| sub-question-generation | Decompose the main question into sub-questions | First step, mandatory |
+| dependency-mapping | Map dependency relationships among sub-questions | After sub-questions are generated |
+| answering-sequence-design | Design the optimal answering order | After the dependency graph is complete |
 
-## 编排模式
+## Orchestration Pattern
 
-**串行模式（唯一模式）**:
-1. sub-question-generation → 子问题列表 + 独立性论证
-2. dependency-mapping → 依赖图 + 关键路径
-3. answering-sequence-design → 执行序列 + 并行机会
+**Serial mode (the only mode)**:
+1. sub-question-generation → sub-question list + independence argument
+2. dependency-mapping → dependency graph + critical path
+3. answering-sequence-design → execution sequence + parallelization opportunities
 
-每一步严格依赖前一步的输出，不可并行。
+Each step strictly depends on the previous step's output; no parallelization.
 
 ## Minimum Yield
 
-- ≥3 个子问题（M tier）
-- 每个子问题有独立性论证
-- 依赖图（无循环依赖）
-- 建议回答序列 + 并行机会识别
+- ≥3 sub-questions (M tier)
+- Each sub-question has an independence argument
+- Dependency graph (no circular dependencies)
+- Suggested answering sequence + parallelization opportunity identification
 
 ## Yield Report
 
-执行完成后报告:
-- 生成的子问题数量
-- 依赖关系数量
-- 关键路径长度
-- 可并行的子问题组
+After execution, report:
+- Number of sub-questions generated
+- Number of dependency relationships
+- Critical path length
+- Groups of sub-questions that can be answered in parallel
 
 <!-- BEGIN available-tables (generated) -->
 

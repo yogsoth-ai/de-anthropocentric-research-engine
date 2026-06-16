@@ -1,6 +1,6 @@
 ---
 name: theory-mechanism-extraction
-description: 'Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选'
+description: 'Tactic: Core of the deductive path — start from theory to extract mechanisms, variables, and relationships, generating hypothesis candidates'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -20,56 +20,56 @@ dependencies:
 
 # Theory Mechanism Extraction
 
-演绎路径核心——从已有理论出发，系统提取机制、识别变量、规范关系，为演绎假设生成提供结构化基础。
+Core of the deductive path — starting from existing theory, systematically extract mechanisms, identify variables, and specify relationships, providing a structured basis for deductive hypothesis generation.
 
-## 编排意图
+## Orchestration Intent
 
-演绎推理的起点是理论，而非数据。本 tactic 强制 CC 先识别领域内相关理论，再逐层拆解：理论 → 机制 → 变量 → 变量间关系。每一层都是下一层的前提，不允许跳步。
+The starting point of deductive reasoning is theory, not data. This tactic forces the CC to first identify relevant theories in the domain, then unpack layer by layer: theory → mechanism → variable → variable-to-variable relationship. Each layer is the prerequisite for the next; skipping steps is not allowed.
 
-最终产出不是假设本身，而是假设的"原材料"——每个机制至少对应一个假设候选（含变量和方向），供上游 strategy 进一步 formalize。
+The final output is not the hypotheses themselves, but the "raw material" for hypotheses — each mechanism corresponds to at least one hypothesis candidate (with variables and direction), for the upstream strategy to further formalize.
 
-## 可用 SOPs
+## Available SOPs
 
-| SOP | 职责 | 何时调用 |
+| SOP | Responsibility | When to call |
 |-----|------|---------|
-| theory-identification | 识别与 gap/insight 相关的已有理论（含理论名称、核心主张、适用范围） | 所有模式必选，首先执行 |
-| mechanism-extraction | 从每个理论中提取可操作的因果机制（mechanism = 连接原因与结果的过程） | 所有模式必选，在 theory-identification 之后 |
-| variable-identification | 从每个机制中识别自变量、因变量、调节变量、控制变量 | 所有模式必选，在 mechanism-extraction 之后 |
-| relationship-specification | 规范变量间的方向性关系（正/负/非线性/调节/中介），生成假设候选 | 所有模式必选，最后执行 |
+| theory-identification | Identify existing theories relevant to the gap/insight (including theory name, core claim, scope of applicability) | Required in all modes, executed first |
+| mechanism-extraction | Extract operationalizable causal mechanisms from each theory (mechanism = the process linking cause and effect) | Required in all modes, after theory-identification |
+| variable-identification | Identify independent, dependent, moderating, and control variables from each mechanism | Required in all modes, after mechanism-extraction |
+| relationship-specification | Specify the directional relationships between variables (positive/negative/nonlinear/moderation/mediation), generating hypothesis candidates | Required in all modes, executed last |
 
-## 编排模式
+## Orchestration Pattern
 
-**Simplified（S tier，1 个理论）**
-- 顺序执行：theory-identification → mechanism-extraction → variable-identification → relationship-specification
-- 覆盖：1 个理论，≥1 个机制，≥1 个假设候选
-- 适用：gap 背景清晰，理论支撑单一
+**Simplified (S tier, 1 theory)**
+- Sequential execution: theory-identification → mechanism-extraction → variable-identification → relationship-specification
+- Coverage: 1 theory, ≥1 mechanism, ≥1 hypothesis candidate
+- Suitable when: the gap background is clear and theoretical support is singular
 
-**Standard（M tier，2-3 个理论）**
-- 顺序执行全部 4 个 SOP，对每个识别出的理论重复 mechanism-extraction + variable-identification + relationship-specification
-- 覆盖：≥2 个理论，≥3 个机制，每个机制 ≥1 个假设候选
-- 适用：gap 跨越多个理论框架，需要比较演绎路径
+**Standard (M tier, 2-3 theories)**
+- Execute all 4 SOPs sequentially, repeating mechanism-extraction + variable-identification + relationship-specification for each identified theory
+- Coverage: ≥2 theories, ≥3 mechanisms, ≥1 hypothesis candidate per mechanism
+- Suitable when: the gap spans multiple theoretical frameworks and deductive paths must be compared
 
-**Deep（L tier，≥3 个理论）**
-- 执行全部 4 个 SOP；mechanism-extraction 对每个理论独立执行；relationship-specification 额外输出跨理论的变量重叠分析
-- 覆盖：≥3 个理论，≥5 个机制，跨理论变量映射，≥5 个假设候选
-- 适用：领域理论丰富，需要系统性演绎覆盖
+**Deep (L tier, ≥3 theories)**
+- Execute all 4 SOPs; mechanism-extraction is run independently for each theory; relationship-specification additionally outputs a cross-theory variable-overlap analysis
+- Coverage: ≥3 theories, ≥5 mechanisms, cross-theory variable mapping, ≥5 hypothesis candidates
+- Suitable when: the domain is theory-rich and systematic deductive coverage is needed
 
 ## Minimum Yield
 
-- ≥2 个理论已被识别并描述（含核心主张和适用范围）
-- ≥3 个机制已从理论中提取（每个机制含因果链描述）
-- 每个机制至少对应 1 个假设候选，含：
-  - 自变量和因变量（已命名）
-  - 关系方向（正/负/非线性）
-  - 来源机制（可追溯到哪个理论的哪个机制）
+- ≥2 theories identified and described (including core claim and scope of applicability)
+- ≥3 mechanisms extracted from the theories (each with a causal-chain description)
+- Each mechanism corresponds to at least 1 hypothesis candidate, including:
+  - Independent and dependent variables (named)
+  - Relationship direction (positive/negative/nonlinear)
+  - Source mechanism (traceable to which mechanism of which theory)
 
 ## Yield Report
 
-执行结束后向调用方 strategy 报告：
-- 识别理论数 / 提取机制数 / 生成假设候选数
-- 理论覆盖范围（哪些理论被纳入，哪些被排除及原因）
-- 变量重叠情况（多个机制共享的变量，可能是关键调节变量）
-- 假设候选质量评估：哪些候选变量可操作性强，哪些需要进一步 operationalization
+After execution, report to the calling strategy:
+- Number of theories identified / mechanisms extracted / hypothesis candidates generated
+- Theory coverage (which theories were included, which were excluded and why)
+- Variable overlap (variables shared by multiple mechanisms, possibly key moderating variables)
+- Hypothesis candidate quality assessment: which candidate variables are highly operationalizable, which need further operationalization
 
 <!-- BEGIN available-tables (generated) -->
 

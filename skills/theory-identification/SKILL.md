@@ -1,12 +1,12 @@
 ---
 name: theory-identification
-description: 'SOP: 识别与研究gap相关的理论框架'
+description: 'SOP: Identify theoretical frameworks relevant to a research gap'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 研究 gap 描述 + 领域标签
-output: 相关理论框架列表 [{name, source, core_claim, relevance, applicability}]
+input: Research gap description + domain tags
+output: List of relevant theoretical frameworks [{name, source, core_claim, relevance, applicability}]
 dependencies:
   sops:
   - hypothesis-formation-paper-overview
@@ -15,24 +15,24 @@ dependencies:
 ---
 
 # Theory Identification
-识别与研究 gap 相关的理论框架，为机制提取提供理论基础。
+Identify theoretical frameworks relevant to a research gap, providing a theoretical basis for mechanism extraction.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有明确的研究 gap 描述（包含领域、现象、未解答的问题）
-2. 领域标签已提供（用于文献扫描方向）
+Preconditions (all must hold before starting):
+1. A clear research gap description exists (including domain, phenomenon, unanswered question)
+2. Domain tags are provided (used to direct the literature scan)
 
-不满足 → 停止，返回错误：缺少 gap 描述或领域标签。
+Not satisfied → stop, return error: missing gap description or domain tags.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证 gap 描述与领域标签完整性
-2. 文献扫描：搜索与 gap 相关的理论文献（literature-engine + web-browsing）
-3. 理论筛选：保留与 gap 直接或间接相关的理论（≥3 个，去除纯方法论文献）
-4. 核心主张提取：对每个理论提炼 1-2 句 core_claim
-5. 适用性评估：评估每个理论对当前 gap 的解释力（high/medium/low）
-6. 输出结构化理论列表
+1. Precheck: verify completeness of the gap description and domain tags
+2. Literature scan: search for theoretical literature relevant to the gap (literature-engine + web-browsing)
+3. Theory screening: keep theories directly or indirectly relevant to the gap (≥3, remove purely methodological literature)
+4. Core claim extraction: distill a 1-2 sentence core_claim for each theory
+5. Applicability assessment: assess each theory's explanatory power for the current gap (high/medium/low)
+6. Output a structured theory list
 
 ## Output Format
 ```json
@@ -46,7 +46,7 @@ dependencies:
   }
 ]
 ```
-最少 3 条，最多 8 条（按 applicability 降序排列）。
+Minimum 3 entries, maximum 8 (sorted by applicability descending).
 
 <!-- BEGIN available-tables (generated) -->
 
