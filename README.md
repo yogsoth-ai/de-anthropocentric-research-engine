@@ -15,7 +15,7 @@
 
 - [What It Does](#-what-it-does)
 - [Design Philosophy](#-design-philosophy)
-- [Architecture (v3.0)](#️-architecture-v30)
+- [Architecture (v3.1)](#️-architecture-v31)
 - [Quick Start](#-quick-start)
 - [Configuration](#️-configuration)
 - [Roadmap](#️-roadmap)
@@ -118,9 +118,9 @@ No special "resume" command. The spec's checkbox state IS the progress tracker.
 
 ---
 
-## 🏗️ Architecture (v3.0)
+## 🏗️ Architecture (v3.1)
 
-DARE v3.0 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **9 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
+DARE v3.1 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **9 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
 
 This is a deliberate design choice. Skills are infinitely composable, require zero deployment infrastructure, and can be modified by editing a text file. The tradeoff is that execution depends entirely on CC's ability to follow complex multi-step instructions — which, as of 2026, is more than sufficient for research orchestration.
 
