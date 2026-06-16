@@ -1,12 +1,12 @@
 ---
 name: paper-research
-description: 'Import SOP: 深度文献研究，原始全文 + PDF 问答（来自 literature-engine）'
+description: 'Import SOP: Deep literature research, raw full text + PDF Q&A (from literature-engine)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/literature-research/SKILL.md
 source_skill: paper-research
-provides: 深度文献研究能力 — 全文获取、PDF 问答、深度分析
+provides: Deep literature research capability — full-text retrieval, PDF Q&A, in-depth analysis
 dependencies:
   sops:
   - literature-research
@@ -15,26 +15,26 @@ execution: import
 
 # Paper Research (Import)
 
-从 `literature-engine` 技能库导入的深度文献研究能力。
+Deep literature research capability imported from the `literature-engine` skill library.
 
-## 用途
+## Purpose
 
-- 获取论文全文（markdown 格式）
-- 对论文 PDF 进行问答
-- 深度分析论文方法和结果
+- Retrieve paper full text (markdown format)
+- Perform Q&A on a paper's PDF
+- Analyze a paper's methods and results in depth
 
-## 使用方式
+## How to Use
 
-直接调用 `literature-engine` 中的 `paper-research` skill。该 skill 提供:
-- 论文全文获取（多源 fallback）
-- PDF 问答（AlphaXiv answer_pdf_queries）
-- AI 三遍阅读法（Keshav method）
+Directly call the `paper-research` skill in `literature-engine`. This skill provides:
+- Paper full-text retrieval (multi-source fallback)
+- PDF Q&A (AlphaXiv answer_pdf_queries)
+- AI three-pass reading method (Keshav method)
 
-## 何时使用
+## When to Use
 
-- 需要深入理解论文的方法细节
-- 需要从论文中提取特定信息
-- 需要对论文进行深度分析
+- You need to understand a paper's methodological details in depth
+- You need to extract specific information from a paper
+- You need to perform in-depth analysis of a paper
 
 <!-- BEGIN available-tables (generated) -->
 

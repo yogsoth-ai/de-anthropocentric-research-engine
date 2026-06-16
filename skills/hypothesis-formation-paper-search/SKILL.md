@@ -1,12 +1,12 @@
 ---
 name: paper-search
-description: 'Import SOP: 中深度文献搜索，AI 摘要报告（来自 literature-engine）'
+description: 'Import SOP: Medium-depth literature search, AI summary report (from literature-engine)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/literature-search/SKILL.md
 source_skill: paper-search
-provides: 中深度文献搜索能力 — 搜索、筛选、AI 摘要
+provides: Medium-depth literature search capability — search, filter, AI summary
 dependencies:
   sops:
   - literature-search
@@ -15,26 +15,26 @@ execution: import
 
 # Paper Search (Import)
 
-从 `literature-engine` 技能库导入的中深度文献搜索能力。
+Medium-depth literature search capability imported from the `literature-engine` skill library.
 
-## 用途
+## Purpose
 
-- 搜索特定主题的相关论文
-- 获取 AI 生成的论文摘要报告
-- 筛选和排序搜索结果
+- Search for papers relevant to a specific topic
+- Obtain AI-generated paper summary reports
+- Filter and rank search results
 
-## 使用方式
+## How to Use
 
-直接调用 `literature-engine` 中的 `paper-search` skill。该 skill 提供:
-- 多源搜索（Semantic Scholar + Google Scholar + AlphaXiv）
-- AI 摘要生成
-- 相关性排序
+Directly call the `paper-search` skill in `literature-engine`. This skill provides:
+- Multi-source search (Semantic Scholar + Google Scholar + AlphaXiv)
+- AI summary generation
+- Relevance ranking
 
-## 何时使用
+## When to Use
 
-- 需要找到某个主题的相关论文集合
-- 需要 AI 辅助的论文摘要
-- 需要在多个数据库中搜索
+- You need to find a collection of papers relevant to a topic
+- You need AI-assisted paper summaries
+- You need to search across multiple databases
 
 <!-- BEGIN available-tables (generated) -->
 

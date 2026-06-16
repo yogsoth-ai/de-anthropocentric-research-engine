@@ -1,12 +1,12 @@
 ---
 name: paper-overview
-description: 'Import SOP: 论文快速扫描，返回 abstract 和 metadata（来自 literature-engine）'
+description: 'Import SOP: Quick paper scan, returns abstract and metadata (from literature-engine)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/literature-overview/SKILL.md
 source_skill: paper-overview
-provides: 论文快速扫描能力 — abstract、metadata、基本信息
+provides: Quick paper scan capability — abstract, metadata, basic information
 dependencies:
   sops:
   - literature-overview
@@ -15,26 +15,26 @@ execution: import
 
 # Paper Overview (Import)
 
-从 `literature-engine` 技能库导入的论文快速扫描能力。
+Quick paper scan capability imported from the `literature-engine` skill library.
 
-## 用途
+## Purpose
 
-- 快速了解一篇论文的主题和贡献
-- 获取论文 metadata（作者、年份、引用数）
-- 判断论文是否值得深入阅读
+- Quickly understand a paper's topic and contribution
+- Obtain paper metadata (authors, year, citation count)
+- Judge whether a paper is worth reading in depth
 
-## 使用方式
+## How to Use
 
-直接调用 `literature-engine` 中的 `paper-overview` skill。该 skill 提供:
-- Semantic Scholar / AlphaXiv 元数据获取
-- Abstract 提取
-- 基本相关性判断
+Directly call the `paper-overview` skill in `literature-engine`. This skill provides:
+- Semantic Scholar / AlphaXiv metadata retrieval
+- Abstract extraction
+- Basic relevance judgment
 
-## 何时使用
+## When to Use
 
-- 需要快速判断一篇论文是否相关
-- 需要获取论文的基本信息
-- 批量扫描多篇论文时
+- You need to quickly judge whether a paper is relevant
+- You need to obtain a paper's basic information
+- When batch-scanning multiple papers
 
 <!-- BEGIN available-tables (generated) -->
 

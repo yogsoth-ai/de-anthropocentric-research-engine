@@ -1,6 +1,6 @@
 ---
 name: framework-guided-formulation
-description: 'Strategy: 选择 RQ 框架（PICO/SPIDER/SPICE/ECLIPSE）并系统应用'
+description: 'Strategy: Select an RQ framework (PICO/SPIDER/SPICE/ECLIPSE) and apply it systematically'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -23,57 +23,57 @@ dependencies:
 
 # Framework-Guided Formulation
 
-选择最适合的 RQ 框架并系统应用 — 当研究类型明确时，用标准框架结构化问题。
+Select the most suitable RQ framework and apply it systematically — when the research type is clear, use a standard framework to structure the question.
 
-## 适用场景
+## When to Use
 
-- 研究类型明确（量化/定性/混合/评估）
-- 有对应的标准框架可用
-- 需要确保问题的各组件完整
+- The research type is clear (quantitative/qualitative/mixed/evaluation)
+- A corresponding standard framework is available
+- You need to ensure all components of the question are complete
 
-## 思维框架
+## Thinking Framework
 
-核心逻辑: 不同研究类型有不同的"好问题"标准。框架是前人总结的"好问题应该包含哪些组件"的清单。选对框架 → 填充每个组件 → 自然得到结构化的问题。
+Core logic: Different research types have different standards for a "good question." A framework is a checklist, distilled by predecessors, of "what components a good question should contain." Pick the right framework → fill in each component → naturally arrive at a structured question.
 
-### 框架选择指南
+### Framework Selection Guide
 
-| 研究类型 | 推荐框架 | 核心组件 |
+| Research type | Recommended framework | Core components |
 |----------|---------|---------|
-| 量化/干预研究 | PICO/PICOTS | Population, Intervention, Comparison, Outcome (+Time, Setting) |
-| 定性研究 | SPIDER | Sample, Phenomenon of Interest, Design, Evaluation, Research type |
-| 评估研究 | SPICE | Setting, Perspective, Intervention, Comparison, Evaluation |
-| 混合方法 | ECLIPSE | Expectation, Client group, Location, Impact, Professionals, Service |
+| Quantitative/intervention research | PICO/PICOTS | Population, Intervention, Comparison, Outcome (+Time, Setting) |
+| Qualitative research | SPIDER | Sample, Phenomenon of Interest, Design, Evaluation, Research type |
+| Evaluation research | SPICE | Setting, Perspective, Intervention, Comparison, Evaluation |
+| Mixed methods | ECLIPSE | Expectation, Client group, Location, Impact, Professionals, Service |
 
-### 框架应用原则
+### Framework Application Principles
 
-- 每个组件必须有明确填充（不留空）
-- 填充内容必须具体（不是"相关人群"而是"18-65岁的2型糖尿病患者"）
-- 如果某组件不适用，显式说明为什么不适用
+- Every component must be explicitly filled in (no blanks)
+- Filled content must be specific (not "relevant population" but "type 2 diabetes patients aged 18–65")
+- If a component is not applicable, explicitly state why it is not applicable
 
 ## Budget Gate
 
-| Tier | 框架候选 | 框架应用 | FINER 检验 | 产出 |
+| Tier | Framework candidates | Framework application | FINER check | Output |
 |------|---------|---------|-----------|------|
-| S | ≥2 框架比较 | 选定框架全组件填充 | 5 项全通过 | ≥1 RQ |
-| M | ≥3 框架比较 | 选定框架全组件 + 替代框架对比 | 5 项 + success criteria | ≥2 RQ |
-| L | ≥4 框架比较 | 多框架并行应用 + 最优选择 | 5 项 + criteria + 敏感性 | ≥3 RQ |
+| S | ≥2 frameworks compared | Selected framework, all components filled | All 5 items pass | ≥1 RQ |
+| M | ≥3 frameworks compared | Selected framework, all components + alternative framework comparison | 5 items + success criteria | ≥2 RQ |
+| L | ≥4 frameworks compared | Multiple frameworks applied in parallel + optimal selection | 5 items + criteria + sensitivity | ≥3 RQ |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 确定研究类型（量化/定性/混合/评估）
-2. 匹配候选框架（framework-matching SOP）
-3. 应用选定框架（pico/spider/spice/eclipse-application SOP）
-4. FINER 检验（finer-criteria-check SOP）
-5. 未通过项修正 → 重新检验
-6. 产出最终 RQ
+1. Determine the research type (quantitative/qualitative/mixed/evaluation)
+2. Match candidate frameworks (framework-matching SOP)
+3. Apply the selected framework (pico/spider/spice/eclipse-application SOP)
+4. FINER check (finer-criteria-check SOP)
+5. Revise failed items → re-check
+6. Produce the final RQ
 
 ## context-checkpoint
 
-Strategy 完成后必须调用 context-checkpoint，记录:
-- 选定的框架及理由
-- 框架各组件的填充内容
-- FINER 检验结果
-- 最终 RQ 表述
+After the Strategy completes, context-checkpoint must be called, recording:
+- The selected framework and rationale
+- The filled content of each framework component
+- The FINER check results
+- The final RQ statement
 
 <!-- BEGIN available-tables (generated) -->
 

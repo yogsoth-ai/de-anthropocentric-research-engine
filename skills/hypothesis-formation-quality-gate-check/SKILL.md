@@ -1,6 +1,6 @@
 ---
 name: quality-gate-check
-description: 'Shared SOP: 通用质量门检查（格式完整性、逻辑一致性）'
+description: 'Shared SOP: General quality-gate check (format completeness, logical consistency)'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
@@ -9,8 +9,8 @@ campaigns:
 - gap-prioritization
 - hypothesis-formulation
 - research-question
-input: 任意产出物（gap 列表 / 假设 / RQ）
-output: 通过/不通过 + 问题列表
+input: Any deliverable (gap list / hypothesis / RQ)
+output: Pass/fail + issue list
 dependencies:
   skills:
   - subagent-spawning
@@ -18,41 +18,41 @@ dependencies:
 
 # Quality Gate Check
 
-通用质量门检查 — 验证产出物的格式完整性和逻辑一致性。
+General quality-gate check — verify the format completeness and logical consistency of a deliverable.
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: 至少 1 个需要检查的产出物。
+Input must contain: at least 1 deliverable to check.
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 产出物是否非空
-2. **格式完整性**: 是否包含所有必要字段
-3. **逻辑一致性**: 各部分之间是否矛盾
-4. **引用完整性**: 引用的来源是否存在
-5. **可操作性**: 产出是否足够具体可执行
-6. **综合判定**: PASS / FAIL
-7. **输出**: 判定 + 问题列表（如有）
+1. **Precondition check**: Is the deliverable non-empty
+2. **Format completeness**: Does it contain all required fields
+3. **Logical consistency**: Are the parts contradictory
+4. **Citation completeness**: Do the cited sources exist
+5. **Actionability**: Is the deliverable specific and executable enough
+6. **Overall determination**: PASS / FAIL
+7. **Output**: Determination + issue list (if any)
 
 ## Check Dimensions
 
-| 维度 | 检查内容 | FAIL 条件 |
+| Dimension | What is checked | FAIL condition |
 |------|---------|----------|
-| 格式完整性 | 必要字段是否齐全 | 缺少必要字段 |
-| 逻辑一致性 | 各部分是否矛盾 | 存在内部矛盾 |
-| 引用完整性 | 引用来源是否可追溯 | 引用无法验证 |
-| 可操作性 | 是否足够具体 | 过于抽象无法执行 |
-| 无歧义性 | 是否有多种解读 | 关键术语有歧义 |
+| Format completeness | Are all required fields present | Missing required fields |
+| Logical consistency | Are the parts contradictory | Internal contradiction exists |
+| Citation completeness | Are cited sources traceable | Citation cannot be verified |
+| Actionability | Is it specific enough | Too abstract to execute |
+| Unambiguity | Are there multiple interpretations | Key terms are ambiguous |
 
 ## Output Format
 
 ```
 Judgment: PASS / FAIL
-Issues found: [数量]
+Issues found: [count]
 Issue list:
-  1. [维度]: [具体问题] — [修正建议]
+  1. [dimension]: [specific issue] — [correction suggestion]
   2. ...
 Severity: CRITICAL / MINOR (per issue)
 ```

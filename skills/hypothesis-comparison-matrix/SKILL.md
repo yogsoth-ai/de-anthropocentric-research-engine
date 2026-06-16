@@ -1,36 +1,36 @@
 ---
 name: hypothesis-comparison-matrix
-description: 'SOP: 构建竞争假设的多维度对比矩阵'
+description: 'SOP: Build a multi-dimensional comparison matrix of competing hypotheses'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 竞争假设集 + 区分性预测（来自上游输出）
-output: 结构化对比矩阵（表格 + 综合评估）
+input: Set of competing hypotheses + discriminating predictions (from upstream output)
+output: Structured comparison matrix (table + overall assessment)
 dependencies:
   skills:
   - subagent-spawning
 ---
 
 # Hypothesis Comparison Matrix
-构建竞争假设的多维度对比矩阵，高亮关键差异，支持知情选择。
+Build a multi-dimensional comparison matrix of competing hypotheses, highlight key differences, and support informed selection.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有 ≥2 个假设（含主假设 + ≥1 个竞争假设）
-2. 假设包含 mechanism、predictions 等基本组件
+Preconditions (all must hold before starting):
+1. ≥2 hypotheses already exist (primary hypothesis + ≥1 competing hypothesis)
+2. Hypotheses contain basic components such as mechanism and predictions
 
-不满足 → 停止，返回错误：需要至少 2 个假设才能构建对比矩阵。
+Not met → stop and return error: at least 2 hypotheses are required to build a comparison matrix.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证假设集完整性
-2. 维度确定：选择对比维度（默认：机制类型/证据支持/可测试性/简约性/解释范围/理论依据）
-3. 逐假设逐维度填充：为每个假设在每个维度上赋值
-4. 差异高亮：标记假设间差异最大的维度
-5. 综合评估：基于矩阵给出综合推荐
-6. 输出结构化对比表
+1. Precondition check: verify completeness of the hypothesis set
+2. Dimension determination: select comparison dimensions (default: mechanism type / evidence support / testability / parsimony / explanatory scope / theoretical basis)
+3. Hypothesis-by-hypothesis, dimension-by-dimension population: assign a value for each hypothesis on each dimension
+4. Difference highlighting: mark the dimensions with the largest differences between hypotheses
+5. Overall assessment: give an overall recommendation based on the matrix
+6. Output the structured comparison table
 
 ## Output Format
 ```json

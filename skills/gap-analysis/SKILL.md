@@ -29,11 +29,11 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 
 | Signal | Strategy |
 |--------|----------|
-| 搜索空白、识别缺失、概念矩阵、关键词提取 | → gap-identification |
-| 分类空白类型、Miles 7-type、Müller-Bloch 6-type | → gap-classification |
-| 验证空白真实性、跨库验证、时间敏感性、假 gap | → gap-validation |
-| 排序优先级、AHRQ PiCMe、可行性、重要性 | → gap-prioritization |
-| 生成报告、证据地图、研究议程、概念矩阵 | → gap-synthesis-strategy |
+| Search for gaps, identify what is missing, concept matrix, keyword extraction | → gap-identification |
+| Classify gap types, Miles 7-type, Müller-Bloch 6-type | → gap-classification |
+| Verify gap authenticity, cross-database verification, temporal sensitivity, false gaps | → gap-validation |
+| Rank priority, AHRQ PiCMe, feasibility, importance | → gap-prioritization |
+| Generate report, evidence map, research agenda, concept matrix | → gap-synthesis-strategy |
 
 ## Available Tactics
 

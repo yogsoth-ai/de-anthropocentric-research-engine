@@ -1,12 +1,12 @@
 ---
 name: gap-normalization
-description: 'SOP: 统一不同来源的 gap 格式为标准 GapRecord'
+description: 'SOP: Unify gaps from different sources into the standard GapRecord format'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: 来自不同来源的原始 gap 条目（字符串列表、结构化对象、或混合格式）
-output: GapRecord[] — 标准化的 gap 记录数组
+input: Raw gap entries from different sources (string list, structured objects, or mixed format)
+output: GapRecord[] — array of standardized gap records
 dependencies:
   skills:
   - subagent-spawning
@@ -14,24 +14,24 @@ dependencies:
 
 # Gap Normalization
 
-统一不同来源的 gap 格式为标准 GapRecord。
+Unify gaps from different sources into the standard GapRecord format.
 
 ## HARD-GATE
 
 <HARD-GATE>
-- 输入不得为空：必须包含至少 1 条原始 gap 条目
-- 每条输出 GapRecord 必须包含非空的 id、title、description、domain、source 字段
-- 若任意必填字段无法提取，该条目标记为 `status: "incomplete"` 而非静默丢弃
+- Input must not be empty: must contain at least 1 raw gap entry
+- Each output GapRecord must contain non-empty id, title, description, domain, and source fields
+- If any required field cannot be extracted, the entry is marked `status: "incomplete"` rather than silently dropped
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 验证输入非空；统计条目数量；识别输入格式（纯文本 / JSON / 混合）
-2. **格式识别**: 逐条判断格式类型——自由文本描述、部分结构化对象、完整结构化对象
-3. **字段提取**: 从每条原始条目提取 id（生成或复用）、title、description、domain、source、evidence、context
-4. **标准化**: 对 title 去噪截断（≤120字符）；description 补全至完整句子；domain 映射到受控词表
-5. **验证**: 检查每条 GapRecord 必填字段完整性；不完整条目打标 `status: "incomplete"` 并记录缺失字段
-6. **输出**: 返回 GapRecord[] 及处理摘要（总数 / 完整数 / 不完整数）
+1. **Precondition check**: Verify input is non-empty; count the entries; identify the input format (plain text / JSON / mixed)
+2. **Format identification**: Determine the format type of each entry — free-text description, partially structured object, fully structured object
+3. **Field extraction**: Extract id (generate or reuse), title, description, domain, source, evidence, context from each raw entry
+4. **Normalization**: Denoise and truncate title (≤120 characters); complete description into full sentences; map domain to a controlled vocabulary
+5. **Validation**: Check the completeness of required fields for each GapRecord; tag incomplete entries with `status: "incomplete"` and record the missing fields
+6. **Output**: Return GapRecord[] and a processing summary (total / complete / incomplete)
 
 ## Output Format
 
@@ -40,12 +40,12 @@ dependencies:
   "records": [
     {
       "id": "gap_001",
-      "title": "短标题（≤120字符）",
-      "description": "完整描述（1-3句）",
-      "domain": "领域标签",
-      "source": "来源标识",
-      "evidence": "支持证据（可选）",
-      "context": "背景信息（可选）",
+      "title": "Short title (≤120 characters)",
+      "description": "Full description (1-3 sentences)",
+      "domain": "Domain label",
+      "source": "Source identifier",
+      "evidence": "Supporting evidence (optional)",
+      "context": "Background information (optional)",
       "status": "complete | incomplete",
       "missing_fields": []
     }
