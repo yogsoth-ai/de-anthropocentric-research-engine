@@ -20,7 +20,7 @@ COL_LABEL = {"campaigns": "Campaign", "strategies": "Strategy",
 ORDER = ["strategies", "tactics", "sops", "campaigns"]
 BEGIN = "<!-- BEGIN available-tables (generated) -->"
 END = "<!-- END available-tables (generated) -->"
-NOTE = "可选,无固定顺序;最终叶子终为 sop。"
+NOTE = "Optional, no fixed order; the final leaf is always a sop."
 
 
 def one_line(text):
@@ -43,7 +43,7 @@ def collect_descriptions(skills_dir):
 
 def render_section(subkey, names, descs):
     label = COL_LABEL[subkey]
-    head = f"## {SUBKEY_HEADING[subkey]}\n\n{NOTE}\n\n| {label} | 何时用 |\n| --- | --- |\n"
+    head = f"## {SUBKEY_HEADING[subkey]}\n\n{NOTE}\n\n| {label} | When to use |\n| --- | --- |\n"
     rows = "".join(f"| {n} | {descs.get(n, '')} |\n" for n in sorted(names))
     return head + rows
 

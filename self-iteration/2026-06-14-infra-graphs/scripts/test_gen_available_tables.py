@@ -20,7 +20,7 @@ def test_render_section_orders_and_labels(tmp_path):
     descs = {"bar": "Do bar things", "baz": "Do baz things"}
     section = gat.render_section("sops", ["baz", "bar"], descs)
     assert "## Available SOPs" in section
-    assert "| SOP | 何时用 |" in section
+    assert "| SOP | When to use |" in section
     # bar row precedes baz row (sorted)
     assert section.index("| bar |") < section.index("| baz |")
     assert "Do bar things" in section
