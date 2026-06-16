@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: knowledge-acquisition-saturation-detection
 description: Determine when additional searching yields diminishing returns. Analyzes
   the latest expansion batch against existing corpus to judge continue/near-saturation/saturated.
   Used by snowball and systematic-survey.

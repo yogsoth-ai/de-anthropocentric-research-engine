@@ -1,5 +1,5 @@
 ---
-name: assumption-enumeration
+name: deep-insight-assumption-enumeration
 description: Systematically identify all assumptions in a method/model — structural,
   parametric, distributional, and scope assumptions.
 execution: subagent

@@ -1,5 +1,5 @@
 ---
-name: perspective-rotation
+name: stress-test-perspective-rotation
 description: 'Tactic: Sequential perspective evaluation with divergence aggregation.
   Each agent evaluates from a distinct viewpoint, then disagreements are surfaced
   and resolved.'

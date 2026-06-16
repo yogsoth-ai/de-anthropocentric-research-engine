@@ -1,5 +1,5 @@
 ---
-name: dialectical-escalation
+name: stress-test-dialectical-escalation
 description: 'Tactic: Progressive debate escalation based on confidence thresholds.
   Each round increases attack sophistication until defender collapses or proves resilient.'
 type: tactic

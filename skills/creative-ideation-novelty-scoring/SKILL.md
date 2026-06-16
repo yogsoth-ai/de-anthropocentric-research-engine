@@ -1,5 +1,5 @@
 ---
-name: novelty-scoring
+name: creative-ideation-novelty-scoring
 description: Score ideas on novelty dimensions — structural distance from known solutions,
   conceptual surprise, domain-crossing depth. Produces ranked novelty assessment.
 execution: subagent

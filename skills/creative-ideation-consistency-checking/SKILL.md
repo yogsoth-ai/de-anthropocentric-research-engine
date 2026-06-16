@@ -1,5 +1,5 @@
 ---
-name: consistency-checking
+name: creative-ideation-consistency-checking
 description: Pairwise consistency evaluation to reduce solution space by identifying
   and removing inconsistent combinations.
 execution: tactic

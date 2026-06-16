@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: experiment-execution-paper-research
 description: 'Import SOP: paper full-text reading (from literature-engine skill)'
 version: 1.0.0
 category: experiment-execution

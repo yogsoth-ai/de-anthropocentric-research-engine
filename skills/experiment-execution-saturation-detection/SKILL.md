@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: experiment-execution-saturation-detection
 description: 'Shared SOP: detect information saturation — know when to stop searching/analyzing'
 version: 1.0.0
 category: experiment-execution

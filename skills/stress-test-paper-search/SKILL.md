@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: stress-test-paper-search
 description: Paper AI summary report via alphaxiv get_paper_content. Import of literature-engine/paper-search
   skill. Structured AI-generated intermediate report.
 execution: import

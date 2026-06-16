@@ -1,5 +1,5 @@
 ---
-name: gap-prioritization
+name: hypothesis-formation-gap-prioritization
 description: 'Campaign: Systematically assess and rank research gaps, determining
   the targets most worth attacking'
 version: 1.0.0

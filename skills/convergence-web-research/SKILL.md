@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: convergence-web-research
 description: Deep web research with full-page extraction — detailed methodology guides,
   tutorials, implementation references.
 execution: import

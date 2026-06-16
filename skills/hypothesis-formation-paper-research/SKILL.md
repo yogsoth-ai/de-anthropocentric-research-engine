@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: hypothesis-formation-paper-research
 description: 'Import SOP: Deep literature research, raw full text + PDF Q&A (from
   literature-engine)'
 version: 1.0.0

@@ -1,5 +1,5 @@
 ---
-name: provocation-generation
+name: deep-insight-provocation-generation
 description: Generate de Bono lateral thinking provocations to challenge dominant
   ideas using escape, reversal, exaggeration, and distortion.
 execution: subagent

@@ -1,5 +1,5 @@
 ---
-name: web-search
+name: creative-ideation-web-search
 description: Quick web scanning for landscape understanding. Import of web-browsing/web-search
   skill. Snippets only — no conclusions from snippets alone.
 execution: import

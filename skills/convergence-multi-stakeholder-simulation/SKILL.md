@@ -1,5 +1,5 @@
 ---
-name: multi-stakeholder-simulation
+name: convergence-multi-stakeholder-simulation
 description: Simulates diverse stakeholder perspectives and their strongest objections/support
   arguments. Shared across steel-manning and consensus campaigns.
 execution: subagent

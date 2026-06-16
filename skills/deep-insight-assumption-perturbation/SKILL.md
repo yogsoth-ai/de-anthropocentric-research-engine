@@ -1,5 +1,5 @@
 ---
-name: assumption-perturbation
+name: deep-insight-assumption-perturbation
 description: One-at-a-time assumption perturbation — extract assumptions, define negations,
   re-derive conclusions under each negation, measure sensitivity. Identifies which
   assumptions are load-bearing.

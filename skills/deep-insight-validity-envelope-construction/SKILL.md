@@ -1,5 +1,5 @@
 ---
-name: validity-envelope-construction
+name: deep-insight-validity-envelope-construction
 description: Combine multi-axis perturbation data into a multi-dimensional validity
   description with boundary conditions and interaction effects.
 execution: subagent

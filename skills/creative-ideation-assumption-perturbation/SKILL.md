@@ -1,5 +1,5 @@
 ---
-name: assumption-perturbation
+name: creative-ideation-assumption-perturbation
 description: Perturb each assumption, observe system response. Systematic stress-testing
   of assumptions to reveal fragility and opportunity.
 execution: subagent

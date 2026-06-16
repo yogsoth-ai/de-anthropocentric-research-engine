@@ -1,5 +1,5 @@
 ---
-name: bottleneck-identification
+name: experiment-execution-bottleneck-identification
 description: Where is the system bottleneck? — TOC 5 Focusing Steps + Current Reality
   Tree to find the binding constraint
 version: 1.0.0

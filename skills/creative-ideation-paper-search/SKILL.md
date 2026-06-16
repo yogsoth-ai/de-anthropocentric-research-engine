@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: creative-ideation-paper-search
 description: Mid-depth paper analysis via AI-generated summaries. Import of literature-engine/literature-search
   skill. Reads AI summary — sufficient for methodology understanding but not for quoting
   specific results.

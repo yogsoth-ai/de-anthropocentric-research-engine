@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: knowledge-acquisition-paper-search
 description: AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search
   skill. Must call get_paper_content for every analyzed paper.
 execution: import

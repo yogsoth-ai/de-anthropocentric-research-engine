@@ -1,5 +1,5 @@
 ---
-name: Web Search
+name: web-search
 description: Quick web scanning — discover pages, get snippets, find URLs. For orientation
   only, not substantive analysis.
 type: sop

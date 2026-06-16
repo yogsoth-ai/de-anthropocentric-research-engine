@@ -1,5 +1,5 @@
 ---
-name: perspective-rotation
+name: creative-ideation-perspective-rotation
 description: Rotate through reviewer/practitioner/theorist/time-machine/novice perspectives
   systematically. Ensures comprehensive viewpoint coverage.
 execution: tactic

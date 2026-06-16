@@ -1,5 +1,5 @@
 ---
-name: gap-identification
+name: knowledge-acquisition-gap-identification
 description: Identify what the literature has NOT addressed — missing methods, untested
   combinations, unexplored applications, contradictions without resolution. Used by
   all strategies.

@@ -1,5 +1,5 @@
 ---
-name: factor-level-design
+name: experiment-execution-factor-level-design
 description: Design factorial experiments to test how specific factors affect outcomes
 version: 1.0.0
 category: experiment-execution

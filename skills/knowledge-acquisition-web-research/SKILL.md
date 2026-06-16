@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: knowledge-acquisition-web-research
 description: Full-page web reading for non-academic perspectives — blogs, tech reports,
   product pages, industry analysis. Import of web-browsing/web-research skill. Must
   fetch full page via apify for every analyzed page.

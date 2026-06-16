@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: stress-test-web-research
 description: Deep web full-text retrieval via Apify RAG browser. Import of web-browsing/web-research
   skill. Full page content for substantive analysis.
 execution: import

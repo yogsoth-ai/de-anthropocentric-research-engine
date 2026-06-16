@@ -1,5 +1,5 @@
 ---
-name: portfolio-optimization
+name: convergence-portfolio-optimization
 description: Portfolio Optimization Campaign — select balanced combinations from candidate
   sets optimizing value, diversity, risk, and robustness using Markowitz, Knapsack,
   Pareto, Real Options, MAP-Elites, and minimax regret methods.

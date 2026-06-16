@@ -1,5 +1,5 @@
 ---
-name: assumption-challenge
+name: convergence-assumption-challenge
 description: Construct the strongest counter-argument against a specific assumption
   and propose alternatives.
 execution: subagent

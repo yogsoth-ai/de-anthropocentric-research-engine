@@ -1,5 +1,5 @@
 ---
-name: assumption-extraction
+name: convergence-assumption-extraction
 description: Systematically surface hidden assumptions underlying a decision with
   confidence levels.
 execution: subagent

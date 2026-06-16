@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: hypothesis-formation-paper-search
 description: 'Import SOP: Medium-depth literature search, AI summary report (from
   literature-engine)'
 version: 1.0.0

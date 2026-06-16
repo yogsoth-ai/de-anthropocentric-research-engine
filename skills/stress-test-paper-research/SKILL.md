@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: stress-test-paper-research
 description: Paper full text access via alphaxiv answer_pdf_queries or get_paper_content(fullText=true).
   Import of literature-engine/paper-research skill. Raw extracted text for precise
   claims.

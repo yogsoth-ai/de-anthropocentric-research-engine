@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: experiment-execution-web-research
 description: 'Import SOP: deep full-page content analysis (from web-browsing skill)'
 version: 1.0.0
 category: experiment-execution

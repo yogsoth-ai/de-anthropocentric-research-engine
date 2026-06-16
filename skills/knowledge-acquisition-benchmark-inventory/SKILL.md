@@ -1,5 +1,5 @@
 ---
-name: benchmark-inventory
+name: knowledge-acquisition-benchmark-inventory
 description: Identify and catalog all relevant benchmarks in target domain
 execution: subagent
 prompt: ./prompt.md

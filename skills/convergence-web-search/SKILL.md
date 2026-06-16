@@ -1,5 +1,5 @@
 ---
-name: web-search
+name: convergence-web-search
 description: Quick web scan to discover relevant pages — methodology references, case
   studies, best practices for convergence methods.
 execution: import

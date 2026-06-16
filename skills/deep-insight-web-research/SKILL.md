@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: deep-insight-web-research
 description: Deep web research with full page fetching via Apify. Import of web-browsing/web-research
   skill. Must fetch full page — no conclusions from previews.
 execution: import

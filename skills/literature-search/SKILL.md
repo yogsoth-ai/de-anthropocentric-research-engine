@@ -1,5 +1,5 @@
 ---
-name: Literature Search
+name: literature-search
 description: Medium-depth literature search — read AI-summarized reports for every
   paper analyzed
 type: sop

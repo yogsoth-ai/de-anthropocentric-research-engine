@@ -1,5 +1,5 @@
 ---
-name: portfolio-optimization
+name: hypothesis-formation-portfolio-optimization
 description: 'Strategy: Treat the gap set as an investment portfolio — use risk/return/diversity
   optimization to select the optimal gap portfolio'
 version: 1.0.0

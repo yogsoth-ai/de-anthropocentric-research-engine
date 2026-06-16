@@ -1,5 +1,10 @@
-import fix_skill_names as m
+import os
+import shutil
+from pathlib import Path
 
+import pytest
+
+import fix_skill_names as m
 
 def test_name_field_from_frontmatter():
     t = '---\nname: web-search\ndescription: x\n---\n# body\nname: not-this\n'
@@ -96,3 +101,16 @@ def test_main_applies(tmp_path):
     assert rc == 0
     txt = (flat / "convergence-web-search" / "SKILL.md").read_text(encoding="utf-8")
     assert "name: convergence-web-search\n" in txt
+
+
+@pytest.mark.skipif(not os.environ.get("DARE_FLAT"),
+                    reason="set DARE_FLAT to run the real integration")
+def test_integration_106_then_0(tmp_path):
+    # Copy the real flat body into tmp so the test never mutates the repo.
+    real = Path(os.environ["DARE_FLAT"])
+    flat = tmp_path / "skills"
+    shutil.copytree(real, flat)
+    before = m.scan(flat)
+    assert len(before) == 106
+    m.apply_fixes(flat)
+    assert m.scan(flat) == []

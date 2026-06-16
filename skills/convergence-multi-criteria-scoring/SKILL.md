@@ -1,5 +1,5 @@
 ---
-name: multi-criteria-scoring
+name: convergence-multi-criteria-scoring
 description: Multi-Criteria Scoring Campaign — evaluate and rank candidates against
   multiple weighted criteria using AHP, BWM, TOPSIS, VIKOR, ELECTRE, PROMETHEE, MAUT
   methods.

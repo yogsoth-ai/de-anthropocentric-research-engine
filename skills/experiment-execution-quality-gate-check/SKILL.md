@@ -1,5 +1,5 @@
 ---
-name: quality-gate-check
+name: experiment-execution-quality-gate-check
 description: 'Shared SOP: verify quality gate criteria are met before proceeding'
 version: 1.0.0
 category: experiment-execution

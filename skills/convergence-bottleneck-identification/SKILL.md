@@ -1,5 +1,5 @@
 ---
-name: bottleneck-identification
+name: convergence-bottleneck-identification
 description: Identify bottleneck dimensions from radar data with severity ranking.
 execution: subagent
 prompt: ./prompt.md

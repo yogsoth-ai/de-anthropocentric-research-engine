@@ -1,5 +1,5 @@
 ---
-name: broad-web-search
+name: north-star-crystallization-broad-web-search
 description: 'Quick web scanning for field landscape understanding. Strict import
   of web-browsing/web-search skill. Hard constraint: brave_web_search count=10 per
   call, at least 150 total search results before completing.'

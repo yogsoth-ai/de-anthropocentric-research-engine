@@ -1,5 +1,5 @@
 ---
-name: quality-gate-check
+name: hypothesis-formation-quality-gate-check
 description: 'Shared SOP: General quality-gate check (format completeness, logical consistency)'
 version: 1.0.0
 category: hypothesis-formation

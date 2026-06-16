@@ -1,5 +1,5 @@
 ---
-name: combination-mapping
+name: knowledge-structuring-combination-mapping
 description: Strategy for enumerating meaningful combinations across dimensions and
   marking existing work.
 execution: strategy

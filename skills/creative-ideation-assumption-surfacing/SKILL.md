@@ -1,5 +1,5 @@
 ---
-name: assumption-surfacing
+name: creative-ideation-assumption-surfacing
 description: Enumerate implicit assumptions in a problem statement or existing solution.
   Produces categorized assumption inventory (physical, social, temporal, economic,
   technical).

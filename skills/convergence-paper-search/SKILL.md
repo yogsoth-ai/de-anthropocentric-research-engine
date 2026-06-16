@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: convergence-paper-search
 description: Paper AI summary reading — deeper understanding of specific methodology
   papers without full-text commitment.
 execution: import

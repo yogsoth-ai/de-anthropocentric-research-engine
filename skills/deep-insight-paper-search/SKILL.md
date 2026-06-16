@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: deep-insight-paper-search
 description: AI-powered paper summary and search. Import of literature-engine/literature-search
   skill. AI summary level — cite as "AI-extracted" not "paper states".
 execution: import

@@ -1,5 +1,5 @@
 ---
-name: claim-decomposition
+name: knowledge-acquisition-claim-decomposition
 description: Independent/dependent claim parsing, element extraction, and feature
   mapping to technical domains
 execution: tactic

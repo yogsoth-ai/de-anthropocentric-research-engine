@@ -1,5 +1,5 @@
 ---
-name: multi-criteria-scoring
+name: deep-insight-multi-criteria-scoring
 description: Score gaps on multiple dimensions (importance, feasibility, novelty,
   urgency, impact) using weighted multi-criteria decision analysis.
 execution: subagent

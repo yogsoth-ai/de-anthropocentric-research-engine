@@ -1,5 +1,5 @@
 ---
-name: claim-decomposition
+name: knowledge-structuring-claim-decomposition
 description: Tactic for decomposing compound claims into atomic propositions — identify
   logical structure, separate conjunctions, extract implicit assumptions.
 execution: tactic

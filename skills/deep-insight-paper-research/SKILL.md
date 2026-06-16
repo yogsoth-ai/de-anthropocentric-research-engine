@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: deep-insight-paper-research
 description: Full-text paper reading via three-pass Keshav method. Import of literature-engine/literature-research
   skill. Authoritative source for claims about paper content.
 execution: import

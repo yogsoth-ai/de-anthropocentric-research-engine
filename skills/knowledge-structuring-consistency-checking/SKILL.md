@@ -1,5 +1,5 @@
 ---
-name: consistency-checking
+name: knowledge-structuring-consistency-checking
 description: Tactic for verifying ontology consistency — detect contradictions, cycles,
   orphans, and type violations.
 execution: tactic

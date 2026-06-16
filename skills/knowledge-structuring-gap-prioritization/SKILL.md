@@ -1,5 +1,5 @@
 ---
-name: gap-prioritization
+name: knowledge-structuring-gap-prioritization
 description: Strategy for ranking unexplored combinations by novelty, feasibility,
   and potential impact.
 execution: strategy

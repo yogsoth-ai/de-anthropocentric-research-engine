@@ -1,5 +1,5 @@
 ---
-name: consistency-pair-evaluation
+name: creative-ideation-consistency-pair-evaluation
 description: Evaluate pairwise value consistency (logical/empirical/normative)
 execution: subagent
 prompt: ./prompt.md

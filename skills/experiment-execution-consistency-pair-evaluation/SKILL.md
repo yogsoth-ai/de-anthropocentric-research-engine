@@ -1,5 +1,5 @@
 ---
-name: consistency-pair-evaluation
+name: experiment-execution-consistency-pair-evaluation
 description: Pairwise consistency assessment using Cross-Consistency Assessment (CCA)
   matrix
 version: 1.0.0

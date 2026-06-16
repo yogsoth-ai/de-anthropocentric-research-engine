@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: stress-test-paper-overview
 description: Paper landscape scan returning abstracts and metadata. Import of literature-engine/paper-overview
   skill. Abstracts only — no conclusions from abstracts.
 execution: import

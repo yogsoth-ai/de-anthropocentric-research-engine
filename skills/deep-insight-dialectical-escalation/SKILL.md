@@ -1,5 +1,5 @@
 ---
-name: dialectical-escalation
+name: deep-insight-dialectical-escalation
 description: Double-loop learning escalation — surface governing variables, generate
   counter-assumptions, test if problem dissolves under alternatives, score wickedness
   if it persists.

@@ -1,5 +1,5 @@
 ---
-name: web-search
+name: hypothesis-formation-web-search
 description: 'Import SOP: quick web scan, discover URLs and snippets (from web-browsing)'
 version: 1.0.0
 category: hypothesis-formation

@@ -1,5 +1,5 @@
 ---
-name: variable-identification
+name: hypothesis-formation-variable-identification
 description: 'SOP: identify variables and their roles within a hypothesis'
 version: 1.0.0
 category: hypothesis-formation

@@ -1,5 +1,5 @@
 ---
-name: assumption-extraction
+name: deep-insight-assumption-extraction
 description: Systematically extract all assumptions (stated, implicit, boundary, mathematical,
   practical) from a method or model.
 execution: subagent

@@ -1,5 +1,5 @@
 ---
-name: factor-level-design
+name: creative-ideation-factor-level-design
 description: Identify factors and their levels for a problem, then design an experiment
   matrix for systematic exploration.
 execution: subagent

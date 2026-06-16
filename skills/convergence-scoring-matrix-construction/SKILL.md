@@ -1,5 +1,5 @@
 ---
-name: scoring-matrix-construction
+name: convergence-scoring-matrix-construction
 description: Build a complete scoring matrix through criterion definition, weighting,
   scoring, normalization, and sensitivity testing.
 execution: tactic

@@ -1,5 +1,5 @@
 ---
-name: assumption-enumeration
+name: creative-ideation-assumption-enumeration
 description: Surface, perturb, and prioritize assumptions by disruption potential.
   Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization.
 execution: tactic

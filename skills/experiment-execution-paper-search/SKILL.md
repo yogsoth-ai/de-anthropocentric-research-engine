@@ -1,5 +1,5 @@
 ---
-name: paper-search
+name: experiment-execution-paper-search
 description: 'Import SOP: paper AI summary reading (from literature-engine skill)'
 version: 1.0.0
 category: experiment-execution

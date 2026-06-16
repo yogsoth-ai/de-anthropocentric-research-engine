@@ -1,5 +1,5 @@
 ---
-name: validity-envelope-construction
+name: stress-test-validity-envelope-construction
 description: Synthesize breakpoints across dimensions into a coherent validity envelope
   for a claim.
 execution: subagent

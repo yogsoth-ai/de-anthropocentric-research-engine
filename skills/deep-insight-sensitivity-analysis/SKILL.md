@@ -1,5 +1,5 @@
 ---
-name: sensitivity-analysis
+name: deep-insight-sensitivity-analysis
 description: Sensitivity Analysis Campaign — identify which assumptions are most critical
   by measuring their impact on conclusions. 5 strategies (parameter-screening, variance-decomposition,
   assumption-criticality, uncertainty-propagation, decision-sensitivity), 3 tactics,

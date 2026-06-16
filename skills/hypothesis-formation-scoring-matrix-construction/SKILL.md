@@ -1,5 +1,5 @@
 ---
-name: scoring-matrix-construction
+name: hypothesis-formation-scoring-matrix-construction
 description: 'Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive
   assessment matrix for all gaps'
 version: 1.0.0

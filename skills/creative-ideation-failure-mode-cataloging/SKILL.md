@@ -1,5 +1,5 @@
 ---
-name: failure-mode-cataloging
+name: creative-ideation-failure-mode-cataloging
 description: Systematically catalog all failure modes in a domain or method, producing
   a classified failure taxonomy.
 execution: subagent

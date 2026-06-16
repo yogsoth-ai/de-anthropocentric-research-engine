@@ -1,5 +1,5 @@
 ---
-name: Web Research
+name: web-research
 description: Deep web research — fetches full page content for analysis. Snippets
   alone are PROHIBITED for conclusions.
 type: sop

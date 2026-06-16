@@ -1,5 +1,5 @@
 ---
-name: novelty-scoring
+name: hypothesis-formation-novelty-scoring
 description: 'SOP: Assess the novelty potential of a research gap, identify differentiation
   directions, and output a score'
 version: 1.0.0

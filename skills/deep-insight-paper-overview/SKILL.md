@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: deep-insight-paper-overview
 description: Paper metadata and abstract-level overview. Import of literature-engine/literature-overview
   skill. Abstracts only — no substantive claims without deeper reading.
 execution: import

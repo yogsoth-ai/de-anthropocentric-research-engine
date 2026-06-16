@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: knowledge-acquisition-paper-overview
 description: Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview
   skill. Abstract-level only — no methodology conclusions from abstracts.
 execution: import

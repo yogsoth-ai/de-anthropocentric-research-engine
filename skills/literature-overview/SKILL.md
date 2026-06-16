@@ -1,5 +1,5 @@
 ---
-name: Literature Overview
+name: literature-overview
 description: Quick landscape scan — discover papers on a topic without full-text reading
 type: sop
 layer: sop

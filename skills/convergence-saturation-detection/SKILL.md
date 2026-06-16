@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: convergence-saturation-detection
 description: Determines when to stop iterating — coverage threshold met or marginal
   returns diminishing. Shared across all campaigns.
 execution: subagent

@@ -1,5 +1,5 @@
 ---
-name: gap-identification
+name: deep-insight-gap-identification
 description: Identify research gaps via PICOS frameworks, concept matrices, evidence
   gap maps, keyword extraction, citation analysis, and topic modeling. Systematic
   discovery of what is missing in the literature.

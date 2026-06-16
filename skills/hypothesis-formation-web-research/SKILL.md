@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: hypothesis-formation-web-research
 description: 'Import SOP: deep web research, full-text fetching and analysis (from
   web-browsing)'
 version: 1.0.0

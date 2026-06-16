@@ -1,5 +1,5 @@
 ---
-name: web-search
+name: experiment-execution-web-search
 description: 'Import SOP: quick web scan discovery (from web-browsing skill)'
 version: 1.0.0
 category: experiment-execution

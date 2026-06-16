@@ -1,5 +1,5 @@
 ---
-name: sensitivity-analysis
+name: convergence-sensitivity-analysis
 description: Tests conclusion robustness by perturbing parameters and observing rank
   changes. Shared across scoring, portfolio, and steel-manning campaigns.
 execution: subagent

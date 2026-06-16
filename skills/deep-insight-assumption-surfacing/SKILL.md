@@ -1,5 +1,5 @@
 ---
-name: assumption-surfacing
+name: deep-insight-assumption-surfacing
 description: Systematically extract implicit assumptions from methods, frameworks,
   or arguments. Identifies what is taken for granted without explicit justification.
 execution: subagent

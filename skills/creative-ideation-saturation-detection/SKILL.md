@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: creative-ideation-saturation-detection
 description: Determine when additional ideation yields diminishing returns. Analyzes
   latest idea batch against existing corpus to judge continue/near-saturation/saturated.
 execution: subagent

@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: hypothesis-formation-saturation-detection
 description: 'Shared SOP: judge whether the current activity has reached information saturation'
 version: 1.0.0
 category: hypothesis-formation

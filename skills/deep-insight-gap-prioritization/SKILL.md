@@ -1,5 +1,5 @@
 ---
-name: gap-prioritization
+name: deep-insight-gap-prioritization
 description: Score and rank validated gaps on importance, feasibility, novelty, and
   urgency. Multi-criteria decision analysis with stakeholder confirmation.
 dependencies:

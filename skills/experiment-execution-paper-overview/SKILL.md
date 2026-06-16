@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: experiment-execution-paper-overview
 description: 'Import SOP: paper landscape scan (from literature-engine skill)'
 version: 1.0.0
 category: experiment-execution

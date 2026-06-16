@@ -1,5 +1,5 @@
 ---
-name: assumption-challenge
+name: stress-test-assumption-challenge
 description: 'Strategy: Military-grade assumption testing — Key Assumptions Check,
   Devil''s Advocacy, Team A/B analysis to expose hidden dependencies and unexamined
   beliefs.'

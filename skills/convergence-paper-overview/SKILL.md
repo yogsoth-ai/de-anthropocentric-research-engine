@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: convergence-paper-overview
 description: Paper landscape scan at abstract level — discover MCDA, voting theory,
   Delphi, and optimization methodology papers.
 execution: import

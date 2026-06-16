@@ -1,5 +1,5 @@
 ---
-name: variable-identification
+name: knowledge-structuring-variable-identification
 description: Identify key variables in the causal system
 execution: strategy
 dependencies:

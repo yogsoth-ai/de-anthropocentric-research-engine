@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: creative-ideation-paper-research
 description: Deep paper analysis with full text reading. Import of literature-engine/literature-research
   skill. Full text access — required for quoting results, verifying claims, extracting
   detailed methodology.

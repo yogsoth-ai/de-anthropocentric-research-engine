@@ -1,5 +1,5 @@
 ---
-name: multi-stakeholder-simulation
+name: deep-insight-multi-stakeholder-simulation
 description: Simulate multiple stakeholder perspectives evaluating a research gap,
   method, or proposal. Identifies blind spots from single-perspective analysis.
 execution: subagent

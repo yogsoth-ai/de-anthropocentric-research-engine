@@ -1,5 +1,5 @@
 ---
-name: Literature Research
+name: literature-research
 description: Deep literature research — raw full text reading and targeted PDF queries
   for rigorous analysis
 type: sop

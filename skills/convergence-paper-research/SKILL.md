@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: convergence-paper-research
 description: Full-text deep reading of methodology papers — complete understanding
   of algorithms, proofs, and implementation details.
 execution: import

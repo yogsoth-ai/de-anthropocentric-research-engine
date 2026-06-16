@@ -1,5 +1,5 @@
 ---
-name: combination-mapping
+name: creative-ideation-combination-mapping
 description: Systematically enumerate parameter dimensions and generate viable combinations.
   Orchestrates parameter extraction → value enumeration → compatibility assessment
   → synthesis.

@@ -1,5 +1,5 @@
 ---
-name: validity-envelope-mapping
+name: stress-test-validity-envelope-mapping
 description: Map the complete validity envelope of a claim across all relevant dimensions,
   synthesizing breakpoints into a bounded region.
 type: strategy

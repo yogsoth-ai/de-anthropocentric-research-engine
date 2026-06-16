@@ -1,5 +1,5 @@
 ---
-name: provocation-generation
+name: creative-ideation-provocation-generation
 description: Generate PO provocations and extract constructive movement. Orchestrates
   assumption surfacing → provocation creation → movement extraction → idea formation.
 execution: tactic

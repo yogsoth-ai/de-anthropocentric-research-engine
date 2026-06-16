@@ -1,5 +1,5 @@
 ---
-name: novelty-scoring
+name: knowledge-structuring-novelty-scoring
 description: SOP for scoring empty cells by novelty potential — how surprising and
   valuable would this combination be?
 execution: sop

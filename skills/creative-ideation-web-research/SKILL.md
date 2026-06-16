@@ -1,5 +1,5 @@
 ---
-name: web-research
+name: creative-ideation-web-research
 description: Deep web page analysis with full content extraction. Import of web-browsing/web-research
   skill. Must fetch full page via apify — no shortcuts.
 execution: import

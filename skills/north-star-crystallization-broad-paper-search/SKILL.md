@@ -1,5 +1,5 @@
 ---
-name: broad-paper-search
+name: north-star-crystallization-broad-paper-search
 description: 'Paper landscape scan within selected field(s). Strict import of literature-engine/literature-overview
   skill. Hard constraint: at least 80 papers scanned.'
 execution: import

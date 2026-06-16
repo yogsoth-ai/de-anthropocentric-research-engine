@@ -1,5 +1,5 @@
 ---
-name: failure-mode-cataloging
+name: deep-insight-failure-mode-cataloging
 description: Systematic failure mode cataloging — generate boundary inputs, observe
   failures, cluster by mechanism, identify triggers, estimate frequency.
 execution: tactic

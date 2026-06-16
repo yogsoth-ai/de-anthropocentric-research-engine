@@ -1,5 +1,5 @@
 ---
-name: paper-overview
+name: hypothesis-formation-paper-overview
 description: 'Import SOP: Quick paper scan, returns abstract and metadata (from literature-engine)'
 version: 1.0.0
 category: hypothesis-formation

@@ -1,5 +1,5 @@
 ---
-name: benchmark-inventory
+name: creative-ideation-benchmark-inventory
 description: Catalog all known solutions/methods in a domain with performance, applicability,
   and limitations.
 execution: subagent

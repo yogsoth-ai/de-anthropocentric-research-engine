@@ -1,5 +1,5 @@
 ---
-name: validity-envelope-mapping
+name: deep-insight-validity-envelope-mapping
 description: Map multi-dimensional validity envelopes — define variation axes, perturb
   systematically, measure degradation, construct boundary surface.
 dependencies:

@@ -1,5 +1,5 @@
 ---
-name: saturation-detection
+name: stress-test-saturation-detection
 description: Determines whether validation has reached saturation — no new weaknesses
   or failure modes being discovered. Used by all 5 campaigns as termination signal.
 execution: subagent

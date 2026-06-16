@@ -1,5 +1,5 @@
 ---
-name: paper-research
+name: knowledge-acquisition-paper-research
 description: Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research
   skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted.
 execution: import
