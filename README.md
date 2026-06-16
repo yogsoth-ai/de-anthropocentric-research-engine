@@ -267,7 +267,7 @@ The 9 freely-composable research packages, each a self-contained 4-layer engine 
 | knowledge-acquisition | ~100 | Literature survey, patent mining, benchmark archaeology, meta-analysis, baselines |
 | experiment-execution | ~90 | Factor design, constraint analysis, scenario planning, implementation planning |
 | hypothesis-formation | ~70 | Gap prioritization, abductive/inductive/deductive generation, research questions |
-| knowledge-structuring | ~70 | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault) |
+| knowledge-structuring | ~70 | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault, inspired by Karpathy's [llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)) |
 | north-star-crystallization | ~30 | Cold/warm/hot start, direction narrowing, North Star synthesis |
 
 Plus the infrastructure that every package draws on:
