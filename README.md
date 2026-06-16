@@ -298,17 +298,21 @@ Plus the infrastructure that every package draws on:
    cp mcp.example.json .mcp.json
    ```
 
-3. Configure your Claude Code project to use the skills:
+3. Install the skills so Claude Code can discover them. Skills are auto-discovered from a `.claude/skills/` directory — there is no `settings.json` path option. Copy (or symlink) every skill into your project's `.claude/skills/` (or the user-level `~/.claude/skills/`):
 
-   ```json
-   {
-     "permissions": {
-       "allow": ["skill:*"]
-     },
-     "skills": {
-       "path": "path/to/de-anthropocentric-research-engine/skills"
-     }
-   }
+   ```bash
+   # macOS / Linux — copy
+   mkdir -p .claude/skills && cp -R skills/* .claude/skills/
+
+   # macOS / Linux — symlink instead (keeps a single source of truth)
+   mkdir -p .claude/skills
+   for dir in skills/*/; do ln -s "$(pwd)/$dir" ".claude/skills/$(basename "$dir")"; done
+   ```
+
+   ```powershell
+   # Windows PowerShell — copy
+   New-Item -ItemType Directory -Force .claude\skills | Out-Null
+   Copy-Item -Recurse skills\* .claude\skills\
    ```
 
 4. Invoke the entry point:
