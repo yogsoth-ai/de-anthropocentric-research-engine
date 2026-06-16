@@ -1,10 +1,13 @@
 ---
 name: comparison-executor
-description: Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning.
+description: Execute a pairwise comparison between two candidates, producing a judgment
+  with winner, confidence, and reasoning.
 execution: subagent
 prompt: ./prompt.md
 input: pair(array), context(object)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Comparison Executor
@@ -22,3 +25,15 @@ Each comparison requires focused deliberation on the specific pair without being
 ## HARD-GATE
 
 Output MUST declare exactly one winner from the pair (no ties unless context explicitly permits ties). Confidence MUST be a value in [0.5, 1.0]. Reasoning MUST reference specific attributes of both candidates.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

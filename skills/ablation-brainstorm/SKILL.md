@@ -1,8 +1,15 @@
 ---
 name: ablation-brainstorm
-description: Remove components one by one, observe system changes to reveal hidden dependencies and generate ideas from structural gaps.
+description: Remove components one by one, observe system changes to reveal hidden
+  dependencies and generate ideas from structural gaps.
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - ablation-execution
+  - dependency-identification
+  - enumeration-synthesis
+  tactics:
+  - coverage-analysis
 ---
 
 # Ablation Brainstorm
@@ -46,3 +53,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Ideate**: For each critical dependency, ask "what if this were replaced/eliminated/redesigned?"
 5. **Filter**: Apply evaluation-filtering to rank generated ideas
 6. **Synthesize**: Produce structured report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| coverage-analysis | Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ablation-execution | Remove components one by one from a system, record the response/impact of each removal. |
+| dependency-identification | Identify critical dependencies from ablation results, producing a dependency graph and highlighting critical components. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+
+<!-- END available-tables (generated) -->

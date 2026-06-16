@@ -1,9 +1,18 @@
 ---
 name: boundary-probing
-description: "Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope."
+description: Map parameter space, generate extreme values, test at boundaries, detect
+  breakpoints, synthesize validity envelope.
 type: tactic
-used-by: [adversarial-stress-testing]
-strategies: [boundary-enumeration, validity-envelope-mapping, critical-case-design]
+strategies:
+- boundary-enumeration
+- validity-envelope-mapping
+- critical-case-design
+dependencies:
+  sops:
+  - breakpoint-detection
+  - extreme-value-generation
+  - parameter-space-mapping
+  - stress-test-validity-envelope-construction
 ---
 
 # Boundary Probing
@@ -32,3 +41,18 @@ strategies: [boundary-enumeration, validity-envelope-mapping, critical-case-desi
 - Breakpoint found in critical dimension (early report)
 - Budget exhausted (report partial envelope)
 - Dimension count exceeds budget (prioritize by sensitivity)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| breakpoint-detection | Test a claim at extreme parameter values and detect the precise point where it breaks down. |
+| extreme-value-generation | Generate boundary and extreme test values for a given parameter dimension to stress-test claims. |
+| parameter-space-mapping | Identify all parameter dimensions along which a claim's validity might vary. |
+| stress-test-validity-envelope-construction | Synthesize breakpoints across dimensions into a coherent validity envelope for a claim. |
+
+<!-- END available-tables (generated) -->

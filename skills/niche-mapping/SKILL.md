@@ -1,10 +1,13 @@
 ---
 name: niche-mapping
-description: Map each candidate to the niches it covers, indicating strength of coverage for each assignment.
+description: Map each candidate to the niches it covers, indicating strength of coverage
+  for each assignment.
 execution: subagent
 prompt: ./prompt.md
 input: candidates, niches
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Niche Mapping
@@ -22,3 +25,15 @@ Mapping requires evaluating each candidate against each niche criterion — a sy
 ## HARD-GATE
 
 Output must include a complete coverage map (every candidate assessed against every niche) and identification of gaps where no candidate provides strong coverage.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

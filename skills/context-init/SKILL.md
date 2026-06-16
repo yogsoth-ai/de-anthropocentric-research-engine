@@ -1,6 +1,9 @@
 ---
 name: context-init
-description: Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed.
+description: Create a new context file for a research Phase. Called once at Phase
+  start to initialize the file that subsequent context-checkpoint calls will append
+  to. Use this skill whenever a new research Phase begins and a fresh context file
+  is needed.
 ---
 
 # Context Init
@@ -21,7 +24,7 @@ step: "import context-management:context-init"
 Run the timestamp script to get the current time:
 
 ```bash
-python <context-management-repo-path>/scripts/timestamp.py
+python scripts/timestamp.py
 ```
 
 Output format: `yyyy-mm-dd-hh-mm` (e.g., `2026-05-16-14-30`)

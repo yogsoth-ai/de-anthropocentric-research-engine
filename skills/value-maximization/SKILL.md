@@ -1,7 +1,15 @@
 ---
 name: value-maximization
-description: Maximize total portfolio value within constraints using Knapsack, Linear programming, Cost-benefit analysis, and NPV ranking methods.
-used-by: portfolio-optimization
+description: Maximize total portfolio value within constraints using Knapsack, Linear
+  programming, Cost-benefit analysis, and NPV ranking methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - selection-from-frontier
 ---
 
 # Value Maximization
@@ -73,3 +81,26 @@ constraint_slack: <remaining budget>
 method_used: <knapsack|LP|NPV>
 confidence: <high|medium|low>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| pareto-visualization | Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation. |
+| selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
+
+<!-- END available-tables (generated) -->

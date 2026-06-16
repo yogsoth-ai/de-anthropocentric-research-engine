@@ -1,8 +1,12 @@
 ---
 name: random-entry
-description: "Random word/concept as thinking entry point (de Bono Random Entry)"
+description: Random word/concept as thinking entry point (de Bono Random Entry)
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - lateral-synthesis
+  - stepping-stone
 ---
 
 # Random Entry
@@ -46,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Movement**: Apply movement-operation to extract useful directions
 5. **Develop**: Use stepping-stone to bridge impractical connections to practical ideas
 6. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: feedback-distribution
-description: Create anonymized feedback report summarizing group judgment distribution for a given round.
+description: Create anonymized feedback report summarizing group judgment distribution
+  for a given round.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[], round_n
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Feedback Distribution
@@ -24,3 +27,15 @@ Spawn a subagent that takes the collected judgments and round number, then produ
 ## HARD-GATE
 
 Output MUST contain: statistical summary (median, IQR or % distribution), anonymized reasoning themes, and round number. Report MUST NOT contain any perspective attribution.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

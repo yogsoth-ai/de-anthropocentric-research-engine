@@ -1,10 +1,9 @@
-﻿---
+---
 name: score-extraction
 description: Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper
 execution: subagent
 prompt: ./prompt.md
 input: paper_content, target_tasks
-used-by: baseline-establishment
 ---
 
 # Score Extraction

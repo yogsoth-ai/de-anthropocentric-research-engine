@@ -1,8 +1,13 @@
 ---
 name: coverage-analysis
-description: Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space.
+description: Systematic coverage evaluation pipeline — benchmark inventory, method-problem
+  crossing, and intersection evaluation to map explored vs unexplored solution space.
 execution: tactic
-used-by: systematic-enumeration, benchmark-sweep, method-problem-matrix, ablation-brainstorm
+dependencies:
+  sops:
+  - creative-ideation-benchmark-inventory
+  - intersection-evaluation
+  - method-problem-crossing
 ---
 
 # Coverage Analysis
@@ -40,3 +45,17 @@ Run intersection-evaluation SOP to annotate each matrix cell as explored, partia
 | benchmark-inventory | Stage 1 — catalog all known solutions |
 | method-problem-crossing | Stage 2 — build cross-reference matrix |
 | intersection-evaluation | Stage 3 — annotate exploration status |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| creative-ideation-benchmark-inventory | Catalog all known solutions/methods in a domain with performance, applicability, and limitations. |
+| intersection-evaluation | Evaluate exploration status of each cell in a method×problem matrix, annotating as explored, partial, or unexplored. |
+| method-problem-crossing | Build method×problem cross-reference matrix showing which methods have been applied to which problems. |
+
+<!-- END available-tables (generated) -->

@@ -1,8 +1,13 @@
 ---
 name: niche-coverage-analysis
-description: Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention.
+description: Define niches within the solution space, map candidates to niches, score
+  coverage completeness, and identify gaps requiring attention.
 execution: tactic
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - coverage-scoring
+  - niche-definition
+  - niche-mapping
 ---
 
 # Niche Coverage Analysis
@@ -37,3 +42,17 @@ Systematically define the niches or capability areas that a portfolio should cov
 - Coverage map showing candidate-to-niche assignments
 - Gap analysis identifying uncovered or under-covered niches with severity ratings
 - Diversity score (0-1) summarizing overall portfolio coverage
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| coverage-scoring | Compute coverage completeness, redundancy, and gap severity scores from a coverage map. |
+| niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |
+| niche-mapping | Map each candidate to the niches it covers, indicating strength of coverage for each assignment. |
+
+<!-- END available-tables (generated) -->

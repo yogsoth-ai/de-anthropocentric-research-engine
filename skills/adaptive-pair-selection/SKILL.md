@@ -1,8 +1,14 @@
 ---
 name: adaptive-pair-selection
-description: Iteratively select maximally informative pairs, execute comparisons, update ratings, and check convergence until ranking stabilizes.
+description: Iteratively select maximally informative pairs, execute comparisons,
+  update ratings, and check convergence until ranking stabilizes.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - comparison-executor
+  - convergence-check
+  - pair-selector
+  - rating-update
 ---
 
 # Adaptive Pair Selection
@@ -41,3 +47,18 @@ Loop stages 1-4 until convergence or budget exhaustion.
 - Global ranking with confidence intervals for each position
 - Convergence curve showing stability score over iterations
 - Comparison log with all judgments made
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
+| convergence-check | Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics. |
+| pair-selector | Select the next comparison pairs that maximize information gain given current ratings and comparison history. |
+| rating-update | Incorporate a new judgment into the rating model and return updated ratings for all candidates. |
+
+<!-- END available-tables (generated) -->

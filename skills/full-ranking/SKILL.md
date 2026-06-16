@@ -1,7 +1,11 @@
 ---
 name: full-ranking
-description: Produce a complete ordering of all candidates using PROMETHEE I/II, ELECTRE III, or MAVT methods.
-used-by: multi-criteria-scoring
+description: Produce a complete ordering of all candidates using PROMETHEE I/II, ELECTRE
+  III, or MAVT methods.
+dependencies:
+  tactics:
+  - convergence-scoring-matrix-construction
+  - multi-method-triangulation
 ---
 
 # Full Ranking
@@ -80,3 +84,16 @@ result: null
 ### Robustness Notes
 [Sensitivity of ranking to weight changes]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
+| multi-method-triangulation | Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options. |
+
+<!-- END available-tables (generated) -->

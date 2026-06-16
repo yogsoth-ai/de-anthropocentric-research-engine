@@ -1,7 +1,11 @@
 ---
 name: stakeholder-objection-simulation
-description: Simulate stakeholder objections through role-play and political feasibility analysis to test whether the decision survives real-world opposition.
-used-by: steel-manning
+description: Simulate stakeholder objections through role-play and political feasibility
+  analysis to test whether the decision survives real-world opposition.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - multi-perspective-attack
 ---
 
 # Stakeholder Objection Simulation
@@ -70,3 +74,16 @@ political_feasibility: HIGH | MEDIUM | LOW
 blocking_objections: []
 recommended_accommodations: []
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adversarial-debate-protocol | Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds. |
+| multi-perspective-attack | Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment. |
+
+<!-- END available-tables (generated) -->

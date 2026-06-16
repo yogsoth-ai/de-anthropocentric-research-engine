@@ -1,8 +1,13 @@
 ---
 name: fantasy-analogy
-description: Wish-fulfillment thinking — ignore physical laws for ideal solution. Use unconstrained imagination to reveal what the problem truly needs.
+description: Wish-fulfillment thinking — ignore physical laws for ideal solution.
+  Use unconstrained imagination to reveal what the problem truly needs.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - fantasy-wish
+  - springboard-launch
+  - synectics-synthesis
 ---
 
 # Fantasy Analogy
@@ -45,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Approximate**: What real mechanisms come closest to the fantasy?
 5. **Bridge**: Design feasible solutions that capture the fantasy's essence
 6. **Validate**: Ensure the bridge solutions address the original need
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| fantasy-wish | Unconstrained wish-fulfillment ideation. Ignore all physical laws to imagine the ideal solution, then identify realization directions. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

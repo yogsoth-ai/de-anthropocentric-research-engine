@@ -1,7 +1,13 @@
-﻿---
+---
 name: discrepancy-analysis
-description: Identify discrepancies between reported and reproducible scores — 15 methods, 45 data points, 30 web searches budget
-used-by: baseline-establishment
+description: Identify discrepancies between reported and reproducible scores — 15
+  methods, 45 data points, 30 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - discrepancy-identification
+  - reproducibility-checklist-audit
 ---
 
 # Discrepancy Analysis
@@ -89,3 +95,24 @@ Cannot exit until score_pairs_compared >= 36 (80% of target).
   ]
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| discrepancy-identification | Compare same-method scores across sources, flag significant deviations |
+| reproducibility-checklist-audit | Assess paper completeness against ML Reproducibility Checklist |
+
+<!-- END available-tables (generated) -->

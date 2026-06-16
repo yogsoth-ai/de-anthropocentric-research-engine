@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | campaign | baseline-establishment | SOTA Performance Baseline Campaign — 5 strategies for systematically collecting, standardizing, and analyzing performance data across methods. Produces standardized comparison tables, progress curves, and headroom analysis. |
 | campaign | benchmark-archaeology | Evaluation Methodology Archaeology Campaign — 5 strategies for systematic analysis of AI/ML benchmarks, metrics, and leaderboards. Reveals construct validity issues, saturation, data contamination, and evaluation protocol inconsistencies. |
-| campaign | knowledge-acquisition | <b>根 ENTRY 入口</b> — Research Knowledge Acquisition Engine。按 research intent 路由到 <b>5 个 campaign</b>(literature-survey / patent-mining / benchmark-archaeology / meta-analysis / baseline-establishment),并可串行/并行/条件式编排多 campaign。<b>Pre-condition: north-star-crystallization 必须先完成。</b> 层级靠 ENTRY.md 散文路由表声明(无 type/layer frontmatter,据 ENTRY 推断为根 campaign)。 |
+| campaign | knowledge-acquisition | Research Knowledge Acquisition Engine with 5 campaigns (literature-survey, patent-mining, benchmark-archaeology, meta-analysis, baseline-establishment). Use this skill whenever a user needs to systematically acquire research knowledge — academic literature, patent landscapes, benchmark evaluations, cross-study statistical synthesis, or SOTA performance baselines. Pre-condition: north-star-crystallization must be complete. |
 | campaign | literature-survey | Autonomous Literature Survey Campaign — 5 research paradigms (scoping, systematic, deep, narrative, snowball) with quantitative budget enforcement. Selects and executes the right survey paradigm based on research intent. |
 | campaign | meta-analysis | Cross-Study Statistical Synthesis Campaign — 5 strategies for systematic collection and methodological planning of multi-study evidence synthesis. Covers pairwise, network, cumulative meta-analysis, heterogeneity investigation, and bias detection. Stops at protocol design (no computation). |
 | campaign | patent-mining | Systematic Patent Analysis Campaign — 5 strategies for patent landscape analysis, prior art search, white space identification, competitive intelligence, and claim analysis. Produces structured patent intelligence reports. |
@@ -37,7 +37,7 @@
 | strategy | white-space-analysis | Identify patent coverage gaps — feature cross-matrix blank areas revealing unprotected technology combinations. Budget: 150 patent families, 10 claim parses, 60 web searches. |
 | tactic | artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
 | tactic | citation-chaining | Forward and backward citation tracing tactic — expand paper coverage by tracing citation networks in both directions from seed/key papers. Alternates forward (who cited this) and backward (what this cited) passes until saturation. |
-| tactic | claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| tactic | knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
 | tactic | classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
 | tactic | condition-normalization | Compare and standardize experimental conditions across papers |
 | tactic | effect-size-extraction | Systematically extract effect sizes and conditions from papers for meta-analytic synthesis |
@@ -52,7 +52,7 @@
 | tactic | score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
 | sop | assignee-normalization | Standardize assignee names and identify corporate group affiliations across patent offices |
 | sop | baseline-synthesis | Produce final structured baseline report integrating all analysis results |
-| sop | benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| sop | knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
 | sop | benchmark-synthesis | Produce final structured audit report |
 | sop | capability-taxonomy-mapping | Build capability taxonomy, map existing benchmark coverage |
 | sop | categorize-papers | Cluster papers by theme, method, or timeline. Produces natural groupings from a paper collection. Used by scoping-survey and narrative-review. |
@@ -69,7 +69,7 @@
 | sop | effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
 | sop | evidence-network-construction | Build evidence network graph for network meta-analysis — nodes, edges, geometry assessment |
 | sop | extract-data | Structured data extraction from deep-read papers — produces comparison tables (method, dataset, metrics, results, limitations). Used by systematic-survey and deep-survey. |
-| sop | gap-identification | Identify what the literature has NOT addressed — missing methods, untested combinations, unexplored applications, contradictions without resolution. Used by all strategies. |
+| sop | knowledge-acquisition-gap-identification | Identify what the literature has NOT addressed — missing methods, untested combinations, unexplored applications, contradictions without resolution. Used by all strategies. |
 | sop | headroom-estimation | Estimate theoretical/practical ceiling vs current SOTA gap |
 | sop | heterogeneity-source-analysis | Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical) |
 | sop | inclusion-criteria-design | Define inclusion/exclusion criteria for systematic study selection in meta-analysis |
@@ -78,9 +78,9 @@
 | sop | meta-analysis-synthesis | Produce final meta-analysis protocol document assembling all planning outputs into PRISMA-compliant protocol |
 | sop | method-discovery | Identify all relevant methods via literature, leaderboards, citation chains |
 | sop | metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
-| sop | paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | knowledge-acquisition-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
+| sop | knowledge-acquisition-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| sop | knowledge-acquisition-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
 | sop | patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
 | sop | patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
 | sop | patent-synthesis | Produce final structured patent intelligence report from all analysis results |
@@ -94,7 +94,7 @@
 | sop | quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
 | sop | reproducibility-checklist-audit | Assess paper completeness against ML Reproducibility Checklist |
 | sop | risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
-| sop | saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| sop | knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
 | sop | score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |
 | sop | seed-selection | Validate and prioritize starting papers for snowball surveys. Evaluates which seeds will yield the richest citation traces based on citation count, recency, and network position. |
 | sop | sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
@@ -102,6 +102,6 @@
 | sop | taxonomy-mapping | Construct a hierarchical field map from paper collection — multi-level taxonomy with parent/child relationships, paper counts per node, and maturity indicators. Used by scoping-survey. |
 | sop | thematic-coding | Identify recurring themes across papers using qualitative coding methodology. Produces a codebook with theme definitions, supporting evidence, and frequency counts. Used by narrative-review. |
 | sop | trend-analysis | Patent filing volume time-series, technology lifecycle stage, and S-curve analysis |
-| sop | web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
-| sop | web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+| sop | knowledge-acquisition-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| sop | knowledge-acquisition-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
 | sop | white-space-mapping | Feature cross-matrix construction and blank area identification for patent opportunity mapping |

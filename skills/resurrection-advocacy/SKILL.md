@@ -1,7 +1,11 @@
 ---
 name: resurrection-advocacy
-description: Argue for rejected candidates using Devil's Advocacy, Dialectical Inquiry, and Adversarial Collaboration to ensure elimination was justified.
-used-by: steel-manning
+description: Argue for rejected candidates using Devil's Advocacy, Dialectical Inquiry,
+  and Adversarial Collaboration to ensure elimination was justified.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - multi-perspective-attack
 ---
 
 # Resurrection Advocacy
@@ -64,3 +68,16 @@ candidates_tested:
 surviving_concerns: []
 recommendation: <action>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adversarial-debate-protocol | Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds. |
+| multi-perspective-attack | Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment. |
+
+<!-- END available-tables (generated) -->

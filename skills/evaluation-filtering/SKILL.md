@@ -1,8 +1,8 @@
 ---
 name: evaluation-filtering
-description: Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection.
+description: Multi-dimensional evaluation and tiered filtering of generated ideas.
+  Orchestrates novelty assessment → feasibility check → ranking → selection.
 execution: tactic
-used-by: structural-deconstruction, cross-domain-discovery, assumption-destruction, biomimicry, synectics, morphological-exploration, lateral-thinking, combinatorial-creativity, perspective-forcing, systematic-enumeration
 ---
 
 # Evaluation Filtering

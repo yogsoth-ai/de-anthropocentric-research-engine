@@ -1,10 +1,13 @@
 ---
 name: objective-definition
-description: Define optimization objectives, constraints, and trade-off preferences from context and candidate information.
+description: Define optimization objectives, constraints, and trade-off preferences
+  from context and candidate information.
 execution: subagent
 prompt: ./prompt.md
 input: context, candidates
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Objective Definition
@@ -25,3 +28,15 @@ Objective definition requires careful analysis of context, stakeholder needs, an
 ## HARD-GATE
 
 Output must contain at least 2 distinct objectives and at least 1 constraint. If fewer can be identified, the subagent must flag this and request clarification.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

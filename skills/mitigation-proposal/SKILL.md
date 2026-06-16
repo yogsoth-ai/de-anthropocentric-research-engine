@@ -1,10 +1,13 @@
 ---
 name: mitigation-proposal
-description: Proposes concrete mitigation strategies for identified weaknesses. Generates prevention, detection, and response measures with feasibility assessment.
+description: Proposes concrete mitigation strategies for identified weaknesses. Generates
+  prevention, detection, and response measures with feasibility assessment.
 execution: subagent
 prompt: ./prompt.md
 input: classified_weakness (string), artifact_context (string)
-used-by: failure-anticipation, red-teaming, adversarial-stress-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Mitigation Proposal
@@ -39,3 +42,15 @@ Stop at proposal — do NOT modify the original artifact. Suggestions only.
 ## Budget
 
 One unit = one mitigation proposal per weakness. Focus on fatal and major findings.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

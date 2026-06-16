@@ -1,14 +1,20 @@
 ---
 name: prerequisite-planning
-description: "Identify obstacles blocking direct achievement and design intermediate objectives to overcome each"
+description: Identify obstacles blocking direct achievement and design intermediate
+  objectives to overcome each
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - obstacle-identification
-  - intermediate-objective-design
+- obstacle-identification
+- intermediate-objective-design
 tactics:
+- task-decomposition
+dependencies:
+  sops:
+  - intermediate-objective-design
+  - obstacle-identification
+  tactics:
   - task-decomposition
 ---
 
@@ -53,3 +59,24 @@ Obstacles identified here feed back into the critical path:
 - Each IO becomes an activity in the network
 - IO dependencies become edges in the activity graph
 - This ensures the plan accounts for real-world blockers, not just ideal-path tasks
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| intermediate-objective-design | Design intermediate objectives to overcome each identified obstacle |
+| obstacle-identification | TOC Prerequisite Tree — list obstacles preventing direct achievement of the objective |
+
+<!-- END available-tables (generated) -->

@@ -1,73 +1,97 @@
 ---
 name: multi-criteria-ranking
-description: "Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表"
+description: 'Strategy: multi-dimensional weighted scoring and ranking — decompose
+  a gap into independent sub-questions, then recombine into a priority list'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
-  - priority-sensitivity-testing
+- scoring-matrix-construction
+- priority-sensitivity-testing
 sops:
-  - importance-scoring
-  - feasibility-scoring
-  - novelty-scoring
-  - impact-scoring
-  - ahp-weighting
-  - priority-synthesis
+- importance-scoring
+- feasibility-scoring
+- novelty-scoring
+- impact-scoring
+- ahp-weighting
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  - priority-sensitivity-testing
+  sops:
+  - gap-normalization
 ---
 
 # Multi-Criteria Ranking
 
-多维度加权评分排序：将"哪个 gap 更好"这一复合问题分解为若干独立维度，分别评分后通过加权求和重组为最终排序。
+Multi-dimensional weighted scoring and ranking: decompose the composite question "which gap is better" into several independent dimensions, score each separately, then recombine into a final ranking via weighted summation.
 
-## 适用场景
+## When to Use
 
-- gap 数量在 5–20 个之间
-- 需要系统化、可解释的排序依据
-- 决策者需要看到每个维度的得分（而非黑箱排序）
-- 后续需要向他人解释为何选择某个 gap
+- The number of gaps is between 5 and 20
+- A systematic, explainable basis for ranking is needed
+- Decision-makers need to see each dimension's score (rather than a black-box ranking)
+- You will later need to explain to others why a particular gap was chosen
 
-## 思维框架
+## Thinking Framework
 
-**核心原则**：复杂判断的可靠性来自分解，而非整体直觉。
+**Core principle**: the reliability of complex judgments comes from decomposition, not holistic intuition.
 
-将"哪个 gap 更值得攻击"拆解为四个独立子问题：
+Break "which gap is most worth attacking" into four independent sub-questions:
 
-1. **重要性**（Importance）：这个 gap 填补后，领域会前进多少？
-2. **可行性**（Feasibility）：以现有资源和方法，能在合理时间内解决吗？
-3. **新颖性**（Novelty）：这个 gap 是否真正未被充分探索？
-4. **影响力**（Impact）：解决后的下游效应有多广？
+1. **Importance**: once this gap is filled, how far will the field advance?
+2. **Feasibility**: with existing resources and methods, can it be solved within a reasonable time?
+3. **Novelty**: is this gap genuinely under-explored?
+4. **Impact**: how broad are the downstream effects after solving it?
 
-每个维度独立评分（1–5），避免维度间的相互污染。权重由 AHP（层次分析法）或用户指定。最终得分 = Σ(维度得分 × 维度权重)。
+Each dimension is scored independently (1–5) to avoid cross-contamination between dimensions. Weights are set by AHP (Analytic Hierarchy Process) or specified by the user. Final score = Σ(dimension score × dimension weight).
 
-**敏感性检验**：权重扰动 ±20%，若排序不变则结论稳健；若排序翻转则需标记为"权重敏感"。
+**Sensitivity check**: perturb weights by ±20%; if the ranking is unchanged the conclusion is robust; if the ranking flips it must be flagged as "weight-sensitive".
 
 ## Budget Gate
 
-| Tier | Gap 数量 | 评分维度 | 敏感性检验 | 最终产出 |
+| Tier | Gap count | Scoring dimensions | Sensitivity check | Final output |
 |------|---------|---------|-----------|---------|
-| S | 5–8 | ≥3 维度 | 可选 | 排序表 + 前 2 gap 攻击建议 |
-| M | 9–15 | ≥4 维度 | 必须 | 排序表 + 前 3 gap 攻击建议 |
-| L | 16–20 | ≥5 维度 | 必须（多权重场景） | 排序表 + 前 5 gap 攻击建议 + 权重敏感性报告 |
+| S | 5–8 | ≥3 dimensions | Optional | Ranking table + attack suggestions for top 2 gaps |
+| M | 9–15 | ≥4 dimensions | Required | Ranking table + attack suggestions for top 3 gaps |
+| L | 16–20 | ≥5 dimensions | Required (multi-weight scenarios) | Ranking table + attack suggestions for top 5 gaps + weight-sensitivity report |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 调用 `gap-normalization` SOP：将输入 gaps 统一为标准格式（ID、标题、一句话描述）
-2. 调用 `ahp-weighting` SOP：确定各维度权重（默认：重要性 0.35、可行性 0.25、新颖性 0.20、影响力 0.20）
-3. 并行调用四个评分 SOP（`importance-scoring`、`feasibility-scoring`、`novelty-scoring`、`impact-scoring`）
-4. 调用 `scoring-matrix-construction` tactic：汇总为评分矩阵
-5. 调用 `priority-sensitivity-testing` tactic：扰动权重，检验排序稳健性
-6. 调用 `priority-synthesis` SOP：生成最终排序 + 攻击建议
+1. Call the `gap-normalization` SOP: normalize input gaps into a standard format (ID, title, one-sentence description)
+2. Call the `ahp-weighting` SOP: determine each dimension's weight (default: importance 0.35, feasibility 0.25, novelty 0.20, impact 0.20)
+3. Call the four scoring SOPs in parallel (`importance-scoring`, `feasibility-scoring`, `novelty-scoring`, `impact-scoring`)
+4. Call the `scoring-matrix-construction` tactic: aggregate into a scoring matrix
+5. Call the `priority-sensitivity-testing` tactic: perturb weights and check ranking robustness
+6. Call the `priority-synthesis` SOP: produce the final ranking + attack suggestions
 
 ## context-checkpoint
 
-每轮结束后记录：
-- 当前评分矩阵（所有 gap × 所有维度）
-- 当前权重向量
-- 敏感性检验结果（稳健 / 权重敏感，标注翻转的 gap 对）
-- 当前 top-N 排序
+After each round, record:
+- The current scoring matrix (all gaps × all dimensions)
+- The current weight vector
+- The sensitivity-check result (robust / weight-sensitive, annotating any flipped gap pairs)
+- The current top-N ranking
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps |
+| priority-sensitivity-testing | Tactic: perturb scoring weights to test the robustness of the gap ranking against weight choice |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| gap-normalization | SOP: Unify gaps from different sources into the standard GapRecord format |
+
+<!-- END available-tables (generated) -->

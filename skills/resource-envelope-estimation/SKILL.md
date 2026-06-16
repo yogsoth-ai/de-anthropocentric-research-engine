@@ -1,7 +1,11 @@
 ---
 name: resource-envelope-estimation
-description: Estimate resources, budget, and timeline using parametric, analogous, and three-point (PERT) estimation methods.
-used-by: feasibility-assessment
+description: Estimate resources, budget, and timeline using parametric, analogous,
+  and three-point (PERT) estimation methods.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
 ---
 
 # Resource Envelope Estimation
@@ -79,3 +83,16 @@ resource_envelope:
   precision_band: "+/-N%"
   key_assumptions: [...]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+| staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
+
+<!-- END available-tables (generated) -->

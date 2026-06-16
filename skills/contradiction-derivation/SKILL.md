@@ -1,9 +1,16 @@
 ---
 name: contradiction-derivation
-description: "Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges."
+description: Negate a claim, derive logical consequences step by step, detect whether
+  a genuine contradiction or absurdity emerges.
 type: tactic
-used-by: [adversarial-stress-testing]
-strategies: [assumption-negation, validity-envelope-mapping]
+strategies:
+- assumption-negation
+- validity-envelope-mapping
+dependencies:
+  sops:
+  - claim-negation
+  - contradiction-detection
+  - deductive-chain
 ---
 
 # Contradiction Derivation
@@ -32,3 +39,17 @@ strategies: [assumption-negation, validity-envelope-mapping]
 - Maximum derivation depth reached (inconclusive)
 - Circular reasoning detected (abort with warning)
 - Budget exhausted (report partial results)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| claim-negation | Formally negate the core claim, producing the logical complement for reductio testing. |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| deductive-chain | Derive logical consequences step by step from a given premise, building a traceable derivation chain. |
+
+<!-- END available-tables (generated) -->

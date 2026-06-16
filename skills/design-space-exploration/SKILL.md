@@ -2,7 +2,11 @@
 name: design-space-exploration
 description: Parametric variation + constraint satisfaction combinatorial search
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - input-space-construction
 ---
 
 # Design Space Exploration
@@ -48,3 +52,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Explore White Space**: Focus on unexplored regions of the feasible space
 6. **Evaluate Emergence**: Check novel configurations for emergent properties
 7. **Synthesize**: Compile viable novel configurations into structured proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| input-space-construction | Build input spaces for two source concepts |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: load-bearing-identification
-description: Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion.
+description: Identify which factors are "load-bearing walls" — factors whose removal
+  would collapse the conclusion.
 execution: subagent
 prompt: ./prompt.md
 input: ablation_results (list), necessity_scores (list), sufficiency_scores (list)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Load-Bearing Identification
@@ -35,3 +38,15 @@ Final synthesis requires weighing multiple evidence streams to produce a definit
 ## Budget
 
 One unit = one synthesis per campaign run.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

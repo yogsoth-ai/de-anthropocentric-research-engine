@@ -1,6 +1,8 @@
 ---
 name: explore-resume
-description: Understand the user's background comprehensively — technical stack, project experience, research experience, publications, research directions. Allows user to express interest beyond their resume. Execute once only, never re-run.
+description: Understand the user's background comprehensively — technical stack, project
+  experience, research experience, publications, research directions. Allows user
+  to express interest beyond their resume. Execute once only, never re-run.
 execution: dialogue
 ---
 

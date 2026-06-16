@@ -1,8 +1,13 @@
 ---
 name: scenario-stress-testing
-description: Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics.
+description: Construct distinct future scenarios, evaluate portfolio performance under
+  each, and identify vulnerabilities and robustness characteristics.
 execution: tactic
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - portfolio-evaluation-per-scenario
+  - portfolio-synthesis
+  - scenario-construction
 ---
 
 # Scenario Stress Testing
@@ -37,3 +42,17 @@ Evaluate how a portfolio performs across multiple plausible future scenarios to 
 - Performance assessment across >=3 distinct scenarios
 - Vulnerability list identifying which portfolio elements fail under which conditions
 - Robustness verdict (robust / conditionally robust / fragile) with supporting evidence
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
+| portfolio-synthesis | Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance. |
+| scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
+
+<!-- END available-tables (generated) -->

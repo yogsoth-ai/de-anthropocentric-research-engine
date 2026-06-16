@@ -1,8 +1,13 @@
 ---
 name: bridge-validation
-description: Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer.
+description: Validate analogy depth and transfer viability. Ensures only deep structural
+  analogies (not surface-level similarities) proceed to transfer.
 execution: tactic
-used-by: cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy
+dependencies:
+  sops:
+  - analogy-quality-assessment
+  - structural-mapping
+  - transfer-adaptation
 ---
 
 # Bridge Validation
@@ -50,3 +55,17 @@ Verify the adapted transfer maintains structural consistency:
 | transfer-adaptation | Stage 2 — test and adapt transfer |
 | structural-mapping | Stage 3 — verify structural consistency |
 | abstraction-extraction | Support — re-abstract if mapping fails |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
+| structural-mapping | Map source→target structural correspondences. Identifies corresponding, missing, and extra elements between domains. |
+| transfer-adaptation | Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles. |
+
+<!-- END available-tables (generated) -->

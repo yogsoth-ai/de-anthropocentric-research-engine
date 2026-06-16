@@ -1,12 +1,16 @@
 ---
 name: cross-consistency-filtering
-description: "Orchestrates pairwise consistency evaluation and narrative construction to filter the morphological field"
+description: Orchestrates pairwise consistency evaluation and narrative construction
+  to filter the morphological field
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: scenario-planning
 orchestrates:
-  - consistency-pair-evaluation
+- consistency-pair-evaluation
+- scenario-narrative-construction
+dependencies:
+  sops:
+  - experiment-execution-consistency-pair-evaluation
   - scenario-narrative-construction
 ---
 
@@ -48,3 +52,16 @@ orchestrates:
 - [ ] Surviving configs span the parameter space (not clustered)
 - [ ] Each narrative is internally consistent with its configuration
 - [ ] Narratives are qualitatively distinct from each other
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| experiment-execution-consistency-pair-evaluation | Pairwise consistency assessment using Cross-Consistency Assessment (CCA) matrix |
+| scenario-narrative-construction | Build rich narratives for surviving morphological configurations using Shell method |
+
+<!-- END available-tables (generated) -->

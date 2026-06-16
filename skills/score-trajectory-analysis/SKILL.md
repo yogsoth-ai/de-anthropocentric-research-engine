@@ -2,7 +2,6 @@
 name: score-trajectory-analysis
 description: Collect historical scores, fit saturation curves, detect inflection points
 execution: tactic
-used-by: benchmark-archaeology
 ---
 
 # Score Trajectory Analysis Tactic

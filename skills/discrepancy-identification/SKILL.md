@@ -1,10 +1,9 @@
-﻿---
+---
 name: discrepancy-identification
 description: Compare same-method scores across sources, flag significant deviations
 execution: subagent
 prompt: ./prompt.md
 input: score_pairs (source_a, source_b, method, dataset)
-used-by: baseline-establishment
 ---
 
 # Discrepancy Identification

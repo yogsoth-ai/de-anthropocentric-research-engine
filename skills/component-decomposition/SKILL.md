@@ -1,8 +1,12 @@
 ---
 name: component-decomposition
-description: Decompose system into functional components, identify dependencies, and surface trimming candidates.
+description: Decompose system into functional components, identify dependencies, and
+  surface trimming candidates.
 execution: tactic
-used-by: structural-deconstruction, component-surgery, function-trimming, recombination-architecture
+dependencies:
+  sops:
+  - function-model-construction
+  - trimming-execution
 ---
 
 # Component Decomposition
@@ -40,3 +44,16 @@ Evaluate each component for trimming potential via trimming-execution SOP criter
 | parameter-identification | Stage 2 — extract component parameters |
 | trimming-execution | Stage 3 — evaluate trimming feasibility |
 | surgery-operation | Post — apply surgical operations to candidates |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| trimming-execution | Progressively remove components from a system while verifying function preservation through redistribution. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: occurrence-scoring
-description: Rate failure mode occurrence probability 1-10. Estimates how likely each failure mode is to manifest during research execution.
+description: Rate failure mode occurrence probability 1-10. Estimates how likely each
+  failure mode is to manifest during research execution.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), chains (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Occurrence Scoring
@@ -28,3 +31,15 @@ Occurrence estimation requires probabilistic reasoning isolated from severity an
 
 - **scores**: List of (failure_mode_id, occurrence_score, justification)
 - **uncertainty_flags**: Modes where occurrence is highly uncertain
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

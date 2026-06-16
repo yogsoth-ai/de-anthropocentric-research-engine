@@ -1,13 +1,18 @@
 ---
 name: subagent-execution-loop
-description: "Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection"
+description: Orchestrate task execution via fresh subagents with dispatch, monitoring,
+  and result collection
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
-  - implementer-dispatch
+- implementer-dispatch
+- execution-monitoring
+- result-collection
+dependencies:
+  sops:
   - execution-monitoring
+  - implementer-dispatch
   - result-collection
 ---
 
@@ -108,3 +113,17 @@ END
 - Validation failure: Provide failure reason in retry prompt
 - Deadlock: Analyze dependency graph for unresolvable cycles
 - Budget exhaustion: Produce partial report with remaining task list
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->

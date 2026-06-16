@@ -1,8 +1,14 @@
 ---
 name: constraint-drilling
-description: Identify constraints, classify them by type and severity, assess removability, and design removal paths for removable constraints.
+description: Identify constraints, classify them by type and severity, assess removability,
+  and design removal paths for removable constraints.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - constraint-classification
+  - constraint-identification-sop
+  - removability-assessment
+  - removal-path
 ---
 
 # Constraint Drilling
@@ -41,3 +47,18 @@ Systematically discover all constraints blocking a candidate, classify them into
 - Classified constraint list with >= 3 constraints identified
 - Removability assessment for each non-trivial constraint
 - Removal paths for all constraints scoring removability > 0.3
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constraint-classification | Classify constraints into hard constraints, soft constraints, and assumptions. |
+| constraint-identification-sop | Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem methods. |
+| removability-assessment | Assess how removable a constraint is with effort estimate and dependency analysis. |
+| removal-path | Design concrete removal steps for a constraint with timeline and resource needs. |
+
+<!-- END available-tables (generated) -->

@@ -1,36 +1,36 @@
 ---
 name: explanation-generation
-description: "SOP: 为异常现象生成候选解释列表"
+description: 'SOP: generate a list of candidate explanations for an anomalous phenomenon'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "结构化异常描述（来自 anomaly-characterization 输出）"
-output: "候选解释列表 + 各自的可观察预测"
+input: 'Structured anomaly description (from anomaly-characterization output)'
+output: 'Candidate explanation list + observable predictions for each'
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Explanation Generation
-通过发散思维为异常现象生成多个候选解释，并为每个解释推导可观察预测。
+Generate multiple candidate explanations for an anomalous phenomenon through divergent thinking, and derive observable predictions for each explanation.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有结构化异常描述（含 phenomenon + deviation + excluded_explanations）
-2. 异常已被确认为非平凡（severity ≠ trivial）
+Preconditions (all must hold before starting):
+1. A structured anomaly description exists (with phenomenon + deviation + excluded_explanations)
+2. The anomaly has been confirmed as non-trivial (severity ≠ trivial)
 
-不满足 → 停止，返回错误：需要先完成 anomaly-characterization。
+Not satisfied → stop and return an error: anomaly-characterization must be completed first.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证异常描述完整性
-2. 发散思维：生成 ≥3 个机制上不同的候选解释（不是同一解释的变体）
-3. 预测推导：对每个解释推导 1-2 个可观察预测（如果解释正确，应该观察到什么）
-4. 证据一致性检查：检查每个解释与已知证据的一致性（consistent/inconsistent/neutral）
-5. 去重：合并机制相同的解释
-6. 输出候选解释列表
+1. Pre-check: verify the completeness of the anomaly description
+2. Divergent thinking: generate ≥3 mechanistically distinct candidate explanations (not variants of the same explanation)
+3. Prediction derivation: for each explanation, derive 1-2 observable predictions (what should be observed if the explanation is correct)
+4. Evidence-consistency check: check each explanation against known evidence (consistent/inconsistent/neutral)
+5. Deduplication: merge explanations with the same mechanism
+6. Output the candidate explanation list
 
 ## Output Format
 ```json
@@ -49,4 +49,4 @@ dependencies:
   }
 ]
 ```
-最少 3 个机制上不同的候选解释。
+At least 3 mechanistically distinct candidate explanations.

@@ -1,7 +1,18 @@
 ---
 name: risk-balancing
-description: Balance portfolio risk and return using Markowitz mean-variance, CVaR, Risk parity, and Kelly criterion methods.
-used-by: portfolio-optimization
+description: Balance portfolio risk and return using Markowitz mean-variance, CVaR,
+  Risk parity, and Kelly criterion methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  - scenario-stress-testing
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - portfolio-evaluation-per-scenario
+  - scenario-construction
+  - selection-from-frontier
 ---
 
 # Risk Balancing
@@ -77,3 +88,29 @@ portfolio_risk: <variance or CVaR>
 sharpe_ratio: <risk-adjusted return>
 method_used: <mean-variance|CVaR|risk-parity|Kelly>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+| scenario-stress-testing | Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| pareto-visualization | Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation. |
+| portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
+| scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
+| selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
+
+<!-- END available-tables (generated) -->

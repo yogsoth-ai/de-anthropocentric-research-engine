@@ -1,7 +1,16 @@
 ---
 name: saturation-analysis
-description: Track score trajectories, detect saturation/failure points — 15 benchmarks, 50 papers, 60 web searches
-used-by: benchmark-archaeology
+description: Track score trajectories, detect saturation/failure points — 15 benchmarks,
+  50 papers, 60 web searches
+dependencies:
+  tactics:
+  - score-trajectory-analysis
+  sops:
+  - benchmark-synthesis
+  - knowledge-acquisition-benchmark-inventory
+  - knowledge-acquisition-saturation-detection
+  - leaderboard-dynamics-analysis
+  - metric-decomposition
 ---
 
 # Saturation Analysis Strategy
@@ -81,3 +90,27 @@ saturation_report:
   remaining_hard_subsets: list[string]
   successor_benchmarks: list[string]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| leaderboard-dynamics-analysis | Analyze leaderboard score distributions, compression, selective reporting |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

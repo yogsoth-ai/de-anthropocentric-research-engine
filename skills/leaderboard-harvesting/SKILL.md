@@ -1,8 +1,12 @@
-﻿---
+---
 name: leaderboard-harvesting
 description: Systematically collect performance data from platforms and papers
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - discrepancy-identification
+  - method-discovery
+  - score-extraction
 ---
 
 # Leaderboard Harvesting
@@ -65,3 +69,17 @@ Consolidate all sources into a single canonical dataset:
 - method-discovery (for finding methods on leaderboards)
 - score-extraction (for paper-based extraction)
 - discrepancy-identification (for cross-validation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| discrepancy-identification | Compare same-method scores across sources, flag significant deviations |
+| method-discovery | Identify all relevant methods via literature, leaderboards, citation chains |
+| score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |
+
+<!-- END available-tables (generated) -->

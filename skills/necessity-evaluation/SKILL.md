@@ -1,10 +1,13 @@
 ---
 name: necessity-evaluation
-description: Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent?
+description: Evaluate the probability of necessity (PN) for a causal factor — would
+  the conclusion fail if this factor were absent?
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), factor (string), conclusion (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Necessity Evaluation
@@ -35,3 +38,15 @@ Necessity evaluation requires careful counterfactual reasoning about absence, is
 ## Budget
 
 One unit = one necessity evaluation per factor.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

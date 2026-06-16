@@ -1,16 +1,17 @@
 ---
 name: sample-size-estimation
-description: "SOP: power analysis and required experiment count estimation"
+description: 'SOP: power analysis and required experiment count estimation'
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - factor-level-design
-  - comparison-design
-input: "Effect size estimate + significance level + statistical power requirement + experiment design type"
-output: "Required sample size/repetition count + power analysis report"
+input: Effect size estimate + significance level + statistical power requirement +
+  experiment design type
+output: Required sample size/repetition count + power analysis report
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # SOP: Sample Size Estimation
@@ -24,3 +25,15 @@ Subagent — spawned via subagent-spawning/spawn-agent skill.
 ## Why Subagent
 
 Sample size estimation requires multi-step calculations based on effect size, variance estimates, and design type, involving deep statistical reasoning suited for an independent subagent.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

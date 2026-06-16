@@ -1,7 +1,17 @@
 ---
 name: robustness-under-uncertainty
-description: Select portfolios that perform well across multiple future scenarios using Minimax regret, Robust optimization, Scenario planning, and Info-gap methods.
-used-by: portfolio-optimization
+description: Select portfolios that perform well across multiple future scenarios
+  using Minimax regret, Robust optimization, Scenario planning, and Info-gap methods.
+dependencies:
+  tactics:
+  - pareto-frontier-construction
+  - scenario-stress-testing
+  sops:
+  - objective-definition
+  - optimization-run
+  - portfolio-evaluation-per-scenario
+  - portfolio-synthesis
+  - scenario-construction
 ---
 
 # Robustness Under Uncertainty
@@ -79,3 +89,28 @@ vulnerable_scenarios:
     gap_to_best: <value>
 method_used: <minimax-regret|robust-optimization|info-gap>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+| scenario-stress-testing | Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| portfolio-evaluation-per-scenario | Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario. |
+| portfolio-synthesis | Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance. |
+| scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: judge-verdict
-description: Render an impartial verdict on advocate case vs critic attacks with explicit reasoning.
+description: Render an impartial verdict on advocate case vs critic attacks with explicit
+  reasoning.
 execution: subagent
 prompt: ./prompt.md
 input: advocate_case, critic_attacks
-used-by: [steel-manning, validation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Judge Verdict
@@ -29,3 +32,15 @@ Output must include:
 - Assessment of advocate case strength post-attack
 - Conditions for acceptance (if ACCEPT or REVISE)
 - Clear reasoning chain from evidence to verdict
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

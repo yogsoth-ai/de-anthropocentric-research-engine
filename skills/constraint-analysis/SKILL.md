@@ -1,19 +1,42 @@
 ---
 name: constraint-analysis
-description: "What limits us — identify bottlenecks, quantify constraints, analyze dependencies, resolve conflicts before experiment execution"
+description: What limits us — identify bottlenecks, quantify constraints, analyze
+  dependencies, resolve conflicts before experiment execution
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - bottleneck-identification
-  - resource-constraint
-  - assumption-constraint
-  - dependency-constraint
-  - conflict-resolution
+- bottleneck-identification
+- resource-constraint
+- assumption-constraint
+- dependency-constraint
+- conflict-resolution
 tactics:
+- constraint-tree-building
+- sensitivity-ranking
+- constraint-breaking
+dependencies:
+  strategies:
+  - assumption-constraint
+  - conflict-resolution
+  - dependency-constraint
+  - experiment-execution-bottleneck-identification
+  - resource-constraint
+  tactics:
+  - constraint-breaking
   - constraint-tree-building
   - sensitivity-ranking
-  - constraint-breaking
+  sops:
+  - constraint-synthesis
+  - context-checkpoint
+  - context-init
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign 2: Constraint Analysis
@@ -76,3 +99,46 @@ Campaign is complete when:
 - Critical dependency chain mapped
 - No unresolved conflicts between top-3 constraints
 - Constraint synthesis report produced
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| assumption-constraint | Which assumptions are most fragile? — Vulnerability ranking + impact assessment of experiment assumptions |
+| conflict-resolution | How do constraints conflict with each other? — Evaporating Cloud + assumption challenging + injection to resolve constraint conflicts |
+| dependency-constraint | What must be completed first? — Dependency chain analysis + prerequisite graph construction |
+| experiment-execution-bottleneck-identification | Where is the system bottleneck? — TOC 5 Focusing Steps + Current Reality Tree to find the binding constraint |
+| resource-constraint | Are resources sufficient? — Quantify compute, data, time, human, and financial resource constraints |
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| constraint-breaking | Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution |
+| constraint-tree-building | Build Current Reality Tree from UDEs through causal chains to core conflicts |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constraint-synthesis | Synthesize constraint analysis into actionable report with priorities |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| experiment-execution-paper-overview | Import SOP: paper landscape scan (from literature-engine skill) |
+| experiment-execution-paper-research | Import SOP: paper full-text reading (from literature-engine skill) |
+| experiment-execution-paper-search | Import SOP: paper AI summary reading (from literature-engine skill) |
+| experiment-execution-quality-gate-check | Shared SOP: verify quality gate criteria are met before proceeding |
+| experiment-execution-saturation-detection | Shared SOP: detect information saturation — know when to stop searching/analyzing |
+| experiment-execution-web-research | Import SOP: deep full-page content analysis (from web-browsing skill) |
+| experiment-execution-web-search | Import SOP: quick web scan discovery (from web-browsing skill) |
+
+<!-- END available-tables (generated) -->

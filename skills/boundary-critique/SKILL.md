@@ -1,7 +1,12 @@
 ---
 name: boundary-critique
-description: Apply CSH boundary critique — what is included/excluded, who benefits/is harmed, what expertise is privileged/marginalized. Identifies opportunities at the boundaries.
-used-by: boundary-analysis
+description: Apply CSH boundary critique — what is included/excluded, who benefits/is
+  harmed, what expertise is privileged/marginalized. Identifies opportunities at the
+  boundaries.
+dependencies:
+  sops:
+  - csh-12-question
+  - deep-insight-assumption-surfacing
 ---
 
 # Boundary Critique
@@ -42,3 +47,16 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Apply CSH boundary critique to the method — what is included/excluded, who benefits/is harmed, what expertise is privileged/marginalized. Identify opportunities at the boundaries.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| csh-12-question | Apply Ulrich's Critical Systems Heuristics 12 questions across 4 dimensions (motivation, control, expertise, legitimacy) comparing is vs ought. |
+| deep-insight-assumption-surfacing | Systematically extract implicit assumptions from methods, frameworks, or arguments. Identifies what is taken for granted without explicit justification. |
+
+<!-- END available-tables (generated) -->

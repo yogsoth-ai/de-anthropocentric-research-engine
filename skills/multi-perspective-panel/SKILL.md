@@ -1,9 +1,18 @@
 ---
 name: multi-perspective-panel
-description: "Strategy: Multi-stakeholder review panel — diverse expert perspectives evaluate artifact simultaneously, then synthesize through structured deliberation."
+description: 'Strategy: Multi-stakeholder review panel — diverse expert perspectives
+  evaluate artifact simultaneously, then synthesize through structured deliberation.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [perspective-rotation]
+tactics:
+- perspective-rotation
+dependencies:
+  tactics:
+  - stress-test-perspective-rotation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - divergence-detection
+  - perspective-critic
 ---
 
 # Multi-Perspective Panel Strategy
@@ -45,3 +54,26 @@ debate-architect → [select panel perspectives]
 - perspective-critic × N (stakeholder evaluation)
 - divergence-detection (agreement mapping)
 - confidence-calibration (consensus detection)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| stress-test-perspective-rotation | Tactic: Sequential perspective evaluation with divergence aggregation. Each agent evaluates from a distinct viewpoint, then disagreements are surfaced and resolved. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| confidence-calibration | Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence. |
+| debate-architect | Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters. |
+| divergence-detection | Identifies agreement and disagreement patterns across multiple perspective evaluations. Maps consensus clusters and persistent divergence points. |
+| perspective-critic | Evaluates artifact from a specific assigned perspective. Produces assessment grounded in that viewpoint's values, priorities, and expertise. |
+
+<!-- END available-tables (generated) -->

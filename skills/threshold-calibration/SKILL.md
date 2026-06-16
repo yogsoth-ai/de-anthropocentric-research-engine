@@ -1,8 +1,13 @@
 ---
 name: threshold-calibration
-description: Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve.
+description: Systematically sweep consensus thresholds to observe which items achieve
+  consensus at what level, producing a threshold-consensus curve.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - consensus-classification
+  - consensus-measurement
+  - threshold-sweep
 ---
 
 # Threshold Calibration
@@ -35,3 +40,17 @@ Systematically vary the consensus threshold to understand the sensitivity of con
 
 - Threshold-consensus curve (threshold vs. number-of-consensus-items curve)
 - Classification results (classification at operating threshold: consensus items, dissensus items)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-classification | Classify items as consensus or dissensus at a given threshold. |
+| consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |
+| threshold-sweep | Compute consensus status at multiple threshold levels to produce a threshold-consensus curve. |
+
+<!-- END available-tables (generated) -->

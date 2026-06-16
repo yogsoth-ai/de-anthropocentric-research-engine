@@ -1,17 +1,25 @@
 ---
 name: experiment-running
-description: "Execute the plan by dispatching fresh subagents per task, monitoring status, and collecting results"
+description: Execute the plan by dispatching fresh subagents per task, monitoring
+  status, and collecting results
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - implementer-dispatch
-  - execution-monitoring
-  - result-collection
+- implementer-dispatch
+- execution-monitoring
+- result-collection
 tactics:
-  - subagent-execution-loop
+- subagent-execution-loop
+- checkpoint-and-recover
+dependencies:
+  sops:
+  - execution-monitoring
+  - implementer-dispatch
+  - result-collection
+  tactics:
   - checkpoint-and-recover
+  - subagent-execution-loop
 ---
 
 # Strategy: Experiment Running
@@ -70,3 +78,26 @@ END
 - **Retry policy**: Max 2 retries per task, then mark BLOCKED
 - **Parallel execution**: Independent tasks can run in parallel (respect resource limits)
 - **Abort condition**: If >50% of critical path tasks are BLOCKED, abort and report
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| checkpoint-and-recover | Checkpoint state before risky operations, detect anomalies, and recover gracefully |
+| subagent-execution-loop | Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->

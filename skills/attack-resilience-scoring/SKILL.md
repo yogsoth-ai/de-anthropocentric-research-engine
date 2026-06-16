@@ -1,10 +1,13 @@
 ---
 name: attack-resilience-scoring
-description: Compute overall resilience score (0.0-1.0) based on attack results, coverage, and vulnerability severity distribution.
+description: Compute overall resilience score (0.0-1.0) based on attack results, coverage,
+  and vulnerability severity distribution.
 execution: subagent
 prompt: ./prompt.md
 input: aggregated_findings (string), coverage_data (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Attack Resilience Scoring
@@ -30,3 +33,15 @@ Scoring requires calibrated judgment independent of attack or defense bias. The 
 - **dimension_scores**: Per-dimension breakdown (logical, empirical, methodological, practical)
 - **confidence_in_score**: How much to trust the score given coverage gaps
 - **verdict**: Pass/conditional-pass/fail with justification
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

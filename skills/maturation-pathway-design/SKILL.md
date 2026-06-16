@@ -1,7 +1,14 @@
 ---
 name: maturation-pathway-design
-description: Design path to readiness using Stage-Gate, Technology Roadmapping, and milestone planning methods.
-used-by: feasibility-assessment
+description: Design path to readiness using Stage-Gate, Technology Roadmapping, and
+  milestone planning methods.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
+  sops:
+  - dimension-assessment
+  - feasibility-synthesis
 ---
 
 # Maturation Pathway Design
@@ -82,3 +89,25 @@ maturation_pathway:
   critical_path: [<stage dependencies>]
   risk_factors: [{risk, mitigation, stage_affected}]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+| staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| dimension-assessment | Score a single readiness dimension for a candidate with evidence and gap analysis. |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+
+<!-- END available-tables (generated) -->

@@ -1,8 +1,12 @@
 ---
 name: quality-assessment-protocol
-description: Methodological quality and bias risk assessment of included studies using validated tools
+description: Methodological quality and bias risk assessment of included studies using
+  validated tools
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Quality Assessment Protocol Tactic
@@ -79,3 +83,16 @@ quality_assessment:
     low_risk_only: [study list]
     excluding_high_risk: [study list]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

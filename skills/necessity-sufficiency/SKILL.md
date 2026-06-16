@@ -1,9 +1,23 @@
 ---
 name: necessity-sufficiency
-description: "Strategy: Probability of Necessity and Sufficiency (PNS/PS) — systematically evaluate whether each factor is necessary, sufficient, both, or neither for the conclusion."
+description: 'Strategy: Probability of Necessity and Sufficiency (PNS/PS) — systematically
+  evaluate whether each factor is necessary, sufficient, both, or neither for the
+  conclusion.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [causal-necessity-testing, systematic-factor-ablation]
+tactics:
+- causal-necessity-testing
+- systematic-factor-ablation
+dependencies:
+  tactics:
+  - causal-necessity-testing
+  - systematic-factor-ablation
+  sops:
+  - causal-claim-extraction
+  - factor-enumeration
+  - load-bearing-identification
+  - necessity-evaluation
+  - single-factor-removal
+  - sufficiency-evaluation
 ---
 
 # Necessity-Sufficiency Strategy
@@ -53,3 +67,29 @@ causal-claim-extraction → factor-enumeration
 - sufficiency-evaluation (PS scoring)
 - single-factor-removal (evidence generation)
 - load-bearing-identification (classification)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| causal-necessity-testing | Tactic: Extract causal claims, evaluate probability of necessity (PN) and sufficiency (PS) for each, classify into necessity-sufficiency quadrants. |
+| systematic-factor-ablation | Tactic: List all factors, remove one at a time, assess conclusion stability, rank factors by load-bearing importance. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| necessity-evaluation | Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent? |
+| single-factor-removal | Remove one specified factor from the artifact's support structure and reason about how the conclusion changes. |
+| sufficiency-evaluation | Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion? |
+
+<!-- END available-tables (generated) -->

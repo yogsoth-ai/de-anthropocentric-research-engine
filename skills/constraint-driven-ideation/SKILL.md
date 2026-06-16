@@ -1,8 +1,12 @@
 ---
 name: constraint-driven-ideation
-description: Inject extreme constraints to force innovation — impossibility breeds creativity.
+description: Inject extreme constraints to force innovation — impossibility breeds
+  creativity.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - constraint-response
+  - perspective-synthesis
 ---
 
 # Constraint-Driven Ideation
@@ -53,3 +57,16 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Forced solutions generated | ≥5 |
 | Transferable principles extracted | ≥3 |
 | Novel unconstrained solutions | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+
+<!-- END available-tables (generated) -->

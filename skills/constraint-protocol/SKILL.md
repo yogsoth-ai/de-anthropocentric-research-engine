@@ -1,8 +1,11 @@
 ---
 name: constraint-protocol
-description: Inject constraints → force creative response → extract transferable principles. Orchestrates constraint injection, response generation, and principle extraction.
+description: Inject constraints → force creative response → extract transferable principles.
+  Orchestrates constraint injection, response generation, and principle extraction.
 execution: tactic
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - constraint-response
 ---
 
 # Constraint Protocol
@@ -39,3 +42,15 @@ From each constrained solution, extract the underlying principle that made it wo
 | constraint-response | Stage 2 — generate solutions under constraints |
 | perspective-synthesis | Stage 3 — synthesize principles into report |
 | novelty-scoring | Post — score novelty of extracted principles |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: debate-critic
-description: Generates structured criticism from attack stance using Toulmin model. Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses.
+description: Generates structured criticism from attack stance using Toulmin model.
+  Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), escalation_level (string), attack_vectors (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Critic
@@ -34,3 +37,15 @@ Attack generation requires dedicated adversarial stance without contamination fr
 ## Budget
 
 One unit = one set of attacks for one round.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

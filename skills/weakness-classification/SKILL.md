@@ -1,10 +1,13 @@
 ---
 name: weakness-classification
-description: Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic) with structured justification and exploitability assessment.
+description: Classifies discovered weaknesses into severity tiers (fatal/major/minor/cosmetic)
+  with structured justification and exploitability assessment.
 execution: subagent
 prompt: ./prompt.md
 input: raw_finding (string), artifact_context (string)
-used-by: multiagent-debate, red-teaming, adversarial-stress-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Weakness Classification
@@ -41,3 +44,15 @@ Classification requires careful reasoning about impact scope and exploitability 
 ## Budget
 
 One unit = one classification. Called per finding.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

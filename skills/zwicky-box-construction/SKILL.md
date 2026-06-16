@@ -1,8 +1,14 @@
 ---
 name: zwicky-box-construction
-description: "Classic Zwicky box: parameter identification → value enumeration → matrix construction"
+description: 'Classic Zwicky box: parameter identification → value enumeration → matrix
+  construction'
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  sops:
+  - matrix-construction
+  - morphological-synthesis
+  - path-generation
+  - value-enumeration
 ---
 
 # Zwicky Box Construction
@@ -46,3 +52,18 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Matrix construction**: Build n-dimensional matrix via matrix-construction SOP
 4. **Combination generation**: Generate paths through the matrix via path-generation
 5. **Synthesis**: Produce structured output via morphological-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| matrix-construction | Build n-dimensional morphological matrix |
+| morphological-synthesis | Synthesize all morphological exploration outputs |
+| path-generation | Generate combination paths through consistent space |
+| value-enumeration | Enumerate 3-5 values per parameter including extremes |
+
+<!-- END available-tables (generated) -->

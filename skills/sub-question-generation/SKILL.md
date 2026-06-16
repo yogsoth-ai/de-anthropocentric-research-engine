@@ -1,46 +1,46 @@
 ---
 name: sub-question-generation
-description: "SOP: 将主研究问题分解为可独立回答的子问题"
+description: 'SOP: Decompose a main research question into independently answerable sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "主研究问题（RQ）"
-output: "子问题列表 + 独立性论证"
+input: Main research question (RQ)
+output: Sub-question list + independence argument
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Sub-Question Generation
 
-将主研究问题分解为可独立回答的子问题。
+Decompose a main research question into independently answerable sub-questions.
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: 1 个已确认范围合适但复杂度高的主研究问题。
+Input must contain: 1 main research question that is confirmed appropriately scoped but high in complexity.
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 主 RQ 是否确实需要分解（复杂度判断）
-2. **维度识别**: 识别主 RQ 中的独立维度
-3. **分解策略选择**: 按因果/变量/条件/层级/时序
-4. **子问题生成**: 为每个维度生成子问题
-5. **MECE 检验**: 互斥且穷尽
-6. **独立性论证**: 每个子问题可独立研究
-7. **覆盖性检验**: 子问题答案组合 = 主问题答案
-8. **输出**: 子问题列表 + 独立性论证 + 覆盖性论证
+1. **Precheck**: Does the main RQ truly need decomposition (complexity judgment)
+2. **Dimension identification**: Identify the independent dimensions within the main RQ
+3. **Decomposition strategy selection**: By causality / variable / condition / hierarchy / temporal order
+4. **Sub-question generation**: Generate a sub-question for each dimension
+5. **MECE check**: Mutually exclusive and collectively exhaustive
+6. **Independence argument**: Each sub-question can be studied independently
+7. **Coverage check**: Combined sub-question answers = main question answer
+8. **Output**: Sub-question list + independence argument + coverage argument
 
 ## Output Format
 
 ```
-Main RQ: [主问题]
-Decomposition strategy: [选择的分解策略]
+Main RQ: [main question]
+Decomposition strategy: [selected decomposition strategy]
 Sub-questions:
-  1. [子问题1] — Independence: [论证]
-  2. [子问题2] — Independence: [论证]
+  1. [sub-question 1] — Independence: [argument]
+  2. [sub-question 2] — Independence: [argument]
   ...
 MECE check: PASS/FAIL
 Coverage check: PASS/FAIL

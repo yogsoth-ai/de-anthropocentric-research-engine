@@ -3,12 +3,20 @@ name: Literature Overview
 description: Quick landscape scan — discover papers on a topic without full-text reading
 type: sop
 layer: sop
-agents: [alphaxiv, semantic-scholar]
+agents:
+- alphaxiv
+- semantic-scholar
 tools:
-  alphaxiv: [discover_papers]
-  semantic-scholar: [relevanceSearch]
+  alphaxiv:
+  - discover_papers
+  semantic-scholar:
+  - relevanceSearch
 input: query (string)
 output: PaperList[] with title, authors, year, citationCount, abstract snippet
+dependencies:
+  sops:
+  - literature-research
+  - literature-search
 ---
 
 # Literature Overview SOP
@@ -149,3 +157,16 @@ ss.relevanceSearch(
 ```
 
 **Expected output:** A list of 15-30 papers with titles, authors, years, and citation counts — enough to understand the landscape and pick papers for deeper reading.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
+| literature-search | Medium-depth literature search — read AI-summarized reports for every paper analyzed |
+
+<!-- END available-tables (generated) -->

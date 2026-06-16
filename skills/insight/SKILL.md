@@ -1,8 +1,19 @@
 ---
 name: insight
-description: Insight Campaign — deep root-cause analysis of why research gaps persist. 5 strategies (root-cause-drilling, stakeholder-mapping, tension-mining, question-reformulation, assumption-audit), 4 tactics, 13 subagent SOPs.
+description: Insight Campaign — deep root-cause analysis of why research gaps persist.
+  5 strategies (root-cause-drilling, stakeholder-mapping, tension-mining, question-reformulation,
+  assumption-audit), 4 tactics, 13 subagent SOPs.
 execution: campaign
-used-by: deep-insight
+dependencies:
+  strategies:
+  - assumption-audit
+  - question-reformulation
+  - root-cause-drilling
+  - stakeholder-mapping
+  - tension-mining
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Insight
@@ -17,11 +28,11 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 
 | Signal | Strategy |
 |--------|----------|
-| 为什么存在、根因、5 Whys、鱼骨图、因果树 | → root-cause-drilling |
-| 谁受影响、利益相关者、JTBD、CSH 12 问 | → stakeholder-mapping |
-| 对立力量、张力、极性、冲突蒸发 | → tension-mining |
-| 如何框定问题、HMW、抽象阶梯、苏格拉底 | → question-reformulation |
-| 隐含假设、脆弱性、前提审计、红队 | → assumption-audit |
+| why it exists, root cause, 5 Whys, fishbone diagram, causal tree | → root-cause-drilling |
+| who is affected, stakeholders, JTBD, CSH 12 questions | → stakeholder-mapping |
+| opposing forces, tensions, polarities, evaporating cloud | → tension-mining |
+| how to frame the problem, HMW, abstraction ladder, Socratic | → question-reformulation |
+| hidden assumptions, fragility, premise audit, red team | → assumption-audit |
 
 ## Available Tactics
 
@@ -41,3 +52,28 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 ## Context Management
 
 context-checkpoint after each strategy completes. Accumulated state persists across strategies within a campaign run.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| assumption-audit | Surface all assumptions, classify by vulnerability (load-bearing × likely-false), validate causal logic. Focus on dangerous assumptions — high load-bearing + non-explicit. |
+| question-reformulation | Reframe research questions using abstraction laddering, HMW formulation, and Socratic probing. Find the most productive level and framing for investigation. |
+| root-cause-drilling | Drill from surface symptoms to root causes via 5 Whys, Ishikawa decomposition, and Current Reality Trees. Validates each causal link with literature evidence. |
+| stakeholder-mapping | Map all affected parties using CSH 12-question framework, identify jobs-to-be-done, classify by salience. Reveals whose perspective is systematically excluded. |
+| tension-mining | Identify opposing forces that keep gaps open. Uses evaporating cloud to expose hidden assumptions behind conflicts and polarity mapping for unresolvable tensions. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->

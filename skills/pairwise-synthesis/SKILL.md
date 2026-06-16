@@ -1,7 +1,21 @@
 ---
 name: pairwise-synthesis
-description: Compare two methods across multiple studies — paired meta-analysis protocol design. Budget: 30 studies, 30 effect sizes, 40 web searches.
-used-by: meta-analysis
+description: 'Compare two methods across multiple studies — paired meta-analysis protocol
+  design. Budget: 30 studies, 30 effect sizes, 40 web searches.'
+dependencies:
+  tactics:
+  - effect-size-extraction
+  - evidence-synthesis-planning
+  - quality-assessment-protocol
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - inclusion-criteria-design
+  - meta-analysis-synthesis
+  - pico-formulation
+  - publication-bias-assessment
+  - risk-of-bias-assessment
+  - sensitivity-analysis-design
 ---
 
 # Pairwise Synthesis Strategy
@@ -83,3 +97,32 @@ protocol:
   bias_assessment_plan: [funnel plot, Egger's, trim-and-fill]
   reporting: PRISMA-2020
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| effect-size-extraction | Systematically extract effect sizes and conditions from papers for meta-analytic synthesis |
+| evidence-synthesis-planning | Plan the statistical synthesis approach — model selection, heterogeneity strategy, and reporting |
+| quality-assessment-protocol | Methodological quality and bias risk assessment of included studies using validated tools |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| data-extraction-form | Design structured data extraction form for systematic meta-analysis data collection |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| inclusion-criteria-design | Define inclusion/exclusion criteria for systematic study selection in meta-analysis |
+| meta-analysis-synthesis | Produce final meta-analysis protocol document assembling all planning outputs into PRISMA-compliant protocol |
+| pico-formulation | Construct PICO/PECO framework for the meta-analysis research question |
+| publication-bias-assessment | Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection model analyses for publication bias |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

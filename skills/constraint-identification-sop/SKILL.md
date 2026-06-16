@@ -1,10 +1,13 @@
 ---
 name: constraint-identification-sop
-description: Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem methods.
+description: Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem
+  methods.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, context
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Constraint Identification SOP
@@ -27,3 +30,15 @@ Constraint discovery requires creative, divergent thinking across multiple frame
 ## HARD-GATE
 
 Output MUST include: at least 3 constraints identified, method attribution for each, and initial severity estimate. Reject if fewer than 3 constraints found.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

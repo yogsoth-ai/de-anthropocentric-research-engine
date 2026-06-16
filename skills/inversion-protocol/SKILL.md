@@ -1,8 +1,14 @@
 ---
 name: inversion-protocol
-description: Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation.
+description: Reverse statements → extract insights → build constructive alternatives.
+  Systematic inversion pipeline from negation to innovation.
 execution: tactic
-used-by: reverse-brainstorming, worst-method-inversion, sacred-cow-hunting, assumption-destruction
+dependencies:
+  sops:
+  - constructive-rebellion
+  - inversion-extraction
+  - reversal-generation
+  - worst-case-design
 ---
 
 # Inversion Protocol
@@ -41,3 +47,18 @@ Use constructive-rebellion SOP to build viable, constructive alternatives from t
 | constructive-rebellion | Stage 3 — build alternatives from insights |
 | worst-case-design | Stage 1 alt — design worst solution for inversion |
 | destruction-synthesis | Post — synthesize all inversion outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| inversion-extraction | Extract constructive insights from worst solutions. Transform failure analysis into innovation directions. |
+| reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
+| worst-case-design | Design the worst possible solution. Deliberate failure engineering to reveal hidden constraints and inversion opportunities. |
+
+<!-- END available-tables (generated) -->

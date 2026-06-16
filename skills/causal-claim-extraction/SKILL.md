@@ -1,10 +1,13 @@
 ---
 name: causal-claim-extraction
-description: Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs.
+description: Extract all causal claims (X causes Y, X leads to Y, X enables Y) from
+  an artifact, producing a structured list of cause-effect pairs.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Causal Claim Extraction
@@ -33,3 +36,15 @@ Causal claim extraction requires careful linguistic analysis of the entire artif
 ## Budget
 
 One unit = one extraction pass per artifact.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

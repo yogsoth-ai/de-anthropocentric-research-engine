@@ -1,50 +1,50 @@
 ---
 name: eclipse-application
-description: "SOP: 应用 ECLIPSE 框架结构化混合方法研究问题"
+description: 'SOP: apply the ECLIPSE framework to structure a mixed-methods research question'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究意图（混合方法研究方向）"
-output: "完整 ECLIPSE 填充 + RQ 表述"
+input: 'Research intent (mixed-methods research direction)'
+output: 'Complete ECLIPSE fill-in + RQ statement'
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # ECLIPSE Application
 
-应用 ECLIPSE 框架 — 适用于混合方法研究。
+Apply the ECLIPSE framework — suited to mixed-methods research.
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: 明确的混合方法研究意图（需要同时考虑多个维度）。
+Input must contain: an explicit mixed-methods research intent (requiring multiple dimensions to be considered simultaneously).
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 确认研究适合 ECLIPSE 框架
-2. **E (Expectation)**: 定义预期改善/结果
-3. **C (Client group)**: 定义目标群体
-4. **L (Location)**: 定义地理/组织位置
-5. **I (Impact)**: 定义预期影响
-6. **P (Professionals)**: 定义涉及的专业人员
-7. **S (Service)**: 定义涉及的服务/系统
-8. **E (Evaluation)**: 定义评估方式
-9. **组装**: 将各组件组装为完整 RQ 句子
-10. **输出**: ECLIPSE 填充表 + RQ 表述
+1. **Pre-check**: confirm the research suits the ECLIPSE framework
+2. **E (Expectation)**: define the expected improvement/outcome
+3. **C (Client group)**: define the target group
+4. **L (Location)**: define the geographic/organizational location
+5. **I (Impact)**: define the expected impact
+6. **P (Professionals)**: define the professionals involved
+7. **S (Service)**: define the service/system involved
+8. **E (Evaluation)**: define the evaluation method
+9. **Assembly**: assemble the components into a complete RQ sentence
+10. **Output**: ECLIPSE fill-in table + RQ statement
 
 ## Output Format
 
 ```
-E (Expectation): [预期结果]
-C (Client group): [目标群体]
-L (Location): [地理/组织位置]
-I (Impact): [预期影响]
-P (Professionals): [涉及专业人员]
-S (Service): [涉及服务/系统]
-E (Evaluation): [评估方式]
+E (Expectation): [expected outcome]
+C (Client group): [target group]
+L (Location): [geographic/organizational location]
+I (Impact): [expected impact]
+P (Professionals): [professionals involved]
+S (Service): [service/system involved]
+E (Evaluation): [evaluation method]
 
 RQ: "What is the [I] of [S] on [C] in [L], as evaluated by [E]?"
 ```

@@ -1,8 +1,17 @@
 ---
 name: lakatos-heuristics
-description: "Proofs and Refutations method: generate counterexamples, attempt monster-barring, incorporate surviving counterexamples as lemma refinements."
+description: 'Proofs and Refutations method: generate counterexamples, attempt monster-barring,
+  incorporate surviving counterexamples as lemma refinements.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - contradiction-derivation
+  - counterexample-heuristics
+  sops:
+  - claim-refinement
+  - contradiction-detection
+  - counterexample-generation
+  - monster-barring-attempt
 ---
 
 # Lakatos Heuristics
@@ -41,3 +50,27 @@ used-by: [adversarial-stress-testing]
 - monster-barring-attempt
 - claim-refinement
 - contradiction-detection
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| contradiction-derivation | Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges. |
+| counterexample-heuristics | Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method). |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| claim-refinement | Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation). |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| counterexample-generation | Systematically generate counterexamples (monsters) to a given claim using diverse heuristic strategies. |
+| monster-barring-attempt | Attempt to exclude a counterexample as illegitimate by tightening definitions or preconditions (Lakatos monster-barring). |
+
+<!-- END available-tables (generated) -->

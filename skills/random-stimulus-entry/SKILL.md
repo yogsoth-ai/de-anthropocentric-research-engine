@@ -1,8 +1,16 @@
 ---
 name: random-stimulus-entry
-description: Random word/paper/concept as thinking entry point. Use genuine randomness to escape fixation and open unexpected solution paths.
+description: Random word/paper/concept as thinking entry point. Use genuine randomness
+  to escape fixation and open unexpected solution paths.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  tactics:
+  - bridge-validation
+  - domain-divergence
+  sops:
+  - cross-domain-synthesis
+  - forced-connection
+  - random-paper-entry
 ---
 
 # Random Stimulus Entry
@@ -49,3 +57,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Iterate**: Generate ≥5 stimuli, force connections for each
 6. **Filter**: Use bridge-validation to separate genuine insights from surface associations
 7. **Synthesize**: Combine validated connections into solution concepts
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
+| domain-divergence | Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| cross-domain-synthesis | Synthesize all cross-domain findings into a structured idea report. Integrates outputs from all strategies and SOPs. |
+| forced-connection | Force connection between two unrelated concepts. Deliberately construct bridging paths where no natural connection exists. |
+| random-paper-entry | Select random paper facet as creative stimulus. Uses genuine randomness in paper selection to break domain fixation. |
+
+<!-- END available-tables (generated) -->

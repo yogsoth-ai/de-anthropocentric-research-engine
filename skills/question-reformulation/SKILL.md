@@ -1,7 +1,12 @@
 ---
 name: question-reformulation
-description: Reframe research questions using abstraction laddering, HMW formulation, and Socratic probing. Find the most productive level and framing for investigation.
-used-by: insight
+description: Reframe research questions using abstraction laddering, HMW formulation,
+  and Socratic probing. Find the most productive level and framing for investigation.
+dependencies:
+  sops:
+  - abstraction-laddering
+  - hmw-formulation
+  - socratic-probing
 ---
 
 # Question Reformulation
@@ -49,3 +54,17 @@ Use abstraction laddering to move between concrete and abstract framings. Genera
 ## Output Format
 
 Reformulated Questions — abstraction ladder, HMW set, Socratic challenges, recommended framing with reasoning.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-laddering | Move between concrete and abstract framings — 3 levels up (Why?) and 3 levels down (How?) to find the most productive research level. |
+| hmw-formulation | Generate "How Might We" questions at different scope levels (narrow, medium, broad). Ensures each is actionable without being prescriptive. |
+| socratic-probing | Apply 6 types of Socratic questions to test claims and assumptions. Exposes weaknesses and strengthens reasoning. |
+
+<!-- END available-tables (generated) -->

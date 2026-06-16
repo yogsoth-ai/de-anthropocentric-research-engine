@@ -1,7 +1,15 @@
 ---
 name: non-compensatory-screening
-description: Eliminate non-qualifying candidates using conjunctive rules, dominance filtering, lexicographic ordering, or veto thresholds.
-used-by: multi-criteria-scoring
+description: Eliminate non-qualifying candidates using conjunctive rules, dominance
+  filtering, lexicographic ordering, or veto thresholds.
+dependencies:
+  tactics:
+  - screening-then-scoring
+  sops:
+  - conjunctive-filter
+  - criterion-definition
+  - dominance-check
+  - threshold-setting
 ---
 
 # Non-Compensatory Screening
@@ -76,3 +84,26 @@ eliminated: []
 ### Surviving Alternatives
 [List, available for subsequent fine-grained scoring]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| screening-then-scoring | First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| conjunctive-filter | Apply conjunctive screening rules to eliminate candidates that fail any threshold. |
+| criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |
+| dominance-check | Identify dominated and non-dominated alternatives in a score matrix using Pareto dominance. |
+| threshold-setting | Define minimum acceptable thresholds for each criterion based on context and constraints. |
+
+<!-- END available-tables (generated) -->

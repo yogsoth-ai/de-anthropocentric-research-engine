@@ -1,10 +1,13 @@
 ---
 name: divergence-detection
-description: Identifies agreement and disagreement patterns across multiple perspective evaluations. Maps consensus clusters and persistent divergence points.
+description: Identifies agreement and disagreement patterns across multiple perspective
+  evaluations. Maps consensus clusters and persistent divergence points.
 execution: subagent
 prompt: ./prompt.md
 input: perspective_outputs (string), round_number (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Divergence Detection
@@ -34,3 +37,15 @@ Divergence analysis requires comparing all perspective outputs simultaneously in
 ## Budget
 
 One unit = one divergence analysis per round.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

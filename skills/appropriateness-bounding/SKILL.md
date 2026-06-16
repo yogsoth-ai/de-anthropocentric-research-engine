@@ -1,7 +1,13 @@
 ---
 name: appropriateness-bounding
-description: Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols.
-used-by: structured-consensus
+description: Establish acceptability standards through RAND/UCLA Appropriateness Method
+  or Consensus Conference protocols.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  - threshold-calibration
+  sops:
+  - consensus-synthesis
 ---
 
 # Appropriateness Bounding
@@ -70,3 +76,24 @@ disagreement_items: [{indication, reason}, ...]
 panel_size: <int>
 method: RAND/UCLA | Consensus Conference
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+| threshold-calibration | Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

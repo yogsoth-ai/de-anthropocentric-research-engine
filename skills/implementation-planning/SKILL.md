@@ -1,20 +1,44 @@
 ---
 name: implementation-planning
-description: "Plan execution path, produce executable plan, dispatch subagents, collect and analyze results"
+description: Plan execution path, produce executable plan, dispatch subagents, collect
+  and analyze results
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - critical-path-planning
-  - prerequisite-planning
-  - plan-writing
-  - experiment-running
-  - result-analysis
+- critical-path-planning
+- prerequisite-planning
+- plan-writing
+- experiment-running
+- result-analysis
 tactics:
-  - task-decomposition
-  - subagent-execution-loop
+- task-decomposition
+- subagent-execution-loop
+- checkpoint-and-recover
+- result-validation-loop
+dependencies:
+  strategies:
+  - critical-path-planning
+  - experiment-running
+  - plan-writing
+  - prerequisite-planning
+  - result-analysis
+  tactics:
   - checkpoint-and-recover
   - result-validation-loop
+  - subagent-execution-loop
+  - task-decomposition
+  sops:
+  - context-checkpoint
+  - context-init
+  - execution-synthesis
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign 4: Implementation Planning
@@ -85,3 +109,47 @@ Even if execution is partial, this campaign MUST produce:
 - Execution log with status per task
 - Whatever results were collected before budget/failure
 - Clear statement of what remains undone and why
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| critical-path-planning | Identify the shortest execution path via CPM forward/backward pass, resource leveling, and buffer insertion |
+| experiment-running | Execute the plan by dispatching fresh subagents per task, monitoring status, and collecting results |
+| plan-writing | Format critical path and prerequisites into bite-sized executable plan following superpowers:writing-plans conventions |
+| prerequisite-planning | Identify obstacles blocking direct achievement and design intermediate objectives to overcome each |
+| result-analysis | Statistically analyze collected results, verify reproducibility, and synthesize findings |
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| checkpoint-and-recover | Checkpoint state before risky operations, detect anomalies, and recover gracefully |
+| result-validation-loop | Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis |
+| subagent-execution-loop | Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| execution-synthesis | Synthesize complete execution report from all results, tests, and reproducibility data |
+| experiment-execution-paper-overview | Import SOP: paper landscape scan (from literature-engine skill) |
+| experiment-execution-paper-research | Import SOP: paper full-text reading (from literature-engine skill) |
+| experiment-execution-paper-search | Import SOP: paper AI summary reading (from literature-engine skill) |
+| experiment-execution-quality-gate-check | Shared SOP: verify quality gate criteria are met before proceeding |
+| experiment-execution-saturation-detection | Shared SOP: detect information saturation — know when to stop searching/analyzing |
+| experiment-execution-web-research | Import SOP: deep full-page content analysis (from web-browsing skill) |
+| experiment-execution-web-search | Import SOP: quick web scan discovery (from web-browsing skill) |
+
+<!-- END available-tables (generated) -->

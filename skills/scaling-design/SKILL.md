@@ -1,19 +1,28 @@
 ---
 name: scaling-design
-description: "Design scaling experiments to characterize performance-resource relationships"
+description: Design scaling experiments to characterize performance-resource relationships
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- factor-identification
+- level-specification
+- metric-specification
+- sample-size-estimation
+- design-matrix-construction
+tactics:
+- statistical-method-selection
+- budget-constrained-design
+dependencies:
+  sops:
+  - design-matrix-construction
   - factor-identification
   - level-specification
   - metric-specification
   - sample-size-estimation
-  - design-matrix-construction
-tactics:
-  - statistical-method-selection
+  tactics:
   - budget-constrained-design
+  - statistical-method-selection
 ---
 
 # Strategy: Scaling Design
@@ -45,3 +54,28 @@ tactics:
 | Model scaling | 4-8 | 2-3 | 8-24 | High (different model sizes) |
 | Compute-optimal | 6-10 per iso-FLOP | 1-2 | 12-20 | Very high |
 | Inference scaling | 5-10 | 5 | 25-50 | Low (inference only) |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| budget-constrained-design | Optimize experiment design under compute and time budget constraints |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

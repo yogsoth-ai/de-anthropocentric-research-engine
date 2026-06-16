@@ -1,10 +1,13 @@
 ---
 name: severity-scoring
-description: Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts.
+description: Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA
+  severity scale calibrated for research artifacts.
 execution: subagent
 prompt: ./prompt.md
 input: failure_modes (string), chains (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Severity Scoring
@@ -28,3 +31,15 @@ Severity assessment requires consistent calibration across all modes. Isolated c
 
 - **scores**: List of (failure_mode_id, severity_score, justification)
 - **calibration_notes**: Any scoring edge cases or assumptions
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

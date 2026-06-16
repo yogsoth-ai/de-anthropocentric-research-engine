@@ -1,14 +1,20 @@
 ---
 name: assumption-constraint
-description: "Which assumptions are most fragile? — Vulnerability ranking + impact assessment of experiment assumptions"
+description: Which assumptions are most fragile? — Vulnerability ranking + impact
+  assessment of experiment assumptions
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
+- assumption-challenging
+- resource-quantification
+tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
   - assumption-challenging
   - resource-quantification
-tactics:
+  tactics:
   - sensitivity-ranking
 ---
 
@@ -56,3 +62,24 @@ Assumption categories:
 | Subagent calls | ≤5 | 2 SOPs + synthesis |
 | Iterations | ≤2 | Re-rank if new assumptions surface |
 | Output size | ≤3000 tokens | Ranked table + validation plan |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| resource-quantification | Quantify resource demand vs supply vs gap for each resource category |
+
+<!-- END available-tables (generated) -->

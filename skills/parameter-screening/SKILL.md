@@ -1,7 +1,12 @@
 ---
 name: parameter-screening
-description: Quick Morris method screening to identify which parameters have large effects and which can be safely ignored.
-used-by: sensitivity-analysis
+description: Quick Morris method screening to identify which parameters have large
+  effects and which can be safely ignored.
+dependencies:
+  tactics:
+  - screening-then-decomposition
+  sops:
+  - morris-screening
 ---
 
 # Parameter Screening
@@ -45,3 +50,23 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Use Morris method (one-at-a-time with random trajectories) to quickly identify which parameters have large effects (high mu*) and which have nonlinear/interaction effects (high sigma). Eliminate clearly unimportant parameters.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| screening-then-decomposition | Two-phase sensitivity — Morris quick screening to eliminate unimportant factors, then Sobol precise decomposition on survivors. Efficient allocation of analytical effort. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| morris-screening | Morris method screening — compute elementary effects to quickly identify important vs unimportant parameters. |
+
+<!-- END available-tables (generated) -->

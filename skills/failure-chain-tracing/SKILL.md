@@ -1,9 +1,16 @@
 ---
 name: failure-chain-tracing
-description: "Tactic: Trace upstream causes and downstream effects of each failure mode. Builds multi-level cause-mode-effect chains for systemic understanding."
+description: 'Tactic: Trace upstream causes and downstream effects of each failure
+  mode. Builds multi-level cause-mode-effect chains for systemic understanding.'
 type: tactic
-used-by: [failure-anticipation]
-strategies: [prospective-hindsight, design-fmea, process-fmea]
+strategies:
+- prospective-hindsight
+- design-fmea
+- process-fmea
+dependencies:
+  sops:
+  - failure-chain-construction
+  - severity-scoring
 ---
 
 # Failure Chain Tracing Tactic
@@ -41,3 +48,16 @@ Trace each failure mode both upstream (root causes) and downstream (cascading ef
 - Root cause reached (no further upstream cause identifiable)
 - End effect reached (stakeholder-level impact identified)
 - Circular dependency detected (flag and stop)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| failure-chain-construction | Build cause-mode-effect chains tracing upstream root causes and downstream cascading effects for each failure mode. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

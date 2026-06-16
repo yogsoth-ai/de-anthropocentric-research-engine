@@ -1,10 +1,13 @@
 ---
 name: round-decision
-description: Decide whether to continue iterating or stop based on consensus score, round number, and stability.
+description: Decide whether to continue iterating or stop based on consensus score,
+  round number, and stability.
 execution: subagent
 prompt: ./prompt.md
 input: consensus_score, round_n, stability
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Round Decision
@@ -24,3 +27,15 @@ Spawn a subagent that evaluates the stopping criteria and returns a clear contin
 ## HARD-GATE
 
 Output MUST contain: `decision` (continue/stop), `reason` (string), and `next_action` (what to do next). Decision must be exactly one of "continue" or "stop".
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

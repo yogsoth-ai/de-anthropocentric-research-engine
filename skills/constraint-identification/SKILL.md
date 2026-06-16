@@ -1,7 +1,10 @@
 ---
 name: constraint-identification
-description: Find blockers and showstoppers using TOC, TRIZ contradiction analysis, and Pre-mortem techniques.
-used-by: feasibility-assessment
+description: Find blockers and showstoppers using TOC, TRIZ contradiction analysis,
+  and Pre-mortem techniques.
+dependencies:
+  tactics:
+  - constraint-drilling
 ---
 
 # Constraint Identification
@@ -72,3 +75,15 @@ constraint_analysis:
   showstopper_verdict: <yes/no>
   showstopper_reason: <if yes>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| constraint-drilling | Identify constraints, classify them by type and severity, assess removability, and design removal paths for removable constraints. |
+
+<!-- END available-tables (generated) -->

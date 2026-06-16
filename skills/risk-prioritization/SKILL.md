@@ -1,9 +1,16 @@
 ---
 name: risk-prioritization
-description: "Strategy: Action Priority matrix — classifies failure modes into H/M/L priority using severity-weighted scoring per AIAG-VDA 2019 Action Priority tables."
+description: 'Strategy: Action Priority matrix — classifies failure modes into H/M/L
+  priority using severity-weighted scoring per AIAG-VDA 2019 Action Priority tables.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [premortem-to-fmea-pipeline]
+tactics:
+- premortem-to-fmea-pipeline
+dependencies:
+  tactics:
+  - premortem-to-fmea-pipeline
+  sops:
+  - action-priority-matrix
+  - severity-scoring
 ---
 
 # Risk Prioritization Strategy
@@ -40,3 +47,24 @@ Classifies failure modes into High/Medium/Low action priority using severity-wei
 
 - action-priority-matrix (RPN computation and H/M/L classification)
 - severity-scoring (re-evaluation if needed)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| premortem-to-fmea-pipeline | Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA analysis. Bridges fast intuitive generation with systematic structured analysis. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| action-priority-matrix | Compute Risk Priority Number (RPN = S x O x D), classify failure modes into H/M/L action priority per AIAG-VDA tables. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

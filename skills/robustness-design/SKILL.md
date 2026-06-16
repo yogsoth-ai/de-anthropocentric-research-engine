@@ -1,18 +1,27 @@
 ---
 name: robustness-design
-description: "Design experiments to identify failure boundaries and robustness limits"
+description: Design experiments to identify failure boundaries and robustness limits
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- factor-identification
+- level-specification
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+- design-matrix-construction
+tactics:
+- statistical-method-selection
+dependencies:
+  sops:
+  - baseline-selection
+  - design-matrix-construction
   - factor-identification
   - level-specification
-  - baseline-selection
   - metric-specification
   - sample-size-estimation
-  - design-matrix-construction
-tactics:
+  tactics:
   - statistical-method-selection
 ---
 
@@ -47,3 +56,28 @@ tactics:
 | Adversarial sweep | 1 attack | 5-10 epsilon | 5-10 | Adversarial robustness curve |
 | Comprehensive | 5+ types | 3-5 each | 50+ | Publication-ready robustness |
 | Cross-domain | N domains | 1 | N | Transfer evaluation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

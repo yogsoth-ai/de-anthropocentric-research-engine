@@ -1,10 +1,13 @@
 ---
 name: weight-elicitation-sop
-description: Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos).
+description: Compute criteria weights using a specified elicitation method (AHP, Swing,
+  BWM, MACBETH, or Simos).
 execution: subagent
 prompt: ./prompt.md
 input: criteria (string[]), method (string)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Weight Elicitation SOP
@@ -22,3 +25,15 @@ Weight computation involves pairwise comparison matrices or ranking logic, requi
 ## HARD-GATE
 
 Weights must sum to 1.0 (allowing ±0.001 rounding error), and must pass the method's consistency check (e.g., AHP CR < 0.1).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

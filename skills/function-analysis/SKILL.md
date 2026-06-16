@@ -1,10 +1,13 @@
 ---
 name: function-analysis
-description: "FMEA Step 3: Decompose artifact into function tree — identify what each component is supposed to do before analyzing how it can fail."
+description: 'FMEA Step 3: Decompose artifact into function tree — identify what each
+  component is supposed to do before analyzing how it can fail.'
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string), analysis_mode (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Function Analysis
@@ -29,3 +32,15 @@ Function decomposition requires systematic analytical thinking without premature
 
 - **function_tree**: Hierarchical list of functions and sub-functions
 - **function_requirements**: What each function must achieve to succeed
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,15 +1,22 @@
 ---
 name: result-analysis
-description: "Statistically analyze collected results, verify reproducibility, and synthesize findings"
+description: Statistically analyze collected results, verify reproducibility, and
+  synthesize findings
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - statistical-testing
-  - reproducibility-verification
-  - execution-synthesis
+- statistical-testing
+- reproducibility-verification
+- execution-synthesis
 tactics:
+- result-validation-loop
+dependencies:
+  sops:
+  - execution-synthesis
+  - reproducibility-verification
+  - statistical-testing
+  tactics:
   - result-validation-loop
 ---
 
@@ -64,3 +71,25 @@ Results feed back into:
 - Wiki vault (claims with evidence)
 - Future experiment design (what worked, what didn't)
 - North star progress tracking
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| result-validation-loop | Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| execution-synthesis | Synthesize complete execution report from all results, tests, and reproducibility data |
+| reproducibility-verification | Verify result reproducibility via re-runs with different seeds and ICC comparison |
+| statistical-testing | Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results |
+
+<!-- END available-tables (generated) -->

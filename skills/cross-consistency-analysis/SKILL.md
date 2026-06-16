@@ -1,8 +1,14 @@
 ---
 name: cross-consistency-analysis
-description: "CCA: pairwise consistency checking to reduce solution space 90-99%"
+description: 'CCA: pairwise consistency checking to reduce solution space 90-99%'
 execution: strategy
-used-by: morphological-exploration
+dependencies:
+  tactics:
+  - creative-ideation-consistency-checking
+  sops:
+  - creative-ideation-consistency-pair-evaluation
+  - morphological-synthesis
+  - solution-space-reduction
 ---
 
 # Cross-Consistency Analysis
@@ -44,3 +50,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Classify inconsistencies**: Tag as logical, empirical, or normative
 4. **Reduce space**: Apply solution-space-reduction to eliminate inconsistent configurations
 5. **Report**: Document reduction ratio and remaining viable space
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| creative-ideation-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
+| morphological-synthesis | Synthesize all morphological exploration outputs |
+| solution-space-reduction | Apply CCA to remove inconsistent combinations |
+
+<!-- END available-tables (generated) -->

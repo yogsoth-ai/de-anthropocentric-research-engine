@@ -1,10 +1,13 @@
 ---
 name: convergence-assessment
-description: Compare results across multiple model variants — quantitative agreement metrics and qualitative conclusion stability.
+description: Compare results across multiple model variants — quantitative agreement
+  metrics and qualitative conclusion stability.
 execution: subagent
 prompt: ./prompt.md
 input: model_outputs (string), comparison_criteria (string)
-used-by: robustness-testing
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Convergence Assessment
@@ -18,3 +21,15 @@ Subagent — spawned via subagent-spawning/spawn-agent.
 ## Budget
 
 One unit = one convergence assessment pass.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

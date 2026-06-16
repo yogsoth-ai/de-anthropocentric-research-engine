@@ -32,7 +32,7 @@ import argparse, json, importlib.util
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-_RG = HERE / "repo-dependency-graph" / "scripts" / "render_graph.py"
+_RG = HERE.parent / "repo-dependency-graph" / "scripts" / "render_graph.py"
 _spec = importlib.util.spec_from_file_location("rg", _RG)
 rg = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(rg)
@@ -242,8 +242,8 @@ def build(files, links, a_data_dir):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--data-dir", default=str(HERE / "data"))
-    ap.add_argument("--out", default=str(HERE / "all-graphs.html"))
+    ap.add_argument("--data-dir", default=str(HERE.parent / "data"))
+    ap.add_argument("--out", default=str(HERE.parent / "all-graphs.html"))
     a = ap.parse_args()
     files = sorted(Path(a.data_dir).glob("*.json"))
     links = load_links()

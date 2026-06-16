@@ -1,10 +1,13 @@
 ---
 name: sensitivity-analysis-design
-description: Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks
+description: Design leave-one-out, influence diagnostics, subgroup analyses, and robustness
+  checks
 execution: subagent
 prompt: ./prompt.md
 input: included_studies, potential_outliers, subgroup_variables
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Sensitivity Analysis Design SOP
@@ -26,3 +29,15 @@ Design comprehensive sensitivity analyses to test the robustness of meta-analyti
 ## Output
 
 Complete sensitivity analysis plan specifying each analysis, its rationale, and interpretation framework.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

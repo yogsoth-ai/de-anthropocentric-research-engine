@@ -1,10 +1,13 @@
 ---
 name: publication-bias-assessment
-description: Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection model analyses for publication bias
+description: Plan funnel plots, Egger's test, trim-and-fill, p-curve, and selection
+  model analyses for publication bias
 execution: subagent
 prompt: ./prompt.md
 input: effect_size_distribution, study_count
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Publication Bias Assessment SOP
@@ -25,3 +28,15 @@ Design the complete publication bias detection and adjustment protocol using vis
 ## Output
 
 Complete publication bias assessment protocol with method selection justified by study count and data characteristics.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

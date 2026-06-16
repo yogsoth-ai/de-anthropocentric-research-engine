@@ -1,18 +1,28 @@
 ---
 name: competitive-scenario
-description: "What will competitors do? — Competitive method progress prediction and time window analysis"
+description: What will competitors do? — Competitive method progress prediction and
+  time window analysis
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - competitive-move-prediction
-  - timeline-projection
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- competitive-move-prediction
+- timeline-projection
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - competitive-move-prediction
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-synthesis
+  - timeline-projection
+  tactics:
   - strategy-robustness-testing
 ---
 
@@ -64,3 +74,28 @@ Key principles:
 | Impact assessment | 10K × N | Per competitive scenario |
 | Robustness scoring | 8K | Competitive positioning |
 | Synthesis | 12K | Strategy recommendations |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| competitive-move-prediction | Predict competitor progress, publications, and strategic moves |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+| timeline-projection | Extrapolate research landscape timelines using trend analysis and milestone projection |
+
+<!-- END available-tables (generated) -->

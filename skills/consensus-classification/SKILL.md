@@ -4,7 +4,9 @@ description: Classify items as consensus or dissensus at a given threshold.
 execution: subagent
 prompt: ./prompt.md
 input: judgments[], threshold
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Consensus Classification
@@ -24,3 +26,15 @@ Spawn a subagent that takes judgments and a threshold value, then classifies eac
 ## HARD-GATE
 
 Output MUST contain: `consensus_items[]` and `dissensus_items[]` arrays. Every item in the input must appear in exactly one list. Each item must include its score and classification rationale.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

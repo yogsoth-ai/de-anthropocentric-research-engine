@@ -1,8 +1,13 @@
 ---
 name: effect-size-extraction
-description: Systematically extract effect sizes and conditions from papers for meta-analytic synthesis
+description: Systematically extract effect sizes and conditions from papers for meta-analytic
+  synthesis
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - data-extraction-form
+  - effect-size-planning
+  - risk-of-bias-assessment
 ---
 
 # Effect Size Extraction Tactic
@@ -90,3 +95,17 @@ extractions:
     quality: [high/medium/low confidence]
     notes: [calculation method, assumptions]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| data-extraction-form | Design structured data extraction form for systematic meta-analysis data collection |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| risk-of-bias-assessment | Assess methodological bias using RoB2, PROBAST, or QUADAS-2 validated tools |
+
+<!-- END available-tables (generated) -->

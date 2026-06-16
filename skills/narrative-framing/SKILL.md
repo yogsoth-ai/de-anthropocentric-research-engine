@@ -1,8 +1,16 @@
 ---
 name: narrative-framing
-description: Theory-driven reading tactic — define a theoretical framework first, then guide reading to fill it with evidence. Five stages (theme identification, argument construction, evidence collection, counter-evidence, synthesis). The most intellectually demanding tactic.
+description: Theory-driven reading tactic — define a theoretical framework first,
+  then guide reading to fill it with evidence. Five stages (theme identification,
+  argument construction, evidence collection, counter-evidence, synthesis). The most
+  intellectually demanding tactic.
 execution: tactic
-used-by: literature-survey
+dependencies:
+  sops:
+  - knowledge-acquisition-paper-research
+  - knowledge-acquisition-paper-search
+  - knowledge-acquisition-web-research
+  - thematic-coding
 ---
 
 # Narrative Framing
@@ -31,3 +39,18 @@ Define a theoretical framework first, then guide reading to fill it with evidenc
 - CC must actively seek counter-evidence (intellectual honesty)
 - Output is not a list but a structured argument
 - Themes should emerge from reading, not be imposed a priori
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| knowledge-acquisition-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
+| knowledge-acquisition-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| knowledge-acquisition-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| thematic-coding | Identify recurring themes across papers using qualitative coding methodology. Produces a codebook with theme definitions, supporting evidence, and frequency counts. Used by narrative-review. |
+
+<!-- END available-tables (generated) -->

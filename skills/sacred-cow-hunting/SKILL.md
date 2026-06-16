@@ -1,8 +1,19 @@
 ---
 name: sacred-cow-hunting
-description: Find and challenge domain's unquestioned beliefs. Systematic identification and productive violation of dogma.
+description: Find and challenge domain's unquestioned beliefs. Systematic identification
+  and productive violation of dogma.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  - inversion-protocol
+  sops:
+  - benchmark-challenge
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - reversal-generation
+  - sacred-cow-identification
 ---
 
 # Sacred Cow Hunting
@@ -51,3 +62,29 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 6. **Reverse**: Use reversal-generation to create formal negations
 7. **Build**: Use constructive-rebellion to form productive violations
 8. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+| inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
+| sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |
+
+<!-- END available-tables (generated) -->

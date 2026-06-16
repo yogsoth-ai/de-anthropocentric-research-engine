@@ -1,10 +1,13 @@
 ---
 name: biotriz-principle-selection
-description: "Select applicable BioTRIZ principles for a given contradiction. Map to biological cases."
+description: Select applicable BioTRIZ principles for a given contradiction. Map to
+  biological cases.
 execution: subagent
 prompt: ./prompt.md
 input: contradiction_description (string)
-used-by: biotriz-resolution
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # BioTRIZ Principle Selection
@@ -18,3 +21,15 @@ Subagent — spawned via subagent-spawning/spawn-agent skill.
 ## Why Subagent
 
 BioTRIZ principle selection requires knowledge of the biological 40 principles, the bio contradiction matrix, and the ability to find relevant biological cases. Benefits from focused specialist attention.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

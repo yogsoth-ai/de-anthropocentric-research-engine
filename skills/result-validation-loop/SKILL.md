@@ -1,15 +1,21 @@
 ---
 name: result-validation-loop
-description: "Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis"
+description: Validate results through statistical testing, ROPE judgment, reproducibility
+  re-runs, and final synthesis
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- result-collection
+- statistical-testing
+- reproducibility-verification
+- execution-synthesis
+dependencies:
+  sops:
+  - execution-synthesis
+  - reproducibility-verification
   - result-collection
   - statistical-testing
-  - reproducibility-verification
-  - execution-synthesis
 ---
 
 # Tactic: Result Validation Loop
@@ -99,3 +105,18 @@ Before producing final synthesis:
 - [ ] At least 3 reproducibility re-runs completed
 - [ ] Limitations are explicitly stated
 - [ ] Next steps are actionable
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| execution-synthesis | Synthesize complete execution report from all results, tests, and reproducibility data |
+| reproducibility-verification | Verify result reproducibility via re-runs with different seeds and ICC comparison |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+| statistical-testing | Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results |
+
+<!-- END available-tables (generated) -->

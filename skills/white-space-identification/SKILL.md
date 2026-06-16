@@ -1,8 +1,12 @@
 ---
 name: white-space-identification
-description: Identify unexplored viable regions in the morphological matrix where no existing methods operate.
+description: Identify unexplored viable regions in the morphological matrix where
+  no existing methods operate.
 execution: tactic
-used-by: morphological-exploration, design-space-mapping, general-morphological-analysis
+dependencies:
+  sops:
+  - combination-evaluation
+  - white-space-detection
 ---
 
 # White Space Identification
@@ -33,3 +37,16 @@ Evaluate identified white-space combinations for feasibility and novelty using c
 |-----|------|
 | white-space-detection | Stage 1 — detect uncovered matrix regions |
 | combination-evaluation | Stage 2 — evaluate feasibility and novelty |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| combination-evaluation | Evaluate new combinations for feasibility and novelty |
+| white-space-detection | Identify matrix regions not covered by existing methods |
+
+<!-- END available-tables (generated) -->

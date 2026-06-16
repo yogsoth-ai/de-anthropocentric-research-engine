@@ -1,9 +1,19 @@
 ---
 name: assumption-cascade
-description: "Tactic: Surface assumptions, sort by dependency, attack root assumptions first, then trace cascade failures through the dependency graph."
+description: 'Tactic: Surface assumptions, sort by dependency, attack root assumptions
+  first, then trace cascade failures through the dependency graph.'
 type: tactic
-used-by: [red-teaming]
-strategies: [assumption-challenge, systematic-probing, groupthink-mitigation]
+strategies:
+- assumption-challenge
+- systematic-probing
+- groupthink-mitigation
+dependencies:
+  sops:
+  - assumption-cascade-tracer
+  - devils-advocacy
+  - finding-aggregation
+  - key-assumptions-check
+  - probe-execution
 ---
 
 # Assumption Cascade Tactic
@@ -34,3 +44,19 @@ Attack assumptions at their roots and trace how failures propagate through depen
 - Cascade found that invalidates >50% of conclusions (critical finding)
 - All assumptions survive attack (artifact resilient at assumption level)
 - Budget exhausted (report partial coverage)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| assumption-cascade-tracer | Build assumption dependency graphs and trace cascade failures when root assumptions are invalidated. |
+| devils-advocacy | Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| key-assumptions-check | Military ACT: systematically enumerate all assumptions, classify by type, and evaluate evidence strength supporting each. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+
+<!-- END available-tables (generated) -->

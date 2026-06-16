@@ -1,10 +1,13 @@
 ---
 name: convergence-check
-description: Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics.
+description: Evaluate whether the ranking has stabilized by analyzing rating history
+  and computing stability metrics.
 execution: subagent
 prompt: ./prompt.md
 input: rating_history(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Convergence Check
@@ -22,3 +25,15 @@ Convergence assessment requires analyzing trends across multiple snapshots and a
 ## HARD-GATE
 
 Output MUST contain a boolean `converged` field and a numeric `stability_score` in [0, 1]. If converged=false, MUST include `recommendation` for what to do next.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: key-assumptions-check
-description: "Military ACT: systematically enumerate all assumptions, classify by type, and evaluate evidence strength supporting each."
+description: 'Military ACT: systematically enumerate all assumptions, classify by
+  type, and evaluate evidence strength supporting each.'
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Key Assumptions Check
@@ -29,3 +32,15 @@ Assumption enumeration requires neutral analytical stance. The agent must surfac
 - **assumptions**: Complete list with classification (explicit/implicit, foundational/operational)
 - **evidence_strength**: Rating for each assumption (strong/moderate/weak/unsupported)
 - **criticality**: How important each assumption is to the overall argument
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

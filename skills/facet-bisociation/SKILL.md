@@ -1,8 +1,16 @@
 ---
 name: facet-bisociation
-description: Bridge two unrelated thinking matrices via Koestler bisociation. Identify independent frames of reference and force collision to produce creative insight.
+description: Bridge two unrelated thinking matrices via Koestler bisociation. Identify
+  independent frames of reference and force collision to produce creative insight.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - bisociation-network-construction
+  - cross-domain-synthesis
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Facet Bisociation
@@ -50,3 +58,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Extract insight**: At each collision point, derive a novel perspective or mechanism
 6. **Build network**: Use bisociation-network-construction to map all collision points
 7. **Validate depth**: Use bridge-validation to confirm insights are structural, not superficial
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
+| domain-divergence | Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| bisociation-network-construction | Build multi-domain bridging concept network. Creates a network of collision points between multiple thinking matrices. |
+| cross-domain-synthesis | Synthesize all cross-domain findings into a structured idea report. Integrates outputs from all strategies and SOPs. |
+
+<!-- END available-tables (generated) -->

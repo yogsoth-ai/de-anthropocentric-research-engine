@@ -2,7 +2,9 @@
 name: evaluation-protocol-comparison
 description: Compare implementation differences of same benchmark across papers
 execution: tactic
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - protocol-element-extraction
 ---
 
 # Evaluation Protocol Comparison Tactic
@@ -92,3 +94,15 @@ protocol_comparison:
 | Protocol elements extracted per paper | 10 |
 | High-variance elements identified | 2 |
 | Impact estimates produced | 3 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| protocol-element-extraction | Extract evaluation protocol parameters from papers |
+
+<!-- END available-tables (generated) -->

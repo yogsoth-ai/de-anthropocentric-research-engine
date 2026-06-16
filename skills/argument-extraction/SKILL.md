@@ -4,7 +4,9 @@ description: Extract and steel-man the core arguments supporting a given opinion
 execution: subagent
 prompt: ./prompt.md
 input: cluster, judgments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Argument Extraction
@@ -24,3 +26,15 @@ Spawn a subagent that takes a cluster characterization and the relevant judgment
 ## HARD-GATE
 
 Output MUST contain: at least 1 argument per cluster, each with `claim`, `evidence`, `reasoning`, and `strength` fields. Arguments must be steel-manned (strongest possible version).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

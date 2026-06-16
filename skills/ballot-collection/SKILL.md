@@ -1,10 +1,13 @@
 ---
 name: ballot-collection
-description: Gather independent ranking ballots from multiple judges or perspectives for a given candidate set.
+description: Gather independent ranking ballots from multiple judges or perspectives
+  for a given candidate set.
 execution: subagent
 prompt: ./prompt.md
 input: candidates(array), perspectives(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ballot Collection
@@ -22,3 +25,15 @@ Each ballot must be generated independently to prevent anchoring. The subagent e
 ## HARD-GATE
 
 Output MUST contain one ballot per perspective. Each ballot MUST rank all candidates (complete ranking) or explicitly mark unranked candidates. No two ballots may be identical unless perspectives are genuinely indistinguishable.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

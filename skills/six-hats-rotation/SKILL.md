@@ -1,8 +1,8 @@
 ---
 name: six-hats-rotation
-description: Complete Six Hats rotation (White→Red→Black→Yellow→Green→Blue) to force systematic perspective diversity.
+description: Complete Six Hats rotation (White→Red→Black→Yellow→Green→Blue) to force
+  systematic perspective diversity.
 execution: strategy
-used-by: perspective-forcing
 ---
 
 # Six Hats Rotation

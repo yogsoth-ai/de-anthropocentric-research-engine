@@ -4,7 +4,9 @@ description: Collect independent judgments from all perspectives on a given ques
 execution: subagent
 prompt: ./prompt.md
 input: question, perspectives[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Judgment Collection
@@ -24,3 +26,15 @@ Spawn a subagent that takes the question and list of perspectives, then generate
 ## HARD-GATE
 
 Output MUST contain: one judgment object per perspective, each with `perspective_id`, `response`, and `reasoning` fields. Missing any perspective fails the gate.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

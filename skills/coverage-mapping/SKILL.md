@@ -1,7 +1,15 @@
 ---
 name: coverage-mapping
-description: Map evaluation coverage, identify untested capability dimensions — 20 benchmarks, 30 papers, 50 web searches
-used-by: benchmark-archaeology
+description: Map evaluation coverage, identify untested capability dimensions — 20
+  benchmarks, 30 papers, 50 web searches
+dependencies:
+  tactics:
+  - score-trajectory-analysis
+  sops:
+  - benchmark-synthesis
+  - capability-taxonomy-mapping
+  - knowledge-acquisition-benchmark-inventory
+  - metric-decomposition
 ---
 
 # Coverage Mapping Strategy
@@ -95,3 +103,26 @@ coverage_map:
     none: int
     coverage_ratio: float
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| capability-taxonomy-mapping | Build capability taxonomy, map existing benchmark coverage |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

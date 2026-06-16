@@ -1,10 +1,13 @@
 ---
 name: dimension-assessment
-description: Score a single readiness dimension for a candidate with evidence and gap analysis.
+description: Score a single readiness dimension for a candidate with evidence and
+  gap analysis.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, dimension
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dimension Assessment
@@ -27,3 +30,15 @@ Each dimension assessment is independent and can run in parallel. The scoring re
 ## HARD-GATE
 
 Output MUST include: numeric score (1-9), at least 2 evidence items, and at least 1 identified gap. Reject outputs missing any of these.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

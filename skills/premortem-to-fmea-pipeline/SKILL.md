@@ -1,9 +1,21 @@
 ---
 name: premortem-to-fmea-pipeline
-description: "Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA analysis. Bridges fast intuitive generation with systematic structured analysis."
+description: 'Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA
+  analysis. Bridges fast intuitive generation with systematic structured analysis.'
 type: tactic
-used-by: [failure-anticipation]
-strategies: [prospective-hindsight, risk-prioritization]
+strategies:
+- prospective-hindsight
+- risk-prioritization
+dependencies:
+  sops:
+  - action-priority-matrix
+  - detection-scoring
+  - failure-chain-construction
+  - failure-mode-extraction
+  - function-analysis
+  - occurrence-scoring
+  - premortem-facilitation
+  - severity-scoring
 ---
 
 # Pre-Mortem to FMEA Pipeline Tactic
@@ -41,3 +53,22 @@ Rapid pre-mortem screening identifies candidate failures; high-severity items tr
 - All generated scenarios have been screened
 - High-severity items have completed full FMEA cycle
 - Action priority assigned to all items above threshold
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| action-priority-matrix | Compute Risk Priority Number (RPN = S x O x D), classify failure modes into H/M/L action priority per AIAG-VDA tables. |
+| detection-scoring | Rate detectability 1-10 (inverted: 10 = hardest to detect). Estimates how likely current controls would catch the failure before impact. |
+| failure-chain-construction | Build cause-mode-effect chains tracing upstream root causes and downstream cascading effects for each failure mode. |
+| failure-mode-extraction | Extract structured failure mode list from raw scenarios or artifact analysis. Produces standardized failure mode records. |
+| function-analysis | FMEA Step 3: Decompose artifact into function tree — identify what each component is supposed to do before analyzing how it can fail. |
+| occurrence-scoring | Rate failure mode occurrence probability 1-10. Estimates how likely each failure mode is to manifest during research execution. |
+| premortem-facilitation | Execute Klein pre-mortem protocol — assume failure has occurred, generate plausible failure scenarios through prospective hindsight. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

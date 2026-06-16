@@ -1,9 +1,23 @@
 ---
 name: critic-defender-judge
-description: "Strategy: Classic triangular debate — Critic attacks, Defender responds, Judge adjudicates. Based on Irving AI Safety via Debate with Toulmin argumentation structure."
+description: 'Strategy: Classic triangular debate — Critic attacks, Defender responds,
+  Judge adjudicates. Based on Irving AI Safety via Debate with Toulmin argumentation
+  structure.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [dialectical-escalation, evidence-tournament]
+tactics:
+- dialectical-escalation
+- evidence-tournament
+dependencies:
+  tactics:
+  - evidence-tournament
+  - stress-test-dialectical-escalation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
+  - evidence-scout
 ---
 
 # Critic-Defender-Judge Strategy
@@ -44,3 +58,29 @@ debate-architect → [for each round]:
 - debate-judge (round adjudication)
 - confidence-calibration (escalation decision)
 - evidence-scout (when evidence-tournament tactic active)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| evidence-tournament | Tactic: Evidence gathering, cross-examination, and quality judgment. External evidence is collected, presented, challenged, and scored for relevance and reliability. |
+| stress-test-dialectical-escalation | Tactic: Progressive debate escalation based on confidence thresholds. Each round increases attack sophistication until defender collapses or proves resilient. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| confidence-calibration | Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence. |
+| debate-architect | Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters. |
+| debate-critic | Generates structured criticism from attack stance using Toulmin model. Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses. |
+| debate-defender | Responds to attacks with counter-evidence and counter-arguments. Defends artifact using evidence, clarification, and rebuttal while acknowledging valid criticisms. |
+| debate-judge | Evaluates debate exchanges, adjudicates argument quality, and produces round verdicts with confidence scores and reasoning. |
+| evidence-scout | Searches for external evidence supporting or opposing specific claims. Returns structured evidence with source assessment and relevance scoring. |
+
+<!-- END available-tables (generated) -->

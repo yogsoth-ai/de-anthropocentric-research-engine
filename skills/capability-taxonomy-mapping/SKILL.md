@@ -4,7 +4,9 @@ description: Build capability taxonomy, map existing benchmark coverage
 execution: subagent
 prompt: ./prompt.md
 input: domain, existing_benchmarks
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Capability Taxonomy Mapping SOP
@@ -27,3 +29,15 @@ Build a hierarchical capability taxonomy for a domain and map existing benchmark
 ## Output
 
 Annotated taxonomy tree with coverage statistics and prioritized gaps.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

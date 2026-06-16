@@ -1,10 +1,13 @@
 ---
 name: pair-selector
-description: Select the next comparison pairs that maximize information gain given current ratings and comparison history.
+description: Select the next comparison pairs that maximize information gain given
+  current ratings and comparison history.
 execution: subagent
 prompt: ./prompt.md
 input: current_ratings(object), comparison_history(array)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Pair Selector
@@ -22,3 +25,15 @@ Pair selection requires reasoning about the full rating landscape and comparison
 ## HARD-GATE
 
 Output MUST contain at least one pair. Each pair must reference exactly two distinct candidates that exist in the current_ratings input.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

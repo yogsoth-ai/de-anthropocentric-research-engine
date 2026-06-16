@@ -1,8 +1,15 @@
 ---
 name: component-surgery
-description: Component-level surgical operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking (SIT).
+description: Component-level surgical operations (subtract/multiply/divide/unify/redirect)
+  from Systematic Inventive Thinking (SIT).
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - recombination-generation
+  - structural-synthesis
+  - surgery-operation
 ---
 
 # Component Surgery
@@ -46,3 +53,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Operate**: Apply surgery-operation SOP with selected operators
 4. **Verify**: Check that modified system retains core function
 5. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| surgery-operation | Execute component surgery operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking. |
+
+<!-- END available-tables (generated) -->

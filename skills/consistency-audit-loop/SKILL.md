@@ -1,8 +1,13 @@
 ---
 name: consistency-audit-loop
-description: Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met.
+description: Detect preference cycles, localize inconsistent judgments, request corrections,
+  and recompute ratings until consistency threshold is met.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - comparison-executor
+  - cycle-detection
+  - inconsistency-localization
 ---
 
 # Consistency Audit Loop
@@ -42,3 +47,17 @@ Loop stages 1-3 until consistency threshold met or repair budget exhausted.
 - List of all cycles found (before and after repair)
 - Repair log: which pairs were re-evaluated, old vs new judgment
 - Final consistency status: pass/fail with metrics
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
+| cycle-detection | Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics. |
+| inconsistency-localization | Identify which specific comparison pairs are most responsible for preference cycles and inconsistencies. |
+
+<!-- END available-tables (generated) -->

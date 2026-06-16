@@ -1,8 +1,15 @@
 ---
 name: dialectical-synthesis
-description: Hegelian thesis-antithesis-synthesis cycle — propose position, generate opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud and polarity-mapping SOPs.
+description: Hegelian thesis-antithesis-synthesis cycle — propose position, generate
+  opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud
+  and polarity-mapping SOPs.
 execution: tactic
-used-by: tension-mining
+dependencies:
+  sops:
+  - deep-insight-paper-search
+  - deep-insight-web-research
+  - evaporating-cloud
+  - polarity-mapping
 ---
 
 # Dialectical Synthesis
@@ -32,3 +39,18 @@ Model conflict as evaporating cloud (expose hidden assumptions behind opposing n
 - polarity maps (if applicable): >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| deep-insight-web-research | Deep web research with full page fetching via Apify. Import of web-browsing/web-research skill. Must fetch full page — no conclusions from previews. |
+| evaporating-cloud | Model conflicts as Goldratt's Evaporating Cloud — expose hidden assumptions behind opposing needs to dissolve the conflict. |
+| polarity-mapping | Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative of each pole), early warnings, action steps for managing rather than solving. |
+
+<!-- END available-tables (generated) -->

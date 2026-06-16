@@ -2,7 +2,15 @@
 name: emergent-property-hunting
 description: Seek properties that emerge from combination (non-additive)
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  tactics:
+  - blend-construction
+  - emergence-detection
+  sops:
+  - blend-elaboration
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - vital-relation-mapping
 ---
 
 # Emergent Property Hunting
@@ -49,3 +57,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Validate**: Confirm emergent properties are genuine (not just overlooked additive properties)
 6. **Characterize**: Describe the mechanism by which emergence occurs (interaction effects, threshold effects, structural effects)
 7. **Rank**: Prioritize emergent properties by novelty and utility
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| blend-elaboration | Run blend as mental simulation |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

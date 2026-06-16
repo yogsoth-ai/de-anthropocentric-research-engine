@@ -1,10 +1,13 @@
 ---
 name: feasibility-synthesis
-description: Synthesize all assessments into a feasibility matrix, recommendation, and risk summary.
+description: Synthesize all assessments into a feasibility matrix, recommendation,
+  and risk summary.
 execution: subagent
 prompt: ./prompt.md
 input: all_assessments
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Feasibility Synthesis
@@ -27,3 +30,15 @@ Final synthesis requires integrating diverse assessment types into a coherent wh
 ## HARD-GATE
 
 Output MUST include: feasibility matrix, clear recommendation (proceed/defer/abandon), and risk summary with top 3 risks. Reject if recommendation is not supported by the matrix data.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: confidence-calibration
-description: Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence.
+description: Calibrates confidence scores based on debate progression. Determines
+  whether to escalate, continue, or terminate based on cumulative evidence.
 execution: subagent
 prompt: ./prompt.md
 input: round_verdicts (string), confidence_history (string), budget_remaining (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Confidence Calibration
@@ -35,3 +38,15 @@ Calibration requires meta-analysis of debate trajectory without being anchored t
 ## Budget
 
 One unit = one calibration assessment per round.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

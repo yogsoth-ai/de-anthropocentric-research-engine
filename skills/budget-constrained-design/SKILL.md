@@ -1,14 +1,18 @@
 ---
 name: budget-constrained-design
-description: "Optimize experiment design under compute and time budget constraints"
+description: Optimize experiment design under compute and time budget constraints
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
+- factor-identification
+- level-specification
+- design-matrix-construction
+dependencies:
+  sops:
+  - design-matrix-construction
   - factor-identification
   - level-specification
-  - design-matrix-construction
 ---
 
 # Tactic: Budget-Constrained Design
@@ -48,3 +52,17 @@ orchestrates:
 - Is there a contingency plan if budget is cut mid-experiment?
 - Are early stopping criteria pre-defined (not post-hoc)?
 - Is the design balanced despite budget constraints?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
+| factor-identification | Identify independent, dependent, and control variables for an experiment |
+| level-specification | Determine appropriate levels for each experimental factor |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: factor-enumeration
-description: List all key factors, conditions, and assumptions that support or enable the artifact's conclusion.
+description: List all key factors, conditions, and assumptions that support or enable
+  the artifact's conclusion.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), causal_claims (list)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Factor Enumeration
@@ -33,3 +36,15 @@ Comprehensive factor enumeration requires systematic scanning without being bias
 ## Budget
 
 One unit = one enumeration pass per artifact.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: alternative-futures
-description: Generate 2-4 divergent scenarios from the same evidence base, each representing a plausible alternative to the artifact's conclusions.
+description: Generate 2-4 divergent scenarios from the same evidence base, each representing
+  a plausible alternative to the artifact's conclusions.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), evidence_base (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternative Futures
@@ -29,3 +32,15 @@ Alternative generation requires creative divergent thinking without anchoring on
 - **alternatives**: 2-4 divergent scenarios, each internally consistent
 - **discriminators**: Observable indicators that would distinguish between alternatives
 - **plausibility_ranking**: Relative plausibility of each alternative vs. the artifact's conclusion
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

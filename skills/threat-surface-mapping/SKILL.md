@@ -1,10 +1,13 @@
 ---
 name: threat-surface-mapping
-description: Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions.
+description: Enumerate all attackable surfaces of an artifact — logical, empirical,
+  methodological, social, and practical dimensions.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Threat Surface Mapping
@@ -29,3 +32,15 @@ Surface enumeration requires systematic coverage without bias toward obvious att
 - **surfaces**: List of threat surfaces with category, description, and attack accessibility rating
 - **coverage_map**: Matrix of dimensions covered vs. uncovered
 - **priority_ranking**: Surfaces ranked by expected vulnerability
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,7 +1,13 @@
 ---
 name: deliberative-calibration
-description: Strategy for small-N complete pairwise comparison using Bradley-Terry, Thurstone, AHP, and Borda methods to produce calibrated rankings.
-used-by: pairwise-ranking
+description: Strategy for small-N complete pairwise comparison using Bradley-Terry,
+  Thurstone, AHP, and Borda methods to produce calibrated rankings.
+dependencies:
+  tactics:
+  - adaptive-pair-selection
+  - consistency-audit-loop
+  sops:
+  - ranking-synthesis
 ---
 
 # Deliberative Calibration
@@ -71,3 +77,24 @@ consistency_ratio: 0.04
 total_comparisons: 28
 convergence_iterations: 3
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adaptive-pair-selection | Iteratively select maximally informative pairs, execute comparisons, update ratings, and check convergence until ranking stabilizes. |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+
+<!-- END available-tables (generated) -->

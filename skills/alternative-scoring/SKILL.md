@@ -1,10 +1,13 @@
 ---
 name: alternative-scoring
-description: Score each candidate alternative against all criteria to produce a score matrix.
+description: Score each candidate alternative against all criteria to produce a score
+  matrix.
 execution: subagent
 prompt: ./prompt.md
 input: candidates (string[]), criteria (string[]), weights (number[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Alternative Scoring
@@ -22,3 +25,15 @@ Scoring requires analyzing each alternative individually, involves significant w
 ## HARD-GATE
 
 Scoring matrix must have no empty values, each score must include a brief rationale (1 sentence), and quantitative criteria must use actual data.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

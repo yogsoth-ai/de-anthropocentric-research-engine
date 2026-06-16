@@ -1,8 +1,15 @@
 ---
 name: factorial-ideation
-description: "DOE thinking: identify factors, define levels, and explore combinations to systematically cover the design space."
+description: 'DOE thinking: identify factors, define levels, and explore combinations
+  to systematically cover the design space.'
 execution: strategy
-used-by: systematic-enumeration
+dependencies:
+  sops:
+  - coverage-gap-detection
+  - creative-ideation-factor-level-design
+  - enumeration-synthesis
+  tactics:
+  - gap-driven-generation
 ---
 
 # Factorial Ideation
@@ -48,3 +55,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Generate**: Propose solutions for high-priority unexplored combinations
 6. **Filter**: Apply evaluation-filtering to rank generated ideas
 7. **Synthesize**: Produce structured report via enumeration-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| gap-driven-generation | Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
+| creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+
+<!-- END available-tables (generated) -->

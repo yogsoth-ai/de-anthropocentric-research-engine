@@ -1,8 +1,13 @@
 ---
 name: life-principles-application
-description: "Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design."
+description: Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction
+  → evolution-mechanism-transfer → abstraction-to-design.
 execution: tactic
-used-by: biomimicry, ecosystem-pattern, evolution-strategy
+dependencies:
+  sops:
+  - abstraction-to-design
+  - ecosystem-pattern-extraction
+  - evolution-mechanism-transfer
 ---
 
 # Life Principles Application
@@ -42,3 +47,17 @@ Abstract extracted patterns and mechanisms into actionable design constraints us
 | emulation-generation | Post — generate solutions within constraints |
 | web-search | Support — search for life principles literature |
 | paper-overview | Support — find biomimicry principles research |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| ecosystem-pattern-extraction | Extract ecosystem-level organization patterns (symbiosis, emergence, cycles, resilience). |
+| evolution-mechanism-transfer | Map evolution mechanisms to design operations. Translate selection, mutation, drift, radiation into design operators. |
+
+<!-- END available-tables (generated) -->

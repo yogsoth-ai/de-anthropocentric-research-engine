@@ -1,8 +1,28 @@
 ---
 name: assumption-destruction
-description: Assumption Destruction Campaign — open new solution spaces by negating, reversing, and challenging fundamental assumptions.
+description: Assumption Destruction Campaign — open new solution spaces by negating,
+  reversing, and challenging fundamental assumptions.
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  strategies:
+  - anti-benchmark
+  - axiom-negation
+  - reverse-brainstorming
+  - sacred-cow-hunting
+  - worst-method-inversion
+  tactics:
+  - creative-ideation-assumption-enumeration
+  - creative-ideation-provocation-generation
+  - evaluation-filtering
+  - inversion-protocol
+  sops:
+  - context-checkpoint
+  - context-init
+  - creative-ideation-assumption-surfacing
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - idea-synthesis
+  - po-provocation
 ---
 
 # Assumption Destruction
@@ -103,3 +123,44 @@ Open new solution spaces by negating, reversing, and challenging fundamental ass
 | sacred-cow-identification | Find unquestioned beliefs |
 | constructive-rebellion | Build alternatives from negation |
 | destruction-synthesis | Final synthesis of all outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| anti-benchmark | Challenge industry best practices' hidden assumptions. Deconstruct benchmarks to reveal unexamined constraints. |
+| axiom-negation | Identify and suspend fundamental assumptions via de Bono PO. Systematically negate axioms to reveal hidden solution spaces. |
+| reverse-brainstorming | How to make it worse? → reverse for solutions. Generate anti-solutions then invert to discover novel approaches. |
+| sacred-cow-hunting | Find and challenge domain's unquestioned beliefs. Systematic identification and productive violation of dogma. |
+| worst-method-inversion | Design worst possible solution → extract insights → invert. Deliberate failure design as creative catalyst. |
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+| creative-ideation-provocation-generation | Generate PO provocations and extract constructive movement. Orchestrates assumption surfacing → provocation creation → movement extraction → idea formation. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+| inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| creative-ideation-assumption-surfacing | Enumerate implicit assumptions in a problem statement or existing solution. Produces categorized assumption inventory (physical, social, temporal, economic, technical). |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+| po-provocation | Generate PO (Provocative Operation) statements per de Bono's lateral thinking. Creates deliberately illogical provocations to escape dominant thinking patterns. |
+
+<!-- END available-tables (generated) -->

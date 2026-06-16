@@ -1,8 +1,23 @@
 ---
 name: structured-consensus
-description: Structured Consensus Campaign — converge multiple perspectives into shared agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA, Consensus Conference methods.
+description: Structured Consensus Campaign — converge multiple perspectives into shared
+  agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA,
+  Consensus Conference methods.
 execution: campaign
-used-by: convergence
+dependencies:
+  strategies:
+  - appropriateness-bounding
+  - argument-crystallization
+  - convergence-distillation
+  - disagreement-cartography
+  - futures-calibration
+  campaigns:
+  - convergence-multi-criteria-scoring
+  sops:
+  - context-checkpoint
+  - context-init
+  - convergence-multi-stakeholder-simulation
+  - convergence-saturation-detection
 ---
 
 # Structured Consensus
@@ -74,3 +89,38 @@ Converge multiple independent perspectives into shared agreement through iterati
 - Feedback reports summarize prior round without exposing individual identities
 - Final synthesis aggregates all rounds into a single consensus report
 - Non-consensus items are explicitly documented with dissent rationale
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| appropriateness-bounding | Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols. |
+| argument-crystallization | Distill the strongest arguments from each perspective through Argument Delphi or Dialectical Delphi methods. |
+| convergence-distillation | Iterative convergence to a single answer through Classic Delphi, Modified Delphi, or Nominal Group Technique rounds. |
+| disagreement-cartography | Map the structure of disagreement across perspectives using Policy Delphi, Argument Delphi, or SAST methods. |
+| futures-calibration | Aggregate probability judgments across perspectives using Real-Time Delphi or prediction market mechanisms. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| convergence-multi-stakeholder-simulation | Simulates diverse stakeholder perspectives and their strongest objections/support arguments. Shared across steel-manning and consensus campaigns. |
+| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
+
+## Available Campaigns
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Campaign | When to use |
+| --- | --- |
+| convergence-multi-criteria-scoring | Multi-Criteria Scoring Campaign — evaluate and rank candidates against multiple weighted criteria using AHP, BWM, TOPSIS, VIKOR, ELECTRE, PROMETHEE, MAUT methods. |
+
+<!-- END available-tables (generated) -->

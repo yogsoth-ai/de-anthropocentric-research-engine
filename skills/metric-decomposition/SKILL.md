@@ -1,10 +1,13 @@
 ---
 name: metric-decomposition
-description: Decompose composite metrics into constituent signals, analyze polarity and ceiling effects
+description: Decompose composite metrics into constituent signals, analyze polarity
+  and ceiling effects
 execution: subagent
 prompt: ./prompt.md
 input: metric_name, metric_definition, score_distribution
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Metric Decomposition SOP
@@ -28,3 +31,15 @@ Decompose a benchmark's evaluation metric into its constituent signals to unders
 ## Output
 
 Structured decomposition showing constituent signals, their weights, ceiling effects, and known pathologies.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

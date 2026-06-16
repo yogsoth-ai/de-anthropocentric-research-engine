@@ -1,8 +1,13 @@
 ---
 name: evidence-synthesis-planning
-description: Plan the statistical synthesis approach — model selection, heterogeneity strategy, and reporting
+description: Plan the statistical synthesis approach — model selection, heterogeneity
+  strategy, and reporting
 execution: tactic
-used-by: meta-analysis
+dependencies:
+  sops:
+  - effect-size-planning
+  - heterogeneity-source-analysis
+  - sensitivity-analysis-design
 ---
 
 # Evidence Synthesis Planning Tactic
@@ -111,3 +116,17 @@ synthesis_plan:
     registration: [PROSPERO ID or plan]
     grade_domains: [risk_of_bias, inconsistency, indirectness, imprecision, publication_bias]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |
+| heterogeneity-source-analysis | Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical) |
+| sensitivity-analysis-design | Design leave-one-out, influence diagnostics, subgroup analyses, and robustness checks |
+
+<!-- END available-tables (generated) -->

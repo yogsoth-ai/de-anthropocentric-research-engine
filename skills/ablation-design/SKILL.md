@@ -1,16 +1,23 @@
 ---
 name: ablation-design
-description: "Design ablation studies to isolate component contributions in ML systems"
+description: Design ablation studies to isolate component contributions in ML systems
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- ablation-component-mapping
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+tactics:
+- statistical-method-selection
+dependencies:
+  sops:
   - ablation-component-mapping
   - baseline-selection
   - metric-specification
   - sample-size-estimation
-tactics:
+  tactics:
   - statistical-method-selection
 ---
 
@@ -42,3 +49,26 @@ tactics:
 | Combinatorial (selected) | 4-6 | ~2N | Suspected interactions between components |
 | Combinatorial (full) | 3-4 | 2^N | Small systems, need complete picture |
 | Conditional | 3-6 | N * conditions | Context-dependent contributions |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ablation-component-mapping | Map system architecture to ablatable units for ablation studies |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: flip-point-detection
-description: Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false.
+description: Find the minimal change magnitude along a dimension that causes the conclusion
+  to flip from true to false.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), dimension (string), conclusion (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Flip-Point Detection
@@ -35,3 +38,15 @@ Flip-point detection requires iterative reasoning about graduated changes, best 
 ## Budget
 
 One unit = one binary search per dimension.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

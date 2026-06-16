@@ -1,7 +1,15 @@
 ---
 name: gap-validation
-description: Validate gap authenticity via cross-database verification, temporal sensitivity testing, and false-gap filtering. Ensures gaps are genuine absences, not search artifacts.
-used-by: gap-analysis
+description: Validate gap authenticity via cross-database verification, temporal sensitivity
+  testing, and false-gap filtering. Ensures gaps are genuine absences, not search
+  artifacts.
+dependencies:
+  tactics:
+  - cross-validation
+  sops:
+  - cross-database-verification
+  - false-gap-filtering
+  - temporal-sensitivity-testing
 ---
 
 # Gap Validation
@@ -55,3 +63,25 @@ For each classified gap: verify across multiple databases (Semantic Scholar, Goo
 ## Output Format
 
 Validated Gap List — each gap with: validation status (confirmed/partial/refuted), cross-database results, temporal trend, false-gap assessment.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| cross-validation | Multi-source cross-validation of gap authenticity — cross-database search, temporal sensitivity testing, false-gap filtering, stakeholder confirmation. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| cross-database-verification | Verify gap existence across multiple databases (Semantic Scholar, Google Scholar, arXiv, domain-specific). Distinguishes database-specific gaps from universal gaps. |
+| false-gap-filtering | Detect false gaps — search failures, already-solved gaps, and inherently unanswerable questions masquerading as research gaps. |
+| temporal-sensitivity-testing | Test whether a gap persists across different time windows (2/5/10 years). Determines if gap is narrowing, widening, or stable over time. |
+
+<!-- END available-tables (generated) -->

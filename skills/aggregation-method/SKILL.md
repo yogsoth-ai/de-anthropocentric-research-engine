@@ -1,10 +1,13 @@
 ---
 name: aggregation-method
-description: Aggregate multiple ranking ballots into a consensus ranking using a specified social choice method.
+description: Aggregate multiple ranking ballots into a consensus ranking using a specified
+  social choice method.
 execution: subagent
 prompt: ./prompt.md
 input: ballots(array), method(string)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Aggregation Method
@@ -22,3 +25,15 @@ Aggregation algorithms (especially Kemeny-Young) involve combinatorial computati
 ## HARD-GATE
 
 Output MUST produce a complete ranking of all candidates. The method field MUST match the input method. If a Condorcet winner exists, it MUST be ranked first (for Condorcet-consistent methods).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

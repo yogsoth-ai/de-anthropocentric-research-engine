@@ -1,7 +1,12 @@
 ---
 name: convergence-distillation
-description: Iterative convergence to a single answer through Classic Delphi, Modified Delphi, or Nominal Group Technique rounds.
-used-by: structured-consensus
+description: Iterative convergence to a single answer through Classic Delphi, Modified
+  Delphi, or Nominal Group Technique rounds.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  sops:
+  - consensus-synthesis
 ---
 
 # Convergence Distillation
@@ -61,3 +66,23 @@ consensus_score: <float>
 rounds_completed: <int>
 dissent_record: <items that did not converge>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

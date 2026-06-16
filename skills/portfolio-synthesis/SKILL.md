@@ -1,10 +1,13 @@
 ---
 name: portfolio-synthesis
-description: Synthesize all per-scenario evaluations into a final portfolio recommendation with robustness score and actionable guidance.
+description: Synthesize all per-scenario evaluations into a final portfolio recommendation
+  with robustness score and actionable guidance.
 execution: subagent
 prompt: ./prompt.md
 input: all_evaluations
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Portfolio Synthesis
@@ -22,3 +25,15 @@ Synthesis requires integrating multiple scenario evaluations, identifying patter
 ## HARD-GATE
 
 Output must include a final portfolio recommendation, numeric robustness score (0-1), and specific actionable recommendations. The synthesis must reference findings from all evaluated scenarios.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

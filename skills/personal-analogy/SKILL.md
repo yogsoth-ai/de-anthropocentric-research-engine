@@ -1,8 +1,13 @@
 ---
 name: personal-analogy
-description: Empathic identification — become the system/component. First-person embodiment to discover hidden constraints and opportunities.
+description: Empathic identification — become the system/component. First-person embodiment
+  to discover hidden constraints and opportunities.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - personal-identification
+  - springboard-launch
+  - synectics-synthesis
 ---
 
 # Personal Analogy
@@ -45,3 +50,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Discover**: Identify constraints and desires invisible from outside
 5. **Extract**: Convert embodiment insights into design principles
 6. **Iterate**: Embody different components for multiple perspectives
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| personal-identification | First-person empathic identification with a system or component. Produces experience description and design insights from embodiment. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

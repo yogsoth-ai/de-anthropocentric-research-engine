@@ -1,7 +1,14 @@
 ---
 name: comparative-feasibility-ranking
-description: Compare feasibility across multiple candidates using multi-dimensional radar and weighted feasibility index.
-used-by: feasibility-assessment
+description: Compare feasibility across multiple candidates using multi-dimensional
+  radar and weighted feasibility index.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
+  - staged-gate-evaluation
+  sops:
+  - feasibility-synthesis
+  - radar-synthesis
 ---
 
 # Comparative Feasibility Ranking
@@ -66,3 +73,25 @@ comparative_ranking:
   recommendation: <top candidate(s) with rationale>
   caveats: [...]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+| staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+| radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |
+
+<!-- END available-tables (generated) -->

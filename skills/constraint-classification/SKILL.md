@@ -4,7 +4,9 @@ description: Classify constraints into hard constraints, soft constraints, and a
 execution: subagent
 prompt: ./prompt.md
 input: constraints[]
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Constraint Classification
@@ -27,3 +29,15 @@ Classification requires careful judgment about what is truly immovable vs. what 
 ## HARD-GATE
 
 Output MUST include: all input constraints classified, at least one constraint in each category (hard/soft/assumption), and justification for each classification. Reject if any input constraint is missing from output.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

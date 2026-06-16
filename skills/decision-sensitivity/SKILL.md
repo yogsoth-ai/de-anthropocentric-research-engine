@@ -1,7 +1,11 @@
 ---
 name: decision-sensitivity
-description: Identify which uncertainties would actually change the research direction decision. Compute EVPI to prioritize uncertainty reduction.
-used-by: sensitivity-analysis
+description: Identify which uncertainties would actually change the research direction
+  decision. Compute EVPI to prioritize uncertainty reduction.
+dependencies:
+  sops:
+  - critical-path-identification
+  - sensitivity-synthesis
 ---
 
 # Decision Sensitivity
@@ -41,3 +45,16 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Identify which uncertainties would actually change the research direction decision. Compute Expected Value of Perfect Information (EVPI) for each uncertain parameter. Focus resources on reducing uncertainty with highest EVPI.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| critical-path-identification | Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization. |
+| sensitivity-synthesis | Synthesize all sensitivity analysis results into a coherent report with prioritized recommendations. |
+
+<!-- END available-tables (generated) -->

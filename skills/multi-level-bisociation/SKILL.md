@@ -2,7 +2,16 @@
 name: multi-level-bisociation
 description: Simultaneous concept collision at multiple abstraction levels
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - abstraction-ladder
+  - blend-composition
+  - combinatorial-synthesis
+  - generic-space-extraction
+  - vital-relation-mapping
+  tactics:
+  - blend-construction
+  - emergence-detection
 ---
 
 # Multi-Level Bisociation
@@ -49,3 +58,28 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Map Cross-Level Effects**: Identify how collision at one level creates opportunities at another
 5. **Extract Insights**: Derive novel mechanisms from the multi-level collision pattern
 6. **Validate Depth**: Confirm insights are structural, not surface-level puns
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-ladder | Perform bisociation at multiple abstraction levels |
+| blend-composition | Compose new connections in blended space |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| generic-space-extraction | Extract shared abstract structure from two input spaces |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

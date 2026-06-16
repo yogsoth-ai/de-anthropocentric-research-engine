@@ -1,13 +1,17 @@
 ---
 name: strategy-robustness-testing
-description: "Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios"
+description: Orchestrates impact assessment and robustness scoring to evaluate research
+  approach resilience across scenarios
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: scenario-planning
 orchestrates:
-  - scenario-impact-assessment
+- scenario-impact-assessment
+- robustness-scoring
+dependencies:
+  sops:
   - robustness-scoring
+  - scenario-impact-assessment
 ---
 
 # Tactic: Strategy Robustness Testing
@@ -51,3 +55,16 @@ orchestrates:
 - [ ] Pivot triggers are observable and measurable
 - [ ] Contingency actions are specific and feasible
 - [ ] Results distinguish between "adapt" and "abandon" thresholds
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+
+<!-- END available-tables (generated) -->

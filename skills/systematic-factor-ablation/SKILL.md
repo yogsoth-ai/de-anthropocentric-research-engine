@@ -1,9 +1,18 @@
 ---
 name: systematic-factor-ablation
-description: "Tactic: List all factors, remove one at a time, assess conclusion stability, rank factors by load-bearing importance."
+description: 'Tactic: List all factors, remove one at a time, assess conclusion stability,
+  rank factors by load-bearing importance.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [factor-removal, structural-counterfactual, necessity-sufficiency]
+strategies:
+- factor-removal
+- structural-counterfactual
+- necessity-sufficiency
+dependencies:
+  sops:
+  - factor-enumeration
+  - fragility-measurement
+  - load-bearing-identification
+  - single-factor-removal
 ---
 
 # Systematic Factor Ablation Tactic
@@ -38,3 +47,18 @@ Ablation methodology: remove factors individually and measure conclusion degrada
 - All factors within budget tested
 - Early termination if first load-bearing factor found and budget is S
 - Saturation: consecutive factors all score below 0.2
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| single-factor-removal | Remove one specified factor from the artifact's support structure and reason about how the conclusion changes. |
+
+<!-- END available-tables (generated) -->

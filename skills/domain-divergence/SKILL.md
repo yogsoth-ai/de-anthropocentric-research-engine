@@ -1,8 +1,13 @@
 ---
 name: domain-divergence
-description: Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential.
+description: Scan and select maximally diverse source domains. Ensures creative search
+  covers genuinely unrelated fields with high transfer potential.
 execution: tactic
-used-by: cross-domain-discovery, facet-bisociation, analogical-transfer, random-stimulus-entry, forced-bridge-construction, design-by-analogy
+dependencies:
+  sops:
+  - abstraction-extraction
+  - analogy-quality-assessment
+  - random-paper-entry
 ---
 
 # Domain Divergence
@@ -48,3 +53,17 @@ Assess the collected domains for genuine diversity:
 | random-word-stimulus | Stage 3 — random word as domain pointer |
 | abstraction-extraction | Stage 4 — verify transfer potential via abstraction |
 | analogy-quality-assessment | Stage 4 — assess structural similarity depth |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |
+| random-paper-entry | Select random paper facet as creative stimulus. Uses genuine randomness in paper selection to break domain fixation. |
+
+<!-- END available-tables (generated) -->

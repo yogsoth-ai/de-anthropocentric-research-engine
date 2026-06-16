@@ -1,10 +1,13 @@
 ---
 name: sufficiency-evaluation
-description: Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion?
+description: Evaluate the probability of sufficiency (PS) for a causal factor — would
+  this factor alone be enough to produce the conclusion?
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), factor (string), conclusion (string)
-used-by: [counterfactual-probing]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Sufficiency Evaluation
@@ -35,3 +38,15 @@ Sufficiency evaluation requires reasoning about isolated factor power, separate 
 ## Budget
 
 One unit = one sufficiency evaluation per factor.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

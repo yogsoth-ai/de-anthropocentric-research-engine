@@ -1,8 +1,13 @@
 ---
 name: contradiction-identification
-description: Identify technical and physical contradictions in a system through functional modeling and matrix analysis.
+description: Identify technical and physical contradictions in a system through functional
+  modeling and matrix analysis.
 execution: tactic
-used-by: structural-deconstruction, triz-contradiction-resolution
+dependencies:
+  sops:
+  - contradiction-matrix-lookup
+  - function-model-construction
+  - separation-principle
 ---
 
 # Contradiction Identification
@@ -40,3 +45,17 @@ For physical contradictions (same parameter must be both X and not-X), identify 
 | contradiction-matrix-lookup | Stage 2 — query matrix for principles |
 | separation-principle | Stage 3 — resolve physical contradictions |
 | triz-principle-application | Post — apply selected principles |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| contradiction-matrix-lookup | Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction. |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| separation-principle | Apply time/space/condition/scale separation to resolve physical contradictions where the same parameter must satisfy opposing requirements. |
+
+<!-- END available-tables (generated) -->

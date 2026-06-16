@@ -1,9 +1,21 @@
 ---
 name: alternative-analysis
-description: "Strategy: What-If Analysis, Alternative Futures, and Four Ways of Seeing — generate competing explanations and scenarios to challenge the dominant narrative."
+description: 'Strategy: What-If Analysis, Alternative Futures, and Four Ways of Seeing
+  — generate competing explanations and scenarios to challenge the dominant narrative.'
 type: strategy
-used-by: [red-teaming]
-tactics: [structured-attack-campaign, adversarial-roleplay]
+tactics:
+- structured-attack-campaign
+- adversarial-roleplay
+dependencies:
+  tactics:
+  - adversarial-roleplay
+  - structured-attack-campaign
+  sops:
+  - alternative-futures
+  - attack-vector-generation
+  - finding-aggregation
+  - probe-execution
+  - threat-surface-mapping
 ---
 
 # Alternative Analysis Strategy
@@ -46,3 +58,28 @@ threat-surface-mapping → [identify variable dimensions]
 - attack-vector-generation (discriminating test design)
 - probe-execution (alternative testing)
 - finding-aggregation (comparative synthesis)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adversarial-roleplay | Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation. |
+| structured-attack-campaign | Tactic: Full attack lifecycle — threat surface enumeration, attack vector generation, systematic probing, and finding aggregation across all surfaces. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternative-futures | Generate 2-4 divergent scenarios from the same evidence base, each representing a plausible alternative to the artifact's conclusions. |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+| threat-surface-mapping | Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,9 @@
-﻿---
+---
 name: baseline-synthesis
 description: Produce final structured baseline report integrating all analysis results
 execution: subagent
 prompt: ./prompt.md
 input: all_analysis_results
-used-by: baseline-establishment
 ---
 
 # Baseline Synthesis

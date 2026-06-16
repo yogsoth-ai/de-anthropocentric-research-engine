@@ -1,7 +1,12 @@
-﻿---
+---
 name: method-inventory
-description: Comprehensively identify all relevant methods for a task — 50 methods, 60 web searches budget
-used-by: baseline-establishment
+description: Comprehensively identify all relevant methods for a task — 50 methods,
+  60 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - method-discovery
 ---
 
 # Method Inventory
@@ -80,3 +85,23 @@ Cannot exit until methods_discovered >= 40 (80% of target).
   }
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| method-discovery | Identify all relevant methods via literature, leaderboards, citation chains |
+
+<!-- END available-tables (generated) -->

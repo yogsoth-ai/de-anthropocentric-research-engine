@@ -1,8 +1,14 @@
 ---
 name: pareto-frontier-construction
-description: Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions.
+description: Build the Pareto frontier from multi-objective optimization, visualize
+  trade-offs, and select a portfolio from non-dominated solutions.
 execution: tactic
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - objective-definition
+  - optimization-run
+  - pareto-visualization
+  - selection-from-frontier
 ---
 
 # Pareto Frontier Construction
@@ -39,3 +45,18 @@ Systematically construct the set of non-dominated solutions across multiple obje
 - Pareto front with >=5 non-dominated points
 - Trade-off visualization showing objective tensions
 - Selected portfolio with explicit justification referencing frontier position
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+| optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
+| pareto-visualization | Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation. |
+| selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
+
+<!-- END available-tables (generated) -->

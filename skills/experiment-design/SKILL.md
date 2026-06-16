@@ -1,19 +1,41 @@
 ---
 name: experiment-design
-description: "Transform validated hypotheses into rigorous, executable experiment designs"
+description: Transform validated hypotheses into rigorous, executable experiment designs
 version: 1.0.0
 category: experiment-execution
 type: campaign
 strategies:
-  - factor-level-design
+- factor-level-design
+- ablation-design
+- comparison-design
+- scaling-design
+- robustness-design
+tactics:
+- statistical-method-selection
+- reproducibility-protocol
+- budget-constrained-design
+dependencies:
+  strategies:
   - ablation-design
   - comparison-design
-  - scaling-design
+  - experiment-execution-factor-level-design
   - robustness-design
-tactics:
-  - statistical-method-selection
-  - reproducibility-protocol
+  - scaling-design
+  tactics:
   - budget-constrained-design
+  - reproducibility-protocol
+  - statistical-method-selection
+  sops:
+  - context-checkpoint
+  - context-init
+  - design-synthesis
+  - experiment-execution-paper-overview
+  - experiment-execution-paper-research
+  - experiment-execution-paper-search
+  - experiment-execution-quality-gate-check
+  - experiment-execution-saturation-detection
+  - experiment-execution-web-research
+  - experiment-execution-web-search
 ---
 
 # Campaign: Experiment Design
@@ -77,3 +99,46 @@ Every campaign invocation must produce at minimum:
 - Metric specification with significance threshold
 - Seed protocol
 - Estimated total compute cost
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| ablation-design | Design ablation studies to isolate component contributions in ML systems |
+| comparison-design | Design fair comparison experiments against baselines and competing methods |
+| experiment-execution-factor-level-design | Design factorial experiments to test how specific factors affect outcomes |
+| robustness-design | Design experiments to identify failure boundaries and robustness limits |
+| scaling-design | Design scaling experiments to characterize performance-resource relationships |
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| budget-constrained-design | Optimize experiment design under compute and time budget constraints |
+| reproducibility-protocol | Ensure experiment reproducibility through systematic environment and seed control |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| design-synthesis | SOP: synthesize complete experiment design report |
+| experiment-execution-paper-overview | Import SOP: paper landscape scan (from literature-engine skill) |
+| experiment-execution-paper-research | Import SOP: paper full-text reading (from literature-engine skill) |
+| experiment-execution-paper-search | Import SOP: paper AI summary reading (from literature-engine skill) |
+| experiment-execution-quality-gate-check | Shared SOP: verify quality gate criteria are met before proceeding |
+| experiment-execution-saturation-detection | Shared SOP: detect information saturation — know when to stop searching/analyzing |
+| experiment-execution-web-research | Import SOP: deep full-page content analysis (from web-browsing skill) |
+| experiment-execution-web-search | Import SOP: quick web scan discovery (from web-browsing skill) |
+
+<!-- END available-tables (generated) -->

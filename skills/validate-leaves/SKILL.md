@@ -1,9 +1,14 @@
 ---
 name: validate-leaves
-description: Quality check on leaf nodes of the GoalTree. Verify each leaf is specific enough, actionable, and that the set of leaves fully covers the top goal. Flag issues for further decomposition.
+description: Quality check on leaf nodes of the GoalTree. Verify each leaf is specific
+  enough, actionable, and that the set of leaves fully covers the top goal. Flag issues
+  for further decomposition.
 execution: subagent
 prompt: ./prompt.md
 input: goal_tree (string), top_goal (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Validate Leaves
@@ -28,3 +33,15 @@ Subagent — spawned via `subagent-spawning/spawn-agent` skill.
 ## Output
 
 Validation report — which leaves pass, which need further decomposition, coverage gaps.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

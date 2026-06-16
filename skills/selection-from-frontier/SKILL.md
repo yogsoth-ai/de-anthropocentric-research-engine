@@ -1,10 +1,13 @@
 ---
 name: selection-from-frontier
-description: Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria.
+description: Select the final portfolio from the Pareto front by applying stakeholder
+  preferences and decision criteria.
 execution: subagent
 prompt: ./prompt.md
 input: pareto_front, preferences
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Selection from Frontier
@@ -22,3 +25,15 @@ Selection requires integrating quantitative frontier data with qualitative prefe
 ## HARD-GATE
 
 Output must include the selected portfolio, explicit justification referencing frontier position, and at least one noted alternative with explanation of what would be gained/lost by choosing it instead.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

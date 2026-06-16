@@ -1,8 +1,14 @@
 ---
 name: gap-driven-generation
-description: Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments.
+description: Generate solutions targeting specific coverage gaps — detect gaps, generate
+  failure-driven solutions, and design factor-level experiments.
 execution: tactic
-used-by: systematic-enumeration, failure-taxonomy, factorial-ideation
+dependencies:
+  sops:
+  - coverage-gap-detection
+  - creative-ideation-factor-level-design
+  - creative-ideation-failure-mode-cataloging
+  - failure-driven-generation
 ---
 
 # Gap-Driven Generation
@@ -40,3 +46,18 @@ Run factor-level-design SOP to identify key factors in the gap space, define lev
 | coverage-gap-detection | Stage 1 — detect uncovered regions |
 | failure-driven-generation | Stage 2 — generate targeted solutions |
 | factor-level-design | Stage 3 — factorial experiment design |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
+| creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |
+| creative-ideation-failure-mode-cataloging | Systematically catalog all failure modes in a domain or method, producing a classified failure taxonomy. |
+| failure-driven-generation | Generate targeted solutions for each identified failure mode, ensuring every failure has at least one proposed mitigation. |
+
+<!-- END available-tables (generated) -->

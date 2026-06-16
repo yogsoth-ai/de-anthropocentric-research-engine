@@ -1,8 +1,17 @@
 ---
 name: biotriz-resolution
-description: "BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve technical contradictions using biological inventive principles."
+description: 'BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve
+  technical contradictions using biological inventive principles.'
 execution: strategy
-used-by: biomimicry
+dependencies:
+  sops:
+  - abstraction-to-design
+  - biological-strategy-extraction
+  - biomimicry-synthesis
+  - biotriz-principle-selection
+  - emulation-generation
+  tactics:
+  - biological-function-mapping
 ---
 
 # BioTRIZ Resolution
@@ -48,3 +57,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Extract strategies**: Use biological-strategy-extraction on champion organisms
 5. **Abstract**: Use abstraction-to-design to create design principles
 6. **Generate solutions**: Use emulation-generation for technical implementations
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| biological-function-mapping | Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
+| biological-strategy-extraction | Extract strategy principles from organisms. Identify mechanism-level details of how biological systems achieve their function. |
+| biomimicry-synthesis | Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions. |
+| biotriz-principle-selection | Select applicable BioTRIZ principles for a given contradiction. Map to biological cases. |
+| emulation-generation | Generate technical solutions emulating biological strategies. Bridge from design principle to concrete implementation. |
+
+<!-- END available-tables (generated) -->

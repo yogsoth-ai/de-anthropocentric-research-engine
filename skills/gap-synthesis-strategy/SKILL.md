@@ -1,7 +1,12 @@
 ---
 name: gap-synthesis-strategy
-description: Compile all gap analysis products into a coherent final report with evidence gap maps, research agenda, and concept matrices.
-used-by: gap-analysis
+description: Compile all gap analysis products into a coherent final report with evidence
+  gap maps, research agenda, and concept matrices.
+dependencies:
+  sops:
+  - egm-construction
+  - evidence-synthesis
+  - gap-synthesis
 ---
 
 # Gap Synthesis
@@ -52,3 +57,17 @@ Compile all intermediate products (gap candidates, classifications, validations,
 ## Output Format
 
 Gap Analysis Report — executive summary, evidence gap map, classified gap inventory, prioritized research agenda, methodology notes.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| egm-construction | Build structured Evidence Gap Maps — define axes (intervention × outcome or method × domain), place gaps in cells, annotate with evidence density and quality. |
+| evidence-synthesis | Synthesize multi-source evidence into structured argumentation. Weaves findings from literature, web, and analysis into coherent evidence maps with explicit strength ratings. |
+| gap-synthesis | Compile all gap analysis intermediate products into a coherent final report with executive summary, detailed findings, and research agenda. |
+
+<!-- END available-tables (generated) -->

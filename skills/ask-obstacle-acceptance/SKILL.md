@@ -1,6 +1,8 @@
 ---
 name: ask-obstacle-acceptance
-description: Present obstacles with their severity assessments and proposed mitigations to the user. Ask whether they can accept these obstacles. If unacceptable after 2 rounds, return to present-candidates.
+description: Present obstacles with their severity assessments and proposed mitigations
+  to the user. Ask whether they can accept these obstacles. If unacceptable after
+  2 rounds, return to present-candidates.
 execution: dialogue
 ---
 

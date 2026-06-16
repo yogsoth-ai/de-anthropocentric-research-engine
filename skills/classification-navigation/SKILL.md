@@ -2,7 +2,11 @@
 name: classification-navigation
 description: IPC/CPC hierarchy drill-down and lateral expansion for patent discovery
 execution: tactic
-used-by: patent-mining
+dependencies:
+  sops:
+  - knowledge-acquisition-saturation-detection
+  - patent-categorization
+  - patent-query-formulation
 ---
 
 # Classification Navigation
@@ -54,3 +58,17 @@ Report to calling strategy after each execution:
 - New relevant codes discovered
 - Patent count per classification code
 - Coverage assessment (% of relevant classification space explored)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+
+<!-- END available-tables (generated) -->

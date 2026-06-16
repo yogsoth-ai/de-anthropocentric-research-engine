@@ -1,8 +1,15 @@
 ---
 name: multi-worldview-comparison
-description: Multi-worldview comparison — CATWOE from multiple perspectives, reframing matrix across professional lenses, identify overlooked framings. Reveals what single-perspective analysis misses.
+description: Multi-worldview comparison — CATWOE from multiple perspectives, reframing
+  matrix across professional lenses, identify overlooked framings. Reveals what single-perspective
+  analysis misses.
 execution: tactic
-used-by: multi-perspective-reframing
+dependencies:
+  sops:
+  - appreciative-discovery
+  - catwoe-analysis
+  - deep-insight-multi-stakeholder-simulation
+  - reframing-matrix
 ---
 
 # Multi-Worldview Comparison
@@ -34,3 +41,18 @@ Key insight: the problem looks fundamentally different from each perspective. Th
 - Synthesis of cross-perspective insights: >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| appreciative-discovery | Search for positive deviants and extract transferable principles using Appreciative Inquiry. |
+| catwoe-analysis | Apply Checkland's CATWOE analysis from a specific stakeholder perspective to reveal how the problem looks from that viewpoint. |
+| deep-insight-multi-stakeholder-simulation | Simulate multiple stakeholder perspectives evaluating a research gap, method, or proposal. Identifies blind spots from single-perspective analysis. |
+| reframing-matrix | Reframe the problem from 4 professional perspectives to reveal what each discipline would focus on. |
+
+<!-- END available-tables (generated) -->

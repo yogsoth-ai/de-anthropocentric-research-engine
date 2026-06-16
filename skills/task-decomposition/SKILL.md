@@ -1,11 +1,17 @@
 ---
 name: task-decomposition
-description: "Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan"
+description: Orchestrate the breakdown of experiment design into sequenced, estimated,
+  and formatted task plan
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- activity-listing
+- dependency-sequencing
+- duration-estimation
+- plan-formatting
+dependencies:
+  sops:
   - activity-listing
   - dependency-sequencing
   - duration-estimation
@@ -56,3 +62,18 @@ END
 - If dependency-sequencing finds cycles: present cycle to user, ask for resolution
 - If duration-estimation lacks data: use conservative estimates (pessimistic × 1.5)
 - If plan-formatting produces placeholders: iterate with specific missing information
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| activity-listing | Enumerate all implementation activities from an experiment design |
+| dependency-sequencing | Determine task dependencies and execution order |
+| duration-estimation | Three-point PERT estimation for implementation activities |
+| plan-formatting | Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: method-sensitivity-report
-description: Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives.
+description: Analyze how the choice of MCDA method affects final rankings and identify
+  method-sensitive alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: rankings (object[]), methods (string[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Method Sensitivity Report
@@ -22,3 +25,15 @@ Sensitivity analysis requires deep understanding of theoretical differences and 
 ## HARD-GATE
 
 Report must clearly distinguish "method-independent conclusions" from "method-dependent conclusions", and provide specific recommendations for each method-dependent conclusion.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

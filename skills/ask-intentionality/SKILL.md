@@ -1,6 +1,9 @@
 ---
 name: ask-intentionality
-description: Deep WHY probing inspired by i* Intentionality modeling. Understand the user's motivation, success definition, risk tolerance, innovation preference, independence preference, time urgency, and learning willingness. The most important SOP in actor-profiling — understanding WHY drives everything downstream.
+description: Deep WHY probing inspired by i* Intentionality modeling. Understand the
+  user's motivation, success definition, risk tolerance, innovation preference, independence
+  preference, time urgency, and learning willingness. The most important SOP in actor-profiling
+  — understanding WHY drives everything downstream.
 execution: dialogue
 ---
 

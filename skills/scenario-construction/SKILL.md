@@ -1,10 +1,13 @@
 ---
 name: scenario-construction
-description: Construct distinct future scenarios spanning key uncertainties for portfolio stress testing.
+description: Construct distinct future scenarios spanning key uncertainties for portfolio
+  stress testing.
 execution: subagent
 prompt: ./prompt.md
 input: context, uncertainties
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Scenario Construction
@@ -22,3 +25,15 @@ Scenario construction requires creative yet disciplined thinking to produce scen
 ## HARD-GATE
 
 Output must contain at least 3 distinct scenarios that span different combinations of key uncertainties. Each scenario must include a narrative, key assumptions, and probability estimate.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

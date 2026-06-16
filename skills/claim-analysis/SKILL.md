@@ -1,8 +1,21 @@
 ---
 name: claim-analysis
-description: Deep claim scope analysis — decompose independent/dependent claims and assess protection scope breadth. Budget: 30 patent families, 30 claim parses, 20 web searches.
+description: 'Deep claim scope analysis — decompose independent/dependent claims and
+  assess protection scope breadth. Budget: 30 patent families, 30 claim parses, 20
+  web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - citation-network-analysis
+  - claim-parsing
+  - legal-status-assessment
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
 ---
 
 # Claim Analysis
@@ -98,3 +111,30 @@ Provide detailed claim-level analysis for a set of target patents. Determines pr
 ## Cross-Jurisdiction Comparison
 [Claim scope differences across patent family members]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
+| knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |
+| claim-parsing | Patent claim syntax parsing — independent/dependent relationships and element extraction |
+| legal-status-assessment | Determine patent legal status — active, expired, pending, lapsed, or revoked |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+| patent-synthesis | Produce final structured patent intelligence report from all analysis results |
+| quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
+
+<!-- END available-tables (generated) -->

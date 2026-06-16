@@ -1,10 +1,13 @@
 ---
 name: devils-advocacy
-description: Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking.
+description: Construct the strongest possible counter-argument against a position,
+  steelmanning the opposition before attacking.
 execution: subagent
 prompt: ./prompt.md
 input: position (string), context (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Devil's Advocacy
@@ -30,3 +33,15 @@ Devil's advocacy requires full commitment to the opposing position. The agent mu
 - **evidence**: Supporting evidence for the counter-argument
 - **confidence**: How strong the counter-argument actually is (0.0-1.0)
 - **fatal_if_true**: Whether the counter-argument would be fatal to the artifact
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

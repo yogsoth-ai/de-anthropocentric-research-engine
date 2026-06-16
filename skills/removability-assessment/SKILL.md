@@ -1,10 +1,13 @@
 ---
 name: removability-assessment
-description: Assess how removable a constraint is with effort estimate and dependency analysis.
+description: Assess how removable a constraint is with effort estimate and dependency
+  analysis.
 execution: subagent
 prompt: ./prompt.md
 input: constraint
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Removability Assessment
@@ -27,3 +30,15 @@ Removability assessment requires focused analysis of a single constraint's chara
 ## HARD-GATE
 
 Output MUST include: removability score (0.0-1.0), effort estimate, and at least 1 dependency identified. Reject if score is provided without supporting rationale.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

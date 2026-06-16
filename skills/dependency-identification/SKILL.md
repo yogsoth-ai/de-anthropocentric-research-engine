@@ -1,10 +1,13 @@
 ---
 name: dependency-identification
-description: Identify critical dependencies from ablation results, producing a dependency graph and highlighting critical components.
+description: Identify critical dependencies from ablation results, producing a dependency
+  graph and highlighting critical components.
 execution: subagent
 prompt: ./prompt.md
 input: ablation_results (object)
-used-by: ablation-brainstorm
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dependency Identification
@@ -18,3 +21,15 @@ Subagent — spawned via subagent-spawning/spawn-agent skill.
 ## Why Subagent
 
 Dependency analysis requires synthesizing ablation data into graph structures and identifying non-obvious transitive dependencies. Benefits from focused analytical context.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

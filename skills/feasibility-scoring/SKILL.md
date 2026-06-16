@@ -1,39 +1,39 @@
 ---
 name: feasibility-scoring
-description: "SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分"
+description: 'SOP: assess the attackability of a research gap, identify bottlenecks, and output a feasibility score'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: "GapRecord — 单条标准化 gap 记录"
-output: "FeasibilityScore — 含维度分、综合分（1-5）、瓶颈列表及依据"
+input: 'GapRecord — a single normalized gap record'
+output: 'FeasibilityScore — dimension scores, composite score (1-5), bottleneck list and rationale'
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Feasibility Scoring
 
-评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分。
+Assess the attackability of a research gap, identify bottlenecks, and output a feasibility score.
 
 ## HARD-GATE
 
 <HARD-GATE>
-- 输入必须是 status: "complete" 的 GapRecord
-- 输出综合分必须在 [1, 5] 区间内
-- 瓶颈列表（bottlenecks）必须存在，若无瓶颈则为空数组 []
-- 每个子维度必须附带至少 1 句文字依据
+- The input must be a GapRecord with status: "complete"
+- The output composite score must be within the [1, 5] range
+- The bottleneck list (bottlenecks) must exist; if there are no bottlenecks it is an empty array []
+- Each sub-dimension must carry at least 1 sentence of textual rationale
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 验证输入 GapRecord 完整性
-2. **方法可用性评估**: 现有方法论工具箱是否足以攻击该 gap（1-5）；参考：是否有成熟算法/框架可复用
-3. **数据可获取性评估**: 所需数据集/语料库是否公开可得（1-5）；参考：公开数据集存在性、数据规模需求
-4. **资源需求评估**: 计算/实验资源需求是否在合理范围（1-5）；参考：GPU 需求、实验室设备、经费
-5. **时间框架评估**: 在典型博士/项目周期内是否可完成（1-5）；参考：预期工作量、依赖链长度
-6. **综合评分**: 四维度等权平均，保留一位小数；提取主要瓶颈（score ≤ 2 的维度）
-7. **输出**: 返回 FeasibilityScore 对象
+1. **Pre-check**: verify the completeness of the input GapRecord
+2. **Method-availability assessment**: is the existing methodological toolbox sufficient to attack this gap (1-5); reference: are there mature algorithms/frameworks to reuse
+3. **Data-accessibility assessment**: are the required datasets/corpora publicly available (1-5); reference: existence of public datasets, data-scale requirements
+4. **Resource-requirement assessment**: are compute/experiment resource needs within a reasonable range (1-5); reference: GPU needs, lab equipment, funding
+5. **Time-horizon assessment**: can it be completed within a typical PhD/project cycle (1-5); reference: expected workload, dependency-chain length
+6. **Composite scoring**: equal-weighted average of the four dimensions, kept to one decimal place; extract the main bottlenecks (dimensions with score ≤ 2)
+7. **Output**: return the FeasibilityScore object
 
 ## Output Format
 
@@ -48,6 +48,6 @@ dependencies:
   },
   "composite_score": 3.0,
   "bottlenecks": ["data_accessibility"],
-  "overall_rationale": "综合依据（2-4句）"
+  "overall_rationale": "Composite rationale (2-4 sentences)"
 }
 ```

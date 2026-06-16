@@ -1,8 +1,17 @@
 ---
 name: anti-benchmark
-description: Challenge industry best practices' hidden assumptions. Deconstruct benchmarks to reveal unexamined constraints.
+description: Challenge industry best practices' hidden assumptions. Deconstruct benchmarks
+  to reveal unexamined constraints.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  sops:
+  - benchmark-challenge
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - sacred-cow-identification
 ---
 
 # Anti-Benchmark
@@ -48,3 +57,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Research alternatives**: Search for domains that succeed WITHOUT these benchmarks
 6. **Build**: Use constructive-rebellion to form solutions that violate conventions productively
 7. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |
+
+<!-- END available-tables (generated) -->

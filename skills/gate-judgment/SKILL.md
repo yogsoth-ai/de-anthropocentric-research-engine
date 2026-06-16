@@ -1,10 +1,13 @@
 ---
 name: gate-judgment
-description: Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE verdict with evidence.
+description: Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE
+  verdict with evidence.
 execution: subagent
 prompt: ./prompt.md
 input: candidate, gate_criteria
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Gate Judgment
@@ -27,3 +30,15 @@ Gate judgment must be rigorous and unbiased. A dedicated subagent applies criter
 ## HARD-GATE
 
 Output MUST include: verdict (GO/KILL/RECYCLE), per-criterion evaluation with evidence, and conditions for advancement. Reject if verdict is not supported by criterion-level evaluation.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

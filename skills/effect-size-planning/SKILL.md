@@ -1,10 +1,13 @@
 ---
 name: effect-size-planning
-description: Determine effect size types and calculation methods for meta-analytic synthesis
+description: Determine effect size types and calculation methods for meta-analytic
+  synthesis
 execution: subagent
 prompt: ./prompt.md
 input: outcome_measures, study_designs
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Effect Size Planning SOP
@@ -25,3 +28,15 @@ Determine the appropriate effect size metric, calculation methods, and conversio
 ## Output
 
 Complete effect size specification including primary metric, calculation formulas for each reporting format, and conversion procedures.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

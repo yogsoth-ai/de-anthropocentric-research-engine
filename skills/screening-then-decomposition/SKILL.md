@@ -1,8 +1,15 @@
 ---
 name: screening-then-decomposition
-description: Two-phase sensitivity — Morris quick screening to eliminate unimportant factors, then Sobol precise decomposition on survivors. Efficient allocation of analytical effort.
+description: Two-phase sensitivity — Morris quick screening to eliminate unimportant
+  factors, then Sobol precise decomposition on survivors. Efficient allocation of
+  analytical effort.
 execution: tactic
-used-by: parameter-screening, variance-decomposition
+dependencies:
+  sops:
+  - deep-insight-paper-search
+  - interaction-detection
+  - morris-screening
+  - sobol-decomposition
 ---
 
 # Screening Then Decomposition
@@ -36,3 +43,18 @@ Phase 3: Detect significant interaction pairs (STi - Si > threshold). Characteri
 - Interaction pairs identified: >= 1
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| interaction-detection | Detect and characterize significant parameter interactions from Sobol decomposition results. |
+| morris-screening | Morris method screening — compute elementary effects to quickly identify important vs unimportant parameters. |
+| sobol-decomposition | Sobol variance decomposition — compute first-order and total-order sensitivity indices for precise variance attribution. |
+
+<!-- END available-tables (generated) -->

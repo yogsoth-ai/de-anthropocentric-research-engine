@@ -1,10 +1,13 @@
 ---
 name: conclusion-sensitivity
-description: Map which assumptions are load-bearing by assessing how the conclusion changes if each assumption fails.
+description: Map which assumptions are load-bearing by assessing how the conclusion
+  changes if each assumption fails.
 execution: subagent
 prompt: ./prompt.md
 input: assumptions[], challenges[]
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Conclusion Sensitivity
@@ -28,3 +31,15 @@ Output must include:
 - Identification of critical assumptions (conclusion-changing)
 - Interaction effects between assumptions
 - Overall decision robustness rating
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

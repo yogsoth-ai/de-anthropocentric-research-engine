@@ -1,8 +1,19 @@
 ---
 name: patent-mining
-description: Systematic Patent Analysis Campaign — 5 strategies for patent landscape analysis, prior art search, white space identification, competitive intelligence, and claim analysis. Produces structured patent intelligence reports.
+description: Systematic Patent Analysis Campaign — 5 strategies for patent landscape
+  analysis, prior art search, white space identification, competitive intelligence,
+  and claim analysis. Produces structured patent intelligence reports.
 execution: campaign
-used-by: knowledge-acquisition
+dependencies:
+  strategies:
+  - claim-analysis
+  - competitive-intelligence
+  - landscape-survey
+  - prior-art-search
+  - white-space-analysis
+  sops:
+  - context-checkpoint
+  - context-init
 ---
 
 # Patent Mining
@@ -80,3 +91,28 @@ Systematic patent intelligence campaign. Analyzes patent landscapes, traces prio
 - **Deduplication**: Patent families are deduplicated by priority number across strategies
 - **Saturation**: Uses shared `saturation-detection` SOP to determine when citation/classification expansion has converged
 - **Output**: Final deliverable is a structured patent intelligence report produced by `patent-synthesis` SOP
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| claim-analysis | Deep claim scope analysis — decompose independent/dependent claims and assess protection scope breadth. Budget: 30 patent families, 30 claim parses, 20 web searches. |
+| competitive-intelligence | Analyze competitor IP portfolios — comparative patent portfolio reports with strategy inference. Budget: 120 patent families, 15 claim parses, 40 web searches. |
+| landscape-survey | Patent landscape full-scan — maps technology domain via assignee ranking, IPC/CPC classification, filing trends. Budget: 200 patent families, 0 claim parses, 80 web searches. |
+| prior-art-search | Evaluate novelty of specific invention — find relevant prior art across patents, publications, and products. Budget: 80 patent families, 20 claim parses, 50 web searches. |
+| white-space-analysis | Identify patent coverage gaps — feature cross-matrix blank areas revealing unprotected technology combinations. Budget: 150 patent families, 10 claim parses, 60 web searches. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->

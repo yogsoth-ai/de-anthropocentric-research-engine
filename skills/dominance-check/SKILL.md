@@ -1,10 +1,13 @@
 ---
 name: dominance-check
-description: Identify dominated and non-dominated alternatives in a score matrix using Pareto dominance.
+description: Identify dominated and non-dominated alternatives in a score matrix using
+  Pareto dominance.
 execution: subagent
 prompt: ./prompt.md
 input: score_matrix (object)
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Dominance Check
@@ -22,3 +25,15 @@ Dominance checking requires O(n^2 x m) pairwise comparisons, logic-intensive but
 ## HARD-GATE
 
 Each "dominated" determination must specify the dominating alternative, and verify the strict definition of dominance (no worse on all criteria + strictly better on at least one).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

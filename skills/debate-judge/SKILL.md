@@ -1,10 +1,14 @@
 ---
 name: debate-judge
-description: Evaluates debate exchanges, adjudicates argument quality, and produces round verdicts with confidence scores and reasoning.
+description: Evaluates debate exchanges, adjudicates argument quality, and produces
+  round verdicts with confidence scores and reasoning.
 execution: subagent
 prompt: ./prompt.md
-input: attacks (string), defenses (string), round_number (string), judging_criteria (string)
-used-by: [multiagent-debate]
+input: attacks (string), defenses (string), round_number (string), judging_criteria
+  (string)
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Judge
@@ -36,3 +40,15 @@ Judgment requires neutral stance isolated from both attack and defense reasoning
 ## Budget
 
 One unit = one round verdict.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

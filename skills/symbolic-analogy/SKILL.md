@@ -1,8 +1,16 @@
 ---
 name: symbolic-analogy
-description: Compress core contradiction into poetic imagery/oxymoron. Use compressed conflicts to reveal hidden solution directions.
+description: Compress core contradiction into poetic imagery/oxymoron. Use compressed
+  conflicts to reveal hidden solution directions.
 execution: strategy
-used-by: synectics
+dependencies:
+  sops:
+  - analogy-chain
+  - springboard-launch
+  - symbolic-compression
+  - synectics-synthesis
+  tactics:
+  - compressed-conflict
 ---
 
 # Symbolic Analogy
@@ -46,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Deepen**: Chain the symbolic image through analogy layers
 5. **Extract**: Convert symbolic insights into concrete mechanisms
 6. **Validate**: Check that solutions actually address the original contradiction
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| compressed-conflict | Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| analogy-chain | Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| symbolic-compression | Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons with interpretation directions for each. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

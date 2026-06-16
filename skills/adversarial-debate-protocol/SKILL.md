@@ -1,8 +1,13 @@
 ---
 name: adversarial-debate-protocol
-description: Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds.
+description: Structured debate protocol that constructs an advocate, deploys critic
+  attacks, and renders a judge verdict through iterative rounds.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - advocate-construction
+  - critic-attack
+  - judge-verdict
 ---
 
 # Adversarial Debate Protocol
@@ -39,3 +44,17 @@ A formal three-role debate structure ensuring decisions survive rigorous adversa
 - Judge verdict (ACCEPT/REJECT/REVISE) with point-by-point reasoning
 - Conditions for acceptance (if ACCEPT)
 - Required modifications (if REVISE)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| advocate-construction | Construct the strongest possible case for a rejected candidate or counter-position. |
+| critic-attack | Attack an advocate's case with multiple arguments rated by severity. |
+| judge-verdict | Render an impartial verdict on advocate case vs critic attacks with explicit reasoning. |
+
+<!-- END available-tables (generated) -->

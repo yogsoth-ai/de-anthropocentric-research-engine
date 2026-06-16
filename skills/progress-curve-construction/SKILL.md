@@ -1,8 +1,12 @@
-﻿---
+---
 name: progress-curve-construction
 description: Build performance-over-time progress curves with inflection detection
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - baseline-synthesis
+  - headroom-estimation
+  - progress-curve-fitting
 ---
 
 # Progress Curve Construction
@@ -69,3 +73,17 @@ Quantify remaining improvement potential:
 - progress-curve-fitting (for Stages 2-3)
 - headroom-estimation (for Stage 4)
 - baseline-synthesis (for final integration)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| baseline-synthesis | Produce final structured baseline report integrating all analysis results |
+| headroom-estimation | Estimate theoretical/practical ceiling vs current SOTA gap |
+| progress-curve-fitting | Construct performance-over-time visualization data |
+
+<!-- END available-tables (generated) -->

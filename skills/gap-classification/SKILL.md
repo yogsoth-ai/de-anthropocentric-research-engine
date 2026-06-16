@@ -1,7 +1,12 @@
 ---
 name: gap-classification
-description: Classify identified gaps using Miles 7-type taxonomy and AHRQ 4-reason framework. Determines gap type (theoretical, methodological, empirical, etc.) and root cause of gap existence.
-used-by: gap-analysis
+description: Classify identified gaps using Miles 7-type taxonomy and AHRQ 4-reason
+  framework. Determines gap type (theoretical, methodological, empirical, etc.) and
+  root cause of gap existence.
+dependencies:
+  sops:
+  - ahrq-reason-classification
+  - gap-typology-classification
 ---
 
 # Gap Classification
@@ -51,3 +56,16 @@ For each gap candidate, apply Miles 7-type taxonomy (theoretical, methodological
 ## Output Format
 
 Classified Gap Table — each gap with: type label, AHRQ reason, confidence, supporting evidence.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ahrq-reason-classification | Classify gap root causes using AHRQ 4-reason framework (insufficient info, biased info, inconsistent info, not yet integrated). |
+| gap-typology-classification | Classify gaps using Miles 7-type taxonomy (theoretical, methodological, empirical, population, practical, knowledge void, evidence gap). |
+
+<!-- END available-tables (generated) -->

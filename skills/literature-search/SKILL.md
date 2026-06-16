@@ -1,14 +1,27 @@
 ---
 name: Literature Search
-description: Medium-depth literature search — read AI-summarized reports for every paper analyzed
+description: Medium-depth literature search — read AI-summarized reports for every
+  paper analyzed
 type: sop
 layer: sop
-agents: [alphaxiv, semantic-scholar]
+agents:
+- alphaxiv
+- semantic-scholar
 tools:
-  alphaxiv: [discover_papers, get_paper_content]
-  semantic-scholar: [relevanceSearch, paper, paperBatch, citations, references]
+  alphaxiv:
+  - discover_papers
+  - get_paper_content
+  semantic-scholar:
+  - relevanceSearch
+  - paper
+  - paperBatch
+  - citations
+  - references
 input: query (string), scope (survey | gap-analysis | background)
 output: PaperAnalysis[] with metadata + AI summary content
+dependencies:
+  sops:
+  - literature-research
 ---
 
 # Literature Search SOP
@@ -193,3 +206,15 @@ alphaxiv.discover_papers(
 ss.citations(paper_id: "ARXIV:2210.17323", limit: 50)  # GPTQ
 ss.citations(paper_id: "ARXIV:2306.00978", limit: 50)  # AWQ
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
+
+<!-- END available-tables (generated) -->

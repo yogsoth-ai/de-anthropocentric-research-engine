@@ -1,8 +1,17 @@
 ---
 name: forced-bridge-construction
-description: Force connections between unrelated technologies. Deliberately construct bridges where none naturally exist to discover novel integration possibilities.
+description: Force connections between unrelated technologies. Deliberately construct
+  bridges where none naturally exist to discover novel integration possibilities.
 execution: strategy
-used-by: cross-domain-discovery
+dependencies:
+  sops:
+  - abstraction-extraction
+  - cross-domain-synthesis
+  - forced-connection
+  - transfer-adaptation
+  tactics:
+  - bridge-validation
+  - domain-divergence
 ---
 
 # Forced Bridge Construction
@@ -50,3 +59,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Iterate endpoints**: Try ≥4 different endpoint pairs
 6. **Extract solutions**: From validated bridges, derive concrete solution ideas
 7. **Synthesize**: Combine bridge-derived ideas into coherent proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
+| domain-divergence | Scan and select maximally diverse source domains. Ensures creative search covers genuinely unrelated fields with high transfer potential. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
+| cross-domain-synthesis | Synthesize all cross-domain findings into a structured idea report. Integrates outputs from all strategies and SOPs. |
+| forced-connection | Force connection between two unrelated concepts. Deliberately construct bridging paths where no natural connection exists. |
+| transfer-adaptation | Adapt transferred principle to target problem constraints. Produces concrete adapted solutions from abstract principles. |
+
+<!-- END available-tables (generated) -->

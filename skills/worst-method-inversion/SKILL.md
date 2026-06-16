@@ -1,8 +1,16 @@
 ---
 name: worst-method-inversion
-description: Design worst possible solution → extract insights → invert. Deliberate failure design as creative catalyst.
+description: Design worst possible solution → extract insights → invert. Deliberate
+  failure design as creative catalyst.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  sops:
+  - constructive-rebellion
+  - destruction-synthesis
+  - inversion-extraction
+  - worst-case-design
+  tactics:
+  - inversion-protocol
 ---
 
 # Worst Method Inversion
@@ -46,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Research**: Search for domains where the inverse principles are already applied
 5. **Build solutions**: Use constructive-rebellion to form viable alternatives
 6. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| inversion-extraction | Extract constructive insights from worst solutions. Transform failure analysis into innovation directions. |
+| worst-case-design | Design the worst possible solution. Deliberate failure engineering to reveal hidden constraints and inversion opportunities. |
+
+<!-- END available-tables (generated) -->

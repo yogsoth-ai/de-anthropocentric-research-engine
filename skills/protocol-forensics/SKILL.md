@@ -1,7 +1,14 @@
 ---
 name: protocol-forensics
-description: Analyze evaluation protocol differences across papers for same benchmark — 5 benchmarks, 60 papers, 30 web searches
-used-by: benchmark-archaeology
+description: Analyze evaluation protocol differences across papers for same benchmark
+  — 5 benchmarks, 60 papers, 30 web searches
+dependencies:
+  tactics:
+  - evaluation-protocol-comparison
+  sops:
+  - benchmark-synthesis
+  - knowledge-acquisition-benchmark-inventory
+  - protocol-element-extraction
 ---
 
 # Protocol Forensics Strategy
@@ -93,3 +100,25 @@ protocol_forensics:
     - recommendation: string
       priority: high|medium|low
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| evaluation-protocol-comparison | Compare implementation differences of same benchmark across papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| protocol-element-extraction | Extract evaluation protocol parameters from papers |
+
+<!-- END available-tables (generated) -->

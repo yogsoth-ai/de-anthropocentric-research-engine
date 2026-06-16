@@ -1,8 +1,29 @@
 ---
 name: systematic-enumeration
-description: Systematic Enumeration Campaign — exhaustive coverage analysis to discover overlooked solution spaces via benchmark sweep, method-problem matrix, ablation, and failure taxonomy
+description: Systematic Enumeration Campaign — exhaustive coverage analysis to discover
+  overlooked solution spaces via benchmark sweep, method-problem matrix, ablation,
+  and failure taxonomy
 execution: campaign
-used-by: creative-ideation
+dependencies:
+  strategies:
+  - ablation-brainstorm
+  - benchmark-sweep
+  - factorial-ideation
+  - failure-taxonomy
+  - method-problem-matrix
+  tactics:
+  - coverage-analysis
+  - creative-ideation-combination-mapping
+  - evaluation-filtering
+  - gap-driven-generation
+  sops:
+  - context-checkpoint
+  - context-init
+  - creative-ideation-novelty-scoring
+  - creative-ideation-saturation-detection
+  - enumeration-synthesis
+  - idea-synthesis
+  - parameter-identification
 ---
 
 # Systematic Enumeration
@@ -107,3 +128,44 @@ Exhaustive coverage analysis to discover overlooked solution spaces via benchmar
 | factor-level-design | Factor/level identification and experiment matrix |
 | coverage-gap-detection | Uncovered region detection and prioritization |
 | enumeration-synthesis | Final synthesis of all enumeration outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| ablation-brainstorm | Remove components one by one, observe system changes to reveal hidden dependencies and generate ideas from structural gaps. |
+| benchmark-sweep | Systematically scan all known solutions, identify gaps in coverage and unexplored regions of the solution space. |
+| factorial-ideation | DOE thinking: identify factors, define levels, and explore combinations to systematically cover the design space. |
+| failure-taxonomy | Catalog all failure modes in a domain, classify them systematically, and generate targeted solutions for each failure type. |
+| method-problem-matrix | Cross method×problem matrix, find unexplored intersections where known methods have not been applied to known problems. |
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| coverage-analysis | Systematic coverage evaluation pipeline — benchmark inventory, method-problem crossing, and intersection evaluation to map explored vs unexplored solution space. |
+| creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
+| evaluation-filtering | Multi-dimensional evaluation and tiered filtering of generated ideas. Orchestrates novelty assessment → feasibility check → ranking → selection. |
+| gap-driven-generation | Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| creative-ideation-novelty-scoring | Score ideas on novelty dimensions — structural distance from known solutions, conceptual surprise, domain-crossing depth. Produces ranked novelty assessment. |
+| creative-ideation-saturation-detection | Determine when additional ideation yields diminishing returns. Analyzes latest idea batch against existing corpus to judge continue/near-saturation/saturated. |
+| enumeration-synthesis | Synthesize all systematic enumeration outputs into a structured idea report with prioritized recommendations. |
+| idea-synthesis | Synthesize diverse ideas into coherent solution concepts. Combines fragments from multiple ideation passes into structured, actionable ideas with clear mechanism descriptions. |
+| parameter-identification | Identify the key parameters/dimensions of a problem space. Produces a structured parameter list with value ranges for morphological analysis. |
+
+<!-- END available-tables (generated) -->

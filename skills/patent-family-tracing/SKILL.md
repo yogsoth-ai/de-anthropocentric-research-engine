@@ -2,7 +2,12 @@
 name: patent-family-tracing
 description: Forward/backward patent citation and priority tracing until saturation
 execution: tactic
-used-by: patent-mining
+dependencies:
+  sops:
+  - citation-network-analysis
+  - knowledge-acquisition-saturation-detection
+  - legal-status-assessment
+  - patent-query-formulation
 ---
 
 # Patent Family Tracing
@@ -60,3 +65,18 @@ Report to calling strategy after each execution:
 - Total frontier size
 - Saturation percentage
 - Depth reached (citation generations)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| legal-status-assessment | Determine patent legal status — active, expired, pending, lapsed, or revoked |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+
+<!-- END available-tables (generated) -->

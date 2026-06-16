@@ -1,10 +1,13 @@
 ---
 name: portfolio-evaluation-per-scenario
-description: Evaluate a specific portfolio's performance metrics and vulnerabilities under a given scenario.
+description: Evaluate a specific portfolio's performance metrics and vulnerabilities
+  under a given scenario.
 execution: subagent
 prompt: ./prompt.md
 input: portfolio, scenario
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Portfolio Evaluation Per Scenario
@@ -22,3 +25,15 @@ Per-scenario evaluation requires careful reasoning about how each scenario's con
 ## HARD-GATE
 
 Output must include quantified performance metrics for the portfolio under the scenario and identification of any members that become vulnerable or fail under scenario conditions.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

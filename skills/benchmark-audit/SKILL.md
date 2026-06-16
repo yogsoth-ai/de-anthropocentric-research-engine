@@ -1,7 +1,16 @@
 ---
 name: benchmark-audit
-description: Systematic quality assessment using BetterBench 46-criterion framework — 5 benchmarks, 30 papers, 40 web searches
-used-by: benchmark-archaeology
+description: Systematic quality assessment using BetterBench 46-criterion framework
+  — 5 benchmarks, 30 papers, 40 web searches
+dependencies:
+  tactics:
+  - artifact-detection
+  sops:
+  - benchmark-synthesis
+  - contamination-audit
+  - documentation-audit
+  - knowledge-acquisition-benchmark-inventory
+  - metric-decomposition
 ---
 
 # Benchmark Audit Strategy
@@ -81,3 +90,27 @@ benchmark_audit:
   key_findings: list[string]
   recommendations: list[string]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| contamination-audit | Detect train-test data leakage and memorization artifacts |
+| documentation-audit | Assess documentation completeness against BetterBench/Datasheets standards |
+| knowledge-acquisition-benchmark-inventory | Identify and catalog all relevant benchmarks in target domain |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

@@ -1,6 +1,12 @@
 ---
 name: context-checkpoint
-description: Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase.
+description: Append research process and results to the current Phase's context file.
+  Each append MUST contain >=500 lines of markdown covering both process and results.
+  Use this skill at plan-designated checkpoint points — typically after each strategy
+  completes or at key decision nodes within a research Phase.
+dependencies:
+  sops:
+  - context-init
 ---
 
 # Context Checkpoint
@@ -94,3 +100,15 @@ The checkpoint is a detailed record for future reference. Write as if the reader
 - Open threads for future investigation
 
 The 500-line minimum exists because sparse checkpoints are useless for recovery. Write generously — this is a research log, not a summary.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+
+<!-- END available-tables (generated) -->

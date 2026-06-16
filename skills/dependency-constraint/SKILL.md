@@ -1,14 +1,20 @@
 ---
 name: dependency-constraint
-description: "What must be completed first? — Dependency chain analysis + prerequisite graph construction"
+description: What must be completed first? — Dependency chain analysis + prerequisite
+  graph construction
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - dependency-graph-construction
-  - critical-chain-identification
+- dependency-graph-construction
+- critical-chain-identification
 tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
+  - critical-chain-identification
+  - dependency-graph-construction
+  tactics:
   - sensitivity-ranking
 ---
 
@@ -58,3 +64,24 @@ Dependency categories:
 | Subagent calls | ≤5 | 2 SOPs + synthesis |
 | Iterations | ≤2 | Re-build if tasks change |
 | Output size | ≤3000 tokens | Graph summary + critical chain |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| critical-chain-identification | Identify the critical chain — longest path considering resource contention |
+| dependency-graph-construction | Build task dependency graph with predecessor/successor relationships |
+
+<!-- END available-tables (generated) -->

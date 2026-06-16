@@ -4,7 +4,9 @@ description: Assess documentation completeness against BetterBench/Datasheets st
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_documentation
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Documentation Audit SOP
@@ -26,3 +28,15 @@ Assess benchmark documentation completeness against established standards: Bette
 ## Output
 
 Documentation completeness score with per-criterion pass/fail and prioritized gaps.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

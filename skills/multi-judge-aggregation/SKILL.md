@@ -1,8 +1,13 @@
 ---
 name: multi-judge-aggregation
-description: Collect independent rankings from multiple judges, aggregate using social choice methods, and identify disagreement hotspots.
+description: Collect independent rankings from multiple judges, aggregate using social
+  choice methods, and identify disagreement hotspots.
 execution: tactic
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - aggregation-method
+  - ballot-collection
+  - cycle-detection
 ---
 
 # Multi-Judge Aggregation
@@ -39,3 +44,17 @@ Collect independent ballots from multiple judges or perspectives, aggregate them
 - Disagreement heatmap: for each pair, what fraction of judges agree
 - Condorcet winner identification (or explicit statement of cycle)
 - Per-judge deviation from consensus (who disagrees most, on what)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| aggregation-method | Aggregate multiple ranking ballots into a consensus ranking using a specified social choice method. |
+| ballot-collection | Gather independent ranking ballots from multiple judges or perspectives for a given candidate set. |
+| cycle-detection | Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics. |
+
+<!-- END available-tables (generated) -->

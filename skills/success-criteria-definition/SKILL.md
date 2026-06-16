@@ -1,45 +1,45 @@
 ---
 name: success-criteria-definition
-description: "SOP: 为研究问题定义可测量的成功标准"
+description: 'SOP: Define measurable success criteria for a research question'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: "研究问题（RQ）"
-output: "可测量的成功标准 + 阈值"
+input: Research question (RQ)
+output: Measurable success criteria + thresholds
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Success Criteria Definition
 
-为研究问题定义可测量的成功标准 — 什么算"回答了这个问题"。
+Define measurable success criteria for a research question — what counts as "having answered this question".
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: 1 个通过 FINER 检验的研究问题。
+Input must contain: 1 research question that has passed the FINER check.
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: RQ 是否已通过 FINER
-2. **结果类型识别**: 定量结果 / 定性结果 / 混合
-3. **指标定义**: 用什么指标衡量"回答了问题"
-4. **阈值设定**: 什么程度算"成功回答"
-5. **部分成功定义**: 什么算"部分回答"
-6. **失败定义**: 什么结果意味着"问题无法回答"
-7. **输出**: 成功标准 + 阈值 + 部分成功 + 失败条件
+1. **Precheck**: Has the RQ passed FINER
+2. **Result type identification**: Quantitative result / qualitative result / mixed
+3. **Metric definition**: What metric measures "the question was answered"
+4. **Threshold setting**: What degree counts as "successfully answered"
+5. **Partial success definition**: What counts as "partially answered"
+6. **Failure definition**: What outcome means "the question cannot be answered"
+7. **Output**: Success criteria + thresholds + partial success + failure conditions
 
 ## Output Format
 
 ```
-RQ: [研究问题]
+RQ: [research question]
 Success criteria:
-  - Full success: [具体条件 + 阈值]
-  - Partial success: [具体条件]
-  - Failure/inconclusive: [具体条件]
-Measurement: [如何测量]
-Timeline: [预期需要多长时间]
+  - Full success: [concrete conditions + thresholds]
+  - Partial success: [concrete conditions]
+  - Failure/inconclusive: [concrete conditions]
+Measurement: [how to measure]
+Timeline: [expected duration]
 ```

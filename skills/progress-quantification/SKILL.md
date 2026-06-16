@@ -1,7 +1,15 @@
-﻿---
+---
 name: progress-quantification
-description: Track performance progress over time, quantify remaining headroom — 30 methods, 100 data points, 40 web searches budget
-used-by: baseline-establishment
+description: Track performance progress over time, quantify remaining headroom — 30
+  methods, 100 data points, 40 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  - progress-curve-construction
+  sops:
+  - baseline-synthesis
+  - headroom-estimation
+  - progress-curve-fitting
 ---
 
 # Progress Quantification
@@ -93,3 +101,26 @@ Cannot exit until historical_data_points >= 80 (80% of target).
   ]
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+| progress-curve-construction | Build performance-over-time progress curves with inflection detection |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| baseline-synthesis | Produce final structured baseline report integrating all analysis results |
+| headroom-estimation | Estimate theoretical/practical ceiling vs current SOTA gap |
+| progress-curve-fitting | Construct performance-over-time visualization data |
+
+<!-- END available-tables (generated) -->

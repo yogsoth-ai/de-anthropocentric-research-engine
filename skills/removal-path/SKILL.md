@@ -1,10 +1,13 @@
 ---
 name: removal-path
-description: Design concrete removal steps for a constraint with timeline and resource needs.
+description: Design concrete removal steps for a constraint with timeline and resource
+  needs.
 execution: subagent
 prompt: ./prompt.md
 input: constraint, removability_data
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Removal Path
@@ -27,3 +30,15 @@ Removal path design requires creative problem-solving and detailed planning that
 ## HARD-GATE
 
 Output MUST include: at least 3 sequenced steps, timeline estimate, resource requirements, and success criteria for each step. Reject if steps are vague or unactionable.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

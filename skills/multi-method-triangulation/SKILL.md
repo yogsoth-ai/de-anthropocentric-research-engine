@@ -1,8 +1,13 @@
 ---
 name: multi-method-triangulation
-description: Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options.
+description: Apply 2-3 MCDA methods to the same candidates, compare rankings, and
+  identify method-sensitive options.
 execution: tactic
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - alternative-scoring
+  - method-sensitivity-report
+  - rank-comparison
 ---
 
 # Multi-Method Triangulation
@@ -35,3 +40,17 @@ Score the same set of alternatives using 2-3 MCDA methods, compare ranking diffe
 ## Minimum Yield
 
 Ranking comparison across >=2 methods + difference analysis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
+| method-sensitivity-report | Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives. |
+| rank-comparison | Compare multiple ranking results to assess agreement and identify divergent items. |
+
+<!-- END available-tables (generated) -->

@@ -1,8 +1,12 @@
 ---
 name: temporal-projection
-description: View problem from 5yr/50yr/500yr future, backcast to generate temporally-informed creative solutions.
+description: View problem from 5yr/50yr/500yr future, backcast to generate temporally-informed
+  creative solutions.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - perspective-synthesis
+  - time-machine
 ---
 
 # Temporal Projection
@@ -52,3 +56,16 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Backcast paths generated | ≥3 |
 | Novel present-day actions identified | ≥5 |
 | Paradigm shift insights | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+| time-machine | Temporal projection — view a solution from future/past time horizons to generate temporally-informed insights. |
+
+<!-- END available-tables (generated) -->

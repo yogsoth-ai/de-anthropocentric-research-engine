@@ -1,8 +1,11 @@
 ---
 name: stakeholder-simulation
-description: Simulate user/engineer/investor/regulator/society perspectives to surface hidden requirements and opportunities.
+description: Simulate user/engineer/investor/regulator/society perspectives to surface
+  hidden requirements and opportunities.
 execution: strategy
-used-by: perspective-forcing
+dependencies:
+  sops:
+  - perspective-synthesis
 ---
 
 # Stakeholder Simulation
@@ -53,3 +56,15 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 | Unique requirements surfaced | ≥3 per stakeholder |
 | Conflict points identified | ≥3 |
 | Multi-stakeholder solutions | ≥2 |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
+
+<!-- END available-tables (generated) -->

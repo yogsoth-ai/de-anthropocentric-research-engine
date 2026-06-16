@@ -1,9 +1,19 @@
 ---
 name: prospective-hindsight
-description: "Strategy: Klein pre-mortem — assume the artifact has failed, then retrospect plausible causes. Generates rapid failure scenario catalog."
+description: 'Strategy: Klein pre-mortem — assume the artifact has failed, then retrospect
+  plausible causes. Generates rapid failure scenario catalog.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [premortem-to-fmea-pipeline, failure-chain-tracing]
+tactics:
+- premortem-to-fmea-pipeline
+- failure-chain-tracing
+dependencies:
+  tactics:
+  - failure-chain-tracing
+  - premortem-to-fmea-pipeline
+  sops:
+  - failure-mode-extraction
+  - premortem-facilitation
+  - severity-scoring
 ---
 
 # Prospective Hindsight Strategy
@@ -39,3 +49,26 @@ premortem-facilitation → failure-mode-extraction
 - premortem-facilitation (execute Klein protocol)
 - failure-mode-extraction (structure scenarios)
 - severity-scoring (rapid severity screen)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| failure-chain-tracing | Tactic: Trace upstream causes and downstream effects of each failure mode. Builds multi-level cause-mode-effect chains for systemic understanding. |
+| premortem-to-fmea-pipeline | Tactic: Pre-mortem rapid screening feeds high-risk items into full FMEA analysis. Bridges fast intuitive generation with systematic structured analysis. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| failure-mode-extraction | Extract structured failure mode list from raw scenarios or artifact analysis. Produces standardized failure mode records. |
+| premortem-facilitation | Execute Klein pre-mortem protocol — assume failure has occurred, generate plausible failure scenarios through prospective hindsight. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

@@ -1,9 +1,23 @@
 ---
 name: thought-experiment
-description: "Strategy: Williamson-style precise thought experiments — construct carefully specified counterfactual scenarios to test whether conclusions depend on contingent features."
+description: 'Strategy: Williamson-style precise thought experiments — construct carefully
+  specified counterfactual scenarios to test whether conclusions depend on contingent
+  features.'
 type: strategy
-used-by: [counterfactual-probing]
-tactics: [minimal-change-search, causal-necessity-testing]
+tactics:
+- minimal-change-search
+- causal-necessity-testing
+dependencies:
+  tactics:
+  - causal-necessity-testing
+  - minimal-change-search
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - load-bearing-identification
+  - necessity-evaluation
 ---
 
 # Thought Experiment Strategy
@@ -53,3 +67,29 @@ causal-claim-extraction → factor-enumeration
 - flip-point-detection (conclusion testing)
 - necessity-evaluation (necessity judgment)
 - load-bearing-identification (classification)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| causal-necessity-testing | Tactic: Extract causal claims, evaluate probability of necessity (PN) and sufficiency (PS) for each, classify into necessity-sufficiency quadrants. |
+| minimal-change-search | Tactic: Generate candidate changes, detect flip-points where conclusion reverses, measure fragility as distance to nearest flip. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| counterfactual-scenario-construction | Construct precise, internally consistent counterfactual scenarios where specified factors are altered, then reason about the resulting conclusion. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| flip-point-detection | Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| necessity-evaluation | Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent? |
+
+<!-- END available-tables (generated) -->

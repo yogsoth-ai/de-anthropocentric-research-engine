@@ -1,8 +1,13 @@
 ---
 name: concept-hierarchy
-description: Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level.
+description: Build concept levels from purpose through concepts to ideas, with escape
+  and fractionation at each level.
 execution: tactic
-used-by: lateral-thinking, concept-fan, challenge-operation
+dependencies:
+  sops:
+  - concept-fan-expansion
+  - escape-technique
+  - fractionation
 ---
 
 # Concept Hierarchy
@@ -43,3 +48,17 @@ Use fractionation SOP to split broad concepts into finer units, enabling recombi
 | concept-fan-expansion | Stage 1 — build concept hierarchy |
 | escape-technique | Stage 2 — escape dominant patterns per level |
 | fractionation | Stage 3 — split and recombine concepts |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
+| escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
+| fractionation | Split concepts into smaller units and recombine them differently to produce novel structures. |
+
+<!-- END available-tables (generated) -->

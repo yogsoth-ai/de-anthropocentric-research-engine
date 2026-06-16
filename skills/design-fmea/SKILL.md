@@ -1,9 +1,24 @@
 ---
 name: design-fmea
-description: "Strategy: Research design-level FMEA — function analysis, failure mode identification, severity/occurrence/detection scoring per AIAG-VDA 2019."
+description: 'Strategy: Research design-level FMEA — function analysis, failure mode
+  identification, severity/occurrence/detection scoring per AIAG-VDA 2019.'
 type: strategy
-used-by: [failure-anticipation]
-tactics: [failure-chain-tracing, mitigation-validation]
+tactics:
+- failure-chain-tracing
+- mitigation-validation
+dependencies:
+  tactics:
+  - failure-chain-tracing
+  - mitigation-validation
+  sops:
+  - action-priority-matrix
+  - detection-scoring
+  - failure-chain-construction
+  - failure-mode-extraction
+  - function-analysis
+  - mitigation-design-sop
+  - occurrence-scoring
+  - severity-scoring
 ---
 
 # Design FMEA Strategy
@@ -45,3 +60,31 @@ function-analysis → failure-mode-extraction → failure-chain-construction
 - severity-scoring, occurrence-scoring, detection-scoring (S/O/D)
 - action-priority-matrix (priority classification)
 - mitigation-design-sop (countermeasure design)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| failure-chain-tracing | Tactic: Trace upstream causes and downstream effects of each failure mode. Builds multi-level cause-mode-effect chains for systemic understanding. |
+| mitigation-validation | Tactic: Run mini-FMEA on proposed mitigations to verify they do not introduce new failure modes. Prevents mitigation-induced risks. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| action-priority-matrix | Compute Risk Priority Number (RPN = S x O x D), classify failure modes into H/M/L action priority per AIAG-VDA tables. |
+| detection-scoring | Rate detectability 1-10 (inverted: 10 = hardest to detect). Estimates how likely current controls would catch the failure before impact. |
+| failure-chain-construction | Build cause-mode-effect chains tracing upstream root causes and downstream cascading effects for each failure mode. |
+| failure-mode-extraction | Extract structured failure mode list from raw scenarios or artifact analysis. Produces standardized failure mode records. |
+| function-analysis | FMEA Step 3: Decompose artifact into function tree — identify what each component is supposed to do before analyzing how it can fail. |
+| mitigation-design-sop | Design prevention, detection, and response measures for high-priority failure modes. Produces actionable countermeasure specifications. |
+| occurrence-scoring | Rate failure mode occurrence probability 1-10. Estimates how likely each failure mode is to manifest during research execution. |
+| severity-scoring | Rate failure mode severity 1-10 based on end-effect impact. Follows AIAG-VDA severity scale calibrated for research artifacts. |
+
+<!-- END available-tables (generated) -->

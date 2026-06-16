@@ -4,7 +4,9 @@ description: Attack an advocate's case with multiple arguments rated by severity
 execution: subagent
 prompt: ./prompt.md
 input: winner, advocate_case
-used-by: [steel-manning, validation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Critic Attack
@@ -28,3 +30,15 @@ Output must include:
 - Severity rating for each (HIGH/MEDIUM/LOW)
 - Evidence or reasoning for each attack
 - At least 1 attack targeting the advocate's strongest point
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

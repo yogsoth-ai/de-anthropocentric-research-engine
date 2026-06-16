@@ -1,10 +1,13 @@
 ---
 name: action-priority-matrix
-description: Compute Risk Priority Number (RPN = S x O x D), classify failure modes into H/M/L action priority per AIAG-VDA tables.
+description: Compute Risk Priority Number (RPN = S x O x D), classify failure modes
+  into H/M/L action priority per AIAG-VDA tables.
 execution: subagent
 prompt: ./prompt.md
 input: severity_scores (string), occurrence_scores (string), detection_scores (string)
-used-by: [failure-anticipation]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Action Priority Matrix
@@ -30,3 +33,15 @@ Priority classification requires mechanical computation followed by judgment on 
 - **priority_matrix**: Full table with S, O, D, RPN, and H/M/L classification
 - **action_required**: H-priority items requiring mandatory mitigation
 - **borderline_cases**: Items near threshold boundaries
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

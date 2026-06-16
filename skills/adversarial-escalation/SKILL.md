@@ -1,9 +1,20 @@
 ---
 name: adversarial-escalation
-description: "Strategy: Progressive pressure escalation — starts with surface-level challenges and escalates to fundamental assumption attacks based on defender confidence decay."
+description: 'Strategy: Progressive pressure escalation — starts with surface-level
+  challenges and escalates to fundamental assumption attacks based on defender confidence
+  decay.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [dialectical-escalation]
+tactics:
+- dialectical-escalation
+dependencies:
+  tactics:
+  - stress-test-dialectical-escalation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
 ---
 
 # Adversarial Escalation Strategy
@@ -47,3 +58,27 @@ debate-architect → [design escalation ladder]
 - debate-defender (responses)
 - debate-judge (level adjudication)
 - confidence-calibration (escalation trigger)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| stress-test-dialectical-escalation | Tactic: Progressive debate escalation based on confidence thresholds. Each round increases attack sophistication until defender collapses or proves resilient. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| confidence-calibration | Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence. |
+| debate-architect | Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters. |
+| debate-critic | Generates structured criticism from attack stance using Toulmin model. Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses. |
+| debate-defender | Responds to attacks with counter-evidence and counter-arguments. Defends artifact using evidence, clarification, and rebuttal while acknowledging valid criticisms. |
+| debate-judge | Evaluates debate exchanges, adjudicates argument quality, and produces round verdicts with confidence scores and reasoning. |
+
+<!-- END available-tables (generated) -->

@@ -1,8 +1,17 @@
 ---
 name: concept-fan
-description: "Expand from purpose to concepts to directions to ideas (de Bono Concept Fan)"
+description: Expand from purpose to concepts to directions to ideas (de Bono Concept
+  Fan)
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - concept-fan-expansion
+  - escape-technique
+  - fractionation
+  - lateral-synthesis
+  tactics:
+  - concept-hierarchy
 ---
 
 # Concept Fan
@@ -47,3 +56,27 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Produce ideas**: For each direction, generate concrete ideas
 5. **Escape and expand**: Use escape-technique if stuck at any level
 6. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
+| escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |
+| fractionation | Split concepts into smaller units and recombine them differently to produce novel structures. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+
+<!-- END available-tables (generated) -->

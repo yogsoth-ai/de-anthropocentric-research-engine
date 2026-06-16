@@ -1,14 +1,12 @@
-﻿---
+---
 name: statistical-testing
-description: "Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on experiment results"
+description: Execute statistical tests — bootstrap, permutation, Bayesian ROPE — on
+  experiment results
 version: 1.0.0
 category: experiment-execution
 type: sop
 execution: subagent
 prompt: ./prompt.md
-used-by:
-  - result-analysis
-  - result-validation-loop
 shared-with: experiment-design
 input: structured result set and pre-registered hypotheses with ROPE
 output: statistical test results with effect sizes, CIs, and ROPE judgment

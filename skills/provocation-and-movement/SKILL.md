@@ -1,8 +1,16 @@
 ---
 name: provocation-and-movement
-description: "PO + Movement: generate provocations then extract useful directions (4 movement types)"
+description: 'PO + Movement: generate provocations then extract useful directions
+  (4 movement types)'
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - lateral-synthesis
+  - movement-operation
+  - stepping-stone
+  tactics:
+  - movement-extraction
 ---
 
 # Provocation and Movement
@@ -46,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 3. **Stepping stones**: For impractical but interesting directions, use stepping-stone SOP
 4. **Alternatives**: Generate concrete alternatives from movement directions
 5. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+| stepping-stone | Use impractical ideas as stepping stones to reach practical solutions (de Bono Stepping Stone technique). |
+
+<!-- END available-tables (generated) -->

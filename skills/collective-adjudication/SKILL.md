@@ -1,7 +1,14 @@
 ---
 name: collective-adjudication
-description: Strategy for multi-judge ranking aggregation using Condorcet, Schulze, Borda, Kemeny-Young, and Copeland methods to produce consensus rankings from diverse perspectives.
-used-by: pairwise-ranking
+description: Strategy for multi-judge ranking aggregation using Condorcet, Schulze,
+  Borda, Kemeny-Young, and Copeland methods to produce consensus rankings from diverse
+  perspectives.
+dependencies:
+  tactics:
+  - consistency-audit-loop
+  - multi-judge-aggregation
+  sops:
+  - ranking-synthesis
 ---
 
 # Collective Adjudication
@@ -74,3 +81,24 @@ disagreement_hotspots:
   - {pair: ["c", "d"], agreement: 0.4, split: "3:2"}
 cross_validation: {borda_agreement: 0.92, copeland_agreement: 0.96}
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+| multi-judge-aggregation | Collect independent rankings from multiple judges, aggregate using social choice methods, and identify disagreement hotspots. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+
+<!-- END available-tables (generated) -->

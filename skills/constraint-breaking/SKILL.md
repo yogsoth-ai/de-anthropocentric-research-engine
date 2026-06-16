@@ -1,13 +1,18 @@
 ---
 name: constraint-breaking
-description: "Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution"
+description: 'Orchestrate the full constraint-breaking cycle: extract conflict, challenge
+  assumptions, project resolution'
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: constraint-analysis
 orchestrates:
-  - core-conflict-extraction
+- core-conflict-extraction
+- assumption-challenging
+- future-reality-projection
+dependencies:
+  sops:
   - assumption-challenging
+  - core-conflict-extraction
   - future-reality-projection
 ---
 
@@ -49,3 +54,17 @@ orchestrates:
 - **Success criterion**: At least one injection that resolves the conflict with ≤2 manageable side effects
 - **Failure criterion**: After 3 injection attempts, none resolve cleanly → flag as hard constraint
 - **Escalation**: If the constraint is a paradigm constraint (belief system), flag for human decision
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| future-reality-projection | Project solution effects using Future Reality Tree logic |
+
+<!-- END available-tables (generated) -->

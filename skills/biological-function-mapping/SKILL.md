@@ -1,8 +1,13 @@
 ---
 name: biological-function-mapping
-description: "Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology."
+description: Map technical functions to biological systems. Orchestrates problem-biologization
+  → organism-discovery → functional-model-biology.
 execution: tactic
-used-by: biomimicry, biologize-and-discover, functional-analogy, biotriz-resolution
+dependencies:
+  sops:
+  - functional-model-biology
+  - organism-discovery
+  - problem-biologization
 ---
 
 # Biological Function Mapping
@@ -42,3 +47,17 @@ For each promising organism, build a functional model (energy/matter/information
 | biological-strategy-extraction | Post — extract transferable strategies |
 | web-search | Support — search for biological solutions |
 | paper-overview | Support — find academic biology sources |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| functional-model-biology | Build biological system functional model. Map energy, matter, and information flows. |
+| organism-discovery | Find organisms solving similar problems. Search across kingdoms for biological champions. |
+| problem-biologization | Restate technical problem as biological question. Translate engineering challenges into nature's language. |
+
+<!-- END available-tables (generated) -->

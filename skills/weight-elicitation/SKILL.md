@@ -1,7 +1,12 @@
 ---
 name: weight-elicitation
 description: Determine criteria weights using AHP, Swing, BWM, MACBETH, or Simos methods.
-used-by: multi-criteria-scoring
+dependencies:
+  tactics:
+  - multi-method-triangulation
+  sops:
+  - criterion-definition
+  - weight-elicitation-sop
 ---
 
 # Weight Elicitation
@@ -78,3 +83,24 @@ final_weights: []
 ### Method Selection Rationale
 [Why the chosen method's weights are used as the final result]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| multi-method-triangulation | Apply 2-3 MCDA methods to the same candidates, compare rankings, and identify method-sensitive options. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |
+| weight-elicitation-sop | Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos). |
+
+<!-- END available-tables (generated) -->

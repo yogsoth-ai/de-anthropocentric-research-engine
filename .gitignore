@@ -38,3 +38,8 @@ memory/
 cache/
 CODEX.md
 assets/logo-prompts.md
+
+# infra-graphs test scratch artifacts
+self-iteration/2026-06-14-infra-graphs/scripts/_t*.html
+self-iteration/2026-06-14-infra-graphs/scripts/_t*.json
+self-iteration/2026-06-14-infra-graphs/scripts/refactory_source.json

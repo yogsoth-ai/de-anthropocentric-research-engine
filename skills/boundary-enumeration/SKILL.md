@@ -1,8 +1,16 @@
 ---
 name: boundary-enumeration
-description: "Systematic Boundary Value Analysis: identify parameter boundaries, test at and beyond limits, detect breakpoints."
+description: 'Systematic Boundary Value Analysis: identify parameter boundaries, test
+  at and beyond limits, detect breakpoints.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - boundary-probing
+  sops:
+  - breakpoint-detection
+  - extreme-value-generation
+  - parameter-space-mapping
+  - stress-test-validity-envelope-construction
 ---
 
 # Boundary Enumeration
@@ -41,3 +49,26 @@ used-by: [adversarial-stress-testing]
 - extreme-value-generation
 - breakpoint-detection
 - validity-envelope-construction
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| boundary-probing | Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| breakpoint-detection | Test a claim at extreme parameter values and detect the precise point where it breaks down. |
+| extreme-value-generation | Generate boundary and extreme test values for a given parameter dimension to stress-test claims. |
+| parameter-space-mapping | Identify all parameter dimensions along which a claim's validity might vary. |
+| stress-test-validity-envelope-construction | Synthesize breakpoints across dimensions into a coherent validity envelope for a claim. |
+
+<!-- END available-tables (generated) -->

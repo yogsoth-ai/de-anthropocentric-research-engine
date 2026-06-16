@@ -1,6 +1,13 @@
 ---
 name: north-star-synthesis
-description: Converge all accumulated context into a crystallized North Star statement and structured ResearchBrief. Performs self-review before presenting to user. Use as the final tactic in any start mode — this is where everything comes together.
+description: Converge all accumulated context into a crystallized North Star statement
+  and structured ResearchBrief. Performs self-review before presenting to user. Use
+  as the final tactic in any start mode — this is where everything comes together.
+dependencies:
+  sops:
+  - crystallize-north-star
+  - final-validation
+  - generate-research-brief
 ---
 
 # North Star Synthesis
@@ -30,3 +37,17 @@ Converge all accumulated context into North Star + ResearchBrief.
 ## Output (Tactic-Level Aggregation, Presented to User)
 
 `North Star (one sentence) + ResearchBrief (structured context document)`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| crystallize-north-star | Fuse the GoalTree root node and user motivation into a single crystallized North Star statement. Format: '[verb] [specific goal], through [method/path], solving [what problem], ultimately [what impact]'. Quality checks: specific? ambitious? achievable? |
+| final-validation | Self-review the North Star + ResearchBrief for completeness, consistency, and clarity before presenting to user. If issues found, return to specific tactic/SOP for targeted fix. If passes, present final output to user for confirmation. |
+| generate-research-brief | Aggregate all accumulated context from the crystallization process into a structured ResearchBrief document. This is the final output artifact alongside the North Star — a comprehensive requirement context document for downstream research strategies. |
+
+<!-- END available-tables (generated) -->

@@ -4,7 +4,9 @@ description: Detect train-test data leakage and memorization artifacts
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_name, training_data_sources, test_set_metadata
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Contamination Audit SOP
@@ -28,3 +30,15 @@ Detect evidence of train-test data leakage, benchmark contamination, and memoriz
 ## Output
 
 Contamination risk assessment with evidence and confidence levels.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

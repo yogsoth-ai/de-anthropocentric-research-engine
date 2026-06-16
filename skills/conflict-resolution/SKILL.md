@@ -1,15 +1,22 @@
 ---
 name: conflict-resolution
-description: "How do constraints conflict with each other? — Evaporating Cloud + assumption challenging + injection to resolve constraint conflicts"
+description: How do constraints conflict with each other? — Evaporating Cloud + assumption
+  challenging + injection to resolve constraint conflicts
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - core-conflict-extraction
-  - assumption-challenging
-  - future-reality-projection
+- core-conflict-extraction
+- assumption-challenging
+- future-reality-projection
 tactics:
+- constraint-breaking
+dependencies:
+  sops:
+  - assumption-challenging
+  - core-conflict-extraction
+  - future-reality-projection
+  tactics:
   - constraint-breaking
 ---
 
@@ -63,3 +70,25 @@ Evaporating Cloud structure:
 | Subagent calls | ≤8 | 3 SOPs + injection generation + validation |
 | Iterations | ≤3 | May need multiple injection attempts |
 | Output size | ≤3000 tokens | EC + injection + FRT summary |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| constraint-breaking | Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| assumption-challenging | Challenge each assumption's validity — shared cross-repo SOP |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| future-reality-projection | Project solution effects using Future Reality Tree logic |
+
+<!-- END available-tables (generated) -->

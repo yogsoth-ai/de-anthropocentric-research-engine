@@ -1,8 +1,13 @@
 ---
 name: multi-dimensional-readiness-scan
-description: Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions.
+description: Assess readiness across multiple dimensions, synthesize into radar visualization,
+  and identify bottleneck dimensions.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - convergence-bottleneck-identification
+  - dimension-assessment
+  - radar-synthesis
 ---
 
 # Multi-Dimensional Readiness Scan
@@ -38,3 +43,17 @@ Systematically evaluate a candidate across all relevant feasibility dimensions, 
 - Complete radar with >= 5 dimensions scored
 - Bottleneck list with severity ranking
 - Overall readiness score (weighted average)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| convergence-bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
+| dimension-assessment | Score a single readiness dimension for a candidate with evidence and gap analysis. |
+| radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |
+
+<!-- END available-tables (generated) -->

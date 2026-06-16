@@ -1,10 +1,13 @@
 ---
 name: perspective-attack
-description: Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives.
+description: Attack a decision from a specific assigned perspective, producing rated
+  arguments and constructive alternatives.
 execution: subagent
 prompt: ./prompt.md
 input: decision, perspective_brief
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Perspective Attack
@@ -28,3 +31,15 @@ Output must include:
 - Severity rating for each attack
 - At least 1 constructive alternative (not just criticism)
 - Attacks must be consistent with the assigned perspective (not generic)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

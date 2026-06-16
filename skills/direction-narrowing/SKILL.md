@@ -1,6 +1,13 @@
 ---
 name: direction-narrowing
-description: Focus within the user's chosen field(s). Identify specific sub-directions through deep paper and web research, then present ranked candidates. Use after landscape-reconnaissance has identified fields of interest.
+description: Focus within the user's chosen field(s). Identify specific sub-directions
+  through deep paper and web research, then present ranked candidates. Use after landscape-reconnaissance
+  has identified fields of interest.
+dependencies:
+  sops:
+  - deep-web-search
+  - north-star-crystallization-broad-paper-search
+  - present-candidates
 ---
 
 # Direction Narrowing
@@ -32,3 +39,17 @@ Focus within chosen field(s). Identify specific sub-directions and present ranke
 ## Output (Tactic-Level Aggregation)
 
 `RankedCandidates[] + user's selection`
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| deep-web-search | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Spawns a subagent to read pages in isolated context. Hard constraint: at least 30 web pages read in full. |
+| north-star-crystallization-broad-paper-search | Paper landscape scan within selected field(s). Strict import of literature-engine/literature-overview skill. Hard constraint: at least 80 papers scanned. |
+| present-candidates | Analyze sub-directions within the user's chosen field and present ranked candidates. Combines sub-direction identification, skill-gap matching, and presentation into a single SOP. Depth scales by start mode: cold-start shows broad sub-directions, warm-start shows specific sub-problems, hot-start shows granular technical details. |
+
+<!-- END available-tables (generated) -->

@@ -1,11 +1,14 @@
 ---
 name: statistical-method-selection
-description: "Select appropriate statistical methods for experiment analysis"
+description: Select appropriate statistical methods for experiment analysis
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
+- metric-specification
+- sample-size-estimation
+dependencies:
+  sops:
   - metric-specification
   - sample-size-estimation
 ---
@@ -43,3 +46,16 @@ orchestrates:
 - Are multiple comparison corrections applied when testing multiple hypotheses?
 - Is the effect size reported alongside p-values?
 - Is the significance threshold pre-registered (not chosen post-hoc)?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+
+<!-- END available-tables (generated) -->

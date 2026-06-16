@@ -1,7 +1,16 @@
 ---
 name: diversity-maximization
-description: Maximize portfolio diversity and coverage using MAP-Elites, Niche coverage, Maximum dispersion, and Anti-clustering methods.
-used-by: portfolio-optimization
+description: Maximize portfolio diversity and coverage using MAP-Elites, Niche coverage,
+  Maximum dispersion, and Anti-clustering methods.
+dependencies:
+  tactics:
+  - niche-coverage-analysis
+  - pareto-frontier-construction
+  sops:
+  - coverage-scoring
+  - niche-definition
+  - niche-mapping
+  - objective-definition
 ---
 
 # Diversity Maximization
@@ -74,3 +83,27 @@ gaps_remaining:
     severity: <high|medium|low>
 method_used: <MAP-Elites|niche-coverage|max-dispersion>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| niche-coverage-analysis | Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention. |
+| pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| coverage-scoring | Compute coverage completeness, redundancy, and gap severity scores from a coverage map. |
+| niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |
+| niche-mapping | Map each candidate to the niches it covers, indicating strength of coverage for each assignment. |
+| objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
+
+<!-- END available-tables (generated) -->

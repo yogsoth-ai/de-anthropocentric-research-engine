@@ -1,6 +1,8 @@
 ---
 name: clarify-resources
-description: Understand what resources the user has available for research — compute, timeline, collaboration, data access, experimental environment. Every item accepts 'TBD' as a valid answer.
+description: Understand what resources the user has available for research — compute,
+  timeline, collaboration, data access, experimental environment. Every item accepts
+  'TBD' as a valid answer.
 execution: dialogue
 ---
 

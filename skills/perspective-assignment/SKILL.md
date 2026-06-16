@@ -1,10 +1,13 @@
 ---
 name: perspective-assignment
-description: Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria.
+description: Define distinct stakeholder or analytical perspectives with their values,
+  concerns, and evaluation criteria.
 execution: subagent
 prompt: ./prompt.md
 input: decision, stakeholders
-used-by: [steel-manning]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Perspective Assignment
@@ -28,3 +31,15 @@ Output must include:
 - Each perspective must have unique values (not overlapping)
 - Each must include specific concerns relevant to the decision
 - Each must define what "failure" looks like from that perspective
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

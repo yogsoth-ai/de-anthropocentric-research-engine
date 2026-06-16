@@ -1,9 +1,18 @@
 ---
 name: causal-necessity-testing
-description: "Tactic: Extract causal claims, evaluate probability of necessity (PN) and sufficiency (PS) for each, classify into necessity-sufficiency quadrants."
+description: 'Tactic: Extract causal claims, evaluate probability of necessity (PN)
+  and sufficiency (PS) for each, classify into necessity-sufficiency quadrants.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [necessity-sufficiency, structural-counterfactual, thought-experiment]
+strategies:
+- necessity-sufficiency
+- structural-counterfactual
+- thought-experiment
+dependencies:
+  sops:
+  - causal-claim-extraction
+  - load-bearing-identification
+  - necessity-evaluation
+  - sufficiency-evaluation
 ---
 
 # Causal Necessity Testing Tactic
@@ -41,3 +50,18 @@ PNS evaluation: for each causal claim, determine whether the cause is necessary,
 - All extracted claims evaluated within budget
 - Early termination if INUS condition found and budget is S
 - All claims score PN < 0.3 (no necessary factors found — conclusion may be overdetermined)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |
+| necessity-evaluation | Evaluate the probability of necessity (PN) for a causal factor — would the conclusion fail if this factor were absent? |
+| sufficiency-evaluation | Evaluate the probability of sufficiency (PS) for a causal factor — would this factor alone be enough to produce the conclusion? |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: probe-execution
-description: Execute a single attack probe against an artifact, record the result with evidence and severity classification.
+description: Execute a single attack probe against an artifact, record the result
+  with evidence and severity classification.
 execution: subagent
 prompt: ./prompt.md
 input: vector (string), artifact (string), persona (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Probe Execution
@@ -31,3 +34,15 @@ Probe execution requires committed adversarial stance. The prober must genuinely
 - **evidence**: Specific evidence supporting the result
 - **severity**: critical/major/minor (if vulnerability found)
 - **follow_up**: Whether deeper probing is warranted
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

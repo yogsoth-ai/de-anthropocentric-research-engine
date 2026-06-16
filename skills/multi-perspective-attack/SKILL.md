@@ -1,8 +1,13 @@
 ---
 name: multi-perspective-attack
-description: Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment.
+description: Assign distinct perspectives to attack a decision from multiple angles,
+  then synthesize findings into a unified assessment.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - perspective-assignment
+  - perspective-attack
+  - steel-manning-synthesis
 ---
 
 # Multi-Perspective Attack
@@ -38,3 +43,17 @@ A structured approach to attacking a decision from multiple distinct viewpoints 
 - Synthesis across all attacks
 - Final verdict (ACCEPT/REJECT/REVISE) with surviving concerns
 - Recommended modifications addressing highest-severity cross-perspective concerns
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| perspective-assignment | Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria. |
+| perspective-attack | Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives. |
+| steel-manning-synthesis | Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications. |
+
+<!-- END available-tables (generated) -->

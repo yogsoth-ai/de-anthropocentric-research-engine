@@ -1,7 +1,13 @@
 ---
 name: variance-decomposition
-description: Sobol variance decomposition — compute first-order and total-order sensitivity indices to quantify each parameter's contribution to output variance.
-used-by: sensitivity-analysis
+description: Sobol variance decomposition — compute first-order and total-order sensitivity
+  indices to quantify each parameter's contribution to output variance.
+dependencies:
+  tactics:
+  - screening-then-decomposition
+  sops:
+  - interaction-detection
+  - sobol-decomposition
 ---
 
 # Variance Decomposition
@@ -45,3 +51,24 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 For parameters surviving screening, compute Sobol first-order (Si) and total-order (STi) indices. Si measures direct effect, STi-Si measures interaction contribution. Focus on parameters with high STi.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| screening-then-decomposition | Two-phase sensitivity — Morris quick screening to eliminate unimportant factors, then Sobol precise decomposition on survivors. Efficient allocation of analytical effort. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| interaction-detection | Detect and characterize significant parameter interactions from Sobol decomposition results. |
+| sobol-decomposition | Sobol variance decomposition — compute first-order and total-order sensitivity indices for precise variance attribution. |
+
+<!-- END available-tables (generated) -->

@@ -1,7 +1,14 @@
 ---
 name: assumption-audit
-description: Surface all assumptions, classify by vulnerability (load-bearing × likely-false), validate causal logic. Focus on dangerous assumptions — high load-bearing + non-explicit.
-used-by: insight
+description: Surface all assumptions, classify by vulnerability (load-bearing × likely-false),
+  validate causal logic. Focus on dangerous assumptions — high load-bearing + non-explicit.
+dependencies:
+  tactics:
+  - assumption-stress-test
+  sops:
+  - abp-vulnerability-classification
+  - clr-validation
+  - deep-insight-assumption-surfacing
 ---
 
 # Assumption Audit
@@ -54,3 +61,25 @@ Surface all assumptions (shared SOP), classify by vulnerability (ABP), validate 
 ## Output Format
 
 Assumption Audit Report — assumption inventory, vulnerability matrix, CLR validation results, priority list for challenging.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| assumption-stress-test | Systematic stress testing of assumptions — surface, classify by vulnerability, attack, assess fragility. Combines assumption-surfacing (shared), abp-vulnerability-classification, and clr-validation SOPs. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| abp-vulnerability-classification | Classify assumptions on 2 axes — load-bearing (how much conclusion depends on it) × vulnerable (how likely to be false). Focuses attention on High-Load × High-Vulnerable quadrant. |
+| clr-validation | Apply Goldratt's 8 Categories of Legitimate Reservation to validate causal claims. Tests clarity, existence, sufficiency, and logical integrity. |
+| deep-insight-assumption-surfacing | Systematically extract implicit assumptions from methods, frameworks, or arguments. Identifies what is taken for granted without explicit justification. |
+
+<!-- END available-tables (generated) -->

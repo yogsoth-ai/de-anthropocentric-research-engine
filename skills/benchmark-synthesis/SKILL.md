@@ -4,7 +4,9 @@ description: Produce final structured audit report
 execution: subagent
 prompt: ./prompt.md
 input: all_analysis_results
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Benchmark Synthesis SOP
@@ -26,3 +28,15 @@ Synthesize all analysis results from a benchmark archaeology campaign into a fin
 ## Output
 
 Final synthesis report suitable for publication or decision-making.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

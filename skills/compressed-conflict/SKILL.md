@@ -1,8 +1,13 @@
 ---
 name: compressed-conflict
-description: Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension.
+description: Generate compressed conflicts (oxymorons) from problem contradictions
+  and extract concrete idea directions from the symbolic tension.
 execution: tactic
-used-by: synectics, symbolic-analogy, excursion-method
+dependencies:
+  sops:
+  - analogy-chain
+  - springboard-launch
+  - symbolic-compression
 ---
 
 # Compressed Conflict
@@ -40,3 +45,17 @@ Extract concrete idea directions from the symbolic tensions. Each oxymoron shoul
 | analogy-chain | Stage 2 — deepen oxymorons through layers |
 | springboard-launch | Stage 3 — convert symbolic insights to solutions |
 | synectics-synthesis | Post — synthesize compressed conflict outputs |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| analogy-chain | Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| symbolic-compression | Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons with interpretation directions for each. |
+
+<!-- END available-tables (generated) -->

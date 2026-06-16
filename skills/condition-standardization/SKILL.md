@@ -1,7 +1,14 @@
-﻿---
+---
 name: condition-standardization
-description: Standardize evaluation condition differences across papers — 20 methods, 60 data points, 30 web searches budget
-used-by: baseline-establishment
+description: Standardize evaluation condition differences across papers — 20 methods,
+  60 data points, 30 web searches budget
+dependencies:
+  tactics:
+  - condition-normalization
+  sops:
+  - compute-normalization
+  - condition-cataloging
+  - performance-table-assembly
 ---
 
 # Condition Standardization
@@ -82,3 +89,25 @@ Cannot exit until data_points_standardized >= 48 (80% of target).
   }
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| condition-normalization | Compare and standardize experimental conditions across papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| compute-normalization | Normalize results by compute budget (Pareto analysis) |
+| condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
+| performance-table-assembly | Assemble unified comparison table with confidence interval annotations |
+
+<!-- END available-tables (generated) -->

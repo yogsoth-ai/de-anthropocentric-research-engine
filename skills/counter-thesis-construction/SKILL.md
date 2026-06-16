@@ -1,7 +1,13 @@
 ---
 name: counter-thesis-construction
-description: Construct the strongest possible counter-argument to the convergence decision using Dialectical Inquiry and Thesis-Antithesis-Synthesis methods.
-used-by: steel-manning
+description: Construct the strongest possible counter-argument to the convergence
+  decision using Dialectical Inquiry and Thesis-Antithesis-Synthesis methods.
+dependencies:
+  tactics:
+  - adversarial-debate-protocol
+  - assumption-excavation
+  sops:
+  - steel-manning-synthesis
 ---
 
 # Counter-Thesis Construction
@@ -69,3 +75,24 @@ verdict: THESIS_STANDS | ANTITHESIS_WINS | SYNTHESIS_FOUND
 reasoning: <key evidence>
 conditions: []
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adversarial-debate-protocol | Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds. |
+| assumption-excavation | Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| steel-manning-synthesis | Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications. |
+
+<!-- END available-tables (generated) -->

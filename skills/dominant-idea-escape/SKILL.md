@@ -1,7 +1,14 @@
 ---
 name: dominant-idea-escape
-description: Identify dominant paradigms constraining the field and use de Bono lateral thinking provocations to escape them.
-used-by: problem-reformulation
+description: Identify dominant paradigms constraining the field and use de Bono lateral
+  thinking provocations to escape them.
+dependencies:
+  tactics:
+  - lateral-escape
+  sops:
+  - consequence-following
+  - deep-insight-provocation-generation
+  - dominant-idea-identification
 ---
 
 # Dominant Idea Escape
@@ -45,3 +52,25 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Identify the dominant paradigm/assumption constraining the field, generate de Bono provocations (escape, reversal, exaggeration, distortion), follow consequences of each provocation to extract viable new framings.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| lateral-escape | de Bono lateral escape sequence — identify dominant idea, generate provocations (escape/reversal/exaggeration/distortion), follow consequences to extract new framings. Breaks paradigm lock-in. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consequence-following | Follow a provocation's logical consequences step by step to extract viable insights and new research directions. |
+| deep-insight-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
+| dominant-idea-identification | Identify dominant paradigms and assumptions constraining thinking in a research field. |
+
+<!-- END available-tables (generated) -->

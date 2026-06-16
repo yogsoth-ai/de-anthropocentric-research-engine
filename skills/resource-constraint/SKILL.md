@@ -1,15 +1,22 @@
 ---
 name: resource-constraint
-description: "Are resources sufficient? — Quantify compute, data, time, human, and financial resource constraints"
+description: Are resources sufficient? — Quantify compute, data, time, human, and
+  financial resource constraints
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: constraint-analysis
 sops:
-  - resource-quantification
-  - critical-chain-identification
-  - buffer-sizing
+- resource-quantification
+- critical-chain-identification
+- buffer-sizing
 tactics:
+- sensitivity-ranking
+dependencies:
+  sops:
+  - buffer-sizing
+  - critical-chain-identification
+  - resource-quantification
+  tactics:
   - sensitivity-ranking
 ---
 
@@ -60,3 +67,25 @@ Resource categories:
 | Subagent calls | ≤6 | 3 SOPs + synthesis |
 | Iterations | ≤2 | Re-quantify if estimates change |
 | Output size | ≤3000 tokens | Gap table + recommendation |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| buffer-sizing | Calculate project, feeding, and resource buffers — shared with implementation-planning |
+| critical-chain-identification | Identify the critical chain — longest path considering resource contention |
+| resource-quantification | Quantify resource demand vs supply vs gap for each resource category |
+
+<!-- END available-tables (generated) -->

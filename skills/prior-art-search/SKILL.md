@@ -1,8 +1,22 @@
 ---
 name: prior-art-search
-description: Evaluate novelty of specific invention — find relevant prior art across patents, publications, and products. Budget: 80 patent families, 20 claim parses, 50 web searches.
+description: 'Evaluate novelty of specific invention — find relevant prior art across
+  patents, publications, and products. Budget: 80 patent families, 20 claim parses,
+  50 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - knowledge-acquisition-claim-decomposition
+  - patent-family-tracing
+  sops:
+  - citation-network-analysis
+  - claim-parsing
+  - knowledge-acquisition-saturation-detection
+  - legal-status-assessment
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
 ---
 
 # Prior Art Search
@@ -91,3 +105,31 @@ Determine whether a specific invention is novel and non-obvious by systematicall
 ## Conclusion
 [Overall patentability/FTO assessment]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
+| knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
+| patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |
+| claim-parsing | Patent claim syntax parsing — independent/dependent relationships and element extraction |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| legal-status-assessment | Determine patent legal status — active, expired, pending, lapsed, or revoked |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+| patent-synthesis | Produce final structured patent intelligence report from all analysis results |
+| quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: structural-mapping
-description: Map source→target structural correspondences. Identifies corresponding, missing, and extra elements between domains.
+description: Map source→target structural correspondences. Identifies corresponding,
+  missing, and extra elements between domains.
 execution: subagent
 prompt: ./prompt.md
 input: source_structure (string), target_domain (string)
-used-by: cross-domain-discovery, analogical-transfer, design-by-analogy, bridge-validation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Structural Mapping
@@ -18,3 +21,15 @@ Subagent — spawned via subagent-spawning/spawn-agent skill.
 ## Why Subagent
 
 Structure-mapping requires systematic alignment of relational systems, tracking correspondences at multiple levels simultaneously. Benefits from dedicated working memory to maintain the full mapping table.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

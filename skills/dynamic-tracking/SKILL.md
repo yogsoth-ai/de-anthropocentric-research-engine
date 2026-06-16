@@ -1,7 +1,13 @@
 ---
 name: dynamic-tracking
-description: Strategy for continuous rating updates using Elo, Glicko-2, TrueSkill 2, and Whole-History Rating for live ranking systems and A/B testing.
-used-by: pairwise-ranking
+description: Strategy for continuous rating updates using Elo, Glicko-2, TrueSkill
+  2, and Whole-History Rating for live ranking systems and A/B testing.
+dependencies:
+  tactics:
+  - adaptive-pair-selection
+  - consistency-audit-loop
+  sops:
+  - ranking-synthesis
 ---
 
 # Dynamic Tracking
@@ -77,3 +83,24 @@ top_movers:
   - {candidate: "...", delta: +120, last_5: "WWWLW"}
 stability_score: 0.88
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| adaptive-pair-selection | Iteratively select maximally informative pairs, execute comparisons, update ratings, and check convergence until ranking stabilizes. |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+
+<!-- END available-tables (generated) -->

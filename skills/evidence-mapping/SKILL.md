@@ -1,8 +1,17 @@
 ---
 name: evidence-mapping
-description: Systematic evidence map construction — search, classify, locate gaps, visualize. Combines concept-matrix-construction, gap-keyword-extraction, evidence-grading, and egm-construction SOPs.
+description: Systematic evidence map construction — search, classify, locate gaps,
+  visualize. Combines concept-matrix-construction, gap-keyword-extraction, evidence-grading,
+  and egm-construction SOPs.
 execution: tactic
-used-by: gap-identification, gap-synthesis-strategy
+dependencies:
+  sops:
+  - concept-matrix-construction
+  - deep-insight-paper-overview
+  - deep-insight-paper-search
+  - egm-construction
+  - evidence-grading
+  - gap-keyword-extraction
 ---
 
 # Evidence Mapping
@@ -35,3 +44,20 @@ Build concept matrix first (articles × concepts), identify empty cells as gap c
 - EGM: >= 1 constructed
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| concept-matrix-construction | Build articles × concepts coverage matrix to visualize research landscape and identify empty cells as gap candidates. |
+| deep-insight-paper-overview | Paper metadata and abstract-level overview. Import of literature-engine/literature-overview skill. Abstracts only — no substantive claims without deeper reading. |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| egm-construction | Build structured Evidence Gap Maps — define axes (intervention × outcome or method × domain), place gaps in cells, annotate with evidence density and quality. |
+| evidence-grading | Assess evidence quality using GRADE/SOE framework. Rates certainty level and identifies downgrade reasons. |
+| gap-keyword-extraction | Extract gap-indicating sentences and phrases from papers/reviews. Identifies linguistic markers of research gaps (e.g., "remains unclear", "has not been explored", "limited understanding"). |
+
+<!-- END available-tables (generated) -->

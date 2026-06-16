@@ -1,7 +1,14 @@
 ---
 name: coherence-diagnosis
-description: Strategy for auditing preference consistency using Consistency Ratio, cycle enumeration, and mElo to detect and resolve intransitivities.
-used-by: pairwise-ranking
+description: Strategy for auditing preference consistency using Consistency Ratio,
+  cycle enumeration, and mElo to detect and resolve intransitivities.
+dependencies:
+  tactics:
+  - consistency-audit-loop
+  sops:
+  - convergence-check
+  - ranking-synthesis
+  - rating-update
 ---
 
 # Coherence Diagnosis
@@ -77,3 +84,25 @@ audit_trail:
 final_ranking_valid: true
 method: consistency-ratio
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| convergence-check | Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics. |
+| ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
+| rating-update | Incorporate a new judgment into the rating model and return updated ratings for all candidates. |
+
+<!-- END available-tables (generated) -->

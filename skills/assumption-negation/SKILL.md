@@ -1,8 +1,17 @@
 ---
 name: assumption-negation
-description: "Classic reductio ad absurdum: negate the core claim, derive logical consequences, seek contradiction or absurdity."
+description: 'Classic reductio ad absurdum: negate the core claim, derive logical
+  consequences, seek contradiction or absurdity.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - contradiction-derivation
+  - counterexample-heuristics
+  sops:
+  - claim-negation
+  - claim-refinement
+  - contradiction-detection
+  - deductive-chain
 ---
 
 # Assumption Negation
@@ -42,3 +51,27 @@ used-by: [adversarial-stress-testing]
 - deductive-chain
 - contradiction-detection
 - claim-refinement
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| contradiction-derivation | Negate a claim, derive logical consequences step by step, detect whether a genuine contradiction or absurdity emerges. |
+| counterexample-heuristics | Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method). |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| claim-negation | Formally negate the core claim, producing the logical complement for reductio testing. |
+| claim-refinement | Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation). |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| deductive-chain | Derive logical consequences step by step from a given premise, building a traceable derivation chain. |
+
+<!-- END available-tables (generated) -->

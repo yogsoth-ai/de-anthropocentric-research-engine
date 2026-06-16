@@ -1,7 +1,10 @@
 ---
 name: maturity-diagnosis
-description: Assess current readiness of candidates using TRL 9-level, NASSS 7-dimension, and Innovation Readiness Level frameworks.
-used-by: feasibility-assessment
+description: Assess current readiness of candidates using TRL 9-level, NASSS 7-dimension,
+  and Innovation Readiness Level frameworks.
+dependencies:
+  tactics:
+  - multi-dimensional-readiness-scan
 ---
 
 # Maturity Diagnosis
@@ -68,3 +71,15 @@ maturity_diagnosis:
   bottlenecks: [{dimension, severity, reason}]
   radar_summary: <text>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
+
+<!-- END available-tables (generated) -->

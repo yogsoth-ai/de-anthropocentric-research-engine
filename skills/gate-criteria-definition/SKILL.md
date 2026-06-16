@@ -1,10 +1,13 @@
 ---
 name: gate-criteria-definition
-description: Define gate criteria and pass thresholds for a specific stage in the Stage-Gate process.
+description: Define gate criteria and pass thresholds for a specific stage in the
+  Stage-Gate process.
 execution: subagent
 prompt: ./prompt.md
 input: stage, context
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Gate Criteria Definition
@@ -27,3 +30,15 @@ Gate criteria must be defined independently of the candidate being evaluated to 
 ## HARD-GATE
 
 Output MUST include: at least 3 gate criteria, measurable pass threshold for each, and evidence requirements. Reject if criteria are vague or unmeasurable.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

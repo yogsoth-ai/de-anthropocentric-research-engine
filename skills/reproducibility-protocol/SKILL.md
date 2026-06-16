@@ -1,13 +1,17 @@
 ---
 name: reproducibility-protocol
-description: "Ensure experiment reproducibility through systematic environment and seed control"
+description: Ensure experiment reproducibility through systematic environment and
+  seed control
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: experiment-design
 orchestrates:
-  - seed-protocol-design
+- seed-protocol-design
+- environment-specification
+dependencies:
+  sops:
   - environment-specification
+  - seed-protocol-design
 ---
 
 # Tactic: Reproducibility Protocol
@@ -38,3 +42,16 @@ orchestrates:
 - Is the order of data loading controlled?
 - Are model initialization seeds separate from data shuffling seeds?
 - Is there a plan for cross-machine reproducibility testing?
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| environment-specification | SOP: define complete experiment environment specification |
+| seed-protocol-design | SOP: design random seed strategy for reproducibility |
+
+<!-- END available-tables (generated) -->

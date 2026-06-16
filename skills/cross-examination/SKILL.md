@@ -1,10 +1,13 @@
 ---
 name: cross-examination
-description: Probes defender responses for inconsistencies, logical gaps, and unsupported claims. Acts as follow-up interrogation after initial defense.
+description: Probes defender responses for inconsistencies, logical gaps, and unsupported
+  claims. Acts as follow-up interrogation after initial defense.
 execution: subagent
 prompt: ./prompt.md
 input: defenses (string), attacks (string), artifact (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Cross-Examination
@@ -35,3 +38,15 @@ Cross-examination requires fresh analytical perspective on the defense — isola
 ## Budget
 
 One unit = one cross-examination pass per round.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

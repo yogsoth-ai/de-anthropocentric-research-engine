@@ -1,13 +1,18 @@
 ---
 name: plan-writing
-description: "Format critical path and prerequisites into bite-sized executable plan following superpowers:writing-plans conventions"
+description: Format critical path and prerequisites into bite-sized executable plan
+  following superpowers:writing-plans conventions
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
-  - plan-formatting
+- plan-formatting
 tactics:
+- task-decomposition
+dependencies:
+  sops:
+  - plan-formatting
+  tactics:
   - task-decomposition
 ---
 
@@ -52,3 +57,23 @@ A valid plan has:
 - [ ] Buffer tasks (non-critical) are identified with float values
 - [ ] No TBD/TODO/placeholder text anywhere
 - [ ] Estimated duration per task (from PERT)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| plan-formatting | Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions |
+
+<!-- END available-tables (generated) -->

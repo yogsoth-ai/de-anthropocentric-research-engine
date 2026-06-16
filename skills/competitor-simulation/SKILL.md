@@ -1,10 +1,13 @@
 ---
 name: competitor-simulation
-description: Competitor perspective — design strategies to defeat this solution, then use attack vectors to improve it.
+description: Competitor perspective — design strategies to defeat this solution, then
+  use attack vectors to improve it.
 execution: subagent
 prompt: ./prompt.md
 input: solution (string)
-used-by: perspective-forcing, role-based-ideation
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Competitor Simulation
@@ -18,3 +21,15 @@ Subagent — spawned via subagent-spawning/spawn-agent skill.
 ## Why Subagent
 
 Competitive analysis requires adversarial thinking that benefits from dedicated context to avoid contaminating constructive ideation.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

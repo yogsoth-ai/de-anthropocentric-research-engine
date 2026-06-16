@@ -1,37 +1,37 @@
 ---
 name: boundary-condition-specification
-description: "SOP: 指定假设成立的边界条件"
+description: 'SOP: Specify the boundary conditions under which a hypothesis holds'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: "假设草案（含 statement + variables + mechanism）"
-output: "边界条件列表（时间/空间/人群/条件/排除）"
+input: Hypothesis draft (with statement + variables + mechanism)
+output: Boundary condition list (temporal/spatial/population/conditional/exclusions)
 dependencies:
   skills:
-    - subagent-spawning
+  - subagent-spawning
 ---
 
 # Boundary Condition Specification
-系统地识别假设成立所需的前提条件，防止过度泛化。
+Systematically identify the preconditions required for a hypothesis to hold, preventing overgeneralization.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有至少 1 个假设草案（含 statement 和 mechanism）
-2. 假设涉及可识别的实体、时间或情境
+Preconditions (all must hold before starting):
+1. At least 1 hypothesis draft is available (with statement and mechanism)
+2. The hypothesis involves identifiable entities, time, or context
 
-不满足 → 停止，返回错误：假设草案不完整，无法确定边界条件。
+Not satisfied → stop and return error: hypothesis draft incomplete, cannot determine boundary conditions.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证假设草案完整性
-2. 时间边界：假设在什么时间段/历史时期成立？是否有时效性？
-3. 空间边界：假设在什么地理/文化/组织范围内成立？
-4. 人群边界：假设适用于哪类主体（人群、物种、系统类型）？
-5. 条件边界：假设成立需要哪些前提条件（技术、制度、环境）？
-6. 排除条件：明确列出假设不适用的情境
-7. 输出结构化边界条件列表
+1. Precondition check: verify completeness of the hypothesis draft
+2. Temporal boundary: in what time period/historical era does the hypothesis hold? Is there a time sensitivity?
+3. Spatial boundary: within what geographic/cultural/organizational scope does the hypothesis hold?
+4. Population boundary: to what kind of subjects does the hypothesis apply (populations, species, system types)?
+5. Conditional boundary: what preconditions are required for the hypothesis to hold (technical, institutional, environmental)?
+6. Exclusion conditions: explicitly list the situations where the hypothesis does not apply
+7. Output structured boundary condition list
 
 ## Output Format
 ```json
@@ -48,4 +48,5 @@ dependencies:
   "notes": "Any additional caveats"
 }
 ```
-每个假设草案产出 1 个边界条件对象。
+Each hypothesis draft yields 1 boundary condition object.
+</output>

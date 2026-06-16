@@ -1,10 +1,13 @@
 ---
 name: disagreement-visualization
-description: Produce a structured disagreement map showing clusters, arguments, and fault lines.
+description: Produce a structured disagreement map showing clusters, arguments, and
+  fault lines.
 execution: subagent
 prompt: ./prompt.md
 input: clusters[], arguments[]
-used-by: structured-consensus
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Disagreement Visualization
@@ -24,3 +27,15 @@ Spawn a subagent that takes clusters and their extracted arguments, then produce
 ## HARD-GATE
 
 Output MUST contain: `disagreement_map` with clusters, fault_lines (at least 1 if multiple clusters exist), and fault_line_types. Map must cover ALL input clusters.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

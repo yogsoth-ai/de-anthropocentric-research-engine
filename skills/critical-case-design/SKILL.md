@@ -1,8 +1,17 @@
 ---
 name: critical-case-design
-description: "Flyvbjerg critical case methodology: select most-likely and least-likely cases to maximize inferential power."
+description: 'Flyvbjerg critical case methodology: select most-likely and least-likely
+  cases to maximize inferential power.'
 type: strategy
-used-by: [adversarial-stress-testing]
+dependencies:
+  tactics:
+  - boundary-probing
+  - counterexample-heuristics
+  sops:
+  - breakpoint-detection
+  - contradiction-detection
+  - extreme-value-generation
+  - parameter-space-mapping
 ---
 
 # Critical Case Design
@@ -42,3 +51,27 @@ used-by: [adversarial-stress-testing]
 - extreme-value-generation
 - breakpoint-detection
 - contradiction-detection
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| boundary-probing | Map parameter space, generate extreme values, test at boundaries, detect breakpoints, synthesize validity envelope. |
+| counterexample-heuristics | Generate counterexamples (monsters), attempt monster-barring, incorporate surviving counterexamples as lemma refinements (Lakatos method). |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| breakpoint-detection | Test a claim at extreme parameter values and detect the precise point where it breaks down. |
+| contradiction-detection | Evaluate whether a derivation chain has reached a genuine contradiction, absurdity, or inconclusive state. |
+| extreme-value-generation | Generate boundary and extreme test values for a given parameter dimension to stress-test claims. |
+| parameter-space-mapping | Identify all parameter dimensions along which a claim's validity might vary. |
+
+<!-- END available-tables (generated) -->

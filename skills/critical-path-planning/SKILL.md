@@ -1,16 +1,24 @@
 ---
 name: critical-path-planning
-description: "Identify the shortest execution path via CPM forward/backward pass, resource leveling, and buffer insertion"
+description: Identify the shortest execution path via CPM forward/backward pass, resource
+  leveling, and buffer insertion
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: implementation-planning
 sops:
+- activity-listing
+- dependency-sequencing
+- duration-estimation
+- critical-path-calculation
+tactics:
+- task-decomposition
+dependencies:
+  sops:
   - activity-listing
+  - critical-path-calculation
   - dependency-sequencing
   - duration-estimation
-  - critical-path-calculation
-tactics:
+  tactics:
   - task-decomposition
 ---
 
@@ -55,3 +63,26 @@ activity-listing
 - If critical path is too long: look for fast-tracking (parallel execution) or crashing (more resources)
 - If resource conflicts exist: prioritize critical path tasks over float tasks
 - Buffer size: typically 50% of critical chain duration (Goldratt's recommendation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| activity-listing | Enumerate all implementation activities from an experiment design |
+| critical-path-calculation | CPM forward/backward pass with float calculation to identify the critical path |
+| dependency-sequencing | Determine task dependencies and execution order |
+| duration-estimation | Three-point PERT estimation for implementation activities |
+
+<!-- END available-tables (generated) -->

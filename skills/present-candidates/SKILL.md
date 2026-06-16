@@ -1,6 +1,9 @@
 ---
 name: present-candidates
-description: Analyze sub-directions within the user's chosen field and present ranked candidates. Combines sub-direction identification, skill-gap matching, and presentation into a single SOP. Depth scales by start mode: cold-start shows broad sub-directions, warm-start shows specific sub-problems, hot-start shows granular technical details.
+description: 'Analyze sub-directions within the user''s chosen field and present ranked
+  candidates. Combines sub-direction identification, skill-gap matching, and presentation
+  into a single SOP. Depth scales by start mode: cold-start shows broad sub-directions,
+  warm-start shows specific sub-problems, hot-start shows granular technical details.'
 execution: dialogue
 ---
 

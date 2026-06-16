@@ -1,10 +1,13 @@
 ---
 name: rank-comparison
-description: Compare multiple ranking results to assess agreement and identify divergent items.
+description: Compare multiple ranking results to assess agreement and identify divergent
+  items.
 execution: subagent
 prompt: ./prompt.md
 input: rankings (object[])
-used-by: multi-criteria-scoring
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Rank Comparison
@@ -22,3 +25,15 @@ Rank comparison involves statistical computation (Kendall tau, Spearman rho) and
 ## HARD-GATE
 
 Must report at least one rank correlation metric (Kendall tau or Spearman rho), and must list all alternatives with ranking differences >= 2 positions.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

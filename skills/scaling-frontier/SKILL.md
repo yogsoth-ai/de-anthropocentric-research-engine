@@ -1,7 +1,11 @@
 ---
 name: scaling-frontier
-description: Analyze behavior across scales — detect regime changes, identify capacity limits, fit scaling laws within regimes.
-used-by: boundary-analysis
+description: Analyze behavior across scales — detect regime changes, identify capacity
+  limits, fit scaling laws within regimes.
+dependencies:
+  sops:
+  - edge-case-generation
+  - scaling-regime-detection
 ---
 
 # Scaling Frontier
@@ -41,3 +45,16 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Analyze behavior across scales (data size, model size, compute, time), detect regime changes (breakpoints where behavior qualitatively shifts), identify capacity limits and their mechanisms.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| edge-case-generation | Systematically generate boundary inputs — boundary values, adversarial constructions, distribution shifts, rare combinations, scale extremes. |
+| scaling-regime-detection | Detect regime changes in scaling behavior — breakpoints where behavior qualitatively shifts, mechanisms behind transitions. |
+
+<!-- END available-tables (generated) -->

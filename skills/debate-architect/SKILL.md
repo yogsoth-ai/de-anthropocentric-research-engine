@@ -1,10 +1,13 @@
 ---
 name: debate-architect
-description: Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters.
+description: Designs debate structure based on artifact type — selects attack vectors,
+  assigns perspectives, determines escalation ladder, and configures round parameters.
 execution: subagent
 prompt: ./prompt.md
 input: artifact (string), artifact_type (string), budget_size (string), strategy (string)
-used-by: [multiagent-debate]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Debate Architect
@@ -36,3 +39,15 @@ Structure design requires analyzing the artifact holistically to determine optim
 ## Budget
 
 One unit = one structure design per debate.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

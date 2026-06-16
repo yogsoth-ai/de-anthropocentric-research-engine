@@ -1,8 +1,14 @@
 ---
 name: iterative-convergence-round
-description: Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue.
+description: Execute one full Delphi round — collect judgments, distribute anonymous
+  feedback, measure consensus, decide whether to continue.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - consensus-measurement
+  - feedback-distribution
+  - judgment-collection
+  - round-decision
 ---
 
 # Iterative Convergence Round
@@ -38,3 +44,18 @@ Execute one complete iteration of the Delphi convergence cycle: collect independ
 - Consensus items list (items that reached consensus)
 - Non-consensus items (items that did not converge, with reasons)
 - Round log (round-by-round progression of scores)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |
+| feedback-distribution | Create anonymized feedback report summarizing group judgment distribution for a given round. |
+| judgment-collection | Collect independent judgments from all perspectives on a given question. |
+| round-decision | Decide whether to continue iterating or stop based on consensus score, round number, and stability. |
+
+<!-- END available-tables (generated) -->

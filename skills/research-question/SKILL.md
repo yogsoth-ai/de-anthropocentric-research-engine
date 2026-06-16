@@ -1,93 +1,133 @@
 ---
 name: research-question
-description: "Campaign: 将假设细化为精确的、框架化的研究问题"
+description: 'Campaign: Refine hypotheses into precise, framed research questions'
 version: 1.0.0
 category: hypothesis-formation
 type: campaign
-input: "假设 + 领域约束（来自 hypothesis-formulation 或用户提供）"
-output: "框架化的研究问题 + scope + success criteria + sub-questions"
+input: Hypothesis + domain constraints (from hypothesis-formulation or user-provided)
+output: Framed research question + scope + success criteria + sub-questions
 strategies:
+- framework-guided-formulation
+- scope-calibration
+- decomposition-formulation
+- comparative-formulation
+- feasibility-constrained-formulation
+tactics:
+- framework-selection-and-application
+- question-refinement-loop
+- sub-question-decomposition
+dependencies:
+  campaigns:
+  - hypothesis-formulation
+  strategies:
+  - comparative-formulation
+  - decomposition-formulation
+  - feasibility-constrained-formulation
   - framework-guided-formulation
   - scope-calibration
-  - decomposition-formulation
-  - comparative-formulation
-  - feasibility-constrained-formulation
-tactics:
-  - framework-selection-and-application
-  - question-refinement-loop
-  - sub-question-decomposition
-dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
-    - web-browsing
-    - literature-engine
-  mcp:
-    - brave-search
-    - apify
-    - alphaxiv
-    - semantic-scholar
+  sops:
+  - context-checkpoint
+  - context-init
+  - hypothesis-formation-quality-gate-check
+  - hypothesis-formation-saturation-detection
+  - question-synthesis
 ---
 
 # Research Question Formulation
 
-将假设细化为精确的研究问题 — 回答"如何将假设细化为精确研究问题？"
+Refine hypotheses into precise research questions — answering "how do we refine a hypothesis into a precise research question?"
 
 ## HARD-GATE
 
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 至少 1 个明确的假设或研究方向已确定
-2. 研究领域和约束条件已知
-3. 目标受众明确（学术论文？项目报告？）
+Preconditions (all must hold before starting):
+1. At least 1 clear hypothesis or research direction has been established
+2. The research domain and constraints are known
+3. The target audience is clear (academic paper? project report?)
 
-不满足 → 停止，建议先完成 hypothesis-formulation 或明确研究方向。
+Not satisfied → stop, recommend completing hypothesis-formulation or clarifying the research direction first.
 </HARD-GATE>
 
 ## Campaign Goal
 
-将"可测试的假设"转化为"精确的研究问题" — 问题必须有明确的 scope、可衡量的 success criteria、可分解的 sub-questions。产出是可以直接指导实验设计或文献综述的研究问题。
+Transform a "testable hypothesis" into a "precise research question" — the question must have a clear scope, measurable success criteria, and decomposable sub-questions. The output is a research question that can directly guide experiment design or literature review.
 
 ## Strategy Selection
 
-| Strategy | 适用场景 | 核心动作 |
+| Strategy | When to Use | Core action |
 |----------|---------|---------|
-| framework-guided-formulation | 研究类型明确，有对应标准框架 | 选框架 → 填充 |
-| scope-calibration | 问题太宽或太窄 | zoom in/out |
-| decomposition-formulation | 问题复杂度高，单一实验无法回答 | 拆解 |
-| comparative-formulation | 需要比较 A vs B | 构建对比 |
-| feasibility-constrained-formulation | 理想问题超出可用资源 | pragmatic 调整 |
+| framework-guided-formulation | Research type is clear, with a corresponding standard framework | Select framework → fill in |
+| scope-calibration | Question is too broad or too narrow | zoom in/out |
+| decomposition-formulation | High question complexity, not answerable by a single experiment | Decompose |
+| comparative-formulation | A comparison of A vs B is needed | Construct the comparison |
+| feasibility-constrained-formulation | The ideal question exceeds available resources | Pragmatic adjustment |
 
-CC 根据假设特征和约束条件自主选择。常见组合: framework-guided → scope-calibration → decomposition。
+The CC selects autonomously based on hypothesis characteristics and constraints. A common combination: framework-guided → scope-calibration → decomposition.
 
 ## Budget Gate
 
-| Tier | 框架评估 | RQ 产出 | FINER 检验 | Sub-questions |
+| Tier | Framework assessment | RQ output | FINER check | Sub-questions |
 |------|---------|---------|-----------|--------------|
-| S | ≥2 框架比较 | ≥1 精确 RQ | 5 项全通过 | 可选 |
-| M | ≥3 框架比较 | ≥2 精确 RQ | 5 项全通过 + success criteria | ≥3 sub-questions |
-| L | ≥4 框架比较 | ≥3 精确 RQ | 5 项全通过 + criteria + 回答序列 | ≥5 sub-questions + 依赖图 |
+| S | ≥2 framework comparisons | ≥1 precise RQ | All 5 items pass | Optional |
+| M | ≥3 framework comparisons | ≥2 precise RQs | All 5 items pass + success criteria | ≥3 sub-questions |
+| L | ≥4 framework comparisons | ≥3 precise RQs | All 5 items pass + criteria + answering sequence | ≥5 sub-questions + dependency graph |
 
-## Research Question Structure (标准产出格式)
+## Research Question Structure (standard output format)
 
-每个 RQ 必须包含:
-- **Main question**: 一句话精确表述
-- **Framework**: 使用的框架及各组件填充
-- **Scope**: 明确的边界（什么在范围内，什么不在）
-- **Success criteria**: 什么算"回答了这个问题"
-- **Sub-questions**: 可独立回答的子问题（如有）
+Every RQ must contain:
+- **Main question**: a one-sentence precise statement
+- **Framework**: the framework used and how each component is filled in
+- **Scope**: clear boundaries (what is in scope, what is not)
+- **Success criteria**: what counts as "having answered the question"
+- **Sub-questions**: independently answerable sub-questions (if any)
 - **FINER assessment**: Feasible, Interesting, Novel, Ethical, Relevant
 
 ## Context Management
 
-- Campaign 开始时调用 context-init
-- 每个 strategy 完成后调用 context-checkpoint（硬性约束）
-- 所有产出累积在单个 campaign-scoped context file
+- Call context-init at the start of the campaign
+- Call context-checkpoint after each strategy completes (hard constraint)
+- All outputs accumulate in a single campaign-scoped context file
 
 ## Minimum Yield
 
-每次 campaign 执行必须产出:
-1. ≥1 个完整框架化的研究问题（含全部 6 个组件）
-2. FINER 5 项标准全部通过
-3. 明确的 success criteria（可衡量）
-4. Scope 声明（in/out of scope）
+Each campaign execution must produce:
+1. ≥1 fully framed research question (containing all 6 components)
+2. All 5 FINER criteria passed
+3. Clear success criteria (measurable)
+4. Scope statement (in/out of scope)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Strategies
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Strategy | When to use |
+| --- | --- |
+| comparative-formulation | Strategy: Construct comparative research questions — systematic comparison of A vs B |
+| decomposition-formulation | Strategy: decompose a complex research question into a hierarchy of independently answerable sub-questions |
+| feasibility-constrained-formulation | Strategy: reshape a research question under resource constraints — pragmatic adjustment that preserves core value |
+| framework-guided-formulation | Strategy: Select an RQ framework (PICO/SPIDER/SPICE/ECLIPSE) and apply it systematically |
+| scope-calibration | Strategy: Adjust research question scope — zoom in/out until the scope is appropriate |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
+| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
+| hypothesis-formation-quality-gate-check | Shared SOP: General quality-gate check (format completeness, logical consistency) |
+| hypothesis-formation-saturation-detection | Shared SOP: judge whether the current activity has reached information saturation |
+| question-synthesis | SOP: synthesize all intermediate products into a final research-question set |
+
+## Available Campaigns
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Campaign | When to use |
+| --- | --- |
+| hypothesis-formulation | Campaign: transform insights and gaps into structured testable hypotheses |
+
+<!-- END available-tables (generated) -->

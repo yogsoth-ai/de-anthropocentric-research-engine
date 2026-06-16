@@ -1,8 +1,15 @@
 ---
 name: six-hats-ideation
-description: "Green Hat focused creative thinking within Six Hats framework"
+description: Green Hat focused creative thinking within Six Hats framework
 execution: strategy
-used-by: lateral-thinking
+dependencies:
+  sops:
+  - alternatives-generation
+  - green-hat-session
+  - lateral-synthesis
+  - movement-operation
+  tactics:
+  - movement-extraction
 ---
 
 # Six Hats Ideation
@@ -47,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Red Hat**: Gut feelings about which ideas resonate
 6. **Blue Hat**: Organize and select — process control
 7. **Synthesize**: Produce structured output via lateral-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| movement-extraction | Extract constructive directions from provocations via 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
+| green-hat-session | Structured creative thinking in Six Hats Green Hat mode — pure creative output with judgment suspended. |
+| lateral-synthesis | Synthesize all lateral thinking intermediate outputs into a structured idea report. |
+| movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |
+
+<!-- END available-tables (generated) -->

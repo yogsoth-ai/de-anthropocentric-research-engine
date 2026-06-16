@@ -1,7 +1,13 @@
 ---
 name: dialectical-reformulation
-description: Surface Argyris governing variables and test whether the problem dissolves under alternative governing variables (double-loop learning).
-used-by: problem-reformulation
+description: Surface Argyris governing variables and test whether the problem dissolves
+  under alternative governing variables (double-loop learning).
+dependencies:
+  tactics:
+  - deep-insight-dialectical-escalation
+  sops:
+  - counter-assumption-generation
+  - governing-variable-surfacing
 ---
 
 # Dialectical Reformulation
@@ -45,3 +51,24 @@ Budget Gate: OPEN/CLOSED (>=80% required to exit)
 ## Execution Guidance
 
 Surface Argyris governing variables (the unstated rules driving behavior), generate counter-assumptions for each, test whether the problem dissolves under alternative governing variables (double-loop learning).
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| deep-insight-dialectical-escalation | Double-loop learning escalation — surface governing variables, generate counter-assumptions, test if problem dissolves under alternatives, score wickedness if it persists. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| counter-assumption-generation | Generate dialectical opposites for governing variables — coherent alternative worldviews where the opposite is true. |
+| governing-variable-surfacing | Apply Argyris framework to identify governing variables — the unstated rules driving behavior in a research field. |
+
+<!-- END available-tables (generated) -->

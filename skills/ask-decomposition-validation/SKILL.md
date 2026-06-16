@@ -1,6 +1,7 @@
 ---
 name: ask-decomposition-validation
-description: Present the GoalTree to the user for confirmation. Ask about reasonableness, missing elements, and priority ordering among sub-goals.
+description: Present the GoalTree to the user for confirmation. Ask about reasonableness,
+  missing elements, and priority ordering among sub-goals.
 execution: dialogue
 ---
 

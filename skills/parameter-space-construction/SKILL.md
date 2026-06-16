@@ -1,13 +1,17 @@
 ---
 name: parameter-space-construction
-description: "Orchestrates driver identification and parameter enumeration to build the complete morphological field"
+description: Orchestrates driver identification and parameter enumeration to build
+  the complete morphological field
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: scenario-planning
 orchestrates:
-  - scenario-driver-identification
+- scenario-driver-identification
+- parameter-enumeration
+dependencies:
+  sops:
   - parameter-enumeration
+  - scenario-driver-identification
 ---
 
 # Tactic: Parameter Space Construction
@@ -46,3 +50,16 @@ orchestrates:
 - [ ] Values within each driver are truly MECE
 - [ ] Total space is computationally tractable for CCA
 - [ ] Parameter space covers the planning horizon adequately
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| parameter-enumeration | Enumerate possible values for each uncertainty driver using MECE principles |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+
+<!-- END available-tables (generated) -->

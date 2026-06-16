@@ -1,9 +1,19 @@
 ---
 name: minimal-change-search
-description: "Tactic: Generate candidate changes, detect flip-points where conclusion reverses, measure fragility as distance to nearest flip."
+description: 'Tactic: Generate candidate changes, detect flip-points where conclusion
+  reverses, measure fragility as distance to nearest flip.'
 type: tactic
-used-by: [counterfactual-probing]
-strategies: [closest-worlds, thought-experiment, factor-removal]
+strategies:
+- closest-worlds
+- thought-experiment
+- factor-removal
+dependencies:
+  sops:
+  - causal-claim-extraction
+  - counterfactual-scenario-construction
+  - factor-enumeration
+  - flip-point-detection
+  - fragility-measurement
 ---
 
 # Minimal Change Search Tactic
@@ -40,3 +50,19 @@ Find the smallest perturbation that flips the conclusion — closer flip-points 
 - All dimensions searched within budget
 - Flip-point found with distance < threshold (extremely fragile)
 - No flip-point found after maximum search depth (robust)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
+| counterfactual-scenario-construction | Construct precise, internally consistent counterfactual scenarios where specified factors are altered, then reason about the resulting conclusion. |
+| factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
+| flip-point-detection | Find the minimal change magnitude along a dimension that causes the conclusion to flip from true to false. |
+| fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |
+
+<!-- END available-tables (generated) -->

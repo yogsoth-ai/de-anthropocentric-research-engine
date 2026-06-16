@@ -1,9 +1,22 @@
 ---
 name: systematic-probing
-description: "Strategy: AI-safety systematic probing — enumerate all threat surfaces, generate attack vectors per surface, execute probes, and aggregate findings across the full attack space."
+description: 'Strategy: AI-safety systematic probing — enumerate all threat surfaces,
+  generate attack vectors per surface, execute probes, and aggregate findings across
+  the full attack space.'
 type: strategy
-used-by: [red-teaming]
-tactics: [structured-attack-campaign, assumption-cascade]
+tactics:
+- structured-attack-campaign
+- assumption-cascade
+dependencies:
+  tactics:
+  - assumption-cascade
+  - structured-attack-campaign
+  sops:
+  - attack-resilience-scoring
+  - attack-vector-generation
+  - finding-aggregation
+  - probe-execution
+  - threat-surface-mapping
 ---
 
 # Systematic Probing Strategy
@@ -47,3 +60,28 @@ threat-surface-mapping → [enumerate surfaces]
 - probe-execution (attack execution)
 - finding-aggregation (result synthesis)
 - attack-resilience-scoring (metric computation)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| assumption-cascade | Tactic: Surface assumptions, sort by dependency, attack root assumptions first, then trace cascade failures through the dependency graph. |
+| structured-attack-campaign | Tactic: Full attack lifecycle — threat surface enumeration, attack vector generation, systematic probing, and finding aggregation across all surfaces. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| attack-resilience-scoring | Compute overall resilience score (0.0-1.0) based on attack results, coverage, and vulnerability severity distribution. |
+| attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
+| finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |
+| probe-execution | Execute a single attack probe against an artifact, record the result with evidence and severity classification. |
+| threat-surface-mapping | Enumerate all attackable surfaces of an artifact — logical, empirical, methodological, social, and practical dimensions. |
+
+<!-- END available-tables (generated) -->

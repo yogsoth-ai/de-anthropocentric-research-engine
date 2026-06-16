@@ -1,79 +1,103 @@
 ---
 name: stakeholder-weighted-ranking
-description: "Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序"
+description: 'Strategy: Weight by stakeholder perspective — the same gap carries different
+  weight under different perspectives; take the consensus ranking at the end'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
 campaign: gap-prioritization
 tactics:
-  - scoring-matrix-construction
-  - priority-sensitivity-testing
+- scoring-matrix-construction
+- priority-sensitivity-testing
 sops:
-  - importance-scoring
-  - feasibility-scoring
-  - novelty-scoring
-  - impact-scoring
-  - ahp-weighting
-  - priority-synthesis
+- importance-scoring
+- feasibility-scoring
+- novelty-scoring
+- impact-scoring
+- ahp-weighting
+- priority-synthesis
 dependencies:
-  skills:
-    - context-management
-    - subagent-spawning
+  tactics:
+  - hypothesis-formation-scoring-matrix-construction
+  - priority-sensitivity-testing
+  sops:
+  - gap-normalization
 ---
 
 # Stakeholder-Weighted Ranking
 
-按利益相关者视角加权排序：识别所有相关方（研究者、工程师、政策制定者、终端用户等），为每类相关方构建独立的权重向量，分别排序后取共识。
+Rank with weights by stakeholder perspective: identify all relevant parties (researchers, engineers, policymakers, end users, etc.), construct an independent weight vector for each class of party, rank separately, and then take the consensus.
 
-## 适用场景
+## When to Use
 
-- 研究涉及多方利益相关者（如医疗 AI：临床医生 + 患者 + 监管机构）
-- 不同相关方对"重要性"的定义存在根本分歧
-- 需要在多方之间建立共识或展示不同视角的排序差异
-- 资助机构或合作方需要看到自己视角下的优先级
+- The research involves multiple stakeholders (e.g., medical AI: clinicians + patients + regulators)
+- Different parties have fundamentally divergent definitions of "importance"
+- A consensus must be built across parties, or the ranking differences across perspectives must be shown
+- A funding agency or collaborator needs to see priorities from their own perspective
 
-## 思维框架
+## Thinking Framework
 
-**核心原则**：没有客观的"最重要 gap"，只有"对谁最重要"。
+**Core principle**: there is no objective "most important gap", only "most important to whom".
 
-流程分三层：
+The process has three layers:
 
-**第一层：相关方识别**
-列出所有会受到研究结果影响的群体。每类相关方有不同的价值函数——工程师重视可行性，政策制定者重视影响力，学术研究者重视新颖性。
+**Layer 1: Stakeholder identification**
+List all groups that would be affected by the research results. Each class of party has a different value function — engineers value feasibility, policymakers value impact, academic researchers value novelty.
 
-**第二层：视角内排序**
-对每类相关方，使用与 multi-criteria-ranking 相同的四维度评分，但权重向量不同。例如：
-- 学术研究者：新颖性 0.40、重要性 0.30、影响力 0.20、可行性 0.10
-- 工程师：可行性 0.40、影响力 0.30、重要性 0.20、新颖性 0.10
-- 政策制定者：影响力 0.45、重要性 0.35、可行性 0.15、新颖性 0.05
+**Layer 2: Within-perspective ranking**
+For each class of party, use the same four-dimensional scoring as multi-criteria-ranking, but with a different weight vector. For example:
+- Academic researchers: novelty 0.40, importance 0.30, impact 0.20, feasibility 0.10
+- Engineers: feasibility 0.40, impact 0.30, importance 0.20, novelty 0.10
+- Policymakers: impact 0.45, importance 0.35, feasibility 0.15, novelty 0.05
 
-**第三层：共识合并**
-Borda count 或加权平均各视角排序，识别"跨视角稳健的 top gap"（所有相关方都认为重要）和"视角分歧 gap"（某些相关方高度重视，其他人不在意）。
+**Layer 3: Consensus merging**
+Borda count or weighted-average the per-perspective rankings, identifying the "cross-perspective robust top gaps" (deemed important by all parties) and the "perspective-divergent gaps" (highly valued by some parties, ignored by others).
 
-**关键洞察**：视角分歧本身是信息——分歧大的 gap 可能需要先做利益对齐，而非直接攻击。
+**Key insight**: perspective divergence is itself information — a gap with large divergence may need interest-alignment first, rather than a direct attack.
 
 ## Budget Gate
 
-| Tier | Gap 数量 | 相关方数量 | 共识方法 | 最终产出 |
+| Tier | Gap count | Party count | Consensus method | Final output |
 |------|---------|-----------|---------|---------|
-| S | 5–10 | 2–3 类 | 简单平均 | 各视角排序 + 共识 top-3 |
-| M | 11–20 | 3–5 类 | Borda count | 各视角排序 + 共识 top-5 + 分歧分析 |
-| L | 20+ | 5+ 类 | 加权 Borda + 敏感性 | 完整视角矩阵 + 共识排序 + 分歧热图 |
+| S | 5–10 | 2–3 classes | Simple average | Per-perspective rankings + consensus top-3 |
+| M | 11–20 | 3–5 classes | Borda count | Per-perspective rankings + consensus top-5 + divergence analysis |
+| L | 20+ | 5+ classes | Weighted Borda + sensitivity | Full perspective matrix + consensus ranking + divergence heatmap |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 调用 `gap-normalization` SOP：统一 gap 格式
-2. 识别相关方类别（CC 自主判断或用户指定）
-3. 为每类相关方调用 `ahp-weighting` SOP：生成该视角的权重向量
-4. 对每类相关方并行执行四维度评分（`importance-scoring`、`feasibility-scoring`、`novelty-scoring`、`impact-scoring`）
-5. 调用 `scoring-matrix-construction` tactic：构建 gap × 相关方 × 维度 三维矩阵
-6. 调用 `priority-sensitivity-testing` tactic：检验相关方权重变化对共识排序的影响
-7. 调用 `priority-synthesis` SOP：Borda count 合并 → 共识排序 + 分歧报告
+1. Call the `gap-normalization` SOP: unify gap format
+2. Identify stakeholder classes (CC judges autonomously or the user specifies)
+3. For each class of party, call the `ahp-weighting` SOP: generate that perspective's weight vector
+4. Run the four-dimensional scoring in parallel for each class of party (`importance-scoring`, `feasibility-scoring`, `novelty-scoring`, `impact-scoring`)
+5. Call the `scoring-matrix-construction` tactic: build the gap × party × dimension three-dimensional matrix
+6. Call the `priority-sensitivity-testing` tactic: test the effect of stakeholder weight changes on the consensus ranking
+7. Call the `priority-synthesis` SOP: Borda-count merge → consensus ranking + divergence report
 
 ## context-checkpoint
 
-每轮结束后记录：
-- 相关方列表及其权重向量
-- 各相关方视角下的 gap 排序
-- 共识排序（Borda 得分）
-- 高分歧 gap 列表（标注分歧来源）
+After each round, record:
+- Stakeholder list and their weight vectors
+- The gap ranking under each stakeholder perspective
+- The consensus ranking (Borda scores)
+- The list of high-divergence gaps (annotated with the source of divergence)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| hypothesis-formation-scoring-matrix-construction | Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps |
+| priority-sensitivity-testing | Tactic: perturb scoring weights to test the robustness of the gap ranking against weight choice |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| gap-normalization | SOP: Unify gaps from different sources into the standard GapRecord format |
+
+<!-- END available-tables (generated) -->

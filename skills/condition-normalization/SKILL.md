@@ -1,8 +1,12 @@
-﻿---
+---
 name: condition-normalization
 description: Compare and standardize experimental conditions across papers
 execution: tactic
-used-by: baseline-establishment
+dependencies:
+  sops:
+  - compute-normalization
+  - condition-cataloging
+  - performance-table-assembly
 ---
 
 # Condition Normalization
@@ -67,3 +71,17 @@ Apply normalization to produce fair comparison subsets:
 - condition-cataloging (for Stage 1)
 - compute-normalization (for Stage 3)
 - performance-table-assembly (for Stage 4)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| compute-normalization | Normalize results by compute budget (Pareto analysis) |
+| condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
+| performance-table-assembly | Assemble unified comparison table with confidence interval annotations |
+
+<!-- END available-tables (generated) -->

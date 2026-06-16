@@ -1,10 +1,13 @@
 ---
 name: radar-synthesis
-description: Synthesize multiple dimension scores into radar chart data and compute overall readiness.
+description: Synthesize multiple dimension scores into radar chart data and compute
+  overall readiness.
 execution: subagent
 prompt: ./prompt.md
 input: dimension_scores[]
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Radar Synthesis
@@ -27,3 +30,15 @@ Synthesis requires holistic analysis of the score pattern — identifying asymme
 ## HARD-GATE
 
 Output MUST include: radar_chart_data with all dimensions, overall_readiness score, and narrative summary. Reject if any dimension from input is missing in output.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

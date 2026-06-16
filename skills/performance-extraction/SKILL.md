@@ -1,7 +1,13 @@
-﻿---
+---
 name: performance-extraction
-description: Systematically extract performance data and conditions from papers — 30 methods, 150 data points, 40 web searches budget
-used-by: baseline-establishment
+description: Systematically extract performance data and conditions from papers —
+  30 methods, 150 data points, 40 web searches budget
+dependencies:
+  tactics:
+  - leaderboard-harvesting
+  sops:
+  - condition-cataloging
+  - score-extraction
 ---
 
 # Performance Extraction
@@ -91,3 +97,24 @@ Cannot exit until data_points >= 120 (80% of target).
   }
 }
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| leaderboard-harvesting | Systematically collect performance data from platforms and papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
+| score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |
+
+<!-- END available-tables (generated) -->

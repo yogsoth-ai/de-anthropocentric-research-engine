@@ -1,10 +1,13 @@
 ---
 name: assumption-cascade-tracer
-description: Build assumption dependency graphs and trace cascade failures when root assumptions are invalidated.
+description: Build assumption dependency graphs and trace cascade failures when root
+  assumptions are invalidated.
 execution: subagent
 prompt: ./prompt.md
 input: assumptions (string), attack_results (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Assumption Cascade Tracer
@@ -29,3 +32,15 @@ Cascade tracing requires systematic graph analysis without bias toward minimizin
 - **dependency_graph**: Directed graph of assumption dependencies
 - **cascade_paths**: For each failed root, the full list of downstream conclusions that collapse
 - **impact_scope**: Percentage of artifact conclusions affected by each cascade
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

@@ -1,14 +1,18 @@
 ---
 name: constraint-tree-building
-description: "Build Current Reality Tree from UDEs through causal chains to core conflicts"
+description: Build Current Reality Tree from UDEs through causal chains to core conflicts
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: constraint-analysis
 orchestrates:
-  - undesirable-effect-listing
+- undesirable-effect-listing
+- causal-chain-tracing
+- core-conflict-extraction
+dependencies:
+  sops:
   - causal-chain-tracing
   - core-conflict-extraction
+  - undesirable-effect-listing
 ---
 
 # Tactic: Constraint Tree Building
@@ -37,3 +41,17 @@ orchestrates:
 - **When to stop**: All UDEs connect to at most 3 root causes, and root causes are expressed as constraints or conflicts
 - **When to escalate**: If >10 UDEs found, prioritize top-5 by severity before tracing
 - **Quality gate**: Every causal link must have a BECAUSE clause (the underlying assumption)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| causal-chain-tracing | Trace UDE to root cause via IF...THEN...BECAUSE logic chains |
+| core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |
+| undesirable-effect-listing | List current Undesirable Effects (UDEs) — observable symptoms of system underperformance |
+
+<!-- END available-tables (generated) -->

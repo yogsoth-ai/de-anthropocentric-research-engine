@@ -1,8 +1,20 @@
 ---
 name: concept-blending
-description: "Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended Space"
+description: 'Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended
+  Space'
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - blend-completion
+  - blend-composition
+  - blend-elaboration
+  - combinatorial-synthesis
+  - generic-space-extraction
+  - input-space-construction
+  - vital-relation-mapping
+  tactics:
+  - blend-construction
+  - emergence-detection
 ---
 
 # Concept Blending
@@ -52,3 +64,30 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 5. **Compose Blend**: Use blend-composition to selectively project and create new connections
 6. **Complete Blend**: Use blend-completion to recruit background knowledge
 7. **Elaborate Blend**: Use blend-elaboration to run the blend as simulation and discover emergent structure
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| blend-completion | Complete blend with background knowledge |
+| blend-composition | Compose new connections in blended space |
+| blend-elaboration | Run blend as mental simulation |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| generic-space-extraction | Extract shared abstract structure from two input spaces |
+| input-space-construction | Build input spaces for two source concepts |
+| vital-relation-mapping | Map 15 vital relations between concepts |
+
+<!-- END available-tables (generated) -->

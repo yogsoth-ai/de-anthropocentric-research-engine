@@ -1,9 +1,19 @@
 ---
 name: society-of-mind
-description: "Strategy: Multi-agent collaborative debate based on Du et al. Society of Mind. Agents share perspectives iteratively until convergence or divergence is detected."
+description: 'Strategy: Multi-agent collaborative debate based on Du et al. Society
+  of Mind. Agents share perspectives iteratively until convergence or divergence is
+  detected.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [perspective-rotation]
+tactics:
+- perspective-rotation
+dependencies:
+  tactics:
+  - stress-test-perspective-rotation
+  sops:
+  - confidence-calibration
+  - debate-architect
+  - divergence-detection
+  - perspective-critic
 ---
 
 # Society of Mind Strategy
@@ -44,3 +54,26 @@ debate-architect → [assign perspectives]
 - perspective-critic × N (perspective evaluation)
 - divergence-detection (convergence tracking)
 - confidence-calibration (termination decision)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| stress-test-perspective-rotation | Tactic: Sequential perspective evaluation with divergence aggregation. Each agent evaluates from a distinct viewpoint, then disagreements are surfaced and resolved. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| confidence-calibration | Calibrates confidence scores based on debate progression. Determines whether to escalate, continue, or terminate based on cumulative evidence. |
+| debate-architect | Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters. |
+| divergence-detection | Identifies agreement and disagreement patterns across multiple perspective evaluations. Maps consensus clusters and persistent divergence points. |
+| perspective-critic | Evaluates artifact from a specific assigned perspective. Produces assessment grounded in that viewpoint's values, priorities, and expertise. |
+
+<!-- END available-tables (generated) -->

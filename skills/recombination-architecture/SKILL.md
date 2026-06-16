@@ -1,8 +1,14 @@
 ---
 name: recombination-architecture
-description: Reassemble decomposed fragments into novel structures through systematic recombination of components.
+description: Reassemble decomposed fragments into novel structures through systematic
+  recombination of components.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - recombination-generation
+  - structural-synthesis
 ---
 
 # Recombination Architecture
@@ -46,3 +52,24 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Generate**: Apply recombination-generation SOP for novel structures
 5. **Evaluate**: Score recombinations for coherence, novelty, feasibility
 6. **Synthesize**: Produce structured output via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+
+<!-- END available-tables (generated) -->

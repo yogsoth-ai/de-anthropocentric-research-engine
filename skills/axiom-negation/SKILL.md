@@ -1,8 +1,16 @@
 ---
 name: axiom-negation
-description: Identify and suspend fundamental assumptions via de Bono PO. Systematically negate axioms to reveal hidden solution spaces.
+description: Identify and suspend fundamental assumptions via de Bono PO. Systematically
+  negate axioms to reveal hidden solution spaces.
 execution: strategy
-used-by: assumption-destruction
+dependencies:
+  tactics:
+  - creative-ideation-assumption-enumeration
+  sops:
+  - constructive-rebellion
+  - creative-ideation-assumption-perturbation
+  - destruction-synthesis
+  - reversal-generation
 ---
 
 # Axiom Negation
@@ -47,3 +55,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Extract movement**: Use provocation-generation to find constructive directions
 5. **Build alternatives**: Use constructive-rebellion to form viable solutions
 6. **Synthesize**: Produce structured output via destruction-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |
+| creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
+| destruction-synthesis | Synthesize all assumption destruction outputs into structured destructive innovation report. |
+| reversal-generation | Systematically reverse positive statements to generate creative inversions. Produces reversed statements with initial associations. |
+
+<!-- END available-tables (generated) -->

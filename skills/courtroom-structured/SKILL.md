@@ -1,9 +1,23 @@
 ---
 name: courtroom-structured
-description: "Strategy: Legal adversarial structure — prosecution presents case, defense responds, evidence is cross-examined, judge delivers verdict. Emphasizes evidence quality and procedural rigor."
+description: 'Strategy: Legal adversarial structure — prosecution presents case, defense
+  responds, evidence is cross-examined, judge delivers verdict. Emphasizes evidence
+  quality and procedural rigor.'
 type: strategy
-used-by: [multiagent-debate]
-tactics: [evidence-tournament, dialectical-escalation]
+tactics:
+- evidence-tournament
+- dialectical-escalation
+dependencies:
+  tactics:
+  - evidence-tournament
+  - stress-test-dialectical-escalation
+  sops:
+  - cross-examination
+  - debate-architect
+  - debate-critic
+  - debate-defender
+  - debate-judge
+  - evidence-scout
 ---
 
 # Courtroom-Structured Strategy
@@ -47,3 +61,29 @@ debate-architect → [define charges]
 - evidence-scout (evidence gathering)
 - cross-examination (probing)
 - debate-judge (verdict per charge)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| evidence-tournament | Tactic: Evidence gathering, cross-examination, and quality judgment. External evidence is collected, presented, challenged, and scored for relevance and reliability. |
+| stress-test-dialectical-escalation | Tactic: Progressive debate escalation based on confidence thresholds. Each round increases attack sophistication until defender collapses or proves resilient. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| cross-examination | Probes defender responses for inconsistencies, logical gaps, and unsupported claims. Acts as follow-up interrogation after initial defense. |
+| debate-architect | Designs debate structure based on artifact type — selects attack vectors, assigns perspectives, determines escalation ladder, and configures round parameters. |
+| debate-critic | Generates structured criticism from attack stance using Toulmin model. Produces claims, grounds, warrants, and rebuttals targeting artifact weaknesses. |
+| debate-defender | Responds to attacks with counter-evidence and counter-arguments. Defends artifact using evidence, clarification, and rebuttal while acknowledging valid criticisms. |
+| debate-judge | Evaluates debate exchanges, adjudicates argument quality, and produces round verdicts with confidence scores and reasoning. |
+| evidence-scout | Searches for external evidence supporting or opposing specific claims. Returns structured evidence with source assessment and relevance scoring. |
+
+<!-- END available-tables (generated) -->

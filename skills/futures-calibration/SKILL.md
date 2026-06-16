@@ -1,7 +1,13 @@
 ---
 name: futures-calibration
-description: Aggregate probability judgments across perspectives using Real-Time Delphi or prediction market mechanisms.
-used-by: structured-consensus
+description: Aggregate probability judgments across perspectives using Real-Time Delphi
+  or prediction market mechanisms.
+dependencies:
+  tactics:
+  - iterative-convergence-round
+  - threshold-calibration
+  sops:
+  - consensus-synthesis
 ---
 
 # Futures Calibration
@@ -66,3 +72,24 @@ rounds_completed: <int>
 convergence_pattern: converging/stable/polarizing
 key_considerations: [...]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+| threshold-calibration | Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

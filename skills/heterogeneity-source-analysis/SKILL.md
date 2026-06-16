@@ -1,10 +1,13 @@
 ---
 name: heterogeneity-source-analysis
-description: Identify and classify sources of between-study heterogeneity (clinical, methodological, statistical)
+description: Identify and classify sources of between-study heterogeneity (clinical,
+  methodological, statistical)
 execution: subagent
 prompt: ./prompt.md
 input: study_characteristics, effect_sizes, moderator_candidates
-used-by: meta-analysis
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Heterogeneity Source Analysis SOP
@@ -26,3 +29,15 @@ Systematically identify, classify, and prioritize potential sources of between-s
 ## Output
 
 Classified sources of heterogeneity with investigation priority and statistical analysis plan.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

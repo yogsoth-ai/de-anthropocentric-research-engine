@@ -1,12 +1,23 @@
 ---
 name: Literature Research
-description: Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis
+description: Deep literature research — raw full text reading and targeted PDF queries
+  for rigorous analysis
 type: sop
 layer: sop
-agents: [alphaxiv, semantic-scholar]
+agents:
+- alphaxiv
+- semantic-scholar
 tools:
-  alphaxiv: [discover_papers, get_paper_content, answer_pdf_queries]
-  semantic-scholar: [relevanceSearch, paper, paperBatch, citations, references]
+  alphaxiv:
+  - discover_papers
+  - get_paper_content
+  - answer_pdf_queries
+  semantic-scholar:
+  - relevanceSearch
+  - paper
+  - paperBatch
+  - citations
+  - references
 input: query (string), focus (experiment-design | methodology | comparison | replication)
 output: DeepAnalysis[] with metadata + raw full text + targeted query results
 ---

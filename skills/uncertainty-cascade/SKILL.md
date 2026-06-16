@@ -1,8 +1,15 @@
 ---
 name: uncertainty-cascade
-description: Uncertainty cascade propagation — assign input distributions, sample via Monte Carlo, propagate through model, analyze output distribution, identify critical paths. Maps how input uncertainty flows to output uncertainty.
+description: Uncertainty cascade propagation — assign input distributions, sample
+  via Monte Carlo, propagate through model, analyze output distribution, identify
+  critical paths. Maps how input uncertainty flows to output uncertainty.
 execution: tactic
-used-by: uncertainty-propagation
+dependencies:
+  sops:
+  - critical-path-identification
+  - deep-insight-paper-search
+  - distribution-assignment
+  - monte-carlo-sampling
 ---
 
 # Uncertainty Cascade
@@ -34,3 +41,18 @@ Focus on: which inputs, if resolved, would most reduce output uncertainty? This 
 - Critical path identified: >= 1 path with ranked inputs
 </HARD-GATE>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| critical-path-identification | Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization. |
+| deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
+| distribution-assignment | Assign probability distributions to uncertain parameters based on available evidence and domain knowledge. |
+| monte-carlo-sampling | Design and execute Monte Carlo sampling strategy for uncertainty propagation through a model. |
+
+<!-- END available-tables (generated) -->

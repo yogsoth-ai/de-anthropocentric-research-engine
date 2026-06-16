@@ -1,7 +1,11 @@
 ---
 name: criteria-interrogation
-description: Challenge the evaluation criteria themselves using Assumption-based Planning, Critical Systems Heuristics, and Boundary Critique to ensure the framework is sound.
-used-by: steel-manning
+description: Challenge the evaluation criteria themselves using Assumption-based Planning,
+  Critical Systems Heuristics, and Boundary Critique to ensure the framework is sound.
+dependencies:
+  tactics:
+  - assumption-excavation
+  - multi-perspective-attack
 ---
 
 # Criteria Interrogation
@@ -69,3 +73,16 @@ sensitivity_result: ROBUST | FRAGILE
 verdict: CRITERIA_SOUND | CRITERIA_BIASED | REWEIGHT
 recommended_changes: []
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| assumption-excavation | Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs. |
+| multi-perspective-attack | Assign distinct perspectives to attack a decision from multiple angles, then synthesize findings into a unified assessment. |
+
+<!-- END available-tables (generated) -->

@@ -1,8 +1,21 @@
 ---
 name: landscape-survey
-description: Patent landscape full-scan — maps technology domain via assignee ranking, IPC/CPC classification, filing trends. Budget: 200 patent families, 0 claim parses, 80 web searches.
+description: 'Patent landscape full-scan — maps technology domain via assignee ranking,
+  IPC/CPC classification, filing trends. Budget: 200 patent families, 0 claim parses,
+  80 web searches.'
 execution: strategy
-used-by: patent-mining
+dependencies:
+  tactics:
+  - classification-navigation
+  - patent-family-tracing
+  sops:
+  - assignee-normalization
+  - knowledge-acquisition-saturation-detection
+  - patent-categorization
+  - patent-query-formulation
+  - patent-synthesis
+  - quality-scoring
+  - trend-analysis
 ---
 
 # Landscape Survey
@@ -87,3 +100,30 @@ Produce a comprehensive patent landscape map for a given technology domain, answ
 ## Appendix: Full Patent Family List
 [Structured table of all 200 families]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
+| patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| assignee-normalization | Standardize assignee names and identify corporate group affiliations across patent offices |
+| knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| patent-categorization | Classify patents by tech subdomain, application scenario, and value chain position |
+| patent-query-formulation | Construct keyword + IPC/CPC + assignee combination search strategies for patent databases |
+| patent-synthesis | Produce final structured patent intelligence report from all analysis results |
+| quality-scoring | Multi-dimensional patent quality assessment — forward citations, family size, claim count, geographic breadth |
+| trend-analysis | Patent filing volume time-series, technology lifecycle stage, and S-curve analysis |
+
+<!-- END available-tables (generated) -->

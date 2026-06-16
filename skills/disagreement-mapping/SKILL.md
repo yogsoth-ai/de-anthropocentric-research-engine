@@ -1,8 +1,14 @@
 ---
 name: disagreement-mapping
-description: Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines.
+description: Map disagreement structure by collecting judgments, clustering opinions,
+  extracting arguments per cluster, and visualizing fault lines.
 execution: tactic
-used-by: structured-consensus
+dependencies:
+  sops:
+  - argument-extraction
+  - cluster-analysis
+  - disagreement-visualization
+  - judgment-collection
 ---
 
 # Disagreement Mapping
@@ -38,3 +44,18 @@ Map the structure of disagreement rather than forcing convergence. Collect diver
 - Disagreement clusters (identified clusters with characterization)
 - Core arguments per cluster (core arguments per cluster, steel-manned)
 - Visualization (disagreement map showing topology and fault lines)
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| argument-extraction | Extract and steel-man the core arguments supporting a given opinion cluster. |
+| cluster-analysis | Identify natural opinion clusters from collected judgments and characterize each cluster. |
+| disagreement-visualization | Produce a structured disagreement map showing clusters, arguments, and fault lines. |
+| judgment-collection | Collect independent judgments from all perspectives on a given question. |
+
+<!-- END available-tables (generated) -->

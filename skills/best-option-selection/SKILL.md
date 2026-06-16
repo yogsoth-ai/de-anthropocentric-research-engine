@@ -1,7 +1,10 @@
 ---
 name: best-option-selection
-description: Select the single best candidate from a set using WSM, TOPSIS, AHP, MAUT, or VIKOR methods.
-used-by: multi-criteria-scoring
+description: Select the single best candidate from a set using WSM, TOPSIS, AHP, MAUT,
+  or VIKOR methods.
+dependencies:
+  tactics:
+  - convergence-scoring-matrix-construction
 ---
 
 # Best-Option Selection
@@ -75,3 +78,15 @@ result: null
 ### Sensitivity Notes
 [Impact of weight changes on the result]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
+
+<!-- END available-tables (generated) -->

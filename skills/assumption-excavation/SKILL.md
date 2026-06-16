@@ -1,8 +1,13 @@
 ---
 name: assumption-excavation
-description: Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs.
+description: Systematic extraction, challenge, and sensitivity analysis of assumptions
+  underlying a decision to identify load-bearing beliefs.
 execution: tactic
-used-by: steel-manning
+dependencies:
+  sops:
+  - conclusion-sensitivity
+  - convergence-assumption-challenge
+  - convergence-assumption-extraction
 ---
 
 # Assumption Excavation
@@ -38,3 +43,17 @@ A three-phase tactic that surfaces hidden assumptions, challenges each one adver
 - Alternative assumption for each (what if the opposite is true?)
 - Sensitivity map showing which assumptions are critical
 - List of critical assumptions requiring mitigation
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| conclusion-sensitivity | Map which assumptions are load-bearing by assessing how the conclusion changes if each assumption fails. |
+| convergence-assumption-challenge | Construct the strongest counter-argument against a specific assumption and propose alternatives. |
+| convergence-assumption-extraction | Systematically surface hidden assumptions underlying a decision with confidence levels. |
+
+<!-- END available-tables (generated) -->

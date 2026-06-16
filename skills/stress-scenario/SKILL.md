@@ -1,17 +1,26 @@
 ---
 name: stress-scenario
-description: "What is the worst case? — Extreme condition construction and failure mode enumeration for risk preparedness"
+description: What is the worst case? — Extreme condition construction and failure
+  mode enumeration for risk preparedness
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: scenario-planning
 sops:
-  - scenario-driver-identification
-  - worst-case-construction
-  - scenario-impact-assessment
-  - robustness-scoring
-  - scenario-synthesis
+- scenario-driver-identification
+- worst-case-construction
+- scenario-impact-assessment
+- robustness-scoring
+- scenario-synthesis
 tactics:
+- strategy-robustness-testing
+dependencies:
+  sops:
+  - robustness-scoring
+  - scenario-driver-identification
+  - scenario-impact-assessment
+  - scenario-synthesis
+  - worst-case-construction
+  tactics:
   - strategy-robustness-testing
 ---
 
@@ -58,3 +67,27 @@ Key principles:
 | Impact assessment | 12K × N | Deeper analysis for stress |
 | Robustness scoring | 10K | Failure threshold mapping |
 | Synthesis | 12K | Risk mitigation report |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
+| scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |
+| scenario-impact-assessment | Assess each scenario's impact on the research approach across multiple dimensions |
+| scenario-synthesis | Comprehensive scenario analysis report synthesizing all scenario work |
+| worst-case-construction | Construct extreme but plausible worst-case scenarios for stress testing |
+
+<!-- END available-tables (generated) -->

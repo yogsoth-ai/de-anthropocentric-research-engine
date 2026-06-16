@@ -1,8 +1,8 @@
 ---
 name: scope-clarification
-description: Structured questioning SOP to determine research boundaries, depth, and breadth. Used during spec generation.
+description: Structured questioning SOP to determine research boundaries, depth, and
+  breadth. Used during spec generation.
 execution: sequential
-used-by: writing-specs
 ---
 
 # Scope Clarification

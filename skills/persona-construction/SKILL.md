@@ -1,10 +1,13 @@
 ---
 name: persona-construction
-description: Build a detailed adversarial persona with background, motivation, expertise, blind spots, and preferred attack patterns.
+description: Build a detailed adversarial persona with background, motivation, expertise,
+  blind spots, and preferred attack patterns.
 execution: subagent
 prompt: ./prompt.md
 input: persona_type (string), artifact_domain (string)
-used-by: [red-teaming]
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Persona Construction
@@ -29,3 +32,15 @@ Persona construction requires creative character building without contamination 
 - **persona**: Complete adversary profile (name, background, motivation, expertise, blind spots)
 - **attack_style**: How this persona typically attacks (preferred patterns)
 - **trigger_phrases**: What aspects of artifacts particularly provoke this persona
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

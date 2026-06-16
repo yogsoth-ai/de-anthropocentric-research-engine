@@ -1,7 +1,14 @@
 ---
 name: tension-mining
-description: Identify opposing forces that keep gaps open. Uses evaporating cloud to expose hidden assumptions behind conflicts and polarity mapping for unresolvable tensions.
-used-by: insight
+description: Identify opposing forces that keep gaps open. Uses evaporating cloud
+  to expose hidden assumptions behind conflicts and polarity mapping for unresolvable
+  tensions.
+dependencies:
+  tactics:
+  - dialectical-synthesis
+  sops:
+  - evaporating-cloud
+  - polarity-mapping
 ---
 
 # Tension Mining
@@ -53,3 +60,24 @@ Identify opposing forces that keep the gap open. Use evaporating cloud to expose
 ## Output Format
 
 Tension Report — identified tensions, evaporating clouds, polarity maps, resolution strategies.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| dialectical-synthesis | Hegelian thesis-antithesis-synthesis cycle — propose position, generate opposition, structured debate, synthesize transcending insight. Combines evaporating-cloud and polarity-mapping SOPs. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| evaporating-cloud | Model conflicts as Goldratt's Evaporating Cloud — expose hidden assumptions behind opposing needs to dissolve the conflict. |
+| polarity-mapping | Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative of each pole), early warnings, action steps for managing rather than solving. |
+
+<!-- END available-tables (generated) -->

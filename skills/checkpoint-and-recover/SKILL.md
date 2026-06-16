@@ -1,11 +1,15 @@
 ---
 name: checkpoint-and-recover
-description: "Checkpoint state before risky operations, detect anomalies, and recover gracefully"
+description: Checkpoint state before risky operations, detect anomalies, and recover
+  gracefully
 version: 1.0.0
 category: experiment-execution
 type: tactic
-used-by: implementation-planning
 orchestrates:
+- execution-monitoring
+- result-collection
+dependencies:
+  sops:
   - execution-monitoring
   - result-collection
 ---
@@ -104,3 +108,16 @@ A checkpoint captures:
 2. **Retry with modification**: Same task, adjusted parameters (for NEEDS_CONTEXT)
 3. **Rollback and skip**: Restore state, mark task BLOCKED, continue
 4. **Rollback and escalate**: Restore state, report to orchestrator for human decision
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| execution-monitoring | Monitor execution progress, detect anomalies, and report status |
+| result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |
+
+<!-- END available-tables (generated) -->

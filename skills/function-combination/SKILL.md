@@ -1,8 +1,15 @@
 ---
 name: function-combination
-description: "TRIZ function analysis: function-level recombination and redistribution"
+description: 'TRIZ function analysis: function-level recombination and redistribution'
 execution: strategy
-used-by: combinatorial-creativity
+dependencies:
+  sops:
+  - combinatorial-synthesis
+  - emergent-property-identification
+  - function-redistribution
+  - input-space-construction
+  tactics:
+  - emergence-detection
 ---
 
 # Function Combination
@@ -47,3 +54,26 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Evaluate Combinations**: Assess each redistribution for feasibility and novelty
 5. **Check Emergence**: Use emergence-detection to find non-additive capabilities
 6. **Synthesize**: Compile viable function recombinations into proposals
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
+| emergent-property-identification | Identify non-additive properties from combinations |
+| function-redistribution | Redistribute functions across different components |
+| input-space-construction | Build input spaces for two source concepts |
+
+<!-- END available-tables (generated) -->

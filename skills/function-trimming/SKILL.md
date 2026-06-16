@@ -1,8 +1,15 @@
 ---
 name: function-trimming
-description: Remove components while preserving function via TRIZ trimming methodology. Simplify systems by redistributing functions.
+description: Remove components while preserving function via TRIZ trimming methodology.
+  Simplify systems by redistributing functions.
 execution: strategy
-used-by: structural-deconstruction
+dependencies:
+  tactics:
+  - component-decomposition
+  sops:
+  - function-model-construction
+  - structural-synthesis
+  - trimming-execution
 ---
 
 # Function Trimming
@@ -47,3 +54,25 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 4. **Trim**: Execute trimming-execution SOP progressively
 5. **Redistribute**: Assign orphaned functions to remaining components
 6. **Synthesize**: Produce simplified system via structural-synthesis
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |
+| structural-synthesis | Synthesize all structural transformation outputs into a coherent, ranked idea report with lineage tracking. |
+| trimming-execution | Progressively remove components from a system while verifying function preservation through redistribution. |
+
+<!-- END available-tables (generated) -->

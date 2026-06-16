@@ -1,7 +1,16 @@
 ---
 name: validity-probing
-description: Challenge construct validity — does benchmark measure claimed capability? — 3 benchmarks, 40 papers, 30 web searches
-used-by: benchmark-archaeology
+description: Challenge construct validity — does benchmark measure claimed capability?
+  — 3 benchmarks, 40 papers, 30 web searches
+dependencies:
+  tactics:
+  - artifact-detection
+  - evaluation-protocol-comparison
+  sops:
+  - benchmark-synthesis
+  - construct-validity-assessment
+  - contamination-audit
+  - metric-decomposition
 ---
 
 # Validity Probing Strategy
@@ -85,3 +94,27 @@ validity_report:
   discriminant_validity: pass|partial|fail
   recommendations: list[string]
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
+| evaluation-protocol-comparison | Compare implementation differences of same benchmark across papers |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| benchmark-synthesis | Produce final structured audit report |
+| construct-validity-assessment | Evaluate whether benchmark measures its claimed capability |
+| contamination-audit | Detect train-test data leakage and memorization artifacts |
+| metric-decomposition | Decompose composite metrics into constituent signals, analyze polarity and ceiling effects |
+
+<!-- END available-tables (generated) -->

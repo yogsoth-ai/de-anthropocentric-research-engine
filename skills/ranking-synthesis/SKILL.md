@@ -1,10 +1,13 @@
 ---
 name: ranking-synthesis
-description: Produce the final ranking artifact from converged ratings and consistency report.
+description: Produce the final ranking artifact from converged ratings and consistency
+  report.
 execution: subagent
 prompt: ./prompt.md
 input: ratings(object), consistency_report(object)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Ranking Synthesis
@@ -22,3 +25,15 @@ Synthesis requires formatting decisions, confidence interval computation, and qu
 ## HARD-GATE
 
 Output MUST rank ALL candidates. Output MUST include confidence intervals. Output MUST reference the consistency status. No candidate may be omitted from the final ranking.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

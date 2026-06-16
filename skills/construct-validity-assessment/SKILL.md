@@ -4,7 +4,9 @@ description: Evaluate whether benchmark measures its claimed capability
 execution: subagent
 prompt: ./prompt.md
 input: benchmark_name, claimed_capability, task_examples
-used-by: benchmark-archaeology
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Construct Validity Assessment SOP
@@ -29,3 +31,15 @@ Evaluate whether a benchmark actually measures the capability it claims to measu
 ## Output
 
 Validity verdict with evidence for each validity dimension.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

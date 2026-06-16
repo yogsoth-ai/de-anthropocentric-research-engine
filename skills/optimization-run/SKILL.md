@@ -1,10 +1,13 @@
 ---
 name: optimization-run
-description: Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions.
+description: Execute multi-objective optimization on candidates to produce a Pareto
+  front of non-dominated solutions.
 execution: subagent
 prompt: ./prompt.md
 input: candidates, objectives, constraints
-used-by: portfolio-optimization
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Optimization Run
@@ -22,3 +25,15 @@ Optimization requires systematic enumeration or heuristic search across the comb
 ## HARD-GATE
 
 Output must contain at least 5 non-dominated solutions on the Pareto front. If the candidate set is too small or constraints too tight, report the maximum achievable frontier size with explanation.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

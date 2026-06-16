@@ -1,10 +1,9 @@
-﻿---
+---
 name: reproducibility-checklist-audit
 description: Assess paper completeness against ML Reproducibility Checklist
 execution: subagent
 prompt: ./prompt.md
 input: paper_content
-used-by: baseline-establishment
 ---
 
 # Reproducibility Checklist Audit

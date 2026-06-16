@@ -1,8 +1,20 @@
 ---
 name: excursion-method
-description: Full 8-stage Gordon-Prince excursion process. Deliberate departure from the problem into unrelated domains, then force-fit discoveries back.
+description: Full 8-stage Gordon-Prince excursion process. Deliberate departure from
+  the problem into unrelated domains, then force-fit discoveries back.
 execution: strategy
-used-by: synectics
+dependencies:
+  tactics:
+  - compressed-conflict
+  - excursion-orchestration
+  sops:
+  - direct-analogy-generation
+  - excursion-departure
+  - force-fit
+  - personal-identification
+  - springboard-launch
+  - symbolic-compression
+  - synectics-synthesis
 ---
 
 # Excursion Method
@@ -53,3 +65,30 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 6. **Force-fit**: Deliberately connect excursion discoveries to the problem
 7. **Springboard**: "I wish..." or "How to..." statements from force-fit
 8. **Develop**: Build springboards into concrete solution concepts
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| compressed-conflict | Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension. |
+| excursion-orchestration | Orchestrate the excursion sequence — departure into unrelated domain, force-fit discoveries back to problem, launch springboard ideas. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| direct-analogy-generation | Find direct analogies from nature/tech/society that share structural properties with the problem. Produces analogy list with structural mappings. |
+| excursion-departure | Leave the problem entirely and explore an unrelated domain. Produces excursion domain discoveries for later force-fitting. |
+| force-fit | Force-fit excursion discoveries back to the original problem. Deliberately create connections between unrelated findings and the challenge. |
+| personal-identification | First-person empathic identification with a system or component. Produces experience description and design insights from embodiment. |
+| springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |
+| symbolic-compression | Compress problem contradiction into 2-3 word oxymoron. Produces oxymorons with interpretation directions for each. |
+| synectics-synthesis | Synthesize all synectics outputs into a structured idea report. Combines results from all analogy types and excursion processes. |
+
+<!-- END available-tables (generated) -->

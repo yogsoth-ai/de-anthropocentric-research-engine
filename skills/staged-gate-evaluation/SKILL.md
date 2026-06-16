@@ -1,8 +1,13 @@
 ---
 name: staged-gate-evaluation
-description: Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence.
+description: Define gate criteria for each stage, evaluate candidates at each gate,
+  and render go/kill/recycle decisions with evidence.
 execution: tactic
-used-by: feasibility-assessment
+dependencies:
+  sops:
+  - feasibility-synthesis
+  - gate-criteria-definition
+  - gate-judgment
 ---
 
 # Staged Gate Evaluation
@@ -40,3 +45,17 @@ Apply Stage-Gate methodology to evaluate a candidate at defined decision points.
 - Evidence supporting each verdict
 - Conditions for advancement (what would change a KILL to GO)
 - Final feasibility synthesis with recommendation
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
+| gate-criteria-definition | Define gate criteria and pass thresholds for a specific stage in the Stage-Gate process. |
+| gate-judgment | Evaluate a candidate against gate criteria and render GO/KILL/RECYCLE verdict with evidence. |
+
+<!-- END available-tables (generated) -->

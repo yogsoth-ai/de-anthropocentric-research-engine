@@ -1,7 +1,13 @@
 ---
 name: argument-crystallization
-description: Distill the strongest arguments from each perspective through Argument Delphi or Dialectical Delphi methods.
-used-by: structured-consensus
+description: Distill the strongest arguments from each perspective through Argument
+  Delphi or Dialectical Delphi methods.
+dependencies:
+  tactics:
+  - disagreement-mapping
+  - iterative-convergence-round
+  sops:
+  - consensus-synthesis
 ---
 
 # Argument Crystallization
@@ -71,3 +77,24 @@ irreducible_tensions:
     nature: <empirical/value/priority>
     why_irreducible: <explanation>
 ```
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| disagreement-mapping | Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines. |
+| iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
+
+<!-- END available-tables (generated) -->

@@ -1,10 +1,13 @@
 ---
 name: rating-update
-description: Incorporate a new judgment into the rating model and return updated ratings for all candidates.
+description: Incorporate a new judgment into the rating model and return updated ratings
+  for all candidates.
 execution: subagent
 prompt: ./prompt.md
 input: judgment(object), current_ratings(object), method(string)
-used-by: pairwise-ranking
+dependencies:
+  sops:
+  - spawn-agent
 ---
 
 # Rating Update
@@ -22,3 +25,15 @@ Rating updates involve mathematical computation specific to the chosen method. I
 ## HARD-GATE
 
 Output MUST contain updated ratings for ALL candidates (not just the compared pair). The winner's rating MUST increase or stay the same. The method field MUST match the input method.
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
+
+<!-- END available-tables (generated) -->

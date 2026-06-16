@@ -1,19 +1,28 @@
 ---
 name: comparison-design
-description: "Design fair comparison experiments against baselines and competing methods"
+description: Design fair comparison experiments against baselines and competing methods
 version: 1.0.0
 category: experiment-execution
 type: strategy
-used-by: experiment-design
 sops:
+- baseline-selection
+- metric-specification
+- sample-size-estimation
+- seed-protocol-design
+- environment-specification
+tactics:
+- statistical-method-selection
+- reproducibility-protocol
+dependencies:
+  sops:
   - baseline-selection
+  - environment-specification
   - metric-specification
   - sample-size-estimation
   - seed-protocol-design
-  - environment-specification
-tactics:
-  - statistical-method-selection
+  tactics:
   - reproducibility-protocol
+  - statistical-method-selection
 ---
 
 # Strategy: Comparison Design
@@ -46,3 +55,28 @@ tactics:
 | Standard | 2-3 baselines | 2-3 | 5 | 30-45 |
 | Comprehensive | 4+ baselines | 3-5 | 5-10 | 100+ |
 | Publication-ready | All relevant | 5+ | 10+ | 200+ |
+
+<!-- BEGIN available-tables (generated) -->
+
+## Available Tactics
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| Tactic | When to use |
+| --- | --- |
+| reproducibility-protocol | Ensure experiment reproducibility through systematic environment and seed control |
+| statistical-method-selection | Select appropriate statistical methods for experiment analysis |
+
+## Available SOPs
+
+Optional, no fixed order; the final leaf is always a sop.
+
+| SOP | When to use |
+| --- | --- |
+| baseline-selection | Select appropriate baselines for experimental comparison |
+| environment-specification | SOP: define complete experiment environment specification |
+| metric-specification | Define experiment metrics and significance standards |
+| sample-size-estimation | SOP: power analysis and required experiment count estimation |
+| seed-protocol-design | SOP: design random seed strategy for reproducibility |
+
+<!-- END available-tables (generated) -->
