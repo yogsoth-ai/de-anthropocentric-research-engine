@@ -93,3 +93,16 @@ Given all outputs from an experiment execution (results, statistical tests, ROPE
 - Next steps are actionable (not "further investigation needed")
 - Report is self-contained (reader needs no other documents)
 - All claims trace back to data (no unsupported interpretations)
+
+## Report Checkpoint
+
+报告产出后，将其作为独立报告落盘（与研究过程文件分开）：
+
+1. import context-init，topic-slug 传 `implementation-planning-report`，建立**独立的报告
+   context 文件**（slug 带 -report 后缀 → 与过程文件不同名 → 幂等不撞 → 新文件）。拿到返回路径。
+2. import context-checkpoint，把上面产出的完整报告 append 进**该报告文件**。定位优先用
+   init 刚返回的路径；若 fresh 上下文丢失，回退查 context/INDEX.md 中 slug 为
+   `implementation-planning-report` 的那一行。
+
+**不要** append 进过程文件（slug 无 -report 的那个），**不要**另建第三个文件。报告同时
+作为本 SOP 的常规返回值交回上层——落盘是记录，不替代返回。
