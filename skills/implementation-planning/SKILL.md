@@ -39,6 +39,19 @@ dependencies:
   - experiment-execution-saturation-detection
   - experiment-execution-web-research
   - experiment-execution-web-search
+  - "ponytail:ponytail"
+  - "ponytail:ponytail-debt"
+  - "ponytail:ponytail-review"
+  - "superpowers:brainstorming"
+  - "superpowers:executing-plans"
+  - "superpowers:finishing-a-development-branch"
+  - "superpowers:receiving-code-review"
+  - "superpowers:requesting-code-review"
+  - "superpowers:subagent-driven-development"
+  - "superpowers:test-driven-development"
+  - "superpowers:using-git-worktrees"
+  - "superpowers:verification-before-completion"
+  - "superpowers:writing-plans"
 ---
 
 # Campaign 4: Implementation Planning
@@ -86,22 +99,6 @@ Typical flow: critical-path-planning → prerequisite-planning → plan-writing 
 
 If any phase exceeds budget, STOP and report partial results.
 
-## Superpowers Adaptation
-
-This campaign internalizes two superpowers patterns:
-
-### From superpowers:writing-plans
-- Tasks are bite-sized (one clear action each)
-- Every task specifies exact file paths (no placeholders)
-- TDD where applicable (test first, implement second)
-- No TBD/TODO in final plan — everything resolved or explicitly deferred
-
-### From superpowers:subagent-driven-development
-- Fresh subagent per task (clean context)
-- Three-stage review: implementer → reviewer → integration
-- Status codes: DONE / BLOCKED / NEEDS_CONTEXT
-- Continuous execution until all tasks complete or budget exhausted
-
 ## Minimum Yield
 
 Even if execution is partial, this campaign MUST produce:
@@ -110,7 +107,34 @@ Even if execution is partial, this campaign MUST produce:
 - Whatever results were collected before budget/failure
 - Clear statement of what remains undone and why
 
+## External Implementation Backbone
+
+本 campaign 的实现段（plan-writing → experiment-running → result-analysis）不自造，
+而是直接 `Skill` load superpowers/ponytail 外部 skill 当 SOP。DARE 原生的排程
+（CPM/PERT/TOC）与统计分析（bootstrap/ROPE/复现）夹在两端，是三明治：
+
+```
+排程层(DARE: CPM/PERT/TOC)
+  → plan-writing: superpowers:brainstorming → superpowers:writing-plans
+  → experiment-running: superpowers:using-git-worktrees
+        → superpowers:executing-plans | superpowers:subagent-driven-development
+        → superpowers:verification-before-completion
+        → superpowers:finishing-a-development-branch
+  → result-analysis(DARE: 统计 + 复现)
+```
+
+ponytail 三道 gate 贯穿执行段（硬接线进 dependencies，钉在前/后）：
+
+| ponytail gate | 时机 |
+|---|---|
+| ponytail:ponytail | executing 之前载入（边写边精简） |
+| ponytail:ponytail-review | code-review 之后载入（逐 diff 查过度工程） |
+| ponytail:ponytail-debt | finishing 之前载入（收集欠债标记） |
+
+舍弃（YAGNI）：ponytail:ponytail-audit（全库扫，错粒度）、ponytail:ponytail-help（速查卡）。
+
 <!-- BEGIN available-tables (generated) -->
+<!-- external rows hand-maintained; do not regenerate this file -->
 
 ## Available Strategies
 
@@ -151,5 +175,18 @@ Optional, no fixed order; the final leaf is always a sop.
 | experiment-execution-saturation-detection | Shared SOP: detect information saturation — know when to stop searching/analyzing |
 | experiment-execution-web-research | Import SOP: deep full-page content analysis (from web-browsing skill) |
 | experiment-execution-web-search | Import SOP: quick web scan discovery (from web-browsing skill) |
+| ponytail:ponytail | Lazy-senior reflex: simplest thing that holds; mark every deliberate shortcut |
+| ponytail:ponytail-debt | Harvest ponytail debt markers before finishing |
+| ponytail:ponytail-review | Audit the diff for over-engineering (delete/stdlib/native/yagni/shrink) |
+| superpowers:brainstorming | Turn the experiment design into an implementation spec (clarify -> approaches -> spec -> self-review -> user gate) |
+| superpowers:executing-plans | Execute the plan task-by-task in the current session with checkpoints |
+| superpowers:finishing-a-development-branch | Verify tests -> merge / PR / branch cleanup |
+| superpowers:receiving-code-review | Verify review feedback before applying; push back when wrong |
+| superpowers:requesting-code-review | Dispatch a code-reviewer subagent after each task |
+| superpowers:subagent-driven-development | Execute the plan via a fresh subagent per task with two-stage review |
+| superpowers:test-driven-development | RED -> GREEN -> REFACTOR per task |
+| superpowers:using-git-worktrees | Create an isolated worktree + run baseline tests before implementing |
+| superpowers:verification-before-completion | Run the proving command and confirm output before claiming done |
+| superpowers:writing-plans | Produce a bite-sized, TDD-structured implementation plan from the spec |
 
 <!-- END available-tables (generated) -->
