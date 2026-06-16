@@ -77,3 +77,22 @@ def test_apply_fixes_rewrites_and_is_idempotent(tmp_path):
     assert "description: x\n" in txt
     # second run: nothing left to change
     assert m.apply_fixes(flat) == []
+
+
+def test_main_dry_run_writes_nothing(tmp_path, capsys):
+    flat = tmp_path / "skills"
+    _mk(flat, "convergence-web-search", "web-search")
+    rc = m.main(["--flat-body", str(flat), "--dry-run"])
+    assert rc == 0
+    # unchanged on disk
+    txt = (flat / "convergence-web-search" / "SKILL.md").read_text(encoding="utf-8")
+    assert "name: web-search\n" in txt
+
+
+def test_main_applies(tmp_path):
+    flat = tmp_path / "skills"
+    _mk(flat, "convergence-web-search", "web-search")
+    rc = m.main(["--flat-body", str(flat)])
+    assert rc == 0
+    txt = (flat / "convergence-web-search" / "SKILL.md").read_text(encoding="utf-8")
+    assert "name: convergence-web-search\n" in txt

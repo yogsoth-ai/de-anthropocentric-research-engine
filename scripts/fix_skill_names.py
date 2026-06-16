@@ -70,3 +70,24 @@ def apply_fixes(flat_body: Path) -> list[str]:
         sk.write_text(fix_name_line(text, folder), encoding="utf-8")
         changed.append(folder)
     return changed
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description="Align frontmatter name to folder-name")
+    ap.add_argument("--flat-body", required=True)
+    ap.add_argument("--dry-run", action="store_true")
+    a = ap.parse_args(argv)
+    flat = Path(a.flat_body)
+    if a.dry_run:
+        rows = scan(flat)
+        for folder, old in rows:
+            print(f"{folder}  <-  name: {old}")
+        print(f"{len(rows)} would change")
+        return 0
+    changed = apply_fixes(flat)
+    print(f"{len(changed)} name fields aligned to folder-name")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
