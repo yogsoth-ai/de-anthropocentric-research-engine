@@ -1,4 +1,4 @@
-<!-- markdownlint-disable -->
+<!-- markdownlint-disable MD033 MD041 MD045 -->
 <p align="center">
   <img src="assets/yogsoth-logo.svg" width="240" />
 </p>
@@ -158,38 +158,38 @@ The orchestrator layer (the `engine-core` package) sits above the 9 research pac
 Inside every package, the skills are organized into exactly four layers. The rule is absolute: each layer calls only the layer directly below it. No exceptions. This same four-layer discipline repeats within each of the 9 packages — the layers below aggregate the counts across all packages.
 
 ```bash
-┌────────────────────────────────────────────────────────────────────────┐
-│  CAMPAIGN (45+)                                                        │
-│  Complete research phases with their own completion criteria           │
-│                                                                        │
-│  north-star-crystallization · knowledge-acquisition · deep-insight     │
-│  hypothesis-formation · creative-ideation · convergence                │
-│  stress-test · experiment-execution · knowledge-structuring            │
-├────────────────────────────────────────────────────────────────────────┤
-│  STRATEGY (200+)                                                      │
-│  Iteration engines with state management and stopping conditions       │
-│                                                                        │
-│  literature-survey · gap-analysis · insight · red-teaming · scoring    │
-│  convergence-distillation · experiment-design · steel-manning          │
-│  deep-survey · scoping-survey · systematic-survey · ...                │
-├────────────────────────────────────────────────────────────────────────┤
-│  TACTIC (100+)                                                         │
-│  Multi-SOP workflows that produce coherent intermediate outputs        │
-│                                                                        │
-│  academic-research · web-research · cross-domain-collision · scamper   │
-│  component-surgery · morphological-exploration · synectics             │
-│  biomimicry · lateral-thinking · concept-blending · ...                │
-├────────────────────────────────────────────────────────────────────────┤
-│  SOP (500+)                                                            │
-│  Atomic single-responsibility operations                               │
-│                                                                        │
-│  paper-search · citation-chaining · gap-identification · claim-parsing │
-│  hypothesis-formulation · analogy-extraction · pairwise-comparison     │
-│  assumption-audit · falsifiability-check · monte-carlo-sampling · ...  │
-├────────────────────────────────────────────────────────────────────────┤
-│  MCP LAYER (6 servers — external tool access)                          │
+┌───────────────────────────────────────────────────────────────────────────┐
+│  CAMPAIGN (45+)                                                           │
+│  Complete research phases with their own completion criteria              │
+│                                                                           │
+│  north-star-crystallization · knowledge-acquisition · deep-insight        │
+│  hypothesis-formation · creative-ideation · convergence                   │
+│  stress-test · experiment-execution · knowledge-structuring               │
+├───────────────────────────────────────────────────────────────────────────┤
+│  STRATEGY (200+)                                                          │
+│  Iteration engines with state management and stopping conditions          │
+│                                                                           │
+│  literature-survey · gap-analysis · insight · red-teaming · scoring       │
+│  convergence-distillation · experiment-design · steel-manning             │
+│  deep-survey · scoping-survey · systematic-survey · ...                   │
+├───────────────────────────────────────────────────────────────────────────┤
+│  TACTIC (100+)                                                            │
+│  Multi-SOP workflows that produce coherent intermediate outputs           │
+│                                                                           │
+│  academic-research · web-research · cross-domain-collision · scamper      │
+│  component-surgery · morphological-exploration · synectics                │
+│  biomimicry · lateral-thinking · concept-blending · ...                   │
+├───────────────────────────────────────────────────────────────────────────┤
+│  SOP (500+)                                                               │
+│  Atomic single-responsibility operations                                  │
+│                                                                           │
+│  paper-search · citation-chaining · gap-identification · claim-parsing    │
+│  hypothesis-formulation · analogy-extraction · pairwise-comparison        │
+│  assumption-audit · falsifiability-check · monte-carlo-sampling · ...     │
+├───────────────────────────────────────────────────────────────────────────┤
+│  MCP LAYER (6 servers — external tool access)                             │
 │  semantic-scholar · brave-search · tavily · alphaxiv · apify · wiki-vault │
-└────────────────────────────────────────────────────────────────────────┘
+└───────────────────────────────────────────────────────────────────────────┘
 ```
 
 **Campaign layer** — Each campaign represents a complete phase of the research lifecycle. `knowledge-acquisition` owns everything about gathering information from the world. `creative-ideation` owns everything about generating novel approaches. Campaigns define what success looks like (completion criteria), when to retreat (backtrack conditions), and how to preserve state (context protocol). A campaign never directly invokes an SOP — it delegates to strategies.
@@ -246,7 +246,7 @@ de-anthropocentric-research-engine/
 ### 🔌 MCP Servers
 
 | Server | Package | Type | Purpose |
-|--------|---------|------|---------|
+| ------ | ------- | ---- | ------- |
 | **semantic-scholar** | [`@yogsoth-ai/semantic-scholar-mcp`](https://github.com/yogsoth-ai/semantic-scholar-mcp) | stdio | Paper lookup, citations, references, recommendations, author info (8 tools) |
 | **wiki-vault** | [`@yogsoth-ai/wiki-vault`](https://github.com/yogsoth-ai/wiki-vault) | stdio | Research knowledge graph — BM25 search, typed edges, graph traversal (8 tools) |
 | **brave-search** | `@brave/brave-search-mcp-server` | stdio | Web search, news search, local search, LLM context |
@@ -259,7 +259,7 @@ de-anthropocentric-research-engine/
 The 9 freely-composable research packages, each a self-contained 4-layer engine (campaign → strategy → tactic → SOP):
 
 | Package | Skills | Key Capabilities |
-|---------|--------|------------------|
+| ------- | ------ | ---------------- |
 | creative-ideation | ~190 | SCAMPER, TRIZ, biomimicry, morphological, lateral thinking, concept blending |
 | convergence | ~120 | Multi-criteria scoring, Pareto, pairwise ranking, consensus, steel-manning |
 | deep-insight | ~110 | Gap analysis, root-cause drilling, tension mining, boundary & sensitivity analysis |
@@ -273,7 +273,7 @@ The 9 freely-composable research packages, each a self-contained 4-layer engine 
 Plus the infrastructure that every package draws on:
 
 | Infrastructure | Skills | Role |
-|----------------|--------|------|
+| -------------- | ------ | ---- |
 | engine-core | 8 | Entry point, writing-specs, executing-specs, research-catalog + 4 orchestration SOPs |
 | literature-engine | 3 | Paper discovery, reading protocols, reference exploration |
 | context-management | 3 | Context init, checkpoint, session recovery |
@@ -286,36 +286,36 @@ Plus the infrastructure that every package draws on:
 
 1. Clone and install:
 
-```bash
-git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
-cd de-anthropocentric-research-engine
-npm install
-```
+   ```bash
+   git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
+   cd de-anthropocentric-research-engine
+   npm install
+   ```
 
 2. Copy `mcp.example.json` to `.mcp.json` and fill in your API keys:
 
-```bash
-cp mcp.example.json .mcp.json
-```
+   ```bash
+   cp mcp.example.json .mcp.json
+   ```
 
 3. Configure your Claude Code project to use the skills:
 
-```json
-{
-  "permissions": {
-    "allow": ["skill:*"]
-  },
-  "skills": {
-    "path": "path/to/de-anthropocentric-research-engine/skills"
-  }
-}
-```
+   ```json
+   {
+     "permissions": {
+       "allow": ["skill:*"]
+     },
+     "skills": {
+       "path": "path/to/de-anthropocentric-research-engine/skills"
+     }
+   }
+   ```
 
 4. Invoke the entry point:
 
-```bash
-/de-anthropocentric-research-engine
-```
+   ```bash
+   /de-anthropocentric-research-engine
+   ```
 
 The orchestrator will guide you through North Star crystallization, then generate an executable Research Spec. To execute the spec later, invoke `/executing-specs`.
 
@@ -355,31 +355,31 @@ You: /executing-specs docs/de-anthropocentric/specs/2026-05-19-cot-faithfulness-
 #### semantic-scholar (`@yogsoth-ai/semantic-scholar-mcp`)
 
 | Variable | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `SS_API_KEY` | [Semantic Scholar API key](https://www.semanticscholar.org/product/api) (optional — public API works without key at lower rate limits) |
 
 #### wiki-vault (`@yogsoth-ai/wiki-vault`)
 
 | Variable | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `VAULT_ROOT` | Absolute path to your Obsidian-compatible vault directory |
 
 #### brave-search (`@brave/brave-search-mcp-server`)
 
 | Variable | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `BRAVE_API_KEY` | [Brave Search API key](https://brave.com/search/api/) |
 
 #### tavily-search (`tavily-mcp`) *(optional)*
 
 | Variable | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `TAVILY_API_KEY` | [Tavily API key](https://app.tavily.com) — opt-in alternative to Brave Search for web search (1,000 free credits/month) |
 
 #### apify (`@apify/actors-mcp-server`)
 
 | Variable | Description |
-|----------|-------------|
+| -------- | ----------- |
 | `APIFY_TOKEN` | [Apify API token](https://console.apify.com/account#/integrations) |
 
 #### alphaxiv (HTTP — no local install)
