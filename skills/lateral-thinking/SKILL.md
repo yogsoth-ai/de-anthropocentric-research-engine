@@ -141,9 +141,9 @@ Escape logical thinking tracks via PO/movement, random entry, concept fan, chall
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | challenge-operation | Non-threatening 'Why?' questioning of current practices (de Bono Challenge) |
 | concept-fan | Expand from purpose to concepts to directions to ideas (de Bono Concept Fan) |
@@ -153,9 +153,9 @@ Escape logical thinking tracks via PO/movement, random entry, concept fan, chall
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
 | creative-ideation-provocation-generation | Generate PO provocations and extract constructive movement. Orchestrates assumption surfacing → provocation creation → movement extraction → idea formation. |
@@ -164,9 +164,9 @@ Escape logical thinking tracks via PO/movement, random entry, concept fan, chall
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
 | challenge-questioning | Non-threatening 'Why?' questioning of current practices to reveal historical accidents vs. genuine constraints. |

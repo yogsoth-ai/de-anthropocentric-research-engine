@@ -1,6 +1,7 @@
 ---
 name: scoring-matrix-construction
-description: 'Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps'
+description: 'Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive
+  assessment matrix for all gaps'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -76,14 +77,14 @@ After execution, report to the calling strategy:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| ahrq-picme-assessment | SOP: 使用 AHRQ PiCMe 框架对研究 gap 进行 6 维度系统评估 |
-| feasibility-scoring | SOP: 评估研究 gap 的可攻击性，识别瓶颈并输出可行性评分 |
-| hypothesis-formation-novelty-scoring | SOP: 评估研究 gap 的新颖性潜力，识别差异化方向并输出评分 |
-| impact-scoring | SOP: 评估研究 gap 的潜在影响力，识别受益方并输出影响力评分 |
-| importance-scoring | SOP: 评估研究 gap 的学术与实践重要性，输出 1-5 分及依据 |
+| ahrq-picme-assessment | SOP: Use the AHRQ PiCMe framework to systematically assess a research gap across 6 dimensions |
+| feasibility-scoring | SOP: assess the attackability of a research gap, identify bottlenecks, and output a feasibility score |
+| hypothesis-formation-novelty-scoring | SOP: Assess the novelty potential of a research gap, identify differentiation directions, and output a score |
+| impact-scoring | SOP: assess the potential impact of a research gap, identify beneficiaries and output an impact score |
+| importance-scoring | SOP: assess the academic and practical importance of a research gap, output a 1-5 score with rationale |
 
 <!-- END available-tables (generated) -->

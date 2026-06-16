@@ -68,17 +68,17 @@ Gap Candidate List with evidence pointers — each candidate includes: gap descr
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | evidence-mapping | Systematic evidence map construction — search, classify, locate gaps, visualize. Combines concept-matrix-construction, gap-keyword-extraction, evidence-grading, and egm-construction SOPs. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | concept-matrix-construction | Build articles × concepts coverage matrix to visualize research landscape and identify empty cells as gap candidates. |
 | egm-construction | Build structured Evidence Gap Maps — define axes (intervention × outcome or method × domain), place gaps in cells, annotate with evidence density and quality. |

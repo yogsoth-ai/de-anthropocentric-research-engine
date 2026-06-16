@@ -42,9 +42,9 @@ Converge all accumulated context into North Star + ResearchBrief.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | crystallize-north-star | Fuse the GoalTree root node and user motivation into a single crystallized North Star statement. Format: '[verb] [specific goal], through [method/path], solving [what problem], ultimately [what impact]'. Quality checks: specific? ambitious? achievable? |
 | final-validation | Self-review the North Star + ResearchBrief for completeness, consistency, and clarity before presenting to user. If issues found, return to specific tactic/SOP for targeted fix. If passes, present final output to user for confirmation. |

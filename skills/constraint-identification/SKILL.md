@@ -80,9 +80,9 @@ constraint_analysis:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | constraint-drilling | Identify constraints, classify them by type and severity, assess removability, and design removal paths for removable constraints. |
 

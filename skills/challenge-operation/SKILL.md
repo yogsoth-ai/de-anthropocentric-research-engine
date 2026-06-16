@@ -58,17 +58,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | concept-hierarchy | Build concept levels from purpose through concepts to ideas, with escape and fractionation at each level. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
 | challenge-questioning | Non-threatening 'Why?' questioning of current practices to reveal historical accidents vs. genuine constraints. |

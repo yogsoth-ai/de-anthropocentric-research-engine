@@ -141,9 +141,9 @@ Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and rec
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | component-surgery | Component-level surgical operations (subtract/multiply/divide/unify/redirect) from Systematic Inventive Thinking (SIT). |
 | function-trimming | Remove components while preserving function via TRIZ trimming methodology. Simplify systems by redistributing functions. |
@@ -153,9 +153,9 @@ Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and rec
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | component-decomposition | Decompose system into functional components, identify dependencies, and surface trimming candidates. |
 | contradiction-identification | Identify technical and physical contradictions in a system through functional modeling and matrix analysis. |
@@ -164,9 +164,9 @@ Decompose systems into components and reassemble via SCAMPER, SIT, TRIZ, and rec
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |

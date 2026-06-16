@@ -50,9 +50,9 @@ Identify barriers, assess severity, propose mitigations, get acceptance.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | ask-obstacle-acceptance | Present obstacles with their severity assessments and proposed mitigations to the user. Ask whether they can accept these obstacles. If unacceptable after 2 rounds, return to present-candidates. |
 | assess-obstacle-severity | Rate each identified obstacle's difficulty — overcomability, time cost, workaround existence. May optionally use search tools to validate assessments. |

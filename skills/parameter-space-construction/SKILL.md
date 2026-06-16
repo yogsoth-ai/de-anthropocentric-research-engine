@@ -55,9 +55,9 @@ dependencies:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | parameter-enumeration | Enumerate possible values for each uncertainty driver using MECE principles |
 | scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |

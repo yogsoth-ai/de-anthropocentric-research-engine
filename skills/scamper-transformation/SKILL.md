@@ -54,9 +54,9 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | recombination-generation | Reassemble decomposed system fragments into novel structural arrangements that create emergent value. |
 | scamper-divergence | Execute SCAMPER 7 operators on a target solution. Subagent self-selects best 2-3 operators for deepest exploration. |

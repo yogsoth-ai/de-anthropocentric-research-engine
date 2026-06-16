@@ -1,12 +1,14 @@
 ---
 name: novelty-scoring
-description: 'SOP: Assess the novelty potential of a research gap, identify differentiation directions, and output a score'
+description: 'SOP: Assess the novelty potential of a research gap, identify differentiation
+  directions, and output a score'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
 input: GapRecord — a single standardized gap record
-output: NoveltyScore — includes dimension scores, composite score (1-5), list of differentiation directions, and rationale
+output: NoveltyScore — includes dimension scores, composite score (1-5), list of differentiation
+  directions, and rationale
 dependencies:
   sops:
   - hypothesis-formation-paper-research
@@ -61,13 +63,13 @@ Assess the novelty potential of a research gap, identify differentiation directi
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| hypothesis-formation-paper-research | Import SOP: 深度文献研究，原始全文 + PDF 问答（来自 literature-engine） |
-| hypothesis-formation-paper-search | Import SOP: 中深度文献搜索，AI 摘要报告（来自 literature-engine） |
-| hypothesis-formation-web-research | Import SOP: 深度 web 研究，全文抓取分析（来自 web-browsing） |
-| hypothesis-formation-web-search | Import SOP: 快速 web 扫描，发现 URL 和 snippet（来自 web-browsing） |
+| hypothesis-formation-paper-research | Import SOP: Deep literature research, raw full text + PDF Q&A (from literature-engine) |
+| hypothesis-formation-paper-search | Import SOP: Medium-depth literature search, AI summary report (from literature-engine) |
+| hypothesis-formation-web-research | Import SOP: deep web research, full-text fetching and analysis (from web-browsing) |
+| hypothesis-formation-web-search | Import SOP: quick web scan, discover URLs and snippets (from web-browsing) |
 
 <!-- END available-tables (generated) -->

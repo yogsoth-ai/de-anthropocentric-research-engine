@@ -57,17 +57,17 @@ Define orthogonal variation axes (data size, noise level, distribution type, etc
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | systematic-perturbation | Multi-axis systematic perturbation — define variation axes, perturb along each, measure degradation, construct validity envelope. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | controlled-perturbation | Systematically vary parameters along defined axes, recording performance at each point to identify degradation thresholds. |
 | deep-insight-validity-envelope-construction | Combine multi-axis perturbation data into a multi-dimensional validity description with boundary conditions and interaction effects. |

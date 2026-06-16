@@ -80,18 +80,18 @@ conditions: []
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | adversarial-debate-protocol | Structured debate protocol that constructs an advocate, deploys critic attacks, and renders a judge verdict through iterative rounds. |
 | assumption-excavation | Systematic extraction, challenge, and sensitivity analysis of assumptions underlying a decision to identify load-bearing beliefs. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | steel-manning-synthesis | Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications. |
 

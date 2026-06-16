@@ -1,6 +1,7 @@
 ---
 name: anomaly-driven-abduction
-description: 'Tactic: Inductive/abductive path — describe anomalous phenomena, generate candidate explanations, rank by plausibility'
+description: 'Tactic: Inductive/abductive path — describe anomalous phenomena, generate
+  candidate explanations, rank by plausibility'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -68,12 +69,12 @@ Report to the calling strategy after execution:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| anomaly-characterization | SOP: 描述和分类无法被现有理论解释的异常现象 |
-| explanation-generation | SOP: 为异常现象生成候选解释列表 |
-| plausibility-ranking | SOP: 对候选解释按合理性进行多维度加权排序 |
+| anomaly-characterization | SOP: Describe and classify anomalous phenomena that existing theory cannot explain |
+| explanation-generation | SOP: generate a list of candidate explanations for an anomalous phenomenon |
+| plausibility-ranking | SOP: rank candidate explanations by plausibility using multi-dimensional weighted scoring |
 
 <!-- END available-tables (generated) -->

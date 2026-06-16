@@ -52,9 +52,9 @@ Loop stages 1-3 until consistency threshold met or repair budget exhausted.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
 | cycle-detection | Scan a pairwise comparison matrix for preference cycles and compute transitivity metrics. |

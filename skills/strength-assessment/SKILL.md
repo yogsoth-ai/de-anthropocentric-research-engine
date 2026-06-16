@@ -46,9 +46,9 @@ Returns: `{ claims_scored: number, strong_claims: number, weak_claims: number, d
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | evidence-attachment | SOP for attaching evidence to a claim — create typed edge (supported_by, contradicts, qualifies) with evidence quality metadata. |
 | strength-scoring | SOP for assigning calibrated strength scores to claims — evaluate evidence weight, count independent sources, check defeaters, produce scored assessment. |

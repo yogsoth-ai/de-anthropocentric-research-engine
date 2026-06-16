@@ -42,9 +42,9 @@ Apply CCA reduction rules via solution-space-reduction SOP. Remove all configura
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | creative-ideation-consistency-pair-evaluation | Evaluate pairwise value consistency (logical/empirical/normative) |
 | solution-space-reduction | Apply CCA to remove inconsistent combinations |

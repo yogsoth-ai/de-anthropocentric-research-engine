@@ -120,9 +120,9 @@ Profile competitor IP portfolios to understand their technology focus, filing st
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
 | knowledge-acquisition-claim-decomposition | Independent/dependent claim parsing, element extraction, and feature mapping to technical domains |
@@ -130,9 +130,9 @@ Profile competitor IP portfolios to understand their technology focus, filing st
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | assignee-normalization | Standardize assignee names and identify corporate group affiliations across patent offices |
 | citation-network-analysis | Build and analyze patent citation networks — main path analysis, PageRank, cluster detection |

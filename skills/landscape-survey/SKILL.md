@@ -105,18 +105,18 @@ Produce a comprehensive patent landscape map for a given technology domain, answ
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | classification-navigation | IPC/CPC hierarchy drill-down and lateral expansion for patent discovery |
 | patent-family-tracing | Forward/backward patent citation and priority tracing until saturation |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | assignee-normalization | Standardize assignee names and identify corporate group affiliations across patent offices |
 | knowledge-acquisition-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |

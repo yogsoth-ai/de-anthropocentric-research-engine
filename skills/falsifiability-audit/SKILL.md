@@ -1,6 +1,7 @@
 ---
 name: falsifiability-audit
-description: 'Tactic: hypothesis quality assurance — check falsifiability, repair failing hypotheses, complete operationalization and boundary-condition specification'
+description: 'Tactic: hypothesis quality assurance — check falsifiability, repair
+  failing hypotheses, complete operationalization and boundary-condition specification'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -69,12 +70,12 @@ After execution, report to the calling strategy:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| boundary-condition-specification | SOP: 指定假设成立的边界条件 |
-| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
-| operationalization | SOP: 将抽象概念操作化为可测量的指标和方法 |
+| boundary-condition-specification | SOP: Specify the boundary conditions under which a hypothesis holds |
+| falsifiability-check | SOP: check whether a hypothesis meets the falsifiability criterion |
+| operationalization | SOP: operationalize abstract concepts into measurable indicators and methods |
 
 <!-- END available-tables (generated) -->

@@ -100,17 +100,17 @@ Cannot exit until score_pairs_compared >= 36 (80% of target).
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | leaderboard-harvesting | Systematically collect performance data from platforms and papers |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | discrepancy-identification | Compare same-method scores across sources, flag significant deviations |
 | reproducibility-checklist-audit | Assess paper completeness against ML Reproducibility Checklist |

@@ -139,9 +139,9 @@ Systematic use of analogy and metaphor for breakthrough associations via Gordon'
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | direct-analogy | Find structurally similar systems in nature/technology/society. Map structural parallels to generate transferable solution principles. |
 | excursion-method | Full 8-stage Gordon-Prince excursion process. Deliberate departure from the problem into unrelated domains, then force-fit discoveries back. |
@@ -151,9 +151,9 @@ Systematic use of analogy and metaphor for breakthrough associations via Gordon'
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | analogy-extraction | Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation. |
 | compressed-conflict | Generate compressed conflicts (oxymorons) from problem contradictions and extract concrete idea directions from the symbolic tension. |
@@ -162,9 +162,9 @@ Systematic use of analogy and metaphor for breakthrough associations via Gordon'
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | analogy-chain | Chain analogies to deeper levels (3-5 layers). Each layer reveals new aspects and insights not visible at the surface. |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |

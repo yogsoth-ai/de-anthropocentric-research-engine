@@ -64,17 +64,17 @@ Obstacles identified here feed back into the critical path:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | intermediate-objective-design | Design intermediate objectives to overcome each identified obstacle |
 | obstacle-identification | TOC Prerequisite Tree — list obstacles preventing direct achievement of the objective |

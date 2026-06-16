@@ -83,11 +83,11 @@ After each round, record:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| falsifiability-audit | Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范 |
-| theory-mechanism-extraction | Tactic: 演绎路径核心——从理论出发提取机制、变量与关系，生成假设候选 |
+| falsifiability-audit | Tactic: hypothesis quality assurance — check falsifiability, repair failing hypotheses, complete operationalization and boundary-condition specification |
+| theory-mechanism-extraction | Tactic: Core of the deductive path — start from theory to extract mechanisms, variables, and relationships, generating hypothesis candidates |
 
 <!-- END available-tables (generated) -->

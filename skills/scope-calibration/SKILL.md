@@ -1,6 +1,7 @@
 ---
 name: scope-calibration
-description: 'Strategy: Adjust research question scope — zoom in/out until the scope is appropriate'
+description: 'Strategy: Adjust research question scope — zoom in/out until the scope
+  is appropriate'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -81,10 +82,10 @@ After the strategy completes, context-checkpoint must be called, recording:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| question-refinement-loop | Tactic: 迭代精化研究问题直到通过 FINER 5 项标准 |
+| question-refinement-loop | Tactic: iteratively refine a research question until it passes all 5 FINER criteria |
 
 <!-- END available-tables (generated) -->

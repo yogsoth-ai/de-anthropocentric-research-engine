@@ -51,9 +51,9 @@ Cannot exit until 80% of budget met. Print state ledger before each iteration de
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | counterfactual-reasoning | Tactic for reasoning about what would happen if variables were different — supports causal identification and intervention analysis. |
 | evidence-weighing | Tactic for assessing the strength and relevance of evidence for causal claims — distinguishes correlation from causation. |
@@ -61,9 +61,9 @@ Cannot exit until 80% of budget met. Print state ledger before each iteration de
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | mechanism-edge-creation | SOP for creating a causal mechanism edge — documents how one variable causes changes in another. |
 

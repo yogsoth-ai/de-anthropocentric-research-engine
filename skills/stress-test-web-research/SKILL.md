@@ -33,9 +33,9 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
 

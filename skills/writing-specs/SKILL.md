@@ -107,9 +107,9 @@ Inform the user: "Spec complete. To execute, invoke `executing-specs` with the p
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | campaign-selection | Structured questioning SOP to determine which campaigns to include, emphasize, or skip. Used during spec generation. |
 | constraint-elicitation | Structured questioning SOP to identify practical constraints that shape the research spec. Used during spec generation. |

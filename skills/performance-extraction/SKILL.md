@@ -102,17 +102,17 @@ Cannot exit until data_points >= 120 (80% of target).
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | leaderboard-harvesting | Systematically collect performance data from platforms and papers |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |
 | score-extraction | Extract (Task, Dataset, Metric, Score, Conditions) tuples from a paper |

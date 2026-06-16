@@ -61,9 +61,9 @@ Classified Gap Table — each gap with: type label, AHRQ reason, confidence, sup
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | ahrq-reason-classification | Classify gap root causes using AHRQ 4-reason framework (insufficient info, biased info, inconsistent info, not yet integrated). |
 | gap-typology-classification | Classify gaps using Miles 7-type taxonomy (theoretical, methodological, empirical, population, practical, knowledge void, evidence gap). |

@@ -36,9 +36,9 @@ Returns: `{ sources_ingested: number, paths: string[] }`
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | wiki-ingest-source | SOP for source page creation — write immutable source page capturing raw material, then update search index. |
 

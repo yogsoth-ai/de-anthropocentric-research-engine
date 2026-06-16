@@ -143,9 +143,9 @@ Produce emergent concepts via concept blending, multi-level bisociation, and fun
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | concept-blending | Fauconnier-Turner 4-space model: Generic + Input1 + Input2 → Blended Space |
 | design-space-exploration | Parametric variation + constraint satisfaction combinatorial search |
@@ -155,9 +155,9 @@ Produce emergent concepts via concept blending, multi-level bisociation, and fun
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | blend-construction | Construct complete 4-space blends with emergent structure. Orchestrates input-space-construction → generic-space-extraction → blend-composition. |
 | creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
@@ -166,9 +166,9 @@ Produce emergent concepts via concept blending, multi-level bisociation, and fun
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abstraction-ladder | Perform bisociation at multiple abstraction levels |
 | blend-completion | Complete blend with background knowledge |

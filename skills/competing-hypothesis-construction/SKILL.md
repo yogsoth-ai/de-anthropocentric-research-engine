@@ -76,18 +76,18 @@ Record after each round:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| competing-hypothesis-matrix | Tactic: 多假设管理——生成竞争假设，设计区分性预测，构建结构化比较矩阵 |
+| competing-hypothesis-matrix | Tactic: Multi-hypothesis management — generate competing hypotheses, design discriminating predictions, build a structured comparison matrix |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
+| falsifiability-check | SOP: check whether a hypothesis meets the falsifiability criterion |
 
 <!-- END available-tables (generated) -->

@@ -78,18 +78,18 @@ comparative_ranking:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | multi-dimensional-readiness-scan | Assess readiness across multiple dimensions, synthesize into radar visualization, and identify bottleneck dimensions. |
 | staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | feasibility-synthesis | Synthesize all assessments into a feasibility matrix, recommendation, and risk summary. |
 | radar-synthesis | Synthesize multiple dimension scores into radar chart data and compute overall readiness. |

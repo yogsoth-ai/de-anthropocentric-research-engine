@@ -46,9 +46,9 @@ dependencies:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | claim-refinement | Propose a refined claim that survives counterexamples while preserving maximum explanatory power (Lakatos lemma-incorporation). |
 | counterexample-generation | Systematically generate counterexamples (monsters) to a given claim using diverse heuristic strategies. |

@@ -45,9 +45,9 @@ Ranking comparison across >=2 methods + difference analysis
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
 | method-sensitivity-report | Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives. |

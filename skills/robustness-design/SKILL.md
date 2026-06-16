@@ -61,17 +61,17 @@ dependencies:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | statistical-method-selection | Select appropriate statistical methods for experiment analysis |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | baseline-selection | Select appropriate baselines for experimental comparison |
 | design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |

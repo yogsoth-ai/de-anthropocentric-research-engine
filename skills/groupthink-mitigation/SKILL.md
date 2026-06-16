@@ -63,18 +63,18 @@ persona-construction → [build 10th Man dissenter]
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | adversarial-roleplay | Tactic: Construct detailed hostile persona, attack artifact from that persona's perspective, record successful attack paths for aggregation. |
 | assumption-cascade | Tactic: Surface assumptions, sort by dependency, attack root assumptions first, then trace cascade failures through the dependency graph. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | devils-advocacy | Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking. |
 | finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |

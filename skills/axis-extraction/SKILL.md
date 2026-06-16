@@ -36,9 +36,9 @@ Systematically extract axes of variation from literature. Look for how authors c
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | axis-validation | SOP for validating that candidate axes are independent and meaningful. |
 | dimension-page-creation | SOP for creating a dimension page — documents an axis of variation with its values and semantics. |

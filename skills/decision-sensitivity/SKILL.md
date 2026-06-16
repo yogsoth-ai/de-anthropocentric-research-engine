@@ -50,9 +50,9 @@ Identify which uncertainties would actually change the research direction decisi
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | critical-path-identification | Identify which input uncertainties contribute most to output uncertainty and compute EVPI for research prioritization. |
 | sensitivity-synthesis | Synthesize all sensitivity analysis results into a coherent report with prioritized recommendations. |

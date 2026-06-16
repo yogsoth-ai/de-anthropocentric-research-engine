@@ -72,9 +72,9 @@ bridging_possibilities: [...]
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | disagreement-mapping | Map disagreement structure by collecting judgments, clustering opinions, extracting arguments per cluster, and visualizing fault lines. |
 

@@ -71,17 +71,17 @@ dissent_record: <items that did not converge>
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | iterative-convergence-round | Execute one full Delphi round — collect judgments, distribute anonymous feedback, measure consensus, decide whether to continue. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | consensus-synthesis | Synthesize all rounds into a final consensus report documenting agreements, dissent, and process. |
 

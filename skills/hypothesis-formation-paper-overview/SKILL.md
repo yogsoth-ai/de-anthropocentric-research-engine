@@ -40,9 +40,9 @@ Directly call the `paper-overview` skill in `literature-engine`. This skill prov
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | literature-overview | Quick landscape scan — discover papers on a topic without full-text reading |
 

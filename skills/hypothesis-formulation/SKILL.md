@@ -101,34 +101,34 @@ Each campaign run must produce:
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
-| abductive-hypothesis-generation | Strategy: 面对异常的最佳解释推理 |
-| competing-hypothesis-construction | Strategy: 为同一现象构建多个竞争假设 |
-| deductive-hypothesis-generation | Strategy: 从现有理论演绎推导假设 |
-| hypothesis-operationalization | Strategy: 将 working hypothesis 精确化为可测试形式 |
-| inductive-hypothesis-generation | Strategy: 从数据/观察归纳提炼假设 |
+| abductive-hypothesis-generation | Strategy: Inference to the best explanation in the face of anomalies |
+| competing-hypothesis-construction | Strategy: Construct multiple competing hypotheses for the same phenomenon |
+| deductive-hypothesis-generation | Strategy: deduce hypotheses from existing theory |
+| hypothesis-operationalization | Strategy: refine a working hypothesis into a precise, testable form |
+| inductive-hypothesis-generation | Strategy: induce and distill hypotheses from data/observations |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
 | context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
-| hypothesis-formation-quality-gate-check | Shared SOP: 通用质量门检查（格式完整性、逻辑一致性） |
-| hypothesis-formation-saturation-detection | Shared SOP: 判断当前活动是否已达信息饱和 |
-| hypothesis-synthesis | SOP: 综合所有中间产物，产出最终结构化假设集 |
+| hypothesis-formation-quality-gate-check | Shared SOP: General quality-gate check (format completeness, logical consistency) |
+| hypothesis-formation-saturation-detection | Shared SOP: judge whether the current activity has reached information saturation |
+| hypothesis-synthesis | SOP: synthesize all intermediate products into a final structured hypothesis set |
 
 ## Available Campaigns
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Campaign | 何时用 |
+| Campaign | When to use |
 | --- | --- |
-| research-question | Campaign: 将假设细化为精确的、框架化的研究问题 |
+| research-question | Campaign: Refine hypotheses into precise, framed research questions |
 
 <!-- END available-tables (generated) -->

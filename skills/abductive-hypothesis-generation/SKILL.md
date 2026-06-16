@@ -77,18 +77,18 @@ Record after each round:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| anomaly-driven-abduction | Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序 |
+| anomaly-driven-abduction | Tactic: Inductive/abductive path — describe anomalous phenomena, generate candidate explanations, rank by plausibility |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| falsifiability-check | SOP: 检验假设是否满足可证伪性标准 |
+| falsifiability-check | SOP: check whether a hypothesis meets the falsifiability criterion |
 
 <!-- END available-tables (generated) -->

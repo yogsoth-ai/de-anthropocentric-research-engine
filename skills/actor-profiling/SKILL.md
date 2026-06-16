@@ -73,9 +73,9 @@ This is a conceptual schema, not a JSON requirement. Express it in whatever form
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | ask-constraints | Understand hard boundaries on the user's research — target venues, methodology preferences, areas to avoid, advisor/team requirements. Not limited to ML/AI — works for any research domain. |
 | ask-intentionality | Deep WHY probing inspired by i* Intentionality modeling. Understand the user's motivation, success definition, risk tolerance, innovation preference, independence preference, time urgency, and learning willingness. The most important SOP in actor-profiling — understanding WHY drives everything downstream. |

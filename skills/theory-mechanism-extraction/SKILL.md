@@ -1,6 +1,7 @@
 ---
 name: theory-mechanism-extraction
-description: 'Tactic: Core of the deductive path — start from theory to extract mechanisms, variables, and relationships, generating hypothesis candidates'
+description: 'Tactic: Core of the deductive path — start from theory to extract mechanisms,
+  variables, and relationships, generating hypothesis candidates'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -75,13 +76,13 @@ After execution, report to the calling strategy:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| hypothesis-formation-variable-identification | SOP: 识别变量及其在假设中的角色 |
-| mechanism-extraction | SOP: 从理论中提取因果机制链 |
-| relationship-specification | SOP: 指定变量间关系的方向与形式 |
-| theory-identification | SOP: 识别与研究gap相关的理论框架 |
+| hypothesis-formation-variable-identification | SOP: identify variables and their roles within a hypothesis |
+| mechanism-extraction | SOP: extract causal mechanism chains from a theory |
+| relationship-specification | SOP: specify the direction and form of relationships between variables |
+| theory-identification | SOP: Identify theoretical frameworks relevant to a research gap |
 
 <!-- END available-tables (generated) -->

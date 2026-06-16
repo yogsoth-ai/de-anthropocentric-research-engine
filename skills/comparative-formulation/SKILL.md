@@ -1,6 +1,7 @@
 ---
 name: comparative-formulation
-description: 'Strategy: Construct comparative research questions — systematic comparison of A vs B'
+description: 'Strategy: Construct comparative research questions — systematic comparison
+  of A vs B'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -80,19 +81,19 @@ After the Strategy completes, context-checkpoint must be called, recording:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| framework-selection-and-application | Tactic: 选择最适合的 RQ 框架并系统应用 |
+| framework-selection-and-application | Tactic: Select the most suitable RQ framework and apply it systematically |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
-| success-criteria-definition | SOP: 为研究问题定义可测量的成功标准 |
+| finer-criteria-check | SOP: check research-question quality against each of the 5 FINER criteria |
+| success-criteria-definition | SOP: Define measurable success criteria for a research question |
 
 <!-- END available-tables (generated) -->

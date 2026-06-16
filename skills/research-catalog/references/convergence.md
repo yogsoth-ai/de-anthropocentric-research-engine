@@ -5,9 +5,9 @@
 | Layer | Skill | Description |
 | --- | --- | --- |
 | campaign | feasibility-assessment | Feasibility Assessment Campaign — evaluate whether selected candidates can actually be implemented using TRL, NASSS, Stage-Gate, TRIZ, TOC, and parametric estimation methods. |
-| campaign | convergence-multi-criteria-scoring | Score gaps on multiple dimensions (importance, feasibility, novelty, urgency, impact) using weighted multi-criteria decision analysis. |
+| campaign | convergence-multi-criteria-scoring | Multi-Criteria Scoring Campaign — evaluate and rank candidates against multiple weighted criteria using AHP, BWM, TOPSIS, VIKOR, ELECTRE, PROMETHEE, MAUT methods. |
 | campaign | pairwise-ranking | Pairwise Ranking Campaign — produce global rankings through pairwise comparisons and voting aggregation using Bradley-Terry, Elo, TrueSkill, Condorcet, Borda, Schulze methods. |
-| campaign | convergence-portfolio-optimization | "Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合" |
+| campaign | convergence-portfolio-optimization | Portfolio Optimization Campaign — select balanced combinations from candidate sets optimizing value, diversity, risk, and robustness using Markowitz, Knapsack, Pareto, Real Options, MAP-Elites, and minimax regret methods. |
 | campaign | steel-manning | Steel-Manning Campaign — adversarial verification of convergence decisions through resurrection advocacy, winner stress-testing, criteria interrogation, and multi-perspective attack using Devil's Advocacy, Pre-mortem, Red Teaming, Dialectical Inquiry methods. |
 | campaign | structured-consensus | Structured Consensus Campaign — converge multiple perspectives into shared agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA, Consensus Conference methods. |
 | strategy | appropriateness-bounding | Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols. |
@@ -54,7 +54,7 @@
 | tactic | niche-coverage-analysis | Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention. |
 | tactic | pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
 | tactic | scenario-stress-testing | Construct distinct future scenarios, evaluate portfolio performance under each, and identify vulnerabilities and robustness characteristics. |
-| tactic | convergence-scoring-matrix-construction | "Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵" |
+| tactic | convergence-scoring-matrix-construction | Build a complete scoring matrix through criterion definition, weighting, scoring, normalization, and sensitivity testing. |
 | tactic | screening-then-scoring | First eliminate non-qualifying candidates with non-compensatory rules, then score survivors with full MCDA methods. |
 | tactic | staged-gate-evaluation | Define gate criteria for each stage, evaluate candidates at each gate, and render go/kill/recycle decisions with evidence. |
 | tactic | threshold-calibration | Systematically sweep consensus thresholds to observe which items achieve consensus at what level, producing a threshold-consensus curve. |
@@ -63,7 +63,7 @@
 | sop | alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
 | sop | argument-extraction | Extract and steel-man the core arguments supporting a given opinion cluster. |
 | sop | convergence-assumption-challenge | Construct the strongest counter-argument against a specific assumption and propose alternatives. |
-| sop | convergence-assumption-extraction | Systematically extract all assumptions (stated, implicit, boundary, mathematical, practical) from a method or model. |
+| sop | convergence-assumption-extraction | Systematically surface hidden assumptions underlying a decision with confidence levels. |
 | sop | ballot-collection | Gather independent ranking ballots from multiple judges or perspectives for a given candidate set. |
 | sop | convergence-bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
 | sop | cluster-analysis | Identify natural opinion clusters from collected judgments and characterize each cluster. |
@@ -91,16 +91,16 @@
 | sop | judge-verdict | Render an impartial verdict on advocate case vs critic attacks with explicit reasoning. |
 | sop | judgment-collection | Collect independent judgments from all perspectives on a given question. |
 | sop | method-sensitivity-report | Analyze how the choice of MCDA method affects final rankings and identify method-sensitive alternatives. |
-| sop | convergence-multi-stakeholder-simulation | Simulate multiple stakeholder perspectives evaluating a research gap, method, or proposal. Identifies blind spots from single-perspective analysis. |
+| sop | convergence-multi-stakeholder-simulation | Simulates diverse stakeholder perspectives and their strongest objections/support arguments. Shared across steel-manning and consensus campaigns. |
 | sop | niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |
 | sop | niche-mapping | Map each candidate to the niches it covers, indicating strength of coverage for each assignment. |
 | sop | normalization | Normalize a score matrix using a specified method to make scores comparable across criteria. |
 | sop | objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
 | sop | optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |
 | sop | pair-selector | Select the next comparison pairs that maximize information gain given current ratings and comparison history. |
-| sop | convergence-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | convergence-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | convergence-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | convergence-paper-overview | Paper landscape scan at abstract level — discover MCDA, voting theory, Delphi, and optimization methodology papers. |
+| sop | convergence-paper-research | Full-text deep reading of methodology papers — complete understanding of algorithms, proofs, and implementation details. |
+| sop | convergence-paper-search | Paper AI summary reading — deeper understanding of specific methodology papers without full-text commitment. |
 | sop | pareto-visualization | Create visual representation of the Pareto frontier showing trade-offs between objectives with narrative explanation. |
 | sop | perspective-assignment | Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria. |
 | sop | perspective-attack | Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives. |
@@ -113,14 +113,14 @@
 | sop | removability-assessment | Assess how removable a constraint is with effort estimate and dependency analysis. |
 | sop | removal-path | Design concrete removal steps for a constraint with timeline and resource needs. |
 | sop | round-decision | Decide whether to continue iterating or stop based on consensus score, round number, and stability. |
-| sop | convergence-saturation-detection | Determine when additional searching yields diminishing returns. Analyzes the latest expansion batch against existing corpus to judge continue/near-saturation/saturated. Used by snowball and systematic-survey. |
+| sop | convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
 | sop | scenario-construction | Construct distinct future scenarios spanning key uncertainties for portfolio stress testing. |
 | sop | scoring-synthesis | Synthesize score matrix, rankings, and sensitivity analysis into a final recommendation. |
 | sop | selection-from-frontier | Select the final portfolio from the Pareto front by applying stakeholder preferences and decision criteria. |
-| sop | convergence-sensitivity-analysis | Sensitivity Analysis Campaign — identify which assumptions are most critical by measuring their impact on conclusions. 5 strategies (parameter-screening, variance-decomposition, assumption-criticality, uncertainty-propagation, decision-sensitivity), 3 tactics, 11 subagent SOPs. |
+| sop | convergence-sensitivity-analysis | Tests conclusion robustness by perturbing parameters and observing rank changes. Shared across scoring, portfolio, and steel-manning campaigns. |
 | sop | steel-manning-synthesis | Synthesize all attacks and verdicts into a final unified assessment with surviving concerns and recommended modifications. |
 | sop | threshold-setting | Define minimum acceptable thresholds for each criterion based on context and constraints. |
 | sop | threshold-sweep | Compute consensus status at multiple threshold levels to produce a threshold-consensus curve. |
-| sop | convergence-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
-| sop | convergence-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
+| sop | convergence-web-research | Deep web research with full-page extraction — detailed methodology guides, tutorials, implementation references. |
+| sop | convergence-web-search | Quick web scan to discover relevant pages — methodology references, case studies, best practices for convergence methods. |
 | sop | weight-elicitation-sop | Compute criteria weights using a specified elicitation method (AHP, Swing, BWM, MACBETH, or Simos). |

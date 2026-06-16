@@ -50,9 +50,9 @@ Deploy constructed hostile personas to attack the artifact from distinct motivat
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | attack-vector-generation | Generate specific attack strategies for a given threat surface, producing concrete probes that can be executed. |
 | finding-aggregation | Aggregate, deduplicate, and classify findings from multiple probes into a coherent vulnerability report. |

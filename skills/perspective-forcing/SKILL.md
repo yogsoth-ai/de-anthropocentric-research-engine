@@ -138,9 +138,9 @@ Discover hidden solutions by systematically switching viewpoints via roles, six 
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | constraint-driven-ideation | Inject extreme constraints to force innovation — impossibility breeds creativity. |
 | role-based-ideation | Role-play as reviewer/practitioner/theorist/novice/competitor to generate diverse perspectives on a solution. |
@@ -150,9 +150,9 @@ Discover hidden solutions by systematically switching viewpoints via roles, six 
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | constraint-protocol | Inject constraints → force creative response → extract transferable principles. Orchestrates constraint injection, response generation, and principle extraction. |
 | creative-ideation-perspective-rotation | Rotate through reviewer/practitioner/theorist/time-machine/novice perspectives systematically. Ensures comprehensive viewpoint coverage. |
@@ -161,9 +161,9 @@ Discover hidden solutions by systematically switching viewpoints via roles, six 
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | competitor-simulation | Competitor perspective — design strategies to defeat this solution, then use attack vectors to improve it. |
 | constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |

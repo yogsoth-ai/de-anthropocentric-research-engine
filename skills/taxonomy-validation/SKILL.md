@@ -52,18 +52,18 @@ Cannot exit until 80% of budget met. Print state ledger before each iteration de
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | hierarchy-construction | Tactic for building is-a and part-of hierarchies — establish parent-child relationships, verify transitivity, detect cycles. |
 | knowledge-structuring-consistency-checking | Tactic for verifying ontology consistency — detect contradictions, cycles, orphans, and type violations. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | gap-detection | SOP for finding structural gaps in the ontology — missing concepts, thin branches, disconnected clusters. |
 | hierarchy-visualization | SOP for inspecting the current hierarchy structure — query graph to display parent-child relationships. |

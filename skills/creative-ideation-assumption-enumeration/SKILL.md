@@ -55,9 +55,9 @@ Rank all assumptions by disruption potential × challengeability. Select top can
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | creative-ideation-assumption-perturbation | Perturb each assumption, observe system response. Systematic stress-testing of assumptions to reveal fragility and opportunity. |
 | sacred-cow-identification | Find domain's unquestioned beliefs. Systematic identification of dogma that constrains innovation. |

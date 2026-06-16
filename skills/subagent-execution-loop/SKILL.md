@@ -118,9 +118,9 @@ END
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | execution-monitoring | Monitor execution progress, detect anomalies, and report status |
 | implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |

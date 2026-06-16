@@ -83,18 +83,18 @@ END
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | checkpoint-and-recover | Checkpoint state before risky operations, detect anomalies, and recover gracefully |
 | subagent-execution-loop | Orchestrate task execution via fresh subagents with dispatch, monitoring, and result collection |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | execution-monitoring | Monitor execution progress, detect anomalies, and report status |
 | implementer-dispatch | Dispatch execution subagent — select model by complexity, construct prompt with full task context |

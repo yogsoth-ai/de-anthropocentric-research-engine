@@ -69,14 +69,14 @@ After execution completes, report:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| eclipse-application | SOP: 应用 ECLIPSE 框架结构化混合方法研究问题 |
-| framework-matching | SOP: 根据研究类型匹配最适合的 RQ 框架 |
-| pico-application | SOP: 应用 PICO/PICOTS 框架结构化研究问题 |
-| spice-application | SOP: 应用 SPICE 框架结构化评估研究问题 |
-| spider-application | SOP: 应用 SPIDER 框架结构化定性研究问题 |
+| eclipse-application | SOP: apply the ECLIPSE framework to structure a mixed-methods research question |
+| framework-matching | SOP: Match the most suitable RQ framework based on research type |
+| pico-application | SOP: apply the PICO/PICOTS framework to structure a research question |
+| spice-application | SOP: Apply the SPICE framework to structure an evaluation research question |
+| spider-application | SOP: Apply the SPIDER framework to structure a qualitative research question |
 
 <!-- END available-tables (generated) -->

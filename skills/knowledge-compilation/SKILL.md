@@ -64,9 +64,9 @@ After compilation completes, trigger `context-checkpoint` to persist vault state
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | wiki-add-edge | SOP wrapping vault_add_edge — create a typed relationship between two vault pages. |
 | wiki-compile-page | SOP for wiki page creation/update — create or update a synthesized wiki page with edges and index update. |

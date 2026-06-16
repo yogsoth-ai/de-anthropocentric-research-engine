@@ -1,6 +1,7 @@
 ---
 name: pairwise-comparison
-description: 'Tactic: rank gaps through relative comparison rather than absolute scoring, suited to hard-to-quantify situations'
+description: 'Tactic: rank gaps through relative comparison rather than absolute scoring,
+  suited to hard-to-quantify situations'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -71,20 +72,20 @@ After execution, report to the calling strategy:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+| hypothesis-formation-scoring-matrix-construction | Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| consistency-check | SOP: 检验 pairwise 判断矩阵的传递一致性，识别不一致项并建议修正 |
-| gap-pairwise-judgment | SOP: 对两个 gap 进行逐标准相对优先级判断，输出偏好结果 |
-| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+| consistency-check | SOP: Check the transitive consistency of a pairwise judgment matrix, identify inconsistent entries, and suggest corrections |
+| gap-pairwise-judgment | SOP: Make a criterion-by-criterion relative priority judgment between two gaps and output the preference result |
+| priority-synthesis | SOP: synthesize all scoring data into a final gap priority list and attack-path suggestions |
 
 <!-- END available-tables (generated) -->

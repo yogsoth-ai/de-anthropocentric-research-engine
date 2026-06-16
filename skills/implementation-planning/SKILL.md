@@ -114,9 +114,9 @@ Even if execution is partial, this campaign MUST produce:
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | critical-path-planning | Identify the shortest execution path via CPM forward/backward pass, resource leveling, and buffer insertion |
 | experiment-running | Execute the plan by dispatching fresh subagents per task, monitoring status, and collecting results |
@@ -126,9 +126,9 @@ Even if execution is partial, this campaign MUST produce:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | checkpoint-and-recover | Checkpoint state before risky operations, detect anomalies, and recover gracefully |
 | result-validation-loop | Validate results through statistical testing, ROPE judgment, reproducibility re-runs, and final synthesis |
@@ -137,9 +137,9 @@ Even if execution is partial, this campaign MUST produce:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
 | context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |

@@ -42,9 +42,9 @@ Define orthogonal axes of variation (at least 3), perturb one axis at a time whi
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | controlled-perturbation | Systematically vary parameters along defined axes, recording performance at each point to identify degradation thresholds. |
 | deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |

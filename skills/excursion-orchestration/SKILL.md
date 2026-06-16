@@ -51,9 +51,9 @@ Convert the force-fitted connections into "I wish..." or "How to..." springboard
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | excursion-departure | Leave the problem entirely and explore an unrelated domain. Produces excursion domain discoveries for later force-fitting. |
 | force-fit | Force-fit excursion discoveries back to the original problem. Deliberately create connections between unrelated findings and the challenge. |

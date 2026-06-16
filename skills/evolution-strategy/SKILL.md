@@ -59,17 +59,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | life-principles-application | Apply life's principles as design constraints. Orchestrates ecosystem-pattern-extraction → evolution-mechanism-transfer → abstraction-to-design. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
 | biomimicry-synthesis | Synthesize all biomimicry outputs into a structured idea report. Integrate biological strategies, design principles, and technical solutions. |

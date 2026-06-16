@@ -48,9 +48,9 @@ A structured approach to attacking a decision from multiple distinct viewpoints 
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | perspective-assignment | Define distinct stakeholder or analytical perspectives with their values, concerns, and evaluation criteria. |
 | perspective-attack | Attack a decision from a specific assigned perspective, producing rated arguments and constructive alternatives. |

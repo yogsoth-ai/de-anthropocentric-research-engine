@@ -1,6 +1,7 @@
 ---
 name: multi-criteria-ranking
-description: 'Strategy: multi-dimensional weighted scoring and ranking — decompose a gap into independent sub-questions, then recombine into a priority list'
+description: 'Strategy: multi-dimensional weighted scoring and ranking — decompose
+  a gap into independent sub-questions, then recombine into a priority list'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -78,19 +79,19 @@ After each round, record:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
-| priority-sensitivity-testing | Tactic: 扰动评分权重，检验 gap 排序对权重选择的稳健性 |
+| hypothesis-formation-scoring-matrix-construction | Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps |
+| priority-sensitivity-testing | Tactic: perturb scoring weights to test the robustness of the gap ranking against weight choice |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| gap-normalization | SOP: 统一不同来源的 gap 格式为标准 GapRecord |
+| gap-normalization | SOP: Unify gaps from different sources into the standard GapRecord format |
 
 <!-- END available-tables (generated) -->

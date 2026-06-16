@@ -1,12 +1,14 @@
 ---
 name: web-research
-description: 'Import SOP: deep web research, full-text fetching and analysis (from web-browsing)'
+description: 'Import SOP: deep web research, full-text fetching and analysis (from
+  web-browsing)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/web-research/SKILL.md
 source_skill: web-research
-provides: Deep web research capability — full-text fetching, content analysis, information synthesis
+provides: Deep web research capability — full-text fetching, content analysis, information
+  synthesis
 dependencies:
   sops:
   - web-research
@@ -40,9 +42,9 @@ Directly invoke the `web-research` skill in `web-browsing`. This skill provides:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | web-research | Deep web research — fetches full page content for analysis. Snippets alone are PROHIBITED for conclusions. |
 

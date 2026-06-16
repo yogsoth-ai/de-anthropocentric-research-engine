@@ -50,9 +50,9 @@ Analyze behavior across scales (data size, model size, compute, time), detect re
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | edge-case-generation | Systematically generate boundary inputs — boundary values, adversarial constructions, distribution shifts, rare combinations, scale extremes. |
 | scaling-regime-detection | Detect regime changes in scaling behavior — breakpoints where behavior qualitatively shifts, mechanisms behind transitions. |

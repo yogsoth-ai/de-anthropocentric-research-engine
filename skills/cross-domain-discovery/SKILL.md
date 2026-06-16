@@ -138,9 +138,9 @@ Find transferable mechanisms from unrelated fields via bisociation, analogical t
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | analogical-transfer | Systematic structure-mapping from source to target domain (Gentner). Identify relational correspondences and transfer higher-order constraints. |
 | design-by-analogy | Complete DBA process: problem reframe → source search → map → transfer → adapt. Full Design-by-Analogy methodology for systematic analogical design. |
@@ -150,9 +150,9 @@ Find transferable mechanisms from unrelated fields via bisociation, analogical t
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | analogy-extraction | Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation. |
 | bridge-validation | Validate analogy depth and transfer viability. Ensures only deep structural analogies (not surface-level similarities) proceed to transfer. |
@@ -162,9 +162,9 @@ Find transferable mechanisms from unrelated fields via bisociation, analogical t
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abstraction-extraction | Extract abstract principles from concrete domain cases. Strips domain-specific details to reveal transferable mechanisms. |
 | analogy-quality-assessment | Assess analogy depth (surface/structural/systemic). Determines whether an analogy warrants transfer investment. |

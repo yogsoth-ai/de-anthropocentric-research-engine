@@ -49,9 +49,9 @@ Execute one complete iteration of the Delphi convergence cycle: collect independ
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |
 | feedback-distribution | Create anonymized feedback report summarizing group judgment distribution for a given round. |

@@ -58,17 +58,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | white-space-identification | Identify unexplored viable regions in the morphological matrix where no existing methods operate. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | combination-evaluation | Evaluate new combinations for feasibility and novelty |
 | design-space-visualization | Generate structured description of design space |

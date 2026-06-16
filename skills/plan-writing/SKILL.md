@@ -62,17 +62,17 @@ A valid plan has:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | task-decomposition | Orchestrate the breakdown of experiment design into sequenced, estimated, and formatted task plan |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | plan-formatting | Format task plan as bite-sized executable tasks following superpowers:writing-plans conventions |
 

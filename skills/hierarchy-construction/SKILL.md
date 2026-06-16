@@ -41,17 +41,17 @@ If the hierarchy is already complete for the current scope, report and exit.
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | knowledge-structuring-consistency-checking | Tactic for verifying ontology consistency — detect contradictions, cycles, orphans, and type violations. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | edge-batch-creation | SOP for creating multiple edges in a batch — efficient bulk relationship creation. |
 | gap-detection | SOP for finding structural gaps in the ontology — missing concepts, thin branches, disconnected clusters. |

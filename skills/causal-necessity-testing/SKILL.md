@@ -55,9 +55,9 @@ PNS evaluation: for each causal claim, determine whether the cause is necessary,
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | causal-claim-extraction | Extract all causal claims (X causes Y, X leads to Y, X enables Y) from an artifact, producing a structured list of cause-effect pairs. |
 | load-bearing-identification | Identify which factors are "load-bearing walls" — factors whose removal would collapse the conclusion. |

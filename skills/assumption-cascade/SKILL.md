@@ -49,9 +49,9 @@ Attack assumptions at their roots and trace how failures propagate through depen
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | assumption-cascade-tracer | Build assumption dependency graphs and trace cascade failures when root assumptions are invalidated. |
 | devils-advocacy | Construct the strongest possible counter-argument against a position, steelmanning the opposition before attacking. |

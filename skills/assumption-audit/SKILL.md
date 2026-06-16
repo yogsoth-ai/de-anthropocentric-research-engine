@@ -66,17 +66,17 @@ Assumption Audit Report — assumption inventory, vulnerability matrix, CLR vali
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | assumption-stress-test | Systematic stress testing of assumptions — surface, classify by vulnerability, attack, assess fragility. Combines assumption-surfacing (shared), abp-vulnerability-classification, and clr-validation SOPs. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abp-vulnerability-classification | Classify assumptions on 2 axes — load-bearing (how much conclusion depends on it) × vulnerable (how likely to be false). Focuses attention on High-Load × High-Vulnerable quadrant. |
 | clr-validation | Apply Goldratt's 8 Categories of Legitimate Reservation to validate causal claims. Tests clarity, existence, sufficiency, and logical integrity. |

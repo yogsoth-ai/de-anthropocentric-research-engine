@@ -47,9 +47,9 @@ From each constrained solution, extract the underlying principle that made it wo
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | constraint-response | Generate creative solutions under extreme constraints — no "impossible" allowed, find a way. |
 

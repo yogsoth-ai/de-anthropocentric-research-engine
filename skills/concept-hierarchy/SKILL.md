@@ -53,9 +53,9 @@ Use fractionation SOP to split broad concepts into finer units, enabling recombi
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | concept-fan-expansion | Expand concept fan from purpose through concepts to directions to ideas (de Bono Concept Fan). |
 | escape-technique | Identify dominant thinking pattern and escape it via deliberate pattern-breaking. |

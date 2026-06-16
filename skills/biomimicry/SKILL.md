@@ -117,9 +117,9 @@ Discover transferable solutions from biological systems via Design Spiral, BioTR
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | biologize-and-discover | Biomimicry Design Spiral: Define→Biologize→Discover→Abstract→Emulate. Translate technical challenges into biological questions and find nature's solutions. |
 | biotriz-resolution | BioTRIZ: biological 40 principles + bio contradiction matrix. Resolve technical contradictions using biological inventive principles. |
@@ -129,9 +129,9 @@ Discover transferable solutions from biological systems via Design Spiral, BioTR
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | analogy-extraction | Extract transferable structural principles from source domains. Orchestrates source identification → abstraction → structural mapping → transfer validation. |
 | biological-function-mapping | Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology. |
@@ -140,9 +140,9 @@ Discover transferable solutions from biological systems via Design Spiral, BioTR
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
 | context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |

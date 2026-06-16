@@ -38,9 +38,9 @@ If a concept cannot be meaningfully decomposed, report it as atomic and exit.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alias-resolution | SOP for detecting and resolving concept aliases — merge duplicate pages, redirect edges. |
 | concept-page-creation | SOP for creating a new concept page with proper frontmatter, content, and initial edges. |

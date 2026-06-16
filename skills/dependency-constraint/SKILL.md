@@ -69,17 +69,17 @@ Dependency categories:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | sensitivity-ranking | Rank constraints by sensitivity — which ones most impact the outcome if they shift |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | critical-chain-identification | Identify the critical chain — longest path considering resource contention |
 | dependency-graph-construction | Build task dependency graph with predecessor/successor relationships |

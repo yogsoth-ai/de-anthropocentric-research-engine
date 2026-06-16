@@ -47,9 +47,9 @@ Define scoring dimensions (importance, feasibility, novelty, urgency, impact). S
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | deep-insight-multi-criteria-scoring | Score gaps on multiple dimensions (importance, feasibility, novelty, urgency, impact) using weighted multi-criteria decision analysis. |
 | deep-insight-web-research | Deep web research with full page fetching via Apify. Import of web-browsing/web-research skill. Must fetch full page — no conclusions from previews. |

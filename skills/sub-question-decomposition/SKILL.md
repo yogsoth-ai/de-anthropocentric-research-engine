@@ -1,6 +1,7 @@
 ---
 name: sub-question-decomposition
-description: 'Tactic: Decompose a main question into a hierarchy of independently answerable sub-questions'
+description: 'Tactic: Decompose a main question into a hierarchy of independently
+  answerable sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -60,12 +61,12 @@ After execution, report:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| answering-sequence-design | SOP: 设计子问题的最优回答顺序 |
-| dependency-mapping | SOP: 映射子问题间的依赖关系 |
-| sub-question-generation | SOP: 将主研究问题分解为可独立回答的子问题 |
+| answering-sequence-design | SOP: Design the optimal answering order for sub-questions |
+| dependency-mapping | SOP: map dependency relationships among sub-questions |
+| sub-question-generation | SOP: Decompose a main research question into independently answerable sub-questions |
 
 <!-- END available-tables (generated) -->

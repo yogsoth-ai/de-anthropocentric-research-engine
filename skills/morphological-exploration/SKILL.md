@@ -130,9 +130,9 @@ Systematic dimension-combination enumeration to discover unexplored solution spa
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | cross-consistency-analysis | CCA: pairwise consistency checking to reduce solution space 90-99% |
 | design-space-mapping | Visualize explored/unexplored regions of solution space |
@@ -142,9 +142,9 @@ Systematic dimension-combination enumeration to discover unexplored solution spa
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | creative-ideation-combination-mapping | Systematically enumerate parameter dimensions and generate viable combinations. Orchestrates parameter extraction → value enumeration → compatibility assessment → synthesis. |
 | creative-ideation-consistency-checking | Pairwise consistency evaluation to reduce solution space by identifying and removing inconsistent combinations. |
@@ -153,9 +153,9 @@ Systematic dimension-combination enumeration to discover unexplored solution spa
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | constraint-injection | Inject artificial constraints to force creative divergence. Generates and applies constraints (resource, time, material, audience, scale) to existing ideas to produce variants. |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |

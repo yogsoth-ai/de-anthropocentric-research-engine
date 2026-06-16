@@ -49,9 +49,9 @@ A formal three-role debate structure ensuring decisions survive rigorous adversa
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | advocate-construction | Construct the strongest possible case for a rejected candidate or counter-position. |
 | critic-attack | Attack an advocate's case with multiple arguments rated by severity. |

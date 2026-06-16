@@ -60,17 +60,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | gap-driven-generation | Generate solutions targeting specific coverage gaps — detect gaps, generate failure-driven solutions, and design factor-level experiments. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
 | creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |

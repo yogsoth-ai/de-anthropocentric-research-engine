@@ -46,9 +46,9 @@ dependencies:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | causal-chain-tracing | Trace UDE to root cause via IF...THEN...BECAUSE logic chains |
 | core-conflict-extraction | Extract core conflict in Evaporating Cloud format (A-B-C-D-D') |

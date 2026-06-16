@@ -80,9 +80,9 @@ The orchestrator decides composition based on the crystallized North Star statem
 
 ## Available Campaigns
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Campaign | 何时用 |
+| Campaign | When to use |
 | --- | --- |
 | baseline-establishment | SOTA Performance Baseline Campaign — 5 strategies for systematically collecting, standardizing, and analyzing performance data across methods. Produces standardized comparison tables, progress curves, and headroom analysis. |
 | benchmark-archaeology | Evaluation Methodology Archaeology Campaign — 5 strategies for systematic analysis of AI/ML benchmarks, metrics, and leaderboards. Reveals construct validity issues, saturation, data contamination, and evaluation protocol inconsistencies. |

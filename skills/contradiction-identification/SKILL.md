@@ -50,9 +50,9 @@ For physical contradictions (same parameter must be both X and not-X), identify 
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | contradiction-matrix-lookup | Query the 39x39 TRIZ contradiction matrix to find recommended inventive principles for a given technical contradiction. |
 | function-model-construction | Build substance-field functional model of a system, annotating useful, harmful, insufficient, and excessive interactions. |

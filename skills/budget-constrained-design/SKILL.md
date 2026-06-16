@@ -57,9 +57,9 @@ dependencies:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
 | factor-identification | Identify independent, dependent, and control variables for an experiment |

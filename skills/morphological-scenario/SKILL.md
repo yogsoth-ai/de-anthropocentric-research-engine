@@ -90,9 +90,9 @@ Key principles:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | cross-consistency-filtering | Orchestrates pairwise consistency evaluation and narrative construction to filter the morphological field |
 | parameter-space-construction | Orchestrates driver identification and parameter enumeration to build the complete morphological field |
@@ -100,9 +100,9 @@ Key principles:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | experiment-execution-consistency-pair-evaluation | Pairwise consistency assessment using Cross-Consistency Assessment (CCA) matrix |
 | parameter-enumeration | Enumerate possible values for each uncertainty driver using MECE principles |

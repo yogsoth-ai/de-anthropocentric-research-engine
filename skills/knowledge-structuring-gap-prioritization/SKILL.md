@@ -52,18 +52,18 @@ Cannot exit until 80% of budget met. Print state ledger before each iteration de
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | axis-extraction | Tactic for systematically extracting axes of variation from literature — identify how practitioners compare approaches. |
 | matrix-generation | Tactic for generating and populating combination matrices — cross dimensions to enumerate the design space. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | knowledge-structuring-novelty-scoring | SOP for scoring empty cells by novelty potential — how surprising and valuable would this combination be? |
 | matrix-export | SOP for exporting the dimensional matrix as a readable document or structured data. |

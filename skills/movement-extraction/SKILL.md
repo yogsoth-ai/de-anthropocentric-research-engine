@@ -53,9 +53,9 @@ From the movement directions, generate concrete alternative approaches using alt
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternatives-generation | Generate alternatives for every known approach — ensure no approach goes unchallenged. |
 | movement-operation | Extract constructive directions from PO provocations using 4 movement types (moment-to-moment, principle, focus difference, positive aspects). |

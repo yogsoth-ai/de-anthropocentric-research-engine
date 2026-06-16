@@ -6,7 +6,8 @@ category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
 input: Research gap description + domain tags
-output: List of relevant theoretical frameworks [{name, source, core_claim, relevance, applicability}]
+output: List of relevant theoretical frameworks [{name, source, core_claim, relevance,
+  applicability}]
 dependencies:
   sops:
   - hypothesis-formation-paper-overview
@@ -52,12 +53,12 @@ Minimum 3 entries, maximum 8 (sorted by applicability descending).
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| hypothesis-formation-paper-overview | Import SOP: 论文快速扫描，返回 abstract 和 metadata（来自 literature-engine） |
-| hypothesis-formation-paper-search | Import SOP: 中深度文献搜索，AI 摘要报告（来自 literature-engine） |
-| hypothesis-formation-web-search | Import SOP: 快速 web 扫描，发现 URL 和 snippet（来自 web-browsing） |
+| hypothesis-formation-paper-overview | Import SOP: Quick paper scan, returns abstract and metadata (from literature-engine) |
+| hypothesis-formation-paper-search | Import SOP: Medium-depth literature search, AI summary report (from literature-engine) |
+| hypothesis-formation-web-search | Import SOP: quick web scan, discover URLs and snippets (from web-browsing) |
 
 <!-- END available-tables (generated) -->

@@ -42,9 +42,9 @@ Evaluate identified white-space combinations for feasibility and novelty using c
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | combination-evaluation | Evaluate new combinations for feasibility and novelty |
 | white-space-detection | Identify matrix regions not covered by existing methods |

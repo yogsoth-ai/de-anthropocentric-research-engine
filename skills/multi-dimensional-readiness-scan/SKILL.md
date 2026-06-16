@@ -48,9 +48,9 @@ Systematically evaluate a candidate across all relevant feasibility dimensions, 
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | convergence-bottleneck-identification | Identify bottleneck dimensions from radar data with severity ranking. |
 | dimension-assessment | Score a single readiness dimension for a candidate with evidence and gap analysis. |

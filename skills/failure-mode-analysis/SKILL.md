@@ -57,17 +57,17 @@ Generate systematic edge cases, observe failure patterns, cluster into failure m
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | deep-insight-failure-mode-cataloging | Systematic failure mode cataloging — generate boundary inputs, observe failures, cluster by mechanism, identify triggers, estimate frequency. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | edge-case-generation | Systematically generate boundary inputs — boundary values, adversarial constructions, distribution shifts, rare combinations, scale extremes. |
 | failure-clustering | Group observed failures by mechanism (not symptom), identify common triggers per cluster, estimate frequency and severity. |

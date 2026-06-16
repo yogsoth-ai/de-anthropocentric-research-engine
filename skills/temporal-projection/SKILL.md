@@ -61,9 +61,9 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | perspective-synthesis | Synthesize all perspective outputs into a structured multi-perspective idea report. |
 | time-machine | Temporal projection — view a solution from future/past time horizons to generate temporally-informed insights. |

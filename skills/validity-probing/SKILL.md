@@ -99,18 +99,18 @@ validity_report:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
 | evaluation-protocol-comparison | Compare implementation differences of same benchmark across papers |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | benchmark-synthesis | Produce final structured audit report |
 | construct-validity-assessment | Evaluate whether benchmark measures its claimed capability |

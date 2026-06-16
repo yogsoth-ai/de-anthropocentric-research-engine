@@ -74,9 +74,9 @@ Consolidate all sources into a single canonical dataset:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | discrepancy-identification | Compare same-method scores across sources, flag significant deviations |
 | method-discovery | Identify all relevant methods via literature, leaderboards, citation chains |

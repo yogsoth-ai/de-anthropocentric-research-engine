@@ -58,17 +58,17 @@ Enumerate modeling assumptions, generate alternative models by relaxing each, co
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | multi-model-convergence | Wimsatt-style multi-method cross-validation — enumerate assumptions, generate alternative models, compare results, flag divergences. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternative-model-generation | Generate alternative model formulations by relaxing, replacing, or generalizing specific assumptions. |
 | convergence-assessment | Compare results across multiple model variants — quantitative agreement metrics and qualitative conclusion stability. |

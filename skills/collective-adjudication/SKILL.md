@@ -86,18 +86,18 @@ cross_validation: {borda_agreement: 0.92, copeland_agreement: 0.96}
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | consistency-audit-loop | Detect preference cycles, localize inconsistent judgments, request corrections, and recompute ratings until consistency threshold is met. |
 | multi-judge-aggregation | Collect independent rankings from multiple judges, aggregate using social choice methods, and identify disagreement hotspots. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | ranking-synthesis | Produce the final ranking artifact from converged ratings and consistency report. |
 

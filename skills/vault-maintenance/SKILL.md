@@ -58,9 +58,9 @@ Typical flow (reference, not prescription):
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | wiki-add-edge | SOP wrapping vault_add_edge — create a typed relationship between two vault pages. |
 | wiki-edge-audit | SOP for auditing wikilink coverage — scans all edges and reports which source pages are missing [[dir/slug]] wikilinks to their targets. |

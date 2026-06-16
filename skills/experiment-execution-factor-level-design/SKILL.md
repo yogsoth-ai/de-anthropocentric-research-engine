@@ -62,18 +62,18 @@ dependencies:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | budget-constrained-design | Optimize experiment design under compute and time budget constraints |
 | statistical-method-selection | Select appropriate statistical methods for experiment analysis |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | design-matrix-construction | Build the experiment design matrix with proper orthogonality and balance |
 | experiment-config-generation | SOP: generate executable experiment configuration files |

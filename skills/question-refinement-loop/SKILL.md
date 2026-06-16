@@ -1,6 +1,7 @@
 ---
 name: question-refinement-loop
-description: 'Tactic: iteratively refine a research question until it passes all 5 FINER criteria'
+description: 'Tactic: iteratively refine a research question until it passes all 5
+  FINER criteria'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -65,12 +66,12 @@ After execution, report:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
-| scope-assessment | SOP: 评估研究问题的范围是否合适（太宽/合适/太窄） |
-| success-criteria-definition | SOP: 为研究问题定义可测量的成功标准 |
+| finer-criteria-check | SOP: check research-question quality against each of the 5 FINER criteria |
+| scope-assessment | SOP: Assess whether a research question has appropriate scope (too broad / appropriate / too narrow) |
+| success-criteria-definition | SOP: Define measurable success criteria for a research question |
 
 <!-- END available-tables (generated) -->

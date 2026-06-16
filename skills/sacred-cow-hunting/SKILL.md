@@ -67,18 +67,18 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | creative-ideation-assumption-enumeration | Surface, perturb, and prioritize assumptions by disruption potential. Orchestrates assumption surfacing → perturbation → sacred cow identification → prioritization. |
 | inversion-protocol | Reverse statements → extract insights → build constructive alternatives. Systematic inversion pipeline from negation to innovation. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | benchmark-challenge | Identify and negate benchmark assumptions. Deconstruct best practices to reveal hidden constraints and open new spaces. |
 | constructive-rebellion | Build constructive alternatives from destructive negation. Transform violated assumptions into viable innovation directions. |

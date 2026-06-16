@@ -49,9 +49,9 @@ Collect independent ballots from multiple judges or perspectives, aggregate them
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | aggregation-method | Aggregate multiple ranking ballots into a consensus ranking using a specified social choice method. |
 | ballot-collection | Gather independent ranking ballots from multiple judges or perspectives for a given candidate set. |

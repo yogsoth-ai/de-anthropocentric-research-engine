@@ -55,9 +55,9 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | personal-identification | First-person empathic identification with a system or component. Produces experience description and design insights from embodiment. |
 | springboard-launch | Convert analogy insights into concrete feasible solutions. Transform abstract connections into actionable mechanisms. |

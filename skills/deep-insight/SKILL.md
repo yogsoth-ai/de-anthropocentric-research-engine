@@ -99,9 +99,9 @@ The orchestrator decides composition based on the research state and user intent
 
 ## Available Campaigns
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Campaign | 何时用 |
+| Campaign | When to use |
 | --- | --- |
 | boundary-analysis | Boundary Analysis Campaign — probe where methods fail, map validity envelopes, test robustness, catalog failure modes, detect scaling limits. 5 strategies, 3 tactics, 11 subagent SOPs. |
 | deep-insight-sensitivity-analysis | Sensitivity Analysis Campaign — identify which assumptions are most critical by measuring their impact on conclusions. 5 strategies (parameter-screening, variance-decomposition, assumption-criticality, uncertainty-propagation, decision-sensitivity), 3 tactics, 11 subagent SOPs. |

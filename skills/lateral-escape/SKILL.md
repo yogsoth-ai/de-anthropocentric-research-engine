@@ -46,9 +46,9 @@ The goal is not to prove the dominant idea wrong — it is to escape its gravita
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | consequence-following | Follow a provocation's logical consequences step by step to extract viable insights and new research directions. |
 | deep-insight-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |

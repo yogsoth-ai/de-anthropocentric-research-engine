@@ -49,9 +49,9 @@ Build concept matrix first (articles × concepts), identify empty cells as gap c
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | concept-matrix-construction | Build articles × concepts coverage matrix to visualize research landscape and identify empty cells as gap candidates. |
 | deep-insight-paper-overview | Paper metadata and abstract-level overview. Import of literature-engine/literature-overview skill. Abstracts only — no substantive claims without deeper reading. |

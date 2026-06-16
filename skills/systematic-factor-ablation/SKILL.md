@@ -52,9 +52,9 @@ Ablation methodology: remove factors individually and measure conclusion degrada
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | factor-enumeration | List all key factors, conditions, and assumptions that support or enable the artifact's conclusion. |
 | fragility-measurement | Compute a fragility index from flip-point distances and degradation scores, summarizing how robust the conclusion is. |

@@ -48,9 +48,9 @@ Complete scoring matrix + weight vector + ranking results
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | alternative-scoring | Score each candidate alternative against all criteria to produce a score matrix. |
 | criterion-definition | Extract evaluation criteria from research goals and candidate alternatives. |

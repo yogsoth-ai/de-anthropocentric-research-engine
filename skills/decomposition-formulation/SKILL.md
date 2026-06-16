@@ -1,6 +1,7 @@
 ---
 name: decomposition-formulation
-description: 'Strategy: decompose a complex research question into a hierarchy of independently answerable sub-questions'
+description: 'Strategy: decompose a complex research question into a hierarchy of
+  independently answerable sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -80,18 +81,18 @@ After the Strategy completes, you must call context-checkpoint and record:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| sub-question-decomposition | Tactic: 将主问题分解为可独立回答的子问题层级 |
+| sub-question-decomposition | Tactic: Decompose a main question into a hierarchy of independently answerable sub-questions |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| finer-criteria-check | SOP: FINER 5 项标准逐项检验研究问题质量 |
+| finer-criteria-check | SOP: check research-question quality against each of the 5 FINER criteria |
 
 <!-- END available-tables (generated) -->

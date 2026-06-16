@@ -48,9 +48,9 @@ A three-phase tactic that surfaces hidden assumptions, challenges each one adver
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | conclusion-sensitivity | Map which assumptions are load-bearing by assessing how the conclusion changes if each assumption fails. |
 | convergence-assumption-challenge | Construct the strongest counter-argument against a specific assumption and propose alternatives. |

@@ -44,9 +44,9 @@ Model conflict as evaporating cloud (expose hidden assumptions behind opposing n
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
 | deep-insight-web-research | Deep web research with full page fetching via Apify. Import of web-browsing/web-research skill. Must fetch full page — no conclusions from previews. |

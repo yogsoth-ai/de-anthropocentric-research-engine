@@ -78,18 +78,18 @@ Key principles:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | cross-consistency-filtering | Orchestrates pairwise consistency evaluation and narrative construction to filter the morphological field |
 | strategy-robustness-testing | Orchestrates impact assessment and robustness scoring to evaluate research approach resilience across scenarios |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | robustness-scoring | Compute robustness index across scenarios with sensitivity analysis |
 | scenario-driver-identification | Identify key uncertainty drivers using PESTEL framework scanning |

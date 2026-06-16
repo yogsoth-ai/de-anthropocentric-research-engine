@@ -52,9 +52,9 @@ Systematically discover all constraints blocking a candidate, classify them into
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | constraint-classification | Classify constraints into hard constraints, soft constraints, and assumptions. |
 | constraint-identification-sop | Identify constraints for a candidate using TOC, TRIZ, and Pre-mortem methods. |

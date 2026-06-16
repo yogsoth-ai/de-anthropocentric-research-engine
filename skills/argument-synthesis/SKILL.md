@@ -63,18 +63,18 @@ Max 2 extra iterations if gaps found.
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | knowledge-structuring-claim-decomposition | Tactic for decomposing compound claims into atomic propositions — identify logical structure, separate conjunctions, extract implicit assumptions. |
 | strength-assessment | Tactic for assessing argument strength — evaluate evidence quality, count independent sources, check for defeaters, assign calibrated confidence scores. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | argument-visualization | SOP for generating argument structure visualization — query graph for argument chains, format as mermaid diagram or indented tree, write to vault. |
 | synthesis-report | SOP for producing argument synthesis reports — aggregate evidence, resolve contradictions, identify surviving claims, write structured summary. |

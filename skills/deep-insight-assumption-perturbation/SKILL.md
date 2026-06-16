@@ -49,9 +49,9 @@ Key principle: negation is not logical NOT — it is the strongest plausible alt
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | conclusion-sensitivity-measurement | Quantify how much conclusions change across all assumption negations and produce a sensitivity ranking. |
 | deep-insight-assumption-extraction | Systematically extract all assumptions (stated, implicit, boundary, mathematical, practical) from a method or model. |

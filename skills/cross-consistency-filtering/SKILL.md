@@ -57,9 +57,9 @@ dependencies:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | experiment-execution-consistency-pair-evaluation | Pairwise consistency assessment using Cross-Consistency Assessment (CCA) matrix |
 | scenario-narrative-construction | Build rich narratives for surviving morphological configurations using Shell method |

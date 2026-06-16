@@ -76,9 +76,9 @@ Apply normalization to produce fair comparison subsets:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | compute-normalization | Normalize results by compute budget (Pareto analysis) |
 | condition-cataloging | Record evaluation conditions (data splits, hyperparams, hardware, seeds) from a paper |

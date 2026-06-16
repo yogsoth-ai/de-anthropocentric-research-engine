@@ -46,9 +46,9 @@ Key insight: the problem looks fundamentally different from each perspective. Th
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | appreciative-discovery | Search for positive deviants and extract transferable principles using Appreciative Inquiry. |
 | catwoe-analysis | Apply Checkland's CATWOE analysis from a specific stakeholder perspective to reveal how the problem looks from that viewpoint. |

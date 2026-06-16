@@ -38,9 +38,9 @@ Assess the strength of evidence for causal claims. Not all evidence is equal —
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | confidence-scoring | SOP for assigning calibrated confidence scores to causal claims based on evidence quality and quantity. |
 | contradiction-flagging | SOP for flagging contradictions in the causal model — identify conflicting evidence or mechanism claims. |

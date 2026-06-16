@@ -1,6 +1,7 @@
 ---
 name: priority-sensitivity-testing
-description: 'Tactic: perturb scoring weights to test the robustness of the gap ranking against weight choice'
+description: 'Tactic: perturb scoring weights to test the robustness of the gap ranking
+  against weight choice'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -70,12 +71,12 @@ After execution, report to the calling strategy:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| ahp-weighting | SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量 |
-| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
-| weight-perturbation | SOP: 扰动权重检验 gap 排序稳定性，输出稳定性判定 |
+| ahp-weighting | SOP: Use the AHP (Analytic Hierarchy Process) to determine scoring-dimension weights, outputting a weight vector |
+| priority-synthesis | SOP: synthesize all scoring data into a final gap priority list and attack-path suggestions |
+| weight-perturbation | SOP: Perturb weights to test gap-ranking stability, output a stability verdict |
 
 <!-- END available-tables (generated) -->

@@ -52,9 +52,9 @@ Loop stages 1-4 until convergence or budget exhaustion.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | comparison-executor | Execute a pairwise comparison between two candidates, producing a judgment with winner, confidence, and reasoning. |
 | convergence-check | Evaluate whether the ranking has stabilized by analyzing rating history and computing stability metrics. |

@@ -41,9 +41,9 @@ KAOS-style recursive goal decomposition into a validated GoalTree.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | and-or-decompose | KAOS-style recursive goal decomposition. AND decomposition for sub-goals that must ALL be satisfied. OR decomposition for alternative paths where any one suffices. Produces a GoalTree (DAG structure). |
 | ask-decomposition-validation | Present the GoalTree to the user for confirmation. Ask about reasonableness, missing elements, and priority ordering among sub-goals. |

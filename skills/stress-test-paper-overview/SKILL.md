@@ -35,9 +35,9 @@ Quantity target is set by the calling strategy's budget table. This SOP executes
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | literature-overview | Quick landscape scan — discover papers on a topic without full-text reading |
 | stress-test-paper-research | Paper full text access via alphaxiv answer_pdf_queries or get_paper_content(fullText=true). Import of literature-engine/paper-research skill. Raw extracted text for precise claims. |

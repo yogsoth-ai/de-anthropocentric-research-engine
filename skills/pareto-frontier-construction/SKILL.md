@@ -50,9 +50,9 @@ Systematically construct the set of non-dominated solutions across multiple obje
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | objective-definition | Define optimization objectives, constraints, and trade-off preferences from context and candidate information. |
 | optimization-run | Execute multi-objective optimization on candidates to produce a Pareto front of non-dominated solutions. |

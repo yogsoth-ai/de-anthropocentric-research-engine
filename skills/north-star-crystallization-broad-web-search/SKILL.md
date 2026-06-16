@@ -33,9 +33,9 @@ Import — strictly follow `web-browsing/web-search` skill protocol.
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | web-search | Quick web scanning — discover pages, get snippets, find URLs. For orientation only, not substantive analysis. |
 

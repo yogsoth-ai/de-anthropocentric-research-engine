@@ -44,9 +44,9 @@ Returns: `{ compound_claims_processed: number, atomic_claims_produced: number, i
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | claim-page-creation | SOP for creating a claim page in the vault — atomic proposition with type classification, source attribution, and initial confidence. |
 | rebuttal-documentation | SOP for documenting rebuttals and counter-claims — create rebuttal pages with typed contradiction edges and source attribution. |

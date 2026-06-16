@@ -59,9 +59,9 @@ Reformulated Questions — abstraction ladder, HMW set, Socratic challenges, rec
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abstraction-laddering | Move between concrete and abstract framings — 3 levels up (Why?) and 3 levels down (How?) to find the most productive research level. |
 | hmw-formulation | Generate "How Might We" questions at different scope levels (narrow, medium, broad). Ensures each is actionable without being prescriptive. |

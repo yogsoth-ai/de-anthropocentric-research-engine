@@ -1,6 +1,7 @@
 ---
 name: feasibility-constrained-formulation
-description: 'Strategy: reshape a research question under resource constraints — pragmatic adjustment that preserves core value'
+description: 'Strategy: reshape a research question under resource constraints — pragmatic
+  adjustment that preserves core value'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -77,10 +78,10 @@ After the Strategy completes, you must call context-checkpoint and record:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| question-refinement-loop | Tactic: 迭代精化研究问题直到通过 FINER 5 项标准 |
+| question-refinement-loop | Tactic: iteratively refine a research question until it passes all 5 FINER criteria |
 
 <!-- END available-tables (generated) -->

@@ -1,6 +1,7 @@
 ---
 name: evidence-based-prioritization
-description: 'Strategy: evidence-strength-based AHRQ PiCMe assessment — drive gap prioritization with the quality of literature evidence'
+description: 'Strategy: evidence-strength-based AHRQ PiCMe assessment — drive gap
+  prioritization with the quality of literature evidence'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -76,19 +77,19 @@ After each round, record:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| hypothesis-formation-scoring-matrix-construction | Tactic: 编排多维度评分 SOP，为所有 gaps 构建综合评估矩阵 |
+| hypothesis-formation-scoring-matrix-construction | Tactic: orchestrate multi-dimensional scoring SOPs to build a comprehensive assessment matrix for all gaps |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| gap-normalization | SOP: 统一不同来源的 gap 格式为标准 GapRecord |
-| priority-synthesis | SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议 |
+| gap-normalization | SOP: Unify gaps from different sources into the standard GapRecord format |
+| priority-synthesis | SOP: synthesize all scoring data into a final gap priority list and attack-path suggestions |
 
 <!-- END available-tables (generated) -->

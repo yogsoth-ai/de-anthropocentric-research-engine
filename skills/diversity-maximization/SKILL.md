@@ -88,18 +88,18 @@ method_used: <MAP-Elites|niche-coverage|max-dispersion>
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | niche-coverage-analysis | Define niches within the solution space, map candidates to niches, score coverage completeness, and identify gaps requiring attention. |
 | pareto-frontier-construction | Build the Pareto frontier from multi-objective optimization, visualize trade-offs, and select a portfolio from non-dominated solutions. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | coverage-scoring | Compute coverage completeness, redundancy, and gap severity scores from a coverage map. |
 | niche-definition | Define niches and capability areas that a portfolio should cover based on domain structure and objectives. |

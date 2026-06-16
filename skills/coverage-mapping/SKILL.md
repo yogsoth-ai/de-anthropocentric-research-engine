@@ -108,17 +108,17 @@ coverage_map:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | score-trajectory-analysis | Collect historical scores, fit saturation curves, detect inflection points |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | benchmark-synthesis | Produce final structured audit report |
 | capability-taxonomy-mapping | Build capability taxonomy, map existing benchmark coverage |

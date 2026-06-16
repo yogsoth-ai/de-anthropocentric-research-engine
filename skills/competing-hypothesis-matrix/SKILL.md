@@ -1,6 +1,7 @@
 ---
 name: competing-hypothesis-matrix
-description: 'Tactic: Multi-hypothesis management — generate competing hypotheses, design discriminating predictions, build a structured comparison matrix'
+description: 'Tactic: Multi-hypothesis management — generate competing hypotheses,
+  design discriminating predictions, build a structured comparison matrix'
 version: 1.0.0
 category: hypothesis-formation
 type: tactic
@@ -66,12 +67,12 @@ Report to the calling strategy after execution:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| competing-hypothesis-generation | SOP: 为同一现象生成机制上不同的竞争假设 |
-| discriminating-prediction-design | SOP: 设计能区分竞争假设的关键预测和观察方案 |
-| hypothesis-comparison-matrix | SOP: 构建竞争假设的多维度对比矩阵 |
+| competing-hypothesis-generation | SOP: Generate mechanistically distinct competing hypotheses for the same phenomenon |
+| discriminating-prediction-design | SOP: design key predictions and observation plans that can distinguish competing hypotheses |
+| hypothesis-comparison-matrix | SOP: Build a multi-dimensional comparison matrix of competing hypotheses |
 
 <!-- END available-tables (generated) -->

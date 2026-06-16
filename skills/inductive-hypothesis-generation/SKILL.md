@@ -80,20 +80,20 @@ Record after each round:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| anomaly-driven-abduction | Tactic: 归纳/溯因路径——描述异常现象，生成候选解释，按可信度排序 |
-| falsifiability-audit | Tactic: 假设质量保证——检验可证伪性，修复不合格假设，完成操作化与边界条件规范 |
+| anomaly-driven-abduction | Tactic: Inductive/abductive path — describe anomalous phenomena, generate candidate explanations, rank by plausibility |
+| falsifiability-audit | Tactic: hypothesis quality assurance — check falsifiability, repair failing hypotheses, complete operationalization and boundary-condition specification |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
-| hypothesis-formation-variable-identification | SOP: 识别变量及其在假设中的角色 |
-| relationship-specification | SOP: 指定变量间关系的方向与形式 |
+| hypothesis-formation-variable-identification | SOP: identify variables and their roles within a hypothesis |
+| relationship-specification | SOP: specify the direction and form of relationships between variables |
 
 <!-- END available-tables (generated) -->

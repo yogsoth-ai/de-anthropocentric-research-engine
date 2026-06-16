@@ -63,17 +63,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | biological-function-mapping | Map technical functions to biological systems. Orchestrates problem-biologization → organism-discovery → functional-model-biology. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | abstraction-to-design | Abstract biological principle to design principle. Bridge from biology to engineering. |
 | biological-strategy-extraction | Extract strategy principles from organisms. Identify mechanism-level details of how biological systems achieve their function. |

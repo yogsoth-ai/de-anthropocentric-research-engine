@@ -114,9 +114,9 @@ protocol:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | effect-size-extraction | Systematically extract effect sizes and conditions from papers for meta-analytic synthesis |
 | evidence-synthesis-planning | Plan the statistical synthesis approach — model selection, heterogeneity strategy, and reporting |
@@ -124,9 +124,9 @@ protocol:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | data-extraction-form | Design structured data extraction form for systematic meta-analysis data collection |
 | effect-size-planning | Determine effect size types and calculation methods for meta-analytic synthesis |

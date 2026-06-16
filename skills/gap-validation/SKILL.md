@@ -68,17 +68,17 @@ Validated Gap List — each gap with: validation status (confirmed/partial/refut
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | cross-validation | Multi-source cross-validation of gap authenticity — cross-database search, temporal sensitivity testing, false-gap filtering, stakeholder confirmation. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | cross-database-verification | Verify gap existence across multiple databases (Semantic Scholar, Google Scholar, arXiv, domain-specific). Distinguishes database-specific gaps from universal gaps. |
 | false-gap-filtering | Detect false gaps — search failures, already-solved gaps, and inherently unanswerable questions masquerading as research gaps. |

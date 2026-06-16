@@ -1,12 +1,14 @@
 ---
 name: paper-research
-description: 'Import SOP: Deep literature research, raw full text + PDF Q&A (from literature-engine)'
+description: 'Import SOP: Deep literature research, raw full text + PDF Q&A (from
+  literature-engine)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/literature-research/SKILL.md
 source_skill: paper-research
-provides: Deep literature research capability — full-text retrieval, PDF Q&A, in-depth analysis
+provides: Deep literature research capability — full-text retrieval, PDF Q&A, in-depth
+  analysis
 dependencies:
   sops:
   - literature-research
@@ -40,9 +42,9 @@ Directly call the `paper-research` skill in `literature-engine`. This skill prov
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | literature-research | Deep literature research — raw full text reading and targeted PDF queries for rigorous analysis |
 

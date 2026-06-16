@@ -51,9 +51,9 @@ Run factor-level-design SOP to identify key factors in the gap space, define lev
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | coverage-gap-detection | Detect uncovered regions in the solution space, producing a prioritized gap list. |
 | creative-ideation-factor-level-design | Identify factors and their levels for a problem, then design an experiment matrix for systematic exploration. |

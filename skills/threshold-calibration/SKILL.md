@@ -45,9 +45,9 @@ Systematically vary the consensus threshold to understand the sensitivity of con
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | consensus-classification | Classify items as consensus or dissensus at a given threshold. |
 | consensus-measurement | Compute consensus score from collected judgments using the appropriate statistical method. |

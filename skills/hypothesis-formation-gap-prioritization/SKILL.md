@@ -1,10 +1,12 @@
 ---
 name: gap-prioritization
-description: 'Campaign: Systematically assess and rank research gaps, determining the targets most worth attacking'
+description: 'Campaign: Systematically assess and rank research gaps, determining
+  the targets most worth attacking'
 version: 1.0.0
 category: hypothesis-formation
 type: campaign
-input: 'Gaps produced by upstream repos (any format: knowledge-acquisition, deep-insight, or manually provided by the user)'
+input: 'Gaps produced by upstream repos (any format: knowledge-acquisition, deep-insight,
+  or manually provided by the user)'
 output: Ranked gap priority list + suggested attack paths for the top N gaps
 strategies:
 - multi-criteria-ranking
@@ -91,41 +93,41 @@ Each campaign execution must produce:
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
-| evidence-based-prioritization | Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级 |
-| hypothesis-formation-portfolio-optimization | Strategy: gap 组合视为投资组合——用风险/收益/多样性优化选出最优 gap 组合 |
-| multi-criteria-ranking | Strategy: 多维度加权评分排序——将 gap 分解为独立子问题后重组为优先级列表 |
-| rapid-triage | Strategy: 快速粗筛——两轮过滤将大量 gaps 压缩为可精排的候选集 |
-| stakeholder-weighted-ranking | Strategy: 按利益相关者视角加权——同一 gap 在不同视角下权重不同，最终取共识排序 |
+| evidence-based-prioritization | Strategy: evidence-strength-based AHRQ PiCMe assessment — drive gap prioritization with the quality of literature evidence |
+| hypothesis-formation-portfolio-optimization | Strategy: Treat the gap set as an investment portfolio — use risk/return/diversity optimization to select the optimal gap portfolio |
+| multi-criteria-ranking | Strategy: multi-dimensional weighted scoring and ranking — decompose a gap into independent sub-questions, then recombine into a priority list |
+| rapid-triage | Strategy: rapid coarse screening — two filtering rounds compress a large set of gaps into a fine-rankable candidate set |
+| stakeholder-weighted-ranking | Strategy: Weight by stakeholder perspective — the same gap carries different weight under different perspectives; take the consensus ranking at the end |
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| pairwise-comparison | Tactic: 通过相对比较而非绝对评分对 gaps 进行排序，适用于难以量化的场景 |
+| pairwise-comparison | Tactic: rank gaps through relative comparison rather than absolute scoring, suited to hard-to-quantify situations |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
 | context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
-| hypothesis-formation-quality-gate-check | Shared SOP: 通用质量门检查（格式完整性、逻辑一致性） |
-| hypothesis-formation-saturation-detection | Shared SOP: 判断当前活动是否已达信息饱和 |
+| hypothesis-formation-quality-gate-check | Shared SOP: General quality-gate check (format completeness, logical consistency) |
+| hypothesis-formation-saturation-detection | Shared SOP: judge whether the current activity has reached information saturation |
 
 ## Available Campaigns
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Campaign | 何时用 |
+| Campaign | When to use |
 | --- | --- |
-| hypothesis-formulation | Campaign: 将 insight 和 gap 转化为结构化的可测试假设 |
+| hypothesis-formulation | Campaign: transform insights and gaps into structured testable hypotheses |
 
 <!-- END available-tables (generated) -->

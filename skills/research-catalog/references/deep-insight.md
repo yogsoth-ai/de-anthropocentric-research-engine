@@ -5,7 +5,7 @@
 | Layer | Skill | Description |
 | --- | --- | --- |
 | campaign | boundary-analysis | Boundary Analysis Campaign — probe where methods fail, map validity envelopes, test robustness, catalog failure modes, detect scaling limits. 5 strategies, 3 tactics, 11 subagent SOPs. |
-| campaign | deep-insight | <b>ENTRY 路由根:5-campaign 深度洞察引擎。</b> 输入一个 research gap / finding,路由到 gap-analysis / insight / boundary-analysis / sensitivity-analysis / problem-reformulation 之一,选 strategy 并在 quantitative budget gate 下自主执行。兵法书模式 —— CC 读完原则后自主编排。HARD-GATE:north-star-crystallization 完成 + knowledge-acquisition 已产出初始 findings 才能进入。 |
+| campaign | deep-insight | Deep Insight Engine with 5 campaigns (gap-analysis, insight, boundary-analysis, sensitivity-analysis, problem-reformulation). Use this skill whenever a user needs to deeply analyze research gaps, understand root causes, probe method boundaries, assess assumption sensitivity, or reformulate research problems. Pre-condition: north-star-crystallization complete + knowledge-acquisition campaign has produced initial findings. |
 | campaign | gap-analysis | Gap Analysis Campaign — identify, classify, validate, and prioritize research gaps via systematic evidence mapping. 5 strategies (gap-identification, gap-classification, gap-validation, gap-prioritization, gap-synthesis), 3 tactics, 12 subagent SOPs. |
 | campaign | insight | Insight Campaign — deep root-cause analysis of why research gaps persist. 5 strategies (root-cause-drilling, stakeholder-mapping, tension-mining, question-reformulation, assumption-audit), 4 tactics, 13 subagent SOPs. |
 | campaign | problem-reformulation | Problem Reformulation Campaign — question the problem itself. Escape dominant ideas, reframe from multiple perspectives, apply dialectical inquiry, assess wickedness, discover appreciative alternatives. 5 strategies, 3 tactics, 10 subagent SOPs. |
@@ -19,7 +19,7 @@
 | strategy | dominant-idea-escape | Identify dominant paradigms constraining the field and use de Bono lateral thinking provocations to escape them. |
 | strategy | failure-mode-analysis | Systematically catalog failure modes — generate edge cases, observe failures, cluster by mechanism, identify triggers and frequency. |
 | strategy | gap-classification | Classify identified gaps using Miles 7-type taxonomy and AHRQ 4-reason framework. Determines gap type (theoretical, methodological, empirical, etc.) and root cause of gap existence. |
-| strategy | deep-insight-gap-identification | Identify what the literature has NOT addressed — missing methods, untested combinations, unexplored applications, contradictions without resolution. Used by all strategies. |
+| strategy | deep-insight-gap-identification | Identify research gaps via PICOS frameworks, concept matrices, evidence gap maps, keyword extraction, citation analysis, and topic modeling. Systematic discovery of what is missing in the literature. |
 | strategy | deep-insight-gap-prioritization | Score and rank validated gaps on importance, feasibility, novelty, and urgency. Multi-criteria decision analysis with stakeholder confirmation. |
 | strategy | gap-synthesis-strategy | Compile all gap analysis products into a coherent final report with evidence gap maps, research agenda, and concept matrices. |
 | strategy | gap-validation | Validate gap authenticity via cross-database verification, temporal sensitivity testing, and false-gap filtering. Ensures gaps are genuine absences, not search artifacts. |
@@ -96,9 +96,9 @@
 | sop | deep-insight-multi-criteria-scoring | Score gaps on multiple dimensions (importance, feasibility, novelty, urgency, impact) using weighted multi-criteria decision analysis. |
 | sop | deep-insight-multi-stakeholder-simulation | Simulate multiple stakeholder perspectives evaluating a research gap, method, or proposal. Identifies blind spots from single-perspective analysis. |
 | sop | negation-definition | Define strongest plausible alternatives (negations) for each assumption to enable perturbation analysis. |
-| sop | deep-insight-paper-overview | Abstract-level paper scanning for broad coverage. Import of literature-engine/literature-overview skill. Abstract-level only — no methodology conclusions from abstracts. |
-| sop | deep-insight-paper-research | Full-depth paper reading with raw text extraction. Import of literature-engine/literature-research skill. Must read fullText (true) — equations, hyperparameters, specific claims extracted. |
-| sop | deep-insight-paper-search | AI-summarized paper reading for intermediate depth. Import of literature-engine/literature-search skill. Must call get_paper_content for every analyzed paper. |
+| sop | deep-insight-paper-overview | Paper metadata and abstract-level overview. Import of literature-engine/literature-overview skill. Abstracts only — no substantive claims without deeper reading. |
+| sop | deep-insight-paper-research | Full-text paper reading via three-pass Keshav method. Import of literature-engine/literature-research skill. Authoritative source for claims about paper content. |
+| sop | deep-insight-paper-search | AI-powered paper summary and search. Import of literature-engine/literature-search skill. AI summary level — cite as "AI-extracted" not "paper states". |
 | sop | polarity-mapping | Map unresolvable tensions as Johnson polarities — 4 quadrants (positive/negative of each pole), early warnings, action steps for managing rather than solving. |
 | sop | deep-insight-provocation-generation | Generate de Bono lateral thinking provocations to challenge dominant ideas using escape, reversal, exaggeration, and distortion. |
 | sop | re-derivation | Re-derive conclusions under a negated assumption, tracking where the derivation diverges from the original. |
@@ -113,6 +113,6 @@
 | sop | temporal-sensitivity-testing | Test whether a gap persists across different time windows (2/5/10 years). Determines if gap is narrowing, widening, or stable over time. |
 | sop | deep-insight-validity-envelope-construction | Combine multi-axis perturbation data into a multi-dimensional validity description with boundary conditions and interaction effects. |
 | sop | variation-axis-definition | Identify orthogonal axes along which a method's validity might vary. Ensures axes are independent, measurable, and span the relevant parameter space. |
-| sop | deep-insight-web-research | Full-page web reading for non-academic perspectives — blogs, tech reports, product pages, industry analysis. Import of web-browsing/web-research skill. Must fetch full page via apify for every analyzed page. |
+| sop | deep-insight-web-research | Deep web research with full page fetching via Apify. Import of web-browsing/web-research skill. Must fetch full page — no conclusions from previews. |
 | sop | deep-insight-web-search | Quick web scanning for landscape understanding. Import of web-browsing/web-search skill. Snippets only — no conclusions from snippets alone. |
 | sop | wickedness-scoring | Score a problem against Rittel's 10 criteria to determine if it is tame, complex, or wicked. |

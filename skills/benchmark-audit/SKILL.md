@@ -95,17 +95,17 @@ benchmark_audit:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | artifact-detection | Detect annotation artifacts and shortcuts in benchmarks |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | benchmark-synthesis | Produce final structured audit report |
 | contamination-audit | Detect train-test data leakage and memorization artifacts |

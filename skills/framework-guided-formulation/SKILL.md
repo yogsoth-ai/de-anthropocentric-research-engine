@@ -1,6 +1,7 @@
 ---
 name: framework-guided-formulation
-description: 'Strategy: Select an RQ framework (PICO/SPIDER/SPICE/ECLIPSE) and apply it systematically'
+description: 'Strategy: Select an RQ framework (PICO/SPIDER/SPICE/ECLIPSE) and apply
+  it systematically'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -79,11 +80,11 @@ After the Strategy completes, context-checkpoint must be called, recording:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
-| framework-selection-and-application | Tactic: 选择最适合的 RQ 框架并系统应用 |
-| question-refinement-loop | Tactic: 迭代精化研究问题直到通过 FINER 5 项标准 |
+| framework-selection-and-application | Tactic: Select the most suitable RQ framework and apply it systematically |
+| question-refinement-loop | Tactic: iteratively refine a research question until it passes all 5 FINER criteria |
 
 <!-- END available-tables (generated) -->

@@ -43,9 +43,9 @@ Broad, shallow field exploration. Understand the landscape of possibilities befo
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | generate-candidate-fields | Propose 3-8 candidate research fields based on the full ActorProfile. When user wants to explore beyond their current stack, use other ActorProfile signals (intentionality, boundary) to determine exploration space. Free exploration within the boundary. |
 | landscape-synthesis | Evaluate each candidate research field on maturity, competition, entry barrier, and publication opportunity. Synthesizes broad-web-search results into a structured FieldPanorama. Must consider both niche approaches AND direct frontal competition in hot fields. |

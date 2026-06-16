@@ -113,9 +113,9 @@ A checkpoint captures:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | execution-monitoring | Monitor execution progress, detect anomalies, and report status |
 | result-collection | Collect experiment outputs — metrics, logs, artifacts — into structured result set |

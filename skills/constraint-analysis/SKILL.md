@@ -104,9 +104,9 @@ Campaign is complete when:
 
 ## Available Strategies
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Strategy | 何时用 |
+| Strategy | When to use |
 | --- | --- |
 | assumption-constraint | Which assumptions are most fragile? — Vulnerability ranking + impact assessment of experiment assumptions |
 | conflict-resolution | How do constraints conflict with each other? — Evaporating Cloud + assumption challenging + injection to resolve constraint conflicts |
@@ -116,9 +116,9 @@ Campaign is complete when:
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | constraint-breaking | Orchestrate the full constraint-breaking cycle: extract conflict, challenge assumptions, project resolution |
 | constraint-tree-building | Build Current Reality Tree from UDEs through causal chains to core conflicts |
@@ -126,9 +126,9 @@ Campaign is complete when:
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | constraint-synthesis | Synthesize constraint analysis into actionable report with priorities |
 | context-checkpoint | Append research process and results to the current Phase's context file. Each append MUST contain >=500 lines of markdown covering both process and results. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |

@@ -59,17 +59,17 @@ Cannot exit strategy until ≥80% of each budget line is consumed OR yield targe
 
 ## Available Tactics
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| Tactic | 何时用 |
+| Tactic | When to use |
 | --- | --- |
 | emergence-detection | Detect and validate emergent properties from combinations. Orchestrates emergent-property-identification → blend-elaboration. |
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | combinatorial-synthesis | Synthesize all combinatorial creativity outputs |
 | emergent-property-identification | Identify non-additive properties from combinations |

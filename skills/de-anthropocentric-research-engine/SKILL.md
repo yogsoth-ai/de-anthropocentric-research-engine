@@ -77,9 +77,9 @@ After the user reviews and approves the spec, they invoke `executing-specs` in a
 
 ## Available SOPs
 
-可选,无固定顺序;最终叶子终为 sop。
+Optional, no fixed order; the final leaf is always a sop.
 
-| SOP | 何时用 |
+| SOP | When to use |
 | --- | --- |
 | executing-specs | Execute a Research Spec step by step, respecting context protocol, deviation limits, and backtrack rules. Supports multi-session recovery. |
 | research-catalog | Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
