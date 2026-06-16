@@ -133,6 +133,17 @@ ponytail 三道 gate 贯穿执行段（硬接线进 dependencies，钉在前/后
 
 舍弃（YAGNI）：ponytail:ponytail-audit（全库扫，错粒度）、ponytail:ponytail-help（速查卡）。
 
+## Context Recording
+
+研究过程经 context-management 落盘，与最终报告分属不同文件：
+
+1. **进入本 campaign 时**：import context-init，topic-slug 传 `implementation-planning`，
+   建立本 campaign 的**过程 context 文件**。init 幂等——同 Phase 重入返回原文件。
+2. **每个 strategy 完成后**：import context-checkpoint（硬约束，不可跳过），把该
+   strategy 的过程与中间产出 append 进上一步的过程文件。
+3. 最终报告**不**写进这个过程文件——由本 campaign 的 synthesis SOP（execution-synthesis）
+   另起 `implementation-planning-report` 文件落盘（见该 SOP）。
+
 <!-- BEGIN available-tables (generated) -->
 <!-- external rows hand-maintained; do not regenerate this file -->
 
