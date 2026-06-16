@@ -1,0 +1,31 @@
+{
+  "name": "@yogsoth-ai/dare",
+  "version": "0.1.0",
+  "description": "One-command installer for the De-Anthropocentric Research Engine skill library",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git",
+    "directory": "cli"
+  },
+  "bin": {
+    "dare": "bin/dare.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "payload",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test",
+    "prepublishOnly": "node scripts/build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
