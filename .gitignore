@@ -39,7 +39,7 @@ cache/
 CODEX.md
 assets/logo-prompts.md
 
-# infra-graphs test scratch artifacts
-self-iteration/2026-06-14-infra-graphs/scripts/_t*.html
-self-iteration/2026-06-14-infra-graphs/scripts/_t*.json
-self-iteration/2026-06-14-infra-graphs/scripts/refactory_source.json
+# infra-graphs test scratch artifacts (moved to top-level scripts/)
+scripts/**/_t*.html
+scripts/**/_t*.json
+scripts/**/refactory_source.json
