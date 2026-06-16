@@ -1,12 +1,12 @@
 ---
 name: ahp-weighting
-description: 'SOP: 使用 AHP 层次分析法确定评分维度权重，输出权重向量'
+description: 'SOP: Use the AHP (Analytic Hierarchy Process) to determine scoring-dimension weights, outputting a weight vector'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: 维度列表（字符串数组）+ 可选的两两比较偏好矩阵
-output: AHPWeights — 权重向量、一致性比率（CR）及判断矩阵
+input: List of dimensions (string array) + optional pairwise comparison preference matrix
+output: AHPWeights — weight vector, consistency ratio (CR), and judgment matrix
 dependencies:
   skills:
   - subagent-spawning
@@ -14,24 +14,24 @@ dependencies:
 
 # AHP Weighting
 
-使用 AHP 层次分析法确定评分维度权重，输出权重向量。
+Use the AHP (Analytic Hierarchy Process) to determine scoring-dimension weights, outputting a weight vector.
 
 ## HARD-GATE
 
 <HARD-GATE>
-- 输入维度数量必须在 [2, 9] 范围内（AHP 适用范围）
-- 输出权重向量各元素之和必须等于 1.0（允许 ±0.001 误差）
-- 一致性比率 CR 必须被计算并报告；若 CR > 0.1 必须标记警告
+- The number of input dimensions must be in the range [2, 9] (AHP applicability range)
+- The elements of the output weight vector must sum to 1.0 (±0.001 tolerance allowed)
+- The consistency ratio CR must be computed and reported; if CR > 0.1 a warning must be flagged
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 验证维度列表非空且数量在 [2, 9] 范围内
-2. **维度列表确认**: 输出维度列表供调用方确认；若已提供比较矩阵则跳至步骤 4
-3. **两两比较矩阵构建**: 对每对维度 (i, j) 赋予 Saaty 标度值（1-9）；矩阵满足 a[j][i] = 1/a[i][j]
-4. **特征向量计算**: 对每列归一化后取行均值，得到优先级向量（权重）
-5. **一致性比率检验**: 计算最大特征值 λ_max → 一致性指数 CI = (λ_max - n)/(n-1) → CR = CI/RI（查 Saaty RI 表）；CR < 0.1 为可接受
-6. **输出**: 返回 AHPWeights 对象；若 CR > 0.1 附加修正建议
+1. **Precondition check**: verify the dimension list is non-empty and its count is in the range [2, 9]
+2. **Dimension list confirmation**: output the dimension list for the caller to confirm; if a comparison matrix is already provided, skip to step 4
+3. **Pairwise comparison matrix construction**: for each pair of dimensions (i, j) assign a Saaty scale value (1-9); the matrix must satisfy a[j][i] = 1/a[i][j]
+4. **Eigenvector computation**: normalize each column then take row means to obtain the priority vector (weights)
+5. **Consistency ratio check**: compute the largest eigenvalue λ_max → consistency index CI = (λ_max - n)/(n-1) → CR = CI/RI (look up the Saaty RI table); CR < 0.1 is acceptable
+6. **Output**: return the AHPWeights object; if CR > 0.1 attach revision suggestions
 
 ## Output Format
 
@@ -49,3 +49,4 @@ dependencies:
   "revision_suggestions": []
 }
 ```
+</output>

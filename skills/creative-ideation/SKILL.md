@@ -33,16 +33,16 @@ dependencies:
 
 | Signal Keywords | Route To |
 |----------------|----------|
-| SCAMPER, TRIZ, 组件手术, 结构变换, 功能裁剪 | → structural-deconstruction |
-| 跨域, 类比迁移, bisociation, 随机刺激, 强制连接 | → cross-domain-discovery |
-| 假设否定, 反向头脑风暴, 最差方法, 反 benchmark | → assumption-destruction |
-| 仿生, 生物类比, 自然策略, BioTRIZ, 生态模式 | → biomimicry |
-| 类比, 隐喻, 远足法, 个人类比, 符号压缩 | → synectics |
-| 形态分析, Zwicky box, CCA, 维度组合, 设计空间 | → morphological-exploration |
-| PO, 横向思维, 概念扇, 随机入口, 挑战操作 | → lateral-thinking |
-| 概念融合, blending, 涌现, 多层组合, 功能重分配 | → combinatorial-creativity |
-| 视角切换, 六帽, 角色扮演, 约束注入, 时间投射 | → perspective-forcing |
-| 穷举, 覆盖分析, 方法矩阵, ablation, 失败分类 | → systematic-enumeration |
+| SCAMPER, TRIZ, component surgery, structural transformation, function trimming | → structural-deconstruction |
+| Cross-domain, analogical transfer, bisociation, random stimulus, forced connection | → cross-domain-discovery |
+| Assumption negation, reverse brainstorming, worst method, anti-benchmark | → assumption-destruction |
+| Biomimicry, biological analogy, natural strategies, BioTRIZ, ecosystem patterns | → biomimicry |
+| Analogy, metaphor, excursion method, personal analogy, symbolic compression | → synectics |
+| Morphological analysis, Zwicky box, CCA, dimension combination, design space | → morphological-exploration |
+| PO, lateral thinking, concept fan, random entry, challenge operation | → lateral-thinking |
+| Concept blending, blending, emergence, multi-level combination, function redistribution | → combinatorial-creativity |
+| Perspective switching, six hats, role play, constraint injection, temporal projection | → perspective-forcing |
+| Enumeration, coverage analysis, method matrix, ablation, failure taxonomy | → systematic-enumeration |
 
 ## Multi-Campaign Orchestration
 
@@ -50,12 +50,12 @@ When the research problem warrants broad creative exploration, CC may invoke mul
 
 | Cluster | Campaigns | When |
 |---------|-----------|------|
-| 类比族 (Analogy) | cross-domain-discovery + biomimicry + synectics | Problem benefits from external domain transfer |
-| 组合族 (Combinatorial) | structural-deconstruction + morphological-exploration + combinatorial-creativity | Problem has decomposable structure |
-| 颠覆族 (Disruptive) | assumption-destruction + lateral-thinking + perspective-forcing | Problem is stuck in dominant paradigm |
-| 覆盖族 (Coverage) | systematic-enumeration + morphological-exploration | Need exhaustive space mapping |
+| Analogy family (Analogy) | cross-domain-discovery + biomimicry + synectics | Problem benefits from external domain transfer |
+| Combinatorial family (Combinatorial) | structural-deconstruction + morphological-exploration + combinatorial-creativity | Problem has decomposable structure |
+| Disruptive family (Disruptive) | assumption-destruction + lateral-thinking + perspective-forcing | Problem is stuck in dominant paradigm |
+| Coverage family (Coverage) | systematic-enumeration + morphological-exploration | Need exhaustive space mapping |
 
-**全面发散**: Invoke 3-5 campaigns based on problem characteristics. Each campaign executes independently with its own context file. Results aggregated at ENTRY level.
+**Comprehensive divergence**: Invoke 3-5 campaigns based on problem characteristics. Each campaign executes independently with its own context file. Results aggregated at ENTRY level.
 
 CC decides:
 - Which campaigns to invoke (1 or many)

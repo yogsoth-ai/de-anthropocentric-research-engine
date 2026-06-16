@@ -29,11 +29,11 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 
 | Signal | Strategy |
 |--------|----------|
-| 有效条件、适用范围、多轴变异、退化曲线 | → validity-envelope-mapping |
-| 跨方法一致性、多模型收敛、Wimsatt 鲁棒性 | → robustness-testing |
-| 系统边界、纳入/排除、CSH 批判 | → boundary-critique |
-| 失效模式、边界输入、分布偏移、对抗性 | → failure-mode-analysis |
-| 规模极限、scaling law、行为突变、容量 | → scaling-frontier |
+| Valid conditions, applicability range, multi-axis variation, degradation curves | → validity-envelope-mapping |
+| Cross-method consistency, multi-model convergence, Wimsatt robustness | → robustness-testing |
+| System boundaries, inclusion/exclusion, CSH critique | → boundary-critique |
+| Failure modes, boundary inputs, distribution shift, adversarial | → failure-mode-analysis |
+| Scaling limits, scaling law, behavioral phase transitions, capacity | → scaling-frontier |
 
 ## Available Tactics
 
