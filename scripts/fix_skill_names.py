@@ -46,3 +46,27 @@ def fix_name_line(text: str, folder_name: str) -> str:
             out_lines.append(ln)
         offset += len(ln)
     return "".join(out_lines)
+
+
+def scan(flat_body: Path) -> list[tuple[str, str]]:
+    """[(folder, current_name)] for every skill whose name != folder-name."""
+    out: list[tuple[str, str]] = []
+    for d in sorted(Path(flat_body).iterdir()):
+        sk = d / "SKILL.md"
+        if not (d.is_dir() and sk.exists()):
+            continue
+        text = sk.read_text(encoding="utf-8")
+        if needs_fix(d.name, text):
+            out.append((d.name, name_field(text)))
+    return out
+
+
+def apply_fixes(flat_body: Path) -> list[str]:
+    """Rewrite SKILL.md in place for each mismatched skill; return changed folders."""
+    changed: list[str] = []
+    for folder, _old in scan(flat_body):
+        sk = Path(flat_body) / folder / "SKILL.md"
+        text = sk.read_text(encoding="utf-8")
+        sk.write_text(fix_name_line(text, folder), encoding="utf-8")
+        changed.append(folder)
+    return changed

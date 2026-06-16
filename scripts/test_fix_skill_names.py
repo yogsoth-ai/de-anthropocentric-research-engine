@@ -50,3 +50,30 @@ def test_fix_name_line_only_touches_name():
     t = '---\nname: Web Search\ndescription: "a: b"\nversion: 1.0.0\n---\nbody\n'
     out = m.fix_name_line(t, "web-search")
     assert out == '---\nname: web-search\ndescription: "a: b"\nversion: 1.0.0\n---\nbody\n'
+
+
+def _mk(flat, folder, name):
+    d = flat / folder
+    d.mkdir(parents=True)
+    (d / "SKILL.md").write_text(f"---\nname: {name}\ndescription: x\n---\nbody\n",
+                                encoding="utf-8")
+
+
+def test_scan_lists_only_mismatches(tmp_path):
+    flat = tmp_path / "skills"
+    _mk(flat, "convergence-web-search", "web-search")   # mismatch
+    _mk(flat, "ablation-design", "ablation-design")     # ok
+    got = dict(m.scan(flat))
+    assert got == {"convergence-web-search": "web-search"}
+
+
+def test_apply_fixes_rewrites_and_is_idempotent(tmp_path):
+    flat = tmp_path / "skills"
+    _mk(flat, "convergence-web-search", "web-search")
+    changed = m.apply_fixes(flat)
+    assert changed == ["convergence-web-search"]
+    txt = (flat / "convergence-web-search" / "SKILL.md").read_text(encoding="utf-8")
+    assert "name: convergence-web-search\n" in txt
+    assert "description: x\n" in txt
+    # second run: nothing left to change
+    assert m.apply_fixes(flat) == []
