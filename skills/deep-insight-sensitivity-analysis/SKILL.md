@@ -29,11 +29,11 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 
 | Signal | Strategy |
 |--------|----------|
-| 快速筛选、Morris 方法、OAT、初步排除 | → parameter-screening |
-| 方差分解、Sobol 指数、贡献度、交互效应 | → variance-decomposition |
-| 假设致命性、扰动、否定、重新推导 | → assumption-criticality |
-| 不确定性传播、Monte Carlo、分布、贝叶斯 | → uncertainty-propagation |
-| 决策敏感性、EVPI、影响图、龙卷风图 | → decision-sensitivity |
+| quick screening, Morris method, OAT, preliminary elimination | → parameter-screening |
+| variance decomposition, Sobol indices, contribution, interaction effects | → variance-decomposition |
+| assumption criticality, perturbation, negation, re-derivation | → assumption-criticality |
+| uncertainty propagation, Monte Carlo, distributions, Bayesian | → uncertainty-propagation |
+| decision sensitivity, EVPI, influence diagrams, tornado diagrams | → decision-sensitivity |
 
 ## Available Tactics
 

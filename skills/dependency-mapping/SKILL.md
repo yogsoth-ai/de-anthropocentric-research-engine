@@ -1,12 +1,12 @@
 ---
 name: dependency-mapping
-description: 'SOP: 映射子问题间的依赖关系'
+description: 'SOP: map dependency relationships among sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: research-question
-input: 子问题列表
-output: 依赖图 + 关键路径 + 建议回答顺序
+input: 'List of sub-questions'
+output: 'Dependency graph + critical path + suggested answering order'
 dependencies:
   skills:
   - subagent-spawning
@@ -14,23 +14,23 @@ dependencies:
 
 # Dependency Mapping
 
-映射子问题间的依赖关系 — 确定哪些子问题必须先回答。
+Map dependency relationships among sub-questions — determine which sub-questions must be answered first.
 
 ## HARD-GATE
 
 <HARD-GATE>
-输入必须包含: ≥2 个已生成的子问题。
+Input must contain: ≥2 already-generated sub-questions.
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 子问题列表是否完整
-2. **依赖识别**: 对每对子问题判断是否存在依赖
-3. **依赖类型标注**: 强依赖（必须先完成）/ 弱依赖（有帮助但非必须）
-4. **循环检测**: 检查是否存在循环依赖
-5. **关键路径识别**: 找到最长依赖链
-6. **并行机会识别**: 找到可同时进行的子问题组
-7. **输出**: 依赖图 + 关键路径 + 并行机会
+1. **Pre-check**: is the sub-question list complete
+2. **Dependency identification**: for each pair of sub-questions, judge whether a dependency exists
+3. **Dependency-type tagging**: strong dependency (must be completed first) / weak dependency (helpful but not required)
+4. **Cycle detection**: check whether circular dependencies exist
+5. **Critical-path identification**: find the longest dependency chain
+6. **Parallelization-opportunity identification**: find groups of sub-questions that can proceed simultaneously
+7. **Output**: dependency graph + critical path + parallelization opportunities
 
 ## Output Format
 

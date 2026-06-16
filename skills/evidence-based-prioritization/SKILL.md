@@ -1,6 +1,6 @@
 ---
 name: evidence-based-prioritization
-description: 'Strategy: 基于证据强度的 AHRQ PiCMe 评估——用文献证据质量驱动 gap 优先级'
+description: 'Strategy: evidence-strength-based AHRQ PiCMe assessment — drive gap prioritization with the quality of literature evidence'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -21,56 +21,56 @@ dependencies:
 
 # Evidence-Based Prioritization
 
-基于证据强度的优先级评估：用 AHRQ PiCMe 框架的六个维度系统评估每个 gap 背后的文献证据质量，让证据最薄弱、影响最大的 gap 浮出水面。
+Evidence-strength-based prioritization: use the six dimensions of the AHRQ PiCMe framework to systematically assess the quality of the literature evidence behind each gap, surfacing the gaps where evidence is weakest and impact is greatest.
 
-## 适用场景
+## When to Use
 
-- gap 来自严谨的文献调研（有明确的引用支撑）
-- 需要向学术同行或资助机构解释优先级决策
-- 研究领域有成熟的证据分级体系（医学、生物、部分 CS 子领域）
-- 希望优先攻击"证据空白最大"而非"最热门"的 gap
+- Gaps come from rigorous literature review (with explicit citation support)
+- You need to explain prioritization decisions to academic peers or funding agencies
+- The research domain has a mature evidence-grading system (medicine, biology, some CS subfields)
+- You want to prioritize attacking the gaps with the "largest evidence void" rather than the "most popular" ones
 
-## 思维框架
+## Thinking Framework
 
-**核心原则**：gap 的优先级不仅取决于它有多重要，还取决于现有证据有多薄弱。证据越薄弱、重要性越高，优先级越高。
+**Core principle**: a gap's priority depends not only on how important it is, but also on how weak the existing evidence is. The weaker the evidence and the higher the importance, the higher the priority.
 
-AHRQ PiCMe 六维度评估框架：
+The AHRQ PiCMe six-dimension assessment framework:
 
-1. **Population（P）**：这个 gap 影响的群体/系统有多明确？覆盖多广？
-2. **Intervention（I）**：现有干预/方法的证据质量如何？（RCT > 观察性 > 专家意见）
-3. **Comparator（C）**：是否有合理的对照基线？缺乏对照是否本身就是 gap？
-4. **Metrics（Me）**：结果指标是否标准化？指标缺失是否是 gap 的一部分？
-5. **Evidence Strength（E）**：现有证据的一致性、样本量、方法论严谨度
-6. **Evidence Gap（G）**：上述五维度中，哪些维度的证据最稀缺？
+1. **Population (P)**: how well-defined is the population/system this gap affects? How broad is the coverage?
+2. **Intervention (I)**: what is the evidence quality of existing interventions/methods? (RCT > observational > expert opinion)
+3. **Comparator (C)**: is there a reasonable control baseline? Is the lack of a control itself a gap?
+4. **Metrics (Me)**: are the outcome metrics standardized? Is the absence of metrics part of the gap?
+5. **Evidence Strength (E)**: consistency, sample size, and methodological rigor of existing evidence
+6. **Evidence Gap (G)**: among the five dimensions above, which has the scarcest evidence?
 
-最终得分 = 重要性得分 × (1 − 证据充分度)。证据越充分的 gap，优先级反而降低（因为已有人在做）。
+Final score = importance score × (1 − evidence sufficiency). Gaps with more sufficient evidence get lower priority (because others are already working on them).
 
-**关键洞察**：这个框架天然偏向"被忽视的重要问题"，而非"热门但已拥挤的问题"。
+**Key insight**: this framework naturally favors "neglected important problems" over "popular but already crowded problems."
 
 ## Budget Gate
 
-| Tier | Gap 数量 | PiCMe 维度 | 文献核查 | 最终产出 |
+| Tier | Number of gaps | PiCMe dimensions | Literature check | Final output |
 |------|---------|-----------|---------|---------|
-| S | 3–8 | 全部 6 维度 | 每 gap ≥2 篇支撑文献 | 排序表 + 证据空白报告 |
-| M | 9–15 | 全部 6 维度 | 每 gap ≥3 篇支撑文献 | 排序表 + 证据空白报告 + 前 3 gap 攻击建议 |
-| L | 16–20 | 全部 6 维度 | 每 gap ≥5 篇支撑文献 | 排序表 + 详细证据图谱 + 前 5 gap 攻击建议 |
+| S | 3–8 | all 6 dimensions | ≥2 supporting references per gap | ranking table + evidence-void report |
+| M | 9–15 | all 6 dimensions | ≥3 supporting references per gap | ranking table + evidence-void report + attack suggestions for top 3 gaps |
+| L | 16–20 | all 6 dimensions | ≥5 supporting references per gap | ranking table + detailed evidence map + attack suggestions for top 5 gaps |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 调用 `gap-normalization` SOP：统一 gap 格式，提取每个 gap 的支撑文献列表
-2. 调用 `ahrq-picme-assessment` SOP：对每个 gap 执行六维度评估
-3. 调用 `importance-scoring` SOP：独立评估重要性（不受证据强度影响）
-4. 调用 `scoring-matrix-construction` tactic：构建 gap × PiCMe维度 矩阵
-5. 计算综合得分：重要性 × (1 − 证据充分度均值)
-6. 调用 `priority-synthesis` SOP：生成最终排序 + 证据空白摘要
+1. Call the `gap-normalization` SOP: standardize the gap format and extract the list of supporting references for each gap
+2. Call the `ahrq-picme-assessment` SOP: run the six-dimension assessment on each gap
+3. Call the `importance-scoring` SOP: assess importance independently (not influenced by evidence strength)
+4. Call the `scoring-matrix-construction` tactic: build a gap × PiCMe-dimension matrix
+5. Compute the composite score: importance × (1 − mean evidence sufficiency)
+6. Call the `priority-synthesis` SOP: produce the final ranking + evidence-void summary
 
 ## context-checkpoint
 
-每轮结束后记录：
-- PiCMe 评估矩阵（gap × 6维度得分）
-- 每个 gap 的支撑文献列表（含证据等级）
-- 证据充分度综合得分
-- 最终优先级排序（含得分公式）
+After each round, record:
+- The PiCMe assessment matrix (gap × 6-dimension scores)
+- The supporting-reference list for each gap (with evidence grade)
+- The composite evidence-sufficiency scores
+- The final priority ranking (with scoring formula)
 
 <!-- BEGIN available-tables (generated) -->
 

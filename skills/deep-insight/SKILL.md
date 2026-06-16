@@ -21,7 +21,7 @@ Deep insight engine — from surface phenomena to root causes, boundaries, assum
 
 ## Design Philosophy
 
-兵法书 (Strategy Book) mode. This file is a textbook, not a script. CC reads, internalizes principles, then autonomously constructs the analysis approach for the specific research situation.
+Strategy Book mode. This file is a textbook, not a script. CC reads, internalizes principles, then autonomously constructs the analysis approach for the specific research situation.
 
 Hard constraints only:
 - **Budget Gate**: Meet the strategy's quantitative floor (±10%) before completing
@@ -52,18 +52,18 @@ CC can skip the tactic layer and use SOPs directly when the task is simple enoug
 
 | Signal | Campaign |
 |--------|----------|
-| gap 识别、空白分类、证据地图、优先级排序、gap 验证 | → gap-analysis |
-| 根因分析、利益相关者、张力、HMW、假设审计、5 Whys | → insight |
-| 有效性边界、方法失效、鲁棒性、分布偏移、规模极限 | → boundary-analysis |
-| 假设排序、敏感性、方差分解、不确定性传播、关键路径 | → sensitivity-analysis |
-| 重新定义问题、主导观念、多视角、双环学习、邪恶问题 | → problem-reformulation |
+| gap identification, gap classification, evidence mapping, prioritization, gap validation | → gap-analysis |
+| root-cause analysis, stakeholders, tensions, HMW, assumption audit, 5 Whys | → insight |
+| validity boundaries, method failure, robustness, distribution shift, scaling limits | → boundary-analysis |
+| assumption ranking, sensitivity, variance decomposition, uncertainty propagation, critical path | → sensitivity-analysis |
+| redefining the problem, dominant ideas, multiple perspectives, double-loop learning, wicked problems | → problem-reformulation |
 
 ## Multi-Campaign Orchestration
 
 Campaigns can be composed:
-- **"深入理解这个 gap"**: gap-analysis → insight
-- **"这个方法可靠吗"**: boundary-analysis → sensitivity-analysis
-- **"我们是不是在解决错误的问题"**: problem-reformulation (may loop back to gap-analysis)
+- **"Understand this gap deeply"**: gap-analysis → insight
+- **"Is this method reliable"**: boundary-analysis → sensitivity-analysis
+- **"Are we solving the wrong problem"**: problem-reformulation (may loop back to gap-analysis)
 - **Full deep dive**: gap-analysis → insight → boundary-analysis → sensitivity-analysis → problem-reformulation
 
 The orchestrator decides composition based on the research state and user intent.

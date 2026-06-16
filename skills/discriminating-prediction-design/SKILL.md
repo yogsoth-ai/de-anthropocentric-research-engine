@@ -1,36 +1,36 @@
 ---
 name: discriminating-prediction-design
-description: 'SOP: 设计能区分竞争假设的关键预测和观察方案'
+description: 'SOP: design key predictions and observation plans that can distinguish competing hypotheses'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 竞争假设集（来自 competing-hypothesis-generation 输出）
-output: 区分性预测列表 + 建议观察/实验方法
+input: 'Set of competing hypotheses (from competing-hypothesis-generation output)'
+output: 'Discriminating prediction list + suggested observation/experiment methods'
 dependencies:
   skills:
   - subagent-spawning
 ---
 
 # Discriminating Prediction Design
-设计能在竞争假设之间做出区分的关键预测，为后续实验设计提供方向。
+Design the key predictions that can discriminate between competing hypotheses, providing direction for subsequent experiment design.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有 ≥2 个竞争假设（含 unique_prediction 字段）
-2. 每个假设有明确的 mechanism 描述
+Preconditions (all must hold before starting):
+1. There are ≥2 competing hypotheses (each with a unique_prediction field)
+2. Each hypothesis has an explicit mechanism description
 
-不满足 → 停止，返回错误：需要至少 2 个竞争假设才能设计区分性预测。
+Not satisfied → stop and return an error: at least 2 competing hypotheses are required to design discriminating predictions.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证竞争假设集完整性
-2. 逐对比较：对每对假设，找出它们预测不同的情境
-3. 分歧点识别：找到预测差异最大的条件或测量维度
-4. 区分性观察/实验设计：设计能在分歧点上产生不同结果的观察或实验
-5. 可行性评估：技术可行性 + 伦理可行性 + 资源需求
-6. 输出区分性预测列表
+1. Pre-check: verify the completeness of the competing-hypotheses set
+2. Pairwise comparison: for each pair of hypotheses, find the situations where they predict differently
+3. Divergence-point identification: find the conditions or measurement dimensions where prediction differences are largest
+4. Discriminating observation/experiment design: design an observation or experiment that produces different results at the divergence point
+5. Feasibility assessment: technical feasibility + ethical feasibility + resource requirements
+6. Output the discriminating prediction list
 
 ## Output Format
 ```json
@@ -47,4 +47,4 @@ dependencies:
   }
 ]
 ```
-覆盖所有主要假设对（primary vs. each competing）。
+Covers all major hypothesis pairs (primary vs. each competing).

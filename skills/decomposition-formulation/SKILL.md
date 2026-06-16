@@ -1,6 +1,6 @@
 ---
 name: decomposition-formulation
-description: 'Strategy: 将复杂研究问题分解为可独立回答的子问题层级'
+description: 'Strategy: decompose a complex research question into a hierarchy of independently answerable sub-questions'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -21,60 +21,60 @@ dependencies:
 
 # Decomposition Formulation
 
-将复杂研究问题分解为可独立回答的子问题 — 当单一实验无法回答整个问题时。
+Decompose a complex research question into independently answerable sub-questions — when a single experiment cannot answer the whole question.
 
-## 适用场景
+## When to Use
 
-- 问题复杂度高，涉及多个独立维度
-- 单一实验/研究无法完整回答
-- 需要分阶段推进的研究计划
-- 问题包含多个因果链或多个变量组
+- High problem complexity, involving multiple independent dimensions
+- A single experiment/study cannot answer it completely
+- Research plans that need to proceed in phases
+- The question contains multiple causal chains or multiple variable groups
 
-## 思维框架
+## Thinking Framework
 
-核心逻辑: 复杂问题 = 多个简单问题的组合。找到正确的分解方式，使每个子问题可以独立回答，且子问题的答案组合起来能回答主问题。
+Core logic: a complex problem = a combination of several simpler problems. Find the right decomposition such that each sub-question can be answered independently, and the answers to the sub-questions combine to answer the main question.
 
-### 分解原则
+### Decomposition Principles
 
-- **MECE**: 子问题互斥且穷尽（Mutually Exclusive, Collectively Exhaustive）
-- **独立性**: 每个子问题可以独立设计研究方案
-- **覆盖性**: 所有子问题的答案组合 = 主问题的答案
-- **可操作性**: 每个子问题都是可研究的（不是哲学问题）
+- **MECE**: sub-questions are mutually exclusive and collectively exhaustive
+- **Independence**: each sub-question can have its research design developed independently
+- **Coverage**: the combined answers of all sub-questions = the answer to the main question
+- **Operationalizability**: each sub-question is researchable (not a philosophical question)
 
-### 分解维度
+### Decomposition Dimensions
 
-- 按因果链: 前因 → 机制 → 结果
-- 按变量: 每个关键变量一个子问题
-- 按条件: 不同边界条件下的表现
-- 按层级: 宏观 → 中观 → 微观
-- 按时序: 短期 → 中期 → 长期效应
+- By causal chain: antecedent → mechanism → outcome
+- By variable: one sub-question per key variable
+- By condition: behavior under different boundary conditions
+- By level: macro → meso → micro
+- By time: short-term → mid-term → long-term effects
 
 ## Budget Gate
 
-| Tier | 子问题数 | 依赖分析 | 序列设计 |
+| Tier | Sub-questions | Dependency analysis | Sequence design |
 |------|---------|---------|---------|
-| S | ≥2 子问题 | 基本依赖识别 | 建议顺序 |
-| M | ≥3 子问题 | 依赖图 + 关键路径 | 最优序列 + 并行机会 |
-| L | ≥5 子问题 | 完整依赖图 + 循环检测 | 多路径方案 + 资源分配 |
+| S | ≥2 sub-questions | basic dependency identification | suggested order |
+| M | ≥3 sub-questions | dependency graph + critical path | optimal sequence + parallelization opportunities |
+| L | ≥5 sub-questions | full dependency graph + cycle detection | multi-path plan + resource allocation |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 分析主 RQ 的复杂度维度
-2. 选择分解策略（按因果/变量/条件/层级/时序）
-3. 生成子问题（sub-question-generation SOP）
-4. 验证 MECE 和覆盖性
-5. 映射依赖关系（dependency-mapping SOP）
-6. 设计回答顺序（answering-sequence-design SOP）
-7. 对每个子问题进行 FINER 检验
+1. Analyze the complexity dimensions of the main RQ
+2. Choose a decomposition strategy (by causality/variable/condition/level/time)
+3. Generate sub-questions (sub-question-generation SOP)
+4. Verify MECE and coverage
+5. Map dependencies (dependency-mapping SOP)
+6. Design the answering sequence (answering-sequence-design SOP)
+7. Run a FINER check on each sub-question
 
 ## context-checkpoint
 
-Strategy 完成后必须调用 context-checkpoint，记录:
-- 主 RQ 及其复杂度分析
-- 选择的分解策略
-- 子问题列表 + 独立性论证
-- 依赖图
-- 建议回答序列
+After the Strategy completes, you must call context-checkpoint and record:
+- The main RQ and its complexity analysis
+- The chosen decomposition strategy
+- The list of sub-questions + independence argument
+- The dependency graph
+- The suggested answering sequence
 
 <!-- BEGIN available-tables (generated) -->
 

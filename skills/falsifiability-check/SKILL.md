@@ -1,37 +1,37 @@
 ---
 name: falsifiability-check
-description: 'SOP: 检验假设是否满足可证伪性标准'
+description: 'SOP: check whether a hypothesis meets the falsifiability criterion'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 假设陈述（含 statement + variables + mechanism）
-output: 可证伪性判定 + falsification scenario + 修改建议（如不可证伪）
+input: 'Hypothesis statement (with statement + variables + mechanism)'
+output: 'Falsifiability verdict + falsification scenario + revision suggestions (if unfalsifiable)'
 dependencies:
   skills:
   - subagent-spawning
 ---
 
 # Falsifiability Check
-依据 Popper 可证伪性标准检验假设，确保每个假设都有明确的否定条件。
+Check hypotheses against Popper's falsifiability criterion, ensuring every hypothesis has an explicit refutation condition.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有至少 1 个假设陈述（含 statement）
-2. 假设涉及可观察的变量或现象
+Preconditions (all must hold before starting):
+1. At least 1 hypothesis statement exists (with statement)
+2. The hypothesis involves observable variables or phenomena
 
-不满足 → 停止，返回错误：假设陈述不完整。
+Not satisfied → stop and return an error: hypothesis statement is incomplete.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证假设陈述完整性
-2. 可观察预测推导：从假设推导出 ≥2 个具体可观察预测
-3. 否定预测构建：构建"如果假设错误，应该观察到什么"
-4. 可行性评估：否定预测在技术和伦理上是否可检验？
-5. 判定：可证伪 / 不可证伪 / 需修改
-6. 若不可证伪：提供具体修改建议使其可证伪
-7. 输出判定结果
+1. Pre-check: verify the completeness of the hypothesis statement
+2. Observable-prediction derivation: derive ≥2 specific observable predictions from the hypothesis
+3. Refutation-prediction construction: construct "what should be observed if the hypothesis is wrong"
+4. Feasibility assessment: is the refutation prediction testable technically and ethically?
+5. Verdict: falsifiable / not falsifiable / needs revision
+6. If not falsifiable: provide specific revision suggestions to make it falsifiable
+7. Output the verdict
 
 ## Output Format
 ```json

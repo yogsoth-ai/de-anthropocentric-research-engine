@@ -1,6 +1,6 @@
 ---
 name: deductive-hypothesis-generation
-description: 'Strategy: 从现有理论演绎推导假设'
+description: 'Strategy: deduce hypotheses from existing theory'
 version: 1.0.0
 category: hypothesis-formation
 type: strategy
@@ -24,60 +24,60 @@ dependencies:
 
 # Deductive Hypothesis Generation
 
-从现有理论演绎推导假设：在理论成熟领域，通过显式推理链将理论命题转化为具体的可测试预测。
+Deduce hypotheses from existing theory: in domains with mature theory, transform theoretical propositions into specific testable predictions through an explicit reasoning chain.
 
-## 适用场景
+## When to Use
 
-- 领域拥有成熟的基础理论（有 named theories、正式模型、或公认机制）
-- 研究 gap 表现为"理论预测与现实观察之间的偏差"
-- 目标是检验、扩展或限定已有理论的适用范围
-- 需要高度可辩护的假设（审稿人会追问理论依据）
+- The domain has mature foundational theory (named theories, formal models, or accepted mechanisms)
+- The research gap manifests as "a discrepancy between theoretical prediction and real-world observation"
+- The goal is to test, extend, or delimit the scope of an existing theory
+- Highly defensible hypotheses are needed (reviewers will press for theoretical justification)
 
-不适用：数据丰富但理论空白的新兴领域 → 改用 inductive-hypothesis-generation。
+Not applicable: emerging domains rich in data but lacking theory → use inductive-hypothesis-generation instead.
 
-## 思维框架
+## Thinking Framework
 
 **Theory → Mechanism → Variable Relationship → Testable Prediction**
 
-演绎的核心逻辑：
+The core logic of deduction:
 
-1. **Theory**：识别支撑研究问题的基础理论（命名理论、正式模型）
-2. **Mechanism**：从理论中提取因果机制（"X 通过 Z 影响 Y"的中间过程）
-3. **Variable Relationship**：将机制转化为变量间的方向性关系（正向/负向/调节/中介）
-4. **Testable Prediction**：将变量关系具体化为在特定条件下的可观测预测
+1. **Theory**: identify the foundational theory underpinning the research question (named theory, formal model)
+2. **Mechanism**: extract the causal mechanism from the theory (the intermediate process by which "X affects Y through Z")
+3. **Variable Relationship**: translate the mechanism into directional relationships among variables (positive/negative/moderating/mediating)
+4. **Testable Prediction**: concretize the variable relationship into an observable prediction under specific conditions
 
-每一步都必须可追溯：每个 prediction 能回溯到机制，每个机制能回溯到理论。这是演绎假设区别于猜测的核心。
+Every step must be traceable: each prediction traces back to a mechanism, each mechanism traces back to a theory. This is what distinguishes a deductive hypothesis from a guess.
 
-**常见陷阱**：
-- 理论引用流于表面（只提名字，不提具体命题）→ 必须引用理论的核心命题
-- 跳过机制直接从理论跳到预测 → 机制是演绎链的关键节点，不可省略
-- 假设范围过广（"在所有情境下"）→ 演绎必须说明边界条件
+**Common pitfalls**:
+- Theory citation that stays superficial (naming only, no specific propositions) → you must cite the theory's core propositions
+- Skipping the mechanism and jumping straight from theory to prediction → the mechanism is the key node of the deductive chain and cannot be omitted
+- Hypothesis scope too broad ("in all contexts") → deduction must state boundary conditions
 
 ## Budget Gate
 
-| Tier | 理论覆盖 | 机制提取 | 假设产出 | 可证伪性 |
+| Tier | Theory coverage | Mechanism extraction | Hypothesis output | Falsifiability |
 |------|---------|---------|---------|---------|
-| S | ≥2 个具名理论 | ≥3 个因果机制 | ≥2 个结构化假设 | 每个假设 1 个 falsification scenario |
-| M | ≥3 个具名理论 | ≥5 个因果机制 | ≥3 个结构化假设 | 每个假设 ≥1 scenario + boundary conditions |
-| L | ≥5 个具名理论 | ≥8 个因果机制 | ≥5 个结构化假设 | 完整 falsifiability audit + 竞争理论比较 |
+| S | ≥2 named theories | ≥3 causal mechanisms | ≥2 structured hypotheses | 1 falsification scenario per hypothesis |
+| M | ≥3 named theories | ≥5 causal mechanisms | ≥3 structured hypotheses | ≥1 scenario + boundary conditions per hypothesis |
+| L | ≥5 named theories | ≥8 causal mechanisms | ≥5 structured hypotheses | full falsifiability audit + competing-theory comparison |
 
-## 默认参考流
+## Default Reference Flow
 
-1. 调用 `theory-identification` SOP：扫描领域文献，列出与 gap 相关的具名理论及其核心命题
-2. 调用 `mechanism-extraction` SOP（via `theory-mechanism-extraction` tactic）：从每个理论中提取因果机制链
-3. 调用 `variable-identification` SOP：将机制中的构念（constructs）转化为可操作变量
-4. 调用 `relationship-specification` SOP：明确变量间方向性关系（含调节/中介结构）
-5. 调用 `boundary-condition-specification` SOP：识别理论适用的前提条件（群体、情境、时间范围等）
-6. 调用 `falsifiability-check` SOP（via `falsifiability-audit` tactic）：为每个假设生成 falsification scenario
-7. 调用 `operationalization` SOP：为关键变量提供测量方法草案
+1. Call the `theory-identification` SOP: scan the domain literature and list the named theories relevant to the gap and their core propositions
+2. Call the `mechanism-extraction` SOP (via the `theory-mechanism-extraction` tactic): extract causal mechanism chains from each theory
+3. Call the `variable-identification` SOP: translate the constructs in the mechanisms into operational variables
+4. Call the `relationship-specification` SOP: specify directional relationships among variables (including moderating/mediating structures)
+5. Call the `boundary-condition-specification` SOP: identify the preconditions under which the theory applies (population, context, time range, etc.)
+6. Call the `falsifiability-check` SOP (via the `falsifiability-audit` tactic): generate a falsification scenario for each hypothesis
+7. Call the `operationalization` SOP: provide draft measurement methods for the key variables
 
 ## context-checkpoint
 
-每轮结束后记录：
-- 已识别理论清单（名称、核心命题、来源）
-- 提取的机制列表（每条机制标注来源理论）
-- 当前假设草稿集（含变量关系 + 边界条件）
-- 可证伪性状态（已通过 / 待审查 / 不可证伪需修改）
+After each round, record:
+- The list of identified theories (name, core proposition, source)
+- The list of extracted mechanisms (each tagged with its source theory)
+- The current set of hypothesis drafts (including variable relationships + boundary conditions)
+- Falsifiability status (passed / pending review / unfalsifiable, needs revision)
 
 <!-- BEGIN available-tables (generated) -->
 
