@@ -1,12 +1,12 @@
 ---
 name: web-search
-description: 'Import SOP: 快速 web 扫描，发现 URL 和 snippet（来自 web-browsing）'
+description: 'Import SOP: quick web scan, discover URLs and snippets (from web-browsing)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/web-search/SKILL.md
 source_skill: web-search
-provides: 快速 web 搜索能力 — 发现相关 URL、snippet、初步信息
+provides: Quick web search capability — discover relevant URLs, snippets, preliminary information
 dependencies:
   sops:
   - web-search
@@ -15,26 +15,26 @@ execution: import
 
 # Web Search (Import)
 
-从 `web-browsing` 技能库导入的快速 web 搜索能力。
+Quick web search capability imported from the `web-browsing` skill library.
 
-## 用途
+## Purpose
 
-- 快速搜索理论框架、方法论文献
-- 发现相关 URL 和 snippet
-- 初步信息收集
+- Quickly search theoretical frameworks and methodology literature
+- Discover relevant URLs and snippets
+- Preliminary information gathering
 
-## 使用方式
+## How to Use
 
-直接调用 `web-browsing` 中的 `web-search` skill。该 skill 提供:
-- Brave Search API 调用
-- 结果过滤和排序
-- Snippet 提取
+Directly invoke the `web-search` skill in `web-browsing`. This skill provides:
+- Brave Search API calls
+- Result filtering and ranking
+- Snippet extraction
 
-## 何时使用
+## When to Use
 
-- 需要快速了解某个概念/框架/方法
-- 需要找到相关资源的 URL
-- 初步信息扫描（不需要深度阅读）
+- Need a quick understanding of a concept/framework/method
+- Need to find URLs for relevant resources
+- Preliminary information scan (no deep reading required)
 
 <!-- BEGIN available-tables (generated) -->
 

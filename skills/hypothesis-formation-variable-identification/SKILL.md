@@ -1,36 +1,36 @@
 ---
 name: variable-identification
-description: 'SOP: 识别变量及其在假设中的角色'
+description: 'SOP: identify variables and their roles within a hypothesis'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 机制描述（来自 mechanism-extraction 输出）
-output: 变量清单 + 角色标注 (IV/DV/mediator/moderator/control) + 操作化可能性评估
+input: Mechanism description (from mechanism-extraction output)
+output: 'Variable list + role annotation (IV/DV/mediator/moderator/control) + operationalizability assessment'
 dependencies:
   skills:
   - subagent-spawning
 ---
 
 # Variable Identification
-从机制描述中识别所有变量并标注其在假设结构中的角色。
+Identify all variables from a mechanism description and annotate their roles within the hypothesis structure.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 至少 1 条因果机制链已提供
-2. 机制链包含可识别的变量名称
+Preconditions (all must hold before starting):
+1. At least 1 causal mechanism chain has been provided
+2. The mechanism chain contains identifiable variable names
 
-不满足 → 停止，返回错误：机制描述不足以识别变量。
+Not met → stop, return error: mechanism description is insufficient to identify variables.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证机制链完整性
-2. 变量提取：从所有机制链中枚举全部变量（含隐含变量）
-3. 角色分类：为每个变量分配角色（IV/DV/mediator/moderator/control/confound）
-4. 去重合并：同一变量在不同机制中出现时合并，标注多重角色
-5. 操作化可能性评估：评估每个变量是否可被测量（high/medium/low/unclear）
-6. 输出结构化变量清单
+1. Precondition check: verify mechanism chain completeness
+2. Variable extraction: enumerate all variables from every mechanism chain (including implicit variables)
+3. Role classification: assign a role to each variable (IV/DV/mediator/moderator/control/confound)
+4. Deduplication and merging: when the same variable appears in different mechanisms, merge it and annotate multiple roles
+5. Operationalizability assessment: evaluate whether each variable can be measured (high/medium/low/unclear)
+6. Output a structured variable list
 
 ## Output Format
 ```json
@@ -45,4 +45,4 @@ dependencies:
   }
 ]
 ```
-至少识别 2 个变量（1 个 IV + 1 个 DV）。
+Identify at least 2 variables (1 IV + 1 DV).

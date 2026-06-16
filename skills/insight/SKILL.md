@@ -28,11 +28,11 @@ This campaign is a strategy book — CC reads, internalizes, and autonomously co
 
 | Signal | Strategy |
 |--------|----------|
-| 为什么存在、根因、5 Whys、鱼骨图、因果树 | → root-cause-drilling |
-| 谁受影响、利益相关者、JTBD、CSH 12 问 | → stakeholder-mapping |
-| 对立力量、张力、极性、冲突蒸发 | → tension-mining |
-| 如何框定问题、HMW、抽象阶梯、苏格拉底 | → question-reformulation |
-| 隐含假设、脆弱性、前提审计、红队 | → assumption-audit |
+| why it exists, root cause, 5 Whys, fishbone diagram, causal tree | → root-cause-drilling |
+| who is affected, stakeholders, JTBD, CSH 12 questions | → stakeholder-mapping |
+| opposing forces, tensions, polarities, evaporating cloud | → tension-mining |
+| how to frame the problem, HMW, abstraction ladder, Socratic | → question-reformulation |
+| hidden assumptions, fragility, premise audit, red team | → assumption-audit |
 
 ## Available Tactics
 

@@ -37,11 +37,11 @@ ENTRY.md (this file)
 
 | Signal | Campaign |
 |--------|----------|
-| 文献调研、综述、论文搜索、PRISMA、snowball | → literature-survey |
-| 专利分析、prior art、白空间、权利要求、IPC | → patent-mining |
-| benchmark 分析、评估方法、metric 缺陷、排行榜、饱和度 | → benchmark-archaeology |
-| 跨研究统计综合、效应量、异质性、发表偏倚、GRADE | → meta-analysis |
-| SOTA 整理、性能对比、baseline 复现、进展曲线 | → baseline-establishment |
+| literature review, survey, paper search, PRISMA, snowball | → literature-survey |
+| patent analysis, prior art, white space, claims, IPC | → patent-mining |
+| benchmark analysis, evaluation methods, metric flaws, leaderboards, saturation | → benchmark-archaeology |
+| cross-study statistical synthesis, effect size, heterogeneity, publication bias, GRADE | → meta-analysis |
+| SOTA compilation, performance comparison, baseline reproduction, progress curves | → baseline-establishment |
 
 ## Multi-Campaign Orchestration
 

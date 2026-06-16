@@ -24,11 +24,11 @@ Autonomous literature survey engine. Five research paradigms, each a self-contai
 
 | Signal | Strategy |
 |--------|----------|
-| 新领域全景映射、broad overview、field mapping | → scoping-survey |
-| 穷尽式覆盖、PRISMA、systematic review | → systematic-survey |
-| 精确子问题、specific mechanism、deep dive | → deep-survey |
-| 理论驱动、argument building、narrative | → narrative-review |
-| 种子论文、citation chain、lineage tracing | → snowball |
+| panoramic mapping of a new field, broad overview, field mapping | → scoping-survey |
+| exhaustive coverage, PRISMA, systematic review | → systematic-survey |
+| precise sub-question, specific mechanism, deep dive | → deep-survey |
+| theory-driven, argument building, narrative | → narrative-review |
+| seed papers, citation chain, lineage tracing | → snowball |
 
 ## Manifest
 

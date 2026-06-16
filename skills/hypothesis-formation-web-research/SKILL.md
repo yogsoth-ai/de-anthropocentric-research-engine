@@ -1,12 +1,12 @@
 ---
 name: web-research
-description: 'Import SOP: 深度 web 研究，全文抓取分析（来自 web-browsing）'
+description: 'Import SOP: deep web research, full-text fetching and analysis (from web-browsing)'
 version: 1.0.0
 category: hypothesis-formation
 type: import-sop
 source: skills/web-research/SKILL.md
 source_skill: web-research
-provides: 深度 web 研究能力 — 全文抓取、内容分析、信息综合
+provides: Deep web research capability — full-text fetching, content analysis, information synthesis
 dependencies:
   sops:
   - web-research
@@ -15,26 +15,26 @@ execution: import
 
 # Web Research (Import)
 
-从 `web-browsing` 技能库导入的深度 web 研究能力。
+Deep web research capability imported from the `web-browsing` skill library.
 
-## 用途
+## Purpose
 
-- 深度研究某个理论框架的细节
-- 全文抓取和分析网页内容
-- 综合多个来源的信息
+- Deeply research the details of a theoretical framework
+- Fetch and analyze full-text web page content
+- Synthesize information from multiple sources
 
-## 使用方式
+## How to Use
 
-直接调用 `web-browsing` 中的 `web-research` skill。该 skill 提供:
-- Brave Search + Apify 全文抓取
-- 内容分析和信息提取
-- 多来源综合
+Directly invoke the `web-research` skill in `web-browsing`. This skill provides:
+- Brave Search + Apify full-text fetching
+- Content analysis and information extraction
+- Multi-source synthesis
 
-## 何时使用
+## When to Use
 
-- 需要深入了解某个框架/方法的完整细节
-- 需要从网页中提取结构化信息
-- 需要综合多个来源形成完整理解
+- Need a thorough understanding of the complete details of a framework/method
+- Need to extract structured information from web pages
+- Need to synthesize multiple sources into a complete understanding
 
 <!-- BEGIN available-tables (generated) -->
 
