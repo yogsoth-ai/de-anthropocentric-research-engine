@@ -61,7 +61,7 @@ DARE's architecture follows a military command hierarchy — not because researc
 ```bash
 Campaign (45+)  →  "Take that hill"         →  WHAT to research (full research stage)
 Strategy (200+) →  "Flank from the east"    →  WHEN and WHY (iteration loops, stopping conditions)
-Tactic (130+)   →  "Squad A cover, B move"  →  HOW to combine (orchestrates multiple SOPs)
+Tactic (120+)   →  "Squad A cover, B move"  →  HOW to combine (orchestrates multiple SOPs)
 SOP (500+)      →  "Fire, reload, advance"  →  HOW to execute (single-responsibility operations)
 ```
 
