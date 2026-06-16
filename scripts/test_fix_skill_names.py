@@ -18,3 +18,35 @@ def test_name_field_ignores_body():
 
 def test_name_field_none_when_no_frontmatter():
     assert m.name_field("no frontmatter here\n") is None
+
+
+def test_needs_fix():
+    assert m.needs_fix("convergence-web-search",
+                       "---\nname: web-search\n---\n") is True
+    assert m.needs_fix("web-search",
+                       "---\nname: web-search\n---\n") is False
+    assert m.needs_fix("x", "---\ndescription: y\n---\n") is False  # no name -> skip
+
+
+def test_fix_name_line_prefix_case():
+    t = "---\nname: web-search\ndescription: keep me\n---\n# body\n"
+    out = m.fix_name_line(t, "convergence-web-search")
+    assert "name: convergence-web-search\n" in out
+    assert "description: keep me\n" in out  # other lines intact
+    assert "name: web-search\n" not in out
+
+
+def test_fix_name_line_titlecase_case():
+    t = "---\nname: Web Search\n---\n"
+    assert m.fix_name_line(t, "web-search") == "---\nname: web-search\n---\n"
+
+
+def test_fix_name_line_idempotent():
+    t = "---\nname: web-search\ndescription: x\n---\n"
+    assert m.fix_name_line(t, "web-search") == t
+
+
+def test_fix_name_line_only_touches_name():
+    t = '---\nname: Web Search\ndescription: "a: b"\nversion: 1.0.0\n---\nbody\n'
+    out = m.fix_name_line(t, "web-search")
+    assert out == '---\nname: web-search\ndescription: "a: b"\nversion: 1.0.0\n---\nbody\n'

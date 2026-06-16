@@ -18,3 +18,31 @@ def name_field(text: str) -> str | None:
         if s.startswith("name:"):
             return s.split(":", 1)[1].strip().strip('"').strip("'")
     return None
+
+
+def needs_fix(folder_name: str, text: str) -> bool:
+    """True when a frontmatter name exists and differs from the folder name."""
+    nm = name_field(text)
+    return nm is not None and nm != folder_name
+
+
+def fix_name_line(text: str, folder_name: str) -> str:
+    """Rewrite the frontmatter name: line to name: <folder_name>, else unchanged."""
+    if not text.startswith("---"):
+        return text
+    end = text.find("\n---", 3)
+    fm_len = end if end != -1 else len(text)
+    out_lines: list[str] = []
+    replaced = False
+    offset = 0  # running byte offset of the current line within text
+    for ln in text.splitlines(keepends=True):
+        within_frontmatter = offset < fm_len
+        if not replaced and within_frontmatter and ln.lstrip().startswith("name:"):
+            indent = ln[:len(ln) - len(ln.lstrip())]
+            newline = "\n" if ln.endswith("\n") else ""
+            out_lines.append(f"{indent}name: {folder_name}{newline}")
+            replaced = True
+        else:
+            out_lines.append(ln)
+        offset += len(ln)
+    return "".join(out_lines)
