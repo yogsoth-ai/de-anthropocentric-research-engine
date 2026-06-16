@@ -25,11 +25,11 @@ Question the problem itself — are we solving the right problem?
 
 | Signal | Strategy |
 |--------|----------|
-| 主导观念、范式锁定、横向思维、逃逸 | → dominant-idea-escape |
-| 多视角、CATWOE、重构矩阵、Rich Pictures | → multi-perspective-reframing |
-| 双环学习、支配变量、辩证探究 | → dialectical-reformulation |
-| 邪恶问题、Rittel 标准、复杂性、Cynefin | → wickedness-assessment |
-| 正向偏差、欣赏式探询、优势视角 | → appreciative-reframing |
+| Dominant idea, paradigm lock-in, lateral thinking, escape | → dominant-idea-escape |
+| Multiple perspectives, CATWOE, reframing matrix, Rich Pictures | → multi-perspective-reframing |
+| Double-loop learning, governing variables, dialectical inquiry | → dialectical-reformulation |
+| Wicked problems, Rittel's criteria, complexity, Cynefin | → wickedness-assessment |
+| Positive deviance, Appreciative Inquiry, asset-based perspective | → appreciative-reframing |
 
 ## Available Tactics
 

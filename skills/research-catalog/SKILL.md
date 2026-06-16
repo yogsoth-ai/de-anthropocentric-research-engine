@@ -27,7 +27,7 @@ Universal convergence engine: turns an unstructured candidate set into ranked se
 
 Creative generation engine: transforms hypotheses and research questions into diverse solution spaces. Ten parallel creativity campaigns spanning structural, analogical, destructive, and combinatorial methods.
 
-**Reach for it when:** SCAMPER / TRIZ / 组件手术 / 结构变换 / 功能裁剪 → structural-deconstruction; 跨域 / 类比迁移 / bisociation / 随机刺激 → cross-domain-discovery; 假设否定 / 反向头脑风暴 / 最差方法 → assumption-destruction; 仿生 / 生物类比 / BioTRIZ → biomimicry; 类比 / 隐喻 / 远足法 → synectics; 形态分析 / Zwicky box / 设计空间 → morphological-exploration; PO / 横向思维 / 概念扇 → lateral-thinking; 概念融合 / blending / 涌现 → combinatorial-creativity; 视角切换 / 六帽 / 角色扮演 → perspective-forcing; 穷举 / 覆盖分析 / 方法矩阵 → systematic-enumeration.
+**Reach for it when:** SCAMPER / TRIZ / component surgery / structural transformation / function trimming → structural-deconstruction; cross-domain / analogical transfer / bisociation / random stimulus → cross-domain-discovery; assumption negation / reverse brainstorming / worst method → assumption-destruction; biomimicry / biological analogy / BioTRIZ → biomimicry; analogy / metaphor / excursion method → synectics; morphological analysis / Zwicky box / design space → morphological-exploration; PO / lateral thinking / concept fan → lateral-thinking; concept blending / blending / emergence → combinatorial-creativity; perspective switching / six hats / role-play → perspective-forcing; enumeration / coverage analysis / method matrix → systematic-enumeration.
 
 **Skills:** see `references/creative-ideation.md`
 
@@ -35,7 +35,7 @@ Creative generation engine: transforms hypotheses and research questions into di
 
 Deep insight engine: from surface phenomena to root causes, boundaries, assumptions, and the problem itself. Five campaigns — gap-analysis, insight, boundary-analysis, sensitivity-analysis, problem-reformulation.
 
-**Reach for it when:** gap 识别 / 空白分类 / 证据地图 / 优先级排序 → gap-analysis; 根因分析 / 利益相关者 / 张力 / HMW / 5 Whys → insight; 有效性边界 / 方法失效 / 鲁棒性 / 分布偏移 → boundary-analysis; 假设排序 / 敏感性 / 方差分解 / 关键路径 → sensitivity-analysis; 重新定义问题 / 主导观念 / 多视角 / 邪恶问题 → problem-reformulation.
+**Reach for it when:** gap identification / white-space classification / evidence map / prioritization → gap-analysis; root-cause analysis / stakeholders / tensions / HMW / 5 Whys → insight; validity boundaries / method failure / robustness / distribution shift → boundary-analysis; assumption ranking / sensitivity / variance decomposition / critical path → sensitivity-analysis; redefining the problem / dominant ideas / multiple perspectives / wicked problems → problem-reformulation.
 
 **Skills:** see `references/deep-insight.md`
 
@@ -51,7 +51,7 @@ Experiment execution engine: from validated hypotheses/approaches through experi
 
 Goal-driven hypothesis & research-question formation engine: turns upstream gaps and insights into testable hypotheses and precise research questions. Three campaigns — gap-prioritization, hypothesis-formulation, research-question.
 
-**Reach for it when:** gap 排序 / 优先级 / 哪个值得做 / 多维评分 / portfolio → gap-prioritization; 假设生成 / 理论推导 / 可证伪 / If-then / 变量 / 机制 / competing hypothesis → hypothesis-formulation; 研究问题 / PICO / SPIDER / FINER / scope / 子问题分解 / success criteria → research-question.
+**Reach for it when:** gap ranking / prioritization / which is worth doing / multi-dimensional scoring / portfolio → gap-prioritization; hypothesis generation / theoretical derivation / falsifiability / If-then / variables / mechanisms / competing hypothesis → hypothesis-formulation; research question / PICO / SPIDER / FINER / scope / sub-question decomposition / success criteria → research-question.
 
 **Skills:** see `references/hypothesis-formation.md`
 
@@ -59,7 +59,7 @@ Goal-driven hypothesis & research-question formation engine: turns upstream gaps
 
 Systematic research-knowledge acquisition engine: academic literature, patent landscapes, benchmark evaluations, cross-study statistical synthesis, and SOTA baselines. Five campaigns — literature-survey, patent-mining, benchmark-archaeology, meta-analysis, baseline-establishment.
 
-**Reach for it when:** 文献调研 / 综述 / 论文搜索 / PRISMA / snowball → literature-survey; 专利分析 / prior art / 白空间 / 权利要求 / IPC → patent-mining; benchmark 分析 / 评估方法 / metric 缺陷 / 排行榜 / 饱和度 → benchmark-archaeology; 跨研究统计综合 / 效应量 / 异质性 / 发表偏倚 / GRADE → meta-analysis; SOTA 整理 / 性能对比 / baseline 复现 / 进展曲线 → baseline-establishment.
+**Reach for it when:** literature review / survey / paper search / PRISMA / snowball → literature-survey; patent analysis / prior art / white space / claims / IPC → patent-mining; benchmark analysis / evaluation methods / metric flaws / leaderboards / saturation → benchmark-archaeology; cross-study statistical synthesis / effect size / heterogeneity / publication bias / GRADE → meta-analysis; SOTA compilation / performance comparison / baseline reproduction / progress curves → baseline-establishment.
 
 **Skills:** see `references/knowledge-acquisition.md`
 

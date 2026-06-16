@@ -1,36 +1,36 @@
 ---
 name: plausibility-ranking
-description: 'SOP: 对候选解释按合理性进行多维度加权排序'
+description: 'SOP: rank candidate explanations by plausibility using multi-dimensional weighted scoring'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: hypothesis-formulation
-input: 候选解释列表 + 相关证据（来自 explanation-generation 输出）
-output: 合理性排序列表 + 各维度评分 + 排序理由
+input: 'Candidate explanation list + relevant evidence (from explanation-generation output)'
+output: 'Plausibility-ranked list + per-dimension scores + ranking rationale'
 dependencies:
   skills:
   - subagent-spawning
 ---
 
 # Plausibility Ranking
-对候选解释从证据一致性、简约性、解释范围三个维度评分，加权排序，产出优先级列表。
+Score candidate explanations on three dimensions — evidence consistency, parsimony, and explanatory scope — then weight and rank them to produce a priority list.
 
 ## HARD-GATE
 <HARD-GATE>
-前置条件（全部满足才能开始）:
-1. 已有 ≥2 个候选解释（来自 explanation-generation）
-2. 每个解释有 mechanism 和 predictions 字段
+Preconditions (all must hold before starting):
+1. ≥2 candidate explanations exist (from explanation-generation)
+2. Each explanation has mechanism and predictions fields
 
-不满足 → 停止，返回错误：需要至少 2 个候选解释才能排序。
+Not satisfied → stop, return error: at least 2 candidate explanations are needed to rank.
 </HARD-GATE>
 
 ## Pipeline
-1. 前置检查：验证候选解释列表完整性
-2. 证据一致性评分（0-10）：与已知证据的符合程度
-3. 简约性评分（0-10）：解释所需假设数量（越少越高分）
-4. 解释范围评分（0-10）：能解释多少相关现象（不仅仅是当前异常）
-5. 加权排序：默认权重 0.5/0.3/0.2（证据/简约/范围），可调整
-6. 输出排序列表 + 理由
+1. Precondition check: verify completeness of the candidate explanation list
+2. Evidence-consistency score (0-10): degree of agreement with known evidence
+3. Parsimony score (0-10): number of assumptions the explanation requires (fewer = higher score)
+4. Explanatory-scope score (0-10): how many related phenomena it can explain (not just the current anomaly)
+5. Weighted ranking: default weights 0.5/0.3/0.2 (evidence/parsimony/scope), adjustable
+6. Output ranked list + rationale
 
 ## Output Format
 ```json

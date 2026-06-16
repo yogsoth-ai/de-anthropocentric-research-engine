@@ -1,13 +1,12 @@
 ---
 name: priority-synthesis
-description: 'SOP: 综合所有评分数据产出最终 gap 优先级列表及攻击路径建议'
+description: 'SOP: synthesize all scoring data into a final gap priority list and attack-path suggestions'
 version: 1.0.0
 category: hypothesis-formation
 type: sop
 campaign: gap-prioritization
-input: 全部评分数据（ImportanceScore[] + FeasibilityScore[] + NoveltyScore[] + ImpactScore[]）+
-  AHP 权重向量
-output: PriorityList — 有序 gap 列表、加权综合分、前 N 个攻击路径建议
+input: 'All scoring data (ImportanceScore[] + FeasibilityScore[] + NoveltyScore[] + ImpactScore[]) + AHP weight vector'
+output: 'PriorityList — ordered gap list, weighted composite scores, attack-path suggestions for the top N'
 dependencies:
   skills:
   - subagent-spawning
@@ -15,25 +14,25 @@ dependencies:
 
 # Priority Synthesis
 
-综合所有评分数据产出最终 gap 优先级列表及攻击路径建议。
+Synthesize all scoring data into a final gap priority list and attack-path suggestions.
 
 ## HARD-GATE
 
 <HARD-GATE>
-- 输入必须包含所有 gap 的全部评分维度（importance / feasibility / novelty / impact）
-- 权重向量必须归一化（和为 1.0，允许 ±0.001 误差）
-- 输出 priority_list 按综合分降序排列，不得有并列（若分数相同则按 feasibility 子分排序）
-- 前 N 个 gap（N = min(3, total_gaps)）必须附带攻击路径建议
+- Input must contain all scoring dimensions for every gap (importance / feasibility / novelty / impact)
+- The weight vector must be normalized (sum to 1.0, ±0.001 tolerance allowed)
+- The output priority_list is sorted by composite score in descending order, with no ties (if scores are equal, sort by the feasibility sub-score)
+- The top N gaps (N = min(3, total_gaps)) must include attack-path suggestions
 </HARD-GATE>
 
 ## Pipeline
 
-1. **前置检查**: 验证所有 gap 的评分数据完整性；验证权重向量归一化
-2. **加权汇总**: 对每个 gap，用 AHP 权重对四维评分加权求和得到综合分
-3. **排序**: 按综合分降序排列；同分则按 feasibility 子分排序
-4. **前 N 名攻击路径建议**: 对排名前 N 的 gap，结合其优势维度和 novelty 的 differentiation_directions，生成具体攻击路径建议（方法选择、数据来源、预期突破点）
-5. **整体分析**: 输出分数分布统计、维度贡献分析
-6. **输出**: 返回 PriorityList 对象
+1. **Precondition check**: verify completeness of the scoring data for every gap; verify the weight vector is normalized
+2. **Weighted aggregation**: for each gap, use the AHP weights to compute a weighted sum of the four dimension scores into a composite score
+3. **Sorting**: sort by composite score descending; on ties, sort by the feasibility sub-score
+4. **Top-N attack-path suggestions**: for the top N gaps, combine their strongest dimensions with novelty's differentiation_directions to generate concrete attack-path suggestions (method choice, data sources, expected breakthrough point)
+5. **Overall analysis**: output score-distribution statistics and dimension-contribution analysis
+6. **Output**: return the PriorityList object
 
 ## Output Format
 
@@ -52,10 +51,10 @@ dependencies:
         "impact": 4.2
       },
       "attack_path": {
-        "recommended_approach": "方法建议（1-2句）",
-        "data_sources": ["数据来源1", "数据来源2"],
-        "expected_breakthrough": "预期突破点（1句）",
-        "estimated_timeline": "预估时间框架"
+        "recommended_approach": "Method suggestion (1-2 sentences)",
+        "data_sources": ["Data source 1", "Data source 2"],
+        "expected_breakthrough": "Expected breakthrough point (1 sentence)",
+        "estimated_timeline": "Estimated timeframe"
       }
     }
   ],
@@ -65,6 +64,6 @@ dependencies:
     "mean_score": 3.3,
     "top_dimension": "importance"
   },
-  "synthesis_notes": "综合分析说明（3-5句）"
+  "synthesis_notes": "Overall analysis notes (3-5 sentences)"
 }
 ```
