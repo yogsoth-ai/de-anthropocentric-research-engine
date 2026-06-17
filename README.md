@@ -9,7 +9,7 @@
 
 </div>
 
-# De-Anthropocentric Research Engine
+# De-Anthropocentric Research Engine (DARE)
 
 *The complete research orchestration system for AI-native science.*
 
