@@ -113,7 +113,7 @@ Optional, no fixed order; the final leaf is always a sop.
 | --- | --- |
 | campaign-selection | Structured questioning SOP to determine which campaigns to include, emphasize, or skip. Used during spec generation. |
 | constraint-elicitation | Structured questioning SOP to identify practical constraints that shape the research spec. Used during spec generation. |
-| research-catalog | Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
+| research-catalog | Capability menu for the research engine. Lists the 10 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
 | scope-clarification | Structured questioning SOP to determine research boundaries, depth, and breadth. Used during spec generation. |
 | spec-self-review | Quality gate for Research Specs. Checks for placeholders, consistency, scope, ambiguity, context protocol, and quantification. Mandatory before user review. |
 

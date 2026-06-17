@@ -82,7 +82,7 @@ Optional, no fixed order; the final leaf is always a sop.
 | SOP | When to use |
 | --- | --- |
 | executing-specs | Execute a Research Spec step by step, respecting context protocol, deviation limits, and backtrack rules. Supports multi-session recovery. |
-| research-catalog | Capability menu for the research engine. Lists the 9 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
+| research-catalog | Capability menu for the research engine. Lists the 10 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
 | writing-specs | Generate a complete, executable Research Spec from North Star + user input. Strategy-level skill that orchestrates questioning, outline, and spec writing. |
 
 <!-- END available-tables (generated) -->
