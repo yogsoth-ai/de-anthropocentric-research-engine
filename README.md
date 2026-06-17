@@ -317,7 +317,27 @@ Plus the infrastructure that every package draws on:
    Copy-Item -Recurse skills\* .claude\skills\
    ```
 
-4. Invoke the entry point:
+4. Install the required external dependencies. Two packages call skills that
+   live outside this repo — install them before running those packages:
+
+   - **experiment-execution** drives experiments through the `superpowers` and
+     `ponytail` Claude Code plugins. Install both via the plugin marketplace:
+
+     ```
+     /plugin marketplace add anthropics/claude-plugins-official
+     /plugin install superpowers
+     /plugin marketplace add DietrichGebert/ponytail
+     /plugin install ponytail
+     ```
+
+   - **ara-from-context** compiles research into an ARA using the ARA
+     `compiler` + `rigor-reviewer` skills:
+
+     ```bash
+     npx @ara-commons/ara-skills
+     ```
+
+5. Invoke the entry point:
 
    ```bash
    /de-anthropocentric-research-engine
