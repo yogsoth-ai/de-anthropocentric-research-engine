@@ -1,0 +1,12 @@
+{
+  "name": "ara-from-context",
+  "nodes": [
+    {"id": "ara-from-context", "layer": "campaign", "desc": "Compile a context/ research record into an ARA (Agent-Native Research Artifact) and run a Level-2 epistemic review — no LaTeX, no narrative paper"},
+    {"id": "context-review", "layer": "tactic", "desc": "Review a context/ directory — sort material into ARA types, locate and align the north-star, and produce a feeding plan for the compiler"},
+    {"id": "compile-and-review", "layer": "tactic", "desc": "Compile the feeding plan into an ARA via the external compiler, then run Level-2 rigor review over it"},
+    {"id": "context-exploring", "layer": "sop", "desc": "Read context/INDEX.md and sort the whole directory into three ARA material types (report line, process line, images), locate the north-star file, and draft a feeding plan for the ARA compiler"},
+    {"id": "north-star-align", "layer": "sop", "desc": "Deep-read the original north-star context, distill this ARA's overall direction, and align it with the user via the reused present-and-ask / present-candidates dialogue SOPs"},
+    {"id": "ara-compile", "layer": "sop", "desc": "Turn the feeding plan into the compiler's $ARGUMENTS and run the external ARA compiler once inline to produce ../ara/"},
+    {"id": "ara-rigor-review", "layer": "sop", "desc": "Run the external ARA rigor-reviewer (Seal Level 2, six-dimension semantic review) over ../ara/ and pass its level2_report.json to the user"}
+  ]
+}
