@@ -23,7 +23,7 @@
 
 DARE is not a tool that helps you do research. It *is* the researcher. You set the direction — DARE searches, reads, discovers gaps, generates hypotheses, stress-tests them, designs experiments, and produces executable research specs. Autonomously. Iteratively. Without asking for permission.
 
-This repository is the **single-clone distribution** of the entire [Yogsoth AI](https://github.com/yogsoth-ai) research ecosystem: 900+ pure-markdown skills organized as **9 freely-composable research packages**, unified under one orchestrator. The packages are fully self-contained — every skill declares its dependencies inline, with no external imports — so one clone gets everything. The ecosystem also includes custom MCP servers ([semantic-scholar-mcp](https://github.com/yogsoth-ai/semantic-scholar-mcp), [wiki-vault](https://github.com/yogsoth-ai/wiki-vault)) published as npm packages — this repo declares them as dependencies so `npm install` pulls everything you need.
+This repository is the **single-clone distribution** of the entire [Yogsoth AI](https://github.com/yogsoth-ai) research ecosystem: 900+ pure-markdown skills organized as **10 freely-composable research packages**, unified under one orchestrator. The packages are fully self-contained — every skill declares its dependencies inline, with no external imports — so one clone gets everything. The ecosystem also includes custom MCP servers ([semantic-scholar-mcp](https://github.com/yogsoth-ai/semantic-scholar-mcp), [wiki-vault](https://github.com/yogsoth-ai/wiki-vault)) published as npm packages — this repo declares them as dependencies so `npm install` pulls everything you need.
 
 ---
 
@@ -67,7 +67,7 @@ SOP (500+)      →  "Fire, reload, advance"  →  HOW to execute (single-respon
 
 Each layer has a single concern and calls only the layer directly below it. A Strategy never touches MCP tools directly; a Tactic never decides research direction. This strict layering means every component is independently testable, replaceable, and composable.
 
-**Campaigns** are the top-level research phases — north-star-crystallization, knowledge-acquisition, deep-insight, hypothesis-formation, creative-ideation, convergence, stress-test, experiment-execution, knowledge-structuring. They are freely composed (no fixed order); each campaign owns a complete research phase and defines its own completion criteria, backtrack conditions, and context protocol.
+**Campaigns** are the top-level research phases — north-star-crystallization, knowledge-acquisition, deep-insight, hypothesis-formation, creative-ideation, convergence, stress-test, experiment-execution, knowledge-structuring, ara-from-context. They are freely composed (no fixed order); each campaign owns a complete research phase and defines its own completion criteria, backtrack conditions, and context protocol.
 
 **Strategies** are the iteration engines within campaigns. A literature survey strategy manages the search-read-reflect loop; a gap analysis strategy manages coverage scoring and saturation detection. Strategies hold state (ledgers, budgets) and decide when to stop.
 
@@ -85,7 +85,7 @@ DARE is not a pipeline. It is an arsenal — a strategy book that the AI reads, 
 
 In a pipeline system, the workflow is hardcoded: `literature → gap → hypothesis → experiment`. The agent has no say in the order, cannot skip stages, and cannot go back. If the experiment phase reveals that the literature review missed a critical subfield, the system has no mechanism to return and fix it.
 
-In DARE, there is no prescribed order. The 9 research packages are freely-composable, self-contained engines; CC reads the `research-catalog` after the direction is crystallized and decides which packages to invoke, in what sequence, and whether to loop back — driven by the current research state, not a fixed lifecycle. The Research Spec captures that chosen composition along with *backtrack conditions* — explicit rules like "if stress-test invalidates >50% of hypotheses, return to hypothesis-formation." The executing agent has full cross-package routing authority: it reads the spec, assesses the current state, and decides which package to invoke next, which strategies within it to combine, and when the current path has failed hard enough to warrant retreat.
+In DARE, there is no prescribed order. The 10 research packages are freely-composable, self-contained engines; CC reads the `research-catalog` after the direction is crystallized and decides which packages to invoke, in what sequence, and whether to loop back — driven by the current research state, not a fixed lifecycle. The Research Spec captures that chosen composition along with *backtrack conditions* — explicit rules like "if stress-test invalidates >50% of hypotheses, return to hypothesis-formation." The executing agent has full cross-package routing authority: it reads the spec, assesses the current state, and decides which package to invoke next, which strategies within it to combine, and when the current path has failed hard enough to warrant retreat.
 
 Within each campaign, the agent faces not one method but many. A gap-analysis campaign offers 15+ detection methods (coverage mapping, white-space identification, boundary unfolding, niche analysis...). A creative-ideation campaign offers 31+ generation techniques (SCAMPER, TRIZ, biomimicry, morphological analysis, concept blending...). The agent selects and combines methods based on the research context — not because "more is better," but because different research problems demand different tools, and a system locked to one approach per phase cannot adapt.
 
@@ -120,13 +120,13 @@ No special "resume" command. The spec's checkbox state IS the progress tracker.
 
 ## 🏗️ Architecture (v3.1)
 
-DARE v3.1 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **9 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
+DARE v3.1 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **10 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
 
 This is a deliberate design choice. Skills are infinitely composable, require zero deployment infrastructure, and can be modified by editing a text file. The tradeoff is that execution depends entirely on CC's ability to follow complex multi-step instructions — which, as of 2026, is more than sufficient for research orchestration.
 
 ### The Control Plane: 8 Orchestrator Skills
 
-The orchestrator layer (the `engine-core` package) sits above the 9 research packages. It does not conduct research — it manages the lifecycle of research campaigns and decides which packages to compose:
+The orchestrator layer (the `engine-core` package) sits above the 10 research packages. It does not conduct research — it manages the lifecycle of research campaigns and decides which packages to compose:
 
 ```bash
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -155,7 +155,7 @@ The orchestrator layer (the `engine-core` package) sits above the 9 research pac
 
 ### The Four-Layer Hierarchy
 
-Inside every package, the skills are organized into exactly four layers. The rule is absolute: each layer calls only the layer directly below it. No exceptions. This same four-layer discipline repeats within each of the 9 packages — the layers below aggregate the counts across all packages.
+Inside every package, the skills are organized into exactly four layers. The rule is absolute: each layer calls only the layer directly below it. No exceptions. This same four-layer discipline repeats within each of the 10 packages — the layers below aggregate the counts across all packages.
 
 ```bash
 ┌───────────────────────────────────────────────────────────────────────────┐
@@ -165,6 +165,7 @@ Inside every package, the skills are organized into exactly four layers. The rul
 │  north-star-crystallization · knowledge-acquisition · deep-insight        │
 │  hypothesis-formation · creative-ideation · convergence                   │
 │  stress-test · experiment-execution · knowledge-structuring               │
+│  ara-from-context                                                         │
 ├───────────────────────────────────────────────────────────────────────────┤
 │  STRATEGY (200+)                                                          │
 │  Iteration engines with state management and stopping conditions          │
@@ -229,8 +230,8 @@ de-anthropocentric-research-engine/
 │   ├── campaign-selection/          # SOP: pick which packages to compose
 │   ├── constraint-elicitation/      # SOP: surface hidden constraints
 │   ├── research-catalog/            # Capability menu (strategy book)
-│   │   └── references/              # One skill table per package (9 files)
-│   └── [890+ more skills]           # The 9 self-contained research packages
+│   │   └── references/              # One skill table per package (10 files)
+│   └── [890+ more skills]           # The 10 self-contained research packages
 ├── context/                         # Session context files (gitignored at runtime)
 │   └── INDEX.md                     # Context file registry
 ├── tests/
@@ -256,7 +257,7 @@ de-anthropocentric-research-engine/
 
 ### 📊 Skill Distribution by Package
 
-The 9 freely-composable research packages, each a self-contained 4-layer engine (campaign → strategy → tactic → SOP):
+The 10 freely-composable research packages, each a self-contained 4-layer engine (campaign → strategy → tactic → SOP):
 
 | Package | Skills | Key Capabilities |
 | ------- | ------ | ---------------- |
@@ -269,6 +270,7 @@ The 9 freely-composable research packages, each a self-contained 4-layer engine 
 | hypothesis-formation | ~70 | Gap prioritization, abductive/inductive/deductive generation, research questions |
 | knowledge-structuring | ~70 | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault, inspired by Karpathy's [llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)) |
 | north-star-crystallization | ~30 | Cold/warm/hot start, direction narrowing, North Star synthesis |
+| ara-from-context | 7 | Compile a completed context/ research record into an ARA (4-layer agent-native artifact) + Level-2 epistemic review. Requires external compiler/rigor-reviewer (`npx @ara-commons/ara-skills`) |
 
 Plus the infrastructure that every package draws on:
 
