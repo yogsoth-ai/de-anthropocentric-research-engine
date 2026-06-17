@@ -15,7 +15,7 @@
 
 - [What It Does](#-what-it-does)
 - [Design Philosophy](#-design-philosophy)
-- [Architecture (v3.1)](#️-architecture-v31)
+- [Architecture (v3.2)](#️-architecture-v32)
 - [Quick Start](#-quick-start)
 - [Configuration](#️-configuration)
 - [Roadmap](#️-roadmap)
@@ -118,9 +118,9 @@ No special "resume" command. The spec's checkbox state IS the progress tracker.
 
 ---
 
-## 🏗️ Architecture (v3.1)
+## 🏗️ Architecture (v3.2)
 
-DARE v3.1 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **10 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
+DARE v3.2 is a pure-skill architecture. There is no application code, no runtime, no framework. The entire system is 900+ markdown files — each one a self-contained instruction set that Claude Code reads and executes. The "runtime" is CC itself. The "framework" is two orthogonal axes: **10 freely-composable packages** (the composition axis — pick and combine as the research demands) and, *within* each package, the **four-layer command hierarchy** that determines which skill can call which.
 
 This is a deliberate design choice. Skills are infinitely composable, require zero deployment infrastructure, and can be modified by editing a text file. The tradeoff is that execution depends entirely on CC's ability to follow complex multi-step instructions — which, as of 2026, is more than sufficient for research orchestration.
 
@@ -270,7 +270,7 @@ The 10 freely-composable research packages, each a self-contained 4-layer engine
 | hypothesis-formation | ~70 | Gap prioritization, abductive/inductive/deductive generation, research questions |
 | knowledge-structuring | ~70 | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault, inspired by Karpathy's [llm-wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)) |
 | north-star-crystallization | ~30 | Cold/warm/hot start, direction narrowing, North Star synthesis |
-| ara-from-context | 7 | Compile a completed context/ research record into an ARA (4-layer agent-native artifact) + Level-2 epistemic review. Requires external compiler/rigor-reviewer (`npx @ara-commons/ara-skills`) |
+| ara-from-context | 7 | Compile a completed context/ research record into an [ARA](https://github.com/ARA-Labs/Agent-Native-Research-Artifact) (4-layer agent-native artifact) + Level-2 epistemic review. Requires external compiler/rigor-reviewer (`npx @ara-commons/ara-skills`) |
 
 Plus the infrastructure that every package draws on:
 
@@ -323,7 +323,7 @@ Plus the infrastructure that every package draws on:
    - **experiment-execution** drives experiments through the `superpowers` and
      `ponytail` Claude Code plugins. Install both via the plugin marketplace:
 
-     ```
+     ```bash
      /plugin marketplace add anthropics/claude-plugins-official
      /plugin install superpowers
      /plugin marketplace add DietrichGebert/ponytail
