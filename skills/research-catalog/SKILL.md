@@ -1,6 +1,6 @@
 ---
 name: research-catalog
-description: Capability menu for the research engine. Lists the 9 freely-composable
+description: Capability menu for the research engine. Lists the 10 freely-composable
   research packages, what each does, when to reach for it, and a pointer to its full
   skill table. Read this after north-star crystallization to decide which packages
   to use — no fixed order. Also serves as the skill-index (capability map).
@@ -9,11 +9,19 @@ execution: reference
 
 # Research Catalog
 
-These 9 packages are freely-composable capability domains. There is **no prescribed order** and no pipeline. After your research direction is crystallized, decide which packages to invoke, in what sequence, and whether to loop back — based on the current research task. Each package is a self-contained research engine with its own campaigns, strategies, tactics, and SOPs.
+These 10 packages are freely-composable capability domains. There is **no prescribed order** and no pipeline. After your research direction is crystallized, decide which packages to invoke, in what sequence, and whether to loop back — based on the current research task. Each package is a self-contained research engine with its own campaigns, strategies, tactics, and SOPs.
 
 To use a package, read its reference table under `references/<package>.md` for the full skill list (sorted by layer, then name). Pick the package whose purpose matches your current need; open its table; select the skills you need.
 
-The 9 packages are listed alphabetically below — the order carries **no** sequencing meaning.
+The 10 packages are listed alphabetically below — the order carries **no** sequencing meaning.
+
+## ara-from-context
+
+Research-to-artifact compilation engine: compiles a completed `context/` research record into an ARA (Agent-Native Research Artifact) — a 4-layer machine-executable knowledge package (PAPER.md + logic/ + src/ + trace/ + evidence/), not a LaTeX narrative paper — then runs a Level-2 epistemic rigor review. One campaign — ara-from-context.
+
+**Reach for it when:** a research arc (typically after experiment-execution) has produced results worth packaging for agents to reproduce/extend → compile context into an ARA + epistemic review. Requires the external `compiler` / `rigor-reviewer` skills (`npx @ara-commons/ara-skills`).
+
+**Skills:** see `references/ara-from-context.md`
 
 ## convergence
 
