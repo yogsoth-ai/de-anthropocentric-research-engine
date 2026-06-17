@@ -51,13 +51,16 @@ def render_table(pkg):
     return "\n".join(out) + "\n"
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--out-dir", default=str(REF_DIR))
+    ap.add_argument("--only", action="append", default=None,
+                    help="render only these package(s); repeatable. "
+                         "Leaves all other committed ref files untouched.")
     ap.add_argument("--allow-degraded", action="store_true",
                     help="run even though skill-index.md is gone (descriptions "
                          "fall back to the sparser graph json desc field)")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
     if not SKILL_INDEX.exists() and not a.allow_degraded:
         raise SystemExit(
             f"refusing to run: {SKILL_INDEX.name} is gone, so descriptions would "
@@ -66,7 +69,8 @@ def main():
             "regeneration is a one-time migration step, not idempotent. "
             "Pass --allow-degraded only if you intend the sparser output.")
     od = Path(a.out_dir); od.mkdir(parents=True, exist_ok=True)
-    for pkg in NINE:
+    pkgs = a.only if a.only else NINE
+    for pkg in pkgs:
         (od / f"{pkg}.md").write_text(render_table(pkg), encoding="utf-8")
         print(f"{pkg}.md: {len(rows_for_package(pkg))} rows")
 
