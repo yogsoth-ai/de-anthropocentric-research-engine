@@ -560,6 +560,11 @@
       "id": "assumption-surfacing",
       "layer": "sop",
       "desc": "<b>SOP(shared,跨 insight/sensitivity/problem-reformulation):</b> 系统抽取方法/框架/论证中未经显式辩护就被默认的隐含假设。"
+    },
+    {
+      "id": "mechanism-gap-hunting",
+      "layer": "campaign",
+      "desc": "<b>Campaign:猎取科学进展被真正卡住的那个具体环节</b>(而非文献空白)。gap-analysis 的求真版兄弟。4 阶段复用 deep-insight 现有 SOP + 每阶段注入指令;穷举式,不打分不排序。"
     }
   ],
   "edges": [
@@ -1497,6 +1502,21 @@
       "from": "dialectical-escalation",
       "to": "assumption-surfacing",
       "tip": "tactic 步 (shared):浮现假设。"
+    },
+    {
+      "from": "mechanism-gap-hunting",
+      "to": "assumption-audit",
+      "tip": "阶段①:抽取被阻断的症状,下沉到 assumption 审计"
+    },
+    {
+      "from": "mechanism-gap-hunting",
+      "to": "dialectical-reformulation",
+      "tip": "阶段②:三层定位,辩证重构卡点表述"
+    },
+    {
+      "from": "mechanism-gap-hunting",
+      "to": "failure-mode-analysis",
+      "tip": "阶段④:阻断验证,失败模式分析"
     }
   ]
 }
