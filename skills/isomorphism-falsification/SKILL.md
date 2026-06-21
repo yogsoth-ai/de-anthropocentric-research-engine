@@ -28,14 +28,14 @@ From strongest to weakest. The attack's job is to find the highest rung the clai
 ### 1. Pin each claimed side precisely
 For each language in which the artifact claims the same object lives, write down EXACTLY what that object is: its ambient space, what "zero/null/kernel/curl" means there, and what structure (group action, vector space, operator) it carries. Vagueness here is itself a finding — you cannot have an isomorphism between two things you cannot define.
 
-### 2. Demand the maps (pairwise, or a common target)
+### 2. Dimension/counting sanity check (cheap — run before any map-construction)
+With each side now pinned: do all the claimed "zero sets" even have the same dimension / cardinality / number of generators? If the counts disagree, the isomorphism is dead at rung 4 immediately and cheaply — stop here, before the expensive map-construction below.
+
+### 3. Demand the maps (pairwise, or a common target)
 An isomorphism among N objects = either all pairwise isomorphisms or a common object all N map to iso-ally. For at least the load-bearing pairs (the boldest claimed equivalence and the most checkable one), attempt to WRITE the map explicitly. If we can only gesture ("they correspond"), drop to rung 4.
 
-### 3. Try to break each map (monster-hunting)
+### 4. Try to break each map (monster-hunting)
 For each exhibited map, hunt a monster: an element of A with no well-defined image in B; two distinct elements of A with the same image (non-injective → not iso); an element of B not hit (non-surjective); an operation preserved in A but not in B (structure not preserved). One surviving monster knocks the claim down a rung.
-
-### 4. Dimension/counting sanity check (cheap, do first)
-Before the hard map-construction: do all the claimed "zero sets" even have the same dimension / cardinality / number of generators? If the counts disagree, the isomorphism is dead at rung 4 immediately and cheaply.
 
 ### 5. Assign the rung, demote the wording
 Output the highest defended rung. If < 1, REWRITE every place the artifact says "isomorphism" to the honest word. This is not a defeat — "isomorphism on the kernel substructure" or even "shared invariant" is a strong true statement; "isomorphism" when it's really an analogy is self-deception.
