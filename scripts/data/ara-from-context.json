@@ -8,5 +8,6 @@
     {"id": "north-star-align", "layer": "sop", "desc": "Deep-read the original north-star context, distill this ARA's overall direction, and align it with the user via the reused present-and-ask / present-candidates dialogue SOPs"},
     {"id": "ara-compile", "layer": "sop", "desc": "Turn the feeding plan into the compiler's $ARGUMENTS and run the external ARA compiler once inline to produce ../ara/"},
     {"id": "ara-rigor-review", "layer": "sop", "desc": "Run the external ARA rigor-reviewer (Seal Level 2, six-dimension semantic review) over ../ara/ and pass its level2_report.json to the user"}
-  ]
+  ],
+  "edges": []
 }
