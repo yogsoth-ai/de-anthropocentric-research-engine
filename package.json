@@ -1,6 +1,6 @@
 {
   "name": "de-anthropocentric-research-engine",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Complete research orchestration system — MCP dependencies for the yogsoth-ai research pipeline",
   "private": true,
   "repository": {
