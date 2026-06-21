@@ -515,6 +515,41 @@
       "id": "validity-envelope-construction",
       "layer": "sop",
       "desc": "<b>SOP(subagent):有效性包络构造</b>。把多维 breakpoint 数据综合成多维有效性包络。"
+    },
+    {
+      "id": "falsification-first-stress-test",
+      "layer": "campaign",
+      "desc": "<b>Campaign:求真对抗验证(非发表辩护)</b>。stress-test 的求真版兄弟,胜负条件反转:目标是廉价证伪,而非扛住攻击。判决只有 BROKEN/CORROBORATED/UNFALSIFIABLE(最差)。无 resilience score、无 hardening。Popper/Lakatos/Mayo/Platt。路由 6 strategy。"
+    },
+    {
+      "id": "adversarial-debate-truthseeking",
+      "layer": "strategy",
+      "desc": "<b>Strategy:辩论引擎求真版。</b>defender 把 claim 钢化成最可证伪形,critic 攻其证伪,judge 只分桶 BROKEN/CORROBORATED/UNFALSIFIABLE,不选赢家、不打说服力分。复用 debate-architect/cross-examination。"
+    },
+    {
+      "id": "red-team-truthseeking",
+      "layer": "strategy",
+      "desc": "<b>Strategy:系统红队求真版。</b>威胁面=承重 claim 集;每 claim 产出能证伪它的具体观测/计算,而非 resilience 分、非 hardening 表;无攻击能触及的 claim=UNFALSIFIABLE(红)。复用 threat-surface-mapping/key-assumptions-check/devils-advocacy/probe-execution。"
+    },
+    {
+      "id": "isomorphism-falsification",
+      "layer": "strategy",
+      "desc": "<b>Strategy:同构证伪。</b>对 'A≅B≅…' 强制要求显式保结构映射,沿 5 阶梯(同构→子结构同构→同态→共享不变量→类比)降级到能真正辩护的那一级。范畴论/模型论/Lakatos 怪兽法。"
+    },
+    {
+      "id": "circular-validation-audit",
+      "layer": "strategy",
+      "desc": "<b>Strategy:循环验证审计。</b>在造任何 validator/sandbox 前先跑;构建 理论断言×validator假设 的非循环矩阵,抓 PASS-by-construction(用理论自身假设造测试)。Cartwright/Winsberg。"
+    },
+    {
+      "id": "independent-convergence-audit",
+      "layer": "strategy",
+      "desc": "<b>Strategy:独立收敛审计。</b>N 条路径都得同一结论时,修正其证据权:度量共享先验/共享框定污染,算有效 N_eff 而非朴素 N。Bayesian agreement/相关误差分析/陪审团定理前提。"
+    },
+    {
+      "id": "elegance-trap-probe",
+      "layer": "strategy",
+      "desc": "<b>Strategy:优雅陷阱探针。</b>攻击的是一个'优点'——美。区分 EARNED 简洁(禁止/预测/subsume)与 DECORATIVE 简洁(只重述/relabel)。把 Occam 美学变成可证伪的门槛。Sober/MDL/Meehl risky prediction。"
     }
   ],
   "edges": [
@@ -2007,6 +2042,36 @@
       "from": "evidence-scout",
       "to": "paper-overview",
       "tip": "evidence-scout 的 prompt 第2步 <b>\"use web search and paper lookup\"</b> 的文献检索入口:应路由到 paper-overview(discover/relevanceSearch landscape 扫描),再按需沿 paper-search→paper-research 阶梯深入,以落实 prompt 要求的 <b>\"prioritize peer-reviewed sources / a Nature paper outranks a preprint\"</b> 质量纪律。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "adversarial-debate-truthseeking",
+      "tip": "<b>路由:任何 sharp claim。</b>defender 钢化→critic 证伪→judge 分桶,不选赢家。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "red-team-truthseeking",
+      "tip": "<b>路由:任何 sharp claim / 收敛 claim / validator 设计。</b>威胁面=承重 claim,产出每条的证伪条件。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "isomorphism-falsification",
+      "tip": "<b>路由:同构断言 A≅B≅…。</b>要显式保结构映射,否则沿 5 阶梯降级到类比。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "circular-validation-audit",
+      "tip": "<b>路由:validator/sandbox 设计。</b>造之前先查非循环性,抓 PASS-by-construction。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "independent-convergence-audit",
+      "tip": "<b>路由:'N 路独立收敛' 证据。</b>度量路径相关性,把朴素 N 折扣成 N_eff。"
+    },
+    {
+      "from": "falsification-first-stress-test",
+      "to": "elegance-trap-probe",
+      "tip": "<b>路由:优雅统一/漂亮 backbone。</b>查简洁是 earned(禁止/预测)还是 decorative(重述)。"
     }
   ]
 }
