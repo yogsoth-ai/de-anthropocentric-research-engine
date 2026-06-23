@@ -1,0 +1,261 @@
+{
+  "note": "29 cross-package collision groups; <pkg>/<old> -> <pkg>/<pkg>-<old>",
+  "groups": [
+    {
+      "pkg": "convergence",
+      "old": "assumption-challenge"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "assumption-challenge"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "assumption-enumeration"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "assumption-enumeration"
+    },
+    {
+      "pkg": "convergence",
+      "old": "assumption-extraction"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "assumption-extraction"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "assumption-perturbation"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "assumption-perturbation"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "assumption-surfacing"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "assumption-surfacing"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "benchmark-inventory"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "old": "benchmark-inventory"
+    },
+    {
+      "pkg": "convergence",
+      "old": "bottleneck-identification"
+    },
+    {
+      "pkg": "experiment-execution",
+      "old": "bottleneck-identification"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "old": "claim-decomposition"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "claim-decomposition"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "combination-mapping"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "combination-mapping"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "consistency-checking"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "consistency-checking"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "consistency-pair-evaluation"
+    },
+    {
+      "pkg": "experiment-execution",
+      "old": "consistency-pair-evaluation"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "dialectical-escalation"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "dialectical-escalation"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "factor-level-design"
+    },
+    {
+      "pkg": "experiment-execution",
+      "old": "factor-level-design"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "failure-mode-cataloging"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "failure-mode-cataloging"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "gap-identification"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "old": "gap-identification"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "gap-prioritization"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "gap-prioritization"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "gap-prioritization"
+    },
+    {
+      "pkg": "convergence",
+      "old": "multi-criteria-scoring"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "multi-criteria-scoring"
+    },
+    {
+      "pkg": "convergence",
+      "old": "multi-stakeholder-simulation"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "multi-stakeholder-simulation"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "novelty-scoring"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "novelty-scoring"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "novelty-scoring"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "perspective-rotation"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "perspective-rotation"
+    },
+    {
+      "pkg": "convergence",
+      "old": "portfolio-optimization"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "portfolio-optimization"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "provocation-generation"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "provocation-generation"
+    },
+    {
+      "pkg": "experiment-execution",
+      "old": "quality-gate-check"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "quality-gate-check"
+    },
+    {
+      "pkg": "convergence",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "creative-ideation",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "experiment-execution",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "saturation-detection"
+    },
+    {
+      "pkg": "convergence",
+      "old": "scoring-matrix-construction"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "scoring-matrix-construction"
+    },
+    {
+      "pkg": "convergence",
+      "old": "sensitivity-analysis"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "sensitivity-analysis"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "validity-envelope-construction"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "validity-envelope-construction"
+    },
+    {
+      "pkg": "deep-insight",
+      "old": "validity-envelope-mapping"
+    },
+    {
+      "pkg": "stress-test",
+      "old": "validity-envelope-mapping"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "old": "variable-identification"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "old": "variable-identification"
+    }
+  ]
+}

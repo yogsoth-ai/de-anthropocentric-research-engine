@@ -43,3 +43,8 @@ assets/logo-prompts.md
 scripts/**/_t*.html
 scripts/**/_t*.json
 scripts/**/refactory_source.json
+
+# self-iteration scratch + local-only credential index (never push)
+**/_t*.html
+**/_t_rs.json
+self-iteration/2026-06-07-triple-cc-system/2026-06-07-INDEX-triple-cc-pretrain.md

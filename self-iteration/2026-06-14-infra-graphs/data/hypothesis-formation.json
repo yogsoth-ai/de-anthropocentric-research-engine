@@ -1,0 +1,230 @@
+{
+  "name": "hypothesis-formation",
+  "nodes": [
+    {"id": "gap-prioritization", "layer": "campaign", "desc": "<b>Campaign:哪些 gap 最值得攻击?</b> 将上游一批未排序 gaps 转化为带优先级的攻击列表(不发现新 gap,只对已有 gap 做决策)。编排 5 个 strategy(multi-criteria-ranking 默认 / evidence-based / stakeholder-weighted / portfolio-optimization / rapid-triage)+ pairwise-comparison tactic。<b>HARD-GATE:≥3 个已识别 gaps。</b>"},
+    {"id": "hypothesis-formulation", "layer": "campaign", "desc": "<b>Campaign:如何将 insight 转化为可测试假设?</b> 把模糊的 gap/现象转化为精确、可证伪、有边界条件的假设。编排 5 个推理 strategy(deductive 理论→预测 / inductive 数据→规律 / abductive 异常→最佳解释 / competing-construction / operationalization)+ 终局 hypothesis-synthesis。<b>HARD-GATE:≥1 个明确 gap/insight。</b>"},
+    {"id": "research-question", "layer": "campaign", "desc": "<b>Campaign:如何将假设细化为精确研究问题?</b> 把可测试假设转化为有 scope、success criteria、sub-questions 的框架化 RQ(止步于问题形成,不做实验设计)。编排 5 个 strategy(framework-guided / scope-calibration / decomposition / comparative / feasibility-constrained)+ 终局 question-synthesis。<b>HARD-GATE:≥1 个明确假设。</b>"},
+
+    {"id": "multi-criteria-ranking", "layer": "strategy", "desc": "<b>Strategy(默认):多维度加权评分排序。</b> 将\"哪个 gap 更好\"分解为重要性/可行性/新颖性/影响力四独立维度,加权求和重组排序。适用 5-20 个 gap。编排 scoring-matrix-construction + priority-sensitivity-testing 两 tactic,直调 gap-normalization。"},
+    {"id": "evidence-based-prioritization", "layer": "strategy", "desc": "<b>Strategy:基于证据强度的 AHRQ PiCMe 评估。</b> 综合分 = 重要性 ×(1−证据充分度),让证据最薄弱、影响最大的 gap 浮出。适用来自严谨文献调研的 gap。编排 scoring-matrix-construction,直调 importance-scoring/priority-synthesis/gap-normalization。"},
+    {"id": "stakeholder-weighted-ranking", "layer": "strategy", "desc": "<b>Strategy:按利益相关者视角加权排序。</b> 为每类相关方构建独立权重向量,分别排序后 Borda 取共识,识别跨视角稳健 gap 与分歧 gap。编排 scoring-matrix-construction + priority-sensitivity-testing,直调 gap-normalization。"},
+    {"id": "portfolio-optimization", "layer": "strategy", "desc": "<b>Strategy:gap 组合即投资组合。</b> Markowitz 式收益/风险/相关性/多样性分析,选有效前沿上的最优 gap 组合。适用 20+ 个 gap。编排 scoring-matrix-construction + priority-sensitivity-testing,直调 gap-normalization。"},
+    {"id": "rapid-triage", "layer": "strategy", "desc": "<b>Strategy:快速粗筛(两轮过滤)。</b> 二元 Keep/Drop 过滤 + 轻量两维评分,把 50+ gap 压缩到可精排规模。常作为 multi-criteria-ranking/portfolio-optimization 的前置。编排 scoring-matrix-construction,直调 gap-normalization/priority-synthesis。"},
+
+    {"id": "deductive-hypothesis-generation", "layer": "strategy", "desc": "<b>Strategy:从理论演绎推导假设。</b> Theory→Mechanism→Variable Relationship→Testable Prediction,每步可追溯。适用理论成熟、gap 是理论-现实偏差的领域。编排 theory-mechanism-extraction + falsifiability-audit 两 tactic(覆盖全部 7 个 SOP)。"},
+    {"id": "inductive-hypothesis-generation", "layer": "strategy", "desc": "<b>Strategy:从数据/观察归纳提炼假设。</b> Observe patterns→Extract regularity→Generalize cautiously→Testable claim,核心风险是过度泛化。适用理论空白但有经验模式的领域。编排 anomaly-driven-abduction + falsifiability-audit,直调 variable-identification/relationship-specification。"},
+    {"id": "abductive-hypothesis-generation", "layer": "strategy", "desc": "<b>Strategy:面对异常的最佳解释推理。</b> Anomaly→候选解释→可信度排序→最佳解释即假设(奥卡姆剃刀+一致性+可检验)。适用观察到现有理论无法解释的异常。编排 anomaly-driven-abduction tactic,直调 falsifiability-check。"},
+    {"id": "competing-hypothesis-construction", "layer": "strategy", "desc": "<b>Strategy:为同一现象构建多个竞争假设。</b> 对抗 confirmation bias,强制机制层面真正不同的并行解释 + 区分性预测。编排 competing-hypothesis-matrix tactic,直调 falsifiability-check。"},
+    {"id": "hypothesis-operationalization", "layer": "strategy", "desc": "<b>Strategy:将 working hypothesis 精确化为可测试形式。</b> Abstract→Concrete 五层(构念澄清/变量识别/操作定义/边界条件/可证伪标准)。适用已有方向性假设需 formalize。编排 falsifiability-audit tactic,直调 variable-identification。"},
+
+    {"id": "framework-guided-formulation", "layer": "strategy", "desc": "<b>Strategy:选 RQ 框架并系统应用。</b> 据研究类型匹配 PICO/SPIDER/SPICE/ECLIPSE,逐组件填充不留空。适用研究类型明确、有标准框架时。编排 framework-selection-and-application + question-refinement-loop 两 tactic(覆盖全部 SOP)。"},
+    {"id": "scope-calibration", "layer": "strategy", "desc": "<b>Strategy:调整 RQ 范围(zoom in/out)。</b> 问题太宽则加约束缩小,太窄则提抽象层级扩大,迭代到\"金发姑娘\"粒度。编排 question-refinement-loop tactic(覆盖 scope-assessment/finer/success-criteria)。"},
+    {"id": "decomposition-formulation", "layer": "strategy", "desc": "<b>Strategy:将复杂 RQ 分解为可独立回答的子问题。</b> MECE + 独立性 + 覆盖性,按因果/变量/条件/层级/时序分解。适用单一实验无法回答时。编排 sub-question-decomposition tactic,直调 finer-criteria-check。"},
+    {"id": "comparative-formulation", "layer": "strategy", "desc": "<b>Strategy:构建对比性 RQ(A vs B)。</b> 明确比较对象/维度/控制/阈值,论证公平性(非 strawman),用 PICO 的 C 组件结构化。编排 framework-selection-and-application tactic,直调 finer-criteria-check/success-criteria-definition。"},
+    {"id": "feasibility-constrained-formulation", "layer": "strategy", "desc": "<b>Strategy:在资源约束下重塑 RQ。</b> 约束即设计参数 — 缩范围/用 proxy/分阶段,保核心价值并显式声明 trade-off。适用理想问题超出资源时。编排 question-refinement-loop tactic(覆盖 scope/finer/success-criteria)。"},
+
+    {"id": "scoring-matrix-construction", "layer": "tactic", "desc": "<b>Tactic:构建多维度评分矩阵。</b> 并行/串行调用各评分 SOP,为所有 gap 构建 gaps × 维度综合评估矩阵。编排 importance/feasibility/novelty/impact-scoring + ahrq-picme-assessment 五 SOP。S=3 dims 并行 / M=4 dims / L=5 dims + PiCMe 串行。"},
+    {"id": "pairwise-comparison", "layer": "tactic", "desc": "<b>Tactic:AHP 风格成对比较排序。</b> 当绝对评分不可靠时,两两相对比较 + 一致性检验(CR<0.1,矛盾触发修正轮)。编排 gap-pairwise-judgment → consistency-check → priority-synthesis。Deep 模式先用 scoring-matrix-construction 筛到 ≤15 个。"},
+    {"id": "priority-sensitivity-testing", "layer": "tactic", "desc": "<b>Tactic:权重扰动检验排序稳健性。</b> 建基线权重 → ±20% 扰动 → 稳定性判定(stable/sensitive/unstable)。编排 ahp-weighting → weight-perturbation → priority-synthesis。"},
+
+    {"id": "theory-mechanism-extraction", "layer": "tactic", "desc": "<b>Tactic:演绎路径核心。</b> 理论→机制→变量→关系逐层拆解,不可跳步,产出假设候选原材料。编排 theory-identification → mechanism-extraction → variable-identification → relationship-specification 四 SOP。"},
+    {"id": "anomaly-driven-abduction", "layer": "tactic", "desc": "<b>Tactic:归纳/溯因路径。</b> 精确描述异常 → 系统生成候选解释 → 按可信度排序,三步缺一不可。编排 anomaly-characterization → explanation-generation → plausibility-ranking。"},
+    {"id": "falsifiability-audit", "layer": "tactic", "desc": "<b>Tactic:假设质量保证(质检非生成)。</b> 假设形成的最终关卡 — 检验可证伪性 → 操作化 → 边界条件,不允许跳步或带病推进。编排 falsifiability-check → operationalization → boundary-condition-specification。"},
+    {"id": "competing-hypothesis-matrix", "layer": "tactic", "desc": "<b>Tactic:多假设管理对抗 confirmation bias。</b> 生成竞争假设 → 设计区分性预测 → 构建比较矩阵,三步不可颠倒。编排 competing-hypothesis-generation → discriminating-prediction-design → hypothesis-comparison-matrix。"},
+
+    {"id": "framework-selection-and-application", "layer": "tactic", "desc": "<b>Tactic:选 RQ 框架并应用。</b> 先 framework-matching 选框架,再据推荐调对应 application SOP。编排 framework-matching → {pico / spider / spice / eclipse}-application(据研究类型分派)。"},
+    {"id": "question-refinement-loop", "layer": "tactic", "desc": "<b>Tactic:迭代精化 RQ 直到 FINER 5/5。</b> 检验→识别问题→针对性修正→重新检验循环(最多 3 轮)。编排 finer-criteria-check + scope-assessment(F 不通过时)+ success-criteria-definition(收尾)。"},
+    {"id": "sub-question-decomposition", "layer": "tactic", "desc": "<b>Tactic:将主问题分解为子问题层级。</b> 生成子问题→映射依赖→设计回答顺序,严格串行,每步产出是下步输入。编排 sub-question-generation → dependency-mapping → answering-sequence-design。"},
+
+    {"id": "gap-normalization", "layer": "sop", "desc": "<b>SOP:统一不同来源 gap 格式为标准 GapRecord。</b> 提取 id/title/description/domain/source,缺字段标 incomplete 而非丢弃。所有 gap-prioritization strategy 的第一步。"},
+    {"id": "importance-scoring", "layer": "sop", "desc": "<b>SOP:评估 gap 学术与实践重要性(1-5)。</b> 领域影响40%+理论贡献30%+实践价值30%。输入须 status:complete 的 GapRecord。"},
+    {"id": "feasibility-scoring", "layer": "sop", "desc": "<b>SOP:评估 gap 可攻击性(1-5)+ 瓶颈。</b> 方法可用性/数据可获取性/资源需求/时间框架四维等权,提取 score≤2 的瓶颈维度。"},
+    {"id": "novelty-scoring", "layer": "sop", "desc": "<b>SOP:评估 gap 新颖性(1-5)+ 差异化方向。</b> 创新潜力+先进性两维。<b>用 literature-engine + web-browsing 检索近 3 年现有工作。</b>"},
+    {"id": "impact-scoring", "layer": "sop", "desc": "<b>SOP:评估 gap 潜在影响力(1-5)。</b> 识别受益方,影响广度 × 影响深度两维等权。"},
+    {"id": "ahrq-picme-assessment", "layer": "sop", "desc": "<b>SOP:AHRQ PiCMe 框架 6 维度评估 gap。</b> Population/Intervention/Comparator/Metrics/Evidence + 综合判定(strong/moderate/weak),生成研究问题草稿。L tier 或 biomedical 领域用。"},
+    {"id": "ahp-weighting", "layer": "sop", "desc": "<b>SOP:AHP 层次分析法定权重。</b> Saaty 1-9 标度两两比较 → 特征向量 → 权重,计算并报告一致性比率 CR(>0.1 警告)。维度数 [2,9]。"},
+    {"id": "weight-perturbation", "layer": "sop", "desc": "<b>SOP:扰动权重检验排序稳定性。</b> ±20% 各维度,算 Kendall τ,判定 stable(τ≥0.8)/sensitive/unstable。"},
+    {"id": "gap-pairwise-judgment", "layer": "sop", "desc": "<b>SOP:对两个 gap 逐标准相对优先级判断。</b> 各标准独立比较 → Saaty 标度赋值(不允许 tie)。pairwise-comparison 的第一步。"},
+    {"id": "consistency-check", "layer": "sop", "desc": "<b>SOP:检验 pairwise 矩阵传递一致性。</b> 算 CR,识别违反 a[i][k]≈a[i][j]×a[j][k] 的不一致三元组并建议修正。"},
+    {"id": "priority-synthesis", "layer": "sop", "desc": "<b>SOP:综合评分产出最终 gap 优先级列表。</b> AHP 权重加权汇总 → 降序排列 → 前 N 名攻击路径建议(方法/数据源/预期突破/时间)。gap-prioritization 终局 SOP。"},
+
+    {"id": "quality-gate-check", "layer": "sop", "desc": "<b>Shared SOP:通用质量门检查。</b> 格式完整性/逻辑一致性/引用完整性/可操作性/无歧义性五维 PASS/FAIL。三 campaign 共享。"},
+    {"id": "saturation-detection", "layer": "sop", "desc": "<b>Shared SOP:判断活动是否已达信息饱和。</b> 增量分析 + 收敛检测,判定 SATURATED/NOT_SATURATED 决定是否继续迭代。三 campaign 共享,需 ≥2 轮迭代数据。"},
+
+    {"id": "theory-identification", "layer": "sop", "desc": "<b>SOP:识别与 gap 相关的理论框架。</b> 提取 core_claim + 适用性(high/med/low),≥3 条最多 8 条。<b>用 literature-engine + web-browsing 文献扫描。</b> theory-mechanism-extraction 第一步。"},
+    {"id": "mechanism-extraction", "layer": "sop", "desc": "<b>SOP:从理论提取因果机制链。</b> X→mediator→Y 因果链 + 机制图,每理论 ≥1 条、总计 ≥2 条。输入 theory-identification 的理论描述。"},
+    {"id": "variable-identification", "layer": "sop", "desc": "<b>SOP:从机制识别变量并标注角色。</b> IV/DV/mediator/moderator/control/confound + 操作化可能性评估,≥2 变量(1 IV+1 DV)。输入 mechanism-extraction 的机制链。"},
+    {"id": "relationship-specification", "layer": "sop", "desc": "<b>SOP:指定变量间关系方向与形式。</b> 正/负/双向 + 线性/U型/阈值/饱和 + 理论依据,争议时标注竞争预测。输入 variable-identification 的变量对。"},
+    {"id": "anomaly-characterization", "layer": "sop", "desc": "<b>SOP:描述分类异常现象。</b> 观察 vs 预期 + 偏差量化 + 排除平凡解释 + 异常分类。溯因推理精确起点。anomaly-driven-abduction 第一步。"},
+    {"id": "explanation-generation", "layer": "sop", "desc": "<b>SOP:为异常生成候选解释。</b> 发散思维 ≥3 个机制上不同的解释 + 各自可观察预测 + 证据一致性。输入 anomaly-characterization 输出。"},
+    {"id": "plausibility-ranking", "layer": "sop", "desc": "<b>SOP:候选解释多维加权排序。</b> 证据一致性0.5/简约性0.3/解释范围0.2 加权,需 ≥2 候选。anomaly-driven-abduction 终步。"},
+    {"id": "competing-hypothesis-generation", "layer": "sop", "desc": "<b>SOP:为同一现象生成机制上不同的竞争假设。</b> 替代机制/替代理论/反向因果,≥2 个真正不同(非主假设变体),标注 shared/unique prediction。"},
+    {"id": "discriminating-prediction-design", "layer": "sop", "desc": "<b>SOP:设计区分竞争假设的关键预测。</b> 逐对找分歧点 → 设计判决性观察/实验 + 可行性评估。需 ≥2 竞争假设(含 unique_prediction)。"},
+    {"id": "hypothesis-comparison-matrix", "layer": "sop", "desc": "<b>SOP:构建竞争假设多维对比矩阵。</b> 机制类型/证据支持/可测试性/简约性/范围/理论依据,高亮关键差异 + 综合推荐。需 ≥2 假设。"},
+    {"id": "falsifiability-check", "layer": "sop", "desc": "<b>SOP:Popper 可证伪性检验。</b> 推导 ≥2 可观察预测 + 否定预测 → 判定 falsifiable/not/needs_revision,不可证伪给修改建议。"},
+    {"id": "operationalization", "layer": "sop", "desc": "<b>SOP:抽象概念操作化为可测量指标。</b> 概念分析 → 指标选择 → 测量方法 → 内容/构念/标准三效度论证。输入 variable-identification 输出。"},
+    {"id": "boundary-condition-specification", "layer": "sop", "desc": "<b>SOP:指定假设成立的边界条件。</b> 时间/空间/人群/条件/排除五类边界,防过度泛化,判定 generalizability。需假设草案含 statement+mechanism。"},
+    {"id": "hypothesis-synthesis", "layer": "sop", "desc": "<b>SOP:综合中间产物产出最终假设集。</b> 收集 deductive/inductive/abductive 全路径假设 → 去重 → 6 组件完整性检查 → 排序 → 关系说明(互补/竞争/独立/层级)。hypothesis-formulation 终局 SOP。"},
+
+    {"id": "framework-matching", "layer": "sop", "desc": "<b>SOP:据研究类型匹配 RQ 框架。</b> 量化→PICO / 定性→SPIDER / 评估→SPICE / 混合→ECLIPSE,输出推荐 + fit_score 候选对比。framework-selection-and-application 第一步。"},
+    {"id": "pico-application", "layer": "sop", "desc": "<b>SOP:应用 PICO/PICOTS 框架。</b> Population/Intervention/Comparison/Outcome(+Time/Setting)逐组件填充并组装 RQ 句子。量化/干预研究用。"},
+    {"id": "spider-application", "layer": "sop", "desc": "<b>SOP:应用 SPIDER 框架。</b> Sample/Phenomenon of Interest/Design/Evaluation/Research type。定性研究用。"},
+    {"id": "spice-application", "layer": "sop", "desc": "<b>SOP:应用 SPICE 框架。</b> Setting/Perspective/Intervention/Comparison/Evaluation。评估研究用。"},
+    {"id": "eclipse-application", "layer": "sop", "desc": "<b>SOP:应用 ECLIPSE 框架。</b> Expectation/Client group/Location/Impact/Professionals/Service/Evaluation。混合方法研究用。"},
+    {"id": "scope-assessment", "layer": "sop", "desc": "<b>SOP:评估 RQ 范围。</b> 判定 TOO_BROAD/APPROPRIATE/TOO_NARROW + 调整建议。question-refinement-loop 中 F 不通过时调用。"},
+    {"id": "finer-criteria-check", "layer": "sop", "desc": "<b>SOP:FINER 5 项标准检验 RQ。</b> Feasible/Interesting/Novel/Ethical/Relevant 逐项 PASS/FAIL + 修正建议。question-refinement-loop 的检验核心。"},
+    {"id": "success-criteria-definition", "layer": "sop", "desc": "<b>SOP:定义 RQ 可测量成功标准。</b> Full/Partial success + Failure 条件 + 阈值 + 测量方式。需 RQ 已通过 FINER。"},
+    {"id": "sub-question-generation", "layer": "sop", "desc": "<b>SOP:将主 RQ 分解为子问题。</b> 按因果/变量/条件/层级/时序分解 + MECE 检验 + 独立性论证 + 覆盖性检验。sub-question-decomposition 第一步。"},
+    {"id": "dependency-mapping", "layer": "sop", "desc": "<b>SOP:映射子问题间依赖关系。</b> 强/弱依赖标注 + 循环检测 + 关键路径 + 并行机会。需 ≥2 子问题。"},
+    {"id": "answering-sequence-design", "layer": "sop", "desc": "<b>SOP:设计子问题最优回答顺序。</b> 拓扑排序 + 并行分组 + 高风险优先(fail fast),分阶段计划。输入 dependency-mapping 的依赖图。"},
+    {"id": "question-synthesis", "layer": "sop", "desc": "<b>SOP:综合中间产物产出最终 RQ 集。</b> 收集框架应用/scope/FINER/子问题 → 一致性检查 → 6 组件完整性检查 → 格式化。research-question 终局 SOP。"},
+
+    {"id": "paper-overview", "layer": "sop", "desc": "<b>Import SOP(来自 literature-engine):论文快速扫描。</b> abstract + metadata + 相关性判断。直接调用 literature-engine 的 paper-overview skill。"},
+    {"id": "paper-search", "layer": "sop", "desc": "<b>Import SOP(来自 literature-engine):中深度文献搜索。</b> 多源搜索 + AI 摘要报告 + 相关性排序。直接调用 literature-engine 的 paper-search skill。"},
+    {"id": "paper-research", "layer": "sop", "desc": "<b>Import SOP(来自 literature-engine):深度文献研究。</b> 原始全文 + PDF 问答(Keshav 三遍阅读法)。直接调用 literature-engine 的 paper-research skill。"},
+    {"id": "web-search", "layer": "sop", "desc": "<b>Import SOP(来自 web-browsing):快速 web 扫描。</b> 发现 URL + snippet,初步信息收集。直接调用 web-browsing 的 web-search skill。"},
+    {"id": "web-research", "layer": "sop", "desc": "<b>Import SOP(来自 web-browsing):深度 web 研究。</b> 全文抓取 + 内容分析 + 多来源综合。直接调用 web-browsing 的 web-research skill。"}
+  ],
+  "edges": [
+    {"from": "gap-prioritization", "to": "hypothesis-formulation", "tip": "ENTRY 多 campaign 编排 <b>典型串行</b>:gap 排序完成后,将排序后的 gaps 交给 hypothesis-formulation 转化为可测试假设。"},
+    {"from": "hypothesis-formulation", "to": "research-question", "tip": "ENTRY 多 campaign 编排 <b>典型串行</b>:假设形成后,交给 research-question 细化为精确框架化研究问题。"},
+    {"from": "research-question", "to": "hypothesis-formulation", "tip": "ENTRY 多 campaign 编排 <b>反向组合</b>:\"先有问题框架,再填充假设\" —— 已有 RQ 框架时回到 hypothesis-formulation 补充假设。"},
+
+    {"from": "gap-prioritization", "to": "multi-criteria-ranking", "tip": "<b>默认 strategy</b>:gap 数量适中(5-20)、需系统化多维评估时。"},
+    {"from": "gap-prioritization", "to": "evidence-based-prioritization", "tip": "gap 来自严谨文献调研、有充足证据支撑、需向学术同行解释优先级时。"},
+    {"from": "gap-prioritization", "to": "stakeholder-weighted-ranking", "tip": "研究涉及多方利益相关者、对\"重要性\"定义存在分歧时。"},
+    {"from": "gap-prioritization", "to": "portfolio-optimization", "tip": "gap 数量大(20+)、需组合层面风险/收益决策时。"},
+    {"from": "gap-prioritization", "to": "rapid-triage", "tip": "gap 数量极大(50+)、需先快速粗筛到可精排规模时(常接 multi-criteria-ranking)。"},
+    {"from": "gap-prioritization", "to": "pairwise-comparison", "tip": "<b>campaign 直辖 tactic</b>:绝对评分难以可靠执行(gap 描述模糊、维度不可比)时,改用 AHP 风格两两相对比较排序。"},
+
+    {"from": "hypothesis-formulation", "to": "deductive-hypothesis-generation", "tip": "领域有成熟理论、gap 是理论预测与现实的偏差时(理论→预测)。"},
+    {"from": "hypothesis-formulation", "to": "inductive-hypothesis-generation", "tip": "领域缺理论但有大量经验观察/数据模式时(数据→规律)。"},
+    {"from": "hypothesis-formulation", "to": "abductive-hypothesis-generation", "tip": "观察到无法被现有理论解释的异常现象时(异常→最佳解释)。"},
+    {"from": "hypothesis-formulation", "to": "competing-hypothesis-construction", "tip": "需保持开放性、避免 confirmation bias、构建多解释并行时。"},
+    {"from": "hypothesis-formulation", "to": "hypothesis-operationalization", "tip": "已有方向性假设、需 formalize 为可测试形式(模糊→精确)时。"},
+
+    {"from": "research-question", "to": "framework-guided-formulation", "tip": "研究类型明确、有对应标准框架(PICO/SPIDER/SPICE/ECLIPSE)时。"},
+    {"from": "research-question", "to": "scope-calibration", "tip": "问题太宽或太窄、需 zoom in/out 调整粒度时。"},
+    {"from": "research-question", "to": "decomposition-formulation", "tip": "问题复杂度高、单一实验无法回答、需拆解为子问题时。"},
+    {"from": "research-question", "to": "comparative-formulation", "tip": "需系统化比较 A vs B 时。"},
+    {"from": "research-question", "to": "feasibility-constrained-formulation", "tip": "理想问题超出可用资源、需 pragmatic 调整时。"},
+
+    {"from": "multi-criteria-ranking", "to": "scoring-matrix-construction", "tip": "默认参考流 step4:并行评分后\"调用 scoring-matrix-construction tactic 汇总为评分矩阵\"。"},
+    {"from": "multi-criteria-ranking", "to": "priority-sensitivity-testing", "tip": "默认参考流 step5:\"调用 priority-sensitivity-testing tactic 扰动权重,检验排序稳健性\"(M/L tier 必须)。"},
+    {"from": "multi-criteria-ranking", "to": "gap-normalization", "tip": "默认参考流 step1:\"调用 gap-normalization SOP 将输入 gaps 统一为标准格式\"(tactic 不提供,strategy 直调)。"},
+
+    {"from": "evidence-based-prioritization", "to": "scoring-matrix-construction", "tip": "默认参考流 step4:\"调用 scoring-matrix-construction tactic 构建 gap × PiCMe维度 矩阵\"。"},
+    {"from": "evidence-based-prioritization", "to": "gap-normalization", "tip": "默认参考流 step1:统一 gap 格式并提取每个 gap 的支撑文献列表(strategy 直调)。"},
+    {"from": "evidence-based-prioritization", "to": "priority-synthesis", "tip": "默认参考流 step6:\"调用 priority-synthesis SOP 生成最终排序 + 证据空白摘要\"(本 strategy 未列 priority-sensitivity-testing,故直调)。"},
+
+    {"from": "stakeholder-weighted-ranking", "to": "scoring-matrix-construction", "tip": "默认参考流 step5:\"调用 scoring-matrix-construction tactic 构建 gap × 相关方 × 维度 三维矩阵\"。"},
+    {"from": "stakeholder-weighted-ranking", "to": "priority-sensitivity-testing", "tip": "默认参考流 step6:\"检验相关方权重变化对共识排序的影响\"。"},
+    {"from": "stakeholder-weighted-ranking", "to": "gap-normalization", "tip": "默认参考流 step1:统一 gap 格式(strategy 直调)。"},
+
+    {"from": "portfolio-optimization", "to": "scoring-matrix-construction", "tip": "默认参考流 step3:\"调用 scoring-matrix-construction tactic 构建评分矩阵\"。"},
+    {"from": "portfolio-optimization", "to": "priority-sensitivity-testing", "tip": "默认参考流 step7:\"检验组合在不同风险偏好下的稳健性\"。"},
+    {"from": "portfolio-optimization", "to": "gap-normalization", "tip": "默认参考流 step1:统一 gap 格式,提取方法论标签和数据依赖(strategy 直调)。"},
+
+    {"from": "rapid-triage", "to": "scoring-matrix-construction", "tip": "默认参考流 step6:\"调用 scoring-matrix-construction tactic 构建轻量评分矩阵\"。"},
+    {"from": "rapid-triage", "to": "gap-normalization", "tip": "默认参考流 step1:统一 gap 格式,为每个 gap 生成一句话摘要(strategy 直调)。"},
+    {"from": "rapid-triage", "to": "priority-synthesis", "tip": "默认参考流 step8:\"调用 priority-synthesis SOP 输出候选集 + 淘汰统计\"(直调)。"},
+
+    {"from": "deductive-hypothesis-generation", "to": "theory-mechanism-extraction", "tip": "默认参考流:从理论出发提取机制(\"via theory-mechanism-extraction tactic\"),覆盖 theory-identification→mechanism→variable→relationship。"},
+    {"from": "deductive-hypothesis-generation", "to": "falsifiability-audit", "tip": "默认参考流 step6:\"为每个假设生成 falsification scenario(via falsifiability-audit tactic)\"。"},
+
+    {"from": "inductive-hypothesis-generation", "to": "anomaly-driven-abduction", "tip": "默认参考流 step2:\"为每个模式生成候选规律解释(via anomaly-driven-abduction tactic)\"。"},
+    {"from": "inductive-hypothesis-generation", "to": "falsifiability-audit", "tip": "默认参考流 step5:\"为每个假设生成 falsification scenario + 泛化边界(via falsifiability-audit tactic)\"。"},
+    {"from": "inductive-hypothesis-generation", "to": "variable-identification", "tip": "默认参考流 step3:\"将规律中的构念转化为可操作变量\"(无 theory-mechanism-extraction tactic,strategy 直调)。"},
+    {"from": "inductive-hypothesis-generation", "to": "relationship-specification", "tip": "默认参考流 step4:\"明确变量间方向性关系(含调节条件)\"(strategy 直调)。"},
+
+    {"from": "abductive-hypothesis-generation", "to": "anomaly-driven-abduction", "tip": "默认参考流 step2:\"系统生成候选解释(via anomaly-driven-abduction tactic)\",覆盖 anomaly-characterization→explanation-generation→plausibility-ranking。"},
+    {"from": "abductive-hypothesis-generation", "to": "falsifiability-check", "tip": "默认参考流 step4:\"为最佳解释生成 falsification scenario\"(tactic 未提供,直调)。"},
+
+    {"from": "competing-hypothesis-construction", "to": "competing-hypothesis-matrix", "tip": "默认参考流:\"强制生成机制层面真正不同的竞争假设(via competing-hypothesis-matrix tactic)\"。"},
+    {"from": "competing-hypothesis-construction", "to": "falsifiability-check", "tip": "默认参考流 step4:\"为每个假设生成 falsification scenario\"(tactic 未提供,直调)。"},
+
+    {"from": "hypothesis-operationalization", "to": "falsifiability-audit", "tip": "默认参考流 step4:\"生成 falsification scenarios,确认假设可证伪性(via falsifiability-audit tactic)\"。"},
+    {"from": "hypothesis-operationalization", "to": "variable-identification", "tip": "默认参考流 step1:\"识别假设中所有构念,分类为 IV/DV/调节/中介\"(直调)。"},
+
+    {"from": "framework-guided-formulation", "to": "framework-selection-and-application", "tip": "默认参考流:匹配候选框架并应用选定框架(framework-matching + {pico/spider/spice/eclipse}-application)。"},
+    {"from": "framework-guided-formulation", "to": "question-refinement-loop", "tip": "默认参考流 step4-5:\"FINER 检验,未通过项修正→重新检验\"。"},
+
+    {"from": "scope-calibration", "to": "question-refinement-loop", "tip": "默认参考流:scope-assessment + 迭代调整 + FINER 检验确认,全部经 question-refinement-loop tactic。"},
+
+    {"from": "decomposition-formulation", "to": "sub-question-decomposition", "tip": "默认参考流:生成子问题→映射依赖→设计回答顺序(sub-question-generation/dependency-mapping/answering-sequence-design)。"},
+    {"from": "decomposition-formulation", "to": "finer-criteria-check", "tip": "默认参考流 step7:\"对每个子问题进行 FINER 检验\"(tactic 未提供,直调)。"},
+
+    {"from": "comparative-formulation", "to": "framework-selection-and-application", "tip": "默认参考流 step5:\"用 PICO 框架结构化(C 组件是核心)\",经 framework-selection-and-application tactic。"},
+    {"from": "comparative-formulation", "to": "finer-criteria-check", "tip": "默认参考流 step6:FINER 检验(tactic 未提供,直调)。"},
+    {"from": "comparative-formulation", "to": "success-criteria-definition", "tip": "默认参考流 step7:\"定义 success criteria(什么算有意义的差异)\"(直调)。"},
+
+    {"from": "feasibility-constrained-formulation", "to": "question-refinement-loop", "tip": "默认参考流 step5-6:\"FINER 检验(特别关注 F)+ 定义 success criteria\",经 question-refinement-loop tactic。"},
+
+    {"from": "scoring-matrix-construction", "to": "importance-scoring", "tip": "所有 tier 必选维度:评估 gap 对领域的战略重要性。"},
+    {"from": "scoring-matrix-construction", "to": "feasibility-scoring", "tip": "所有 tier 必选维度:评估当前资源下攻克 gap 的可行性。"},
+    {"from": "scoring-matrix-construction", "to": "novelty-scoring", "tip": "所有 tier 必选维度:评估 gap 研究新颖性和原创贡献潜力。"},
+    {"from": "scoring-matrix-construction", "to": "impact-scoring", "tip": "M/L tier 增加维度:评估研究产出的潜在引用/应用影响。"},
+    {"from": "scoring-matrix-construction", "to": "ahrq-picme-assessment", "tip": "L tier 或 biomedical/health 领域:用 AHRQ PiCMe 框架做结构化评估(并行执行前 4 个后串行)。"},
+
+    {"from": "pairwise-comparison", "to": "gap-pairwise-judgment", "tip": "必选第一步:对所有 N×(N-1)/2 对 gap 执行相对重要性判断,产出比较矩阵。"},
+    {"from": "pairwise-comparison", "to": "consistency-check", "tip": "必选每轮比较后:计算 CR;若 CR≥0.1 标记矛盾判断对并返回修正建议(最多 3 轮)。"},
+    {"from": "pairwise-comparison", "to": "priority-synthesis", "tip": "必选 CR<0.1 后:从成对比较矩阵合成最终优先级权重和排序。"},
+    {"from": "pairwise-comparison", "to": "scoring-matrix-construction", "tip": "Deep 模式(gap>15):\"先用 scoring-matrix-construction 做初步筛选,将 gap 缩减至 ≤15 个\",再执行 pairwise 流程。"},
+
+    {"from": "priority-sensitivity-testing", "to": "ahp-weighting", "tip": "第一步:从维度重要性判断推导基线权重;若无判断则用等权重。"},
+    {"from": "priority-sensitivity-testing", "to": "weight-perturbation", "tip": "第二步:对每个维度施加 ±20% 扰动,重新计算排序。"},
+    {"from": "priority-sensitivity-testing", "to": "priority-synthesis", "tip": "第三步:汇总所有扰动场景的排序结果,合成稳定性报告。"},
+
+    {"from": "theory-mechanism-extraction", "to": "theory-identification", "tip": "所有模式必选第一步:识别与 gap/insight 相关的已有理论(名称、核心主张、适用范围)。"},
+    {"from": "theory-mechanism-extraction", "to": "mechanism-extraction", "tip": "在 theory-identification 之后:从每个理论提取可操作的因果机制。"},
+    {"from": "theory-mechanism-extraction", "to": "variable-identification", "tip": "在 mechanism-extraction 之后:从每个机制识别 IV/DV/调节/控制变量。"},
+    {"from": "theory-mechanism-extraction", "to": "relationship-specification", "tip": "最后执行:规范变量间方向性关系,生成假设候选。"},
+
+    {"from": "anomaly-driven-abduction", "to": "anomaly-characterization", "tip": "所有模式必选第一步:精确描述异常(观察、偏差、发生条件、已排除的平凡解释)。"},
+    {"from": "anomaly-driven-abduction", "to": "explanation-generation", "tip": "在 anomaly-characterization 之后:生成多个能完整解释异常的候选解释。"},
+    {"from": "anomaly-driven-abduction", "to": "plausibility-ranking", "tip": "最后执行:按先验概率/解释力/简洁性/可测试性对候选解释排序。"},
+
+    {"from": "falsifiability-audit", "to": "falsifiability-check", "tip": "所有模式必选首先执行:对每个假设检验可证伪性;未通过则迭代修复后重新检验。"},
+    {"from": "falsifiability-audit", "to": "operationalization", "tip": "在 falsifiability-check 通过后:为每个假设的变量提供操作定义(如何测量、用什么工具)。"},
+    {"from": "falsifiability-audit", "to": "boundary-condition-specification", "tip": "最后执行:规范假设成立的前提条件、适用范围和已知限制。"},
+
+    {"from": "competing-hypothesis-matrix", "to": "competing-hypothesis-generation", "tip": "所有模式必选首先执行:基于主假设生成 ≥3 个机制不同的竞争假设。"},
+    {"from": "competing-hypothesis-matrix", "to": "discriminating-prediction-design", "tip": "在 competing-hypothesis-generation 之后:为每对竞争假设设计区分性预测。"},
+    {"from": "competing-hypothesis-matrix", "to": "hypothesis-comparison-matrix", "tip": "最后执行:将所有假设和区分性预测组装为结构化比较矩阵。"},
+
+    {"from": "framework-selection-and-application", "to": "framework-matching", "tip": "第一步必调:根据研究类型匹配最适合的框架。"},
+    {"from": "framework-selection-and-application", "to": "pico-application", "tip": "据 framework-matching 推荐分派:量化/干预研究 → 应用 PICO/PICOTS。"},
+    {"from": "framework-selection-and-application", "to": "spider-application", "tip": "据 framework-matching 推荐分派:定性研究 → 应用 SPIDER。"},
+    {"from": "framework-selection-and-application", "to": "spice-application", "tip": "据 framework-matching 推荐分派:评估研究 → 应用 SPICE。"},
+    {"from": "framework-selection-and-application", "to": "eclipse-application", "tip": "据 framework-matching 推荐分派:混合方法研究 → 应用 ECLIPSE。"},
+
+    {"from": "question-refinement-loop", "to": "finer-criteria-check", "tip": "每轮循环的检验步骤:FINER 5 项标准逐项判定。"},
+    {"from": "question-refinement-loop", "to": "scope-assessment", "tip": "当 F(Feasible)不通过时:评估范围并缩小。"},
+    {"from": "question-refinement-loop", "to": "success-criteria-definition", "tip": "循环结束后(FINER 全通过):定义可测量的成功标准。"},
+
+    {"from": "sub-question-decomposition", "to": "sub-question-generation", "tip": "第一步必调:将主问题分解为子问题 + 独立性论证。"},
+    {"from": "sub-question-decomposition", "to": "dependency-mapping", "tip": "子问题生成后:映射子问题间依赖关系 + 关键路径。"},
+    {"from": "sub-question-decomposition", "to": "answering-sequence-design", "tip": "依赖图完成后:设计最优回答顺序 + 并行机会。"},
+
+    {"from": "gap-prioritization", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>shared: true</code> + <code>campaigns: gap-prioritization</code>。gap 优先级列表产出后做通用质量门检查(格式/逻辑/引用/可操作性)。"},
+    {"from": "hypothesis-formulation", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 hypothesis-formulation。假设集产出后做 PASS/FAIL 质量门检查。"},
+    {"from": "research-question", "to": "quality-gate-check", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 research-question。RQ 产出后做通用质量门检查。"},
+
+    {"from": "gap-prioritization", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>shared: true</code> + <code>campaigns: gap-prioritization</code>。迭代排序时判断是否已达信息饱和(SATURATED/NOT_SATURATED)。"},
+    {"from": "hypothesis-formulation", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 hypothesis-formulation。判断假设生成是否已饱和、决定是否继续迭代。"},
+    {"from": "research-question", "to": "saturation-detection", "tip": "<b>Shared SOP(三 campaign 共享)</b>:frontmatter <code>campaigns:</code> 列出 research-question。判断 RQ 精化是否已饱和。"},
+
+    {"from": "hypothesis-formulation", "to": "hypothesis-synthesis", "tip": "<b>campaign 终局 SOP</b>:frontmatter <code>campaign: hypothesis-formulation</code>,SKILL 自述\"campaign 的最终输出步骤\"。收集 deductive/inductive/abductive 全路径假设 → 去重 → 排序 → 关系说明。"},
+
+    {"from": "research-question", "to": "question-synthesis", "tip": "<b>campaign 终局 SOP</b>:frontmatter <code>campaign: research-question</code>,SKILL 自述\"campaign 的最终输出步骤\"。综合框架应用/scope/FINER/子问题产出最终 RQ 集。"},
+
+    {"from": "theory-identification", "to": "paper-overview", "tip": "<b>sop→sop(import 能力)</b>:theory-identification Pipeline step3-5\"理论筛选(保留相关)+ 核心主张提取 + 适用性评估\"= 批量扫描候选理论文献的 abstract/metadata 做相关性判断,匹配 paper-overview 的\"批量扫描多篇论文 / 快速判断相关性\"。"},
+    {"from": "theory-identification", "to": "paper-search", "tip": "<b>sop→sop(import 能力)</b>:theory-identification Pipeline step2\"文献扫描:搜索与 gap 相关的理论文献(literature-engine + web-browsing)\"= 找到某主题相关论文集合,匹配 paper-search。"},
+    {"from": "theory-identification", "to": "web-search", "tip": "<b>sop→sop(import 能力)</b>:theory-identification step2 文献扫描显式列 <code>web-browsing</code>;快速 web 扫描理论框架,匹配 web-search 的\"快速了解某个概念/框架/方法\"。"},
+
+    {"from": "novelty-scoring", "to": "paper-search", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring Pipeline step2\"利用 literature-engine 和 web-browsing 检索与该 gap 直接相关的近期工作(近 3 年)\"= 找到相关论文集合,匹配 paper-search。"},
+    {"from": "novelty-scoring", "to": "paper-research", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2\"记录已有解法和部分解法\"需深度提取论文中已解决/部分解决的特定信息,匹配 paper-research 的\"提取特定信息 / 深度分析\"。"},
+    {"from": "novelty-scoring", "to": "web-search", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2 显式列 <code>web-browsing</code> 检索近期工作;初步 web 扫描相关工作,匹配 web-search。"},
+    {"from": "novelty-scoring", "to": "web-research", "tip": "<b>sop→sop(import 能力)</b>:novelty-scoring step2-3\"记录已有解法...对比现有工作与该 gap 的完整需求\"需全文抓取 + 多来源综合,匹配 web-research 的\"全文抓取 / 内容分析 / 多来源综合\"。"}
+  ]
+}

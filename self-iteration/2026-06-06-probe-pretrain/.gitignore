@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# Privacy red line: CC log paths must never be committed
+*.session.jsonl
+logs/
+.env

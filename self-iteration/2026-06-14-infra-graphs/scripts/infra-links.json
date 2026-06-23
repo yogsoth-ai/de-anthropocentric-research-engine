@@ -1,0 +1,783 @@
+{
+  "collapse": [
+    {
+      "pkg": "north-star-crystallization",
+      "wrapper": "broad-paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "north-star-crystallization",
+      "wrapper": "broad-web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "deep-insight",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "deep-insight",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "deep-insight",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "deep-insight",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "deep-insight",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "creative-ideation",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "creative-ideation",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "creative-ideation",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "creative-ideation",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "creative-ideation",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "web-research",
+      "infra": "web-browsing",
+      "skill": "web-research"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "web-search",
+      "infra": "web-browsing",
+      "skill": "web-search"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "convergence",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "stress-test",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-overview",
+      "infra": "literature-engine",
+      "skill": "literature-overview"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-research",
+      "infra": "literature-engine",
+      "skill": "literature-research"
+    },
+    {
+      "pkg": "experiment-execution",
+      "wrapper": "paper-search",
+      "infra": "literature-engine",
+      "skill": "literature-search"
+    }
+  ],
+  "subagent_sops": {
+    "north-star-crystallization": [
+      "and-or-decompose",
+      "assess-obstacle-severity",
+      "deep-web-search",
+      "feasibility-check",
+      "generate-candidate-fields",
+      "generate-research-brief",
+      "identify-obstacles",
+      "landscape-synthesis",
+      "propose-mitigations",
+      "validate-leaves"
+    ],
+    "knowledge-acquisition": [
+      "assignee-normalization",
+      "benchmark-inventory",
+      "benchmark-synthesis",
+      "capability-taxonomy-mapping",
+      "categorize-papers",
+      "citation-network-analysis",
+      "claim-parsing",
+      "construct-validity-assessment",
+      "contamination-audit",
+      "data-extraction-form",
+      "define-search-protocol",
+      "documentation-audit",
+      "effect-size-planning",
+      "evidence-network-construction",
+      "extract-data",
+      "gap-identification",
+      "heterogeneity-source-analysis",
+      "inclusion-criteria-design",
+      "leaderboard-dynamics-analysis",
+      "legal-status-assessment",
+      "meta-analysis-synthesis",
+      "metric-decomposition",
+      "patent-categorization",
+      "patent-query-formulation",
+      "patent-synthesis",
+      "pico-formulation",
+      "prisma-flowchart",
+      "protocol-element-extraction",
+      "publication-bias-assessment",
+      "quality-assessment",
+      "quality-scoring",
+      "risk-of-bias-assessment",
+      "saturation-detection",
+      "seed-selection",
+      "sensitivity-analysis-design",
+      "survey-synthesis",
+      "taxonomy-mapping",
+      "thematic-coding",
+      "trend-analysis",
+      "white-space-mapping"
+    ],
+    "deep-insight": [
+      "abp-vulnerability-classification",
+      "abstraction-laddering",
+      "ahrq-reason-classification",
+      "alternative-model-generation",
+      "appreciative-discovery",
+      "assumption-enumeration",
+      "assumption-extraction",
+      "assumption-surfacing",
+      "boundary-synthesis",
+      "catwoe-analysis",
+      "clr-validation",
+      "concept-matrix-construction",
+      "conclusion-sensitivity-measurement",
+      "consequence-following",
+      "controlled-perturbation",
+      "convergence-assessment",
+      "counter-assumption-generation",
+      "critical-path-identification",
+      "cross-database-verification",
+      "csh-12-question",
+      "current-reality-tree",
+      "distribution-assignment",
+      "dominant-idea-identification",
+      "edge-case-generation",
+      "egm-construction",
+      "evaporating-cloud",
+      "evidence-grading",
+      "evidence-synthesis",
+      "failure-clustering",
+      "false-gap-filtering",
+      "five-whys-drilling",
+      "fragility-flagging",
+      "gap-keyword-extraction",
+      "gap-synthesis",
+      "gap-typology-classification",
+      "governing-variable-surfacing",
+      "hmw-formulation",
+      "interaction-detection",
+      "ishikawa-decomposition",
+      "jtbd-mapping",
+      "monte-carlo-sampling",
+      "morris-screening",
+      "multi-criteria-scoring",
+      "multi-stakeholder-simulation",
+      "negation-definition",
+      "polarity-mapping",
+      "provocation-generation",
+      "re-derivation",
+      "reformulation-synthesis",
+      "reframing-matrix",
+      "salience-classification",
+      "scaling-regime-detection",
+      "sensitivity-synthesis",
+      "sobol-decomposition",
+      "socratic-probing",
+      "stakeholder-confirmation",
+      "temporal-sensitivity-testing",
+      "validity-envelope-construction",
+      "variation-axis-definition",
+      "wickedness-scoring"
+    ],
+    "hypothesis-formation": [],
+    "creative-ideation": [
+      "ablation-execution",
+      "abstraction-extraction",
+      "abstraction-ladder",
+      "abstraction-to-design",
+      "alternatives-generation",
+      "analogy-chain",
+      "analogy-quality-assessment",
+      "assumption-perturbation",
+      "assumption-surfacing",
+      "benchmark-challenge",
+      "benchmark-inventory",
+      "biological-strategy-extraction",
+      "biomimicry-synthesis",
+      "biotriz-principle-selection",
+      "bisociation-network-construction",
+      "blend-completion",
+      "blend-composition",
+      "blend-elaboration",
+      "challenge-questioning",
+      "combination-evaluation",
+      "combinatorial-synthesis",
+      "competitor-simulation",
+      "concept-fan-expansion",
+      "consistency-pair-evaluation",
+      "constraint-injection",
+      "constraint-response",
+      "constructive-rebellion",
+      "contradiction-matrix-lookup",
+      "coverage-gap-detection",
+      "cross-domain-synthesis",
+      "dependency-identification",
+      "design-space-visualization",
+      "destruction-synthesis",
+      "direct-analogy-generation",
+      "domain-scanning",
+      "ecosystem-pattern-extraction",
+      "emergent-property-identification",
+      "emulation-generation",
+      "enumeration-synthesis",
+      "escape-technique",
+      "evolution-mechanism-transfer",
+      "excursion-departure",
+      "factor-level-design",
+      "failure-driven-generation",
+      "failure-mode-cataloging",
+      "fantasy-wish",
+      "force-fit",
+      "forced-connection",
+      "fractionation",
+      "function-model-construction",
+      "function-redistribution",
+      "functional-model-biology",
+      "generic-space-extraction",
+      "green-hat-session",
+      "idea-synthesis",
+      "input-space-construction",
+      "intersection-evaluation",
+      "inversion-extraction",
+      "lateral-synthesis",
+      "matrix-construction",
+      "method-problem-crossing",
+      "morphological-synthesis",
+      "movement-operation",
+      "novelty-scoring",
+      "novice-perspective",
+      "organism-discovery",
+      "parameter-identification",
+      "path-generation",
+      "personal-identification",
+      "perspective-synthesis",
+      "po-provocation",
+      "practitioner-hat",
+      "problem-biologization",
+      "random-paper-entry",
+      "random-word-stimulus",
+      "recombination-generation",
+      "reversal-generation",
+      "reviewer2-hat",
+      "sacred-cow-identification",
+      "saturation-detection",
+      "scamper-divergence",
+      "separation-principle",
+      "solution-space-reduction",
+      "springboard-launch",
+      "stepping-stone",
+      "structural-mapping",
+      "structural-synthesis",
+      "surgery-operation",
+      "symbolic-compression",
+      "synectics-synthesis",
+      "theorist-hat",
+      "time-machine",
+      "transfer-adaptation",
+      "trimming-execution",
+      "triz-principle-application",
+      "value-enumeration",
+      "vital-relation-mapping",
+      "white-space-detection",
+      "worst-case-design"
+    ],
+    "convergence": [
+      "advocate-construction",
+      "aggregation-method",
+      "alternative-scoring",
+      "argument-extraction",
+      "assumption-challenge",
+      "assumption-extraction",
+      "ballot-collection",
+      "bottleneck-identification",
+      "cluster-analysis",
+      "comparison-executor",
+      "conclusion-sensitivity",
+      "conjunctive-filter",
+      "consensus-classification",
+      "consensus-measurement",
+      "consensus-synthesis",
+      "constraint-classification",
+      "constraint-identification-sop",
+      "convergence-check",
+      "coverage-scoring",
+      "criterion-definition",
+      "critic-attack",
+      "cycle-detection",
+      "dimension-assessment",
+      "disagreement-visualization",
+      "dominance-check",
+      "feasibility-synthesis",
+      "feedback-distribution",
+      "gate-criteria-definition",
+      "gate-judgment",
+      "inconsistency-localization",
+      "judge-verdict",
+      "judgment-collection",
+      "method-sensitivity-report",
+      "multi-stakeholder-simulation",
+      "niche-definition",
+      "niche-mapping",
+      "normalization",
+      "objective-definition",
+      "optimization-run",
+      "pair-selector",
+      "pareto-visualization",
+      "perspective-assignment",
+      "perspective-attack",
+      "portfolio-evaluation-per-scenario",
+      "portfolio-synthesis",
+      "radar-synthesis",
+      "rank-comparison",
+      "ranking-synthesis",
+      "rating-update",
+      "removability-assessment",
+      "removal-path",
+      "round-decision",
+      "saturation-detection",
+      "scenario-construction",
+      "scoring-synthesis",
+      "selection-from-frontier",
+      "sensitivity-analysis",
+      "steel-manning-synthesis",
+      "threshold-setting",
+      "threshold-sweep",
+      "weight-elicitation-sop"
+    ],
+    "stress-test": [
+      "action-priority-matrix",
+      "alternative-futures",
+      "assumption-cascade-tracer",
+      "attack-resilience-scoring",
+      "attack-vector-generation",
+      "breakpoint-detection",
+      "causal-claim-extraction",
+      "claim-negation",
+      "claim-refinement",
+      "confidence-calibration",
+      "contradiction-detection",
+      "counterexample-generation",
+      "counterfactual-scenario-construction",
+      "cross-examination",
+      "debate-architect",
+      "debate-critic",
+      "debate-defender",
+      "debate-judge",
+      "debate-transcript-analysis",
+      "deductive-chain",
+      "detection-scoring",
+      "devils-advocacy",
+      "divergence-detection",
+      "evidence-scout",
+      "extreme-value-generation",
+      "factor-enumeration",
+      "failure-chain-construction",
+      "failure-mode-extraction",
+      "finding-aggregation",
+      "flip-point-detection",
+      "fragility-measurement",
+      "function-analysis",
+      "key-assumptions-check",
+      "load-bearing-identification",
+      "mitigation-design-sop",
+      "mitigation-proposal",
+      "monster-barring-attempt",
+      "necessity-evaluation",
+      "occurrence-scoring",
+      "parameter-space-mapping",
+      "persona-construction",
+      "perspective-critic",
+      "premortem-facilitation",
+      "probe-execution",
+      "re-scoring",
+      "saturation-detection",
+      "severity-scoring",
+      "single-factor-removal",
+      "sufficiency-evaluation",
+      "threat-surface-mapping",
+      "validity-envelope-construction",
+      "verdict-synthesis",
+      "weakness-classification"
+    ],
+    "experiment-execution": [
+      "ablation-component-mapping",
+      "activity-listing",
+      "assumption-challenging",
+      "baseline-selection",
+      "buffer-sizing",
+      "causal-chain-tracing",
+      "competitive-move-prediction",
+      "consistency-pair-evaluation",
+      "constraint-synthesis",
+      "core-conflict-extraction",
+      "critical-chain-identification",
+      "critical-path-calculation",
+      "dependency-graph-construction",
+      "dependency-sequencing",
+      "design-matrix-construction",
+      "design-synthesis",
+      "duration-estimation",
+      "environment-specification",
+      "experiment-config-generation",
+      "factor-identification",
+      "future-reality-projection",
+      "implementer-dispatch",
+      "intermediate-objective-design",
+      "level-specification",
+      "metric-specification",
+      "obstacle-identification",
+      "parameter-enumeration",
+      "plan-formatting",
+      "quality-gate-check",
+      "resource-quantification",
+      "robustness-scoring",
+      "sample-size-estimation",
+      "saturation-detection",
+      "scenario-driver-identification",
+      "scenario-impact-assessment",
+      "scenario-narrative-construction",
+      "scenario-synthesis",
+      "seed-protocol-design",
+      "timeline-projection",
+      "undesirable-effect-listing",
+      "worst-case-construction"
+    ],
+    "knowledge-structuring": []
+  },
+  "campaigns": [
+    {
+      "pkg": "north-star-crystallization",
+      "campaign": "north-star-crystallization"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "campaign": "baseline-establishment"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "campaign": "benchmark-archaeology"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "campaign": "literature-survey"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "campaign": "meta-analysis"
+    },
+    {
+      "pkg": "knowledge-acquisition",
+      "campaign": "patent-mining"
+    },
+    {
+      "pkg": "deep-insight",
+      "campaign": "boundary-analysis"
+    },
+    {
+      "pkg": "deep-insight",
+      "campaign": "gap-analysis"
+    },
+    {
+      "pkg": "deep-insight",
+      "campaign": "insight"
+    },
+    {
+      "pkg": "deep-insight",
+      "campaign": "problem-reformulation"
+    },
+    {
+      "pkg": "deep-insight",
+      "campaign": "sensitivity-analysis"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "campaign": "gap-prioritization"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "campaign": "hypothesis-formulation"
+    },
+    {
+      "pkg": "hypothesis-formation",
+      "campaign": "research-question"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "assumption-destruction"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "biomimicry"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "combinatorial-creativity"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "cross-domain-discovery"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "lateral-thinking"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "morphological-exploration"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "perspective-forcing"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "structural-deconstruction"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "synectics"
+    },
+    {
+      "pkg": "creative-ideation",
+      "campaign": "systematic-enumeration"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "feasibility-assessment"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "multi-criteria-scoring"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "pairwise-ranking"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "portfolio-optimization"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "steel-manning"
+    },
+    {
+      "pkg": "convergence",
+      "campaign": "structured-consensus"
+    },
+    {
+      "pkg": "stress-test",
+      "campaign": "adversarial-stress-testing"
+    },
+    {
+      "pkg": "stress-test",
+      "campaign": "counterfactual-probing"
+    },
+    {
+      "pkg": "stress-test",
+      "campaign": "failure-anticipation"
+    },
+    {
+      "pkg": "stress-test",
+      "campaign": "multiagent-debate"
+    },
+    {
+      "pkg": "stress-test",
+      "campaign": "red-teaming"
+    },
+    {
+      "pkg": "experiment-execution",
+      "campaign": "constraint-analysis"
+    },
+    {
+      "pkg": "experiment-execution",
+      "campaign": "experiment-design"
+    },
+    {
+      "pkg": "experiment-execution",
+      "campaign": "implementation-planning"
+    },
+    {
+      "pkg": "experiment-execution",
+      "campaign": "scenario-planning"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "campaign": "argument-mapping"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "campaign": "causal-modeling"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "campaign": "dimensional-analysis"
+    },
+    {
+      "pkg": "knowledge-structuring",
+      "campaign": "ontology-building"
+    }
+  ],
+  "broken_paper": []
+}
