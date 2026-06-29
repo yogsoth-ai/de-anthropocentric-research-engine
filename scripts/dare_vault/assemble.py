@@ -48,6 +48,10 @@ def main():
     nodes, edges = load()
     kept = kept_names(nodes)
     ke = kept_edges(edges, kept)
+    # 数量门：写盘前先 assert，对不上即停（副作用之前）
+    assert len(kept) == 847, f"kept={len(kept)}"
+    assert len(nodes) - len(kept) == 83, f"excluded={len(nodes) - len(kept)}"
+    assert len(ke) == 1851, f"edges={len(ke)}"
     CONCEPTS.mkdir(parents=True, exist_ok=True)
     missing = [n for n in sorted(kept) if not (FRAG / f"{n}.md").exists()]
     assert not missing, f"缺片段 {len(missing)}: {missing[:5]}"
@@ -73,7 +77,6 @@ def main():
         with EDGES.open("a", encoding="utf-8", newline="") as f:
             f.write("\n".join(new_lines) + "\n")
     print(f"pages={len(kept)} edges={len(ke)} appended={len(new_lines)}")
-    assert len(kept) == 847 and len(ke) == 1851
 
 if __name__ == "__main__":
     main()
