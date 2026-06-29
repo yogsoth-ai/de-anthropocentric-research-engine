@@ -36,8 +36,10 @@ def page(name, nodes, frag, edges, kept):
           f"created: {DATE}\n"
           f"tags: [dare-method, {layer}, {pkg}]\n"
           "---\n")
+    # Defect 2 fix: neutralize stray wikilink tokens in fragment prose only
+    safe_frag = frag.strip().replace("[[", "［[").replace("]]", "]］")
     body = (f"\n## 层级 / 包\n{layer} · {pkg}\n\n"
-            f"## 方法论讲解\n{frag.strip()}\n\n"
+            f"## 方法论讲解\n{safe_frag}\n\n"
             f"{orchestration(name, nodes, edges, kept)}\n\n"
             f"## 来源\nskills/{name}/SKILL.md\n")
     return fm + body
@@ -51,16 +53,26 @@ def main():
     assert not missing, f"缺片段 {len(missing)}: {missing[:5]}"
     for name in sorted(kept):
         frag = (FRAG / f"{name}.md").read_text(encoding="utf-8")
+        # Defect 1 fix: pass newline="" to disable Windows \n→\r\n translation
         (CONCEPTS / f"dare-{name}.md").write_text(
-            page(name, nodes, frag, edges, kept), encoding="utf-8")
-    with EDGES.open("a", encoding="utf-8") as f:
-        for e in ke:
-            f.write(json.dumps({
-                "source": f"concepts/dare-{e['from']}.md",
-                "target": f"concepts/dare-{e['to']}.md",
-                "edge_type": "component_of", "weight": 1, "created": DATE},
-                ensure_ascii=False) + "\n")
-    print(f"pages={len(kept)} edges={len(ke)}")
+            page(name, nodes, frag, edges, kept), encoding="utf-8", newline="")
+    # Defect 3 fix: idempotent edge append — skip lines already present
+    existing = set()
+    if EDGES.exists():
+        existing = set(EDGES.read_text(encoding="utf-8").splitlines())
+    new_lines = []
+    for e in ke:
+        line = json.dumps({
+            "source": f"concepts/dare-{e['from']}.md",
+            "target": f"concepts/dare-{e['to']}.md",
+            "edge_type": "component_of", "weight": 1, "created": DATE},
+            ensure_ascii=False)
+        if line not in existing:
+            new_lines.append(line)
+    if new_lines:
+        with EDGES.open("a", encoding="utf-8", newline="") as f:
+            f.write("\n".join(new_lines) + "\n")
+    print(f"pages={len(kept)} edges={len(ke)} appended={len(new_lines)}")
     assert len(kept) == 847 and len(ke) == 1851
 
 if __name__ == "__main__":
