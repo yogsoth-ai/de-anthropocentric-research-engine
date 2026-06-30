@@ -55,6 +55,10 @@
 
 ```mermaid
 graph TD
+  classDef tbd fill:#3a3a3a,stroke:#888,color:#ddd;
+  classDef processing fill:#5a4a00,stroke:#ffc107,color:#fff;
+  classDef done fill:#1b4d2e,stroke:#4caf50,color:#fff;
+
   subgraph ST1["STAGE1 数据核心"]
     L1[L1 weights]
     L2[L2 leak_audit]
@@ -159,4 +163,9 @@ graph TD
   R2 -->|点火| R6
   R6 -->|收敛| R7
   L17 -->|依赖| R7
+
+  class L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16,L17 tbd;
+  class S1,S2,S3,S4,S5,S6 tbd;
+  class D1,D2,D3,D4 tbd;
+  class R1,R2,R3,R4,R5,R6,R7 tbd;
 ```
