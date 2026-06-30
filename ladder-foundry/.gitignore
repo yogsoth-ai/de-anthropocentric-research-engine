@@ -1,0 +1,10 @@
+# ladder-foundry — privacy red line + device-local
+runs/
+weights/*.json
+!weights/.gitkeep
+env.sh
+bootstrap.sh
+*.key
+__pycache__/
+*.pyc
+.pytest_cache/
