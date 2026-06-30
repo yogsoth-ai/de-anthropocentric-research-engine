@@ -164,7 +164,8 @@ graph TD
   R6 -->|收敛| R7
   L17 -->|依赖| R7
 
-  class L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16,L17 tbd;
+  class L1,L2,L3,L4,L5,L6 done;
+  class L7,L8,L9,L10,L11,L12,L13,L14,L15,L16,L17 tbd;
   class S1,S2,S3,S4,S5,S6 tbd;
   class D1,D2,D3,D4 tbd;
   class R1,R2,R3,R4,R5,R6,R7 tbd;
