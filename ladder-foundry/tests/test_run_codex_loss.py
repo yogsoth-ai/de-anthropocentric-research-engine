@@ -105,7 +105,7 @@ def _fake_loss1(payload, schema_path):
                               for ax in ("A1", "A2", "A3", "A4", "A5")}})
 
 
-def test_loss1_landing(tmp_path, monkeypatch):
+def test_loss1_landing(tmp_path):
     import run_codex_loss as M
     rd = tmp_path / "runs" / "r0"
     (rd / "configs").mkdir(parents=True)

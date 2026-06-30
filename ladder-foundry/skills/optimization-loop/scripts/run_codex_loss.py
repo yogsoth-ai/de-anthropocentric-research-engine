@@ -146,7 +146,7 @@ def run_loss2(triples, intended_order, skill_md, out, seed, codex_fn=_default_co
     intended = [s.strip() for s in intended_order.split(",")]      # id0..id5 high->low
     n = len(triples)
     perm = shuffle_perm(n, seed)
-    perm_path = Path(out).with_suffix(".perm.json")
+    perm_path = Path(out).parent / (Path(out).stem + ".perm.json")
     perm_path.write_text(json.dumps(
         {str(p): Path(triples[perm[p]]).stem for p in range(n)}, indent=2),
         encoding="utf-8")
