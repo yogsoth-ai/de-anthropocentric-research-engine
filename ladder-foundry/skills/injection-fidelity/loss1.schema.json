@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["fidelity", "loss1", "per_axis_evidence", "drift_flag"],
+  "properties": {
+    "fidelity": {"type": "boolean"},
+    "loss1": {"type": "number", "minimum": 0, "maximum": 1},
+    "drift_flag": {"type": "boolean"},
+    "note": {"type": "string"},
+    "per_axis_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["A1", "A2", "A3", "A4", "A5"],
+      "properties": {
+        "A1": {"$ref": "#/definitions/axis"},
+        "A2": {"$ref": "#/definitions/axis"},
+        "A3": {"$ref": "#/definitions/axis"},
+        "A4": {"$ref": "#/definitions/axis"},
+        "A5": {"$ref": "#/definitions/axis"}
+      }
+    }
+  },
+  "definitions": {
+    "axis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observed", "expected_band", "pass", "quote"],
+      "properties": {
+        "observed": {"type": ["number", "string", "boolean"]},
+        "expected_band": {"type": "string"},
+        "pass": {"type": "boolean"},
+        "quote": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
