@@ -47,9 +47,9 @@ def main():
 
     print("== contract reconciliation (field -> schema -> consumer) ==")
     rows = [
-        ("axis_prose", "L1 schema seg ①", "L3 axes.level_text"),
-        ("interp_params", "L1 schema seg ② (3-key lock)", "L4 interpolator.ladder_levels"),
-        ("assembler_params", "L1 schema seg ③", "L5 assembler.build_batch"),
+        ("axis_prose", "L1 schema seg (1)", "L3 axes.level_text"),
+        ("interp_params", "L1 schema seg (2) (3-key lock)", "L4 interpolator.ladder_levels"),
+        ("assembler_params", "L1 schema seg (3)", "L5 assembler.build_batch"),
         ("frozen_label.rank_order", "L1 locked (dump_initial only)", "L4 reads direction"),
         ("frozen_label.coord_table", "L1 locked, empty in batch-0", "L4/L5 read coords"),
     ]
