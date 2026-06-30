@@ -1,3 +1,4 @@
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -55,11 +56,13 @@ def test_threshold_point_back_not_copied():
     t = txt()
     # the skill points back to the module constants, does not re-state the digits
     assert "FIDELITY_MIN" in t and "BATCH_RATIO_MIN" in t
+    assert "0.90" not in t and "0.80" not in t   # point-back: digits must NOT be restated
 
 
 def test_banned_flags_and_driver_absent():
     t = txt()
-    for banned in ("-p ", "--resume", "--session-id", "--allowedTools",
+    assert not re.search(r"-p[\s]", t), "print flag -p present"
+    for banned in ("--resume", "--session-id", "--allowedTools",
                    "drive_cc", "pexpect", "PTY"):
         assert banned not in t, banned
 
