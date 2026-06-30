@@ -221,6 +221,12 @@ Every skill declares its own dependencies inline. Each `SKILL.md` carries, in it
 
 ```bash
 de-anthropocentric-research-engine/
+├── agents/skills/dare-research-engine/
+│   └── SKILL.md                     # Codex adapter source
+├── install/
+│   ├── codex.js                     # Clone-based Codex installer (Node.js)
+│   ├── codex.sh                     # Clone-based Codex installer (macOS / Linux)
+│   └── codex.ps1                    # Clone-based Codex installer (Windows PowerShell)
 ├── skills/                          # All 900+ skills live here (flat directories)
 │   ├── de-anthropocentric-research-engine/   # Entry point orchestrator
 │   ├── writing-specs/               # Spec generation (strategy level)
@@ -286,7 +292,7 @@ Plus the infrastructure that every package draws on:
 
 ## 🚀 Quick Start
 
-1. Clone and install:
+1. Clone and install dependencies:
 
    ```bash
    git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
@@ -294,13 +300,49 @@ Plus the infrastructure that every package draws on:
    npm install
    ```
 
-2. Copy `mcp.example.json` to `.mcp.json` and fill in your API keys:
+2. Pick your runtime.
+
+### Codex
+
+1. Install the Codex adapter from this clone:
+
+   ```bash
+   # Install into this repository
+   ./install/codex.sh
+
+   # Or install DARE into another project
+   ./install/codex.sh --target /path/to/your/project
+   ```
+
+   Windows PowerShell:
+
+   ```powershell
+   .\install\codex.ps1
+   .\install\codex.ps1 --target C:\path\to\your\project
+   ```
+
+   The adapter source lives at `agents/skills/dare-research-engine/SKILL.md`. The installer writes it to `.agents/skills/dare-research-engine/SKILL.md` in the target project because that is the Codex discovery path. The full `skills/` tree remains the DARE knowledge base and is read on demand through YAML `dependencies`.
+
+   - Default behavior copies the DARE knowledge base into `.dare/skills`, so the target project still works if this clone is deleted.
+   - Use `--link` only when you explicitly want `.dare/skills` to point back to this clone.
+   - Use `--dry-run` to preview changes.
+   - MCP is not configured by this installer; add Codex MCP servers later in `.codex/config.toml` if needed.
+
+2. Invoke the entry point in Codex:
+
+   ```text
+   $dare-research-engine
+   ```
+
+### Claude Code
+
+1. Copy `mcp.example.json` to `.mcp.json` and fill in your API keys:
 
    ```bash
    cp mcp.example.json .mcp.json
    ```
 
-3. Install the skills so Claude Code can discover them. Skills are auto-discovered from a `.claude/skills/` directory — there is no `settings.json` path option. Copy (or symlink) every skill into your project's `.claude/skills/` (or the user-level `~/.claude/skills/`):
+2. Install the skills so Claude Code can discover them. Skills are auto-discovered from a `.claude/skills/` directory — there is no `settings.json` path option. Copy (or symlink) every skill into your project's `.claude/skills/` (or the user-level `~/.claude/skills/`):
 
    ```bash
    # macOS / Linux — copy
@@ -317,7 +359,7 @@ Plus the infrastructure that every package draws on:
    Copy-Item -Recurse skills\* .claude\skills\
    ```
 
-4. Install the required external dependencies. Two packages call skills that
+3. Install the required external dependencies. Two packages call skills that
    live outside this repo — install them before running those packages:
 
    - **experiment-execution** drives experiments through the `superpowers` and
@@ -337,7 +379,7 @@ Plus the infrastructure that every package draws on:
      npx @ara-commons/ara-skills
      ```
 
-5. Invoke the entry point:
+4. Invoke the entry point:
 
    ```bash
    /de-anthropocentric-research-engine
