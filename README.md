@@ -224,7 +224,6 @@ de-anthropocentric-research-engine/
 ├── agents/skills/dare-research-engine/
 │   └── SKILL.md                     # Codex adapter source
 ├── install/
-│   ├── codex.js                     # Clone-based Codex installer (Node.js)
 │   ├── codex.sh                     # Clone-based Codex installer (macOS / Linux)
 │   └── codex.ps1                    # Clone-based Codex installer (Windows PowerShell)
 ├── skills/                          # All 900+ skills live here (flat directories)
