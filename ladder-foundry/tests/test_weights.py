@@ -85,3 +85,21 @@ def test_load_rejects_bad_interp_keyset(tmp_path):
     p.write_text(json.dumps(w), encoding="utf-8")    # persist the tampered weights
     with pytest.raises(ValueError):
         weights.load(str(p))                          # load() must reject the bad keyset
+
+
+def test_axis_prose_is_real_not_seed(tmp_path):
+    w = _w(tmp_path)
+    # every A1-A3 body across L0..L4 is authored, none is the STAGE-1 seed string
+    for axis in ("A1", "A2", "A3"):
+        for lvl in ("L0", "L1", "L2", "L3", "L4"):
+            body = w["axis_prose"][axis][lvl]
+            assert isinstance(body, str) and len(body) >= 15
+            assert "seed prose" not in body
+
+
+def test_axis_prose_passes_leak_audit(tmp_path):
+    from generator.leak_audit import leak_audit
+    w = _w(tmp_path)
+    for axis, levels in w["axis_prose"].items():
+        for lvl, body in levels.items():
+            leak_audit(body)        # raises LeakHit if a denied term slipped in

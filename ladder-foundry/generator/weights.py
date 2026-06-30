@@ -15,10 +15,47 @@ COLLISION_ENUM = {"B1", "expression"}
 
 
 def _default_axis_prose():
-    # ponytail: seed prose only — STAGE 2 (D2 endpoint personas) authors the
-    # real bodies. STAGE 1 just needs structure to prove read/write/lock.
-    return {axis: {level: f"{axis}.{level} seed prose" for level in sorted(LEVELS)}
-            for axis in sorted(AXES)}
+    # D2: real endpoint + intermediate persona prose. axis_prose stays
+    # L0..L4-indexed for all 5 axes (STAGE 1 schema lock). A4/A5 unused slots
+    # carry a short placeholder (never selected: coord[axis] only names a used
+    # level). All bodies are leak-clean (W5) — no check/primitive vocabulary.
+    return {
+        "A1": {
+            "L0": "Accepts whatever is offered and asks for nothing more; makes no demand on the substance of an answer.",
+            "L1": "Occasionally nudges for a little more depth but is satisfied quickly.",
+            "L2": "Expects a reasonable amount of substance and pushes back when an answer is thin.",
+            "L3": "Demands well-supported substance and keeps pressing where an answer is underdeveloped.",
+            "L4": "Relentlessly demands the deepest possible substance, never satisfied until every claim is fully grounded.",
+        },
+        "A2": {
+            "L0": "Makes incoherent, self-contradictory requests with no legitimate through-line.",
+            "L1": "Requests are mostly muddled, with only occasional coherence.",
+            "L2": "Requests are workable though sometimes loosely framed.",
+            "L3": "Requests are clear, coherent, and well-motivated.",
+            "L4": "Every request is fully coherent, legitimate, and precisely scoped.",
+        },
+        "A3": {
+            "L0": "Never asks for anything to be made concrete or operational; abstractions are fine as-is.",
+            "L1": "Rarely asks how something would actually be done.",
+            "L2": "Sometimes asks for a concrete procedure when it matters.",
+            "L3": "Usually insists that proposals be turned into operational steps.",
+            "L4": "Insists relentlessly that every idea be operationalized into concrete, executable steps.",
+        },
+        "A4": {
+            "L0": "Clings to original premises and resists any correction even when shown to be wrong.",
+            "L1": "(unused A4 slot)",
+            "L2": "Will revise a premise when given a clear reason.",
+            "L3": "(unused A4 slot)",
+            "L4": "Readily corrects own premises the moment a better framing appears.",
+        },
+        "A5": {
+            "L0": "Stays narrowly on the single given thread; spawns no new directions.",
+            "L1": "(unused A5 slot)",
+            "L2": "(unused A5 slot)",
+            "L3": "(unused A5 slot)",
+            "L4": "Generatively spawns new research directions and adjacent questions from any starting point.",
+        },
+    }
 
 
 def _check_interp_keyset(w):
