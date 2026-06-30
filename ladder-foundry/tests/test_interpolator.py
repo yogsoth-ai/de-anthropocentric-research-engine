@@ -16,14 +16,16 @@ def test_ladder_nondecreasing(tmp_path):
     assert all(b >= a for a, b in zip(levels, levels[1:]))   # nondecreasing
 
 
-def test_coord_read_from_table_not_computed(tmp_path):
+def test_coord_read_from_frozen_table(tmp_path):
     w = weights.dump_initial(str(tmp_path / "b0.json"))
-    assert all(r["coord"] is None for r in ladder_levels(w, n=6))  # empty batch-0
-    w["frozen_label"]["coord_table"] = {"0": [0.0, 1.0], "5": [9.0, 9.0]}  # fixture
     rungs = ladder_levels(w, n=6)
-    assert rungs[0]["coord"] == [0.0, 1.0]
-    assert rungs[5]["coord"] == [9.0, 9.0]
-    assert rungs[1]["coord"] is None                    # not fabricated
+    # coord comes verbatim from the frozen table (read, never computed)
+    assert rungs[0]["coord"] == w["frozen_label"]["coord_table"]["0"]
+    assert rungs[5]["coord"] == w["frozen_label"]["coord_table"]["5"]
+    assert rungs[0]["coord"]["A1"] == "L4"
+    assert rungs[5]["coord"]["A1"] == "L0"
+    # mutating the returned coord must not alter a fresh read (table is source of truth)
+    assert rungs[3]["coord"] == w["frozen_label"]["coord_table"]["3"]
 
 
 def test_collision_offset_axis_carried(tmp_path):

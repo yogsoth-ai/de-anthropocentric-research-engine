@@ -13,6 +13,16 @@ LEVELS = {"L0", "L1", "L2", "L3", "L4"}
 INTERP_KEYS = {"collision_offset_axis", "endpoint_spread", "granularity_map"}
 COLLISION_ENUM = {"B1", "expression"}
 
+# rung -> locked label coordinate (authored once, never recomputed at gen time)
+_COORD_TABLE = {
+    "0": {"A1": "L4", "A2": "L4", "A3": "L4", "A4": "C+", "A5": "G+", "B1": "neu"},
+    "1": {"A1": "L3", "A2": "L3", "A3": "L3", "A4": "C+", "A5": "G+", "B1": "neu"},
+    "2": {"A1": "L2", "A2": "L2", "A3": "L2", "A4": "C0", "A5": "G+", "B1": "neu"},
+    "3": {"A1": "L2", "A2": "L1", "A3": "L2", "A4": "C0", "A5": "G0", "B1": "buz"},
+    "4": {"A1": "L1", "A2": "L1", "A3": "L1", "A4": "C-", "A5": "G0", "B1": "buz"},
+    "5": {"A1": "L0", "A2": "L0", "A3": "L0", "A4": "C-", "A5": "G0", "B1": "buz"},
+}
+
 
 def _default_axis_prose():
     # D2: real endpoint + intermediate persona prose. axis_prose stays
@@ -81,7 +91,7 @@ def dump_initial(path):
         },
         "frozen_label": {
             "rank_order": {"direction": [0, 1, 2, 3, 4, 5], "primary_sort": ["A1", "A3", "A2"]},
-            "coord_table": {},
+            "coord_table": {k: dict(v) for k, v in _COORD_TABLE.items()},
         },
     }
     Path(path).write_text(json.dumps(w, indent=2, ensure_ascii=False), encoding="utf-8")

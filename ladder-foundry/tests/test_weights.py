@@ -19,9 +19,22 @@ def test_interp_params_key_set_locked(tmp_path):
         weights.revise(w, "assembler_params", "turn_budget", 13, "trigger keyset check")
 
 
-def test_coord_table_empty_in_batch0(tmp_path):
+def test_coord_table_has_six_frozen_rungs(tmp_path):
     w = _w(tmp_path)
-    assert w["frozen_label"]["coord_table"] == {}
+    ct = w["frozen_label"]["coord_table"]
+    assert set(ct.keys()) == {"0", "1", "2", "3", "4", "5"}
+    assert ct["0"] == {"A1": "L4", "A2": "L4", "A3": "L4",
+                       "A4": "C+", "A5": "G+", "B1": "neu"}
+    assert ct["5"] == {"A1": "L0", "A2": "L0", "A3": "L0",
+                       "A4": "C-", "A5": "G0", "B1": "buz"}
+
+
+def test_coord_table_spine_is_monotone_nonincreasing(tmp_path):
+    w = _w(tmp_path)
+    ct = w["frozen_label"]["coord_table"]
+    for axis in ("A1", "A2", "A3"):
+        idx = [int(ct[str(i)][axis][1:]) for i in range(6)]   # "L4"->4
+        assert all(b <= a for a, b in zip(idx, idx[1:])), f"{axis} not monotone: {idx}"
 
 
 def test_rank_order_locked_values(tmp_path):
