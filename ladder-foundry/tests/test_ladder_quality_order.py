@@ -31,6 +31,8 @@ def test_schema_required_keys_and_optional_fields_omitted():
     assert "calibration_handoff" not in props
     assert "confound_flat_pass" not in props
     assert s["properties"]["tau"]["type"] == "number"
+    assert s["properties"]["tau"]["minimum"] == -1
+    assert s["properties"]["tau"]["maximum"] == 1
     for b in ("monotonicity_pass", "endpoint_separation_pass", "rigor_floor_flag"):
         assert s["properties"][b]["type"] == "boolean"
 
@@ -40,6 +42,7 @@ def test_pairwise_log_item_shape():
     item = s["properties"]["pairwise_log"]["items"]
     assert set(item["required"]) == {"i", "j", "winner", "reason"}
     assert item["properties"]["reason"]["minLength"] == 1
+    assert item["properties"]["winner"]["type"] == "integer"
 
 
 def test_downstream_gate_alignment():
@@ -53,7 +56,7 @@ def test_downstream_gate_alignment():
                          "--fidelity-rate", "0.95", "--mono", "false",
                          "--endpoint", "true"],
                         cwd=str(LF), capture_output=True, text=True)
-    assert r2.stdout.strip() == "false"
+    assert r2.returncode == 0 and r2.stdout.strip() == "false"
 
 
 def test_d1_d5_only_no_academic_criteria():
