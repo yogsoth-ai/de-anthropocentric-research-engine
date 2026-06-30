@@ -1,3 +1,0 @@
-{"type":"assistant","cwd":"D:\\YOGSOTH-AI","sessionId":"s1","message":{"content":[{"type":"tool_use","name":"Skill","input":{"skill":"warm-start"}}]}}
-{"type":"assistant","cwd":"D:\\YOGSOTH-AI","sessionId":"s1","message":{"content":[{"type":"tool_use","name":"Skill","input":{"skill":"context-init"}}]}}
-{"type":"user","cwd":"D:\\YOGSOTH-AI","sessionId":"s1","message":{"content":"hi"}}
