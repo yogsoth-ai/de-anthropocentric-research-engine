@@ -75,3 +75,13 @@ def test_load_roundtrip_and_keyset_validation(tmp_path):
     weights.dump_initial(p)
     w = weights.load(p)
     assert set(w.keys()) == {"axis_prose", "interp_params", "assembler_params", "frozen_label"}
+
+
+def test_load_rejects_bad_interp_keyset(tmp_path):
+    import json
+    p = tmp_path / "tampered.json"
+    w = weights.dump_initial(str(p))                 # valid batch-0 on disk
+    w["interp_params"]["sneaky_coord"] = [1, 2]      # smuggle a coord under a new key
+    p.write_text(json.dumps(w), encoding="utf-8")    # persist the tampered weights
+    with pytest.raises(ValueError):
+        weights.load(str(p))                          # load() must reject the bad keyset
