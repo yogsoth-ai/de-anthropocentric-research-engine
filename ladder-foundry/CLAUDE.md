@@ -105,9 +105,9 @@ or `.env` (2 tokens). Each role carries only what it needs:
 
 ## Environment facts (this box, verified 2026-07-01, read-only)
 
-- `claude` 2.1.197 on PATH; global config `C:\Users\Strix\.claude`.
+- `claude` 2.1.197 on PATH; global config `C:\Users\<user>\.claude`.
 - `codex` 0.120.0 on PATH (`~/.codex` has auth) — present, but we drop it.
-- Shell: Git Bash / MSYS2 (`MINGW64`), NOT WSL. `$HOME=/c/Users/Strix`.
+- Shell: Git Bash / MSYS2 (`MINGW64`), NOT WSL. `$HOME=/c/Users/<user>`.
 - **tmux: NOT installed.** No terminal multiplexer available.
 - `ladder-foundry/sandbox/` already has a prototype (`.claude/`,
   `settings.local.json.template`, `read_session.py`, `smoke_test.py`) but NO
