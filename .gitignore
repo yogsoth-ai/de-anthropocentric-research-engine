@@ -48,3 +48,11 @@ scripts/**/refactory_source.json
 **/_t*.html
 **/_t_rs.json
 self-iteration/2026-06-07-triple-cc-system/2026-06-07-INDEX-triple-cc-pretrain.md
+
+# ladder-foundry generated configs (gitignored; human-eye gate only)
+ladder-foundry/configs/
+
+# ladder-foundry 2B sandbox runtime (CC config, logs, transcripts — local-only)
+ladder-foundry/sandbox/.claude/
+ladder-foundry/sandbox/runs/
+ladder-foundry/sandbox/transcripts/

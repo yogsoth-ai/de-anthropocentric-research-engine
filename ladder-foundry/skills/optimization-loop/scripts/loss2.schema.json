@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tau", "monotonicity_pass", "endpoint_separation_pass",
+               "rigor_floor_flag", "pairwise_log"],
+  "properties": {
+    "tau": {"type": "number", "minimum": -1, "maximum": 1},
+    "monotonicity_pass": {"type": "boolean"},
+    "endpoint_separation_pass": {"type": "boolean"},
+    "rigor_floor_flag": {"type": "boolean"},
+    "pairwise_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["i", "j", "winner", "reason"],
+        "properties": {
+          "i": {"type": "integer"},
+          "j": {"type": "integer"},
+          "winner": {"type": "integer"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
