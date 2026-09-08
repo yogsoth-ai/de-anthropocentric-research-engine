@@ -90,12 +90,12 @@ Verdicts for completed blocks: `COVERED`, `THINNED`, or `UNCERTAIN`. Rows not ye
 | 82 | causal evidence / feedback / intervention / counterfactual | construct-causal-model | COVERED | Variables, mechanism edges, evidence/counterevidence, contradictions, feedback loops, chains, interventions, counterfactuals, causal validation, and confidence updates are all called. |
 | 83 | dimensional analysis | explore-dimensional-space(mode=research-space-mapping) | COVERED | Dimension/value discovery, combination enumeration, compatibility, axis-independence validation, coverage gaps, scoring, and subquestion generation cover the v3 dimensional-analysis kernel. |
 | 84 | argument mapping / counterclaims / evidence | construct-argument-map | COVERED | Claim atomization, assumptions, evidence/defeaters, counterclaims, strength scoring, critique, contradiction detection, and inspectable graph construction are explicit. |
-| 85 | knowledge compilation / vault maintenance | artifact/storage layer | PASS-with-caveat | path locatable; semantic equivalence not assumed; architecture contract 85; source_status=MOVED_RUNTIME |
+| 85 | knowledge compilation / vault maintenance | artifact/storage layer | MOVED_RUNTIME | Storage/vault execution is explicitly outside the v4 scientific graph; retain for R1 runtime/artifact-boundary adjudication (runtime-boundary.md:6). |
 | 86 | factorial / ablation / metric / sample-size / statistics design | design-experiment | COVERED | Variables/levels, design matrix, metrics, sample size, baselines, ablation mapping, randomness, environment, statistics, reproducibility, and budget optimization are all in the calls union; old phantom-mode REJECT withdrawn. |
 | 87 | constraint analysis | analyze-constraints-readiness(mode=resource/causal) | COVERED | Readiness, bottlenecks, hard/soft constraints, removability, mitigation, resource gaps, causal chains, conflicts, critical chain, assumptions, future reality, and stage gates are explicit. |
 | 88 | scenario planning | analyze-future-scenarios | COVERED | Drivers, dimension values, compatibility, scenario construction, impact, robustness, competitive moves, and temporal trajectories cover the v3 scenario-planning contract. |
-| 89 | implementation dependency planning | host execution planner | PASS-with-caveat | path locatable; semantic equivalence not assumed; architecture contract 89; source_status=MOVED_RUNTIME |
-| 90 | critical-path duration / buffering / dispatch / monitoring | host execution planner/runtime | PASS-with-caveat | path locatable; semantic equivalence not assumed; architecture contract 90; source_status=MOVED_RUNTIME |
+| 89 | implementation dependency planning | host execution planner | MOVED_RUNTIME | Execution planning ownership is transferred to the host/runtime boundary; scientific graph coverage is not the adjudication surface (runtime-boundary.md:6). |
+| 90 | critical-path duration / buffering / dispatch / monitoring | host execution planner/runtime | MOVED_RUNTIME | Critical-path execution, buffering, dispatch, and monitoring are runtime responsibilities under R1 (runtime-boundary.md:5.3-5.6). |
 | 91 | statistical result analysis / reproducibility | analyze-experiment-results | THINNED | Statistical testing and reproducibility verification are explicit, but the v3 result-analysis alternatives (frequentist/resampling/Bayesian) and execution-synthesis/result-validation-loop are not explicit in the calls. |
 | 92 | deductive hypothesis generation | formulate-hypotheses(mode=deductive) ? falsifiability-audit | COVERED | Theory identification, causal/mechanism extraction, variable/relationship specification, and falsifiability/operationalization/boundaries cover the deductive path. |
 | 93 | inductive hypothesis generation | formulate-hypotheses(mode=inductive): extract-empirical-regularity ? identify-variables ? specify-relationship ? falsifiability-audit | COVERED | Empirical-regularity extraction, variables, relationships, and falsifiability checks are explicit. |
@@ -131,7 +131,7 @@ Verdicts for completed blocks: `COVERED`, `THINNED`, or `UNCERTAIN`. Rows not ye
 | 123 | competitive scenario | analyze-future-scenarios ? predict-competitive-move | COVERED | Competitor moves, timing, preemption/priority risk, assumptions, and scenario impact/robustness are explicit. |
 | 124 | temporal scenario | analyze-future-scenarios ? analyze-temporal-trajectory | COVERED | Temporal trajectories, regime changes, inflections, uncertainty, and scenario impacts are explicit. |
 | 125 | narrative scenario consistency | analyze-future-scenarios ? construct-scenario ? evaluate-compatibility | COVERED | Narrative/baseline scenario construction includes explicit assumptions/plausibility, and compatibility evaluation prunes inconsistent combinations. |
-| 126 | experiment-running agent dispatch / monitoring | host runtime / coding agent / scheduler | PASS-with-caveat | path locatable; semantic equivalence not assumed; architecture contract 126; source_status=MOVED_RUNTIME |
+| 126 | experiment-running agent dispatch / monitoring | host runtime / coding agent / scheduler | MOVED_RUNTIME | Agent dispatch and monitoring are explicitly host-runtime responsibilities (runtime-boundary.md:5.5-5.6). |
 | 127 | collective adjudication / independent judge ballots | pairwise-ranking ? collect-independent-judgments ? aggregate-ranking | COVERED | Independent ballots, preserved rationales, pairwise comparison, consistency, rating updates, and explicit aggregation are called. |
 | 128 | social-choice aggregation (Condorcet/Schulze/Borda/Kemeny/Copeland) | aggregate-ranking(rule=...) | THINNED | Rule-parameterized aggregation is present, but the v3 named social-choice rule family and tie/incomparability handling are not explicit. |
 | 129 | disagreement mapping | structured-consensus ? map-disagreement | COVERED | `map-disagreement` explicitly represents agreement, disagreement, and reasons within structured consensus. |
@@ -161,9 +161,9 @@ These 19 phantom-mode items came from the R2 roster assignment; they are not ind
 
 Sequence: C2 moves actor-profiling from v3 startup elicitation to a product input contract. Sirelia裁定已废止 R1 §2 的旧 Spec 形态描述；actor-profiling 验收条件待 R1 重定，当前 UNCERTAIN。
 
-Granularity: C19 collapses v3 literature-survey paradigms into one v4 node with no modes (architecture:6195,597). REJECT.
+Granularity: C19 collapses v3 literature-survey paradigms into one v4 node with no explicit modes (architecture:6195,597); the calls still cover the generic evidence workflow, but paradigm-specific gates are absent, so THINNED.
 
-Input/output: C39 Morris-to-Sobol requires numeric parameter/distribution inputs and interaction attribution; v4 only names an SOP path and no tactic modes (architecture:6335,378). REJECT.
+Input/output: C39 Morris-to-Sobol names a global-sensitivity SOP, but does not preserve the v3 elementary-effects, first/total-order, and interaction-detection outputs, so THINNED.
 
 Subject: C10 subagent spawning and implementer dispatch are runtime responsibilities after R1; this is ownership transfer, not scientific coverage (runtime-boundary.md:5.5).
 
@@ -176,14 +176,14 @@ Strength correction: C70's prior caveat was false. `rank-candidates` calls `set-
 | 2 | PENDING_R1_REJUDGMENT | UNCERTAIN | Sirelia裁定：actor-profiling 验收条件待重定 |
 | 9 | MOVED_RUNTIME | COVERED | runtime-boundary.md:3-4 |
 | 10 | MOVED_RUNTIME | COVERED | runtime-boundary.md:5.5-6 |
-| 85 | MOVED_ARTIFACT | PASS-with-caveat | runtime-boundary.md:6 |
-| 89 | SPLIT | PASS-with-caveat | runtime-boundary.md:6 |
-| 90 | MOVED_RUNTIME | PASS-with-caveat | runtime-boundary.md:5.3-5.6 |
-| 126 | MOVED_RUNTIME | PASS-with-caveat | runtime-boundary.md:5.5-5.6 |
+| 85 | MOVED_ARTIFACT | MOVED_RUNTIME | runtime-boundary.md:6 |
+| 89 | SPLIT | MOVED_RUNTIME | runtime-boundary.md:6 |
+| 90 | MOVED_RUNTIME | MOVED_RUNTIME | runtime-boundary.md:5.3-5.6 |
+| 126 | MOVED_RUNTIME | MOVED_RUNTIME | runtime-boundary.md:5.5-5.6 |
 
 ## 5. Block status
 
 - C1-C20: COVERED 8, THINNED 11, UNCERTAIN 1.
-- C21-C146: pending the same tactic+SOP-union review; legacy labels are not final.
+- C21-C146: reviewed through calls[tactic] plus all called SOPs; remaining exceptions are C102 UNCERTAIN and C85/C89/C90/C126 MOVED_RUNTIME pending R1 boundary adjudication.
 
 No completion declaration written. Sirelia must review and write the exact GOAL ACHIEVED line in 00-escalation.md.
