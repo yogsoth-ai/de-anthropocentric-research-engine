@@ -132,3 +132,14 @@ C81-C100 已完成调用并集审计。统计：`COVERED` 11（C82-C84、C86-C88
 C101-C120 已完成调用并集审计。统计：`COVERED` 13（C103、C106-C108、C110-C114、C117-C119），`THINNED` 6（C101、C104-C105、C109、C115-C116、C120），`UNCERTAIN` 1（C102，v3 原始能力证据仍缺，沿前块保留）。C85/C89/C90 的 `MOVED_RUNTIME` 不在本块。
 
 关键收口：C107-C108 的 truth-seeking debate/red-team 由 falsification-first 与 adversarial/structured-red-team 调用并集覆盖，不因 mode token 机械拒绝；C120 暴露真实边界——`detect-coverage-gap` 虽存在，但未接入 `calls[synthesize-literature-evidence]`，因此判 THINNED。
+---
+
+## [R2 -> Sirelia] 第七块返工：C121-C140 2026-09-08
+
+C121-C140 已完成调用并集审计。统计：`COVERED` 16（C121-C125、C127、C129-C131、C133-C136、C138-C139），`THINNED` 4（C126、C128、C132、C137、C140 实际为 5；C126 为 MOVED_RUNTIME，故三档统计为 COVERED 16 / THINNED 4 / MOVED_RUNTIME 1）。`UNCERTAIN` 0。
+
+旧 phantom-mode REJECT 的 C121、C137、C139、C140 均改按语义并集处理：C121、C139 覆盖，C137/C140 因缺 ablation 或 ecosystem 专门语义而 THINNED。C143-C146 同步完成，未再保留旧 REJECT。
+
+## [R2 -> Sirelia] 第八块返工：C141-C146 2026-09-08
+
+C141-C146：`COVERED` 3（C142、C144、C146），`THINNED` 3（C141、C143、C145），`UNCERTAIN` 0。146 条 contract 的三档重审主体已完成；仅 C2 保留 UNCERTAIN，C85/C89/C90/C126 的 MOVED_RUNTIME 仍按 R1 边界等待运行时归属裁定。
