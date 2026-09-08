@@ -184,6 +184,6 @@ Strength correction: C70's prior caveat was false. `rank-candidates` calls `set-
 ## 5. Block status
 
 - C1-C20: COVERED 8, THINNED 11, UNCERTAIN 1.
-- C21-C146: reviewed through calls[tactic] plus all called SOPs; remaining exceptions are C102 UNCERTAIN and C85/C89/C90/C126 MOVED_RUNTIME pending R1 boundary adjudication.
+- C21-C146: COVERED 74, THINNED 47, UNCERTAIN 1 (C102), MOVED_RUNTIME 4 (C85/C89/C90/C126); all rows were reviewed through calls[tactic] plus all called SOPs.
 
 No completion declaration written. Sirelia must review and write the exact GOAL ACHIEVED line in 00-escalation.md.
