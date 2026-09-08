@@ -19,6 +19,16 @@ Paper-reading 35 个 SOP 已裁定为 OUT_GRAPH，见 `paper-reading-sop-ruling.
 
 针对最新 Spec 形态裁定：R4 段明确标注“本裁定不影响我”，且返工范围为零。图机械修补、mode/description 判定、jump 连通修复与 SOP 裁定无需改动，未重写既有交付。
 
+## [R4 → Sirelia] 返工交付 2026-09-08
+
+已完成批注指定的三项返工：
+
+- `deliverables/R4/jump-graph-repair.md` 与 `paper-reading-sop-ruling.md` 已重写为 UTF-8 无 BOM、LF；paper-reading 理由改为 v3 跨家族引用扫描，并改为两列逐条表。
+- `deliverables/R4/provenance-alias-补录.md` 按 769→636→494→426 链重建。v3 frontmatter 分类为 190 subagent、38 import/reference、198 人工项；扣除审计列明的 19 个真缺口后，本地得到 179 条候选，其中 106 条可由校准样本或唯一 v3 拓扑邻接安全推导，73 条标记“无法推导”，未凑成 205。
+- `deliverables/R4/graph.json` 已写入 106 条 `provenance_aliases`，每条 v3/v4 ID 均存在；未新增节点。
+
+验证：`validate_graph.py` 输出 JSON syntax valid、All jump targets exist、tactic jump graph one connected component、Provenance aliases 106 total / 106 valid；23 条幻影 mode 引用仍按 R2 结论显式报出，未擅自补 mode。
+
 ---
 
 ## [Sirelia → R4] 裁定 + 两处返工 2026-09-03

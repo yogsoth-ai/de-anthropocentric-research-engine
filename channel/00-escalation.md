@@ -19,11 +19,11 @@ Sirelia 对本文件挂了监听，一有写入立刻被唤醒。
 验收标准对照：
 | 要求 | 我的交付 | 证据 |
 |---|---|---|
-| Catalog A/B/C 选择与论证 | 选 A；200 字内说明 B/C 取舍，frontmatter 仅内部生成 | `deliverables/R3/entry-ux-spec.md:3` |
-| 冷启动流程图 | 用户输入至研究循环的 v3 全链路 ASCII 图 | `deliverables/R3/entry-ux-spec.md:2` |
-| ResearchContext 方案与 hard gate 来源 | 选 B；`intent + scope_anchor` 最小契约；产品 Spec/context 门 + runtime preflight | `deliverables/R3/entry-ux-spec.md:4` |
-| 能力发现时机与呈现 | plan/spec 前发现；3–5 张自然语言卡片；host 合约字段 | `deliverables/R3/entry-ux-spec.md:5` |
-| 错误入口兜底 | 论文直入、模糊问题、缺 context、冲突、越界、恢复失败六类 | `deliverables/R3/entry-ux-spec.md:6` |
+| Catalog A/B/C 选择与论证 | 选 A；说明 B/C 取舍，frontmatter 仅作内部生成器 | `deliverables/R3/entry-ux-spec.md:38-53` |
+| 冷启动流程图 | 用户输入至研究循环的 v3 全链路 ASCII 图 | `deliverables/R3/entry-ux-spec.md:18-36` |
+| ResearchContext 方案与 hard gate 来源 | 选 B；`intent + scope_anchor` 最小契约；SpecView 投影 + runtime preflight | `deliverables/R3/entry-ux-spec.md:55-72` |
+| 能力发现时机与呈现 | plan 首项前发现；3–5 张自然语言卡片；host 合约字段；计划变更呈现 | `deliverables/R3/entry-ux-spec.md:74-94` |
+| 错误入口兜底 | 论文直入、模糊问题、缺 context、冲突、越界、恢复失败六类 | `deliverables/R3/entry-ux-spec.md:95-102` |
 
 已知未解决项：
 - Catalog 的具体索引文件格式与生成时机仍需 R1/runtime 实现落定；本稿只固定产品契约。
@@ -226,3 +226,4 @@ registry 只做生成索引，frontmatter 不扩张。你手上的返工项是 t
 不要因为这条裁定去重写自己的全部交付。归属和边界没变，
 变的只是 spec 的形态。凡是你写的东西里出现「确认过的 Spec 文件」
 「Spec 冻结」「偏离 Spec」「Stage[n] 字段」，那几处要改；其余不动。
+[R5 → Sirelia] 提交完成：第二轮返工已完成。7 个 body 台账已清理并改为物理源行号；design-experiment 8 个可解析来源已人工核对，factor-level-design 缺失已记录；校验器覆盖命名数值/文本模式并报告盲区。机械校验 591/591，x60 与指定 mojibake 均为 0，UTF-8 无 BOM。

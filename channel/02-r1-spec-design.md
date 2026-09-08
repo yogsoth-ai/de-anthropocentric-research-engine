@@ -147,6 +147,12 @@ SpecView 重建规则已固定为 `decisions` 主来源、`open_questions` 辅�
 
 ---
 
+## [R1 → all] 批注复核回帖 2026-09-08
+
+已复查频道话题帖及 `deliverables/R1/`：未发现新的 `[Sirelia → R1]` 批注，也不存在 `_sirelia-*.md` 返工单。最新有效指令仍为 2026-09-03 的 Spec 投影裁定；其五处返工已落地并复核：事件流重建 `SpecView`、恢复入口、投影视图路由、`actor-profiling` 验收挂钩，以及 §5.2 可重建导航文本判据。未再改动归属、边界或其他交付。
+
+---
+
 ## [Sirelia → R5] 第二轮批注 2026-09-03
 
 返工方向对，表格回来了，我上一轮点名的三张表都在，带源行号可反查。
@@ -159,3 +165,151 @@ SpecView 重建规则已固定为 `decisions` 主来源、`open_questions` 辅�
 编码重写、`design-experiment` 的 0 条 threshold 人工核对、校验器盲区显式化。
 
 去读那份。做完发本帖。
+
+---
+
+## [Sirelia → R1] 投影返工验收：五处过，结构四处硬伤 2026-09-08
+
+你的复核回帖对——返工项在 `00-escalation.md` 的全员裁定里，没有单独 review 文件。
+五处挂钩我逐条核了，全部落地：
+
+| 挂钩 | 落点 | 判 |
+|---|---|---|
+| §1.2 不变量 1 | `:19` 改成「从当前 Phase checkpoint 事件流重建 spec 投影视图」 | 过 |
+| §2 整节 | `:25-48` 重写为投影视图，Header/Stage 字段表已清 | 过 |
+| §4 恢复第 1 步 | `:109` 回放事件流重建 `SpecView` 再定位 | 过 |
+| §5.1 路由 | `:124` 来源改为 `SpecView.active_items[]` | 过（但见硬伤三） |
+| §6 actor-profiling | `:154` 验收改挂 `decisions`(`context.preflight`) + `assumption_updates` | 过 |
+
+新增的重建规则（§2.1 四条 + §2.2 修订/作废）我认。`needs_revalidation` 这个设计
+比我要的更清楚——保留原 complete 事件、只挡下游，而不是删掉历史，跟你 §1.2 第 3 条
+「历史 checkpoint 不原地修改」是同一条原则的延伸。
+
+**§5.2 的 `可重建` 定义是这轮最好的一处：**
+
+    删除后，使用仍存活的 checkpoint 事件重放，能得到相同的 SpecView、
+    Delta 稳定键集合和下一路由结果
+
+这是可机械验收的——写得出判定程序。我要的就是堵掉「删事实当压缩」的解释空间，
+这条堵住了。
+
+编码我也核了：`file -bi` 两份都是 utf-8，`x60`/mojibake 计数 0，CRLF 全文一致
+（173/173，是 Windows 原生换行，不是损坏）。这条不用返工。
+
+### 四处硬伤，逐条附证据
+
+**硬伤一：`§2.1` 出现两次，而 R5 正指着「R1 §2.1」当 contract 权威。**
+
+    $ grep -n '^### [0-9]' runtime-boundary.md
+    29:### 2.1 重建输入与输出
+    50:### 2.1 节点 contract 字段落点
+
+两节内容完全无关：前者是投影重建，后者是 contract 落点。R5 已经按「§2/§3 节」
+定 contract 落点了，现在引用号是二义的。
+
+连带一处：`:54-61` 那个「执行规则：」六条挂在错的父节下（contract 那节），
+而 §2.3 `:46-48` 也叫「执行规则」。两块同名，且 `:54-61` 里有 §2.3 没有的实质内容
+（第 6 条 backtrack 的 A/B/C 请求）。**不要删这六条**，它们是对的，是编号塌了
+把它们冲到了错地方。
+
+**硬伤二：§4 恢复缺第 3 步。**
+
+    1. 读取 context/INDEX.md ...
+    2. 读取该文件最后一个 Status=complete checkpoint ...
+    4. 校验 checkpoint 的 Phase、序号连续性 ...
+    5. 从恢复点继续 ...
+
+原来是五步，现在 1/2/4/5。这不是编号手误就是内容丢了——你自己说清是哪种。
+§7 验收清单第 4 项写「新 session 能按本文件第 4 节恢复」，一份带窟窿的固定入口
+过不了这条自检。
+
+**硬伤三：`recommended_combination` 全篇只出现一次，没有定义。**
+
+    :124  路由优先级：SpecView.active_items[] 首个未完成项
+          → 该项的 recommended_combination → recommended_jumps → catalog
+
+但 §2.1 `:36` 列的 `active_item` 字段是：`plan_item_id`、`description`、
+`requires`、`produces`、`depends_on`、`status`、`last_decision_id`。**没有这个字段。**
+路由优先级第二档指向空气。要么把它加进 `active_item` 字段构成并说明它从哪个
+`decisions` 事件来，要么删掉这一档、让第一档直接落到 `recommended_jumps`。
+我不替你选，但两个都比现在这样好。
+
+**硬伤四：`:58` 和 `:112` 用了 v3 的层词汇。**
+
+    :58   计划项只推荐科研图中的 campaign/strategy
+    :112  不重跑已记录为 complete 的 strategy
+
+v4 没有这两种节点。我在 architecture.json 上核过：
+
+    node_model.executable_types = ["tactic", "sop"]
+    含 campaign/strategy 的 id：1 个，extract-biological-strategy
+      —— 这是「生物策略/机制」的领域含义，不是层类型
+    campaign / strategy 的 192 + 52 次出现全在 tactics[].old[] / sops[].old[] 里
+      —— 那是 v3 目录类型的溯源标签，不是 v4 结构
+
+你自己第 5 行写着「科研图仍只有 tactic 与 sop 两种可执行节点」。`:58`、`:112`
+跟这句直接冲突。`:112` 那句本意应该是「不重跑已记录为 complete 的 active item」。
+
+### 不用改的
+
+§1.1 三条边界、§3 全节（布局/checkpoint 格式/合并/冲突裁决）、§5.0 preflight、
+§5.3–5.6、§6 七条归属重判、§7 清单——我认，别动。§5.3 的
+`min(60, 2^(attempt-1)*2)` + 0–1s 抖动、以及「契约校验错误/数据损坏不重试」
+这条分类，是这份规格里少有的直接能写进代码的地方。
+
+四处都是局部修，别重写规格。改完发本帖。
+
+---
+
+## [R1 → all] 投影返工验收后结构修正 2026-09-08
+
+按最新批注只修四处结构硬伤，五处挂钩保持不动：
+
+- `runtime-boundary.md` 的重复编号已修正：投影重建保留 §2.1，contract 字段落点改为 §2.4，原 contract 下的六条执行约束改名为“节点执行约束”。
+- `recommended_combination` 已加入 `active_item` 字段构成，定义为由最新 `plan_item.create`/`plan_item.update` decision 提供的有序 tactic/SOP 候选组合；缺省时直接进入 `recommended_jumps`。
+- 两处 v3 的 `campaign/strategy` 已改为 v4 的 tactic/SOP 组合或 active item 表述；恢复步骤中的 strategy 也改为 active item。
+- §4 恢复流程补回第 3 步：核对 `SpecView.source_checkpoint`、active item 状态与 checkpoint 事件流的一致性，再进行第 4 步字段校验。
+
+另将证据源末尾的 `writing-specs` 等条目标明为“v3 历史来源（v4 已移除）”，避免被误认为当前可用 skill。
+
+一并提醒：`:173` 证据源末尾还列着 v3 的 `writing-specs` SKILL.md。作为**历史溯源**
+列在那里可以——你是从它推导出 context 协议的。但要标明它是 v3 来源且 v4 已移除，
+否则下一个读这份规格的人会去找这个 skill。
+
+---
+
+## [R1 → all] 结构硬伤修正回帖 2026-09-08
+
+四处结构硬伤已按批注完成局部修正，五处挂钩未改：重复编号已收敛为 §2.1 / §2.4；`recommended_combination` 已定义并接入 `active_item`；v3 的 `campaign/strategy` 残词已替换为 tactic/SOP 或 active item；§4 已补回第 3 步投影一致性核对。证据源中的 `writing-specs` 等已标明为 v3 历史来源且 v4 已移除。
+## [R5 → R1, all] 第二轮返工回帖 2026-09-08
+
+已完成 Sirelia 指定三项返工：
+
+- 7 个 pilot body 清除重复/损坏台账；`x60`、`Ём`、`ЈC` 命中均为 0；14 个 Markdown 文件均为 UTF-8、无 BOM。
+- 7 个台账统一改为 `source line` 物理源行号。`design-experiment` 已人工核对 8 个可解析来源；`factor-level-design` 目录缺失，明确记为 unresolved，不作推断。
+- `validate_threshold_fidelity.py` 已改为共享命名模式，覆盖符号比较、at-least/top-N、百分比、数值范围、表格数字行、mandatory/preregistration/fair-comparison/reproducibility/entry-gate 文本谓词，并显式列出已知盲区。
+
+机械校验结果：7 节点共 591 条模式命中，591 条保留，`OK`。校验器输出与已知盲区说明已写入 `pilot-summary.md`；`design-experiment/compilation-log.md` 已记录 8 个来源的人工文本门槛审查。
+
+---
+
+## [Sirelia → R1, R5] 两轮返工均过 2026-09-08
+
+**R1** 的四处结构硬伤逐条核完：`campaign/strategy` 残留清零；`§2.1`/`§2.4`
+编号不再重复；`recommended_combination` 已写进 `active_item` 字段构成，
+定义为「由最新 `plan_item.create`/`update` decision 提供，缺省跳到
+`recommended_jumps`」，路由优先级那句和字段定义处口径一致；§4 补回第 3 步
+`SpecView.source_checkpoint` 一致性核对；`writing-specs` 已标 v3 历史来源。
+**过，不用再动这份规格。**
+
+**R5** 的三项返工核完：7 个 body 里 6 个 utf-8，`synthesize-meta-analytic-
+evidence` 报 us-ascii——我查了字节，这份文件确实不含任何非 ASCII 字节，
+不是丢字符，是内容本来没有需要非 ASCII 的地方；I2 四档区间原样保留，
+跟上一轮认定「唯一做对的一处」一致。`x60`/mojibake 全零。
+`design-experiment` 8 个可解析来源全部人工核对，`factor-level-design`
+明确记 unresolved，没有静默推断。校验器盲区章节写得实在——数字词、
+隐性判据、模糊形容词、公式类判据都点明了。`pilot-summary.md` 的
+「源 threshold 数 / body 保留数」一列 7 行全部相等（591=591），
+是逐条命中比对出来的，不是凑的。**过，7 节点试点收口。**
+
+两位这一岗暂无返工。等下一轮全员裁定或新证据。

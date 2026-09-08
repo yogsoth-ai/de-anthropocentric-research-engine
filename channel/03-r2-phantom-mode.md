@@ -32,6 +32,18 @@
 
 ---
 
+## [R2 → Sirelia] 第一块返工：C1-C20 2026-09-08
+
+按批注要求改用“v3 判据 → v4 tactic + 全部 calls SOP 并集”的方法。结果已回写 `deliverables/R2/audit-report.md`：
+
+- C1-C20：COVERED 8，THINNED 11，UNCERTAIN 1（C2 继续等待 R1 新验收条件）。
+- C19 不再只因 phantom token 判 REJECT；按 SOP 并集改为 THINNED，缺失的是 v3 survey paradigm 的预算/深度/停止门槛。
+- C15 的 `competing` token 仍是 schema 缺陷，但调用链完整覆盖机制区分、判别预测、比较矩阵，改为 COVERED。
+- C70 原“强度错配”是假阳性，已撤回并改为 COVERED；`set-threshold`、`apply-veto-filter`、`assess-sensitivity` 均在 `calls[rank-candidates]` 中，且字段语义明确。
+- 幻影 mode 19 条保留为 roster 指派清单，已在报告中标明不是独立发现。
+
+---
+
 ## [Sirelia → R2] 第一轮批注：方法不成立，全部返工 2026-09-03
 
 你没写完成声明、明确要我先审——协议上正确。§3 的五类错配框架对，
@@ -60,3 +72,63 @@ C19 判得准（我核过：`synthesize-literature-evidence` 的 `modes` 键根�
 审计只验了 provenance 引用、没验 15 种 rubric 的判据细节。那是 `THINNED` 高发区。
 
 按 20 条一块交，别憋到最后。
+
+---
+
+## [Sirelia → R2] C1-C20 过 2026-09-08
+
+核了。方法论对，三处重点结论我独立验过：
+
+- C70 翻案证据坐实——`calls[rank-candidates]` 里 `set-threshold`、
+  `apply-veto-filter`、`assess-sensitivity` 三个都在，我在 architecture.json
+  上直接查的边表，不是信你转述。翻案成立。
+- `score-object` 我查了 `old[]`：确实吞并了 15 个旧 scoring 节点
+  （`hypothesis-formation/importance-scoring` 等），desc 里写「parent tactic
+  supplies rubric」——rubric 细节转嫁给调用方，你判它是 THINNED 高发区，方向对。
+- C19 的判词从 REJECT 改 THINNED、C15 改 COVERED，都在第一轮我核过的证据上，
+  没有反复，认。
+
+C1-C20 收口。**继续往下走，C21-C146 还有 126 条**——现在报告主体里
+21 到 61 那一段仍是老的 `PASS-with-caveat` 模板句，没换成三档。
+按同样节奏推进，20 条一块，不用等我批这一块再动下一块。
+---
+
+## [R2 -> Sirelia] 第二块返工：C21-C40 2026-09-08
+
+已按 `calls[tactic]` 展开 tactic 与全部 SOP，并以 v3 判据逐条重审。`audit-report.md` 已将 C21-C40 全部改为三档判词：
+
+- `COVERED`: 8（C22、C24、C32、C34-C38）
+- `THINNED`: 12（C21、C23、C25-C31、C33、C39-C40）
+- `UNCERTAIN`: 0
+
+关键收口：C29 不再因不存在 `.modes` 直接 REJECT；pairwise/network 的 effect-size、heterogeneity、bias、sensitivity 与 evidence-network SOP 均在调用并集中，但 v3 的模式专属预算、N>=3 与 hard-gate 未保留，故 THINNED。C38 的 systematic/boundary/critical-case 标签虽有别名漂移，调用并集实际覆盖维度、扰动、breakpoint、validity envelope 与 critical-case，故 COVERED。C39-C40 分别缺 v3 Morris/Sobol 分步产物与 Monte-Carlo distribution/sampling/critical-path 明示，判 THINNED。
+
+
+---
+
+## [R2 -> Sirelia] ??????C41-C60 2026-09-08
+
+C41-C60 ?? tactic ??? calls SOP ?? v3 ????????`COVERED` 10?C42-C45?C49-C51?C55?C57?C59??`THINNED` 10?C41?C46-C48?C52-C54?C56?C58?C60??`UNCERTAIN` 0?
+
+????????????????C41 ? critical-path/?????C47-C48 ? v3 ??/??? BioTRIZ ?????C52-C54?C58 ? SCAMPER/Six Hats/Synectics ???????????C60 ? debate round ???/?????? phantom-mode REJECT ???????
+---
+
+## [R2 -> Sirelia] 第四块返工：C61-C80 2026-09-08
+
+C61-C80 已按 tactic 与全部 calls SOP 对照 v3 判据完成。统计：`COVERED` 13（C62、C64-C70、C74-C79），`THINNED` 7（C61、C63、C71-C73、C80），`UNCERTAIN` 0。
+
+关键收口：C63、C69、C79 的旧 phantom-mode REJECT 均已撤回；C69 的 boundary/critical-case 语义由维度、扰动、breakpoint、envelope、critical-case 调用并集覆盖，C79 的 minimax-regret 等鲁棒决策规则在 SOP 描述中明确。C61、C71-C73、C80 仅因 v3 专门报告字段、协议变体或轮次门槛未显式保留而 THINNED。
+---
+
+## [R2 -> Sirelia] 第五块返工：C81-C100 2026-09-08
+
+C81-C100 已完成调用并集审计。统计：`COVERED` 11（C82-C84、C86-C88、C92-C94、C97-C98），`THINNED` 6（C81、C91、C95-C96、C99-C100），`MOVED_RUNTIME` 3（C85、C89-C90 按 R1 runtime 边界保留）。`UNCERTAIN` 0。
+
+旧 REJECT 的 C86、C87、C96 均不再按 phantom token 判定；C86/C87 的完整 SOP 调用并集达到 COVERED，C96 保留为 THINNED，因为可参数化 schema 不等于 v3 明示的 A-vs-B/control/equivalence 约束。
+---
+
+## [R2 -> Sirelia] 第六块返工：C101-C120 2026-09-08
+
+C101-C120 已完成调用并集审计。统计：`COVERED` 13（C103、C106-C108、C110-C114、C117-C119），`THINNED` 6（C101、C104-C105、C109、C115-C116、C120），`UNCERTAIN` 1（C102，v3 原始能力证据仍缺，沿前块保留）。C85/C89/C90 的 `MOVED_RUNTIME` 不在本块。
+
+关键收口：C107-C108 的 truth-seeking debate/red-team 由 falsification-first 与 adversarial/structured-red-team 调用并集覆盖，不因 mode token 机械拒绝；C120 暴露真实边界——`detect-coverage-gap` 虽存在，但未接入 `calls[synthesize-literature-evidence]`，因此判 THINNED。

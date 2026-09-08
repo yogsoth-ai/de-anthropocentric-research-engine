@@ -43,97 +43,104 @@ Reject “valid” when benchmark artifact probes are absent, contamination is u
 ## Context checkpoint / Delta notes
 
 Append benchmark version, construct claims, probes, contamination evidence, coverage gaps, protocol diffs, verdict, and repair decisions.
-## Preserved threshold ledger (verbatim source lines)
 
-- \x60benchmark-audit:49\x60 Cannot exit until 80% of all targets met.
-- \x60saturation-analysis:49\x60 Cannot exit until 80% of all targets met.
-- \x60saturation-analysis:89\x60   score_compression: float  # top-10 score range
-- \x60validity-probing:49\x60 Cannot exit until 80% of all targets met.
-- \x60coverage-mapping:48\x60 Cannot exit until 80% of all targets met.
-- \x60protocol-forensics:47\x60 Cannot exit until 80% of all targets met.
-## Preserved threshold table ledger (ASCII-normalized from source)
+## Preserved source criteria ledger
 
-| source | line | source threshold row |
-|---|---:|---|
-| benchmark-audit | 49 | Cannot exit until 80% of all targets met. |
-| saturation-analysis | 49 | Cannot exit until 80% of all targets met. |
-| saturation-analysis | 89 |   score_compression: float  # top-10 score range |
-| validity-probing | 49 | Cannot exit until 80% of all targets met. |
-| coverage-mapping | 48 | Cannot exit until 80% of all targets met. |
-| protocol-forensics | 47 | Cannot exit until 80% of all targets met. |
-## Preserved numeric tables (ASCII-normalized from source)
-
-| source | line | source table row |
-|---|---:|---|
-| benchmark-archaeology | 39 | \| benchmark-audit \| Systematic quality assessment using BetterBench 46-criterion framework \| |
-| benchmark-archaeology | 72 | \| benchmark-audit \| 5 \| 30 \| 40 \| |
-| benchmark-archaeology | 73 | \| saturation-analysis \| 15 \| 50 \| 60 \| |
-| benchmark-archaeology | 74 | \| validity-probing \| 3 \| 40 \| 30 \| |
-| benchmark-archaeology | 75 | \| coverage-mapping \| 20 \| 30 \| 50 \| |
-| benchmark-archaeology | 76 | \| protocol-forensics \| 5 \| 60 \| 30 \| |
-| benchmark-archaeology | 77 | \| **Total** \| **48** \| **210** \| **210** \| |
-| benchmark-archaeology | 112 | \| benchmark-audit \| Systematic quality assessment using BetterBench 46-criterion framework — 5 benchmarks, 30 papers, 40 web searches \| |
-| benchmark-archaeology | 113 | \| coverage-mapping \| Map evaluation coverage, identify untested capability dimensions — 20 benchmarks, 30 papers, 50 web searches \| |
-| benchmark-archaeology | 114 | \| protocol-forensics \| Analyze evaluation protocol differences across papers for same benchmark — 5 benchmarks, 60 papers, 30 web searches \| |
-| benchmark-archaeology | 115 | \| saturation-analysis \| Track score trajectories, detect saturation/failure points — 15 benchmarks, 50 papers, 60 web searches \| |
-| benchmark-archaeology | 116 | \| validity-probing \| Challenge construct validity — does benchmark measure claimed capability>= — 3 benchmarks, 40 papers, 30 web searches \| |
-| benchmark-audit | 28 | \| Benchmarks audited \| 3 \| 5 \| |
-| benchmark-audit | 29 | \| Papers read \| 20 \| 30 \| |
-| benchmark-audit | 30 | \| Web searches \| 25 \| 40 \| |
-| benchmark-audit | 38 | \| Benchmarks audited \| 0 \| 5 \| PENDING \| |
-| benchmark-audit | 39 | \| Papers fetched \| 0 \| 30 \| PENDING \| |
-| benchmark-audit | 40 | \| Papers read \| 0 \| 20 \| PENDING \| |
-| benchmark-audit | 41 | \| Web searches \| 0 \| 40 \| PENDING \| |
-| benchmark-audit | 42 | \| Documentation audits complete \| 0 \| 5 \| PENDING \| |
-| benchmark-audit | 43 | \| Metric decompositions complete \| 0 \| 5 \| PENDING \| |
-| benchmark-audit | 44 | \| Contamination checks complete \| 0 \| 5 \| PENDING \| |
-| benchmark-audit | 45 | \| Synthesis reports produced \| 0 \| 5 \| PENDING \| |
-| saturation-analysis | 28 | \| Benchmarks analyzed \| 10 \| 15 \| |
-| saturation-analysis | 29 | \| Papers read \| 35 \| 50 \| |
-| saturation-analysis | 30 | \| Web searches \| 40 \| 60 \| |
-| saturation-analysis | 38 | \| Benchmarks analyzed \| 0 \| 15 \| PENDING \| |
-| saturation-analysis | 39 | \| Score trajectories built \| 0 \| 15 \| PENDING \| |
-| saturation-analysis | 40 | \| Papers fetched \| 0 \| 50 \| PENDING \| |
-| saturation-analysis | 41 | \| Papers read \| 0 \| 35 \| PENDING \| |
-| saturation-analysis | 42 | \| Web searches \| 0 \| 60 \| PENDING \| |
-| saturation-analysis | 43 | \| Saturation detections run \| 0 \| 15 \| PENDING \| |
-| saturation-analysis | 44 | \| Leaderboard analyses done \| 0 \| 10 \| PENDING \| |
-| saturation-analysis | 45 | \| Failure mode catalogs built \| 0 \| 5 \| PENDING \| |
-| validity-probing | 28 | \| Benchmarks probed \| 2 \| 3 \| |
-| validity-probing | 29 | \| Papers read \| 30 \| 40 \| |
-| validity-probing | 30 | \| Web searches \| 20 \| 30 \| |
-| validity-probing | 38 | \| Benchmarks probed \| 0 \| 3 \| PENDING \| |
-| validity-probing | 39 | \| Papers fetched \| 0 \| 40 \| PENDING \| |
-| validity-probing | 40 | \| Papers read \| 0 \| 30 \| PENDING \| |
-| validity-probing | 41 | \| Web searches \| 0 \| 30 \| PENDING \| |
-| validity-probing | 42 | \| Construct validity assessments \| 0 \| 3 \| PENDING \| |
-| validity-probing | 43 | \| Artifact detection runs \| 0 \| 3 \| PENDING \| |
-| validity-probing | 44 | \| Alternative explanation catalogs \| 0 \| 3 \| PENDING \| |
-| validity-probing | 45 | \| Convergent validity checks \| 0 \| 3 \| PENDING \| |
-| coverage-mapping | 27 | \| Benchmarks mapped \| 15 \| 20 \| |
-| coverage-mapping | 28 | \| Papers read \| 20 \| 30 \| |
-| coverage-mapping | 29 | \| Web searches \| 35 \| 50 \| |
-| coverage-mapping | 37 | \| Benchmarks mapped \| 0 \| 20 \| PENDING \| |
-| coverage-mapping | 38 | \| Capability taxonomy nodes \| 0 \| 30 \| PENDING \| |
-| coverage-mapping | 39 | \| Papers fetched \| 0 \| 30 \| PENDING \| |
-| coverage-mapping | 40 | \| Papers read \| 0 \| 20 \| PENDING \| |
-| coverage-mapping | 41 | \| Web searches \| 0 \| 50 \| PENDING \| |
-| coverage-mapping | 42 | \| Coverage annotations complete \| 0 \| 20 \| PENDING \| |
-| coverage-mapping | 43 | \| White spaces identified \| 0 \| 5 \| PENDING \| |
-| coverage-mapping | 44 | \| Redundancy clusters found \| 0 \| 3 \| PENDING \| |
-| protocol-forensics | 26 | \| Benchmarks forensically analyzed \| 3 \| 5 \| |
-| protocol-forensics | 27 | \| Papers read \| 45 \| 60 \| |
-| protocol-forensics | 28 | \| Web searches \| 20 \| 30 \| |
-| protocol-forensics | 36 | \| Benchmarks analyzed \| 0 \| 5 \| PENDING \| |
-| protocol-forensics | 37 | \| Papers fetched \| 0 \| 60 \| PENDING \| |
-| protocol-forensics | 38 | \| Papers read \| 0 \| 45 \| PENDING \| |
-| protocol-forensics | 39 | \| Web searches \| 0 \| 30 \| PENDING \| |
-| protocol-forensics | 40 | \| Protocol extractions complete \| 0 \| 60 \| PENDING \| |
-| protocol-forensics | 41 | \| Difference matrices built \| 0 \| 5 \| PENDING \| |
-| protocol-forensics | 42 | \| Variance attributions done \| 0 \| 5 \| PENDING \| |
-| protocol-forensics | 43 | \| Impact assessments complete \| 0 \| 5 \| PENDING \| |
-| evaluation-protocol-comparison | 36 | \| **Infrastructure** \| Framework, precision (fp16/bf16/fp32), batch size, hardware \| |
-| evaluation-protocol-comparison | 93 | \| Papers compared \| 8 \| |
-| evaluation-protocol-comparison | 94 | \| Protocol elements extracted per paper \| 10 \| |
-| evaluation-protocol-comparison | 95 | \| High-variance elements identified \| 2 \| |
-| evaluation-protocol-comparison | 96 | \| Impact estimates produced \| 3 \| |
+| source | source line | kind | source criterion |
+|---|---:|---|---|
+| benchmark-archaeology | 39 | numeric-table | \\| benchmark-audit \\| Systematic quality assessment using BetterBench 46-criterion framework \\| |
+| benchmark-archaeology | 72 | numeric-table | \\| benchmark-audit \\| 5 \\| 30 \\| 40 \\| |
+| benchmark-archaeology | 73 | numeric-table | \\| saturation-analysis \\| 15 \\| 50 \\| 60 \\| |
+| benchmark-archaeology | 74 | numeric-table | \\| validity-probing \\| 3 \\| 40 \\| 30 \\| |
+| benchmark-archaeology | 75 | numeric-table | \\| coverage-mapping \\| 20 \\| 30 \\| 50 \\| |
+| benchmark-archaeology | 76 | numeric-table | \\| protocol-forensics \\| 5 \\| 60 \\| 30 \\| |
+| benchmark-archaeology | 77 | numeric-table | \\| **Total** \\| **48** \\| **210** \\| **210** \\| |
+| benchmark-audit | 28 | numeric-table | \\| Benchmarks audited \\| 3 \\| 5 \\| |
+| benchmark-audit | 29 | numeric-table | \\| Papers read \\| 20 \\| 30 \\| |
+| benchmark-audit | 30 | numeric-table | \\| Web searches \\| 25 \\| 40 \\| |
+| benchmark-audit | 35 | textual | <HARD-GATE> |
+| benchmark-audit | 38 | numeric-table | \\| Benchmarks audited \\| 0 \\| 5 \\| PENDING \\| |
+| benchmark-audit | 39 | numeric-table | \\| Papers fetched \\| 0 \\| 30 \\| PENDING \\| |
+| benchmark-audit | 40 | numeric-table | \\| Papers read \\| 0 \\| 20 \\| PENDING \\| |
+| benchmark-audit | 41 | numeric-table | \\| Web searches \\| 0 \\| 40 \\| PENDING \\| |
+| benchmark-audit | 42 | numeric-table | \\| Documentation audits complete \\| 0 \\| 5 \\| PENDING \\| |
+| benchmark-audit | 43 | numeric-table | \\| Metric decompositions complete \\| 0 \\| 5 \\| PENDING \\| |
+| benchmark-audit | 44 | numeric-table | \\| Contamination checks complete \\| 0 \\| 5 \\| PENDING \\| |
+| benchmark-audit | 45 | numeric-table | \\| Synthesis reports produced \\| 0 \\| 5 \\| PENDING \\| |
+| benchmark-audit | 46 | textual | </HARD-GATE> |
+| benchmark-audit | 49 | numeric | Cannot exit until 80% of all targets met. |
+| benchmark-audit | 81 | numeric | betterbench_score: float  # 0-1, proportion of 46 criteria met |
+| saturation-analysis | 28 | numeric-table | \\| Benchmarks analyzed \\| 10 \\| 15 \\| |
+| saturation-analysis | 29 | numeric-table | \\| Papers read \\| 35 \\| 50 \\| |
+| saturation-analysis | 30 | numeric-table | \\| Web searches \\| 40 \\| 60 \\| |
+| saturation-analysis | 35 | textual | <HARD-GATE> |
+| saturation-analysis | 38 | numeric-table | \\| Benchmarks analyzed \\| 0 \\| 15 \\| PENDING \\| |
+| saturation-analysis | 39 | numeric-table | \\| Score trajectories built \\| 0 \\| 15 \\| PENDING \\| |
+| saturation-analysis | 40 | numeric-table | \\| Papers fetched \\| 0 \\| 50 \\| PENDING \\| |
+| saturation-analysis | 41 | numeric-table | \\| Papers read \\| 0 \\| 35 \\| PENDING \\| |
+| saturation-analysis | 42 | numeric-table | \\| Web searches \\| 0 \\| 60 \\| PENDING \\| |
+| saturation-analysis | 43 | numeric-table | \\| Saturation detections run \\| 0 \\| 15 \\| PENDING \\| |
+| saturation-analysis | 44 | numeric-table | \\| Leaderboard analyses done \\| 0 \\| 10 \\| PENDING \\| |
+| saturation-analysis | 45 | numeric-table | \\| Failure mode catalogs built \\| 0 \\| 5 \\| PENDING \\| |
+| saturation-analysis | 46 | textual | </HARD-GATE> |
+| saturation-analysis | 49 | numeric | Cannot exit until 80% of all targets met. |
+| saturation-analysis | 87 | numeric | estimated_time_to_ceiling: string  # e.g., "6-12 months" |
+| saturation-analysis | 89 | numeric | score_compression: float  # top-10 score range |
+| validity-probing | 28 | numeric-table | \\| Benchmarks probed \\| 2 \\| 3 \\| |
+| validity-probing | 29 | numeric-table | \\| Papers read \\| 30 \\| 40 \\| |
+| validity-probing | 30 | numeric-table | \\| Web searches \\| 20 \\| 30 \\| |
+| validity-probing | 35 | textual | <HARD-GATE> |
+| validity-probing | 38 | numeric-table | \\| Benchmarks probed \\| 0 \\| 3 \\| PENDING \\| |
+| validity-probing | 39 | numeric-table | \\| Papers fetched \\| 0 \\| 40 \\| PENDING \\| |
+| validity-probing | 40 | numeric-table | \\| Papers read \\| 0 \\| 30 \\| PENDING \\| |
+| validity-probing | 41 | numeric-table | \\| Web searches \\| 0 \\| 30 \\| PENDING \\| |
+| validity-probing | 42 | numeric-table | \\| Construct validity assessments \\| 0 \\| 3 \\| PENDING \\| |
+| validity-probing | 43 | numeric-table | \\| Artifact detection runs \\| 0 \\| 3 \\| PENDING \\| |
+| validity-probing | 44 | numeric-table | \\| Alternative explanation catalogs \\| 0 \\| 3 \\| PENDING \\| |
+| validity-probing | 45 | numeric-table | \\| Convergent validity checks \\| 0 \\| 3 \\| PENDING \\| |
+| validity-probing | 46 | textual | </HARD-GATE> |
+| validity-probing | 49 | numeric | Cannot exit until 80% of all targets met. |
+| coverage-mapping | 21 | textual | Build a comprehensive map of "what we can and cannot measure" for a given AI capability domain. Identify white spaces where important capabilities lack rigorous evaluation, and redundancies where multiple benchmarks test the same narrow skill. |
+| coverage-mapping | 27 | numeric-table | \\| Benchmarks mapped \\| 15 \\| 20 \\| |
+| coverage-mapping | 28 | numeric-table | \\| Papers read \\| 20 \\| 30 \\| |
+| coverage-mapping | 29 | numeric-table | \\| Web searches \\| 35 \\| 50 \\| |
+| coverage-mapping | 34 | textual | <HARD-GATE> |
+| coverage-mapping | 37 | numeric-table | \\| Benchmarks mapped \\| 0 \\| 20 \\| PENDING \\| |
+| coverage-mapping | 38 | numeric-table | \\| Capability taxonomy nodes \\| 0 \\| 30 \\| PENDING \\| |
+| coverage-mapping | 39 | numeric-table | \\| Papers fetched \\| 0 \\| 30 \\| PENDING \\| |
+| coverage-mapping | 40 | numeric-table | \\| Papers read \\| 0 \\| 20 \\| PENDING \\| |
+| coverage-mapping | 41 | numeric-table | \\| Web searches \\| 0 \\| 50 \\| PENDING \\| |
+| coverage-mapping | 42 | numeric-table | \\| Coverage annotations complete \\| 0 \\| 20 \\| PENDING \\| |
+| coverage-mapping | 43 | numeric-table | \\| White spaces identified \\| 0 \\| 5 \\| PENDING \\| |
+| coverage-mapping | 44 | numeric-table | \\| Redundancy clusters found \\| 0 \\| 3 \\| PENDING \\| |
+| coverage-mapping | 45 | textual | </HARD-GATE> |
+| coverage-mapping | 48 | numeric | Cannot exit until 80% of all targets met. |
+| protocol-forensics | 20 | textual | Expose the "reproducibility gap" in benchmark evaluation by documenting how papers differ in their implementation of supposedly standardized evaluation protocols. Quantify the score variance attributable to protocol differences rather than model improvements. |
+| protocol-forensics | 26 | numeric-table | \\| Benchmarks forensically analyzed \\| 3 \\| 5 \\| |
+| protocol-forensics | 27 | numeric-table | \\| Papers read \\| 45 \\| 60 \\| |
+| protocol-forensics | 28 | numeric-table | \\| Web searches \\| 20 \\| 30 \\| |
+| protocol-forensics | 33 | textual | <HARD-GATE> |
+| protocol-forensics | 36 | numeric-table | \\| Benchmarks analyzed \\| 0 \\| 5 \\| PENDING \\| |
+| protocol-forensics | 37 | numeric-table | \\| Papers fetched \\| 0 \\| 60 \\| PENDING \\| |
+| protocol-forensics | 38 | numeric-table | \\| Papers read \\| 0 \\| 45 \\| PENDING \\| |
+| protocol-forensics | 39 | numeric-table | \\| Web searches \\| 0 \\| 30 \\| PENDING \\| |
+| protocol-forensics | 40 | numeric-table | \\| Protocol extractions complete \\| 0 \\| 60 \\| PENDING \\| |
+| protocol-forensics | 41 | numeric-table | \\| Difference matrices built \\| 0 \\| 5 \\| PENDING \\| |
+| protocol-forensics | 42 | numeric-table | \\| Variance attributions done \\| 0 \\| 5 \\| PENDING \\| |
+| protocol-forensics | 43 | numeric-table | \\| Impact assessments complete \\| 0 \\| 5 \\| PENDING \\| |
+| protocol-forensics | 44 | textual | </HARD-GATE> |
+| protocol-forensics | 47 | numeric | Cannot exit until 80% of all targets met. |
+| protocol-forensics | 61 | textual | 1. **Target Selection**: Choose 5 benchmarks with known reproducibility issues or high paper volume |
+| protocol-forensics | 63 | numeric | a. Collect 10-15 papers that report results on the same benchmark |
+| protocol-forensics | 76 | textual | 6. **Synthesis**: Produce per-benchmark forensics report with reproducibility recommendations |
+| protocol-forensics | 98 | textual | reproducibility_grade: A\\|B\\|C\\|D\\|F |
+| evaluation-protocol-comparison | 12 | textual | Compare how different papers implement the same benchmark to expose hidden protocol variance that undermines cross-paper score comparability. |
+| evaluation-protocol-comparison | 18 | numeric | Collect 10-15 papers that report results on the target benchmark: |
+| evaluation-protocol-comparison | 36 | numeric-table | \\| **Infrastructure** \\| Framework, precision (fp16/bf16/fp32), batch size, hardware \\| |
+| evaluation-protocol-comparison | 48 | textual | - **Low**: Minor variations (e.g., different random seeds) |
+| evaluation-protocol-comparison | 82 | textual | cross_paper_comparability: high\\|moderate\\|low\\|unreliable |
+| evaluation-protocol-comparison | 91 | textual | \\| Metric \\| Minimum \\| |
+| evaluation-protocol-comparison | 93 | numeric-table | \\| Papers compared \\| 8 \\| |
+| evaluation-protocol-comparison | 94 | numeric-table | \\| Protocol elements extracted per paper \\| 10 \\| |
+| evaluation-protocol-comparison | 95 | numeric-table | \\| High-variance elements identified \\| 2 \\| |
+| evaluation-protocol-comparison | 96 | numeric-table | \\| Impact estimates produced \\| 3 \\| |

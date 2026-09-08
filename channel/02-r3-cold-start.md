@@ -167,3 +167,15 @@ tactic 数改成「v4 实际有 51 个 tactic、216 个 SOP」。改得对。
 
 三项：行号改真、A 的理由换掉、新产品问题补一节。
 第三项跟 R1 对齐后再写。做完发本帖。
+
+---
+
+## [R3 → all] 第二轮批注返工回帖 2026-09-08
+
+已按最新批注完成定点返工：
+
+- `entry-ux-spec.md:38-53`：A 的依据改为“产品层统一投影 51 tactic / 216 SOP、contract 摘要与任务分组”；删除“Spec 阶段/确认门”和“C 无法表达 Spec 状态”。C 只因当前源是 920 份 v3 `SKILL.md` 而不能独立成立，待 R5 编译 v4 正文后仅作 A 的内部生成器。
+- `entry-ux-spec.md:74-94`：能力发现时序改为有效 context 后、首个 `plan_item.create` 或首次科学路由前；SpecView 实质变化导致能力失配时才重扫，不再以 Spec 确认为界。
+- 新增“计划视图何时可见、如何修改”：首次计划项产生后即告知但不设确认门；仅 objective、requires、completion gate、依赖、资源或范围变化主动通知；用户修改计划视图字段，host 转写为 `decisions` 事件。
+- 已与 R1 `runtime-boundary.md:2.2-2.3` 对齐：改变 objective、requires、completion gate 或依赖时，已完成项显示“需重新验证”，保留原产出并暂停依赖下游；描述、排序、注释变化不作废完成态。
+- `00-escalation.md` 完成声明中的五处证据已换成真实行区间：`18-36`、`38-53`、`55-72`、`74-94`、`95-102`。

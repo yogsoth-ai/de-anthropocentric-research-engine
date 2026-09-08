@@ -46,92 +46,105 @@ Do not call a baseline fair when conditions are missing, metrics are incomparabl
 ## Context checkpoint / Delta notes
 
 Append method IDs, normalized records, excluded records with reasons, discrepancy pairs, progress model, and headroom uncertainty.
-## Preserved threshold ledger (verbatim source lines)
 
-- \x60method-inventory:41\x60 Cannot exit until methods_discovered >= 40 (80% of target).
-- \x60performance-extraction:44\x60 Cannot exit until data_points >= 120 (80% of target).
-- \x60condition-standardization:44\x60 Cannot exit until data_points_standardized >= 48 (80% of target).
-- \x60discrepancy-analysis:43\x60 Cannot exit until score_pairs_compared >= 36 (80% of target).
-- \x60progress-quantification:46\x60 Cannot exit until historical_data_points >= 80 (80% of target).
-## Preserved threshold table ledger (ASCII-normalized from source)
+## Preserved source criteria ledger
 
-| source | line | source threshold row |
-|---|---:|---|
-| method-inventory | 41 | Cannot exit until methods_discovered >= 40 (80% of target). |
-| performance-extraction | 44 | Cannot exit until data_points >= 120 (80% of target). |
-| condition-standardization | 44 | Cannot exit until data_points_standardized >= 48 (80% of target). |
-| discrepancy-analysis | 43 | Cannot exit until score_pairs_compared >= 36 (80% of target). |
-| progress-quantification | 46 | Cannot exit until historical_data_points >= 80 (80% of target). |
-## Preserved numeric tables (ASCII-normalized from source)
-
-| source | line | source table row |
-|---|---:|---|
-| baseline-establishment | 70 | \| method-inventory \| 50 \| 0 \| 60 \| |
-| baseline-establishment | 71 | \| performance-extraction \| 30 \| 150 \| 40 \| |
-| baseline-establishment | 72 | \| condition-standardization \| 20 \| 60 \| 30 \| |
-| baseline-establishment | 73 | \| discrepancy-analysis \| 15 \| 45 \| 30 \| |
-| baseline-establishment | 74 | \| progress-quantification \| 30 \| 100 \| 40 \| |
-| baseline-establishment | 75 | \| **TOTAL** \| **145** \| **355** \| **200** \| |
-| baseline-establishment | 105 | \| condition-standardization \| Standardize evaluation condition differences across papers — 20 methods, 60 data points, 30 web searches budget \| |
-| baseline-establishment | 106 | \| discrepancy-analysis \| Identify discrepancies between reported and reproducible scores — 15 methods, 45 data points, 30 web searches budget \| |
-| baseline-establishment | 107 | \| method-inventory \| Comprehensively identify all relevant methods for a task — 50 methods, 60 web searches budget \| |
-| baseline-establishment | 108 | \| performance-extraction \| Systematically extract performance data and conditions from papers — 30 methods, 150 data points, 40 web searches budget \| |
-| baseline-establishment | 109 | \| progress-quantification \| Track performance progress over time, quantify remaining headroom — 30 methods, 100 data points, 40 web searches budget \| |
-| method-inventory | 23 | \| Methods discovered \| 30 \| 50 \| |
-| method-inventory | 24 | \| Web searches \| 40 \| 60 \| |
-| method-inventory | 25 | \| Papers consulted \| 20 \| 40 \| |
-| method-inventory | 33 | \| Methods discovered \| 0 \| 50 \| BLOCKED \| |
-| method-inventory | 34 | \| Web searches used \| 0 \| 60 \| — \| |
-| method-inventory | 35 | \| Papers consulted \| 0 \| 40 \| — \| |
-| method-inventory | 36 | \| Leaderboard sources \| 0 \| 5 \| — \| |
-| method-inventory | 37 | \| Citation chains traced \| 0 \| 10 \| — \| |
-| performance-extraction | 24 | \| Methods covered \| 20 \| 30 \| |
-| performance-extraction | 25 | \| Data points extracted \| 100 \| 150 \| |
-| performance-extraction | 26 | \| Web searches \| 25 \| 40 \| |
-| performance-extraction | 27 | \| Papers read \| 15 \| 30 \| |
-| performance-extraction | 35 | \| Methods covered \| 0 \| 30 \| BLOCKED \| |
-| performance-extraction | 36 | \| Data points extracted \| 0 \| 150 \| BLOCKED \| |
-| performance-extraction | 37 | \| Web searches used \| 0 \| 40 \| — \| |
-| performance-extraction | 38 | \| Papers read \| 0 \| 30 \| — \| |
-| performance-extraction | 39 | \| Datasets covered \| 0 \| 5 \| — \| |
-| performance-extraction | 40 | \| Metrics tracked \| 0 \| 3 \| — \| |
-| condition-standardization | 25 | \| Methods analyzed \| 15 \| 20 \| |
-| condition-standardization | 26 | \| Data points standardized \| 40 \| 60 \| |
-| condition-standardization | 27 | \| Web searches \| 20 \| 30 \| |
-| condition-standardization | 28 | \| Condition dimensions cataloged \| 5 \| 10 \| |
-| condition-standardization | 36 | \| Methods analyzed \| 0 \| 20 \| BLOCKED \| |
-| condition-standardization | 37 | \| Data points standardized \| 0 \| 60 \| BLOCKED \| |
-| condition-standardization | 38 | \| Condition dimensions \| 0 \| 10 \| — \| |
-| condition-standardization | 39 | \| Normalization rules defined \| 0 \| 5 \| — \| |
-| condition-standardization | 40 | \| Fair comparison sets \| 0 \| 3 \| — \| |
-| discrepancy-analysis | 24 | \| Methods analyzed \| 10 \| 15 \| |
-| discrepancy-analysis | 25 | \| Data points compared \| 30 \| 45 \| |
-| discrepancy-analysis | 26 | \| Web searches \| 20 \| 30 \| |
-| discrepancy-analysis | 27 | \| Reproduction studies consulted \| 5 \| 10 \| |
-| discrepancy-analysis | 35 | \| Methods analyzed \| 0 \| 15 \| BLOCKED \| |
-| discrepancy-analysis | 36 | \| Score pairs compared \| 0 \| 45 \| BLOCKED \| |
-| discrepancy-analysis | 37 | \| Discrepancies flagged \| 0 \| — \| — \| |
-| discrepancy-analysis | 38 | \| Reproduction studies found \| 0 \| 10 \| — \| |
-| discrepancy-analysis | 39 | \| Reliability ratings assigned \| 0 \| 15 \| — \| |
-| progress-quantification | 26 | \| Methods tracked \| 20 \| 30 \| |
-| progress-quantification | 27 | \| Historical data points \| 70 \| 100 \| |
-| progress-quantification | 28 | \| Web searches \| 25 \| 40 \| |
-| progress-quantification | 29 | \| Time span covered (years) \| 3 \| 5+ \| |
-| progress-quantification | 37 | \| Methods tracked \| 0 \| 30 \| BLOCKED \| |
-| progress-quantification | 38 | \| Historical data points \| 0 \| 100 \| BLOCKED \| |
-| progress-quantification | 39 | \| Web searches used \| 0 \| 40 \| — \| |
-| progress-quantification | 40 | \| Progress curves built \| 0 \| 3 \| — \| |
-| progress-quantification | 41 | \| Headroom estimates \| 0 \| 3 \| — \| |
-| progress-quantification | 42 | \| Inflection points identified \| 0 \| 2 \| — \| |
-| leaderboard-harvesting | 62 | \| Leaderboard sources checked \| 3 \| |
-| leaderboard-harvesting | 63 | \| Methods with scores \| 15 \| |
-| leaderboard-harvesting | 64 | \| Cross-validated score pairs \| 10 \| |
-| leaderboard-harvesting | 65 | \| Deduplication conflicts resolved \| 5 \| |
-| condition-normalization | 64 | \| Condition dimensions cataloged \| 5 \| |
-| condition-normalization | 65 | \| Methods with full condition vectors \| 10 \| |
-| condition-normalization | 66 | \| Normalization rules defined \| 3 \| |
-| condition-normalization | 67 | \| Fair comparison sets produced \| 2 \| |
-| progress-curve-construction | 66 | \| Progress curves constructed \| 2 \| |
-| progress-curve-construction | 67 | \| Years of history covered \| 3 \| |
-| progress-curve-construction | 68 | \| Inflection points identified \| 1 \| |
-| progress-curve-construction | 69 | \| Headroom estimates produced \| 2 \| |
+| source | source line | kind | source criterion |
+|---|---:|---|---|
+| baseline-establishment | 28 | textual | \\| Check reproducibility / discrepancies \\| discrepancy-analysis \\| |
+| baseline-establishment | 40 | textual | \\| discrepancy-analysis \\| Identify discrepancies between reported and reproducible scores \\| |
+| baseline-establishment | 58 | textual | \\| reproducibility-checklist-audit \\| Assess paper against ML Reproducibility Checklist \\| |
+| baseline-establishment | 70 | numeric-table | \\| method-inventory \\| 50 \\| 0 \\| 60 \\| |
+| baseline-establishment | 71 | numeric-table | \\| performance-extraction \\| 30 \\| 150 \\| 40 \\| |
+| baseline-establishment | 72 | numeric-table | \\| condition-standardization \\| 20 \\| 60 \\| 30 \\| |
+| baseline-establishment | 73 | numeric-table | \\| discrepancy-analysis \\| 15 \\| 45 \\| 30 \\| |
+| baseline-establishment | 74 | numeric-table | \\| progress-quantification \\| 30 \\| 100 \\| 40 \\| |
+| baseline-establishment | 75 | numeric-table | \\| **TOTAL** \\| **145** \\| **355** \\| **200** \\| |
+| method-inventory | 23 | numeric-table | \\| Methods discovered \\| 30 \\| 50 \\| |
+| method-inventory | 24 | numeric-table | \\| Web searches \\| 40 \\| 60 \\| |
+| method-inventory | 25 | numeric-table | \\| Papers consulted \\| 20 \\| 40 \\| |
+| method-inventory | 30 | textual | <HARD-GATE> |
+| method-inventory | 33 | numeric-table | \\| Methods discovered \\| 0 \\| 50 \\| BLOCKED \\| |
+| method-inventory | 34 | numeric-table | \\| Web searches used \\| 0 \\| 60 \\| — \\| |
+| method-inventory | 35 | numeric-table | \\| Papers consulted \\| 0 \\| 40 \\| — \\| |
+| method-inventory | 36 | numeric-table | \\| Leaderboard sources \\| 0 \\| 5 \\| — \\| |
+| method-inventory | 37 | numeric-table | \\| Citation chains traced \\| 0 \\| 10 \\| — \\| |
+| method-inventory | 38 | textual | </HARD-GATE> |
+| method-inventory | 41 | numeric | Cannot exit until methods_discovered >= 40 (80% of target). |
+| performance-extraction | 18 | textual | Extract structured performance data from papers, leaderboards, and reproducibility studies. Each data point is a (Task, Dataset, Metric, Score, Conditions) tuple with full provenance. Prioritizes primary sources (original papers) but cross-references against leaderboards and third-party reproductions. |
+| performance-extraction | 24 | numeric-table | \\| Methods covered \\| 20 \\| 30 \\| |
+| performance-extraction | 25 | numeric-table | \\| Data points extracted \\| 100 \\| 150 \\| |
+| performance-extraction | 26 | numeric-table | \\| Web searches \\| 25 \\| 40 \\| |
+| performance-extraction | 27 | numeric-table | \\| Papers read \\| 15 \\| 30 \\| |
+| performance-extraction | 32 | textual | <HARD-GATE> |
+| performance-extraction | 35 | numeric-table | \\| Methods covered \\| 0 \\| 30 \\| BLOCKED \\| |
+| performance-extraction | 36 | numeric-table | \\| Data points extracted \\| 0 \\| 150 \\| BLOCKED \\| |
+| performance-extraction | 37 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| — \\| |
+| performance-extraction | 38 | numeric-table | \\| Papers read \\| 0 \\| 30 \\| — \\| |
+| performance-extraction | 39 | numeric-table | \\| Datasets covered \\| 0 \\| 5 \\| — \\| |
+| performance-extraction | 40 | numeric-table | \\| Metrics tracked \\| 0 \\| 3 \\| — \\| |
+| performance-extraction | 41 | textual | </HARD-GATE> |
+| performance-extraction | 44 | numeric | Cannot exit until data_points >= 120 (80% of target). |
+| condition-standardization | 25 | numeric-table | \\| Methods analyzed \\| 15 \\| 20 \\| |
+| condition-standardization | 26 | numeric-table | \\| Data points standardized \\| 40 \\| 60 \\| |
+| condition-standardization | 27 | numeric-table | \\| Web searches \\| 20 \\| 30 \\| |
+| condition-standardization | 28 | numeric-table | \\| Condition dimensions cataloged \\| 5 \\| 10 \\| |
+| condition-standardization | 33 | textual | <HARD-GATE> |
+| condition-standardization | 36 | numeric-table | \\| Methods analyzed \\| 0 \\| 20 \\| BLOCKED \\| |
+| condition-standardization | 37 | numeric-table | \\| Data points standardized \\| 0 \\| 60 \\| BLOCKED \\| |
+| condition-standardization | 38 | numeric-table | \\| Condition dimensions \\| 0 \\| 10 \\| — \\| |
+| condition-standardization | 39 | numeric-table | \\| Normalization rules defined \\| 0 \\| 5 \\| — \\| |
+| condition-standardization | 40 | numeric-table | \\| Fair comparison sets \\| 0 \\| 3 \\| — \\| |
+| condition-standardization | 41 | textual | </HARD-GATE> |
+| condition-standardization | 44 | numeric | Cannot exit until data_points_standardized >= 48 (80% of target). |
+| condition-standardization | 60 | textual | 3. Group methods by comparable condition sets |
+| condition-standardization | 63 | textual | 6. Produce fair comparison subsets where conditions are controlled |
+| discrepancy-analysis | 24 | numeric-table | \\| Methods analyzed \\| 10 \\| 15 \\| |
+| discrepancy-analysis | 25 | numeric-table | \\| Data points compared \\| 30 \\| 45 \\| |
+| discrepancy-analysis | 26 | numeric-table | \\| Web searches \\| 20 \\| 30 \\| |
+| discrepancy-analysis | 27 | numeric-table | \\| Reproduction studies consulted \\| 5 \\| 10 \\| |
+| discrepancy-analysis | 32 | textual | <HARD-GATE> |
+| discrepancy-analysis | 35 | numeric-table | \\| Methods analyzed \\| 0 \\| 15 \\| BLOCKED \\| |
+| discrepancy-analysis | 36 | numeric-table | \\| Score pairs compared \\| 0 \\| 45 \\| BLOCKED \\| |
+| discrepancy-analysis | 37 | numeric-table | \\| Discrepancies flagged \\| 0 \\| — \\| — \\| |
+| discrepancy-analysis | 38 | numeric-table | \\| Reproduction studies found \\| 0 \\| 10 \\| — \\| |
+| discrepancy-analysis | 39 | numeric-table | \\| Reliability ratings assigned \\| 0 \\| 15 \\| — \\| |
+| discrepancy-analysis | 40 | textual | </HARD-GATE> |
+| discrepancy-analysis | 43 | numeric | Cannot exit until score_pairs_compared >= 36 (80% of target). |
+| discrepancy-analysis | 52 | textual | - **reproducibility-checklist-audit** — Assess paper reproducibility completeness |
+| discrepancy-analysis | 59 | textual | 4. Apply reproducibility-checklist-audit to papers with large discrepancies |
+| discrepancy-analysis | 85 | textual | "reproducibility_checklist_score": 0, |
+| progress-quantification | 26 | numeric-table | \\| Methods tracked \\| 20 \\| 30 \\| |
+| progress-quantification | 27 | numeric-table | \\| Historical data points \\| 70 \\| 100 \\| |
+| progress-quantification | 28 | numeric-table | \\| Web searches \\| 25 \\| 40 \\| |
+| progress-quantification | 29 | numeric-table | \\| Time span covered (years) \\| 3 \\| 5+ \\| |
+| progress-quantification | 34 | textual | <HARD-GATE> |
+| progress-quantification | 37 | numeric-table | \\| Methods tracked \\| 0 \\| 30 \\| BLOCKED \\| |
+| progress-quantification | 38 | numeric-table | \\| Historical data points \\| 0 \\| 100 \\| BLOCKED \\| |
+| progress-quantification | 39 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| — \\| |
+| progress-quantification | 40 | numeric-table | \\| Progress curves built \\| 0 \\| 3 \\| — \\| |
+| progress-quantification | 41 | numeric-table | \\| Headroom estimates \\| 0 \\| 3 \\| — \\| |
+| progress-quantification | 42 | numeric-table | \\| Inflection points identified \\| 0 \\| 2 \\| — \\| |
+| progress-quantification | 43 | textual | </HARD-GATE> |
+| progress-quantification | 46 | numeric | Cannot exit until historical_data_points >= 80 (80% of target). |
+| leaderboard-harvesting | 43 | numeric | - Flag discrepancies > 1 standard deviation |
+| leaderboard-harvesting | 58 | textual | ## Minimum Yield |
+| leaderboard-harvesting | 62 | numeric-table | \\| Leaderboard sources checked \\| 3 \\| |
+| leaderboard-harvesting | 63 | numeric-table | \\| Methods with scores \\| 15 \\| |
+| leaderboard-harvesting | 64 | numeric-table | \\| Cross-validated score pairs \\| 10 \\| |
+| leaderboard-harvesting | 65 | numeric-table | \\| Deduplication conflicts resolved \\| 5 \\| |
+| condition-normalization | 28 | textual | - Random seeds: number of runs, seed selection, variance reported |
+| condition-normalization | 51 | textual | ### Stage 4: Fair Comparison Baseline |
+| condition-normalization | 53 | textual | Apply normalization to produce fair comparison subsets: |
+| condition-normalization | 58 | textual | **Yield**: Fair comparison tables with methodology notes. |
+| condition-normalization | 60 | textual | ## Minimum Yield |
+| condition-normalization | 64 | numeric-table | \\| Condition dimensions cataloged \\| 5 \\| |
+| condition-normalization | 65 | numeric-table | \\| Methods with full condition vectors \\| 10 \\| |
+| condition-normalization | 66 | numeric-table | \\| Normalization rules defined \\| 3 \\| |
+| condition-normalization | 67 | numeric-table | \\| Fair comparison sets produced \\| 2 \\| |
+| progress-curve-construction | 62 | textual | ## Minimum Yield |
+| progress-curve-construction | 66 | numeric-table | \\| Progress curves constructed \\| 2 \\| |
+| progress-curve-construction | 67 | numeric-table | \\| Years of history covered \\| 3 \\| |
+| progress-curve-construction | 68 | numeric-table | \\| Inflection points identified \\| 1 \\| |
+| progress-curve-construction | 69 | numeric-table | \\| Headroom estimates produced \\| 2 \\| |
+| progress-curve-construction | 73 | numeric | - progress-curve-fitting (for Stages 2-3) |

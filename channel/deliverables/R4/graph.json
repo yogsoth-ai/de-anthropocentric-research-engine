@@ -7108,5 +7108,643 @@
     "docs/runtime-boundary.md": "Host-neutral runtime responsibilities; no provider-specific tool instructions.",
     "scripts/validate_graph.py": "Validate IDs, edge legality, reachability, and capability mappings.",
     "scripts/build_graph_html.py": "Regenerate the interactive architecture graph."
-  }
+  },
+  "provenance_aliases": [
+    {
+      "v3_id": "ablation-brainstorm",
+      "v4_id": "coverage-white-space-search",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "adversarial-persona",
+      "v4_id": "structured-red-team",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "alternative-analysis",
+      "v4_id": "structured-red-team",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "appropriateness-bounding",
+      "v4_id": "structured-consensus",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "argument-visualization",
+      "v4_id": "construct-argument-map",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "biological-function-mapping",
+      "v4_id": "biomimetic-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "biotriz-resolution",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "blend-construction",
+      "v4_id": "conceptual-blending",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "boundary-enumeration",
+      "v4_id": "map-validity-envelope",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "boundary-probing",
+      "v4_id": "map-validity-envelope",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "challenge-operation",
+      "v4_id": "identify-dominant-frame",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "checkpoint-and-recover",
+      "v4_id": "analyze-experiment-results",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "closest-worlds",
+      "v4_id": "counterfactual-causal-analysis",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "coherence-diagnosis",
+      "v4_id": "pairwise-ranking",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "combination-enumeration",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "compressed-conflict",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "constraint-driven-ideation",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "constraint-protocol",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "convergence-multi-criteria-scoring",
+      "v4_id": "rank-candidates",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "convergence-portfolio-optimization",
+      "v4_id": "portfolio-optimization",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "convergence-scoring-matrix-construction",
+      "v4_id": "rank-candidates",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "counter-thesis-construction",
+      "v4_id": "adversarial-deliberation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "creative-ideation-assumption-enumeration",
+      "v4_id": "destructive-ideation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "creative-ideation-consistency-checking",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "creative-ideation-perspective-rotation",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "criteria-interrogation",
+      "v4_id": "adversarial-deliberation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "deep-insight",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "deep-insight-failure-mode-cataloging",
+      "v4_id": "enumerate-dimension-values",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "deep-insight-sensitivity-analysis",
+      "v4_id": "sensitivity-analysis",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "deep-insight-validity-envelope-mapping",
+      "v4_id": "map-validity-envelope",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "design-space-mapping",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "dialectical-synthesis",
+      "v4_id": "map-productive-polarity",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "dimension-discovery",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "direct-analogy",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "domain-divergence",
+      "v4_id": "analogical-discovery",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "ecosystem-pattern",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "emergence-detection",
+      "v4_id": "conceptual-blending",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "evidence-tournament",
+      "v4_id": "adversarial-deliberation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "excursion-method",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "excursion-orchestration",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "experiment-execution-bottleneck-identification",
+      "v4_id": "analyze-constraints-readiness",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "experiment-execution-factor-level-design",
+      "v4_id": "design-experiment",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "experiment-running",
+      "v4_id": "analyze-experiment-results",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "explanation-generation",
+      "v4_id": "formulate-hypotheses",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "facet-bisociation",
+      "v4_id": "analogical-discovery",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "factor-removal",
+      "v4_id": "counterfactual-causal-analysis",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "factorial-ideation",
+      "v4_id": "coverage-white-space-search",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "failure-mode-analysis",
+      "v4_id": "enumerate-dimension-values",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "failure-taxonomy",
+      "v4_id": "coverage-white-space-search",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "fantasy-analogy",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "forced-bridge-construction",
+      "v4_id": "analogical-discovery",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "gap-driven-generation",
+      "v4_id": "coverage-white-space-search",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "groupthink-mitigation",
+      "v4_id": "structured-red-team",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hierarchy-visualization",
+      "v4_id": "build-domain-ontology",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hypothesis-formation-gap-prioritization",
+      "v4_id": "rank-candidates",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hypothesis-formation-novelty-scoring",
+      "v4_id": "score-object",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hypothesis-formation-saturation-detection",
+      "v4_id": "assess-evidence-saturation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hypothesis-formation-variable-identification",
+      "v4_id": "formulate-hypotheses",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "hypothesis-synthesis",
+      "v4_id": "formulate-hypotheses",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "implementation-planning",
+      "v4_id": "analyze-experiment-results",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "inversion-protocol",
+      "v4_id": "destructive-ideation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-claim-decomposition",
+      "v4_id": "construct-argument-map",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-combination-mapping",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-consistency-checking",
+      "v4_id": "build-domain-ontology",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-gap-prioritization",
+      "v4_id": "rank-candidates",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-novelty-scoring",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "knowledge-structuring-variable-identification",
+      "v4_id": "construct-causal-model",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "loop-documentation",
+      "v4_id": "detect-feedback-loop",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "matrix-export",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "mechanism-gap-hunting",
+      "v4_id": "drill-root-causes",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "method-problem-matrix",
+      "v4_id": "coverage-white-space-search",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "multi-level-bisociation",
+      "v4_id": "abstract-structure",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "narrative-review",
+      "v4_id": "synthesize-literature-evidence",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "north-star-synthesis",
+      "v4_id": "crystallize-north-star",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "ontology-export",
+      "v4_id": "build-domain-ontology",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "plausibility-ranking",
+      "v4_id": "formulate-hypotheses",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "premortem-to-fmea-pipeline",
+      "v4_id": "score-fmea-risk",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "prerequisite-planning",
+      "v4_id": "identify-obstacles",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "prospective-hindsight",
+      "v4_id": "fmea-risk-analysis",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "question-generation",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "question-synthesis",
+      "v4_id": "formulate-research-question",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "random-entry",
+      "v4_id": "extract-constructive-movement",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "random-stimulus-entry",
+      "v4_id": "analogical-discovery",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "recombination-architecture",
+      "v4_id": "structural-transformation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "reverse-brainstorming",
+      "v4_id": "destructive-ideation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "role-based-ideation",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "score-trajectory-analysis",
+      "v4_id": "audit-benchmark-validity",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "screening-then-scoring",
+      "v4_id": "rank-candidates",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "six-hats-ideation",
+      "v4_id": "extract-constructive-movement",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "six-hats-rotation",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "snowball",
+      "v4_id": "synthesize-literature-evidence",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "source-gathering",
+      "v4_id": "build-domain-ontology",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "stakeholder-simulation",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "stress-test-assumption-challenge",
+      "v4_id": "structured-red-team",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "stress-test-dialectical-escalation",
+      "v4_id": "adversarial-deliberation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "stress-test-validity-envelope-mapping",
+      "v4_id": "map-validity-envelope",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "subagent-execution-loop",
+      "v4_id": "analyze-experiment-results",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "success-criteria-definition",
+      "v4_id": "formulate-research-question",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "symbolic-analogy",
+      "v4_id": "instantiate-transfer",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "synthesis-report",
+      "v4_id": "construct-argument-map",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "temporal-projection",
+      "v4_id": "problem-reframing",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "thought-experiment",
+      "v4_id": "counterfactual-causal-analysis",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "threshold-calibration",
+      "v4_id": "calibrate-probability-forecast",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "validation-report",
+      "v4_id": "construct-causal-model",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "worst-method-inversion",
+      "v4_id": "destructive-ideation",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    },
+    {
+      "v3_id": "zwicky-box-construction",
+      "v4_id": "explore-dimensional-space",
+      "compression_type": "many-to-1",
+      "notes": "derived from an audit calibration sample or a uniquely dominant direct v3 topology neighbor"
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 # DARE v4 入口与能力发现 UX 规格（R3）
 
-> 状态：用户侧方案；R1 已确认 Spec 归属为 A，本稿据此收敛 Catalog。
+> 状态：用户侧方案；Spec 归属仍为 DARE 产品层，形态按 checkpoint 事件流投影视图处理。
 > 设计前提：第一次使用的用户不知道 DARE，只想问一个研究问题。
 
 ## 1. 冷启动场景
@@ -35,9 +35,9 @@
 
 v3 的优点是入口和收敛路径明确；代价是冷启动用户要经历多轮对话，且 catalog 依赖四层层级。v4 删除四层后，必须保留“入口预检、最小采集、能力建议、可恢复状态”这四个产品行为，不能把责任退回 host 的自由发挥。
 
-## 3. Catalog 机制（选择：A，R1 已确认）
+## 3. Catalog 机制（选择：A）
 
-选择 **A：Catalog 留在 DARE 产品层，作为 Spec 的能力索引**。v4 实际有 51 个 tactic、216 个 SOP；A 的依据是把这组节点及 Spec 阶段/确认门统一投影为可审计索引。B 把 267 个 JSON 节点责任退给 host，入口不可见；C 依赖当前 920 份 v3 `SKILL.md`，而非 v4 的 267 节点，且无法表达 Spec 状态。frontmatter 只能作内部生成器；用户按任务看到 3–5 个候选，不见 slug。
+选择 **A：Catalog 留在 DARE 产品层**。v4 有 51 个 tactic、216 个 SOP；产品层需把扁平节点、contract 摘要与任务分组投影为统一索引，避免 host 自行猜入口。B 把 267 个节点退给 host。C 当前只读 920 份 v3 `SKILL.md`，源错位；待 R5 编译 v4 正文后可作为 A 的内部生成器，而非独立机制。
 
 ### C 的显式 frontmatter 契约（仅作内部生成器/备用实现）
 
@@ -69,20 +69,28 @@ ResearchContext:
 
 采用 **B：soft gate + 有界降级**。入口先从原问题零样本预填；只对影响路由的缺口发起一次结构化 `context-elicit`，固定询问最多 3 项。用户不回答时写入明确默认值并标记 `inferred`，继续走低风险的探索/综述；涉及实验、外部行动或不可逆资源消耗时，不得默认补齐硬约束。
 
-Hard gate 的强制力来自两道可审计门：DARE 产品层先确认用户批准的 Research Spec 与当前 Phase context；runtime 再做 `context preflight`/schema validator。任何 tactic/sop 调用前检查 `intent` 与 `scope_anchor`，任一缺失即返回 `NEEDS_CONTEXT {missing, inferred, next_questions}`，Spec/context 定位失败则返回 `NEEDS_SPEC` 或 `NEEDS_PHASE_CONTEXT`，不得调用科学节点。它不是 host 自觉，也不依赖某个 tactic 的 `precondition`。校验通过后才允许生成 plan 或执行研究循环；这些门与 R1 规定的“缺输入即停止并报告路径”一致。
+Hard gate 的强制力来自两道可审计门：DARE 产品层须能从当前 Phase checkpoint 事件流重建 `SpecView`，runtime 再做 `context preflight`/schema validator。任何 tactic/sop 调用前检查 `intent` 与 `scope_anchor`；缺失即返回 `NEEDS_CONTEXT {missing, inferred, next_questions}`，Phase context 不可定位或尚无 `plan_item.create` 事件则返回 `NEEDS_PHASE_CONTEXT` 或追加最小计划 decision，不得直接调用科学节点。它不是 host 自觉，也不依赖某个 tactic 的 `precondition`。
 
 ## 5. 能力发现时机与呈现
 
 ### Host AI 合约
 
-- session 首次建立有效 context 后调用一次 capability discovery，且在 plan/spec 生成前必须调用。
+- session 首次建立有效 context 后、追加首个 `plan_item.create` 或进行首次科学路由前调用一次 capability discovery。
 - 用户明确问“你能做什么”时进入 browse；context 改变或上次无匹配时才重新发现。
+- `SpecView` 的 objective、requires、completion gate 或依赖发生实质变化，导致原能力选择失配时重新发现；描述、排序、注释变化不重扫。
 - 返回 `CapabilitySet[]`：`id, user_label, description, when_to_use, requires, produces, confidence, source_ref, next_call`。
 - 默认按任务相关性返回 3–5 项；完整清单是可选的 machine-readable 展开，不作为首屏。
 
 ### 用户呈现
 
 用自然语言按“文献综述 / 实验设计 / 数据分析 / 假设检验”等任务组卡片，显示“能做什么、何时使用、需要什么、会产出什么、为什么推荐”。隐藏 package/tactic/SOP slug；允许“查看全部”和“换一组”，不强迫用户选项，host 可根据 intent 直接推荐首项。
+
+### 计划视图何时可见、如何修改
+
+1. **首次可见**：首个 `plan_item.create` 写入后立即向用户显示紧凑计划视图，再开始首个科学节点；这是信息告知，不是确认门。视图至少显示当前目标、接下来 3–5 项、每项预期产出、完成判据与主要约束。用户随时可要求“查看当前计划”。
+2. **主动通知边界**：objective、requires、completion gate、依赖、预计资源或范围发生变化时主动显示“计划已变更”及影响项；只改描述、排序或注释时静默更新，在用户打开计划时呈现。多项同批变化合并成一次通知。
+3. **用户如何改**：用户编辑的是计划视图中的目标、范围/约束、优先级、计划项、依赖和完成判据，不直接编辑文件。每次提交转换为带 `plan_item_id`、operation、changed_fields、reason、source=user 的 `decisions` 事件，再从事件流重建视图。
+4. **已完成项失效**：按 R1 语义，若新 decision 改变已完成项的 objective、requires、completion gate 或依赖，界面将其显示为“需重新验证”，保留原完成时间与产出，并暂停依赖它的下游；只改描述、排序或注释时保持“已完成”。重新满足新判据后恢复为“已完成”。
 
 ## 6. 错误入口兜底
 

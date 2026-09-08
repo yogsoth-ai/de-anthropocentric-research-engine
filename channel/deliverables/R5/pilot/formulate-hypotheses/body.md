@@ -55,97 +55,93 @@ Reject unfalsifiable wording, variables without operational definitions, and “
 ## Context checkpoint / Delta notes
 
 Append candidate list, selected hypotheses, operational definitions, predictions, falsification tests, and unresolved theory conflicts.
-## Preserved threshold ledger (verbatim source lines)
 
-- \x60hypothesis-formulation:45\x60 1. At least 1 clear research gap or insight has been identified
-- \x60hypothesis-formulation:72\x60 | S | Ён2 structured hypotheses | Ён2 relevant theories | 1 falsification scenario per hypothesis | Optional |
-- \x60hypothesis-formulation:73\x60 | M | Ён3 structured hypotheses | Ён3 theories + Ён5 mechanisms | Ён1 scenario + boundary conditions per hypothesis | Ён2 competing hypotheses |
-- \x60hypothesis-formulation:74\x60 | L | Ён5 structured hypotheses | Ён5 theories + Ён8 mechanisms | Complete falsifiability audit | Ён3 competing hypotheses + discriminating predictions |
-- \x60hypothesis-formulation:95\x60 1. Ён2 complete structured hypotheses (including all 6 components)
-- \x60deductive-hypothesis-generation:60\x60 | S | Ён2 named theories | Ён3 causal mechanisms | Ён2 structured hypotheses | 1 falsification scenario per hypothesis |
-- \x60deductive-hypothesis-generation:61\x60 | M | Ён3 named theories | Ён5 causal mechanisms | Ён3 structured hypotheses | Ён1 scenario + boundary conditions per hypothesis |
-- \x60deductive-hypothesis-generation:62\x60 | L | Ён5 named theories | Ён8 causal mechanisms | Ён5 structured hypotheses | full falsifiability audit + competing-theory comparison |
-- \x60inductive-hypothesis-generation:59\x60 | S | Ён3 independent observation patterns | Ён2 regularities | Ён2 structured hypotheses | Each hypothesis specifies its sample source |
-- \x60inductive-hypothesis-generation:60\x60 | M | Ён5 independent observation patterns | Ён3 regularities | Ён3 structured hypotheses | Generalization boundary + falsification scenario |
-- \x60inductive-hypothesis-generation:61\x60 | L | Ён8 independent observation patterns | Ён5 regularities | Ён4 structured hypotheses | Complete generalization boundary + comparison of competing regularities |
-- \x60abductive-hypothesis-generation:56\x60 | S | 1 precisely described anomaly | Ён2 candidate explanations | 1 best-explanation hypothesis | Ён1 competing hypothesis retained |
-- \x60abductive-hypothesis-generation:57\x60 | M | 1ЈC2 anomalies | Ён3 candidate explanations | Ён2 structured hypotheses | complete plausibility ranking |
-- \x60abductive-hypothesis-generation:58\x60 | L | Ён2 related anomalies | Ён5 candidate explanations | Ён3 structured hypotheses | complete ranking + discriminating prediction design |
-- \x60hypothesis-operationalization:59\x60 | M | Above + justification of operationalization validity | Variable measurement includes reliability/validity considerations | Complete boundary conditions | Ён2 falsification scenarios |
-- \x60theory-mechanism-extraction:45\x60 - Coverage: 1 theory, Ён1 mechanism, Ён1 hypothesis candidate
-- \x60theory-mechanism-extraction:50\x60 - Coverage: Ён2 theories, Ён3 mechanisms, Ён1 hypothesis candidate per mechanism
-- \x60theory-mechanism-extraction:53\x60 **Deep (L tier, Ён3 theories)**
-- \x60theory-mechanism-extraction:55\x60 - Coverage: Ён3 theories, Ён5 mechanisms, cross-theory variable mapping, Ён5 hypothesis candidates
-- \x60theory-mechanism-extraction:60\x60 - Ён2 theories identified and described (including core claim and scope of applicability)
-- \x60theory-mechanism-extraction:61\x60 - Ён3 mechanisms extracted from the theories (each with a causal-chain description)
-- \x60theory-mechanism-extraction:62\x60 - Each mechanism corresponds to at least 1 hypothesis candidate, including:
-- \x60anomaly-driven-abduction:41\x60 - Sequential execution: anomaly-characterization Ёњ explanation-generation (Ён3 explanations) Ёњ plausibility-ranking
-- \x60anomaly-driven-abduction:45\x60 - anomaly-characterization executes independently for each anomaly; explanation-generation generates Ён3 explanations (explanations may be shared across anomalies); plausibility-ranking ranks all explanations uniformly
-- \x60anomaly-driven-abduction:55\x60 - Ён3 candidate explanations, each explanation:
-- \x60competing-hypothesis-construction:55\x60 | S | Ён2 genuinely competing hypotheses | Ён1 discriminating prediction | simplified version (2ЁС2) | 1 falsification scenario per hypothesis |
-- \x60competing-hypothesis-construction:56\x60 | M | Ён3 competing hypotheses | Ён2 discriminating predictions | full matrix (hypotheses ЁС predictions) | full falsification per hypothesis |
-- \x60competing-hypothesis-construction:57\x60 | L | Ён4 competing hypotheses | Ён3 discriminating predictions | full matrix + experiment design suggestions | full falsifiability audit |
-- \x60competing-hypothesis-matrix:34\x60 | competing-hypothesis-generation | Based on the primary hypothesis, generate Ён3 alternative hypotheses competing with it (different mechanisms, same or similar phenomenon prediction range) | Required in all modes, execute first |
-- \x60competing-hypothesis-matrix:41\x60 - Sequentially execute all 3 SOPs; generate Ён3 competing hypotheses; design Ён2 discriminating predictions; build comparison matrix
-- \x60competing-hypothesis-matrix:49\x60 - All 3 SOPs execute; competing-hypothesis-generation additional requirement: at least 1 competing hypothesis comes from a completely different theoretical framework; discriminating-prediction-design additional requirement: each discriminating prediction annotates the required experiment scale and difficulty; hypothesis-comparison-matrix additional output: recommended experiment priority (most discriminating predictions ranked first)
-- \x60competing-hypothesis-matrix:54\x60 - Ён3 competing hypotheses (explaining the same phenomenon as the primary hypothesis but with different mechanisms)
-- \x60competing-hypothesis-matrix:55\x60 - Ён2 discriminating predictions (each prediction produces different expected outcomes for at least 2 hypotheses)
-## Preserved threshold table ledger (ASCII-normalized from source)
+## Preserved source criteria ledger
 
-| source | line | source threshold row |
-|---|---:|---|
-| hypothesis-formulation | 45 | 1. At least 1 clear research gap or insight has been identified |
-| hypothesis-formulation | 72 | \| S \| ≥2 structured hypotheses \| ≥2 relevant theories \| 1 falsification scenario per hypothesis \| Optional \| |
-| hypothesis-formulation | 73 | \| M \| ≥3 structured hypotheses \| ≥3 theories + ≥5 mechanisms \| ≥1 scenario + boundary conditions per hypothesis \| ≥2 competing hypotheses \| |
-| hypothesis-formulation | 74 | \| L \| ≥5 structured hypotheses \| ≥5 theories + ≥8 mechanisms \| Complete falsifiability audit \| ≥3 competing hypotheses + discriminating predictions \| |
-| hypothesis-formulation | 95 | 1. ≥2 complete structured hypotheses (including all 6 components) |
-| deductive-hypothesis-generation | 60 | \| S \| ≥2 named theories \| ≥3 causal mechanisms \| ≥2 structured hypotheses \| 1 falsification scenario per hypothesis \| |
-| deductive-hypothesis-generation | 61 | \| M \| ≥3 named theories \| ≥5 causal mechanisms \| ≥3 structured hypotheses \| ≥1 scenario + boundary conditions per hypothesis \| |
-| deductive-hypothesis-generation | 62 | \| L \| ≥5 named theories \| ≥8 causal mechanisms \| ≥5 structured hypotheses \| full falsifiability audit + competing-theory comparison \| |
-| inductive-hypothesis-generation | 59 | \| S \| ≥3 independent observation patterns \| ≥2 regularities \| ≥2 structured hypotheses \| Each hypothesis specifies its sample source \| |
-| inductive-hypothesis-generation | 60 | \| M \| ≥5 independent observation patterns \| ≥3 regularities \| ≥3 structured hypotheses \| Generalization boundary + falsification scenario \| |
-| inductive-hypothesis-generation | 61 | \| L \| ≥8 independent observation patterns \| ≥5 regularities \| ≥4 structured hypotheses \| Complete generalization boundary + comparison of competing regularities \| |
-| abductive-hypothesis-generation | 56 | \| S \| 1 precisely described anomaly \| ≥2 candidate explanations \| 1 best-explanation hypothesis \| ≥1 competing hypothesis retained \| |
-| abductive-hypothesis-generation | 57 | \| M \| 1–2 anomalies \| ≥3 candidate explanations \| ≥2 structured hypotheses \| complete plausibility ranking \| |
-| abductive-hypothesis-generation | 58 | \| L \| ≥2 related anomalies \| ≥5 candidate explanations \| ≥3 structured hypotheses \| complete ranking + discriminating prediction design \| |
-| hypothesis-operationalization | 59 | \| M \| Above + justification of operationalization validity \| Variable measurement includes reliability/validity considerations \| Complete boundary conditions \| ≥2 falsification scenarios \| |
-| theory-mechanism-extraction | 45 | - Coverage: 1 theory, ≥1 mechanism, ≥1 hypothesis candidate |
-| theory-mechanism-extraction | 50 | - Coverage: ≥2 theories, ≥3 mechanisms, ≥1 hypothesis candidate per mechanism |
-| theory-mechanism-extraction | 53 | **Deep (L tier, ≥3 theories)** |
-| theory-mechanism-extraction | 55 | - Coverage: ≥3 theories, ≥5 mechanisms, cross-theory variable mapping, ≥5 hypothesis candidates |
-| theory-mechanism-extraction | 60 | - ≥2 theories identified and described (including core claim and scope of applicability) |
-| theory-mechanism-extraction | 61 | - ≥3 mechanisms extracted from the theories (each with a causal-chain description) |
-| theory-mechanism-extraction | 62 | - Each mechanism corresponds to at least 1 hypothesis candidate, including: |
-| anomaly-driven-abduction | 41 | - Sequential execution: anomaly-characterization → explanation-generation (≥3 explanations) → plausibility-ranking |
-| anomaly-driven-abduction | 45 | - anomaly-characterization executes independently for each anomaly; explanation-generation generates ≥3 explanations (explanations may be shared across anomalies); plausibility-ranking ranks all explanations uniformly |
-| anomaly-driven-abduction | 55 | - ≥3 candidate explanations, each explanation: |
-| competing-hypothesis-construction | 55 | \| S \| ≥2 genuinely competing hypotheses \| ≥1 discriminating prediction \| simplified version (2×2) \| 1 falsification scenario per hypothesis \| |
-| competing-hypothesis-construction | 56 | \| M \| ≥3 competing hypotheses \| ≥2 discriminating predictions \| full matrix (hypotheses × predictions) \| full falsification per hypothesis \| |
-| competing-hypothesis-construction | 57 | \| L \| ≥4 competing hypotheses \| ≥3 discriminating predictions \| full matrix + experiment design suggestions \| full falsifiability audit \| |
-| competing-hypothesis-matrix | 34 | \| competing-hypothesis-generation \| Based on the primary hypothesis, generate ≥3 alternative hypotheses competing with it (different mechanisms, same or similar phenomenon prediction range) \| Required in all modes, execute first \| |
-| competing-hypothesis-matrix | 41 | - Sequentially execute all 3 SOPs; generate ≥3 competing hypotheses; design ≥2 discriminating predictions; build comparison matrix |
-| competing-hypothesis-matrix | 49 | - All 3 SOPs execute; competing-hypothesis-generation additional requirement: at least 1 competing hypothesis comes from a completely different theoretical framework; discriminating-prediction-design additional requirement: each discriminating prediction annotates the required experiment scale and difficulty; hypothesis-comparison-matrix additional output: recommended experiment priority (most discriminating predictions ranked first) |
-| competing-hypothesis-matrix | 54 | - ≥3 competing hypotheses (explaining the same phenomenon as the primary hypothesis but with different mechanisms) |
-| competing-hypothesis-matrix | 55 | - ≥2 discriminating predictions (each prediction produces different expected outcomes for at least 2 hypotheses) |
-## Preserved numeric tables (ASCII-normalized from source)
-
-| source | line | source table row |
-|---|---:|---|
-| hypothesis-formulation | 72 | \| S \| ≥2 structured hypotheses \| ≥2 relevant theories \| 1 falsification scenario per hypothesis \| Optional \| |
-| hypothesis-formulation | 73 | \| M \| ≥3 structured hypotheses \| ≥3 theories + ≥5 mechanisms \| ≥1 scenario + boundary conditions per hypothesis \| ≥2 competing hypotheses \| |
-| hypothesis-formulation | 74 | \| L \| ≥5 structured hypotheses \| ≥5 theories + ≥8 mechanisms \| Complete falsifiability audit \| ≥3 competing hypotheses + discriminating predictions \| |
-| deductive-hypothesis-generation | 60 | \| S \| ≥2 named theories \| ≥3 causal mechanisms \| ≥2 structured hypotheses \| 1 falsification scenario per hypothesis \| |
-| deductive-hypothesis-generation | 61 | \| M \| ≥3 named theories \| ≥5 causal mechanisms \| ≥3 structured hypotheses \| ≥1 scenario + boundary conditions per hypothesis \| |
-| deductive-hypothesis-generation | 62 | \| L \| ≥5 named theories \| ≥8 causal mechanisms \| ≥5 structured hypotheses \| full falsifiability audit + competing-theory comparison \| |
-| inductive-hypothesis-generation | 59 | \| S \| ≥3 independent observation patterns \| ≥2 regularities \| ≥2 structured hypotheses \| Each hypothesis specifies its sample source \| |
-| inductive-hypothesis-generation | 60 | \| M \| ≥5 independent observation patterns \| ≥3 regularities \| ≥3 structured hypotheses \| Generalization boundary + falsification scenario \| |
-| inductive-hypothesis-generation | 61 | \| L \| ≥8 independent observation patterns \| ≥5 regularities \| ≥4 structured hypotheses \| Complete generalization boundary + comparison of competing regularities \| |
-| abductive-hypothesis-generation | 56 | \| S \| 1 precisely described anomaly \| ≥2 candidate explanations \| 1 best-explanation hypothesis \| ≥1 competing hypothesis retained \| |
-| abductive-hypothesis-generation | 57 | \| M \| 1–2 anomalies \| ≥3 candidate explanations \| ≥2 structured hypotheses \| complete plausibility ranking \| |
-| abductive-hypothesis-generation | 58 | \| L \| ≥2 related anomalies \| ≥5 candidate explanations \| ≥3 structured hypotheses \| complete ranking + discriminating prediction design \| |
-| hypothesis-operationalization | 58 | \| S \| All abstract terms have operational definitions \| All variables have draft measurement methods \| Main boundary conditions specified \| 1 falsification scenario \| |
-| hypothesis-operationalization | 59 | \| M \| Above + justification of operationalization validity \| Variable measurement includes reliability/validity considerations \| Complete boundary conditions \| ≥2 falsification scenarios \| |
-| competing-hypothesis-construction | 55 | \| S \| ≥2 genuinely competing hypotheses \| ≥1 discriminating prediction \| simplified version (2×2) \| 1 falsification scenario per hypothesis \| |
-| competing-hypothesis-construction | 56 | \| M \| ≥3 competing hypotheses \| ≥2 discriminating predictions \| full matrix (hypotheses × predictions) \| full falsification per hypothesis \| |
-| competing-hypothesis-construction | 57 | \| L \| ≥4 competing hypotheses \| ≥3 discriminating predictions \| full matrix + experiment design suggestions \| full falsifiability audit \| |
-| competing-hypothesis-matrix | 34 | \| competing-hypothesis-generation \| Based on the primary hypothesis, generate ≥3 alternative hypotheses competing with it (different mechanisms, same or similar phenomenon prediction range) \| Required in all modes, execute first \| |
+| source | source line | kind | source criterion |
+|---|---:|---|---|
+| hypothesis-formulation | 41 | textual | ## HARD-GATE |
+| hypothesis-formulation | 43 | textual | <HARD-GATE> |
+| hypothesis-formulation | 44 | textual | Preconditions (all must hold before starting): |
+| hypothesis-formulation | 45 | numeric | 1. At least 1 clear research gap or insight has been identified |
+| hypothesis-formulation | 50 | textual | </HARD-GATE> |
+| hypothesis-formulation | 62 | textual | \\| abductive-hypothesis-generation \\| An anomalous phenomenon that existing theory cannot explain has been observed \\| Anomaly → best explanation \\| |
+| hypothesis-formulation | 68 | textual | ## Budget Gate |
+| hypothesis-formulation | 72 | numeric | \\| S \\| ≥2 structured hypotheses \\| ≥2 relevant theories \\| 1 falsification scenario per hypothesis \\| Optional \\| |
+| hypothesis-formulation | 73 | numeric | \\| M \\| ≥3 structured hypotheses \\| ≥3 theories + ≥5 mechanisms \\| ≥1 scenario + boundary conditions per hypothesis \\| ≥2 competing hypotheses \\| |
+| hypothesis-formulation | 74 | numeric | \\| L \\| ≥5 structured hypotheses \\| ≥5 theories + ≥8 mechanisms \\| Complete falsifiability audit \\| ≥3 competing hypotheses + discriminating predictions \\| |
+| hypothesis-formulation | 78 | textual | Each hypothesis must contain: |
+| hypothesis-formulation | 92 | textual | ## Minimum Yield |
+| hypothesis-formulation | 94 | textual | Each campaign run must produce: |
+| hypothesis-formulation | 95 | numeric | 1. ≥2 complete structured hypotheses (including all 6 components) |
+| deductive-hypothesis-generation | 49 | textual | Every step must be traceable: each prediction traces back to a mechanism, each mechanism traces back to a theory. This is what distinguishes a deductive hypothesis from a guess. |
+| deductive-hypothesis-generation | 52 | textual | - Theory citation that stays superficial (naming only, no specific propositions) → you must cite the theory's core propositions |
+| deductive-hypothesis-generation | 53 | textual | - Skipping the mechanism and jumping straight from theory to prediction → the mechanism is the key node of the deductive chain and cannot be omitted |
+| deductive-hypothesis-generation | 54 | textual | - Hypothesis scope too broad ("in all contexts") → deduction must state boundary conditions |
+| deductive-hypothesis-generation | 56 | textual | ## Budget Gate |
+| deductive-hypothesis-generation | 60 | numeric | \\| S \\| ≥2 named theories \\| ≥3 causal mechanisms \\| ≥2 structured hypotheses \\| 1 falsification scenario per hypothesis \\| |
+| deductive-hypothesis-generation | 61 | numeric | \\| M \\| ≥3 named theories \\| ≥5 causal mechanisms \\| ≥3 structured hypotheses \\| ≥1 scenario + boundary conditions per hypothesis \\| |
+| deductive-hypothesis-generation | 62 | numeric | \\| L \\| ≥5 named theories \\| ≥8 causal mechanisms \\| ≥5 structured hypotheses \\| full falsifiability audit + competing-theory comparison \\| |
+| inductive-hypothesis-generation | 50 | textual | **The core risk of induction**: over-generalization (jumping from a limited sample to a universal law). Each inductive hypothesis must make explicit: |
+| inductive-hypothesis-generation | 55 | textual | ## Budget Gate |
+| inductive-hypothesis-generation | 59 | numeric | \\| S \\| ≥3 independent observation patterns \\| ≥2 regularities \\| ≥2 structured hypotheses \\| Each hypothesis specifies its sample source \\| |
+| inductive-hypothesis-generation | 60 | numeric | \\| M \\| ≥5 independent observation patterns \\| ≥3 regularities \\| ≥3 structured hypotheses \\| Generalization boundary + falsification scenario \\| |
+| inductive-hypothesis-generation | 61 | numeric | \\| L \\| ≥8 independent observation patterns \\| ≥5 regularities \\| ≥4 structured hypotheses \\| Complete generalization boundary + comparison of competing regularities \\| |
+| abductive-hypothesis-generation | 24 | textual | Inference to the best explanation in the face of anomalies: when an anomalous phenomenon that existing theory cannot explain is observed, systematically generate candidate explanations and select the most plausible one as the hypothesis. |
+| abductive-hypothesis-generation | 29 | textual | - Existing theory cannot adequately explain a known phenomenon |
+| abductive-hypothesis-generation | 30 | textual | - One of several competing explanations must be selected as the most worth testing |
+| abductive-hypothesis-generation | 47 | textual | - **Occam's razor**: when explanatory power is comparable, prefer the explanation with fewer assumptions |
+| abductive-hypothesis-generation | 49 | textual | - **Testability**: the best explanation must be able to produce observable predictions (otherwise it cannot be verified) |
+| abductive-hypothesis-generation | 50 | textual | - **Generation completeness**: candidate explanations must be exhausted before ranking, to avoid premature convergence |
+| abductive-hypothesis-generation | 52 | textual | ## Budget Gate |
+| abductive-hypothesis-generation | 56 | numeric | \\| S \\| 1 precisely described anomaly \\| ≥2 candidate explanations \\| 1 best-explanation hypothesis \\| ≥1 competing hypothesis retained \\| |
+| abductive-hypothesis-generation | 57 | numeric | \\| M \\| 1–2 anomalies \\| ≥3 candidate explanations \\| ≥2 structured hypotheses \\| complete plausibility ranking \\| |
+| abductive-hypothesis-generation | 58 | numeric | \\| L \\| ≥2 related anomalies \\| ≥5 candidate explanations \\| ≥3 structured hypotheses \\| complete ranking + discriminating prediction design \\| |
+| hypothesis-operationalization | 50 | textual | - Circular definition (defining X in terms of X) → an operational definition must reference observable behavior or measurement |
+| hypothesis-operationalization | 51 | textual | - Mismatch between measurement and construct (operationalism gap) → must argue that the measurement instrument actually captures the construct |
+| hypothesis-operationalization | 52 | textual | - Overly broad boundary conditions ("in all contexts") → must be specific about sample, context, and time range |
+| hypothesis-operationalization | 54 | textual | ## Budget Gate |
+| hypothesis-operationalization | 58 | numeric-table | \\| S \\| All abstract terms have operational definitions \\| All variables have draft measurement methods \\| Main boundary conditions specified \\| 1 falsification scenario \\| |
+| hypothesis-operationalization | 59 | numeric | \\| M \\| Above + justification of operationalization validity \\| Variable measurement includes reliability/validity considerations \\| Complete boundary conditions \\| ≥2 falsification scenarios \\| |
+| theory-mechanism-extraction | 36 | textual | \\| theory-identification \\| Identify existing theories relevant to the gap/insight (including theory name, core claim, scope of applicability) \\| Required in all modes, executed first \\| |
+| theory-mechanism-extraction | 37 | textual | \\| mechanism-extraction \\| Extract operationalizable causal mechanisms from each theory (mechanism = the process linking cause and effect) \\| Required in all modes, after theory-identification \\| |
+| theory-mechanism-extraction | 38 | textual | \\| variable-identification \\| Identify independent, dependent, moderating, and control variables from each mechanism \\| Required in all modes, after mechanism-extraction \\| |
+| theory-mechanism-extraction | 39 | textual | \\| relationship-specification \\| Specify the directional relationships between variables (positive/negative/nonlinear/moderation/mediation), generating hypothesis candidates \\| Required in all modes, executed last \\| |
+| theory-mechanism-extraction | 45 | numeric | - Coverage: 1 theory, ≥1 mechanism, ≥1 hypothesis candidate |
+| theory-mechanism-extraction | 48 | numeric | **Standard (M tier, 2-3 theories)** |
+| theory-mechanism-extraction | 50 | numeric | - Coverage: ≥2 theories, ≥3 mechanisms, ≥1 hypothesis candidate per mechanism |
+| theory-mechanism-extraction | 51 | textual | - Suitable when: the gap spans multiple theoretical frameworks and deductive paths must be compared |
+| theory-mechanism-extraction | 53 | numeric | **Deep (L tier, ≥3 theories)** |
+| theory-mechanism-extraction | 55 | numeric | - Coverage: ≥3 theories, ≥5 mechanisms, cross-theory variable mapping, ≥5 hypothesis candidates |
+| theory-mechanism-extraction | 58 | textual | ## Minimum Yield |
+| theory-mechanism-extraction | 60 | numeric | - ≥2 theories identified and described (including core claim and scope of applicability) |
+| theory-mechanism-extraction | 61 | numeric | - ≥3 mechanisms extracted from the theories (each with a causal-chain description) |
+| theory-mechanism-extraction | 62 | numeric | - Each mechanism corresponds to at least 1 hypothesis candidate, including: |
+| anomaly-driven-abduction | 22 | textual | Inductive/abductive path — precisely describe anomalous phenomena that existing theory cannot explain, generate multiple candidate explanations, rank by plausibility, and provide a structured basis for abductive hypotheses. |
+| anomaly-driven-abduction | 28 | textual | None of the three steps can be omitted: imprecise description means explanations cannot be focused; insufficient explanations make ranking meaningless; ranking without basis turns hypothesis selection into guesswork. |
+| anomaly-driven-abduction | 34 | textual | \\| anomaly-characterization \\| Precisely describe the anomalous phenomenon: what was observed, deviation from expectation, conditions of occurrence, excluded trivial explanations \\| Required in all modes, execute first \\| |
+| anomaly-driven-abduction | 35 | textual | \\| explanation-generation \\| Generate multiple candidate explanations (abductive hypotheses); each explanation must fully account for the anomaly \\| Required in all modes, after anomaly-characterization \\| |
+| anomaly-driven-abduction | 36 | textual | \\| plausibility-ranking \\| Rank candidate explanations by plausibility criteria (prior probability, explanatory power, parsimony, testability) \\| Required in all modes, execute last \\| |
+| anomaly-driven-abduction | 41 | numeric | - Sequential execution: anomaly-characterization → explanation-generation (≥3 explanations) → plausibility-ranking |
+| anomaly-driven-abduction | 44 | numeric | **Standard (M tier, 1-3 related anomalies)** |
+| anomaly-driven-abduction | 45 | numeric | - anomaly-characterization executes independently for each anomaly; explanation-generation generates ≥3 explanations (explanations may be shared across anomalies); plausibility-ranking ranks all explanations uniformly |
+| anomaly-driven-abduction | 49 | textual | - All 3 SOPs execute; explanation-generation additional requirement: each explanation must state why existing theory cannot explain the anomaly; plausibility-ranking additional output: which explanations can be distinguished by a single experiment |
+| anomaly-driven-abduction | 52 | textual | ## Minimum Yield |
+| anomaly-driven-abduction | 55 | numeric | - ≥3 candidate explanations, each explanation: |
+| anomaly-driven-abduction | 63 | textual | - Anomaly description completeness (whether it meets HARD-GATE requirements) |
+| competing-hypothesis-construction | 41 | textual | 1. **Force diversity**: competing hypotheses must be genuinely different at the mechanism level, not variants of the same mechanism |
+| competing-hypothesis-construction | 49 | textual | - **Comparability**: both hypotheses have clear testable predictions |
+| competing-hypothesis-construction | 51 | textual | ## Budget Gate |
+| competing-hypothesis-construction | 55 | numeric | \\| S \\| ≥2 genuinely competing hypotheses \\| ≥1 discriminating prediction \\| simplified version (2×2) \\| 1 falsification scenario per hypothesis \\| |
+| competing-hypothesis-construction | 56 | numeric | \\| M \\| ≥3 competing hypotheses \\| ≥2 discriminating predictions \\| full matrix (hypotheses × predictions) \\| full falsification per hypothesis \\| |
+| competing-hypothesis-construction | 57 | numeric | \\| L \\| ≥4 competing hypotheses \\| ≥3 discriminating predictions \\| full matrix + experiment design suggestions \\| full falsifiability audit \\| |
+| competing-hypothesis-matrix | 28 | textual | The three steps cannot be reordered: first generate competing hypotheses (skipping not allowed), then design discriminating predictions (not allowed to only compare without testing), and finally build the comparison matrix (not allowed to only enumerate without quantifying). The final output is not "which hypothesis is correct" but "what experiment can distinguish them." |
+| competing-hypothesis-matrix | 34 | numeric | \\| competing-hypothesis-generation \\| Based on the primary hypothesis, generate ≥3 alternative hypotheses competing with it (different mechanisms, same or similar phenomenon prediction range) \\| Required in all modes, execute first \\| |
+| competing-hypothesis-matrix | 35 | textual | \\| discriminating-prediction-design \\| Design discriminating predictions for each pair of competing hypotheses — find an observable result for which the two hypotheses predict differently \\| Required in all modes, after competing-hypothesis-generation \\| |
+| competing-hypothesis-matrix | 36 | textual | \\| hypothesis-comparison-matrix \\| Assemble all hypotheses and discriminating predictions into a structured comparison matrix, annotating each hypothesis's expected outcome for each prediction \\| Required in all modes, execute last \\| |
+| competing-hypothesis-matrix | 41 | numeric | - Sequentially execute all 3 SOPs; generate ≥3 competing hypotheses; design ≥2 discriminating predictions; build comparison matrix |
+| competing-hypothesis-matrix | 44 | numeric | **Standard (M tier, 2-3 primary hypotheses)** |
+| competing-hypothesis-matrix | 49 | numeric | - All 3 SOPs execute; competing-hypothesis-generation additional requirement: at least 1 competing hypothesis comes from a completely different theoretical framework; discriminating-prediction-design additional requirement: each discriminating prediction annotates the required experiment scale and difficulty; hypothesis-comparison-matrix additional output: recommended experiment priority (most discriminating predictions ranked first) |
+| competing-hypothesis-matrix | 52 | textual | ## Minimum Yield |
+| competing-hypothesis-matrix | 54 | numeric | - ≥3 competing hypotheses (explaining the same phenomenon as the primary hypothesis but with different mechanisms) |
+| competing-hypothesis-matrix | 55 | numeric | - ≥2 discriminating predictions (each prediction produces different expected outcomes for at least 2 hypotheses) |

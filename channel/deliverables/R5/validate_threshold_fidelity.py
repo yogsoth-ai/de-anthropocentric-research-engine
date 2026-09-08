@@ -1,68 +1,79 @@
-"""Mechanical gate: every numeric threshold token in pilot sources must appear in its body."""
+"""Mechanical fidelity gate for numeric and textual source criteria."""
 from __future__ import annotations
-
-import json
-import re
-import sys
+import json, re, sys
 from pathlib import Path
 
 ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
 SKILLS = Path(r"D:\YOGSOTH-AI\de-anthropocentric-research-engine\skills")
 PILOT = Path(__file__).parent / "pilot"
-IDS = [
-    "synthesize-meta-analytic-evidence",
-    "design-experiment",
-    "formulate-hypotheses",
-    "analyze-constraints-readiness",
-    "rank-candidates",
-    "establish-empirical-baseline",
-    "audit-benchmark-validity",
+IDS = ["synthesize-meta-analytic-evidence", "design-experiment", "formulate-hypotheses", "analyze-constraints-readiness", "rank-candidates", "establish-empirical-baseline", "audit-benchmark-validity"]
+
+# Shared semantics: each named pattern is used for both counting and ledger generation.
+PATTERNS = [
+    ("symbolic-comparator", re.compile(r"(?:>=|<=|≥|≤|±)"), "symbolic comparator"),
+    ("at-least", re.compile(r"\bat\s+least\s+\d+\b", re.I), "at least N"),
+    ("top-n", re.compile(r"\btop[- ]?\d+\b", re.I), "top-N"),
+    ("percentage", re.compile(r"\b\d+(?:\.\d+)?\s*%"), "percentage"),
+    ("numeric-range", re.compile(r"\b\d+\s*[-–]\s*\d+\b"), "numeric range"),
+    ("angle-comparator", re.compile(r"(?:<|>)\s*\d+\b"), "< N / > N"),
+    ("table-digits", re.compile(r"^\s*\|.*\d"), "table row containing digits"),
+    ("mandatory", re.compile(r"\b(?:must|cannot|required|minimum)\b", re.I), "mandatory predicate"),
+    ("preregistration", re.compile(r"pre[- ]?registr|post[- ]hoc", re.I), "preregistration predicate"),
+    ("fair-comparison", re.compile(r"same\s+(?:compute|tuning|conditions?)|fair\s+comparison|control\s+all\s+confounds|comparab(?:le|ility)", re.I), "same-condition/fair-comparison predicate"),
+    ("reproducibility", re.compile(r"reproducib|random\s+seeds?|software\s+environment|non[- ]determin|verification\s+protocol", re.I), "reproducibility predicate"),
+    ("entry-gate", re.compile(r"HARD[- ]GATE|before entering|quality gate|budget gate|minimum yield|cannot exit", re.I), "explicit entry-gate phrase"),
 ]
-TOKEN = re.compile(
-    r"(?:>=|<=|\u00b1|\u2265|\u2264|\bat least\s+\d+\b|\btop[- ]?\d+\b|\b\d+\s*%)",
-    re.I,
-)
 
-
-def canonical(text: str) -> str:
-    """Compare semantics despite transport/rendering differences in Unicode operators."""
-    return (text.replace("≥", ">=").replace("≤", "<=").replace("±", "+/-")
-            .replace("–", "-").replace("—", "-").replace("≠", "!=")
-            .replace("\\|", "|"))
-
-
-def source_files() -> dict[str, Path]:
+def source_files():
     return {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
 
+def criteria(src):
+    out = []
+    lines = src.read_text(encoding="utf-8").splitlines()
+    in_frontmatter = bool(lines and lines[0].strip() == "---")
+    for no, line in enumerate(lines, 1):
+        if in_frontmatter:
+            if no > 1 and line.strip() == "---": in_frontmatter = False
+            continue
+        if "<!-- BEGIN available-tables (generated) -->" in line: break
+        hit = next(((name, label) for name, rx, label in PATTERNS if rx.search(line)), None)
+        if hit:
+            name, _ = hit
+            numeric = name in {"symbolic-comparator", "at-least", "top-n", "percentage", "numeric-range", "angle-comparator"}
+            out.append((no, "numeric-table" if name == "table-digits" else ("numeric" if numeric else "textual"), line.strip()))
+    return out
 
-def main() -> int:
+def body_text(path):
+    text = path.read_text(encoding="utf-8")
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        text = parts[2] if len(parts) == 3 else text
+    return text.split("<!-- BEGIN available-tables (generated) -->", 1)[0]
+
+def contains(body, criterion):
+    normalize = lambda s: " ".join(s.replace("\\\\|", "|").replace("\\|", "|").split())
+    return normalize(criterion) in normalize(body)
+
+def main():
     graph = json.loads(ARCH.read_text(encoding="utf-8"))
-    by_name = source_files()
-    missing: list[str] = []
-    total = 0
+    by_name, missing, total = source_files(), [], 0
     for node_id in IDS:
         node = next(n for n in graph["tactics"] if n["id"] == node_id)
-        body = canonical((PILOT / node_id / "body.md").read_text(encoding="utf-8"))
-        node_total = 0
+        body, node_total, node_missing = body_text(PILOT / node_id / "body.md"), 0, 0
         for old in node.get("old", []):
             name = old.rsplit("/", 1)[-1].split(" [", 1)[0].strip()
             src = by_name.get(name)
             if src is None:
                 continue
-            for line_no, line in enumerate(src.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
-                if TOKEN.search(line):
-                    node_total += 1
-                    total += 1
-                    if canonical(line.rstrip()) not in body:
-                        missing.append(f"{node_id}: {src}:{line_no}: {line.strip()}")
-        print(f"{node_id}: source threshold lines={node_total}, missing={sum(x.startswith(node_id + ':') for x in missing)}")
+            for line_no, _, line in criteria(src):
+                node_total += 1; total += 1
+                if not contains(body, line):
+                    node_missing += 1; missing.append(f"{node_id}: {src}:{line_no}: {line}")
+        print(f"{node_id}: source criteria={node_total}, missing={node_missing}")
+    print("Known blind spots: number words/non-English thresholds; implicit domain criteria without cue words; qualitative adjectives (adequate/relevant/representative); formulas or constraints outside matched forms; zero/low-count nodes require manual review.")
     if missing:
-        print("MISSING threshold lines:", file=sys.stderr)
-        print("\n".join(missing), file=sys.stderr)
-        return 1
-    print(f"OK: {total} source threshold lines preserved verbatim")
-    return 0
-
+        print("MISSING source criteria:", file=sys.stderr); print("\n".join(missing), file=sys.stderr); return 1
+    print(f"OK: {total} matched source criteria present"); return 0
 
 if __name__ == "__main__":
     raise SystemExit(main())

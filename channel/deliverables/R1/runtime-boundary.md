@@ -33,7 +33,7 @@ v4 不把 spec 作为独立文件、确认态或冻结态对象。当前 spec �
 1. `decisions` 是计划的主来源。识别 `plan_item.create`、`plan_item.update`、`plan_item.retire`、`plan_gate.update` 和 `phase_status.update` 事件。
 2. `open_questions` 只作为辅助：将未决问题挂到其 `plan_item_id`；它不能单独创建可执行计划项。
 3. 其余六个 Delta 字段只提供事实、证据和不确定性引用；除非被 `decisions` 明确引用，不得直接改变 spec 结构。
-4. 输出为内存中的 `SpecView`：`phase`、`objective`、`active_items[]`、`context_requirements[]`、`completion_gates[]`、`backtrack_conditions[]`、`status`、`source_checkpoint`。每个 `active_item` 至少含 `plan_item_id`、`description`、`requires`、`produces`、`depends_on`、`status` 和 `last_decision_id`。
+4. 输出为内存中的 `SpecView`：`phase`、`objective`、`active_items[]`、`context_requirements[]`、`completion_gates[]`、`backtrack_conditions[]`、`status`、`source_checkpoint`。每个 `active_item` 至少含 `plan_item_id`、`description`、`requires`、`produces`、`depends_on`、`status`、`last_decision_id` 和可选的 `recommended_combination`。该字段只由对应 `plan_item.create`/`plan_item.update` 的最新 `decisions` 决定，表示有序的 tactic/SOP 候选组合；缺省时跳过该层，继续使用 `recommended_jumps`。
 
 `SpecView` 不是新的落盘对象；需要持久化时只追加产生它的 decision/checkpoint 事件。若没有任何 `plan_item.create` 事件，host 必须先追加一个最小计划决定，再调用科研节点。
 
@@ -47,15 +47,15 @@ v4 不把 spec 作为独立文件、确认态或冻结态对象。当前 spec �
 
 每次路由前重建当前 `SpecView`，选择第一个 `active_item.status != complete` 且依赖已满足的项；执行后通过 checkpoint 记录结果与 Delta。完成判据来自当前投影视图的 `completion_gates`，若修订使判据变化，则按 2.2 节重新验证，不得以旧 complete 标记自动前进。计划变化就是新的 `decisions` 事件，必须说明变化原因与影响。
 
-### 2.1 节点 contract 字段落点
+### 2.4 节点 contract 字段落点
 
 每个 tactic/SOP 的 `input_contract` 与 `output_contract` 以正文中的固定小节为唯一权威：`## Input Contract`、`## Output Contract`。小节必须写明字段、类型、required/optional、失败条件和输出判据；threshold、rubric、反例仍保留在正文对应段落。frontmatter 只保留 `name` 与 `description`；产品层可生成 `registry/capabilities.json` 作为 catalog 索引和 `source_ref` 缓存，但不得把索引当作唯一事实，也不得要求运行时读取 provider-specific 字段。这样 R5 的编译有稳定落点，R3 的发现只消费索引摘要，运行时 Delta 仍由本文件第 3 节统一定义。
 
-执行规则：
+节点执行约束：
 
 1. host 先重建当前 `SpecView`，再读取其 `context_requirements` 指向的 context；输入不存在或不完整时停止，不自行补造。
 2. 每个 active item 依次执行其投影视图中声明的步骤与 checkpoint；阶段末是否完成由当前 `completion_gates` 判定。
-3. 计划项只推荐科研图中的 campaign/strategy；最终 tactic/SOP 选择可由 host 按 catalog 索引完成，但必须记录选择理由和输入 state slice。
+3. 计划项只声明 tactic/SOP 组合或顺序建议；最终 tactic/SOP 选择可由 host 按 catalog 索引完成，但必须记录选择理由和输入 state slice。
 4. 计划变化通过新的 `decisions` 事件表达，并按 2.2 节处理对已完成项的影响。
 5. `completion_gates` 必须是数字或客观可核验条件；未满足时保留项未完成，不得自动前进。
 6. 触发 `backtrack_conditions` 时，host 先向用户请求 A（回退）、B（继续）、C（其他）；未获选择不得静默回退或前进。
@@ -108,8 +108,9 @@ host 将每个 Delta 作为事件追加，不做静默覆盖：
 
 1. 读取 `context/INDEX.md`，找到目标 Phase 的唯一 context 文件与最新 checkpoint 序号；回放截至恢复点的事件流，重建当前 `SpecView`，定位第一个未完成 active item。
 2. 读取该文件最后一个 `Status=complete` checkpoint；若最后 checkpoint 为 `partial/blocked`，先读取它的 Open questions，再回到最近一个 complete checkpoint，并从该点重建 spec 投影。
+3. 核对恢复点的 `SpecView.source_checkpoint`、active item 状态与 checkpoint 事件流一致；不一致时停止并报告投影不一致位置。
 4. 校验 checkpoint 的 Phase、序号连续性和 Delta 八字段；校验失败时停止，报告损坏位置。
-5. 从恢复点继续，不重跑已记录为 complete 的 strategy；如需重跑，必须新增 checkpoint 并写明原因。
+5. 从恢复点继续，不重跑已记录为 complete 的 active item；如需重跑，必须新增 checkpoint 并写明原因。
 
 恢复不读取 host scratchpad 作为事实来源，也不要求把整份 context 文件压入提示词；摘要只能作为导航，事实以 checkpoint 事件为准。
 
@@ -170,4 +171,4 @@ host 负责决定是否派发 subagent。可派发条件：任务边界明确、
 - [ ] 路由、重试、并行、派发、监控均能输出第 5 节要求的可审计字段。
 - [ ] 七条 capability 的接收方与 status 可由审计者依据第 6 节逐条判定。
 
-证据源：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:21-33`（state_semantics）、`:35-49`（boundaries）、`:6076`（actor-profiling）、`:6125`（engine-core/context-management/checkpointing）、`:6657`（knowledge compilation/vault maintenance）、`:6685-6692`（implementation dependency planning 与 critical-path）、`:6944`（experiment-running dispatch/monitoring）；`file-transfer/2026-08-24-14-22-dare-v4-capability-coverage-audit.md:14-16,206-212,446`；v3 `context-init`、`context-checkpoint`、`writing-specs`、`executing-specs` SKILL.md。
+证据源：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:21-33`（state_semantics）、`:35-49`（boundaries）、`:6076`（actor-profiling）、`:6125`（engine-core/context-management/checkpointing）、`:6657`（knowledge compilation/vault maintenance）、`:6685-6692`（implementation dependency planning 与 critical-path）、`:6944`（experiment-running dispatch/monitoring）；`file-transfer/2026-08-24-14-22-dare-v4-capability-coverage-audit.md:14-16,206-212,446`；v3 历史来源（v4 已移除）：`context-init`、`context-checkpoint`、`writing-specs`、`executing-specs` SKILL.md。

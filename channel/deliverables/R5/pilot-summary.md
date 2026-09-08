@@ -14,16 +14,16 @@
 
 | v4 节点 | 源节点/正文行数 | v4 body | 源 threshold 数 | body 保留数 | 压缩比（源/body） | 缩减 |
 |---|---:|---:|---:|---:|---:|---:|
-| synthesize-meta-analytic-evidence | 9 / 805 | 167 | 14 | 14 | 4.82:1 | 79.3% |
-| design-experiment | 8 / 304 | 87 | 0 | 0 | 3.49:1 | 71.4% |
-| formulate-hypotheses | 9 / 493 | 151 | 33 | 33 | 3.26:1 | 69.4% |
-| analyze-constraints-readiness | 22 / 1,051 | 193 | 43 | 43 | 5.45:1 | 81.6% |
-| rank-candidates | 13 / 734 | 163 | 30 | 30 | 4.50:1 | 77.8% |
-| establish-empirical-baseline | 9 / 696 | 137 | 5 | 5 | 5.08:1 | 80.3% |
-| audit-benchmark-validity | 7 / 600 | 139 | 6 | 6 | 4.32:1 | 76.8% |
-| **合计** | **77 / 4,683** | **1,037** | **131** | **131** | **4.52:1** | **77.9%** |
+| synthesize-meta-analytic-evidence | 9 / 805 | 167 | 89 | 89 | 4.82:1 | 79.3% |
+| design-experiment | 8 / 304 | 87 | 59 | 59 | 3.49:1 | 71.4% |
+| formulate-hypotheses | 9 / 493 | 151 | 85 | 85 | 3.26:1 | 69.4% |
+| analyze-constraints-readiness | 22 / 1,051 | 193 | 93 | 93 | 5.45:1 | 81.6% |
+| rank-candidates | 13 / 734 | 163 | 72 | 72 | 4.50:1 | 77.8% |
+| establish-empirical-baseline | 9 / 696 | 137 | 97 | 97 | 5.08:1 | 80.3% |
+| audit-benchmark-validity | 7 / 600 | 139 | 96 | 96 | 4.32:1 | 76.8% |
+| **合计** | **77 / 4,683** | **1,037** | **591** | **591** | **4.52:1** | **77.9%** |
 
-`design-experiment` 的 roster 估算为 6 个旧节点/~702 行，而当前 architecture 列出 9 个 `old`、8 个可解析正文；该差异记录为边界 case，不用静默修正。阈值列由 `validate_threshold_fidelity.py` 逐条核验；所有 131 条源命中均保留。
+`design-experiment` 的 roster 估算为 6 个旧节点/~702 行，而当前 architecture 列出 9 个 `old`、8 个可解析正文；`factor-level-design` 目录缺失，已明确记录为 unresolved，不作静默推断。阈值与文本门槛列由 `validate_threshold_fidelity.py` 逐条核验；591 条模式命中均保留。正文已重写为单一 UTF-8 台账，删除重复/损坏副本。
 
 ## 编译耗时
 
@@ -57,3 +57,10 @@
 - 每个 body 都有 Input/Output contract、执行步骤、gate、failure、provenance、Delta 说明。
 - 7 个 body 的数字门槛可在对应 log 与 v3 源节点中反查；无法解析的源名未被伪造为已继承。
 - body 只描述科研变换；retry、parallelism、dispatch、monitoring 未写入科学步骤。
+## Validator scope and blind spots
+
+`validate_threshold_fidelity.py` scans author-authored source text only: frontmatter and generated `available-tables` are excluded. Named patterns cover symbolic comparators (`>=`, `<=`, `≥`, `≤`, `±`), `at least N`, `top-N`, percentages, numeric ranges, `<N`/`>N`, digit-bearing table rows, mandatory predicates, preregistration, fair-comparison, reproducibility, and explicit entry-gate phrases. Physical source line numbers are retained in every ledger.
+
+Known blind spots requiring manual review: number words or non-English thresholds; implicit domain criteria without cue words; qualitative adjectives such as adequate/relevant/representative; formulas or constraints outside matched forms; and zero/low-count nodes.
+
+Manual `design-experiment` review covered all 8 resolvable sources and found textual gates for HARD-GATE/minimum yield, same compute/tuning, preregistration/power/stopping, and seed/environment/verification reproducibility. `factor-level-design` remains explicitly unresolved because its directory is absent.
