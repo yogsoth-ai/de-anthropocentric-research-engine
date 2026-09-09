@@ -17,6 +17,31 @@
 
 ## 2. v3 冷启动流程（现状对比）
 
+### 2.1 v4 entry orchestration: six steps as a product-layer template
+
+R2 C1 assigns the six-step sequence (`actor-profiling -> landscape-reconnaissance -> direction-narrowing -> obstacle-analysis -> goal-decomposition -> north-star-synthesis`) to the product layer. It is an entry-depth orchestration template, not a v4 scientific-graph node and not a new layer. Each step emits `ResearchContext`, `decisions`, or `SpecView` inputs for host/runtime.
+
+| Entry depth | Default start | Prefix-skip rule | Product-layer output |
+|---|---|---|---|
+| cold-start | `actor-profiling` | Skip no prefix | intent/context, direction set, obstacle report, goal decomposition, North Star |
+| warm-start | `landscape-reconnaissance` or `direction-narrowing` | Skip `actor-profiling` when background/domain direction is already supplied | Complete missing scope, candidate directions, obstacles, and goal decisions |
+| hot-start | `obstacle-analysis` or `goal-decomposition` | Skip the first two steps when a concrete question, paper, or dataset is supplied; create a minimal implicit plan if needed | Minimal executable plan, goal/North Star, and context preflight |
+| resume | First unfinished item in current `SpecView` | Do not rerun completed work | Restored context, decisions, and plan |
+
+The default order is retained. Only an already-covered **prefix** may be skipped; arbitrary middle-step jumps are not allowed. If a later step lacks a required predecessor output, fill that step or return `NEEDS_CONTEXT`. The six steps are not six mandatory chat turns: one turn may combine steps, and known inputs are prefilled. Users see natural-language phases such as “clarifying background” and “narrowing candidate directions,” not tactic/SOP slugs. Each step has a checkable completion condition and output for host implementation and R2 mechanical checks.
+
+#### Mapping the five cold-start scenarios
+
+| Scenario | Starting depth | Six-step mapping |
+|---|---|---|
+| Literature review | cold; warm when domain scope is known | Background/actor -> landscape -> direction -> obstacles -> review goal -> North Star |
+| Experiment design | warm or hot | Start at direction when the direction is known; start at obstacle/goal for an existing hypothesis, then complete feasibility and objective |
+| Resource-constrained research | warm | Enter direction + obstacle quickly while collecting `resources` and `hard_constraints`, then goal/North Star |
+| Direct paper analysis | hot | Skip exploration; extract obstacle/goal from the paper, create a minimal implicit plan and North Star |
+| Continue existing research | resume | Restore `SpecView`/context and continue from the first unfinished item; do not rerun the six steps |
+
+Cold/warm/hot describe how much of the six-step prefix is already covered, not separate workflows. All five scenarios share the same template and `NEEDS_CONTEXT` fallback.
+
 ```text
 用户问题
   -> research-start（entry）

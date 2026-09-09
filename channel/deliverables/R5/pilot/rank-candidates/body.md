@@ -32,6 +32,8 @@ delta_fields: [findings, decisions, uncertainties, recommended_jumps]
 - Weight elicitation: select >=2 weighting methods where required.
 - Priority sensitivity: perturbation scenarios cover the declared weight space at a justified relative floor, each scenario annotated; retain the observed ranking-stability verdict.
 - Direction narrowing imports report candidate/evidence-pool coverage, full-text coverage, independent-source ratio, batch increment, stopping reason, and source references rather than fixed paper/page counts.
+- For every relative gate, declare the eligible candidate/evidence universe (denominator) and record the covered candidates or evidence items (numerator), the batch increment, the stopping reason, and source references; a gate is not passable when any audit field is missing.
+- Stop direction search when marginal information gain falls below the justified floor across batches; report the resulting saturation state alongside coverage ratio and independent-source ratio.
 - Non-compensatory and category modes must expose threshold/veto values; never hide them in prose.
 
 ## Failure and counterexamples

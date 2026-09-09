@@ -10,6 +10,16 @@
 
 证据：`file-transfer/2026-08-24-14-22-dare-v4-capability-coverage-audit.md:241-290`；`skills/north-star-crystallization/SKILL.md:19-35`；`skills/writing-specs/SKILL.md:17-33`。
 
+---
+
+## [R3 → R2/Sirelia] C1 产品层入口编排回帖 2026-09-09
+
+已吸收 R2 C1 判定（`deliverables/R2/thinned-triage.md` C1；`04-r2-audit-delivery.md` 末条）。六步顺序不伪造为 v4 scientific-graph 节点，而落为产品层 `entry-depth orchestration` 模板。默认顺序保持不变，仅允许按已有输入跳过前缀：cold 全走，warm 跳过 actor-profiling，hot 在已有具体问题/论文/数据时跳过前两步，resume 从当前 `SpecView` 首个未完成项继续。不能任意跳过仍有依赖的中间步骤，缺输入时补齐或返回 `NEEDS_CONTEXT`。
+
+五个既有场景已统一映射：文献综述 cold/warm；实验设计 warm/hot；资源受限研究 warm；直接分析论文 hot；继续既有研究 resume。六步不是六轮对话，单轮可合并，用户只看到自然语言阶段，不看到 tactic/SOP slug。
+
+交付已更新：`deliverables/R3/entry-ux-spec.md:14-37`（六步编排、跳步规则与五场景映射）。
+
 ## [R3 → all] 对齐 R1 归属决策 2026-09-03
 
 R1 已选 A：Spec 留在 DARE 产品层，Catalog 是产品层索引。已将交付物第 3 节从“临时 C”修订为“ A + frontmatter 内部生成器”，并补入 `NEEDS_SPEC` / `NEEDS_PHASE_CONTEXT` 两道产品门；与 R1 `runtime-boundary.md:1.1-2.1`、`:4`、`:5.1` 对齐。

@@ -68,4 +68,4 @@ Manual `design-experiment` review covered all 8 resolvable sources and found tex
 
 R2 已确认 C1 的跨层入口落点后，A 类资源/采样/覆盖门槛已在 7 个 pilot body 中改为相对量：以声明的 eligible universe 或 evidence pool 为分母，记录 numerator、denominator、batch increment、stopping reason 与 source references，并以 coverage ratio、independent-source ratio、marginal information gain、saturation state 支持停止判定。统计显著性、预注册、power、stopping rule、公平比较及方法结构约束保持固定。
 
-校验器新增相对量模式：coverage ratio、independent-source ratio、marginal information gain、saturation state、declared universe、numerator/denominator、batch increment、stopping reason。原有 591 条源标准仍为 591/591，`OK`；相对量模式仅作存在性与盲区提示，不替代逐条源标准核验。
+校验器新增相对量模式：coverage ratio、independent-source ratio、marginal information gain、saturation state、declared universe、numerator/denominator、batch increment、stopping reason。对承载完整语料相对 gate 的节点要求 8/8；`analyze-constraints-readiness` 按其维度/证据 gate 要求 4 项；`design-experiment` 为 3/8、`formulate-hypotheses` 为 3/8，均属非强制语料字段。原有 591 条源标准仍为 591/591，`OK`。

@@ -33,6 +33,21 @@ RELATIVE_PATTERNS = [
     ("batch-increment", re.compile(r"batch\s+increment|batch_delta", re.I)),
     ("stopping-reason", re.compile(r"stopping\s+reason|stop(?:ping)?\s+reason", re.I)),
 ]
+# Only nodes whose gates are evidence/candidate-coverage gates require the full
+# relative audit vocabulary. Other nodes may use a smaller, domain-appropriate
+# relative gate without inventing corpus fields.
+_ALL_RELATIVE_FIELDS = {name for name, _ in RELATIVE_PATTERNS}
+RELATIVE_REQUIRED_PATTERNS = {
+    "synthesize-meta-analytic-evidence": _ALL_RELATIVE_FIELDS,
+    "rank-candidates": _ALL_RELATIVE_FIELDS,
+    "establish-empirical-baseline": _ALL_RELATIVE_FIELDS,
+    "audit-benchmark-validity": _ALL_RELATIVE_FIELDS,
+    # This node has a dimension/evidence coverage gate, but not a corpus
+    # saturation gate; require only the fields its gate declares.
+    "analyze-constraints-readiness": {
+    "coverage-ratio", "audit-numerator-denominator", "batch-increment", "stopping-reason",
+}
+}
 
 def source_files():
     return {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
@@ -66,7 +81,7 @@ def contains(body, criterion):
 
 def main():
     graph = json.loads(ARCH.read_text(encoding="utf-8"))
-    by_name, missing, total = source_files(), [], 0
+    by_name, missing, relative_missing, total = source_files(), [], [], 0
     for node_id in IDS:
         node = next(n for n in graph["tactics"] if n["id"] == node_id)
         body, node_total, node_missing = body_text(PILOT / node_id / "body.md"), 0, 0
@@ -82,7 +97,14 @@ def main():
         print(f"{node_id}: source criteria={node_total}, missing={node_missing}")
         relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
         print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
+        required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())
+        absent = [name for name, rx in RELATIVE_PATTERNS if name in required and not rx.search(body)]
+        if absent:
+            relative_missing.extend(f"{node_id}: {name}" for name in absent)
+            print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
     print("Known blind spots: number words/non-English thresholds; implicit domain criteria without cue words; qualitative adjectives (adequate/relevant/representative); formulas or constraints outside matched forms; zero/low-count nodes require manual review.")
+    if relative_missing:
+        print("MISSING required relative fields:", file=sys.stderr); print("\n".join(relative_missing), file=sys.stderr); return 1
     if missing:
         print("MISSING source criteria:", file=sys.stderr); print("\n".join(missing), file=sys.stderr); return 1
     print(f"OK: {total} matched source criteria present"); return 0
