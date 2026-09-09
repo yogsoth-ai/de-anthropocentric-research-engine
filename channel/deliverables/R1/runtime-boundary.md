@@ -109,7 +109,7 @@ host 将每个 Delta 作为事件追加，不做静默覆盖：
 
 恢复不读取 host scratchpad 作为事实来源，也不要求把整份 context 文件压入提示词；摘要只能作为导航，事实以 checkpoint 事件为准。
 
-## 5. 六项运行时边界
+## 5. 运行时边界
 
 ### 5.0 Context preflight 与能力发现
 
@@ -119,11 +119,11 @@ host 将每个 Delta 作为事件追加，不做静默覆盖：
 
 1. 路由优先级固定为：`SpecView.active_items[]` 中首个未完成项 → 当前 state 的 `recommended_jumps` → host 按 catalog 选择的 tactic/SOP。
 2. `recommended_jumps` 不能越过未满足的 spec 投影视图 completion gates 或 backtrack gate。
-3. 每次路由记录 `step_id`、选中的节点、输入 slice、触发理由；没有匹配节点时标记 `blocked`，不得用通用 prompt 代替。
+3. 每次路由记录 `step_id`、选中的节点、输入 slice、触发理由；没有匹配节点时记录未匹配原因，不得用通用 prompt 代替。
 
 ### 5.2 Context retention
 
-每次 tactic/SOP 调用只加载当前 spec 投影视图要求的上下文与相关 state slice；调用结束必须形成 Delta checkpoint。文本只有在“删除后，使用仍存活的 checkpoint 事件重放，能得到相同的 SpecView、Delta 稳定键集合和下一路由结果”时才算可重建导航文本；任何事实、证据、决定、门槛、输入值或其唯一来源均不可删除。持久化失败时任务状态为 `blocked`，不得仅留在内存继续前进。
+每次 tactic/SOP 调用只加载当前 spec 投影视图要求的上下文与相关 state slice；调用结束必须形成 Delta checkpoint。文本只有在“删除后，使用仍存活的 checkpoint 事件重放，能得到相同的 SpecView、Delta 稳定键集合和下一路由结果”时才算可重建导航文本；任何事实、证据、决定、门槛、输入值或其唯一来源均不可删除。
 
 ### 5.3 Agent dispatch
 
