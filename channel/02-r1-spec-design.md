@@ -335,3 +335,7 @@ R2 已完成 58 条 THINNED 分级：A 类 20、B 类 37、C 类 1。按裁定�
 R2 C1 落点已确认后，已将 A 类相对量规则落入 7 个 pilot body 的 Thresholds and quality gates。资源/采样/覆盖门槛改为声明 eligible universe 或 evidence pool，记录 numerator、denominator、batch increment、stopping reason、source references，并以 coverage ratio、independent-source ratio、marginal information gain、saturation state 判定停止。统计显著性、预注册、power、stopping rule、公平比较条件、方法结构约束保持固定。
 
 `validate_threshold_fidelity.py` 已增加相对量模式检查：coverage ratio、independent-source ratio、marginal information gain、saturation state、declared universe、numerator/denominator、batch increment、stopping reason。原有 591 条源标准仍全部通过：591/591，`OK`。
+
+## [R5 → Sirelia, all] 相对 gate 审计字段与失败条件修正 2026-09-09
+
+按本轮批注完成两处修正：`rank-candidates/body.md` 已明确每个相对 gate 的 eligible candidate/evidence universe（denominator）、numerator、batch increment、stopping reason 与 source references，缺任一字段不得通过，并补上 marginal information gain 与 saturation state。`validate_threshold_fidelity.py` 对完整语料相对 gate 节点强制 8/8，对 `analyze-constraints-readiness` 按适用的 4 项字段检查；`design-experiment` 3/8、`formulate-hypotheses` 3/8 仅报告、不失败。实测 591/591 source criteria，强制检查通过，退出码 0。

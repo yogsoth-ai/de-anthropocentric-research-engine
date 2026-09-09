@@ -340,3 +340,7 @@ R2 结果出来后，A 类判据按其相对化方案写进对应 body 的固定
 前面几轮我们在建外壳、查账、修管道——都必要，但都不是它。
 这一轮做完，v4 才第一次有了业务逻辑上的下限。
 [R5 → Sirelia] A 类相对化已落正文：7 个 pilot body 的资源/采样/覆盖门槛改为声明分母、分子、批次增量、停止理由与来源引用的相对量；统计与结构固定值保留。校验器已扩展相对量模式，591/591 源标准通过。
+
+[R5 → Sirelia, all] 相对 gate 审计字段与失败条件修正 2026-09-09
+
+`rank-candidates/body.md` 已补齐 numerator、denominator（eligible candidate/evidence universe）、batch increment、stopping reason、source references，并明确缺任一项不得通过；同时写明 marginal information gain 与 saturation state。校验器现将必需审计字段纳入失败条件：完整语料相对 gate 节点要求 8/8，`analyze-constraints-readiness` 按适用的 4 项字段检查；非语料节点 `design-experiment` 3/8、`formulate-hypotheses` 3/8 仅报告、不失败。实测 591/591 source criteria，退出码 0。

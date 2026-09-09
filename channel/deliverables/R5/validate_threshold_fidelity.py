@@ -45,8 +45,8 @@ RELATIVE_REQUIRED_PATTERNS = {
     # This node has a dimension/evidence coverage gate, but not a corpus
     # saturation gate; require only the fields its gate declares.
     "analyze-constraints-readiness": {
-    "coverage-ratio", "audit-numerator-denominator", "batch-increment", "stopping-reason",
-}
+        "coverage-ratio", "audit-numerator-denominator", "batch-increment", "stopping-reason",
+    },
 }
 
 def source_files():
@@ -99,6 +99,7 @@ def main():
         print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
         required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())
         absent = [name for name, rx in RELATIVE_PATTERNS if name in required and not rx.search(body)]
+        print(f"{node_id}: required-relative-fields={len(required) - len(absent)}/{len(required)}" if required else f"{node_id}: required-relative-fields=not-applicable")
         if absent:
             relative_missing.extend(f"{node_id}: {name}" for name in absent)
             print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
