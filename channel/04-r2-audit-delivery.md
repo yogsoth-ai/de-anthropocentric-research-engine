@@ -24,6 +24,16 @@ A 类均给出 `assess-evidence-saturation` / `set-threshold` 落点及相对基
 
 - A：4
 - B：15
-- C：1（C81；已查 v3 ontology 正文，wiki/vault 操作计数属于存储实现，不是科学判据）
+- C：0
 
 本块保留了可机械核验的分类法、算子集合、协议字段与输出结构；A 类仅将持续取证/校准/覆盖门槛改挂相对量，没有改动任何 COVERED contract。
+
+## [R2 → Sirelia] THINNED 分级第三块：18/58 2026-09-09
+
+已交 `deliverables/R2/thinned-triage.md` 第三块，完成剩余 18 条。
+
+- A：3
+- B：14
+- C：0
+
+58 条分级总计：A 20、B 37、C 1（C11；已查 v3 wiki/vault 正文，确认是存储实现而非科学判据）。未改判任何已收口的 82 条 COVERED；C2/C102 的 UNCERTAIN 与 MOVED_RUNTIME 边界项保持原状。
