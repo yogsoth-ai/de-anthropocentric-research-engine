@@ -23,6 +23,16 @@ PATTERNS = [
     ("reproducibility", re.compile(r"reproducib|random\s+seeds?|software\s+environment|non[- ]determin|verification\s+protocol", re.I), "reproducibility predicate"),
     ("entry-gate", re.compile(r"HARD[- ]GATE|before entering|quality gate|budget gate|minimum yield|cannot exit", re.I), "explicit entry-gate phrase"),
 ]
+RELATIVE_PATTERNS = [
+    ("coverage-ratio", re.compile(r"coverage\s+ratio|coverage_ratio", re.I)),
+    ("independent-source-ratio", re.compile(r"independent[- ]source\s+ratio|independent_source_ratio", re.I)),
+    ("marginal-information-gain", re.compile(r"marginal\s+information\s+gain|marginal_information_gain", re.I)),
+    ("saturation-state", re.compile(r"saturation\s+state|saturation_state", re.I)),
+    ("declared-universe", re.compile(r"declared\s+(?:eligible\s+)?(?:universe|evidence\s+pool)|(?:eligible|evidence)\s+(?:evidence\s+)?universe|evidence\s+pool", re.I)),
+    ("audit-numerator-denominator", re.compile(r"numerator.*denominator|denominator.*numerator", re.I)),
+    ("batch-increment", re.compile(r"batch\s+increment|batch_delta", re.I)),
+    ("stopping-reason", re.compile(r"stopping\s+reason|stop(?:ping)?\s+reason", re.I)),
+]
 
 def source_files():
     return {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
@@ -70,6 +80,8 @@ def main():
                 if not contains(body, line):
                     node_missing += 1; missing.append(f"{node_id}: {src}:{line_no}: {line}")
         print(f"{node_id}: source criteria={node_total}, missing={node_missing}")
+        relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
+        print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
     print("Known blind spots: number words/non-English thresholds; implicit domain criteria without cue words; qualitative adjectives (adequate/relevant/representative); formulas or constraints outside matched forms; zero/low-count nodes require manual review.")
     if missing:
         print("MISSING source criteria:", file=sys.stderr); print("\n".join(missing), file=sys.stderr); return 1

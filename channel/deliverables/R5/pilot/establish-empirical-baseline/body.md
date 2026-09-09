@@ -28,11 +28,13 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 
 ## Thresholds and quality gates
 
-- `method-inventory`: methods_discovered >= 40 (80% of target).
-- `performance-extraction`: data_points >= 120 (80% of target).
-- `condition-standardization`: data_points_standardized >= 48 (80% of target).
-- `discrepancy-analysis`: score_pairs_compared >= 36 (80% of target).
-- `progress-quantification`: historical_data_points >= 80 (80% of target).
+- Baseline acquisition gates are relative to a declared eligible universe: record numerator, denominator, batch increment, stopping reason, and source references for each ratio.
+- `method-inventory`: method coverage ratio reaches a justified floor over the eligible method universe.
+- `performance-extraction`: comparable-record coverage ratio reaches a justified floor over eligible records.
+- `condition-standardization`: complete condition-vector ratio reaches a justified floor over comparable records.
+- `discrepancy-analysis`: score-pair coverage ratio reaches a justified floor over eligible comparison pairs.
+- `progress-quantification`: historical-time coverage and independent-source ratio reach justified floors; stop when added periods no longer change the trajectory conclusion.
+- Across modes, report marginal information gain and saturation state when added records or periods no longer change the baseline conclusion.
 - Normalization must expose condition, compute, metric, and unit transformations.
 
 ## Failure and counterexamples

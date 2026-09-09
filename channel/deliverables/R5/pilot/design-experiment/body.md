@@ -33,6 +33,8 @@ delta_fields: [findings, decisions, uncertainties, open_questions]
 ## Thresholds and quality gates
 
 - `experiment-design` HARD-GATE and Budget Gate remain mandatory; no exit before declared minimum yield.
+- Resource and run-scale gates are relative to the declared resource envelope and eligible factor/condition space; record numerator, denominator, batch increment, stopping reason, and source references.
+- Scale, ablation, comparison, and robustness coverage must reach a justified relative floor over the declared design space; do not substitute an unreasoned fixed run count.
 - Factor levels, comparison baseline, statistical test, significance threshold, sample-size rationale, and stopping rule must all be explicit.
 - Significance threshold must be pre-registered, not chosen post-hoc.
 - Budget-constrained design must report at least one feasible design under the stated resource envelope.

@@ -6,7 +6,7 @@
 
 | Contract ID | v3 原判据（原文摘录 + 源文件行号） | 类别 | 判 C 的依据 | 判 A 的相对化方案 | 落点 |
 |---|---|---|---|---|---|
-| C1 | `cold-start`: “six tactics … actor-profiling → landscape-reconnaissance → direction-narrowing → obstacle-analysis → goal-decomposition → north-star-synthesis” (`refactory_source.json:5411`) | B | — | — | `de-anthropocentric-research-engine` 的 `calls`/路由顺序；逐项检查六步是否存在且顺序正确。 |
+| C1 | `cold-start`: “six tactics … actor-profiling → landscape-reconnaissance → direction-narrowing → obstacle-analysis → goal-decomposition → north-star-synthesis” (`refactory_source.json:5411`) | B | — | — | v4 图无对应 entry/cold-start 承载节点；按 R4“无法推导”结论，不伪造 v4 落点。六步入口顺序转为产品层编排职责，归 R3；R2 仅保留该顺序作为跨层接口的机械检查。 |
 | C3 | `landscape-reconnaissance`: “HARD-GATE: broad-web-search ≥150 sources; no conclusions from abstracts alone” (`refactory_source.json:5439`) | A | — | 挂 `assess-evidence-saturation`：以当前已纳入语料的边际信息增益相对前一批降至预设比例为饱和；另挂 `set-threshold`，阈值按领域基准语料规模给理由，不写死 150。 | `synthesize-literature-evidence` → `assess-evidence-saturation`；证据协议的 stopping evidence。 |
 | C4 | `direction-narrowing`: “HARD-GATE: ≥80 papers; ≥30 full-text pages” (`refactory_source.json:5446`) | A | — | 挂 `assess-evidence-saturation` 判断候选方向证据增益；`set-threshold` 以候选池/命中池比例和全文覆盖比例设有理由的最低线。 | `rank-candidates` 的证据前置协议 + `assess-evidence-saturation`/`set-threshold`。 |
 | C5 | `obstacle-analysis`: “requires user … 2 acceptance loops, 2 alternative mitigations” (`refactory_source.json:5453`) | B | — | — | `analyze-constraints-readiness` → `apply-stage-gate`；机械核验 acceptance、替代方案与门状态字段。 |

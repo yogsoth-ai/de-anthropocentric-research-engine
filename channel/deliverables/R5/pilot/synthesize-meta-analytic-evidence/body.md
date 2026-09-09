@@ -40,9 +40,9 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 
 ## Thresholds and quality gates
 
-- Budget gate: source pairwise/network/cumulative/heterogeneity/bias SOPs cannot exit until 80% of the declared floor is met.
-- `effect-size-extraction`: at least 5 studies processed and at least 5 effect sizes extracted or calculation planned.
-- `quality-assessment-protocol`: at least 5 studies assessed.
+- Evidence-acquisition gates use relative coverage, not fixed study/web counts. Declare the eligible evidence universe (or current evidence pool), then record numerator, denominator, batch increment, stopping reason, and source references.
+- Pairwise/network/cumulative/heterogeneity/bias modes stop when marginal information gain falls below the declared, justified floor across consecutive batches; report coverage ratio, independent-source ratio, and saturation state.
+- `effect-size-extraction` and `quality-assessment-protocol` must cover the declared eligible records at the justified relative floor; do not substitute an unreasoned absolute count.
 - If k >= 10, pre-specified subgroup/meta-regression investigation is required where applicable.
 - I2 interpretation bands are retained: 0-40% low, 30-60% moderate, 50-90% substantial, 75-100% considerable; overlaps are source wording and must not be silently normalized.
 

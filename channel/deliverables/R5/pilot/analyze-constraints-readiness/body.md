@@ -28,6 +28,9 @@ delta_fields: [findings, decisions, uncertainties, open_questions, recommended_j
 
 ## Thresholds and quality gates
 
+- Feasibility, maturity, constraint, resource, and maturation gates use declared dimension/evidence/constraint coverage ratios; record numerator, denominator, batch increment, stopping reason, and source references.
+- Preserve structural requirements: at least one hard constraint, one removal path per removable constraint, explicit stage gates, and a binding-constraint rule relative to the observed score distribution.
+
 - Feasibility dimensions >=5; blockers >=3 per candidate where source protocol applies.
 - Maturity diagnosis: >=5 dimensions, >=2 evidence items per dimension, >=1 bottleneck.
 - Constraint identification: >=3 constraints per candidate; >=1 hard constraint; >=1 removal path per removable constraint.

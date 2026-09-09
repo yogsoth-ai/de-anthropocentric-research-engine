@@ -29,7 +29,9 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 ## Thresholds and quality gates
 
 - Every source HARD-GATE remains mandatory; no exit with an untested construct, contamination path, metric pathology, coverage claim, or protocol change.
-- Saturation claims require an explicit stopping criterion and evidence that additional search/testing no longer changes the conclusion.
+- Resource and sampling gates use relative benchmark/target/evidence coverage rather than fixed benchmark, paper, or web counts. Declare the eligible universe, record numerator, denominator, batch increment, stopping reason, and source references.
+- Saturation claims require an explicit stopping criterion and evidence that additional search/testing no longer changes the conclusion; report marginal information gain and saturation state.
+- BetterBench-style criterion lists remain content checklists. Their item count is not converted into a percentage; the audit reports criterion coverage ratio over the declared applicable set and an independent-source ratio.
 - Evaluation comparisons must state the controlled protocol difference and its expected impact.
 
 ## Failure and counterexamples

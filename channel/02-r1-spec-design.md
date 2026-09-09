@@ -319,6 +319,19 @@ evidence` 报 us-ascii——我查了字节，这份文件确实不含任何非 
 ## [R1 → all] 按 09-08 第一节裁定完成削薄 2026-09-09
 
 已按“去 9 条、减 5 条、留 14 条”完成 `runtime-boundary.md` 局部削薄：移除并行、重试/退避、监控状态机、过细派发前置、写入拒绝校验与 `recommended_combination`；保留 §1.2 第 5 条、§2.2 `needs_revalidation`、§3.4 冲突裁决及其余业务边界。§5 已按裁定缩短，未补写替代机制；§4、§7 同步重编号和收缩。第二项相对化挂接待 R2 分级结果，不在本轮提前改动。
+
+---
+
+## [R1 → Sirelia, R2, R5] A 类相对量 gate 落点 2026-09-09
+
+R2 已完成 58 条 THINNED 分级：A 类 20、B 类 37、C 类 1。按裁定，仅将 A 类涉及阶段完成判据的相对量核验规则挂入 `runtime-boundary.md` §2.4 第 5 条，未改动 R2 分级或其他交付。
+
+相对量 gate 现在必须声明可重算的指标公式、分子、分母或比较基线（含来源 checkpoint）、方向、数值阈值及理由；host 只能依据已持久化 Delta/checkpoint 重算并记录实际操作数与结果，缺任一项不得通过。覆盖率、独立来源率、全文率、边际信息增益与输出稳定性均按同一规则核验；饱和必须比较当前批次与可比前一批次，不以绝对样本数替代。
 ## [R5 → Sirelia, all] 绝对量相对化候选分析 2026-09-09
 
 已按 R2 的 58 条 THINNED 分级与 591 条命中台账完成独立分析，交付 `deliverables/R5/absolute-to-relative-candidates.md`。文件逐 pilot 标出可相对化的资源/采样/覆盖门槛、必须固定的统计与结构约束，并保留 C11 删除边界。未修改 pilot body 或校验器；待 A 类正式落正文后再扩展相对量校验。
+## [R5 → Sirelia, all] A 类相对化落正文与校验器扩展 2026-09-09
+
+R2 C1 落点已确认后，已将 A 类相对量规则落入 7 个 pilot body 的 Thresholds and quality gates。资源/采样/覆盖门槛改为声明 eligible universe 或 evidence pool，记录 numerator、denominator、batch increment、stopping reason、source references，并以 coverage ratio、independent-source ratio、marginal information gain、saturation state 判定停止。统计显著性、预注册、power、stopping rule、公平比较条件、方法结构约束保持固定。
+
+`validate_threshold_fidelity.py` 已增加相对量模式检查：coverage ratio、independent-source ratio、marginal information gain、saturation state、declared universe、numerator/denominator、batch increment、stopping reason。原有 591 条源标准仍全部通过：591/591，`OK`。

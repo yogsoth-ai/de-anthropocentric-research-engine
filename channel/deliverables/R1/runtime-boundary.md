@@ -54,8 +54,8 @@ v4 不把 spec 作为独立文件、确认态或冻结态对象。当前 spec �
 节点执行约束：
 
 1. host 先重建当前 `SpecView`，再读取其 `context_requirements` 指向的 context；输入不存在或不完整时停止，不自行补造。
-2. 计划项只声明 tactic/SOP 组合或顺序建议；最终 tactic/SOP 选择可由 host 按 catalog 索引完成，但必须记录选择理由和输入 state slice。
-3. `completion_gates` 必须是数字或客观可核验条件；未满足时保留项未完成，不得自动前进。
+3. 计划项只声明 tactic/SOP 组合或顺序建议；最终 tactic/SOP 选择可由 host 按 catalog 索引完成，但必须记录选择理由和输入 state slice。
+5. `completion_gates` 必须是数字或客观可核验条件；未满足时保留项未完成，不得自动前进。相对量 gate 必须在对应 `decision` 中声明指标公式、分子、分母或比较基线（含来源 checkpoint）、方向、数值阈值及理由；host 只从已持久化的 Delta/checkpoint 重算并记录实际操作数与结果，缺任一项不得判定通过。覆盖率、独立来源率、全文率、边际信息增益或输出稳定性均须按同一规则给出可重算的相对值；饱和判定必须比较当前批次与可比的前一批次，不得以绝对样本数替代。
 
 ## 3. State 持久化与 Delta 合并
 

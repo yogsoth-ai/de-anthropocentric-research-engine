@@ -39,9 +39,9 @@ delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_ques
 
 ## Thresholds and quality gates
 
+- Candidate explanation and prediction gates report coverage relative to the declared mechanism/explanation space; record numerator, denominator, batch increment, stopping reason, and source references.
 - Base hard gate: at least 1 clear research gap or insight.
-- Abductive S tier: >=2 candidate explanations, 1 best explanation, >=1 competing hypothesis.
-- Competing mode: at least 2 hypotheses and >=2 discriminating predictions.
+- Abductive and competing modes must report relative coverage of candidate explanations and discriminating predictions over the declared mechanism space; fixed counts are not used as a proxy for exhaustiveness.
 - Each mechanism must correspond to at least 1 hypothesis candidate.
 
 ## Failure and counterexamples

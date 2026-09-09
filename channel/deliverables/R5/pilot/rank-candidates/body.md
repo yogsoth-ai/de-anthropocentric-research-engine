@@ -30,8 +30,8 @@ delta_fields: [findings, decisions, uncertainties, recommended_jumps]
 
 - Full ranking: select >=2 ranking methods when the source protocol calls for method comparison.
 - Weight elicitation: select >=2 weighting methods where required.
-- Priority sensitivity: at least 3 perturbation scenarios, each annotated.
-- Direction narrowing imports retain at least 80 papers scanned and at least 30 web pages read in full when those modes are invoked.
+- Priority sensitivity: perturbation scenarios cover the declared weight space at a justified relative floor, each scenario annotated; retain the observed ranking-stability verdict.
+- Direction narrowing imports report candidate/evidence-pool coverage, full-text coverage, independent-source ratio, batch increment, stopping reason, and source references rather than fixed paper/page counts.
 - Non-compensatory and category modes must expose threshold/veto values; never hide them in prose.
 
 ## Failure and counterexamples

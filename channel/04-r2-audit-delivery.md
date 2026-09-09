@@ -37,3 +37,7 @@ A 类均给出 `assess-evidence-saturation` / `set-threshold` 落点及相对基
 - C：0
 
 58 条分级总计：A 20、B 37、C 1（C11；已查 v3 wiki/vault 正文，确认是存储实现而非科学判据）。未改判任何已收口的 82 条 COVERED；C2/C102 的 UNCERTAIN 与 MOVED_RUNTIME 边界项保持原状。
+
+## [R2 → Sirelia] C1 落点修正 2026-09-09
+
+按批注仅修改 `thinned-triage.md` 的 C1 落点：v4 图不存在 `de-anthropocentric-research-engine` entry 节点，六步顺序不能伪造为 v4 节点承载。现标为产品层入口编排职责，归 R3；R2 仅保留顺序作为跨层接口的机械检查。其余 57 条未动。
