@@ -54,3 +54,12 @@ Audit: `deliverables/R1/contract-state-audit.md`. Host dependency list: `deliver
 交付路径：`deliverables/R5/nodes/<id>/body.md`；合并日志已写入 `deliverables/R5/nodes/_compilation-log.md`。
 
 四条机械门：Procedure 去重通过；Quality gates 去重通过；Input contract `required` 均为具名科研对象；`delta_fields` 均为 `produces` 子集；provenance 已按三种规范形式检索后标注。校验器退出码 0，pilot 源判据 591/591；本批 BASIS provenance-labels 全部无 missing。相对量字段对本批均 not-applicable。
+## [R5] BASIS fan-out final batch (22/52) — 2026-09-12
+
+Completed nodes (fan-in order): `verify-evidence-independence`, `construct-perspective-set`, `derive-consequences`, `design-mitigation`, `evaluate-scenario-impact`, `evaluate-scenario-robustness`, `generate-provocation`, `generate-subquestions`, `identify-obstacles`, `map-coverage-space`, `measure-portfolio-diversity`, `normalize-comparison-scale`, `rotate-perspective`, `sequence-work`, `trace-causal-chain`, `adjudicate-exchange`, `construct-defense`, `construct-validity-envelope`, `detect-breakpoint`, `elicit-weights`, `enumerate-combinations`, `identify-bottleneck`.
+
+All 22 are BASIS SOPs with `## Parameterization`; specialized-BASIS nodes are included. A/B/C totals: A=0, B=28, C=0. Provenance totals: resolved=0, concept=50, intermediate=8. Unresolved provenance is intentionally labeled concept/intermediate; no approximate source substitution.
+
+Four mechanical gates: Procedure deduplication PASS; Quality-gates deduplication PASS; named-input contracts PASS; `delta_fields` subset PASS. Preserved source criteria ledgers remain where source criteria exist, a deliberate R5 deviation because R5 owns the 591-item threshold ledger and must preserve v3 fixed criteria verbatim.
+
+Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source criteria 591/591. Full graph inventory reports 266/267 compiled bodies: `structured-consensus` has a compilation log but no body under current R4 artifacts, so this remains a reported blind spot rather than an R5 fabrication. Other blind spots: number words/non-English thresholds, implicit criteria without cue words, qualitative predicates, formulas outside matched patterns, and zero/low-count nodes requiring manual review.

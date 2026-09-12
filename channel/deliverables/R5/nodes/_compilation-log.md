@@ -119,3 +119,50 @@ Fan-in 2. Merged baseline, counterfactual, and worst-case scenario modes with as
 ## define-criteria
 
 Fan-in 2. Merged criterion definition and scoring-matrix extraction. A=0, B=4, C=0; provenance resolved=1, concept=1, intermediate=1.
+
+## verify-evidence-independence
+Fan-in 3. Independent-channel and lineage audit. A=0, B=0, C=0; provenance resolved=0, concept=1, intermediate=0.
+## construct-perspective-set
+Fan-in 3. Explicit worldview, stakeholder, and role lens construction. A=0, B=3, C=0; provenance resolved=0, concept=4, intermediate=0.
+## derive-consequences
+Fan-in 2. Stepwise consequence tracing from altered premises. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=0.
+## design-mitigation
+Fan-in 2. Mechanism-linked mitigation with residual-risk validation. A=0, B=2, C=0; provenance resolved=0, concept=3, intermediate=2.
+## evaluate-scenario-impact
+Fan-in 2. Fixed-scenario candidate/portfolio impact assessment. A=0, B=2, C=0; provenance resolved=0, concept=2, intermediate=2.
+## evaluate-scenario-robustness
+Fan-in 2. Cross-scenario robust-decision aggregation. A=0, B=3, C=0; provenance resolved=0, concept=3, intermediate=2.
+## generate-provocation
+Fan-in 2. Pattern-breaking provocation generation. A=0, B=0, C=0; provenance resolved=0, concept=3, intermediate=0.
+## generate-subquestions
+Fan-in 2. MECE subquestion decomposition. A=0, B=1, C=0; provenance resolved=0, concept=1, intermediate=0.
+## identify-obstacles
+Fan-in 1. Evidence-linked obstacle register. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=0.
+## map-coverage-space
+Fan-in 2. Typed coverage map with redundancy and gaps. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=2.
+## measure-portfolio-diversity
+Fan-in 2. Niche coverage and concentration measurement. A=0, B=3, C=0; provenance resolved=0, concept=2, intermediate=0.
+## normalize-comparison-scale
+Fan-in 2. Direction-preserving normalization with uncertainty retention. A=0, B=2, C=0; provenance resolved=0, concept=2, intermediate=2.
+## rotate-perspective
+Fan-in 1. Evidence-fixed perspective rotation. A=0, B=0, C=0; provenance resolved=0, concept=3, intermediate=0.
+## sequence-work
+Fan-in 2. Topological sequencing with fail-fast prioritization. A=0, B=1, C=0; provenance resolved=0, concept=1, intermediate=0.
+## trace-causal-chain
+Fan-in 2. Full causal-chain tracing with intermediates and loops. A=0, B=1, C=0; provenance resolved=0, concept=2, intermediate=0.
+## adjudicate-exchange
+Fan-in 1. Explicit argument/critique disposition and verdict. A=0, B=2, C=0; provenance resolved=0, concept=2, intermediate=0.
+## construct-defense
+Fan-in 1. Evidence-linked advocacy with acknowledged weaknesses. A=0, B=3, C=0; provenance resolved=0, concept=2, intermediate=0.
+## construct-validity-envelope
+Fan-in 1. Multi-axis validity boundary synthesis. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=0.
+## detect-breakpoint
+Fan-in 1. Witness-based regime boundary detection. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=0.
+## elicit-weights
+Fan-in 1. Caller-selected normalized weight elicitation. A=0, B=3, C=0; provenance resolved=0, concept=2, intermediate=0.
+## enumerate-combinations
+Fan-in 1. Neutral constrained or sampled combination enumeration. A=0, B=0, C=0; provenance resolved=0, concept=3, intermediate=0.
+## identify-bottleneck
+Fan-in 1. Limiting-dimension assessment with dependency tests. A=0, B=0, C=0; provenance resolved=0, concept=2, intermediate=0.
+
+All 52 BASIS SOPs retain `## Preserved source criteria ledger` where source criteria exist. This deliberate template deviation is required because R5 owns the 591-item threshold ledger and must preserve v3 fixed criteria verbatim for downstream validation.

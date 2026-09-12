@@ -99,6 +99,18 @@ def contains(body, criterion):
 def main():
     graph = json.loads(ARCH.read_text(encoding="utf-8"))
     by_name, missing, relative_missing, total = source_files(), [], [], 0
+    # Full graph inventory: source-criterion accounting remains anchored to
+    # the 591-item ledger, while every v4 node is checked for a compiled body.
+    all_ids = [n["id"] for n in graph.get("tactics", [])] + [n["id"] for n in graph.get("sops", [])]
+    body_roots = [PILOT.parent, NODES.parent.parent / "R1", NODES.parent.parent / "R2", NODES.parent.parent / "R3", NODES.parent.parent / "R4", NODES.parent.parent / "R5"]
+    body_paths = {}
+    for root in body_roots:
+        for p in root.rglob("body.md") if root.exists() else []:
+            body_paths.setdefault(p.parent.name, p)
+    absent_bodies = [node_id for node_id in all_ids if node_id not in body_paths]
+    print(f"full-node-coverage={len(all_ids) - len(absent_bodies)}/{len(all_ids)}")
+    if absent_bodies:
+        print("missing compiled bodies:", ", ".join(absent_bodies), file=sys.stderr)
     for node_id in IDS:
         pool = graph["tactics"]
         node = next(n for n in pool if n["id"] == node_id)
