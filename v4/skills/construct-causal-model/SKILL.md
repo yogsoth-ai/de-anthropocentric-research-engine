@@ -19,17 +19,17 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Define measurable variables and candidate mechanisms with explicit direction and scope. (`identify-variables`)
-2. Represent mechanism edges, evidence, feedback, interventions, and counterfactual dependencies in one inspectable graph. (`extract-causal-structure`)
-3. Validate causal links and update confidence while distinguishing correlation, mechanism, and intervention evidence. (`represent-mechanism-edge`)
-4. Define measurable variables and candidate mechanisms with explicit direction and scope. (`attach-evidence-to-relation`)
-5. Represent mechanism edges, evidence, feedback, interventions, and counterfactual dependencies in one inspectable graph. (`detect-contradiction`)
-6. Validate causal links and update confidence while distinguishing correlation, mechanism, and intervention evidence. (`detect-feedback-loop`)
-7. Define measurable variables and candidate mechanisms with explicit direction and scope. (`trace-causal-chain`)
-8. Represent mechanism edges, evidence, feedback, interventions, and counterfactual dependencies in one inspectable graph. (`analyze-intervention`)
-9. Validate causal links and update confidence while distinguishing correlation, mechanism, and intervention evidence. (`construct-counterfactual`)
-10. Define measurable variables and candidate mechanisms with explicit direction and scope. (`validate-causal-link`)
-11. Represent mechanism edges, evidence, feedback, interventions, and counterfactual dependencies in one inspectable graph. (`update-confidence-from-evidence`)
+1. Inventory outcomes, factors, mediators, moderators, confounders, and assumptions before drawing any edge. (`identify-variables`)
+2. Extract directed cause–mediator–effect chains with temporal order, boundary conditions, and evidence anchors. (`extract-causal-structure`)
+3. Encode each mechanism edge with pathway, sign, enabling conditions, falsifier, and strength. (`represent-mechanism-edge`)
+4. Attach independent supporting and contradicting evidence to those typed edges, retaining alternative interpretations. (`attach-evidence-to-relation`)
+5. Compare opposing causal claims under common scope so conflicts are recorded before model validation. (`detect-contradiction`)
+6. Search the directed structure for reinforcing and balancing cycles, delays, uncertain edges, and testable loop implications. (`detect-feedback-loop`)
+7. Trace the validated graph from each target outcome through intermediate nodes, branches, and because-links. (`trace-causal-chain`)
+8. Map intervention components, dose, timing, implementation fidelity, comparators, and heterogeneous effects onto the model. (`analyze-intervention`)
+9. Freeze declared invariants, propagate the intervention through the graph, and classify the counterfactual outcome. (`construct-counterfactual`)
+10. Apply CLR-style checks to each causal link for existence, connection, sufficiency, omitted conditions, and alternatives. (`validate-causal-link`)
+11. Reweight confidence using the complete evidence ledger, preserving unresolved conflicts and permitted bounds. (`update-confidence-from-evidence`)
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

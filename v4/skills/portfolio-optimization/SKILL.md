@@ -19,16 +19,16 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Formalize objectives, dependencies, resource limits, and scenario assumptions for the candidate portfolio. (`define-objective`)
-2. Construct the Pareto frontier, test impact and robustness across scenarios, and measure diversity and optionality. (`optimize-pareto-frontier`)
-3. Select a feasible portfolio and sequence it with a traceable tradeoff and residual risk statement. (`construct-scenario`)
-4. Formalize objectives, dependencies, resource limits, and scenario assumptions for the candidate portfolio. (`evaluate-scenario-impact`)
-5. Construct the Pareto frontier, test impact and robustness across scenarios, and measure diversity and optionality. (`select-from-frontier`)
-6. Select a feasible portfolio and sequence it with a traceable tradeoff and residual risk statement. (`measure-portfolio-diversity`)
-7. Formalize objectives, dependencies, resource limits, and scenario assumptions for the candidate portfolio. (`map-dependencies`)
-8. Construct the Pareto frontier, test impact and robustness across scenarios, and measure diversity and optionality. (`sequence-work`)
-9. Select a feasible portfolio and sequence it with a traceable tradeoff and residual risk statement. (`evaluate-optionality`)
-10. Formalize objectives, dependencies, resource limits, and scenario assumptions for the candidate portfolio. (`evaluate-scenario-robustness`)
+1. Declare outcome directions, hard constraints, stakeholder scope, horizon, and permissible tradeoffs before comparing candidates. (`define-objective`)
+2. Remove infeasible candidates and retain only points not dominated across the normalized objective dimensions. (`optimize-pareto-frontier`)
+3. Stress each surviving candidate or portfolio under a fixed scenario to expose impact, tradeoffs, and failure triggers. (`construct-scenario`)
+4. Evaluate the current portfolio inside each scenario using stable criteria, explicit missingness, and counterexamples. (`evaluate-scenario-impact`)
+5. Apply the preference policy to the current frontier and document the chosen point, sacrificed objectives, and nearest alternatives. (`select-from-frontier`)
+6. Quantify coverage across the declared feature or failure-mode dimensions to reveal concentration and niche collapse. (`measure-portfolio-diversity`)
+7. Map dependencies, cycles, critical paths, and independent branches before committing to an execution order. (`map-dependencies`)
+8. Topologically order the dependent work while surfacing fail-fast and high-risk branches for the decision record. (`sequence-work`)
+9. Compare immediate, deferred, staged, and information-gathering actions by reversibility, delay cost, and trigger conditions. (`evaluate-optionality`)
+10. Aggregate scenario results under the declared robust-decision rule and state which portfolio assumptions remain fragile. (`evaluate-scenario-robustness`)
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

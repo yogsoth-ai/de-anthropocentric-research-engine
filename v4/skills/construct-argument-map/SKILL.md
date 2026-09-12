@@ -19,13 +19,13 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Atomize each claim and expose premises, assumptions, and counterclaims as typed nodes. (`atomize-claim`)
-2. Attach evidence and defeaters to relations, then score strength with the caller's rubric and visible uncertainty. (`surface-assumptions`)
-3. Inspect contradictions and construct the final graph without averaging away unresolved disputes. (`attach-evidence-to-relation`)
-4. Atomize each claim and expose premises, assumptions, and counterclaims as typed nodes. (`document-counterclaim`)
-5. Attach evidence and defeaters to relations, then score strength with the caller's rubric and visible uncertainty. (`score-object`)
-6. Inspect contradictions and construct the final graph without averaging away unresolved disputes. (`construct-critique`)
-7. Atomize each claim and expose premises, assumptions, and counterclaims as typed nodes. (`detect-contradiction`)
+1. Split compound claims into atomic propositions so every later relation can receive its own evidence and confidence judgment. (`atomize-claim`)
+2. Register explicit and implicit assumptions, especially those whose failure would change the conclusion. (`surface-assumptions`)
+3. Link source records to typed relations with directness, independence, consistency, and alternative-interpretation metadata. (`attach-evidence-to-relation`)
+4. Add credible counterclaims with their supporting basis, scope, implications, and possible rebuttals. (`document-counterclaim`)
+5. Score each typed object against the caller’s rubric without filling missing evidence with an unstated default. (`score-object`)
+6. Attack the assembled argument from the supplied perspective and rank the strongest formal, empirical, scope, or implementation weakness. (`construct-critique`)
+7. Compare opposing claims under shared scope, classify contradictions, and record the evidence needed to adjudicate them. (`detect-contradiction`)
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
