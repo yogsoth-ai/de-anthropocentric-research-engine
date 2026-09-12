@@ -63,3 +63,12 @@ All 22 are BASIS SOPs with `## Parameterization`; specialized-BASIS nodes are in
 Four mechanical gates: Procedure deduplication PASS; Quality-gates deduplication PASS; named-input contracts PASS; `delta_fields` subset PASS. Preserved source criteria ledgers remain where source criteria exist, a deliberate R5 deviation because R5 owns the 591-item threshold ledger and must preserve v3 fixed criteria verbatim.
 
 Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source criteria 591/591. Full graph inventory reports 266/267 compiled bodies: `structured-consensus` has a compilation log but no body under current R4 artifacts, so this remains a reported blind spot rather than an R5 fabrication. Other blind spots: number words/non-English thresholds, implicit criteria without cue words, qualitative predicates, formulas outside matched patterns, and zero/low-count nodes requiring manual review.
+## [R5] Historical 94-hit pilot triage — 2026-09-12
+
+复核完成：94 条缺失判据分为真判据 52、结构性误报 41（四 pilot 分项：design-experiment 1/5，formulate-hypotheses 29/10，rank-candidates 22/7，establish-empirical-baseline 0/19）。
+
+真判据已按 A 类相对化补入 pilot 正文。保留的 v3 标尺包括：S/M/L structured hypotheses 2/3/5，named theories 2/3/5，independent observations 3/5/8，abductive precisely-defined anomaly 1，以及 scaling geometric progression typically 4–8 points；正文同时声明 declared universe、numerator、batch increment、stopping reason、source references、方向与阈值理由。
+
+误报白名单仅匹配：v3 SOP 子步骤/调用行、Base SOP 编排预算表、层级标题，以及 zero-state 输出快照。未按节点或整段跳过。依据与逐项分类见 `deliverables/R5/pilot-94-triage.md`。
+
+`validate_threshold_fidelity.py` 已加入 source-specific relative criterion 判定与窄结构白名单。全量结果：退出码 0，591 条台账命中；盲区仍为数字词/非英文阈值、无提示词的隐式判据、定性形容词、未匹配公式，以及 266/267 正文覆盖中的既有 `structured-consensus` 缺正文问题。

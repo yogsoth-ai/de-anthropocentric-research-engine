@@ -1,0 +1,302 @@
+[
+  [
+    "design-experiment",
+    "comparison-design",
+    47,
+    "6. **reproducibility-protocol** (tactic) → Ensure all results are reproducible"
+  ],
+  [
+    "design-experiment",
+    "reproducibility-protocol",
+    21,
+    "1. **Assess Reproducibility Requirements** → Determine level needed (exact, statistical, conceptual)"
+  ],
+  [
+    "design-experiment",
+    "reproducibility-protocol",
+    22,
+    "2. **seed-protocol-design** → Design random seed strategy for all stochastic components"
+  ],
+  [
+    "design-experiment",
+    "reproducibility-protocol",
+    24,
+    "4. **Define Verification Plan** → How to confirm reproducibility (re-run subset, cross-machine test)"
+  ],
+  [
+    "design-experiment",
+    "reproducibility-protocol",
+    25,
+    "5. **Document Non-Determinism** → Identify and document unavoidable sources of variance"
+  ],
+  [
+    "formulate-hypotheses",
+    "hypothesis-formulation",
+    62,
+    "| abductive-hypothesis-generation | An anomalous phenomenon that existing theory cannot explain has been observed | Anomaly → best explanation |"
+  ],
+  [
+    "formulate-hypotheses",
+    "theory-mechanism-extraction",
+    53,
+    "**Deep (L tier, ≥3 theories)**"
+  ],
+  [
+    "formulate-hypotheses",
+    "anomaly-driven-abduction",
+    22,
+    "Inductive/abductive path — precisely describe anomalous phenomena that existing theory cannot explain, generate multiple candidate explanations, rank by plausibility, and provide a structured basis for abductive hypotheses."
+  ],
+  [
+    "formulate-hypotheses",
+    "anomaly-driven-abduction",
+    41,
+    "- Sequential execution: anomaly-characterization → explanation-generation (≥3 explanations) → plausibility-ranking"
+  ],
+  [
+    "formulate-hypotheses",
+    "anomaly-driven-abduction",
+    45,
+    "- anomaly-characterization executes independently for each anomaly; explanation-generation generates ≥3 explanations (explanations may be shared across anomalies); plausibility-ranking ranks all explanations uniformly"
+  ],
+  [
+    "formulate-hypotheses",
+    "competing-hypothesis-matrix",
+    34,
+    "| competing-hypothesis-generation | Based on the primary hypothesis, generate ≥3 alternative hypotheses competing with it (different mechanisms, same or similar phenomenon prediction range) | Required in all modes, execute first |"
+  ],
+  [
+    "formulate-hypotheses",
+    "competing-hypothesis-matrix",
+    35,
+    "| discriminating-prediction-design | Design discriminating predictions for each pair of competing hypotheses — find an observable result for which the two hypotheses predict differently | Required in all modes, after competing-hypothesis-generation |"
+  ],
+  [
+    "formulate-hypotheses",
+    "competing-hypothesis-matrix",
+    41,
+    "- Sequentially execute all 3 SOPs; generate ≥3 competing hypotheses; design ≥2 discriminating predictions; build comparison matrix"
+  ],
+  [
+    "formulate-hypotheses",
+    "competing-hypothesis-matrix",
+    54,
+    "- ≥3 competing hypotheses (explaining the same phenomenon as the primary hypothesis but with different mechanisms)"
+  ],
+  [
+    "formulate-hypotheses",
+    "competing-hypothesis-matrix",
+    55,
+    "- ≥2 discriminating predictions (each prediction produces different expected outcomes for at least 2 hypotheses)"
+  ],
+  [
+    "rank-candidates",
+    "rapid-triage",
+    71,
+    "4. Call the `importance-scoring` SOP on the Keep set (1–3 coarse score)"
+  ],
+  [
+    "rank-candidates",
+    "rapid-triage",
+    72,
+    "5. Call the `feasibility-scoring` SOP on the Keep set (1–3 coarse score)"
+  ],
+  [
+    "rank-candidates",
+    "best-option-selection",
+    21,
+    "| Base SOP | Target | ±10% Range |"
+  ],
+  [
+    "rank-candidates",
+    "full-ranking",
+    22,
+    "| Base SOP | Target | ±10% Range |"
+  ],
+  [
+    "rank-candidates",
+    "category-sorting",
+    22,
+    "| Base SOP | Target | ±10% Range |"
+  ],
+  [
+    "rank-candidates",
+    "non-compensatory-screening",
+    27,
+    "| Base SOP | Target | ±10% Range |"
+  ],
+  [
+    "rank-candidates",
+    "weight-elicitation",
+    23,
+    "| Base SOP | Target | ±10% Range |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "method-inventory",
+    33,
+    "| Methods discovered | 0 | 50 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "method-inventory",
+    34,
+    "| Web searches used | 0 | 60 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "method-inventory",
+    35,
+    "| Papers consulted | 0 | 40 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "method-inventory",
+    36,
+    "| Leaderboard sources | 0 | 5 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "method-inventory",
+    37,
+    "| Citation chains traced | 0 | 10 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    35,
+    "| Methods covered | 0 | 30 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    36,
+    "| Data points extracted | 0 | 150 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    37,
+    "| Web searches used | 0 | 40 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    38,
+    "| Papers read | 0 | 30 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    39,
+    "| Datasets covered | 0 | 5 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "performance-extraction",
+    40,
+    "| Metrics tracked | 0 | 3 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "condition-standardization",
+    36,
+    "| Methods analyzed | 0 | 20 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "condition-standardization",
+    37,
+    "| Data points standardized | 0 | 60 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "condition-standardization",
+    38,
+    "| Condition dimensions | 0 | 10 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "condition-standardization",
+    39,
+    "| Normalization rules defined | 0 | 5 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "condition-standardization",
+    40,
+    "| Fair comparison sets | 0 | 3 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    35,
+    "| Methods analyzed | 0 | 15 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    36,
+    "| Score pairs compared | 0 | 45 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    37,
+    "| Discrepancies flagged | 0 | — | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    38,
+    "| Reproduction studies found | 0 | 10 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    39,
+    "| Reliability ratings assigned | 0 | 15 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "discrepancy-analysis",
+    52,
+    "- **reproducibility-checklist-audit** — Assess paper reproducibility completeness"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    37,
+    "| Methods tracked | 0 | 30 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    38,
+    "| Historical data points | 0 | 100 | BLOCKED |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    39,
+    "| Web searches used | 0 | 40 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    40,
+    "| Progress curves built | 0 | 3 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    41,
+    "| Headroom estimates | 0 | 3 | — |"
+  ],
+  [
+    "establish-empirical-baseline",
+    "progress-quantification",
+    42,
+    "| Inflection points identified | 0 | 2 | — |"
+  ]
+]

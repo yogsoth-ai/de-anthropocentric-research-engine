@@ -43,6 +43,8 @@ delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_ques
 - Base hard gate: at least 1 clear research gap or insight.
 - Abductive and competing modes must report relative coverage of candidate explanations and discriminating predictions over the declared mechanism space; fixed counts are not used as a proxy for exhaustiveness.
 - Each mechanism must correspond to at least 1 hypothesis candidate.
+- A-class source scale is retained as relative tiers over the caller-declared universe: S requires at least 2 structured hypotheses, M at least 3, and L at least 5; deductive theory tiers retain S/M/L at least 2/3/5 named theories; inductive observation tiers retain at least 3/5/8 independent observations; abductive mode requires one precisely defined anomaly. These are minimum source bands, not claims of corpus exhaustiveness.
+- Relative audit: declared universe = eligible hypothesis/evidence pool; numerator = qualifying hypotheses, theories, observations, or anomalies; batch increment = newly screened qualifying items per pass; stopping reason = caller rule or saturation decision; source references = source ledger and cited records; direction/threshold rationale = higher coverage is better, with source S/M/L minima preserved as tier gates.
 
 ## Failure and counterexamples
 
