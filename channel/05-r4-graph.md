@@ -95,9 +95,9 @@ R4 delivery complete: all GROUP D bodies and required compilation logs are prese
 - gates: dedup PASS; named inputs PASS; delta subset PASS; provenance pre-check PASS
 
 ## Closure audit — 2026-09-12
-- graph counts: 51 tactics / 216 SOP; 317 calls; 160 jumps (85 T→T, 75 S→S; no cross-layer edges)
+- graph counts: 51 tactics / 216 SOP; 317 calls; 157 jumps (82 T→T, 75 S→S; no cross-layer edges)
 - calls: 317/317 are tactic→SOP; unknown endpoints 0; duplicate edges 0
-- jumps: 160/160 are same-layer; unknown endpoints 0; duplicate edges 0
+- jumps: 157/157 are same-layer; unknown endpoints 0; duplicate edges 0
 - tactic-origin reachability: 267/267 nodes reachable; isolated nodes 0
 - protocol citation gaps (R4 tactic bodies):
   - analyze-future-scenarios: evaluate-compatibility, predict-competitive-move, analyze-temporal-trajectory
@@ -110,3 +110,11 @@ R4 delivery complete: all GROUP D bodies and required compilation logs are prese
   - complete: analyze-experiment-results, decompose-research-question, falsifiability-audit
 - calls present in graph but omitted from these protocols are not explicitly named in their generic Deviation text; report as citation gaps for N2 validator
 - cleanup: removed 42 reassigned R4 SOP shells duplicated in R1/R2 (HYPOTHESIS/STRUCTURING/CONVERGENCE); no graph nodes or source files changed
+
+## Closure audit — count correction
+
+- Authoritative graph counts: 51 tactics / 216 SOP; 317 calls; 157 jumps (82 T→T, 75 S→S; no cross-layer edges).
+- Calls: 317/317 are tactic→SOP; unknown endpoints 0; duplicate edges 0.
+- Jumps: 157/157 are same-layer; unknown endpoints 0; duplicate edges 0.
+- Source of the earlier +3: the R4 channel copy included three repair-overlay patent edges absent from the read-only authoritative architecture: `mine-patent-landscape → validate-research-gap`, `assess-prior-art-and-claims → validate-research-gap`, and `map-patent-white-space → validate-research-gap`. They were mistakenly included in the closure total. No calls were counted as jumps and no edge was double-counted.
+- This corrected block supersedes the earlier 160-edge closure figures above.

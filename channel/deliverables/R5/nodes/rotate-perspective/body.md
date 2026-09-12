@@ -15,7 +15,7 @@ constraints: [only perspective assumptions/objectives may change between passes]
 ## Output contract
 ```yaml
 produces: [perspective_interpretations, changed_assumptions, risk_opportunity_matrix, comparison_notes]
-delta_fields: [findings, assumptions_updates, uncertainties]
+delta_fields: [findings, assumption_updates, uncertainties]
 ```
 ## Quality gates
 - Every pass names exactly one active perspective.

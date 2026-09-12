@@ -2,11 +2,62 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
 REG = ROOT / "v4" / "registry"
+PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
+EXPLICIT_INTERMEDIATE = {
+    "conceptual-blending [strategy]",
+    "Pass3/merge-near-duplicate-concepts",
+}
+PROVENANCE_ALIASES = {
+    "conceptual-blending/generic-space": "generic-space-extraction",
+}
+
+
+def provenance_variants(value: str) -> set[str]:
+    value = value.strip()
+    stripped = value
+    while True:
+        next_value = PROV_SUFFIX.sub("", stripped).strip()
+        if next_value == stripped:
+            break
+        stripped = next_value
+    basename = stripped.rsplit("/", 1)[-1]
+    variants = {value, stripped, basename}
+    if "/" in stripped:
+        package, name = stripped.rsplit("/", 1)
+        variants.add(f"{package}-{name}")
+    alias = PROVENANCE_ALIASES.get(stripped)
+    if alias:
+        variants |= {alias, alias.rsplit("/", 1)[-1]}
+    return {x for x in variants if x}
+
+
+def provenance_statuses(nodes: list[dict]) -> None:
+    source = ROOT / "scripts" / "refactory_source.json"
+    try:
+        source_names = {n.get("name", "") for n in json.loads(source.read_text(encoding="utf-8")).get("nodes", [])}
+        source_names |= {x.rsplit("/", 1)[-1] for x in source_names}
+    except (OSError, json.JSONDecodeError):
+        source_names = set()
+    for node in nodes:
+        statuses = {}
+        for old in node.get("old", []):
+            clean = PROV_SUFFIX.sub("", old).strip()
+            variants = provenance_variants(old)
+            if old in EXPLICIT_INTERMEDIATE:
+                statuses[old] = "intermediate"
+            elif any(candidate in source_names for candidate in variants):
+                statuses[old] = "resolved"
+            elif clean.startswith("Pass") or re.search(r"\[(?:campaign|strategy)(?:/tactic)?\]", old):
+                statuses[old] = "intermediate"
+            else:
+                statuses[old] = "concept"
+        node["provenance_status"] = statuses
 
 
 def main() -> None:
@@ -18,6 +69,7 @@ def main() -> None:
             item["type"] = "tactic" if kind == "tactics" else "sop"
             item["provenance"] = item.get("old", [])
             nodes.append(item)
+    provenance_statuses(nodes)
     calls = [
         {"type": "calls", "source": src, "target": target}
         for src, targets in source["calls"].items()

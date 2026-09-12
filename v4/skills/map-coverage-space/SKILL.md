@@ -4,45 +4,34 @@ description: "Map a set of methods/assets/evidence items against a typed problem
 ---
 
 # map-coverage-space
-
 ## Purpose
-
-Map a set of methods/assets/evidence items against a typed problem, capability, condition, or design space to expose redundancy and coverage structure.
-
+Map methods, assets, or evidence against a typed problem or capability space to expose redundancy and gaps.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [item_set, coverage_dimensions, target_space]
+optional: [strength_scale, applicability_rules, evidence_links]
+constraints: [dimension semantics and coverage states are declared]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Define cells or regions from the supplied dimensions.
+2. Assign each item to supported, partial, or unsupported regions.
+3. Merge duplicate coverage and identify uncovered or weakly supported regions.
+4. Return the map with evidence and confidence annotations.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
+produces: [coverage_map, redundancy_clusters, gap_register, confidence_annotations]
 delta_fields: [findings, evidence_updates, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Every assignment names its dimensions and evidence.
+- Coverage ratio is computed from a declared universe and numerator/denominator.
+- Weak and missing coverage are distinguished.
+## Parameterization
+Caller supplies item schema, dimension ontology, coverage states, strength scale, and audit numerator/denominator definitions.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject maps with implicit dimensions, unsupported assignments, or ratios lacking a declared universe.
 ## Provenance map
-
-- intermediate: creative-ideation/method-problem-crossing
-- intermediate: knowledge-acquisition/capability-taxonomy-mapping
+- concept: creative-ideation/method-problem-crossing
+- concept: knowledge-acquisition/capability-taxonomy-mapping
 - intermediate: Pass3/map-method-problem-space
 - intermediate: Pass3/map-capability-coverage

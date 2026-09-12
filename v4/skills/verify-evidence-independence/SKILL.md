@@ -4,42 +4,35 @@ description: "Seek independent evidence channels sufficient to determine whether
 ---
 
 # verify-evidence-independence
-
 ## Purpose
-
-Seek independent evidence channels sufficient to determine whether a finding/gap is source-specific. No database/provider is named.
-
+Determine whether a finding is supported by independent evidence channels rather than one source lineage.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [finding, evidence_records, independence_definition]
+optional: [source_lineage, search_scope, stopping_rule]
+constraints: [independence claims require explicit lineage and channel distinctions]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Group records by source, method, dataset, and citation lineage.
+2. Identify channels that are independent under the supplied definition.
+3. Compare direction, effect, and contradiction across channels.
+4. Return support status, dependence risks, and remaining search needs.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [independence_assessment, independent_evidence_set, dependence_risks, open_questions]
+delta_fields: [evidence_updates, uncertainties, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- No record is counted as independent without a documented lineage break.
+- Agreement and disagreement are reported separately.
+- Search stops only under caller-supplied stopping rule or explicit saturation rationale.
+## Parameterization
+Caller supplies evidence schema, independence tests, lineage fields, channel taxonomy, and stopping rule.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject unsupported independence claims, duplicate lineages, or evidence pooled without provenance.
 ## Provenance map
-
-- intermediate: deep-insight/cross-database-verification
+- concept: deep-insight/cross-database-verification
+## Preserved source criteria ledger
+| source | criterion |
+|---|---|
+| deep-insight/cross-database-verification | Seek independent evidence channels sufficient to test source-specificity. |

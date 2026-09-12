@@ -12,34 +12,34 @@ Represent a core constraint conflict in an Evaporating-Cloud-like structure with
 ## Input contract
 
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
+required: [undesirable_effects, constraint_relations, assumption_records]
+optional: [evidence, assumptions, prior_results]
 constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
 
-1. List the observed undesirable effects and the two desired conditions that cannot be satisfied simultaneously.
-2. Trace each condition through its prerequisite assumptions and mark which links are empirical, inferred, or disputed.
-3. Return the typed conflict structure with candidate leverage points and the evidence needed to dissolve each assumption.
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
 ## Output contract
 
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [extract_core_conflict_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
 ```
 
 ## Quality gates
 
-- The extract core conflict decision is tied to its declared scientific object and source evidence.
-- Missing values, assumptions, and boundary conditions remain visible.
-- Statistical criteria stay exact where applicable: α 0.05 and power 0.8.
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
 
 ## Failure and counterexamples
 
-Reject extract core conflict when the target schema is incomplete, evidence is incompatible, or a counterexample defeats the stated interpretation.
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
 
 ## Provenance map
 
-- resolved: core-conflict-extraction
+- intermediate: experiment-execution/core-conflict-extraction

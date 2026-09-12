@@ -4,42 +4,31 @@ description: "Topologically sequence dependent work while prioritizing fail-fast
 ---
 
 # sequence-work
-
 ## Purpose
-
-Topologically sequence dependent work while prioritizing fail-fast/high-risk branches.
-
+Topologically sequence dependent work while prioritizing fail-fast and high-risk branches.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [work_items, dependency_graph, prioritization_policy]
+optional: [resource_limits, risk_scores, parallelism_rules]
+constraints: [dependencies must be acyclic or cycles explicitly reported]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Validate nodes and dependency edges.
+2. Detect cycles and compute available roots.
+3. Rank ready items by fail-fast, risk, and policy priorities.
+4. Emit ordered batches and parallelizable branches.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [work_sequence, parallel_batches, cycle_report, priority_rationale]
+delta_fields: [decisions, uncertainties, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Input contains a subquestion list and dependency graph.
+- No item precedes an unmet prerequisite.
+- Every priority change has a stated policy reason.
+## Parameterization
+Caller supplies work schema, dependency semantics, priority policy, cycle handling, and resource constraints.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject sequences that hide cycles, violate prerequisites, or claim parallelism across dependent items.
 ## Provenance map
-
-- intermediate: hypothesis-formation/answering-sequence-design
+- concept: hypothesis-formation/answering-sequence-design

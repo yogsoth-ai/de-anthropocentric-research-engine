@@ -46,7 +46,7 @@ Do not label a candidate ready with missing evidence, unclassified hard constrai
 
 26 architecture `old` entries; readiness, feasibility, resource, obstacle, dependency, sensitivity, and maturation families are merged by mode. Missing aliases are listed in log.
 
-## Context checkpoint / Delta notes
+## Legacy context checkpoint / Delta notes
 
 Append dimension scores/evidence, constraint IDs, bottleneck rationale, resources, gates, and unresolved conflicts.
 
@@ -146,4 +146,8 @@ Append dimension scores/evidence, constraint IDs, bottleneck rationale, resource
 | constraint-breaking | 35 | textual | - Injection must be: specific, actionable, within our control, and testable |
 | constraint-breaking | 36 | numeric | - Generate 2-3 candidate injections |
 | constraint-breaking | 43 | textual | - What conditions (prerequisites) must hold? |
+
+## Context checkpoint / Delta notes
+
+Append dimension scores/evidence, constraint IDs, bottleneck rationale, resources, gates, and unresolved conflicts.
 | constraint-breaking | 54 | numeric | - **Success criterion**: At least one injection that resolves the conflict with ≤2 manageable side effects |

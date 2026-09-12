@@ -12,15 +12,15 @@ Construct and validate an explicit causal model with measurable variables, mecha
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [variable_records, mechanism_candidates, evidence_records]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
 ## Execution protocol
 
 1. Inventory outcomes, factors, mediators, moderators, confounders, and assumptions before drawing any edge. (`identify-variables`)
-2. Extract directed cause–mediator–effect chains with temporal order, boundary conditions, and evidence anchors. (`extract-causal-structure`)
+2. Extract directed cause?mediator?effect chains with temporal order, boundary conditions, and evidence anchors. (`extract-causal-structure`)
 3. Encode each mechanism edge with pathway, sign, enabling conditions, falsifier, and strength. (`represent-mechanism-edge`)
 4. Attach independent supporting and contradicting evidence to those typed edges, retaining alternative interpretations. (`attach-evidence-to-relation`)
 5. Compare opposing causal claims under common scope so conflicts are recorded before model validation. (`detect-contradiction`)
@@ -37,22 +37,22 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [causal_graph, mechanism_edges, intervention_implications, confidence_updates]
-delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_updates]
+delta_fields: [findings, decisions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
-- resolved: causal-modeling
+- intermediate: knowledge-structuring/causal-modeling [campaign]
 - intermediate: variable-identification [strategy]
 - resolved: mechanism-mapping
 - resolved: evidence-collection
@@ -65,10 +65,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

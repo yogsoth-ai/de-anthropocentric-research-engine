@@ -4,43 +4,32 @@ description: "Synthesize multi-axis breakpoints into a multidimensional statemen
 ---
 
 # construct-validity-envelope
-
 ## Purpose
-
-Synthesize multi-axis breakpoints into a multidimensional statement of where a claim/method remains valid.
-
+Synthesize multi-axis breakpoints into a multidimensional statement of where a claim or method remains valid.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [claim_or_method, axis_results, validity_criteria]
+optional: [boundary_interactions, uncertainty_model, extrapolation_policy]
+constraints: [each boundary is tied to an axis result and evidence]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Align axis scales, directions, and validity labels.
+2. Combine breakpoint regions and inspect interaction effects.
+3. Mark supported, uncertain, and invalid regions.
+4. Emit the envelope with extrapolation warnings and monitoring observables.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [validity_envelope, boundary_conditions, uncertain_regions, monitoring_observables]
+delta_fields: [findings, uncertainties, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- No envelope boundary lacks an axis-level witness.
+- Interactions are reported when independent-axis combination is unjustified.
+- Extrapolated regions are labeled as such.
+## Parameterization
+Caller supplies axis schema, breakpoint format, validity criteria, interaction policy, and uncertainty representation.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject envelopes inferred from one axis, unsupported extrapolation, or boundaries without observables.
 ## Provenance map
-
-- resolved: deep-insight-validity-envelope-construction
-- resolved: stress-test-validity-envelope-construction
+- concept: deep-insight/validity-envelope-construction
+- concept: stress-test/validity-envelope-construction

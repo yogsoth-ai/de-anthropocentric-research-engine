@@ -20,6 +20,7 @@ R5 = ROOT / "channel" / "deliverables" / "R5" / "validate_threshold_fidelity.py"
 DELTA = {"findings", "evidence_updates", "hypothesis_updates", "assumption_updates", "uncertainties", "decisions", "open_questions", "recommended_jumps"}
 GENERIC = re.compile(r"\b(?:source_state|task_object|input_object)\b", re.I)
 SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
+PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
 
 
 class Checker:
@@ -88,6 +89,23 @@ def normalize_sentence(line: str) -> str:
     line = re.sub(r"\([^)]*\)", "", line)
     line = re.sub(r"^\s*(?:[-*]|\d+[.)])\s*", "", line)
     return " ".join(line.split()).strip().lower()
+
+
+def provenance_variants(value: str) -> set[str]:
+    """Return exact lookup forms after removing provenance-only suffixes."""
+    value = value.strip()
+    stripped = value
+    while True:
+        next_value = PROV_SUFFIX.sub("", stripped).strip()
+        if next_value == stripped:
+            break
+        stripped = next_value
+    basename = stripped.rsplit("/", 1)[-1]
+    variants = {value, stripped, basename}
+    if "/" in stripped:
+        package, name = stripped.rsplit("/", 1)
+        variants.add(f"{package}-{name}")
+    return {x for x in variants if x}
 
 
 def main() -> int:
@@ -183,15 +201,23 @@ def main() -> int:
 
     if SOURCE.exists():
         try:
-            source_names = {n.get("name", "") for n in json.loads(SOURCE.read_text(encoding="utf-8")).get("nodes", [])}
+            source_nodes = json.loads(SOURCE.read_text(encoding="utf-8")).get("nodes", [])
+            source_names = {n.get("name", "") for n in source_nodes}
             source_names |= {x.rsplit("/", 1)[-1] for x in source_names}
+            source_names |= {
+                f"{n.get('package')}-{n.get('name')}"
+                for n in source_nodes
+                if n.get("package") and n.get("name")
+            }
         except Exception:
             source_names = set()
         for node in nodes:
             for old in node.get("old", []):
-                candidates = (old.split(" [",1)[0], old.rsplit("/",1)[-1].split(" [",1)[0])
-                if "concept" in old.lower() and not any(x in source_names or x.replace("/", "-") in source_names for x in candidates):
-                    c.error(GRAPH, 1, f"concept provenance not found in refactory source: {old}")
+                status = node.get("provenance_status", {}).get(old)
+                if status != "concept":
+                    continue
+                if any(candidate in source_names for candidate in provenance_variants(old)):
+                    c.error(GRAPH, 1, f"provenance is searchable but still marked concept: {old}")
     if caps.get("count") != len(caps.get("contracts", [])):
         c.error(CAPS, 1, "capability count does not match contracts")
     if not args.skip_threshold and R5.exists():

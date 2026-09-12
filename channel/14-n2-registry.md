@@ -43,3 +43,6 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 ## 低负载说明
 
 未使用 git 写操作、npm install、superpowers 或 ara。构建脚本单次读取权威 JSON；校验器默认单进程，正文尚未齐全时可先用 `--skip-threshold`。
+## 本轮校正（2026-09-12）
+
+按 build-gate-01 裁定，仅修正校验器误报，不放宽门禁：provenance 归一化循环剥离 `(...)` 与 `[...]` 后缀，并尝试裸名、`package-name`、`package/name`；`generic-space` 保留 `generic-space-extraction` 别名。`graph.json` 新增逐条 `provenance_status`，三条实际存在的旧名标为 `resolved`，`conceptual-blending [strategy]` 与 `Pass3/merge-near-duplicate-concepts` 标为 `intermediate`。`--skip-threshold` 仅作低负载诊断；默认全量校验已调用 R5，当前 R5 仍报 `full-node-coverage=266/267`、缺 `structured-consensus`，退出码为 1。

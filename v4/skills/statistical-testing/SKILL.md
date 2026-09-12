@@ -12,34 +12,34 @@ Apply the pre-declared statistical/estimation procedure and report effect size, 
 ## Input contract
 
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
+required: [predeclared_analysis_plan, observations, comparison_structure]
+optional: [evidence, assumptions, prior_results]
 constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
 
-1. Lock the analysis to the predeclared test or estimator, outcome definition, comparison, and multiplicity rule.
-2. Compute effect size and uncertainty, including the α = 0.05 decision rule, model checks, and any ROPE or equivalence criterion.
-3. Interpret the result against the estimand and practical threshold without converting a non-significant result into evidence of no effect.
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
 ## Output contract
 
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [statistical_testing_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
 ```
 
 ## Quality gates
 
-- The statistical testing decision is tied to its declared scientific object and source evidence.
-- Missing values, assumptions, and boundary conditions remain visible.
-- Statistical criteria stay exact where applicable: α 0.05 and power 0.8.
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
 
 ## Failure and counterexamples
 
-Reject statistical testing when the target schema is incomplete, evidence is incompatible, or a counterexample defeats the stated interpretation.
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
 
 ## Provenance map
 
-- resolved: statistical-testing
+- intermediate: experiment-execution/statistical-testing

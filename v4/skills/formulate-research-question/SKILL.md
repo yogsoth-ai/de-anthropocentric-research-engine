@@ -12,18 +12,18 @@ Convert a hypothesis into a precise research question with fit-for-purpose frame
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [hypothesis_or_gap, candidate_frameworks, feasibility_constraints]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
 ## Execution protocol
 
-1. Select a framework that matches the hypothesis, population, comparison, and intended decision. (`apply-question-framework`)
-2. Test question quality, scope, feasibility, criteria, and threshold against the available evidence and resources. (`assess-question-quality`)
-3. Refine the abstraction level and emit one precise question with success criteria and documented exclusions. (`define-criteria`)
-4. Select a framework that matches the hypothesis, population, comparison, and intended decision. (`set-threshold`)
-5. Test question quality, scope, feasibility, criteria, and threshold against the available evidence and resources. (`adjust-abstraction-scope`)
+1. Use `apply-question-framework` on its named scientific object and record the evidence or decision it contributes.
+2. Use `assess-question-quality` on its named scientific object and record the evidence or decision it contributes.
+3. Use `define-criteria` on its named scientific object and record the evidence or decision it contributes.
+4. Use `set-threshold` on its named scientific object and record the evidence or decision it contributes.
+5. Use `adjust-abstraction-scope` on its named scientific object and record the evidence or decision it contributes.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
@@ -31,18 +31,18 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [research_question, success_criteria, scope_decision]
-delta_fields: [findings, uncertainties]
+delta_fields: [decisions, open_questions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
@@ -58,10 +58,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

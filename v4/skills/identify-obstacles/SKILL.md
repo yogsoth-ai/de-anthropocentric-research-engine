@@ -4,43 +4,32 @@ description: "Enumerate obstacles that block a target goal/direction, with type,
 ---
 
 # identify-obstacles
-
 ## Purpose
-
-Enumerate obstacles that block a target goal/direction, with type, evidence, and blocking relation.
-
+Enumerate obstacles blocking a target goal or direction, with evidence and blocking relations.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [target_goal, current_state, domain_context]
+optional: [timeline, resource_inventory, prior_failures]
+constraints: [each obstacle has type, evidence, and blocking relation]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Compare target requirements with current capabilities and constraints.
+2. Enumerate technical, evidential, resource, temporal, and dependency obstacles.
+3. Link each obstacle to blocked outcomes and supporting evidence.
+4. Return severity, uncertainty, and candidate removal questions.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [obstacle_register, blocking_relations, evidence_links, removal_questions]
+delta_fields: [findings, uncertainties, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Every listed obstacle has a blocking relation and evidence or an explicit uncertainty label.
+- Duplicate obstacles are merged only when mechanism and remedy coincide.
+- Obstacles are separated from symptoms and desired outcomes.
+## Parameterization
+Caller supplies goal schema, obstacle taxonomy, evidence fields, severity scale, and merge policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject generic risks, unsupported blockers, or lists with no relation to the target goal.
 ## Provenance map
-
-- intermediate: north-star-crystallization/identify-obstacles
-- intermediate: experiment-execution/obstacle-identification
+- concept: north-star-crystallization/identify-obstacles
+- concept: experiment-execution/obstacle-identification

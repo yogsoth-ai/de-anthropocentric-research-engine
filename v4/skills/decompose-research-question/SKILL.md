@@ -12,16 +12,16 @@ Decompose a complex RQ into MECE subquestions, map dependencies, and schedule th
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [research_question, scope_constraints, dependency_evidence]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
 ## Execution protocol
 
-1. State the research question, scope, and answerability constraints that delimit decomposition. (`generate-subquestions`)
-2. Generate MECE subquestions, map dependencies, and identify which subquestion each dependency enables. (`map-dependencies`)
-3. Sequence the work by prerequisite and information value, flagging overlaps and unanswerable branches. (`sequence-work`)
+1. Use `generate-subquestions` on its named scientific object and record the evidence or decision it contributes.
+2. Use `map-dependencies` on its named scientific object and record the evidence or decision it contributes.
+3. Use `sequence-work` on its named scientific object and record the evidence or decision it contributes.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
@@ -29,18 +29,18 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [subquestion_set, dependency_map, answering_sequence]
-delta_fields: [findings, uncertainties]
+delta_fields: [open_questions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
@@ -51,10 +51,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

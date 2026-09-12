@@ -4,44 +4,33 @@ description: "Generate a deliberate pattern-breaking perturbation: PO, reversal,
 ---
 
 # generate-provocation
-
 ## Purpose
-
-Generate a deliberate pattern-breaking perturbation: PO, reversal, negation, random stimulus, exaggeration, or distortion.
-
+Generate a deliberate pattern-breaking perturbation that opens alternative reasoning paths.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [target_pattern, provocation_mode, boundary_conditions]
+optional: [random_stimulus_pool, intensity, safety_constraints]
+constraints: [provocation must be traceable to the target pattern]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Describe the dominant pattern and its protected assumptions.
+2. Apply the selected mode: PO, reversal, negation, random stimulus, exaggeration, or distortion.
+3. Record the altered elements and generated questions.
+4. Return candidate directions without premature selection.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [provocations, altered_assumptions, generated_questions, candidate_directions]
+delta_fields: [findings, hypothesis_updates, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Mode and intensity are recorded for each provocation.
+- At least one altered assumption and one testable question accompany every item.
+- Provocations remain within declared safety and scope boundaries.
+## Parameterization
+Caller supplies target schema, provocation modes, intensity scale, stimulus pool, and boundary constraints.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject random outputs with no relation to the target or ideas presented as validated conclusions.
 ## Provenance map
-
-- intermediate: creative-ideation/po-provocation
-- resolved: deep-insight-provocation-generation
-- intermediate: creative-ideation/random-word-stimulus
+- concept: creative-ideation/po-provocation
+- concept: deep-insight/provocation-generation
+- concept: creative-ideation/random-word-stimulus

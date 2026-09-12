@@ -3,7 +3,7 @@ name: synthesize-meta-analytic-evidence
 description: "Design or execute a quantitative evidence synthesis with pairwise/network/cumulative/heterogeneity/bias modes while preserving study-level quality and sensitivity logic."
 ---
 
-# synthesize-meta-analytic-evidence
+﻿# synthesize-meta-analytic-evidence
 
 ## Purpose
 
@@ -59,7 +59,7 @@ Reject synthesis when study identity, outcome definition, or effect measure is m
 
 `meta-analysis`, `pairwise-synthesis`, `network-comparison`, `cumulative-tracking`, `heterogeneity-investigation`, `bias-detection`, `effect-size-extraction`, `quality-assessment-protocol`, `evidence-synthesis-planning`; all source gates kept, repeated provider details compressed.
 
-## Context checkpoint / Delta notes
+## Legacy context checkpoint / Delta notes
 
 Append study set, extraction table, estimate, uncertainty, heterogeneity/bias decisions, and unresolved comparability questions.
 
@@ -156,3 +156,7 @@ Append study set, extraction table, estimate, uncertainty, heterogeneity/bias de
 | evidence-synthesis-planning | 52 | numeric | - **Thresholds**: I2 interpretation (0-40% low, 30-60% moderate, 50-90% substantial, 75-100% considerable) |
 | evidence-synthesis-planning | 80 | textual | ## Minimum Yield |
 | evidence-synthesis-planning | 86 | numeric | - At least 3 sensitivity analyses designed |
+
+## Context checkpoint / Delta notes
+
+Append study set, extraction table, estimate, uncertainty, heterogeneity/bias decisions, and unresolved comparability questions.

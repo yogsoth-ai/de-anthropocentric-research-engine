@@ -4,45 +4,34 @@ description: "Evaluate a fixed candidate, research path, or portfolio under one 
 ---
 
 # evaluate-scenario-impact
-
 ## Purpose
-
-Evaluate a fixed candidate, research path, or portfolio under one explicit scenario using stable criteria and return impact, tradeoffs, and failure triggers.
-
+Evaluate one fixed candidate, path, or portfolio under one explicit scenario.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [candidate, scenario, evaluation_criteria]
+optional: [baseline, metric_definitions, vulnerability_rules]
+constraints: [criteria, units, and scenario assumptions remain fixed during evaluation]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Instantiate the candidate under scenario assumptions.
+2. Compute or qualitatively assess each declared criterion.
+3. Identify tradeoffs, vulnerabilities, and failure triggers.
+4. Return impact evidence and unresolved uncertainties.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [impact_assessment, metric_results, tradeoffs, vulnerabilities, failure_triggers]
+delta_fields: [findings, uncertainties, decisions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- All declared criteria are addressed with units or explicit qualitative scales.
+- Vulnerable or failing members are named, not hidden in aggregate scores.
+- Scenario assumptions and baseline are cited for every comparison.
+## Parameterization
+Caller supplies candidate schema, scenario schema, criteria, metric formulas, baseline, and vulnerability thresholds.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject evaluations that change scenario assumptions midstream or report aggregate impact without member-level checks.
 ## Provenance map
-
-- intermediate: convergence/portfolio-evaluation-per-scenario
-- intermediate: experiment-execution/scenario-impact-assessment
+- concept: convergence/portfolio-evaluation-per-scenario
+- concept: experiment-execution/scenario-impact-assessment
 - intermediate: Pass3/evaluate-scenario
 - intermediate: Pass3/assess-scenario-impact

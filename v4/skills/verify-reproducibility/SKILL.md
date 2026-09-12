@@ -12,34 +12,34 @@ Assess reproducibility across reruns/replications using the predeclared reproduc
 ## Input contract
 
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
+required: [reproducibility_target, rerun_results, replication_results]
+optional: [evidence, assumptions, prior_results]
 constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
 
-1. Align rerun and replication outputs to the declared reproducibility target and verify that environments and inputs are comparable.
-2. Compute suitable agreement, variance, or calibration metrics and report their uncertainty rather than a binary match alone.
-3. Judge the target-specific verdict, diagnose divergence sources, and state whether another run or a revised target is required.
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
 ## Output contract
 
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [verify_reproducibility_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
 ```
 
 ## Quality gates
 
-- The verify reproducibility decision is tied to its declared scientific object and source evidence.
-- Missing values, assumptions, and boundary conditions remain visible.
-- Statistical criteria stay exact where applicable: α 0.05 and power 0.8.
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
 
 ## Failure and counterexamples
 
-Reject verify reproducibility when the target schema is incomplete, evidence is incompatible, or a counterexample defeats the stated interpretation.
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
 
 ## Provenance map
 
-- resolved: reproducibility-verification
+- intermediate: experiment-execution/reproducibility-verification

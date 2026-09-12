@@ -15,7 +15,7 @@ constraints: [each perspective must have a distinct warrant and scope]
 ## Output contract
 ```yaml
 produces: [perspective_set, selection_rationale, assumption_map, blind_spot_map]
-delta_fields: [findings, assumptions_updates, uncertainties]
+delta_fields: [findings, assumption_updates, uncertainties]
 ```
 ## Quality gates
 - Perspectives are non-duplicate and relevant to the target.

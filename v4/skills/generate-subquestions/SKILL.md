@@ -4,42 +4,31 @@ description: "Decompose a research question into MECE subquestions with coverage
 ---
 
 # generate-subquestions
-
 ## Purpose
-
 Decompose a research question into MECE subquestions with coverage and independence arguments.
-
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [main_research_question, scope_statement]
+optional: [evidence_map, dependency_constraints, desired_granularity]
+constraints: [question must be scoped and complex enough to decompose]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Parse the main question into objects, mechanisms, conditions, and outcomes.
+2. Generate candidate subquestions and assign coverage domains.
+3. Remove overlap, test independence, and map dependencies.
+4. Return the MECE set with unresolved gaps.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [subquestion_set, coverage_map, independence_arguments, dependency_notes]
+delta_fields: [findings, open_questions, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Input contains one confirmed, appropriately scoped main question.
+- Every subquestion maps to a distinct coverage domain.
+- Overlap and uncovered regions are explicitly reported.
+## Parameterization
+Caller supplies question schema, scope test, MECE policy, granularity, and dependency representation.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject decompositions that merely restate the main question or leave domains without a coverage rationale.
 ## Provenance map
-
-- intermediate: hypothesis-formation/sub-question-generation
+- concept: hypothesis-formation/sub-question-generation

@@ -4,43 +4,32 @@ description: "Trace ordered causal chains including intermediate nodes, branches
 ---
 
 # trace-causal-chain
-
 ## Purpose
-
-Trace ordered causal chains including intermediate nodes, branches, and loops with explicit because/mechanism links.
-
+Trace ordered causal chains with intermediate nodes, branches, loops, mechanisms, and boundary conditions.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [causal_question, evidence_set, chain_granularity]
+optional: [candidate_graph, time_order, loop_policy]
+constraints: [every edge has a because/mechanism statement]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Identify start and endpoint variables from the question.
+2. Expand intermediate mediators and mechanism links.
+3. Mark branches, feedback loops, temporal order, and unsupported edges.
+4. Return complete chains with evidence and boundary conditions.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [causal_chains, intermediate_nodes, branch_loop_map, evidence_links, boundary_conditions]
+delta_fields: [findings, hypothesis_updates, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Full chains, not endpoints alone, are reported.
+- Each edge has an explicit mechanism or is labeled unresolved.
+- Loops and alternative paths are retained rather than flattened.
+## Parameterization
+Caller supplies variable schema, evidence-link schema, granularity, temporal semantics, and loop policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject endpoint-only summaries, circular edges without loop evidence, or implied mechanisms.
 ## Provenance map
-
-- intermediate: knowledge-structuring/causal-chain-query
-- intermediate: experiment-execution/causal-chain-tracing
+- concept: knowledge-structuring/causal-chain-query
+- concept: experiment-execution/causal-chain-tracing

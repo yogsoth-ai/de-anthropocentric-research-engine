@@ -1,4 +1,4 @@
-# audit-benchmark-validity
+﻿# audit-benchmark-validity
 
 ## Purpose
 
@@ -36,13 +36,13 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 
 ## Failure and counterexamples
 
-Reject “valid” when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
+Reject 鈥渧alid鈥?when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
 
 ## Provenance map
 
 7 architecture `old` entries: archaeology, audit, saturation, validity probing, coverage mapping, protocol forensics, evaluation comparison. Provider-specific retrieval compressed.
 
-## Context checkpoint / Delta notes
+## Legacy context checkpoint / Delta notes
 
 Append benchmark version, construct claims, probes, contamination evidence, coverage gaps, protocol diffs, verdict, and repair decisions.
 
@@ -146,3 +146,7 @@ Append benchmark version, construct claims, probes, contamination evidence, cove
 | evaluation-protocol-comparison | 94 | numeric-table | \\| Protocol elements extracted per paper \\| 10 \\| |
 | evaluation-protocol-comparison | 95 | numeric-table | \\| High-variance elements identified \\| 2 \\| |
 | evaluation-protocol-comparison | 96 | numeric-table | \\| Impact estimates produced \\| 3 \\| |
+
+## Context checkpoint / Delta notes
+
+Append benchmark version, construct claims, probes, contamination evidence, coverage gaps, protocol diffs, verdict, and repair decisions.

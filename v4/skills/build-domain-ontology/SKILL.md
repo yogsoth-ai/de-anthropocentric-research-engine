@@ -12,8 +12,8 @@ Construct a tool-independent domain ontology: scope the domain, atomize concepts
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [domain_scope, concept_records, relation_evidence]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
@@ -27,7 +27,7 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 6. Check node and relation schemas together with hierarchy, dependency, cardinality, and cycle constraints. (`audit-structure-consistency`)
 7. Compare the resulting representation with its eligible feature space to prioritize absent, thin, disconnected, or weak regions. (`detect-coverage-gap`)
 8. Merge only semantically identical aliases and near-duplicates, redirecting dependent edges and retaining rejected merges. (`canonicalize-entity`)
-9. Update confidence from classified supporting or contradicting evidence after the ontology’s identities and structure are stable. (`update-confidence-from-evidence`)
+9. Update confidence from classified supporting or contradicting evidence after the ontology?s identities and structure are stable. (`update-confidence-from-evidence`)
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
@@ -35,22 +35,22 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [scoped_ontology, typed_relations, consistency_findings, coverage_gaps]
-delta_fields: [findings, uncertainties]
+delta_fields: [findings, decisions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
-- resolved: ontology-building
+- intermediate: knowledge-structuring/ontology-building [campaign]
 - resolved: domain-scoping
 - resolved: concept-extraction
 - resolved: relation-typing
@@ -63,10 +63,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

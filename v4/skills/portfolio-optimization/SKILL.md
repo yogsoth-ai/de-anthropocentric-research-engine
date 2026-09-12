@@ -12,8 +12,8 @@ Formalize objectives/constraints, construct a Pareto frontier, stress across sce
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [candidate_set, objective_vector, resource_constraints, scenario_set]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
@@ -36,18 +36,18 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [pareto_frontier, selected_portfolio, scenario_risk_summary]
-delta_fields: [findings, uncertainties]
+delta_fields: [findings, decisions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
@@ -65,10 +65,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

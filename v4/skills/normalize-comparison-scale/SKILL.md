@@ -4,45 +4,34 @@ description: "Normalize heterogeneous values onto a declared comparison scale wh
 ---
 
 # normalize-comparison-scale
-
 ## Purpose
-
-Normalize heterogeneous values onto a declared comparison scale while preserving direction, units, uncertainty, and the transformation rule. The normalized object may be criterion scores, resource budgets, or another comparable quantity.
-
+Normalize heterogeneous values onto a declared comparison scale while preserving direction, units, uncertainty, and transformation rule.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [value_set, criterion_definitions, normalization_rule]
+optional: [bounds, missing_value_policy, uncertainty_model]
+constraints: [direction and units are preserved; rule is declared before transformation]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Validate units, direction, bounds, and missingness.
+2. Apply the caller-supplied transformation to each value.
+3. Preserve uncertainty and retain original values for audit.
+4. Return normalized values and out-of-bound diagnostics.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [normalized_values, transformation_record, uncertainty_preservation, diagnostics]
+delta_fields: [evidence_updates, uncertainties, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- All normalized values lie in the caller-declared range, commonly [0, 1].
+- Maximize/minimize directions are explicit and correctly oriented.
+- Missing and extrapolated values are labeled, never silently imputed.
+## Parameterization
+Caller supplies value schema, units, direction labels, bounds, transformation formula, and missingness policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject mixed units, hidden inversion, or normalization that discards uncertainty and source values.
 ## Provenance map
-
-- intermediate: convergence/normalization
+- concept: convergence/normalization
 - intermediate: Pass4/normalize-scores
-- intermediate: knowledge-acquisition/compute-normalization
+- concept: knowledge-acquisition/compute-normalization
 - intermediate: Pass4/normalize-compute-budget

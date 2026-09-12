@@ -12,14 +12,14 @@ Construct and compare plausible future/competitive/temporal/stress scenarios and
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [research_path, scenario_axes, uncertainty_drivers]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
 ## Execution protocol
 
-1. Rank the horizon’s high-impact uncertainties so later scenarios vary the drivers most capable of changing the research path. (`identify-scenario-drivers`)
+1. Rank the horizon?s high-impact uncertainties so later scenarios vary the drivers most capable of changing the research path. (`identify-scenario-drivers`)
 2. Enumerate representative, boundary, and adversarial values for each retained driver before combining them. (`enumerate-dimension-values`)
 3. Prune combinations that violate explicit compatibility rules while retaining near-boundary cases for inspection. (`evaluate-compatibility`)
 4. Assemble the surviving driver values into distinct baseline, counterfactual, and extreme-but-plausible worlds. (`construct-scenario`)
@@ -34,22 +34,22 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [scenario_set, impact_comparison, robustness_assessment]
-delta_fields: [findings, uncertainties]
+delta_fields: [findings, decisions]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
-- resolved: scenario-planning
+- intermediate: experiment-execution/scenario-planning [campaign]
 - resolved: morphological-scenario
 - resolved: narrative-scenario
 - resolved: stress-scenario
@@ -63,10 +63,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

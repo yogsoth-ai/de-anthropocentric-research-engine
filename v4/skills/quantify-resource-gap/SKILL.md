@@ -12,34 +12,34 @@ Quantify resource demand, available supply, gap, severity, and uncertainty for a
 ## Input contract
 
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
+required: [resource_demand, resource_supply, plan_scope]
+optional: [evidence, assumptions, prior_results]
 constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
 
-1. Define the plan scope and units, then estimate demand for people, compute, data, time, and materials.
-2. Record available supply, committed allocations, and uncertainty bounds before subtracting supply from demand.
-3. Classify gap severity, identify the binding resource, and show which assumption or mitigation would change the result.
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
 ## Output contract
 
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [quantify_resource_gap_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
 ```
 
 ## Quality gates
 
-- The quantify resource gap decision is tied to its declared scientific object and source evidence.
-- Missing values, assumptions, and boundary conditions remain visible.
-- Statistical criteria stay exact where applicable: α 0.05 and power 0.8.
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
 
 ## Failure and counterexamples
 
-Reject quantify resource gap when the target schema is incomplete, evidence is incompatible, or a counterexample defeats the stated interpretation.
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
 
 ## Provenance map
 
-- resolved: resource-quantification
+- intermediate: experiment-execution/resource-quantification

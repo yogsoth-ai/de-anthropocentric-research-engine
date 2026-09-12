@@ -12,34 +12,34 @@ Given cost per run and resource budget, choose the most information-efficient fe
 ## Input contract
 
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
+required: [candidate_designs, run_costs, resource_budget, validity_constraints]
+optional: [evidence, assumptions, prior_results]
 constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
 
-1. Translate the resource budget into per-run limits, fixed overhead, and validity constraints that no candidate may violate.
-2. Compare feasible designs by expected information per cost while preserving the essential contrast, randomization, and measurement plan.
-3. Select the dominant design or document the tradeoff when no candidate is strictly superior; include the budget ledger.
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
 ## Output contract
 
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [optimize_design_under_budget_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
 ```
 
 ## Quality gates
 
-- The optimize design under budget decision is tied to its declared scientific object and source evidence.
-- Missing values, assumptions, and boundary conditions remain visible.
-- Statistical criteria stay exact where applicable: α 0.05 and power 0.8.
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
 
 ## Failure and counterexamples
 
-Reject optimize design under budget when the target schema is incomplete, evidence is incompatible, or a counterexample defeats the stated interpretation.
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
 
 ## Provenance map
 
-- resolved: budget-constrained-design
+- intermediate: experiment-execution/budget-constrained-design [tactic]

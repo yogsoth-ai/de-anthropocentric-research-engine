@@ -12,15 +12,15 @@ Interpret completed experimental outputs after host/runtime execution using pre-
 ## Input contract
 
 ```yaml
-required: [research_object, objective, constraints]
-optional: [evidence, assumptions, prior_results]
+required: [experiment_results, predeclared_analysis_plan, reproducibility_target]
+optional: [assumptions, prior_findings, evidence_updates]
 constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
 ```
 
 ## Execution protocol
 
-1. Freeze the predeclared estimand and analysis plan before reading the outcome pattern. (`statistical-testing`)
-2. Run the statistical procedure and reproducibility check on the completed outputs, keeping effect size separate from decision significance. (`verify-reproducibility`)
+1. Use `statistical-testing` on its named scientific object and record the evidence or decision it contributes.
+2. Use `verify-reproducibility` on its named scientific object and record the evidence or decision it contributes.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
@@ -28,22 +28,22 @@ Deviation: reorder only when a dependency is already satisfied or unavailable; r
 
 ```yaml
 produces: [effect_estimates, uncertainty_summary, reproducibility_assessment, interpretation]
-delta_fields: [findings, uncertainties]
+delta_fields: [uncertainties]
 ```
 
 ## Thresholds and quality gates
 
-- Every output is traceable to a named input, called operation, and evidence reference.
+- Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
 - Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
-Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the conclusion; return the partial delta with the failure recorded.
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
 ## Provenance map
 
-- resolved: result-analysis
+- intermediate: experiment-execution/result-analysis [strategy]
 - resolved: result-validation-loop
 - resolved: statistical-testing
 - resolved: reproducibility-verification
@@ -54,10 +54,10 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 
 | source | criterion | treatment |
 |---|---|---|
-| resolved v3 entries above | node-specific scientific criteria | retained and specialized to the v4 object contract |
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
 | experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes
 
-Return only the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

@@ -4,44 +4,33 @@ description: "Construct combinations across dimensions/values without prematurel
 ---
 
 # enumerate-combinations
-
 ## Purpose
-
-Construct combinations across dimensions/values without prematurely judging them.
-
+Construct combinations across declared dimensions and values without prematurely judging them.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [dimensions, value_sets, combination_policy]
+optional: [exclusion_constraints, sampling_limit, random_seed]
+constraints: [every emitted combination records its source values]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Validate dimensions, values, and exclusions.
+2. Generate the Cartesian, constrained, or sampled combinations requested.
+3. Preserve provenance of each component and mark omitted combinations.
+4. Return the neutral combination set for downstream evaluation.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [combination_set, component_provenance, exclusions, omitted_space]
+delta_fields: [findings, open_questions]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- No combination is scored or filtered unless policy explicitly requests it.
+- Exclusions are recorded with reasons.
+- Sampled enumeration reports sampling rule and coverage limits.
+## Parameterization
+Caller supplies dimension schema, value sets, combination mode, exclusions, and sampling policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject combinations with missing components, hidden exclusions, or premature quality judgments.
 ## Provenance map
-
-- intermediate: creative-ideation/matrix-construction
-- intermediate: creative-ideation/recombination-generation
-- intermediate: creative-ideation/combination-generation
+- concept: creative-ideation/matrix-construction
+- concept: creative-ideation/recombination-generation
+- concept: creative-ideation/combination-generation

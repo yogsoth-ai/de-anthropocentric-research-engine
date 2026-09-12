@@ -4,46 +4,35 @@ description: "Aggregate a candidate, strategy, or portfolio across explicit scen
 ---
 
 # evaluate-scenario-robustness
-
 ## Purpose
-
-Aggregate a candidate, strategy, or portfolio across explicit scenarios under a declared robust-decision rule such as worst-case score, minimax regret, maximin, threshold survival, or pivot-trigger analysis.
-
+Aggregate candidate performance across explicit scenarios under a declared robust-decision rule.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [candidate_set, scenario_set, criterion_results, robustness_rule]
+optional: [regret_definition, survival_thresholds, pivot_triggers]
+constraints: [scenario results use common criteria and direction]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Verify scenario comparability and criterion direction.
+2. Apply the supplied rule: worst-case, minimax regret, maximin, survival, or pivot trigger.
+3. Expose scenario-specific failures and tradeoffs.
+4. Return ranking, rule sensitivity, and pivot conditions.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [robustness_assessment, robust_ranking, regret_or_worst_case, pivot_triggers]
+delta_fields: [findings, decisions, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- At least 3 distinct futures are evaluated when the scenario set is intended to span uncertainty.
+- Rule is declared before aggregation and applied consistently.
+- A candidate failing a survival threshold is not rescued by averaging.
+## Parameterization
+Caller supplies scenario schema, criterion scales, aggregation rule, regret/survival definitions, and pivot policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject hidden scenario weighting, incomparable metrics, or robustness claims from a single future.
 ## Provenance map
-
-- intermediate: experiment-execution/robustness-scoring
-- intermediate: experiment-execution/strategy-robustness-testing [tactic]
-- intermediate: convergence/portfolio-optimization/robustness-under-uncertainty [strategy]
+- concept: experiment-execution/robustness-scoring
+- concept: experiment-execution/strategy-robustness-testing
+- concept: convergence/portfolio-optimization/robustness-under-uncertainty
 - intermediate: Pass8/score-scenario-robustness
 - intermediate: Pass8/evaluate-regret-robustness

@@ -4,43 +4,32 @@ description: "Construct the strongest defensible case while acknowledging valid 
 ---
 
 # construct-defense
-
 ## Purpose
-
 Construct the strongest defensible case while acknowledging valid weaknesses.
-
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [position, evidence_set, objection_set]
+optional: [defense_criteria, audience, weakness_policy]
+constraints: [support must be evidence-linked and weaknesses cannot be erased]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. State the position and burden of proof.
+2. Select and order the strongest supporting arguments.
+3. Address objections and reframe only where evidence supports the reframe.
+4. Mark residual weaknesses and scope limits.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [defense_case, supporting_arguments, objection_responses, residual_weaknesses]
+delta_fields: [findings, decisions, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- At least 3 supporting arguments are supplied when evidence permits.
+- At least 1 perceived weakness is tested for legitimate reframing.
+- Every claim has an evidence or uncertainty link.
+## Parameterization
+Caller supplies position schema, evidence rubric, objection taxonomy, argument-count rule, and weakness policy.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject hedged advocacy, unsupported reframes, or defenses that omit valid objections.
 ## Provenance map
-
-- intermediate: stress-test/debate-defender
-- intermediate: convergence/advocate-construction
+- concept: stress-test/debate-defender
+- concept: convergence/advocate-construction

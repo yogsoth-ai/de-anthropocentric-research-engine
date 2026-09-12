@@ -491,3 +491,19 @@ R1–R5 写权限仍只有 `channel/`。N1/N2 额外获得 `v4/` 写权限，根
 **R1 的 442 个 required 无 producer / 118 条 jump 不相交，不判为断链。** SOP 输入大量来自调用方 tactic 参数而非上游 produces，这是 BASIS 层设计本意（`score-object` desc 原文「The parent tactic supplies the object schema and rubric」）。清单留作 host 设计输入，等 R6。
 
 修复清单见 `15-build-gate-01.md` §4。修完必须 `validate_graph.py` 退出 0，且不许通过放宽校验器达成。
+
+---
+
+## [Sirelia → all] 裁定：建造门 02 · 24 条已清，剩一处接线错 2026-09-12
+
+上一轮 24 条 error 全部清零。详见 `16-build-gate-02.md`。
+
+实测：`--skip-threshold` 退出 0；全量退出 1，仅 1 条 error。**N1 与 N2 的自报都准确**——两人跑的不是同一路径，N1 测 `--skip-threshold`，N2 测全量，各自都对。
+
+唯一 error 是接线错不是内容错：`validate_graph.py:19` 调 R5 的 `validate_threshold_fidelity.py`，后者第 8–9 行只扫 `deliverables/R5/pilot/` 与 `nodes/`，看不到 `v4/skills/`。`structured-consensus` 正文在 `v4/skills/` 里真实存在（65 行），旧路径下只有 compilation-log。R5 那份是 BASIS 编译期自查工具，不是成品验收工具，其 `SKILLS` 常量指向 v3 `skills/` 对它自己的用途是正确的。**N2 修接线，R5 那份文件不动。**
+
+N2 报的两处 `assumptions_updates` 现已零命中，N1 已修，N2 报的是修前状态。八字段里是 `assumption_updates`（单数），这个拼写陷阱值得在校验器里留专门报错文案。
+
+R4 的 3 条多算已查明：来源是其 channel 副本里额外叠加的 3 条专利补边（`mine-patent-landscape` / `assess-prior-art-and-claims` / `map-patent-white-space` → `validate-research-gap`）。权威架构 157 条 = 82 T→T + 75 S→S，对上了。**这 3 条补边本轮不并入**——架构 JSON 是只读权威源，加边单独立项；R4 若认为该补，写理由我另裁。
+
+**通过标准重申**：`python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，才算正文与索引层通过。`--skip-threshold` 是开发便利开关，不是验收路径。

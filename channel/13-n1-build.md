@@ -242,6 +242,15 @@ status: source/rebuilt
 
 IDs: classify-simplicity-evidence, test-risky-prediction, assess-patent-claim-scope, generate-counterexample, collect-independent-judgments, adjust-abstraction-scope, evaluate-scenario-robustness
 
+## Repair batch 28
+
+Scope: five tactic execution protocols, seven pilot section orders, and twenty-two R5 BASIS body replacements.
+
+- tactic protocols: rewritten with node-specific ordered semantics; no repeated three-sentence cycle
+- pilots: `Provenance map` → `Preserved source criteria ledger` → `Context checkpoint / Delta notes`
+- R5 BASIS: replaced from `channel/deliverables/R5/nodes/` while retaining v4 architecture frontmatter
+- N2 gate: `python v4/scripts/validate_graph.py --skip-threshold` → `OK: graph validation passed (0 warning(s))`, exit code 0
+
 A/B/C: 0/0/0 (N1 new)
 provenance: resolved=9, concept=0, intermediate=7
 intra-section duplicate self-check: PASS

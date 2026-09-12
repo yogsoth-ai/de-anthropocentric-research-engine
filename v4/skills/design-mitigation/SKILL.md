@@ -4,46 +4,35 @@ description: "Design an intervention that prevents, detects, responds to, remove
 ---
 
 # design-mitigation
-
 ## Purpose
-
-Design an intervention that prevents, detects, responds to, removes, or relaxes a failure mode/constraint; state residual risk and validation evidence.
-
+Design an intervention that prevents, detects, responds to, removes, or relaxes a failure mode.
 ## Input contract
-
 ```yaml
-required: [research_object, operation_parameters]
-optional: [evidence, assumptions, constraints]
-constraints: [parameters name the scientific object being transformed; preserve provenance and missingness]
+required: [failure_mode, causal_mechanism, resource_limits]
+optional: [existing_controls, timeline, acceptance_criteria]
+constraints: [residual risk and validation evidence must be explicit]
 ```
-
 ## Procedure
-
-1. Identify the typed target, decision question, and eligible evidence.
-2. Transform the target using the declared rule and attach each material choice to an input or source.
-3. Inspect scope, missingness, and counterexamples, then emit the typed result with uncertainty.
-
+1. Classify the failure and locate controllable causal points.
+2. Generate prevention, detection, response, removal, and relaxation options.
+3. Sequence selected actions with resources and validation tests.
+4. Estimate residual risk and define escalation conditions.
 ## Output contract
-
 ```yaml
-produces: [operation_result, evidence_trace, uncertainties]
-delta_fields: [findings, evidence_updates, uncertainties]
+produces: [mitigation_plan, validation_tests, residual_risk, success_criteria]
+delta_fields: [decisions, findings, uncertainties]
 ```
-
 ## Quality gates
-
-- The operation applies to a named scientific object, not a generic placeholder.
-- Every non-trivial value has a source, derivation, or explicit missing marker.
-- The output remains within scope and records uncertainty.
-
+- Plan contains at least 3 sequenced actions when a multi-step intervention is feasible.
+- Each action has an owner-independent resource statement, validation test, and success criterion.
+- Residual risk is not reported as zero without evidence.
+## Parameterization
+Caller supplies failure taxonomy, causal graph, intervention classes, resource schema, timeline, and risk scale.
 ## Failure and counterexamples
-
-Fail closed when the target schema is incomplete, evidence is incompatible, or a counterexample breaks the interpretation.
-
+Reject vague actions, controls that do not touch the mechanism, or plans without residual-risk accounting.
 ## Provenance map
-
-- intermediate: stress-test/mitigation-design-sop
-- intermediate: stress-test/re-scoring
-- intermediate: convergence/removal-path
+- concept: stress-test/mitigation-design-sop
+- concept: stress-test/re-scoring
+- concept: convergence/removal-path
 - intermediate: Pass3/design-mitigation
 - intermediate: Pass3/design-removal-path
