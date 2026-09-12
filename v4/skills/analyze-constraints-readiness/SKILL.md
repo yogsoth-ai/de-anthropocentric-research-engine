@@ -41,7 +41,7 @@ delta_fields: [findings, decisions, uncertainties, open_questions, recommended_j
 - Constraint identification: >=3 constraints per candidate; >=1 hard constraint; >=1 removal path per removable constraint.
 - Resource envelope: >=3 dimensions (time, cost, personnel) and >=2 analogies per estimate.
 - Maturation path: >=3 stage gates and >=2 milestones per stage.
-- Binding constraint threshold: sensitivity score >2× median.
+- Binding constraint threshold: sensitivity score >2* median.
 
 ## Failure and counterexamples
 
@@ -89,14 +89,14 @@ Append dimension scores/evidence, constraint IDs, bottleneck rationale, resource
 | maturation-pathway-design | 37 | textual | \\| target_readiness \\| object \\| Required maturity for implementation \\| |
 | maturation-pathway-design | 62 | textual | 2. Define target readiness required for implementation |
 | maturation-pathway-design | 76 | textual | target_readiness: <required score> |
-| multi-dimensional-readiness-scan | 23 | textual | 3. **Bottleneck Identification** — Analyze the radar for dimensions significantly below the mean or below required thresholds. Deploy `bottleneck-identification` SOP on the radar data. |
+| multi-dimensional-readiness-scan | 23 | textual | 3. **Bottleneck Identification** - Analyze the radar for dimensions significantly below the mean or below required thresholds. Deploy `bottleneck-identification` SOP on the radar data. |
 | multi-dimensional-readiness-scan | 29 | numeric-table | \\| dimension-assessment \\| 1 \\| Score a single readiness dimension \\| |
 | multi-dimensional-readiness-scan | 30 | numeric-table | \\| radar-synthesis \\| 2 \\| Combine scores into radar chart data \\| |
 | multi-dimensional-readiness-scan | 31 | numeric-table | \\| bottleneck-identification \\| 3 \\| Identify limiting dimensions \\| |
 | multi-dimensional-readiness-scan | 39 | numeric | - Each dimension should have at least 2 evidence items supporting the score |
 | multi-dimensional-readiness-scan | 41 | textual | ## Minimum Yield |
 | multi-dimensional-readiness-scan | 43 | numeric | - Complete radar with >= 5 dimensions scored |
-| constraint-drilling | 26 | numeric | 4. **Removal Path Design** — For constraints with removability > 0.3, design concrete steps to remove or mitigate them. Deploy `removal-path` SOP for each removable constraint. |
+| constraint-drilling | 26 | numeric | 4. **Removal Path Design** - For constraints with removability > 0.3, design concrete steps to remove or mitigate them. Deploy `removal-path` SOP for each removable constraint. |
 | constraint-drilling | 32 | numeric-table | \\| constraint-identification-sop \\| 1 \\| Discover constraints using structured methods \\| |
 | constraint-drilling | 33 | numeric-table | \\| constraint-classification \\| 2 \\| Categorize constraints by type \\| |
 | constraint-drilling | 34 | numeric-table | \\| removability-assessment \\| 3 \\| Score removability of each constraint \\| |
@@ -105,47 +105,47 @@ Append dimension scores/evidence, constraint IDs, bottleneck rationale, resource
 | constraint-drilling | 45 | textual | ## Minimum Yield |
 | constraint-drilling | 47 | numeric | - Classified constraint list with >= 3 constraints identified |
 | constraint-drilling | 49 | numeric | - Removal paths for all constraints scoring removability > 0.3 |
-| staged-gate-evaluation | 19 | textual | 1. **Gate Criteria Definition** — Define what must be true for a candidate to pass each gate. Deploy `gate-criteria-definition` SOP for each stage gate. |
+| staged-gate-evaluation | 19 | textual | 1. **Gate Criteria Definition** - Define what must be true for a candidate to pass each gate. Deploy `gate-criteria-definition` SOP for each stage gate. |
 | staged-gate-evaluation | 29 | numeric-table | \\| gate-criteria-definition \\| 1 \\| Define criteria and pass thresholds \\| |
 | staged-gate-evaluation | 30 | numeric-table | \\| gate-judgment \\| 2 \\| Evaluate and render verdict \\| |
 | staged-gate-evaluation | 31 | numeric-table | \\| feasibility-synthesis \\| 3 \\| Synthesize into final recommendation \\| |
 | staged-gate-evaluation | 35 | numeric | - Stage 1 should define >= 3 gates (e.g., concept feasibility, technical feasibility, implementation readiness) |
 | staged-gate-evaluation | 42 | textual | ## Minimum Yield |
 | obstacle-analysis | 24 | textual | \\| propose-mitigations \\| Propose evidence-backed mitigations \\| subagent (search **required**) \\| |
-| propose-mitigations | 29 | textual | **Required** — must use imported skills to validate feasibility: |
+| propose-mitigations | 29 | textual | **Required** - must use imported skills to validate feasibility: |
 | constraint-analysis | 44 | textual | ## HARD-GATE |
 | constraint-analysis | 46 | textual | Before entering this campaign, the following must be true: |
 | constraint-analysis | 78 | textual | ## Budget Gate |
-| constraint-analysis | 82 | numeric | \\| Subagent calls \\| ≤15 per strategy \\| Pause and report partial \\| |
-| constraint-analysis | 83 | numeric | \\| Wall-clock time \\| ≤30 min per strategy \\| Checkpoint and continue \\| |
-| constraint-analysis | 84 | numeric | \\| Context tokens \\| ≤80k per strategy \\| Summarize and spawn fresh \\| |
-| constraint-analysis | 85 | numeric | \\| Total campaign \\| ≤5 strategies \\| Skip if constraint already resolved \\| |
+| constraint-analysis | 82 | numeric | \\| Subagent calls \\| <=15 per strategy \\| Pause and report partial \\| |
+| constraint-analysis | 83 | numeric | \\| Wall-clock time \\| <=30 min per strategy \\| Checkpoint and continue \\| |
+| constraint-analysis | 84 | numeric | \\| Context tokens \\| <=80k per strategy \\| Summarize and spawn fresh \\| |
+| constraint-analysis | 85 | numeric | \\| Total campaign \\| <=5 strategies \\| Skip if constraint already resolved \\| |
 | constraint-analysis | 94 | textual | ## Minimum Yield |
 | constraint-analysis | 97 | numeric | - At least 1 binding constraint identified and characterized |
 | constraint-analysis | 100 | numeric | - No unresolved conflicts between top-3 constraints |
 | resource-constraint | 63 | textual | ## Budget Gate |
-| resource-constraint | 67 | numeric | \\| Subagent calls \\| ≤6 \\| 3 SOPs + synthesis \\| |
-| resource-constraint | 68 | numeric | \\| Iterations \\| ≤2 \\| Re-quantify if estimates change \\| |
-| resource-constraint | 69 | numeric | \\| Output size \\| ≤3000 tokens \\| Gap table + recommendation \\| |
+| resource-constraint | 67 | numeric | \\| Subagent calls \\| <=6 \\| 3 SOPs + synthesis \\| |
+| resource-constraint | 68 | numeric | \\| Iterations \\| <=2 \\| Re-quantify if estimates change \\| |
+| resource-constraint | 69 | numeric | \\| Output size \\| <=3000 tokens \\| Gap table + recommendation \\| |
 | assumption-constraint | 55 | numeric | - Top-5 fragile assumptions with validation paths |
 | assumption-constraint | 58 | textual | ## Budget Gate |
-| assumption-constraint | 62 | numeric | \\| Subagent calls \\| ≤5 \\| 2 SOPs + synthesis \\| |
-| assumption-constraint | 63 | numeric | \\| Iterations \\| ≤2 \\| Re-rank if new assumptions surface \\| |
-| assumption-constraint | 64 | numeric | \\| Output size \\| ≤3000 tokens \\| Ranked table + validation plan \\| |
+| assumption-constraint | 62 | numeric | \\| Subagent calls \\| <=5 \\| 2 SOPs + synthesis \\| |
+| assumption-constraint | 63 | numeric | \\| Iterations \\| <=2 \\| Re-rank if new assumptions surface \\| |
+| assumption-constraint | 64 | numeric | \\| Output size \\| <=3000 tokens \\| Ranked table + validation plan \\| |
 | dependency-constraint | 60 | textual | ## Budget Gate |
-| dependency-constraint | 64 | numeric | \\| Subagent calls \\| ≤5 \\| 2 SOPs + synthesis \\| |
-| dependency-constraint | 65 | numeric | \\| Iterations \\| ≤2 \\| Re-build if tasks change \\| |
-| dependency-constraint | 66 | numeric | \\| Output size \\| ≤3000 tokens \\| Graph summary + critical chain \\| |
+| dependency-constraint | 64 | numeric | \\| Subagent calls \\| <=5 \\| 2 SOPs + synthesis \\| |
+| dependency-constraint | 65 | numeric | \\| Iterations \\| <=2 \\| Re-build if tasks change \\| |
+| dependency-constraint | 66 | numeric | \\| Output size \\| <=3000 tokens \\| Graph summary + critical chain \\| |
 | conflict-resolution | 66 | textual | ## Budget Gate |
-| conflict-resolution | 70 | numeric | \\| Subagent calls \\| ≤8 \\| 3 SOPs + injection generation + validation \\| |
-| conflict-resolution | 71 | numeric | \\| Iterations \\| ≤3 \\| May need multiple injection attempts \\| |
-| conflict-resolution | 72 | numeric | \\| Output size \\| ≤3000 tokens \\| EC + injection + FRT summary \\| |
+| conflict-resolution | 70 | numeric | \\| Subagent calls \\| <=8 \\| 3 SOPs + injection generation + validation \\| |
+| conflict-resolution | 71 | numeric | \\| Iterations \\| <=3 \\| May need multiple injection attempts \\| |
+| conflict-resolution | 72 | numeric | \\| Output size \\| <=3000 tokens \\| EC + injection + FRT summary \\| |
 | constraint-tree-building | 25 | textual | - Minimum 5 UDEs for a meaningful tree |
 | constraint-tree-building | 42 | numeric | - **When to escalate**: If >10 UDEs found, prioritize top-5 by severity before tracing |
 | constraint-tree-building | 43 | textual | - **Quality gate**: Every causal link must have a BECAUSE clause (the underlying assumption) |
 | sensitivity-ranking | 25 | textual | - Express gaps in comparable units where possible |
 | sensitivity-ranking | 43 | numeric | - **When to skip**: If only 1-2 constraints exist, ranking is trivial |
-| sensitivity-ranking | 44 | numeric | - **Threshold**: Constraints with sensitivity score >2× the median are "binding" |
+| sensitivity-ranking | 44 | numeric | - **Threshold**: Constraints with sensitivity score >2* the median are "binding" |
 | constraint-breaking | 26 | textual | - If constraint is not a dilemma, reframe: "We need X" vs "We cannot have X because Y" |
 | constraint-breaking | 29 | numeric | - Input: all assumptions from the EC (typically 8-15 assumptions across 4 arrows) |
 | constraint-breaking | 35 | textual | - Injection must be: specific, actionable, within our control, and testable |
@@ -155,4 +155,4 @@ Append dimension scores/evidence, constraint IDs, bottleneck rationale, resource
 ## Context checkpoint / Delta notes
 
 Append dimension scores/evidence, constraint IDs, bottleneck rationale, resources, gates, and unresolved conflicts.
-| constraint-breaking | 54 | numeric | - **Success criterion**: At least one injection that resolves the conflict with ≤2 manageable side effects |
+| constraint-breaking | 54 | numeric | - **Success criterion**: At least one injection that resolves the conflict with <=2 manageable side effects |

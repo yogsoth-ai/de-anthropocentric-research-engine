@@ -57,3 +57,8 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 ## 2026-09-12 第 13 项门
 
 `validate_graph.py` 新增 v4 正文编码门：逐行拒绝 CJK 区字符、替换字符 `�` 与 UTF-8 BOM，错误包含文件和行号。定向检查 `--skip-threshold` 退出 0，当前 267 份正文零误报、零 BOM。
+## 2026-09-12 第 14 项门
+
+已与正文批量替换同批完成：267 份 `SKILL.md` 中的非 ASCII 数学/排版符号已改为 ASCII 等价物；校验器新增专门门禁，发现 `≥ ≤ ≠ ≈ ± × → ← — – “ ” ‘ ’ • …` 时按文件和行号报错，并提示使用 inline math 或 ASCII。frontmatter 不纳入正文符号门，BOM/CJK/替换字符门保持有效。
+
+验证：`python v4/scripts/validate_graph.py --skip-threshold` 与默认全量均退出 0。

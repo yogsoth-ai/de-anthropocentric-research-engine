@@ -54,7 +54,7 @@ Reject niche lists with no evidence, maturity claims based on publication volume
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| none retained | — | — | No source numeric/textual criterion retained after normalization. |
+| none retained | - | - | No source numeric/textual criterion retained after normalization. |
 
 ## Context checkpoint / Delta notes
 

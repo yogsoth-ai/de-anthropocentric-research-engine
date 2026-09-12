@@ -41,7 +41,7 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 
 ## Failure and counterexamples
 
-Reject “valid” when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
+Reject "valid" when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
 
 ## Provenance map
 

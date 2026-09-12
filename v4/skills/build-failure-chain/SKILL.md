@@ -5,7 +5,7 @@ description: "Build multi-level cause -> failure mode -> effect chains and ident
 
 # build-failure-chain
 ## Purpose
-Build cause → failure mode → effect chains and identify cascades and shared roots.
+Build cause -> failure mode -> effect chains and identify cascades and shared roots.
 ## Input contract
 ```yaml
 required: [functions_or_process, failure_modes, observed_effects]

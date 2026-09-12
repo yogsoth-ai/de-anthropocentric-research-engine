@@ -61,7 +61,7 @@ Reject when the universe is undefined, a gap is inferred from missing data rathe
 ## Verbatim source criteria excerpts
 
 - `gap-detection` line 27: Must analyze the full orphan list and report actionable gap descriptions.
-- `model-gap-detection` line 21: Check for edges with weight < 0.3 — these are weak links needing more evidence.
+- `model-gap-detection` line 21: Check for edges with weight < 0.3 - these are weak links needing more evidence.
 - `model-gap-detection` line 27: Must check both orphans and weak links and include actionable suggestions.
 
 ## Preserved source criteria ledger

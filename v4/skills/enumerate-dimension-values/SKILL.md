@@ -34,8 +34,8 @@ delta_fields: [findings, evidence_updates, decisions, uncertainties]
 
 ## Quality gates
 
-- Preserve the source representative enumeration of 3–5 values per parameter when that mode is selected.
-- Preserve experimental factor levels of 2–5 levels with an explicit spacing strategy.
+- Preserve the source representative enumeration of 3-5 values per parameter when that mode is selected.
+- Preserve experimental factor levels of 2-5 levels with an explicit spacing strategy.
 - Boundary/extreme mode must include the caller-defined boundary, pathological, distribution-shift, rare-combination, or scale-extreme cases; do not invent a fixed case count.
 
 ## Parameterization
@@ -64,5 +64,5 @@ Reject values outside declared domains, levels without units or semantics, or pa
 
 | source | physical line | kind | source criterion |
 |---|---:|---|---|
-| creative-ideation/value-enumeration | 11 | numeric | Enumerate 3–5 values per parameter, including extremes. |
-| experiment-execution/level-specification | 12 | numeric | Experimental factor levels use 2–5 levels and an explicit spacing strategy. |
+| creative-ideation/value-enumeration | 11 | numeric | Enumerate 3-5 values per parameter, including extremes. |
+| experiment-execution/level-specification | 12 | numeric | Experimental factor levels use 2-5 levels and an explicit spacing strategy. |

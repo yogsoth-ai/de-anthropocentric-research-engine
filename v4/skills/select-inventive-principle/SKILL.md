@@ -25,7 +25,7 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommend
 ## Quality gates
 - All 40 principles appear individually; every selected principle has a contradiction-specific rationale and every rejected principle has a recorded reason.
 ## Failure and counterexamples
-Reject “appropriate principle” summaries, selections without parameter mapping, or principle names detached from a proposed transformation.
+Reject "appropriate principle" summaries, selections without parameter mapping, or principle names detached from a proposed transformation.
 ## Provenance map
 - `triz/contradiction-matrix`: concept (no exact pool entry).
 - `inventive-principle-selection`: concept (no exact pool entry).

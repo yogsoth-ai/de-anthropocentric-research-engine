@@ -25,7 +25,7 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions]
 ## Quality gates
 - Exactly one operator is named per variant unless the caller explicitly records a composed sequence; all affected interfaces and constraints are visible.
 ## Failure and counterexamples
-Reject unnamed transformations, variants that silently break dependencies, and “remove” operations that leave the same function in disguise.
+Reject unnamed transformations, variants that silently break dependencies, and "remove" operations that leave the same function in disguise.
 ## Provenance map
 - `creative-ideation/scamper-transformation`: resolved.
 - `creative-ideation/function-redistribution`: resolved.

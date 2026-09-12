@@ -52,7 +52,7 @@ Do not infer unprotected status from an empty search result, a single family, or
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| none retained | — | — | No source numeric/textual criterion retained after normalization. |
+| none retained | - | - | No source numeric/textual criterion retained after normalization. |
 
 ## Context checkpoint / Delta notes
 

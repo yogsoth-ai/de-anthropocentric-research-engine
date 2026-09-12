@@ -23,8 +23,8 @@ produces: [weight_vector, consistency_diagnostics, preference_gaps, method_recor
 delta_fields: [decisions, uncertainties, open_questions]
 ```
 ## Quality gates
-- AHP-style elicitation accepts 2–9 dimensions only.
-- Weight sum is 1.0 within caller-declared tolerance (default ±0.001).
+- AHP-style elicitation accepts 2-9 dimensions only.
+- Weight sum is 1.0 within caller-declared tolerance (default +/-0.001).
 - Consistency ratio is reported; CR > 0.1 is flagged when applicable.
 ## Parameterization
 Caller supplies criterion schema, method, pairwise/preference scale, tolerance, and consistency policy.
@@ -36,6 +36,6 @@ Reject inapplicable dimensionality, negative weights, missing comparisons, or un
 ## Preserved source criteria ledger
 | source | criterion |
 |---|---|
-| hypothesis-formation/ahp-weighting | AHP applicability range is 2–9 dimensions. |
-| hypothesis-formation/ahp-weighting | Weight vector sums to 1.0 within ±0.001. |
+| hypothesis-formation/ahp-weighting | AHP applicability range is 2-9 dimensions. |
+| hypothesis-formation/ahp-weighting | Weight vector sums to 1.0 within +/-0.001. |
 | hypothesis-formation/ahp-weighting | CR > 0.1 is flagged. |

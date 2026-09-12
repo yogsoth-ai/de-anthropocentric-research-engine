@@ -43,7 +43,7 @@ The caller must provide item/subproblem schema, edge vocabulary, strength scale,
 
 ## Failure and counterexamples
 
-Reject self-justifying edges, cycles hidden by reordering, or “parallel” labels where shared prerequisites remain.
+Reject self-justifying edges, cycles hidden by reordering, or "parallel" labels where shared prerequisites remain.
 
 ## Provenance map
 
@@ -54,5 +54,5 @@ Reject self-justifying edges, cycles hidden by reordering, or “parallel” lab
 
 | source | physical line | kind | source criterion |
 |---|---:|---|---|
-| hypothesis-formation/dependency-mapping | 12 | numeric | Requires ≥2 subproblems; labels strong/weak dependencies, detects cycles, identifies critical path and parallel opportunities. |
+| hypothesis-formation/dependency-mapping | 12 | numeric | Requires >=2 subproblems; labels strong/weak dependencies, detects cycles, identifies critical path and parallel opportunities. |
 

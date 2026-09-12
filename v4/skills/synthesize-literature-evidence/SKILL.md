@@ -60,8 +60,8 @@ Do not call a synthesis systematic without an auditable screening flow, deep wit
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| scoping-survey | 4239 | numeric/textual | breadth/depth: 100 paper-overview / 20 paper-search / 0 paper-research; HARD-GATE each SOP row ≥90%. |
-| systematic-survey | 4246 | numeric/textual | 30 paper-research; HARD-GATE ≥90%. |
+| scoping-survey | 4239 | numeric/textual | breadth/depth: 100 paper-overview / 20 paper-search / 0 paper-research; HARD-GATE each SOP row >=90%. |
+| systematic-survey | 4246 | numeric/textual | 30 paper-research; HARD-GATE >=90%. |
 | deep-survey | 4253 | numeric | 50% deep-read rate (20/40). |
 | snowball-survey | 4330 | numeric/textual | backward/forward lineage, 67% deep-read, minimal web-search budget. |
 

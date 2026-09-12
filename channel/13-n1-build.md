@@ -255,6 +255,12 @@ Scope: five tactic execution protocols, seven pilot section orders, and twenty-t
 Synced the R5 threshold-fidelity revisions for `formulate-hypotheses`, `rank-candidates`, `establish-empirical-baseline`, and `design-experiment` into `v4/skills/`; architecture frontmatter retained.
 
 N2 full gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
+## Repair batch 30
+
+Synced the five completed R5 pilot bodies into `v4/skills/`: `formulate-hypotheses`, `rank-candidates`, `establish-empirical-baseline`, `design-experiment`, and `audit-benchmark-validity`.
+
+Full N2 gate: `python v4/scripts/validate_graph.py` → `OK: graph validation passed (0 warning(s))`, exit code 0.
 - N2 gate: `python v4/scripts/validate_graph.py --skip-threshold` → `OK: graph validation passed (0 warning(s))`, exit code 0
 
 A/B/C: 0/0/0 (N1 new)

@@ -48,4 +48,4 @@ Reject an edge that creates a cycle or conflates is-a with part-of.
 |---|---|
 | hierarchy-construction | Acyclic always; cycles are logical errors. |
 | hierarchy-construction | Multiple inheritance is allowed. |
-| hierarchy-construction | Depth ≤5 unless explicitly justified. |
+| hierarchy-construction | Depth <=5 unless explicitly justified. |

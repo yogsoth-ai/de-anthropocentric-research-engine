@@ -17,7 +17,7 @@ constraints: [operator and affected component must be named for every variant]
 2. Apply exactly named SCAMPER operators (`transform-component`): Substitute, Combine, Adapt, Modify (including magnify/minify variants), Put to another use, Eliminate, Reverse (including rearrange variants).
 3. Evaluate compatibility of each variant (`evaluate-compatibility`).
 4. Synthesize viable transformations (`synthesize-idea`).
-Deviation: operators may be selected or sequenced by the design question, but the record must state which of the seven operators were considered, applied, rejected, and why; “appropriate operator” is invalid.
+Deviation: operators may be selected or sequenced by the design question, but the record must state which of the seven operators were considered, applied, rejected, and why; "appropriate operator" is invalid.
 ## Output contract
 ```yaml
 produces: [component_decomposition, operator_variants, compatibility_report, transformed_designs]

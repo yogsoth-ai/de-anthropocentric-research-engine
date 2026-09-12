@@ -27,6 +27,7 @@ GENERIC = re.compile(r"\b(?:source_state|task_object|input_object)\b", re.I)
 SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
 PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
 CJK_OR_REPLACEMENT = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002fa1f\ufffd]")
+NON_ASCII_TYPO = re.compile(r"[≥≤≠≈±×→←—–“”‘’•…]")
 
 
 class Checker:
@@ -118,9 +119,15 @@ def check_text_encoding(path: Path, checker: Checker) -> None:
     data = path.read_bytes()
     if data.startswith(b"\xef\xbb\xbf"):
         checker.error(path, 1, "UTF-8 BOM is not allowed")
-    for no, line in enumerate(data.decode("utf-8").splitlines(), 1):
+    lines = data.decode("utf-8").splitlines()
+    fm_end = 0
+    if lines and lines[0].strip() == "---":
+        fm_end = next((i for i, line in enumerate(lines[1:], 1) if line.strip() == "---"), 0)
+    for no, line in enumerate(lines[fm_end + 1:], fm_end + 2):
         if CJK_OR_REPLACEMENT.search(line):
             checker.error(path, no, "v4正文 contains CJK or replacement character")
+        if NON_ASCII_TYPO.search(line):
+            checker.error(path, no, "non-ASCII mathematical/typographic symbol; use inline math ($\\ge$, $\\le$, $\\pm$, $\\times$, $\\to$) or ASCII equivalent")
 
 
 def run_r5_against_v4() -> tuple[int, str, str]:

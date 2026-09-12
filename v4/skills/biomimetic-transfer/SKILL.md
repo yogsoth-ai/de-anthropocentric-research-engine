@@ -35,6 +35,6 @@ Reject organism-by-appearance analogies, transfers without mechanism, and propos
 - `creative-ideation/biomimicry`, `biologize-and-discover`, `biotriz`, `biological-analogy`: resolved/concept only when exact v3 node is found.
 - Status: `creative-ideation/biomimicry`, `biologize-and-discover` resolved; `biotriz`, `biological-analogy` concept.
 ## Preserved source criteria ledger
-- Preserve biologize → discover → extract strategy → transfer workflow and BioTRIZ branching.
+- Preserve biologize -> discover -> extract strategy -> transfer workflow and BioTRIZ branching.
 ## Context checkpoint / Delta notes
 Append function translation, analog evidence, mechanism, transfer assumptions, and compatibility failures.

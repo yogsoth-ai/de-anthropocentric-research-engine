@@ -31,6 +31,6 @@ Do not label a region white space when it is merely unsearched, incomparable, or
 - `systematic-enumeration`, `benchmark-sweep`, `coverage-analysis`, `white-space-identification`, `benchmark-inventory`, `coverage-gap-detection`, `white-space-detection`: resolved/concept by exact lookup.
 - Status: all except `benchmark-inventory` resolved; `benchmark-inventory` concept (only package-prefixed variant found).
 ## Preserved source criteria ledger
-- Preserve inventory → coverage crossing → gap detection → candidate synthesis.
+- Preserve inventory -> coverage crossing -> gap detection -> candidate synthesis.
 ## Context checkpoint / Delta notes
 Append inventory additions, occupied cells, gap definitions, exclusions, and generated candidates.

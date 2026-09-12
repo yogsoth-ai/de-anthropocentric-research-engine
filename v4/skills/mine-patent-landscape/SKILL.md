@@ -56,7 +56,7 @@ Do not count family members as independent inventions, equate assignee name vari
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| none retained | — | — | No source numeric/textual criterion retained after normalization. |
+| none retained | - | - | No source numeric/textual criterion retained after normalization. |
 
 ## Context checkpoint / Delta notes
 

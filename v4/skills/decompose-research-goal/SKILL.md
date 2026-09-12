@@ -57,7 +57,7 @@ Reject trees with circular dependencies, vague leaves, or branches that cannot b
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| none retained | — | — | No source numeric/textual criterion retained after normalization. |
+| none retained | - | - | No source numeric/textual criterion retained after normalization. |
 
 ## Context checkpoint / Delta notes
 

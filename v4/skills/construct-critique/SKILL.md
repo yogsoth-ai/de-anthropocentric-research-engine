@@ -55,5 +55,5 @@ Reject attacks that merely restate disagreement without a reason or evidence, an
 
 | source | physical line | kind | source criterion |
 |---|---:|---|---|
-| convergence/critic-attack | 27 | numeric/gate | Must produce ≥3 attacks, each with HIGH/MEDIUM/LOW severity and evidence, including at least 1 attack against the strongest point. |
+| convergence/critic-attack | 27 | numeric/gate | Must produce >=3 attacks, each with HIGH/MEDIUM/LOW severity and evidence, including at least 1 attack against the strongest point. |
 

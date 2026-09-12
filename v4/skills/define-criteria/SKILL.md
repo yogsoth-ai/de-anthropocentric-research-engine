@@ -48,7 +48,7 @@ Reject vague criteria lacking an observable measurement or criteria that cannot 
 
 | source | criterion |
 |---|---|
-| criterion-definition | Criteria count is between 3–12. |
+| criterion-definition | Criteria count is between 3-12. |
 | criterion-definition | Each criterion includes name, definition, unit of measurement, and direction (higher-is-better/lower-is-better). |
 | convergence-scoring-matrix-construction | Normalization method matches the aggregation method. |
-| convergence-scoring-matrix-construction | Sensitivity testing perturbs at least 3 weight parameters by ±10%. |
+| convergence-scoring-matrix-construction | Sensitivity testing perturbs at least 3 weight parameters by +/-10%. |

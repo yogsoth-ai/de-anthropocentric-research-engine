@@ -38,7 +38,7 @@ delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, unce
 
 ## Failure and counterexamples
 
-Do not accept “understand the topic” as a top goal without an outcome or decision target.
+Do not accept "understand the topic" as a top goal without an outcome or decision target.
 
 ## Provenance map
 

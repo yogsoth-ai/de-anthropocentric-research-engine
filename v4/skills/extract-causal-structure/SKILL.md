@@ -20,7 +20,7 @@ constraints: [preserve direction and scope; distinguish observed association fro
 ## Procedure
 
 1. Identify candidate cause, mediator, effect, conditions, and temporal order.
-2. Extract X→mediator→Y chains and direct X→Y claims at the requested granularity.
+2. Extract X->mediator->Y chains and direct X->Y claims at the requested granularity.
 3. Record assumptions, boundary conditions, and evidence for each edge.
 4. Assemble the causal graph and flag unsupported or ambiguous links.
 
@@ -57,5 +57,5 @@ Reject chains with missing direction, no stated mechanism, or evidence that supp
 
 | source | physical line | kind | source criterion |
 |---|---:|---|---|
-| hypothesis-formation/mechanism-extraction | 22 | numeric | Produce X→mediator→Y mechanism chains, at least 1 per theory and at least 2 total where applicable. |
+| hypothesis-formation/mechanism-extraction | 22 | numeric | Produce X->mediator->Y mechanism chains, at least 1 per theory and at least 2 total where applicable. |
 

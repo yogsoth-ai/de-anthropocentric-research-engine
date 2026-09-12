@@ -36,7 +36,7 @@ delta_fields: [findings, evidence_updates, decisions, uncertainties]
 
 - `Parameterization` is complete before scoring; the SOP does not own a shared rubric catalogue.
 - Every dimension has a score, evidence reference, and explicit rationale; missing values remain visible.
-- Preserve caller-supplied fixed scales and weights exactly. Source rubrics include importance 1–5 with 40%/30%/30% weights, feasibility 1–5 with four equal dimensions and bottlenecks at score ≤2, impact 1–5 with two equal dimensions, strength 0–10 bands, and obstacle overcomability classes 1 week/1 month/6 months/fundamental.
+- Preserve caller-supplied fixed scales and weights exactly. Source rubrics include importance 1-5 with 40%/30%/30% weights, feasibility 1-5 with four equal dimensions and bottlenecks at score <=2, impact 1-5 with two equal dimensions, strength 0-10 bands, and obstacle overcomability classes 1 week/1 month/6 months/fundamental.
 - For relative evidence gates, declare universe, numerator, denominator, batch increment, stopping reason, source references, direction, and threshold rationale; otherwise do not claim completion.
 
 ## Parameterization
@@ -70,12 +70,12 @@ Reject scoring when the object schema or rubric is incomplete, a dimension lacks
 - `importance-scoring` lines 22-24: Input must be a complete GapRecord; composite score lies in [1, 5]; each sub-dimension has at least 1 sentence of rationale.
 - `importance-scoring` line 33: Composite score is weighted 40%/30%/30% across domain impact, theoretical contribution, and practical value, to one decimal place.
 - `feasibility-scoring` lines 22-24: Input status is complete; composite score is [1, 5]; bottlenecks list exists.
-- `feasibility-scoring` line 35: Four dimensions are equal-weighted; dimensions with score ≤ 2 are bottlenecks.
+- `feasibility-scoring` line 35: Four dimensions are equal-weighted; dimensions with score <= 2 are bottlenecks.
 - `impact-scoring` lines 22-24: Input status is complete; composite score is [1, 5]; beneficiaries list has at least 1 beneficiary.
 - `impact-scoring` lines 32-33: Breadth and depth are scored on 1-5 dimensions.
 - `alternative-scoring` line 27: Scoring matrix has no empty values, each score has a one-sentence rationale, and quantitative criteria use actual data.
 - `strength-scoring` lines 24-28: Strength bands are 0-2, 3-4, 5-6, 7-8, and 9-10; explicit reasoning is mandatory.
-- `strength-assessment` line 19: Must score ≥3 claims per invocation.
+- `strength-assessment` line 19: Must score >=3 claims per invocation.
 - `assess-obstacle-severity` line 33: Overcomability is 1-week learnable / 1-month effort / 6-month investment / fundamental blocker.
 
 ## Preserved source criteria ledger
@@ -83,9 +83,9 @@ Reject scoring when the object schema or rubric is incomplete, a dimension lacks
 | source | physical line | kind | source criterion |
 |---|---:|---|---|
 | hypothesis-formation/importance-scoring | 14 | numeric/rubric | Input must be a GapRecord with status: complete; output composite score [1, 5]; each sub-dimension has at least 1 sentence of rationale. |
-| hypothesis-formation/importance-scoring | 25 | numeric/rubric | Domain impact, theoretical contribution, and practical value are scored 1–5; weighted 40%/30%/30%, to one decimal place. |
-| hypothesis-formation/feasibility-scoring | 14 | numeric/rubric | Composite score is [1, 5]; bottlenecks exist; four dimensions are equal-weighted; dimensions with score ≤2 are bottlenecks. |
-| hypothesis-formation/impact-scoring | 14 | numeric/rubric | Composite score is [1, 5]; beneficiaries list is non-empty; breadth and depth are equal-weighted 1–5 dimensions. |
+| hypothesis-formation/importance-scoring | 25 | numeric/rubric | Domain impact, theoretical contribution, and practical value are scored 1-5; weighted 40%/30%/30%, to one decimal place. |
+| hypothesis-formation/feasibility-scoring | 14 | numeric/rubric | Composite score is [1, 5]; bottlenecks exist; four dimensions are equal-weighted; dimensions with score <=2 are bottlenecks. |
+| hypothesis-formation/impact-scoring | 14 | numeric/rubric | Composite score is [1, 5]; beneficiaries list is non-empty; breadth and depth are equal-weighted 1-5 dimensions. |
 | convergence/alternative-scoring | 22 | gate | No empty score cells; every cell has one sentence of rationale; quantitative criteria use real data. |
-| knowledge-structuring/strength-scoring | 17 | numeric/rubric | Strength score is 0–10 with bands 0–2, 3–4, 5–6, 7–8, 9–10; explicit reasoning is mandatory. |
+| knowledge-structuring/strength-scoring | 17 | numeric/rubric | Strength score is 0-10 with bands 0-2, 3-4, 5-6, 7-8, 9-10; explicit reasoning is mandatory. |
 | north-star-crystallization/assess-obstacle-severity | 12 | rubric | Overcomability classes are 1 week, 1 month, 6 months, or fundamental; include time cost and workaround status. |
