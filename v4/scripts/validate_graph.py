@@ -26,6 +26,7 @@ DELTA = {"findings", "evidence_updates", "hypothesis_updates", "assumption_updat
 GENERIC = re.compile(r"\b(?:source_state|task_object|input_object)\b", re.I)
 SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
 PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
+CJK_OR_REPLACEMENT = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002fa1f\ufffd]")
 
 
 class Checker:
@@ -113,6 +114,15 @@ def provenance_variants(value: str) -> set[str]:
     return {x for x in variants if x}
 
 
+def check_text_encoding(path: Path, checker: Checker) -> None:
+    data = path.read_bytes()
+    if data.startswith(b"\xef\xbb\xbf"):
+        checker.error(path, 1, "UTF-8 BOM is not allowed")
+    for no, line in enumerate(data.decode("utf-8").splitlines(), 1):
+        if CJK_OR_REPLACEMENT.search(line):
+            checker.error(path, no, "v4正文 contains CJK or replacement character")
+
+
 def run_r5_against_v4() -> tuple[int, str, str]:
     """Run unchanged R5 against its own ledgers, adding only missing v4 bodies."""
     with tempfile.TemporaryDirectory(prefix="v4-r5-") as temp_name:
@@ -189,6 +199,7 @@ def main() -> int:
     for node_id, node in by_id.items():
         path = SKILLS / node_id / "SKILL.md"
         if not path.exists(): continue
+        check_text_encoding(path, c)
         lines, sections = lines_and_sections(path)
         fm, fm_end = frontmatter(lines)
         if set(fm) != {"name", "description"}:

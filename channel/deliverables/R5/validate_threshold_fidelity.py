@@ -75,11 +75,12 @@ def criteria(src):
     return out
 
 def body_text(path):
+    """Read the complete authored file; threshold checks include Failure sections."""
     text = path.read_text(encoding="utf-8")
     if text.startswith("---"):
         parts = text.split("---", 2)
         text = parts[2] if len(parts) == 3 else text
-    return text.split("<!-- BEGIN available-tables (generated) -->", 1)[0]
+    return text
 
 def section(text, heading, next_heading=None):
     m = re.search(rf"^## {re.escape(heading)}\s*$", text, re.M)

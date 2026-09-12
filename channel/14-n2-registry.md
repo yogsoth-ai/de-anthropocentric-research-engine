@@ -54,3 +54,6 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 ## 2026-09-12 通过标准回退
 
 按 build-gate-02 裁定，R5 门重新以其退出码为唯一判据。`full-node-coverage=267/267` 仅证明映射覆盖完整，不再替代 R5 退出码。当前临时映射下 R5 返回 0，默认全量校验返回 0。
+## 2026-09-12 第 13 项门
+
+`validate_graph.py` 新增 v4 正文编码门：逐行拒绝 CJK 区字符、替换字符 `�` 与 UTF-8 BOM，错误包含文件和行号。定向检查 `--skip-threshold` 退出 0，当前 267 份正文零误报、零 BOM。
