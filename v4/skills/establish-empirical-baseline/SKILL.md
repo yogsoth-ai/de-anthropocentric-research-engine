@@ -3,7 +3,7 @@ name: establish-empirical-baseline
 description: "Establish a fair empirical baseline by inventorying methods, extracting comparable performance, normalizing conditions/compute, checking discrepancies, and estimating progress/headroom."
 ---
 
-﻿# establish-empirical-baseline
+# establish-empirical-baseline
 
 ## Purpose
 
@@ -72,10 +72,10 @@ Append method IDs, normalized records, excluded records with reasons, discrepanc
 | method-inventory | 25 | numeric-table | \\| Papers consulted \\| 20 \\| 40 \\| |
 | method-inventory | 30 | textual | <HARD-GATE> |
 | method-inventory | 33 | numeric-table | \\| Methods discovered \\| 0 \\| 50 \\| BLOCKED \\| |
-| method-inventory | 34 | numeric-table | \\| Web searches used \\| 0 \\| 60 \\| 鈥?\\| |
-| method-inventory | 35 | numeric-table | \\| Papers consulted \\| 0 \\| 40 \\| 鈥?\\| |
-| method-inventory | 36 | numeric-table | \\| Leaderboard sources \\| 0 \\| 5 \\| 鈥?\\| |
-| method-inventory | 37 | numeric-table | \\| Citation chains traced \\| 0 \\| 10 \\| 鈥?\\| |
+| method-inventory | 34 | numeric-table | \\| Web searches used \\| 0 \\| 60 \\| — \\| |
+| method-inventory | 35 | numeric-table | \\| Papers consulted \\| 0 \\| 40 \\| — \\| |
+| method-inventory | 36 | numeric-table | \\| Leaderboard sources \\| 0 \\| 5 \\| — \\| |
+| method-inventory | 37 | numeric-table | \\| Citation chains traced \\| 0 \\| 10 \\| — \\| |
 | method-inventory | 38 | textual | </HARD-GATE> |
 | method-inventory | 41 | numeric | Cannot exit until methods_discovered >= 40 (80% of target). |
 | performance-extraction | 18 | textual | Extract structured performance data from papers, leaderboards, and reproducibility studies. Each data point is a (Task, Dataset, Metric, Score, Conditions) tuple with full provenance. Prioritizes primary sources (original papers) but cross-references against leaderboards and third-party reproductions. |
@@ -86,10 +86,10 @@ Append method IDs, normalized records, excluded records with reasons, discrepanc
 | performance-extraction | 32 | textual | <HARD-GATE> |
 | performance-extraction | 35 | numeric-table | \\| Methods covered \\| 0 \\| 30 \\| BLOCKED \\| |
 | performance-extraction | 36 | numeric-table | \\| Data points extracted \\| 0 \\| 150 \\| BLOCKED \\| |
-| performance-extraction | 37 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| 鈥?\\| |
-| performance-extraction | 38 | numeric-table | \\| Papers read \\| 0 \\| 30 \\| 鈥?\\| |
-| performance-extraction | 39 | numeric-table | \\| Datasets covered \\| 0 \\| 5 \\| 鈥?\\| |
-| performance-extraction | 40 | numeric-table | \\| Metrics tracked \\| 0 \\| 3 \\| 鈥?\\| |
+| performance-extraction | 37 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| — \\| |
+| performance-extraction | 38 | numeric-table | \\| Papers read \\| 0 \\| 30 \\| — \\| |
+| performance-extraction | 39 | numeric-table | \\| Datasets covered \\| 0 \\| 5 \\| — \\| |
+| performance-extraction | 40 | numeric-table | \\| Metrics tracked \\| 0 \\| 3 \\| — \\| |
 | performance-extraction | 41 | textual | </HARD-GATE> |
 | performance-extraction | 44 | numeric | Cannot exit until data_points >= 120 (80% of target). |
 | condition-standardization | 25 | numeric-table | \\| Methods analyzed \\| 15 \\| 20 \\| |
@@ -99,9 +99,9 @@ Append method IDs, normalized records, excluded records with reasons, discrepanc
 | condition-standardization | 33 | textual | <HARD-GATE> |
 | condition-standardization | 36 | numeric-table | \\| Methods analyzed \\| 0 \\| 20 \\| BLOCKED \\| |
 | condition-standardization | 37 | numeric-table | \\| Data points standardized \\| 0 \\| 60 \\| BLOCKED \\| |
-| condition-standardization | 38 | numeric-table | \\| Condition dimensions \\| 0 \\| 10 \\| 鈥?\\| |
-| condition-standardization | 39 | numeric-table | \\| Normalization rules defined \\| 0 \\| 5 \\| 鈥?\\| |
-| condition-standardization | 40 | numeric-table | \\| Fair comparison sets \\| 0 \\| 3 \\| 鈥?\\| |
+| condition-standardization | 38 | numeric-table | \\| Condition dimensions \\| 0 \\| 10 \\| — \\| |
+| condition-standardization | 39 | numeric-table | \\| Normalization rules defined \\| 0 \\| 5 \\| — \\| |
+| condition-standardization | 40 | numeric-table | \\| Fair comparison sets \\| 0 \\| 3 \\| — \\| |
 | condition-standardization | 41 | textual | </HARD-GATE> |
 | condition-standardization | 44 | numeric | Cannot exit until data_points_standardized >= 48 (80% of target). |
 | condition-standardization | 60 | textual | 3. Group methods by comparable condition sets |
@@ -113,12 +113,12 @@ Append method IDs, normalized records, excluded records with reasons, discrepanc
 | discrepancy-analysis | 32 | textual | <HARD-GATE> |
 | discrepancy-analysis | 35 | numeric-table | \\| Methods analyzed \\| 0 \\| 15 \\| BLOCKED \\| |
 | discrepancy-analysis | 36 | numeric-table | \\| Score pairs compared \\| 0 \\| 45 \\| BLOCKED \\| |
-| discrepancy-analysis | 37 | numeric-table | \\| Discrepancies flagged \\| 0 \\| 鈥?\\| 鈥?\\| |
-| discrepancy-analysis | 38 | numeric-table | \\| Reproduction studies found \\| 0 \\| 10 \\| 鈥?\\| |
-| discrepancy-analysis | 39 | numeric-table | \\| Reliability ratings assigned \\| 0 \\| 15 \\| 鈥?\\| |
+| discrepancy-analysis | 37 | numeric-table | \\| Discrepancies flagged \\| 0 \\| — \\| — \\| |
+| discrepancy-analysis | 38 | numeric-table | \\| Reproduction studies found \\| 0 \\| 10 \\| — \\| |
+| discrepancy-analysis | 39 | numeric-table | \\| Reliability ratings assigned \\| 0 \\| 15 \\| — \\| |
 | discrepancy-analysis | 40 | textual | </HARD-GATE> |
 | discrepancy-analysis | 43 | numeric | Cannot exit until score_pairs_compared >= 36 (80% of target). |
-| discrepancy-analysis | 52 | textual | - **reproducibility-checklist-audit** 鈥?Assess paper reproducibility completeness |
+| discrepancy-analysis | 52 | textual | - **reproducibility-checklist-audit** — Assess paper reproducibility completeness |
 | discrepancy-analysis | 59 | textual | 4. Apply reproducibility-checklist-audit to papers with large discrepancies |
 | discrepancy-analysis | 85 | textual | "reproducibility_checklist_score": 0, |
 | progress-quantification | 26 | numeric-table | \\| Methods tracked \\| 20 \\| 30 \\| |
@@ -128,10 +128,10 @@ Append method IDs, normalized records, excluded records with reasons, discrepanc
 | progress-quantification | 34 | textual | <HARD-GATE> |
 | progress-quantification | 37 | numeric-table | \\| Methods tracked \\| 0 \\| 30 \\| BLOCKED \\| |
 | progress-quantification | 38 | numeric-table | \\| Historical data points \\| 0 \\| 100 \\| BLOCKED \\| |
-| progress-quantification | 39 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| 鈥?\\| |
-| progress-quantification | 40 | numeric-table | \\| Progress curves built \\| 0 \\| 3 \\| 鈥?\\| |
-| progress-quantification | 41 | numeric-table | \\| Headroom estimates \\| 0 \\| 3 \\| 鈥?\\| |
-| progress-quantification | 42 | numeric-table | \\| Inflection points identified \\| 0 \\| 2 \\| 鈥?\\| |
+| progress-quantification | 39 | numeric-table | \\| Web searches used \\| 0 \\| 40 \\| — \\| |
+| progress-quantification | 40 | numeric-table | \\| Progress curves built \\| 0 \\| 3 \\| — \\| |
+| progress-quantification | 41 | numeric-table | \\| Headroom estimates \\| 0 \\| 3 \\| — \\| |
+| progress-quantification | 42 | numeric-table | \\| Inflection points identified \\| 0 \\| 2 \\| — \\| |
 | progress-quantification | 43 | textual | </HARD-GATE> |
 | progress-quantification | 46 | numeric | Cannot exit until historical_data_points >= 80 (80% of target). |
 | leaderboard-harvesting | 43 | numeric | - Flag discrepancies > 1 standard deviation |

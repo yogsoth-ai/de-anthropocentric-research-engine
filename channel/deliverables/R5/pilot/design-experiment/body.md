@@ -1,4 +1,4 @@
-﻿# design-experiment
+# design-experiment
 
 ## Purpose
 
@@ -73,13 +73,13 @@ Record hypothesis ID, design mode, factors/levels, analysis plan, budget, prereg
 | ablation-design | 50 | numeric | \\| Combinatorial (full) \\| 3-4 \\| 2^N \\| Small systems, need complete picture \\| |
 | ablation-design | 51 | numeric | \\| Conditional \\| 3-6 \\| N * conditions \\| Context-dependent contributions \\| |
 | comparison-design | 34 | textual | - **Fair Comparison Protocol** (Bouthillier 2021): Control all confounds, same compute budget, same tuning effort. |
-| comparison-design | 47 | textual | 6. **reproducibility-protocol** (tactic) 鈫?Ensure all results are reproducible |
+| comparison-design | 47 | textual | 6. **reproducibility-protocol** (tactic) → Ensure all results are reproducible |
 | comparison-design | 50 | textual | ## Budget Gate |
 | comparison-design | 54 | numeric-table | \\| Minimal \\| 1 SOTA + 1 simple \\| 1 \\| 3 \\| 6 \\| |
 | comparison-design | 55 | numeric | \\| Standard \\| 2-3 baselines \\| 2-3 \\| 5 \\| 30-45 \\| |
 | comparison-design | 56 | numeric | \\| Comprehensive \\| 4+ baselines \\| 3-5 \\| 5-10 \\| 100+ \\| |
 | comparison-design | 57 | numeric-table | \\| Publication-ready \\| All relevant \\| 5+ \\| 10+ \\| 200+ \\| |
-| scaling-design | 43 | numeric | 2. **level-specification** 鈫?Define scale points (geometric progression, typically 4-8 points) |
+| scaling-design | 43 | numeric | 2. **level-specification** → Define scale points (geometric progression, typically 4-8 points) |
 | scaling-design | 49 | textual | ## Budget Gate |
 | scaling-design | 53 | numeric | \\| Data scaling \\| 4-6 \\| 3 \\| 12-18 \\| Low (same model, subset data) \\| |
 | scaling-design | 54 | numeric | \\| Model scaling \\| 4-8 \\| 2-3 \\| 8-24 \\| High (different model sizes) \\| |
@@ -99,10 +99,10 @@ Record hypothesis ID, design mode, factors/levels, analysis plan, budget, prereg
 | statistical-method-selection | 36 | numeric-table | \\| Want probability of superiority \\| Bayesian comparison (Benavoli 2017) \\| |
 | statistical-method-selection | 48 | textual | - Is the significance threshold pre-registered (not chosen post-hoc)? |
 | reproducibility-protocol | 17 | textual | # Tactic: Reproducibility Protocol |
-| reproducibility-protocol | 21 | textual | 1. **Assess Reproducibility Requirements** 鈫?Determine level needed (exact, statistical, conceptual) |
-| reproducibility-protocol | 22 | textual | 2. **seed-protocol-design** 鈫?Design random seed strategy for all stochastic components |
-| reproducibility-protocol | 24 | textual | 4. **Define Verification Plan** 鈫?How to confirm reproducibility (re-run subset, cross-machine test) |
-| reproducibility-protocol | 25 | textual | 5. **Document Non-Determinism** 鈫?Identify and document unavoidable sources of variance |
+| reproducibility-protocol | 21 | textual | 1. **Assess Reproducibility Requirements** → Determine level needed (exact, statistical, conceptual) |
+| reproducibility-protocol | 22 | textual | 2. **seed-protocol-design** → Design random seed strategy for all stochastic components |
+| reproducibility-protocol | 24 | textual | 4. **Define Verification Plan** → How to confirm reproducibility (re-run subset, cross-machine test) |
+| reproducibility-protocol | 25 | textual | 5. **Document Non-Determinism** → Identify and document unavoidable sources of variance |
 | reproducibility-protocol | 29 | textual | \\| Reproducibility Level \\| Requirement \\| When to Use \\| |
 | reproducibility-protocol | 37 | textual | - Are all random seeds documented and controllable? |
 | reproducibility-protocol | 38 | textual | - Is the full software environment captured (versions, dependencies)? |

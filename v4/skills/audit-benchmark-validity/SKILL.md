@@ -3,7 +3,7 @@ name: audit-benchmark-validity
 description: "Treat benchmarks as scientific measurement instruments: audit construct validity, contamination, metric pathology, coverage, leaderboard dynamics, and protocol drift."
 ---
 
-﻿# audit-benchmark-validity
+# audit-benchmark-validity
 
 ## Purpose
 
@@ -41,7 +41,7 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 
 ## Failure and counterexamples
 
-Reject 鈥渧alid鈥?when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
+Reject “valid” when benchmark artifact probes are absent, contamination is unknown but ignored, or leaderboard gains cannot be separated from protocol drift. A high score is not evidence of construct validity by itself.
 
 ## Provenance map
 
