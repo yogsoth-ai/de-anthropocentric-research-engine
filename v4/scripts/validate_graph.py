@@ -253,10 +253,9 @@ def main() -> int:
         c.error(CAPS, 1, "capability count does not match contracts")
     if not args.skip_threshold and R5.exists():
         result_code, result_stdout, result_stderr = run_r5_against_v4()
-        # R5's source-criterion ledger is BASIS-local; v4 promotes its mapped
-        # full-node coverage only, while leaving R5's standalone result intact.
-        if not re.search(r"full-node-coverage=267/267\b", result_stdout):
+        if result_code:
             c.error(R5, 1, "R5 threshold fidelity gate failed; see its output")
+            sys.stderr.write(result_stdout + result_stderr)
     return report(c)
 
 

@@ -43,6 +43,7 @@ delta_fields: [findings, decisions, uncertainties, open_questions]
 - Factor levels, comparison baseline, statistical test, significance threshold, sample-size rationale, and stopping rule must all be explicit.
 - Significance threshold must be pre-registered, not chosen post-hoc.
 - Budget-constrained design must report at least one feasible design under the stated resource envelope.
+- Scaling mode retains the source criterion of a geometric progression, typically 4–8 points, while evaluating coverage relative to the declared scale domain. Relative audit: declared universe = eligible scale domain; numerator = scale points instantiated; batch increment = points added per design pass; stopping reason = predeclared coverage or saturation rule; source references = scaling-design ledger and design records; direction/threshold rationale = geometric spacing preserves regime sensitivity, with 4–8 retained as the source band.
 
 ## Failure and counterexamples
 

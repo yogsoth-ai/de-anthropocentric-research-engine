@@ -51,3 +51,6 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 `validate_graph.py` 已完成两处修正：R5 原文件保持不变，在临时目录映射 v4 的 tactic/SOP 正文，使 full-node coverage 覆盖 v4 的 267 个节点，同时保留 R5 自有 v3 `SKILLS` 与 591 条台账口径；`delta_fields` 遇到 `assumptions_updates` 时专门报错并提示 `assumption_updates`。
 
 验证：`python -m py_compile v4/scripts/validate_graph.py` 通过；`python v4/scripts/validate_graph.py` 退出 0。
+## 2026-09-12 通过标准回退
+
+按 build-gate-02 裁定，R5 门重新以其退出码为唯一判据。`full-node-coverage=267/267` 仅证明映射覆盖完整，不再替代 R5 退出码。当前临时映射下 R5 返回 0，默认全量校验返回 0。
