@@ -6,7 +6,9 @@ from pathlib import Path
 ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
 SKILLS = Path(r"D:\YOGSOTH-AI\de-anthropocentric-research-engine\skills")
 PILOT = Path(__file__).parent / "pilot"
+NODES = Path(__file__).parent / "nodes"
 IDS = ["synthesize-meta-analytic-evidence", "design-experiment", "formulate-hypotheses", "analyze-constraints-readiness", "rank-candidates", "establish-empirical-baseline", "audit-benchmark-validity"]
+BASIS_IDS = ["assess-sensitivity", "evaluate-compatibility", "score-object", "surface-assumptions", "detect-coverage-gap", "analyze-temporal-trajectory", "enumerate-dimension-values", "identify-variables", "apply-perturbation", "canonicalize-entity"]
 
 # Shared semantics: each named pattern is used for both counting and ledger generation.
 PATTERNS = [
@@ -42,12 +44,16 @@ RELATIVE_REQUIRED_PATTERNS = {
     "rank-candidates": _ALL_RELATIVE_FIELDS,
     "establish-empirical-baseline": _ALL_RELATIVE_FIELDS,
     "audit-benchmark-validity": _ALL_RELATIVE_FIELDS,
+    "detect-coverage-gap": _ALL_RELATIVE_FIELDS,
     # This node has a dimension/evidence coverage gate, but not a corpus
     # saturation gate; require only the fields its gate declares.
     "analyze-constraints-readiness": {
         "coverage-ratio", "audit-numerator-denominator", "batch-increment", "stopping-reason",
     },
 }
+# BASIS SOPs without an evidence-coverage gate intentionally remain
+# not-applicable for corpus-relative fields; their parameterized scales are
+# checked in the source ledger and contract sections instead.
 
 def source_files():
     return {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
@@ -83,7 +89,8 @@ def main():
     graph = json.loads(ARCH.read_text(encoding="utf-8"))
     by_name, missing, relative_missing, total = source_files(), [], [], 0
     for node_id in IDS:
-        node = next(n for n in graph["tactics"] if n["id"] == node_id)
+        pool = graph["tactics"]
+        node = next(n for n in pool if n["id"] == node_id)
         body, node_total, node_missing = body_text(PILOT / node_id / "body.md"), 0, 0
         for old in node.get("old", []):
             name = old.rsplit("/", 1)[-1].split(" [", 1)[0].strip()
@@ -95,6 +102,31 @@ def main():
                 if not contains(body, line):
                     node_missing += 1; missing.append(f"{node_id}: {src}:{line_no}: {line}")
         print(f"{node_id}: source criteria={node_total}, missing={node_missing}")
+        relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
+        print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
+        required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())
+        absent = [name for name, rx in RELATIVE_PATTERNS if name in required and not rx.search(body)]
+        print(f"{node_id}: required-relative-fields={len(required) - len(absent)}/{len(required)}" if required else f"{node_id}: required-relative-fields=not-applicable")
+        if absent:
+            relative_missing.extend(f"{node_id}: {name}" for name in absent)
+            print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
+    for node_id in BASIS_IDS:
+        node = next(n for n in graph["sops"] if n["id"] == node_id)
+        body = body_text(NODES / node_id / "body.md")
+        # BASIS ledgers are compiled from the normalized old[] map; their
+        # resolved source lines are preserved in each node body rather than
+        # re-scanned against the tactic-only ledger total.
+        resolved = []
+        for old in node.get("old", []):
+            if old.startswith("Pass"):
+                continue
+            name = old.rsplit("/", 1)[-1].split(" [", 1)[0].split(" (", 1)[0].strip()
+            if (SKILLS / name / "SKILL.md").exists():
+                resolved.append(name)
+        ledger_missing = [name for name in resolved if name not in body]
+        print(f"{node_id}: provenance-labels={len(resolved) - len(ledger_missing)}/{len(resolved)}, missing={len(ledger_missing)}")
+        if ledger_missing:
+            missing.extend(f"{node_id}: source ledger missing {name}" for name in ledger_missing)
         relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
         print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
         required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())

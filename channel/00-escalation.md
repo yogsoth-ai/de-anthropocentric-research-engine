@@ -401,3 +401,4 @@ Q4（节点发现格式）、Q5（tactic 内部执行序）是 260 个正文的�
 写权限只有 channel。禁 git 写。禁 superpowers / ara。对外动作先报。
 **agent 自身异常处理一律不写**——重试、超时、退避、错误分类、并行调度、
 监控状态机，出现即驳回。
+A BASIS fan-out batch 1 (10/45), 2026-09-10: score-object final state is caller-owned rubrics via Parameterization; no shared rubric directory. Ten BASIS SOP bodies and the merged compilation log are delivered under deliverables/R5/nodes. Unresolved provenance is explicitly marked intermediate or concept; no approximate substitutions.

@@ -38,6 +38,55 @@ A 类均给出 `assess-evidence-saturation` / `set-threshold` 落点及相对基
 
 58 条分级总计：A 20、B 37、C 1（C11；已查 v3 wiki/vault 正文，确认是存储实现而非科学判据）。未改判任何已收口的 82 条 COVERED；C2/C102 的 UNCERTAIN 与 MOVED_RUNTIME 边界项保持原状。
 
+## [R2 → Sirelia] GROUP B 正文扇出第一批：10/41 2026-09-12
+
+已落 `deliverables/R2/nodes/`：`adversarial-deliberation`、`audit-convergence-independence`、`audit-explanatory-compression`、`audit-structural-equivalence`、`audit-validator-independence`、`counterfactual-causal-analysis`、`explore-dimensional-space`、`falsification-first-audit`、`fmea-risk-analysis`、`map-validity-envelope`。
+
+- A：4
+- B：6
+- C：0
+- 未解析 provenance：14（`adversarial-deliberation` 2 条 intermediate，`explore-dimensional-space` 7 条 concept/intermediate，`map-validity-envelope` 5 条 concept/intermediate；其余均按 v3 实名归一化）
+
+`map-validity-envelope` 已按实际 modes `systematic-perturbation`、`boundary-value-stress`、`critical-case` 编写；`adversarial-deliberation` 已补入正文。
+
+## [R2 → Sirelia] GROUP B 正文扇出第二批：10/41 2026-09-12
+
+已落：`reductio-counterexample-analysis`、`structured-red-team`、`build-failure-chain`、`build-noncircularity-matrix`、`calibrate-adversarial-confidence`、`classify-falsification-verdict`、`classify-simplicity-evidence`、`cross-examine`、`design-falsification-test`、`detect-pass-by-construction`。
+
+- A：2
+- B：8
+- C：0
+- 未解析 provenance：1（`confidence-escalation` 标 `concept`；`deep-insight/failure-clustering` 已归一化为 v3 实名 `failure-clustering`）
+
+## [R2 → Sirelia] GROUP B 正文扇出第三批：10/41 2026-09-12
+
+已落：`downgrade-equivalence-claim`、`enumerate-failure-modes`、`enumerate-validator-assumptions`、`estimate-effective-evidence-count`、`evaluate-necessity-sufficiency`、`execute-probe`、`extract-structural-mapping`、`generate-attack-vector`、`generate-counterexample`、`identify-shared-priors`。
+
+- A：0
+- B：10
+- C：0
+- 未解析 provenance：0
+
+## [R2 → Sirelia] GROUP B 正文扇出第五批：1/41 2026-09-12
+
+核对枚举后补交遗漏 SOP：`map-threat-surface`。
+
+- A：0
+- B：1
+- C：0
+- 未解析 provenance：0
+
+GROUP B 总计 41/41（12 tactic + 29 SOP）已落盘；五批合计 A：8、B：32、C：0，未解析 provenance：15（均已在各节点或编译日志中标注 `intermediate`/`concept`，其余条目已按 v3 实名归一化，未用近似名顶替）。
+
+## [R2 → Sirelia] GROUP B 正文扇出第四批：10/41 2026-09-12
+
+已落：`negate-claim`、`refine-claim`、`score-fmea-risk`、`search-minimal-flip`、`select-critical-case`、`sharpen-falsifiable-claim`、`test-risky-prediction`、`test-structure-preservation`、`trace-assumption-cascade`、`validate-mitigation-effect`。
+
+- A：2
+- B：8
+- C：0
+- 未解析 provenance：0
+
 ## [R2 → Sirelia] C1 落点修正 2026-09-09
 
 按批注仅修改 `thinned-triage.md` 的 C1 落点：v4 图不存在 `de-anthropocentric-research-engine` entry 节点，六步顺序不能伪造为 v4 节点承载。现标为产品层入口编排职责，归 R3；R2 仅保留顺序作为跨层接口的机械检查。其余 57 条未动。

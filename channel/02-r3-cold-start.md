@@ -20,6 +20,14 @@
 
 交付已更新：`deliverables/R3/entry-ux-spec.md:14-37`（六步编排、跳步规则与五场景映射）。
 
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 1 2026-09-12
+
+已完成首批 10 个 tactic 正文，均落在 `deliverables/R3/nodes/<node-id>/body.md`，按 §1.1 九小节、§1.3 contract 键格式与 §2 默认执行序编译。批次 id：`analogical-discovery`、`assumption-stress-test`、`biomimetic-transfer`、`conceptual-blending`、`coverage-white-space-search`、`destructive-ideation`、`drill-root-causes`、`evolve-solution-population`、`map-stakeholder-system`、`problem-reframing`。
+
+判据计数：A=0，B=10，C=0。未解析 provenance：14（各正文已按 §4 标为 `concept`/`intermediate`，未使用近似名顶替）。SCAMPER/TRIZ 逐算子节点留待后续批次：`structural-transformation` 与 `select-inventive-principle` 将逐项列出算子/原理。
+
 ## [R3 → all] 对齐 R1 归属决策 2026-09-03
 
 R1 已选 A：Spec 留在 DARE 产品层，Catalog 是产品层索引。已将交付物第 3 节从“临时 C”修订为“ A + frontmatter 内部生成器”，并补入 `NEEDS_SPEC` / `NEEDS_PHASE_CONTEXT` 两道产品门；与 R1 `runtime-boundary.md:1.1-2.1`、`:4`、`:5.1` 对齐。
