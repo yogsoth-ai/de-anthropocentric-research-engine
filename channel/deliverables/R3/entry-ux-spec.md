@@ -142,3 +142,70 @@ Hard gate 的强制力来自两道可审计门：DARE 产品层须能从当前 P
 - frontmatter 不能承接完整 contract：`channel/deliverables/R5/field-distribution-analysis.md:45-49`。
 - v4 canonical context 四字段：同审计 `:268-276`；v4 runtime/product 边界：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:39-48`。
 - v3 entry 节点：`scripts/refactory_source.json` 中唯一 `"layer": "entry"` 节点（`de-anthropocentric-research-engine`）。
+
+## 9. v4 267-node description 可选性审计（2026-09-12）
+
+### 9.1 判定口径
+
+本审计直接读取 `refactory/2026-08-23-22-16-dare-v4-architecture.json` 的 51 tactics + 216 SOP descriptions。description 必须让未读正文的 agent 同时回答「做什么」与「何时选它」。因此：
+
+- 仅写动作、没有对象/触发条件/输入状态的，判为 **WHEN 缺失**；建议补成 `When <state/need>, <verb> <object>; use it before/after <boundary>`。
+- 两个描述若共享同一动作和对象、未说明层级或交付差异，判为 **区分度不足**；目录不得只靠正文补救。
+- shared-basis SOP 必须明确「调用方提供的对象/标准/规则/维度/场景」；否则判为 **caller parameter 缺失**。
+
+### 9.2 结果总览
+
+| 检查 | 结果 | 结论 |
+|---|---:|---|
+| 节点 descriptions | 267 | 全量读取 |
+| 区分度不足（高风险） | 3 对 | 必须改写后才能用于 N1/N2 catalog |
+| WHEN 缺失（严格触发词审计） | 144 | 其中多数语义可猜；仍建议在编译 frontmatter 时补显式 `when_to_use`，不把 description 原文直接当卡片文案 |
+| shared-basis SOP | 45 | 27 已显式声明 caller 参数，18 不合格 |
+
+### 9.3 高风险近重复与改写建议
+
+| 节点 | 当前问题 | 建议 description |
+|---|---|---|
+| `structural-transformation` / `transform-component` | tactic 与 SOP 都写 component/function transformation，agent 无法判断应选编排还是单步算子 | tactic：`When a system needs a coordinated structural redesign, decompose components and run a selected sequence of explicit operators; use this tactic to compose transformations.` SOP：`When a parent tactic has selected one component operation, apply exactly one named operator to that component and return the changed structure.` |
+| `map-research-landscape` / `synthesize-field-panorama` | 都写 field maturity/competition/barriers；前者是范围映射，后者是单次摘要 | `map-research-landscape`: `When choosing where to enter a research area, map multiple candidate fields/subfields and their maturity, competition, barriers, and opportunities.` `synthesize-field-panorama`: `When a candidate-field set already exists, summarize each field against supplied comparison dimensions for downstream ranking.` |
+| `assumption-stress-test` / `classify-assumption-vulnerability` | tactic 描述含 classify vulnerability，SOP 也只写同一分类动作 | tactic：`When a conclusion may depend on fragile premises, surface, classify, challenge, and re-check load-bearing assumptions.` SOP：`When a parent tactic supplies an assumption list and vulnerability rubric, classify each assumption by load-bearing importance and failure susceptibility.` |
+
+### 9.4 WHEN 缺失节点（144）
+
+以下节点没有显式触发词或使用边界。它们不应直接作为 N1 用户卡片文案；N1 编译时按组套用建议模板，并保留节点动作原文：
+
+- **tactic（30）**：`explore-dimensional-space`, `decompose-research-question`, `validate-research-gap`, `assumption-stress-test`, `sensitivity-analysis`, `structured-red-team`, `fmea-risk-analysis`, `counterfactual-causal-analysis`, `reductio-counterexample-analysis`, `destructive-ideation`, `structural-transformation`, `pairwise-ranking`, `structured-consensus`, `map-research-landscape`, `decompose-research-goal`, `mine-patent-landscape`, `assess-prior-art-and-claims`, `map-patent-white-space`, `audit-benchmark-validity`, `synthesize-meta-analytic-evidence`, `establish-empirical-baseline`, `build-domain-ontology`, `construct-causal-model`, `construct-argument-map`, `design-experiment`, `resolve-inventive-contradiction`, `conceptual-blending`, `audit-validator-independence`, `audit-convergence-independence`, `audit-explanatory-compression`。
+- **SOP（114）**：其中 18 个同时属于 shared-basis caller-parameter 缺失项（见 9.5）；其余 WHEN 缺失项按三类补写：`<object-state> 已存在但需要 <operation>`、`父 tactic 已确定 <parameter/rubric>`、`在 <decision boundary> 前执行`。这不是新增节点语义，而是把隐含选择条件显式化。
+
+对 N1/N2 的统一改写规则：`<when clause>, <what clause>; use when <selection boundary>; requires <caller-supplied inputs>; produces <decision-relevant output>.` 这条规则覆盖上述 144 项，避免为每个节点复制一套自由文本而再次失真。
+
+### 9.5 shared-basis SOP caller 参数审计（18/45 不合格）
+
+以下 18 个 SOP 的 description 未明确调用方必须提供的参数。建议逐条替换为带 caller contract 的版本：
+
+| SOP | 建议 description |
+|---|---|
+| `generate-subquestions` | `When a parent tactic supplies the research question and coverage/independence standard, decompose it into MECE subquestions and justify coverage.` |
+| `map-dependencies` | `When a parent tactic supplies work items and dependency evidence, construct the dependency graph, critical paths, cycles, and parallel branches.` |
+| `sequence-work` | `When a parent tactic supplies a dependency graph and priority policy, topologically order work while placing fail-fast/high-risk branches first.` |
+| `verify-evidence-independence` | `When a parent tactic supplies a finding/gap and admissible evidence channels, seek independent support sufficient to test source-specificity.` |
+| `challenge-assumption` | `When a parent tactic supplies an assumption and consequence rubric, construct the strongest countercase and assess failure consequences.` |
+| `validate-causal-link` | `When a parent tactic supplies a causal relation and CLR checks, audit clarity, existence, sufficiency, and logical completeness.` |
+| `identify-load-bearing-factors` | `When a parent tactic supplies a conclusion and perturbation/importance rule, identify factors, assumptions, or uncertainties that control it most.` |
+| `derive-consequences` | `When a parent tactic supplies an altered premise or negated claim and inference scope, trace only logically valid consequences.` |
+| `evaluate-compatibility` | `When a parent tactic supplies candidate combinations and compatibility criteria, evaluate logical, empirical, and normative fit and prune invalid regions.` |
+| `generate-provocation` | `When a parent tactic supplies a target representation and provocation mode, generate one deliberate pattern-breaking perturbation.` |
+| `check-dominance` | `When a parent tactic supplies alternatives, dimensions, and strict dominance rule, identify Pareto-dominated and non-dominated items.` |
+| `map-disagreement` | `When a parent tactic supplies the perspectives/arguments and agreement schema, represent agreements, disagreements, and reasons.` |
+| `assess-goal-feasibility` | `When a parent tactic supplies the goal DAG, resources, obstacles, and timeline, label branches feasible/stretch/infeasible and propose OR alternatives.` |
+| `enumerate-dimension-values` | `When a parent tactic supplies a dimension definition and coverage mode, enumerate meaningful representative, boundary, pathological, or adversarial values.` |
+| `design-mitigation` | `When a parent tactic supplies a failure/constraint and residual-risk rubric, design a prevent/detect/respond/remove/relax intervention and state validation evidence.` |
+| `map-coverage-space` | `When a parent tactic supplies items, typed dimensions, and coverage encoding, map redundancy and exposed gaps across the space.` |
+| `analyze-scaling-regime` | `When a parent tactic supplies an entity, scale axis, outcome, and regime criteria, analyze changes, saturation, and transitions across scale.` |
+| `adjust-abstraction-scope` | `When a parent tactic supplies the object, target abstraction, and scope dimensions, move the representation until explanatory or experimental leverage improves.` |
+
+`score-object` remains the positive reference: `The parent tactic supplies the object schema and rubric.`
+
+### 9.6 N1/N2 implementation consequence
+
+N1 frontmatter must keep `description` as the normalized two-part sentence (`what` + `when_to_use`), not blindly copy raw `desc`. N2 catalog must index the explicit `when_to_use`, required caller parameters, and the three high-risk disambiguation pairs. Until these rewrites are compiled, the product-layer catalog may show the 267 nodes only as internal candidates, not as unqualified user recommendations.

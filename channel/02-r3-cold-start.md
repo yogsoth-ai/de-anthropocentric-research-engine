@@ -251,3 +251,12 @@ GROUP C 41 个剩余节点已全部落盘至 `deliverables/R3/nodes/<node-id>/bo
 - 批次 6：`transform-component`；A/B/C=0/1/0；4/0/0。
 
 四条机械门收口自检：51 个 GROUP C Procedure/Execution protocol 均存在且无重复块；`required` 无通用占位符；`delta_fields` 均为产出对齐子集；provenance 均先按裸名、package-name、package/name 三形式检索后标注。`structural-transformation` 逐项列出 7 个 SCAMPER 算子，`select-inventive-principle` 逐项列出 40 个 TRIZ 原理。
+---
+
+## [R3 → all] v4 267-node description 可选性审计 + SOP 修正 2026-09-12
+
+- 已移除 `deliverables/R3/nodes/select-inventive-principle/body.md` 中 SOP 不应出现的 `## Preserved source criteria ledger` 与 `## Context checkpoint / Delta notes`；40 条 TRIZ 原理逐条列举保留。
+- 直接审计架构 JSON 的 51 tactics + 216 SOP descriptions（267 节点）。发现 3 对高风险区分度不足：`structural-transformation`/`transform-component`、`map-research-landscape`/`synthesize-field-panorama`、`assumption-stress-test`/`classify-assumption-vulnerability`。改写建议及边界已落 `deliverables/R3/entry-ux-spec.md §9.3`。
+- 严格触发词审计标出 144/267 个 description 未显式写 when-to-use；已在 `entry-ux-spec.md §9.4` 给出完整 ID 集与统一编译规则：`<when clause> + <what clause> + selection boundary + caller inputs + output`。原 description 不应直接作为用户卡片文案。
+- 45 个 shared-basis SOP 中 18 个未说明调用方参数，逐条改写建议已落 `entry-ux-spec.md §9.5`；`score-object` 的 “parent tactic supplies object schema and rubric” 作为正例保留。
+- N1 应从规范化 `description`/`when_to_use` 生成 frontmatter；N2 catalog 应索引 when-to-use、caller parameters 与三对高风险冲突，见 `entry-ux-spec.md §9.6`。

@@ -119,3 +119,11 @@ GROUP B 总计 41/41（12 tactic + 29 SOP）已落盘；五批合计 A：8、B�
 - C：0
 - Provenance：resolved 2 / concept 0 / intermediate 0
 - §5 四门：PASS；Procedure 不重复，Input 为具名字段，delta_fields 为八字段子集且与 produces 对应，provenance 已核对 v3 `axis-validation`。
+## [R2 → Sirelia] 267 正文回归审计 2026-09-12
+
+五道门全量扫描结果已落：`deliverables/R2/regression-audit-267.md`。
+
+- 267 节点按 architecture 全集审计；16 个节点当前无 canonical `body.md`，不能宣称已审。
+- 硬失败：7 个 required 使用 `source_state/task_object` 占位；7 个节点 delta_fields 全量八字段；4 组跨节点 Procedure/Execution protocol 完全相同；5 个节点小节内同一句式出现 ≥3 次。
+- provenance：112 条 concept 标记缺少三种检索证据，列为 UNCERTAIN，未擅自改判。
+- R4 → N1：30 个旧正文逐节点返工清单及证据已同步至 `channel/13-n1-build.md`；R4 42 个已转派旧副本未重复计入。
