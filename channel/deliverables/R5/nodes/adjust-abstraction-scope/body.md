@@ -36,8 +36,7 @@ Reject a level that changes the object while appearing to change only scope; rej
 ## Provenance map
 - resolved: abstraction-laddering
 - resolved: scope-assessment
-- intermediate: question-reformulation
-- intermediate: scope-calibration
+- resolved: question-reformulation
+- resolved: scope-calibration
 - intermediate: Pass8/shift-abstraction-level
 - intermediate: Pass8/adjust-question-scope
-

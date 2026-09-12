@@ -82,7 +82,7 @@ Fan-in 3. Merged CLR-style causal-link validation. A=0, B=1, C=0; unresolved pro
 
 ## adjust-abstraction-scope
 
-Fan-in 2. Merged abstraction laddering, question reformulation, scope calibration, and scope assessment. A=0, B=0, C=0; provenance resolved=2, concept=0, intermediate=4.
+Fan-in 2. Merged abstraction laddering, question reformulation, scope calibration, and scope assessment. A=0, B=0, C=0; provenance resolved=4, concept=0, intermediate=2.
 
 ## aggregate-ranking
 
@@ -90,7 +90,7 @@ Fan-in 2. Merged priority synthesis and scoring synthesis under caller-supplied 
 
 ## analyze-scaling-regime
 
-Fan-in 2. Merged scaling analysis and scaling-frontier regime detection. A=0, B=0, C=0; provenance resolved=1, concept=0, intermediate=1.
+Fan-in 2. Merged scaling analysis and scaling-frontier regime detection. A=0, B=1, C=0; provenance resolved=1, concept=1, intermediate=0.
 
 ## assess-goal-feasibility
 
@@ -98,7 +98,7 @@ Fan-in 2. Merged feasibility check against resources, obstacles, and timeline. A
 
 ## challenge-assumption
 
-Fan-in 2. Merged assumption, benchmark, and counter-assumption challenges. A=0, B=0, C=0; provenance resolved=3, concept=0, intermediate=0.
+Fan-in 2. Merged assumption, benchmark, and counter-assumption challenges. A=0, B=0, C=0; provenance resolved=2, concept=1, intermediate=0.
 
 ## check-dominance
 
@@ -114,8 +114,8 @@ Fan-in 2. Merged hierarchy construction with explicit acyclicity, transitivity, 
 
 ## construct-scenario
 
-Fan-in 2. Merged baseline, counterfactual, and worst-case scenario modes with assumptions and observables. A=0, B=1, C=0; provenance resolved=3, concept=0, intermediate=1.
+Fan-in 2. Merged baseline, counterfactual, and worst-case scenario modes with assumptions and observables. A=0, B=1, C=0; provenance resolved=4, concept=0, intermediate=0.
 
 ## define-criteria
 
-Fan-in 2. Merged criterion definition and scoring-matrix extraction. A=0, B=1, C=0; provenance resolved=3, concept=0, intermediate=1.
+Fan-in 2. Merged criterion definition and scoring-matrix extraction. A=0, B=1, C=1; provenance resolved=1, concept=1, intermediate=1.

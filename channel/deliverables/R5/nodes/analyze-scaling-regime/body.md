@@ -35,5 +35,4 @@ Reject a regime claim based on a single point or a scale change confounded with 
 
 ## Provenance map
 - resolved: scaling-frontier
-- intermediate: deep-insight/scaling-analysis
-
+- concept: deep-insight/scaling-analysis

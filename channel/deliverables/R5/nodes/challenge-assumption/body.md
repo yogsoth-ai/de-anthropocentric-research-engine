@@ -34,7 +34,6 @@ Caller supplies assumption schema, evidence standard, challenge mode, consequenc
 Reject a challenge that merely negates the assumption without mechanism or evidence.
 
 ## Provenance map
-- resolved: convergence-assumption-challenge
+- concept: convergence/assumption-challenge
 - resolved: benchmark-challenge
 - resolved: counter-assumption-generation
-

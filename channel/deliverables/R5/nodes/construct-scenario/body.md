@@ -37,5 +37,4 @@ Reject decorative narratives that do not vary an uncertainty or expose a testabl
 - resolved: scenario-construction
 - resolved: counterfactual-scenario-construction
 - resolved: worst-case-construction
-- intermediate: stress-scenario
-
+- resolved: stress-scenario

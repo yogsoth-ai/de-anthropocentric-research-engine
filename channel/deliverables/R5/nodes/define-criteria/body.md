@@ -35,7 +35,6 @@ Reject vague criteria lacking an observable measurement or criteria that cannot 
 
 ## Provenance map
 - resolved: criterion-definition
-- resolved: convergence-scoring-matrix-construction
+- concept: hypothesis-formation/scoring-matrix-construction (criteria-extraction core)
 - resolved: hypothesis-formation-scoring-matrix-construction
 - intermediate: Pass4/define-success-criteria
-

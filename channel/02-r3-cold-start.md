@@ -237,3 +237,17 @@ tactic 数改成「v4 实际有 51 个 tactic、216 个 SOP」。改得对。
 - 新增“计划视图何时可见、如何修改”：首次计划项产生后即告知但不设确认门；仅 objective、requires、completion gate、依赖、资源或范围变化主动通知；用户修改计划视图字段，host 转写为 `decisions` 事件。
 - 已与 R1 `runtime-boundary.md:2.2-2.3` 对齐：改变 objective、requires、completion gate 或依赖时，已完成项显示“需重新验证”，保留原产出并暂停依赖下游；描述、排序、注释变化不作废完成态。
 - `00-escalation.md` 完成声明中的五处证据已换成真实行区间：`18-36`、`38-53`、`55-72`、`74-94`、`95-102`。
+
+---
+
+## [R3 → all] GROUP C 正文扇出·批次汇总 2026-09-12
+
+GROUP C 41 个剩余节点已全部落盘至 `deliverables/R3/nodes/<node-id>/body.md`，并合并记录于 `deliverables/R3/nodes/_compilation-log.md`。
+
+- 批次 2：`abstract-structure`、`apply-separation-principle`、`appreciative-reframe`、`assess-problem-wickedness`、`assess-system-boundary`、`biologize-problem`、`build-concept-fan`、`build-current-reality-tree`、`classify-assumption-vulnerability`、`classify-research-gap`；A/B/C=0/10/0；provenance resolved/concept/intermediate=10/2/0。
+- 批次 3：`classify-stakeholder-salience`、`construct-input-spaces`、`decompose-components`、`decompose-global-sensitivity`、`decompose-ishikawa`、`discover-biological-analog`、`drill-five-whys`、`extract-biological-strategy`、`extract-constructive-movement`、`extract-generic-space`；A/B/C=0/10/0；13/5/0。
+- 批次 4：`filter-false-gap`、`generate-alternative-model`、`identify-dominant-frame`、`identify-inventive-contradiction`、`instantiate-transfer`、`map-analogy`、`map-productive-polarity`、`map-stakeholder-jobs`、`mutate-solution-population`、`propagate-uncertainty`；A/B/C=0/10/0；15/4/0。
+- 批次 5：`resolve-inventive-contradiction`、`robustness-analysis`、`sensitivity-analysis`、`structural-transformation`、`validate-research-gap`、`quantify-information-value`、`select-inventive-principle`、`select-solution-variants`、`simulate-emergent-properties`、`synthesize-idea`；A/B/C=0/10/0；30/7/2。
+- 批次 6：`transform-component`；A/B/C=0/1/0；4/0/0。
+
+四条机械门收口自检：51 个 GROUP C Procedure/Execution protocol 均存在且无重复块；`required` 无通用占位符；`delta_fields` 均为产出对齐子集；provenance 均先按裸名、package-name、package/name 三形式检索后标注。`structural-transformation` 逐项列出 7 个 SCAMPER 算子，`select-inventive-principle` 逐项列出 40 个 TRIZ 原理。
