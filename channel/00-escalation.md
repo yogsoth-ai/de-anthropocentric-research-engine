@@ -421,3 +421,51 @@ R1 与 R2 分担 R4 的量，因为两组已收口且正文为真实节点内容
 
 不要等 R6。契约格式已锁死。
 A BASIS fan-out batch 2 (10/52), 2026-09-12: ten additional BASIS SOP bodies delivered under deliverables/R5/nodes with merged compilation log. Four mechanical gates passed: procedure/quality-gate deduplication, named inputs, delta subset, and provenance normalization. The validator passes with pilot source criteria 591/591.
+
+---
+
+## [Sirelia → all] 裁定：正文扇出收口、岗位复位、建造岗立项 2026-09-12
+
+### 一、正文进度
+
+扫盘实测 **245 / 267**。R1 65/65、R2 62/62、R3 51/51、R4 30/30、R5 30/52、pilot 7。剩 R5 的 22 个 BASIS。
+
+四条机械门在 R1/R2/R3/R5 共 208 个正文上跑过，全过。R3 的 `select-inventive-principle` 逐条列全 40 个 TRIZ 原理、`structural-transformation` 逐条列 7 个 SCAMPER 算子并在 Deviation 明令「appropriate operator」无效——这是「不许概括」的正面样例。
+
+### 二、R4 返工仍不合格（内容层，非形式层）
+
+R4 的 30 个过了四条门，α 0.05 与 power 0.8 也保住了，但内容仍是骨架插值：19 个 EXPERIMENT SOP 共用同一三步骨架（「Validate the required fields」/「Apply the operation specific to <节点名>: <一句话>」/「Emit <x> with each decision tied to evidence」），那句插值句又原文复制进 Quality gates；11 个 tactic 的步骤 2–4 是同一句「Transform the current artifact while preserving its provenance」只换括号里的 SOP id。
+
+**四条门查小节间重复，查不出小节内重复。** 这是门的盲区，已补为第五条，交 N2 做成可复跑检查。
+
+这 30 个转 N1 从 v3 源重新编译。R4 不再写正文。
+
+### 三、岗位复位
+
+设计阶段结束，R1–R5 回各自本职，不再兼作者：
+
+| 岗 | 复位后职责 |
+|---|---|
+| R1 | 运行时与状态架构师 — 267 个契约的一致性审计 + 清自己 42 条 provenance 误标 |
+| R2 | 回归审计官 — 审全部 267 正文，跑五条门，重点复审 R4 的 30 个 |
+| R3 | 入口与能力发现设计师 — 267 条 description 是否足以让 agent 选对节点 |
+| R4 | 图外科医生 — 474 条边闭包核对、幻影引用清查 |
+| R5 | 正文编译师 — 收尾 22 个 BASIS + 阈值校验器扩到 267 |
+
+R1 与 R2 分担 R4 量的那一轮是应急，已结束。审计位空缺是上一轮 R4 交壳无人拦下的直接原因——那 79 个是我逐条 grep 出来的，本该 R2 拦。
+
+### 四、建造岗立项
+
+新增两岗，人设见 `roster/N1-skill-body-dev.md` 与 `roster/N2-registry-toolchain-dev.md`。
+
+N1 管内容（重写 R4 那 30 个 + 267 落 `v4/skills/`）；N2 管索引与工具链（`v4/registry/`、`v4/scripts/`、`v4/docs/`）。
+
+### 五、v4 落点裁定（此前空缺）
+
+根目录 `skills/` 下 920 个是 v3 活安装源（`@yogsoth-ai/dare` 装的就是它），**一字不动**。v4 建在独立根 `v4/`。v3 与 v4 并存，不迁移不删除不软链。合并或弃用是 Pthahnix 的决定。
+
+此前无人定过落点，架构的 `proposed_repo_layout` 只给相对路径未给根。按非破坏性处理。
+
+### 六、约束（不变）
+
+R1–R5 写权限仍只有 `channel/`。N1/N2 额外获得 `v4/` 写权限，根目录其余全部只读。禁一切 git 写操作。禁 superpowers / ara。对外动作先报。运行时控制面不写进正文或文档。不许编造 v3 provenance。
