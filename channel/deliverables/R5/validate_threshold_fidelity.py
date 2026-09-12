@@ -94,7 +94,17 @@ def section(text, heading, next_heading=None):
     return " ".join(tail.split())
 
 def contains(body, criterion):
-    normalize = lambda s: " ".join(s.replace("\\\\|", "|").replace("\\|", "|").split())
+    def normalize(s):
+        # N1 may render comparison operators as Unicode or LaTeX; compare a
+        # canonical operator form so presentation changes cannot hide loss.
+        s = s.replace("\\\\|", "|").replace("\\|", "|")
+        ge, le, pm = "\u2265", "\u2264", "\u00b1"
+        for latex, symbol in ((r"\geq", ge), (r"\ge", ge),
+                              (r"\leq", le), (r"\le", le),
+                              (r"\pm", pm)):
+            s = s.replace(latex, symbol)
+        s = re.sub(r"([≥≤±])\s+", r"\1", s)
+        return " ".join(s.replace("$", "").split())
     return normalize(criterion) in normalize(body)
 
 def structural_false_positive(src_name: str, line_no: int, line: str, node_id: str) -> bool:

@@ -57,7 +57,7 @@ Append candidate set hash, criteria/weights, rule, ranking, sensitivity scenario
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| multi-criteria-ranking | 49 | numeric | Each dimension is scored independently (1-5) to avoid cross-contamination between dimensions. Weights are set by AHP (Analytic Hierarchy Process) or specified by the user. Final score = Σ(dimension score * dimension weight). |
+| multi-criteria-ranking | 49 | numeric | Each dimension is scored independently (1-5) to avoid cross-contamination between dimensions. Weights are set by AHP (Analytic Hierarchy Process) or specified by the user. Final score = $\Sigma$(dimension score * dimension weight). |
 | multi-criteria-ranking | 51 | numeric | **Sensitivity check**: perturb weights by +/-20%; if the ranking is unchanged the conclusion is robust; if the ranking flips it must be flagged as "weight-sensitive". |
 | multi-criteria-ranking | 53 | textual | ## Budget Gate |
 | multi-criteria-ranking | 57 | numeric | \\| S \\| 5-8 \\| >=3 dimensions \\| Optional \\| Ranking table + attack suggestions for top 2 gaps \\| |
@@ -125,7 +125,7 @@ Append candidate set hash, criteria/weights, rule, ranking, sensitivity scenario
 | weight-elicitation | 26 | numeric | \\| weight-elicitation-sop \\| >=2 methods \\| 2-3 \\| |
 | weight-elicitation | 27 | numeric-table | \\| rank-comparison \\| 1 comparison \\| 1 \\| |
 | weight-elicitation | 60 | numeric | 2. Select >=2 weighting methods (recommended: AHP + BWM or Swing + Simos) |
-| weight-elicitation | 76 | numeric | - AHP CR: [value] (< 0.1 ✓) |
+| weight-elicitation | 76 | numeric | - AHP CR: [value] (< 0.1 pass) |
 | direction-narrowing | 36 | numeric | - `broad-paper-search`: at least 80 papers scanned |
 | direction-narrowing | 37 | numeric | - `deep-web-search`: at least 30 web pages read in full |
 | present-and-ask | 29 | numeric | User's selected 1-2 fields of interest + reasoning. |

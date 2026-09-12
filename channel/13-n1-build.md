@@ -238,6 +238,18 @@ provenance: resolved=10, concept=0, intermediate=0
 intra-section duplicate self-check: PASS
 status: source/rebuilt
 
+## Repair batch 31
+
+ASCII/inline-math normalization across all 267 `v4/skills/*/SKILL.md` bodies. Frontmatter descriptions were excluded to preserve registry equality.
+
+Replacement total: 72
+
+- `>=` source count: 0; `<=` source count: 0; `+/-` source count: 0; `x`/arrow/dash/quote substitutions: 0
+- alpha → `$\\alpha$`: 60; tau → `$\\tau$`: 8; rho → `$\\rho$`: 1; Sigma → `$\\Sigma$`: 1
+- checkmark → `pass`: 1; BOM removed: 1
+
+Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
 ## Batch 27 (7)
 
 IDs: classify-simplicity-evidence, test-risky-prediction, assess-patent-claim-scope, generate-counterexample, collect-independent-judgments, adjust-abstraction-scope, evaluate-scenario-robustness

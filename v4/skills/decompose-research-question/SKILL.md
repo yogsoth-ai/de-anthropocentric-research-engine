@@ -36,7 +36,7 @@ delta_fields: [open_questions]
 
 - Each output is traceable to an input object, operation, and evidence reference.
 - Scope, assumptions, and unresolved alternatives remain explicit.
-- Retain α 0.05 and power 0.8 wherever the predeclared statistical design requires them.
+- Retain $\alpha$ 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
 ## Failure and counterexamples
 
@@ -52,7 +52,7 @@ Stop synthesis when a required object is absent, a precondition is violated, or 
 | source | criterion | treatment |
 |---|---|---|
 | resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
-| experiment-execution/statistical-testing | α = 0.05 | fixed value retained where applicable |
+| experiment-execution/statistical-testing | $\alpha$ = 0.05 | fixed value retained where applicable |
 | experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
 ## Context checkpoint / Delta notes

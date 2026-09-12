@@ -14,7 +14,7 @@ Given cost per run and resource budget, choose the most information-efficient fe
 ```yaml
 required: [candidate_designs, run_costs, resource_budget, validity_constraints]
 optional: [evidence, assumptions, prior_results]
-constraints: [use named scientific objects; retain provenance and missingness; α = 0.05 and power = 0.8 where applicable]
+constraints: [use named scientific objects; retain provenance and missingness; $\alpha$ = 0.05 and power = 0.8 where applicable]
 ```
 
 ## Procedure
@@ -34,7 +34,7 @@ delta_fields: [evidence_updates, uncertainties]
 
 - Inputs are named scientific objects with compatible schemas.
 - Every material result has a derivation or source reference.
-- Fixed statistical criteria remain exact where applicable: α 0.05 and power 0.8.
+- Fixed statistical criteria remain exact where applicable: $\alpha$ 0.05 and power 0.8.
 
 ## Failure and counterexamples
 

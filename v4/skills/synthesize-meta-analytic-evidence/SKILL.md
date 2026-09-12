@@ -3,7 +3,7 @@ name: synthesize-meta-analytic-evidence
 description: "Design or execute a quantitative evidence synthesis with pairwise/network/cumulative/heterogeneity/bias modes while preserving study-level quality and sensitivity logic."
 ---
 
-﻿# synthesize-meta-analytic-evidence
+# synthesize-meta-analytic-evidence
 
 ## Purpose
 
