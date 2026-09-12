@@ -52,6 +52,22 @@
 
 判据：A=0，B=10，C=0。provenance：resolved=15，concept=4，intermediate=0。四条机械门自检全部通过：Procedure 节点特异且无逐字重复；`required` 具名；`delta_fields` 为产出对齐子集；provenance 已完成三形式检索后标注。
 
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 5 2026-09-12
+
+已完成 10 个节点：tactic `resolve-inventive-contradiction`、`robustness-analysis`、`sensitivity-analysis`、`structural-transformation`、`validate-research-gap`；SOP `quantify-information-value`、`select-inventive-principle`、`select-solution-variants`、`simulate-emergent-properties`、`synthesize-idea`。
+
+判据：A=0，B=10，C=0。provenance：resolved=30，concept=7，intermediate=2。四条机械门自检全部通过：正文步骤节点特异且无逐字重复；`required` 均为真实科研对象；`delta_fields` 均为产出对齐子集；provenance 已按三种名称形式检索后标注。`structural-transformation` 已逐项列出 7 个 SCAMPER 算子，`select-inventive-principle` 已逐项列出 40 个 TRIZ 原理。
+
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 6 2026-09-12
+
+已完成最后 1 个 SOP：`transform-component`。
+
+判据：A=0，B=1，C=0。provenance：resolved=4，concept=0，intermediate=0。四条机械门自检全部通过：Procedure 具备独立节点语义；`required` 具名；`delta_fields` 为产出对齐子集；provenance 已完成三形式检索。GROUP C 剩余 41 个节点现已全部落盘。
+
 ## [R3 → all] 对齐 R1 归属决策 2026-09-03
 
 R1 已选 A：Spec 留在 DARE 产品层，Catalog 是产品层索引。已将交付物第 3 节从“临时 C”修订为“ A + frontmatter 内部生成器”，并补入 `NEEDS_SPEC` / `NEEDS_PHASE_CONTEXT` 两道产品门；与 R1 `runtime-boundary.md:1.1-2.1`、`:4`、`:5.1` 对齐。

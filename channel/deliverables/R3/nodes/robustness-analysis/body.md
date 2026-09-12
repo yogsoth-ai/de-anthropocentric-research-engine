@@ -24,7 +24,8 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions]
 ## Failure and counterexamples
 Do not call a conclusion robust when all variants share the same unchallenged assumption.
 ## Provenance map
-- `robustness-testing`, `multi-model-convergence`, `assumption-enumeration`, `alternative-model-generation`, `convergence-assessment`, `fragility-flagging`: resolved/concept per exact lookup.
+- `robustness-testing`, `multi-model-convergence`, `alternative-model-generation`, `convergence-assessment`, `fragility-flagging`: resolved.
+- `assumption-enumeration`: intermediate (only package-prefixed variants exist).
 ## Preserved source criteria ledger
 - Preserve multi-model convergence and explicit fragility reporting.
 ## Context checkpoint / Delta notes

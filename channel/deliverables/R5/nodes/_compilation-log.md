@@ -79,3 +79,43 @@ Fan-in 3. Merged justified non-compensatory threshold setting. A=0, B=1, C=0; un
 ## validate-causal-link
 
 Fan-in 3. Merged CLR-style causal-link validation. A=0, B=1, C=0; unresolved provenance=0. Preserved eight CLR categories.
+
+## adjust-abstraction-scope
+
+Fan-in 2. Merged abstraction laddering, question reformulation, scope calibration, and scope assessment. A=0, B=0, C=0; provenance resolved=2, concept=0, intermediate=4.
+
+## aggregate-ranking
+
+Fan-in 2. Merged priority synthesis and scoring synthesis under caller-supplied aggregation rules. A=0, B=0, C=0; provenance resolved=2, concept=0, intermediate=0.
+
+## analyze-scaling-regime
+
+Fan-in 2. Merged scaling analysis and scaling-frontier regime detection. A=0, B=0, C=0; provenance resolved=1, concept=0, intermediate=1.
+
+## assess-goal-feasibility
+
+Fan-in 2. Merged feasibility check against resources, obstacles, and timeline. A=0, B=0, C=0; provenance resolved=1, concept=0, intermediate=0.
+
+## challenge-assumption
+
+Fan-in 2. Merged assumption, benchmark, and counter-assumption challenges. A=0, B=0, C=0; provenance resolved=3, concept=0, intermediate=0.
+
+## check-dominance
+
+Fan-in 2. Preserved strict Pareto dominance and witness requirement. A=0, B=0, C=0; provenance resolved=1, concept=0, intermediate=0.
+
+## construct-counterfactual
+
+Fan-in 2. Preserved minimal intervention, cascading effects, and consistency status. A=0, B=0, C=0; provenance resolved=1, concept=0, intermediate=0.
+
+## construct-hierarchy
+
+Fan-in 2. Merged hierarchy construction with explicit acyclicity, transitivity, roots, and depth checks. A=0, B=1, C=0; provenance resolved=1, concept=0, intermediate=1.
+
+## construct-scenario
+
+Fan-in 2. Merged baseline, counterfactual, and worst-case scenario modes with assumptions and observables. A=0, B=1, C=0; provenance resolved=3, concept=0, intermediate=1.
+
+## define-criteria
+
+Fan-in 2. Merged criterion definition and scoring-matrix extraction. A=0, B=1, C=0; provenance resolved=3, concept=0, intermediate=1.

@@ -26,7 +26,8 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended
 ## Failure and counterexamples
 Reject rankings based on arbitrary ranges, invalid model runs, or point estimates that hide distributional uncertainty.
 ## Provenance map
-- `sensitivity-analysis`, `parameter-screening`, `variance-decomposition`, `assumption-criticality`, `uncertainty-propagation`, `decision-sensitivity`, `screening-then-decomposition`, `uncertainty-cascade`: resolved where exact names exist; otherwise concept.
+- `sensitivity-analysis`: intermediate (exact pool names are package-prefixed variants).
+- `parameter-screening`, `variance-decomposition`, `assumption-criticality`, `uncertainty-propagation`, `decision-sensitivity`, `screening-then-decomposition`, `uncertainty-cascade`: resolved.
 ## Preserved source criteria ledger
 - Preserve perturbation, Morris/Sobol, uncertainty cascade, assumption criticality, and information-value modes.
 ## Context checkpoint / Delta notes

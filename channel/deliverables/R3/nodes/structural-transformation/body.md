@@ -9,7 +9,7 @@ constraints: [operator and affected component must be named for every variant]
 ```
 ## Execution protocol
 1. Decompose components and functions (`decompose-components`).
-2. Apply exactly named SCAMPER operators (`transform-component`): Substitute, Combine, Adapt, Modify/Magnify/Minify, Put to another use, Eliminate, Reverse/Rearrange.
+2. Apply exactly named SCAMPER operators (`transform-component`): Substitute, Combine, Adapt, Modify (including magnify/minify variants), Put to another use, Eliminate, Reverse (including rearrange variants).
 3. Evaluate compatibility of each variant (`evaluate-compatibility`).
 4. Synthesize viable transformations (`synthesize-idea`).
 Deviation: operators may be selected or sequenced by the design question, but the record must state which of the seven operators were considered, applied, rejected, and why; “appropriate operator” is invalid.
@@ -23,8 +23,8 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommend
 ## Failure and counterexamples
 Reject variants with unnamed operators, hidden multi-operator changes, or transformations that violate hard constraints without disclosure.
 ## Provenance map
-- `structural-deconstruction`, `component-surgery`, `scamper-transformation`, `function-trimming`, `function-combination`, `component-decomposition`: resolved where exact names exist; otherwise concept.
+- `structural-deconstruction`, `component-surgery`, `scamper-transformation`, `function-trimming`, `function-combination`, `component-decomposition`: resolved.
 ## Preserved source criteria ledger
-- Preserve the seven SCAMPER operators individually: Substitute; Combine; Adapt; Modify/Magnify/Minify; Put to another use; Eliminate; Reverse/Rearrange.
+- Preserve the seven SCAMPER operators individually: Substitute; Combine; Adapt; Modify; Put to another use; Eliminate; Reverse. Magnify/minify and rearrange are recorded as variants of Modify and Reverse, not extra operators.
 ## Context checkpoint / Delta notes
 Append component changes, operator coverage, rejected variants, compatibility results, and selected design.

@@ -25,7 +25,8 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommend
 ## Failure and counterexamples
 Reject a solution that merely accepts the trade-off, renames the contradiction, or shifts harm outside the declared boundary.
 ## Provenance map
-- `creative-ideation/structural-deconstruction`, `triz`, `contradiction-matrix`, `separation-principles`: resolved where exact names exist; otherwise concept.
+- `creative-ideation/structural-deconstruction`: resolved.
+- `triz`, `contradiction-matrix`, `separation-principles`: concept (no exact pool entries).
 ## Preserved source criteria ledger
 - Preserve contradiction matrix reasoning, physical separation, and compatibility validation.
 ## Context checkpoint / Delta notes

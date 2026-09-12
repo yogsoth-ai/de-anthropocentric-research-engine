@@ -23,7 +23,7 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended
 ## Failure and counterexamples
 Reject gaps caused by duplicate sources, narrow retrieval, resolved prior work, or unanswerable wording.
 ## Provenance map
-- `deep-insight/gap-validation`, `cross-validation`, `cross-database-verification`, `false-gap-filtering`, `temporal-sensitivity-testing`: resolved where exact names exist; otherwise concept.
+- `deep-insight/gap-validation`, `cross-validation`, `cross-database-verification`, `false-gap-filtering`, `temporal-sensitivity-testing`: resolved.
 ## Preserved source criteria ledger
 - Preserve cross-source verification, false-gap filtering, and temporal persistence checks.
 ## Context checkpoint / Delta notes

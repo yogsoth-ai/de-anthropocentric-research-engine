@@ -67,3 +67,28 @@ Batch 3 total: 10 SOP, A=0, B=10, C=0; provenance resolved=13, concept=5, interm
 | propagate-uncertainty | B | 1 | 1 | 0 |
 
 Batch 4 total: 10 SOP, A=0, B=10, C=0; provenance resolved=15, concept=4, intermediate=0. Mechanical gates 1–4: pass.
+
+## Batch 5 — tactic + SOP
+
+| node | kind | judgment | resolved | concept | intermediate |
+|---|---|---:|---:|---:|---:|
+| resolve-inventive-contradiction | tactic | B | 1 | 3 | 0 |
+| robustness-analysis | tactic | B | 5 | 0 | 1 |
+| sensitivity-analysis | tactic | B | 7 | 0 | 1 |
+| structural-transformation | tactic | B | 6 | 0 | 0 |
+| validate-research-gap | tactic | B | 5 | 0 | 0 |
+| quantify-information-value | SOP | B | 1 | 1 | 0 |
+| select-inventive-principle | SOP | B | 0 | 2 | 0 |
+| select-solution-variants | SOP | B | 0 | 1 | 0 |
+| simulate-emergent-properties | SOP | B | 1 | 0 | 0 |
+| synthesize-idea | SOP | B | 4 | 0 | 0 |
+
+Batch 5 total: 10 nodes, A=0, B=10, C=0; provenance resolved=30, concept=7, intermediate=2. Mechanical gates 1–4: pass. `structural-transformation` enumerates all seven SCAMPER operators; `select-inventive-principle` enumerates all 40 TRIZ principles individually.
+
+## Batch 6 — final SOP
+
+| node | kind | judgment | resolved | concept | intermediate |
+|---|---|---:|---:|---:|---:|
+| transform-component | SOP | B | 4 | 0 | 0 |
+
+Batch 6 total: 1 SOP, A=0, B=1, C=0; provenance resolved=4, concept=0, intermediate=0. Mechanical gates 1–4: pass.

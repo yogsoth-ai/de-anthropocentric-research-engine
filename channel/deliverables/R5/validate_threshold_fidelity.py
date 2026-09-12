@@ -8,7 +8,7 @@ SKILLS = Path(r"D:\YOGSOTH-AI\de-anthropocentric-research-engine\skills")
 PILOT = Path(__file__).parent / "pilot"
 NODES = Path(__file__).parent / "nodes"
 IDS = ["synthesize-meta-analytic-evidence", "design-experiment", "formulate-hypotheses", "analyze-constraints-readiness", "rank-candidates", "establish-empirical-baseline", "audit-benchmark-validity"]
-BASIS_IDS = ["assess-sensitivity", "evaluate-compatibility", "score-object", "surface-assumptions", "detect-coverage-gap", "analyze-temporal-trajectory", "enumerate-dimension-values", "identify-variables", "apply-perturbation", "canonicalize-entity"]
+BASIS_IDS = ["assess-sensitivity", "evaluate-compatibility", "score-object", "surface-assumptions", "detect-coverage-gap", "analyze-temporal-trajectory", "enumerate-dimension-values", "identify-variables", "apply-perturbation", "canonicalize-entity", "construct-critique", "define-analysis-dimensions", "detect-contradiction", "extract-causal-structure", "identify-load-bearing-factors", "inventory-reference-items", "map-dependencies", "map-disagreement", "set-threshold", "validate-causal-link", "adjust-abstraction-scope", "aggregate-ranking", "analyze-scaling-regime", "assess-goal-feasibility", "challenge-assumption", "check-dominance", "construct-counterfactual", "construct-hierarchy", "construct-scenario", "define-criteria"]
 
 # Shared semantics: each named pattern is used for both counting and ledger generation.
 PATTERNS = [
