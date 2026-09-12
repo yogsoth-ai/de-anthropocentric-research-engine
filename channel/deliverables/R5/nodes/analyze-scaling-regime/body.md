@@ -36,3 +36,9 @@ Reject a regime claim based on a single point or a scale change confounded with 
 ## Provenance map
 - resolved: scaling-frontier
 - concept: deep-insight/scaling-analysis
+
+## Preserved source criteria ledger
+
+| source | criterion |
+|---|---|
+| scaling-frontier | Analyze behavior across scales, detect regime changes, and identify capacity limits and mechanisms. |

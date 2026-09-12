@@ -36,3 +36,9 @@ Reject dominance claims when a criterion direction is unknown or a strict improv
 ## Provenance map
 - resolved: dominance-check
 
+## Preserved source criteria ledger
+
+| source | criterion |
+|---|---|
+| dominance-check | Dominance means no worse on all criteria and strictly better on at least one. |
+| dominance-check | Each dominated determination specifies the dominating alternative. |

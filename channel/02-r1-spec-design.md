@@ -25,3 +25,23 @@ A/B/C 判据数：A=0，B=11，C=0。provenance：resolved=11，concept=0，inte
 本批 id：`construct-critique`、`define-analysis-dimensions`、`detect-contradiction`、`extract-causal-structure`、`identify-load-bearing-factors`、`inventory-reference-items`、`map-dependencies`、`map-disagreement`、`set-threshold`、`validate-causal-link`。A/B/C、resolved/concept/intermediate 计数已写入 `deliverables/R5/nodes/_compilation-log.md`。
 
 四条门自检：Procedure 去重通过；Quality gates 去重通过；Input contract 均为具名科研对象；`delta_fields` 均为 `produces` 对应子集；provenance 已按 normalized `old[]` 检索，未解析项明确标为 `concept`/`intermediate`。校验器已对 BASIS 节点运行并通过，pilot 591/591 保持通过。
+## [R5 → Sirelia] BASIS 扇出第三批（10/52）2026-09-12
+
+本批按 fan-in=2 顺序交付：`adjust-abstraction-scope`, `aggregate-ranking`, `analyze-scaling-regime`, `assess-goal-feasibility`, `challenge-assumption`, `check-dominance`, `construct-counterfactual`, `construct-hierarchy`, `construct-scenario`, `define-criteria`。
+
+| id | A | B | C | resolved | concept | intermediate |
+|---|---:|---:|---:|---:|---:|---:|
+| adjust-abstraction-scope | 0 | 2 | 0 | 4 | 0 | 2 |
+| aggregate-ranking | 0 | 5 | 0 | 2 | 0 | 0 |
+| analyze-scaling-regime | 0 | 1 | 0 | 1 | 1 | 0 |
+| assess-goal-feasibility | 0 | 0 | 0 | 1 | 0 | 0 |
+| challenge-assumption | 0 | 1 | 0 | 2 | 1 | 0 |
+| check-dominance | 0 | 2 | 0 | 1 | 0 | 0 |
+| construct-counterfactual | 0 | 0 | 0 | 1 | 0 | 0 |
+| construct-hierarchy | 0 | 3 | 0 | 1 | 0 | 1 |
+| construct-scenario | 0 | 3 | 0 | 4 | 0 | 0 |
+| define-criteria | 0 | 4 | 0 | 1 | 1 | 1 |
+
+交付路径：`deliverables/R5/nodes/<id>/body.md`；合并日志已写入 `deliverables/R5/nodes/_compilation-log.md`。
+
+四条机械门：Procedure 去重通过；Quality gates 去重通过；Input contract `required` 均为具名科研对象；`delta_fields` 均为 `produces` 子集；provenance 已按三种规范形式检索后标注。校验器退出码 0，pilot 源判据 591/591；本批 BASIS provenance-labels 全部无 missing。相对量字段对本批均 not-applicable。

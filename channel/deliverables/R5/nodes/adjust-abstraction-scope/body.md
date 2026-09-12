@@ -40,3 +40,10 @@ Reject a level that changes the object while appearing to change only scope; rej
 - resolved: scope-calibration
 - intermediate: Pass8/shift-abstraction-level
 - intermediate: Pass8/adjust-question-scope
+
+## Preserved source criteria ledger
+
+| source | criterion |
+|---|---|
+| scope-assessment | Input must contain at least 1 fully stated research question. |
+| scope-assessment | Too broad requires a book/multiple papers; appropriate is answerable by one paper; too narrow is self-evident or lacks contribution. |

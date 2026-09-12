@@ -38,3 +38,11 @@ Reject decorative narratives that do not vary an uncertainty or expose a testabl
 - resolved: counterfactual-scenario-construction
 - resolved: worst-case-construction
 - resolved: stress-scenario
+
+## Preserved source criteria ledger
+
+| source | criterion |
+|---|---|
+| scenario-construction | Output contains at least 3 distinct scenarios spanning different combinations of key uncertainties. |
+| scenario-construction | Each scenario includes a narrative, key assumptions, and probability estimate. |
+| worst-case-construction | Extreme-but-plausible mode includes breaking points, failure cascades, and recovery assessment. |

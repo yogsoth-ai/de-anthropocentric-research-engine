@@ -37,3 +37,12 @@ Reject mixed units without normalization; reject a recommendation when a hard cr
 - resolved: priority-synthesis
 - resolved: scoring-synthesis
 
+## Preserved source criteria ledger
+
+| source | criterion |
+|---|---|
+| priority-synthesis | All scoring dimensions are present for every gap. |
+| priority-synthesis | Weight vector sums to 1.0 within ±0.001. |
+| priority-synthesis | Priority list is sorted descending; ties use feasibility sub-score. |
+| priority-synthesis | Top N is N=min(3,total gaps) and includes attack-path suggestions. |
+| scoring-synthesis | Final recommendation includes recommended alternative, confidence, key assumptions, and risk warnings. |
