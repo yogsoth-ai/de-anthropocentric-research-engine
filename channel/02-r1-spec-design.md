@@ -72,3 +72,6 @@ Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source crite
 误报白名单仅匹配：v3 SOP 子步骤/调用行、Base SOP 编排预算表、层级标题，以及 zero-state 输出快照。未按节点或整段跳过。依据与逐项分类见 `deliverables/R5/pilot-94-triage.md`。
 
 `validate_threshold_fidelity.py` 已加入 source-specific relative criterion 判定与窄结构白名单。全量结果：退出码 0，591 条台账命中；盲区仍为数字词/非英文阈值、无提示词的隐式判据、定性形容词、未匹配公式，以及 266/267 正文覆盖中的既有 `structured-consensus` 缺正文问题。
+## [R5] Threshold operator compatibility handoff — 2026-09-12
+
+校验器已将 ASCII `>= <= +/-` 与 Unicode `≥ ≤ ±`、LaTeX `\\ge/\\geq/\\le/\\leq/\\pm` 归一为同一判据。验证直接运行于现有 pilot 正文与 v3 ledger：五个 pilot 均 `missing=0`，591 台账路径检查退出码 0；当前真实库存提示仍为 `full-node-coverage=266/267`（`structured-consensus` 既有路径问题）。记录见 `deliverables/R5/ascii-operator-compatibility.md`。

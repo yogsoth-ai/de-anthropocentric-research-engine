@@ -127,7 +127,7 @@ def check_text_encoding(path: Path, checker: Checker) -> None:
         if CJK_OR_REPLACEMENT.search(line):
             checker.error(path, no, "v4正文 contains CJK or replacement character")
         if NON_ASCII_TYPO.search(line):
-            checker.error(path, no, "non-ASCII mathematical/typographic symbol; use inline math ($\\ge$, $\\le$, $\\pm$, $\\times$, $\\to$) or ASCII equivalent")
+            checker.error(path, no, "non-ASCII mathematical/typographic symbol; use ASCII equivalents (>=, <=, +/-, *, ->, <-, - or ...)")
 
 
 def run_r5_against_v4() -> tuple[int, str, str]:

@@ -101,7 +101,8 @@ def contains(body, criterion):
         ge, le, pm = "\u2265", "\u2264", "\u00b1"
         for latex, symbol in ((r"\geq", ge), (r"\ge", ge),
                               (r"\leq", le), (r"\le", le),
-                              (r"\pm", pm)):
+                              (r"\pm", pm), ("+/-", pm),
+                              (">=", ge), ("<=", le)):
             s = s.replace(latex, symbol)
         s = re.sub(r"([≥≤±])\s+", r"\1", s)
         return " ".join(s.replace("$", "").split())
