@@ -344,3 +344,60 @@ R2 结果出来后，A 类判据按其相对化方案写进对应 body 的固定
 [R5 → Sirelia, all] 相对 gate 审计字段与失败条件修正 2026-09-09
 
 `rank-candidates/body.md` 已补齐 numerator、denominator（eligible candidate/evidence universe）、batch increment、stopping reason、source references，并明确缺任一项不得通过；同时写明 marginal information gain 与 saturation state。校验器现将必需审计字段纳入失败条件：完整语料相对 gate 节点要求 8/8，`analyze-constraints-readiness` 按适用的 4 项字段检查；非语料节点 `design-experiment` 3/8、`formulate-hypotheses` 3/8 仅报告、不失败。实测 591/591 source criteria，退出码 0。
+
+---
+
+## [Sirelia → all] 裁定：全量扇出 + host 立项 2026-09-10
+
+骨架收口。今晚要拿到可开发的完整 design。两路并行。
+
+### 一、新岗 R6：host 设计
+
+v4 所有规格写了十一处「host 必须」，host 从未定义。
+题目、六个必答问题、约束、交付要求全在 `08-host-negotiation.md`。
+落 `deliverables/R6/host-design.md`。
+
+Q4（节点发现格式）、Q5（tactic 内部执行序）是 260 个正文的硬约束，
+优先出这两条。
+
+### 二、R1–R5：260 个节点正文扇出
+
+规格 `09-fanout-spec.md`。要点：
+
+- **两个模板**：tactic 九小节（照抄 pilot），SOP 七小节（新立，写 `Procedure` 不写
+  `Execution protocol`，不写 checkpoint 小节）。BASIS SOP 额外写 `## Parameterization`。
+- **contract 格式锁死**（§1.3），`delta_fields` 只取八字段子集。按它写不返工。
+- **tactic 必须给默认执行序**，每步括号列本步 SOP id，且 id 必须在
+  `calls[<tactic-id>]` 里真实存在。
+- 判据继续按 A/B/C 三类，A 类六个审计字段照 R5 pilot 口径。
+  统计/power/预注册/公平比较保持固定值。
+- provenance 归一化规则见 §4，**查不到标 concept/intermediate，不许用近似名顶替**。
+
+分区（按 id 全量枚举在 §5，无重叠）：
+
+| 岗 | 组 | 数量 |
+|---|---|---|
+| R1 | ACQUISITION + DIRECTION | 44（6 tactic + 38 SOP）|
+| R2 | STRESS + CROSS | 41（12 tactic + 29 SOP）|
+| R3 | IDEATION + INSIGHT | 51（15 tactic + 36 SOP）|
+| R4 | HYPOTHESIS + EXPERIMENT + CONVERGENCE + STRUCTURING | 79（11 tactic + 68 SOP）|
+| R5 | BASIS（全 SOP） | 45 |
+
+合计 260。加已完成 7 个 = 267。
+
+**R5 先做 `score-object`**：15 个 rubric 抽共享库还是全部交给
+`Parameterization`，本轮定终态。它被 6 个 tactic 调用，
+结论出来在 channel 说一声，R1/R2/R3 按它写。
+
+**不要等 host。** Q4/Q5 只影响解析格式，§1.3 已锁死。
+
+### 三、节奏
+
+10 个一批，交到自己的 topic 帖，每批报：id、A/B/C 判据数、未解析 provenance 数。
+不许憋到最后。求裁写 `00-escalation.md`。
+
+### 四、不变的约束
+
+写权限只有 channel。禁 git 写。禁 superpowers / ara。对外动作先报。
+**agent 自身异常处理一律不写**——重试、超时、退避、错误分类、并行调度、
+监控状态机，出现即驳回。
