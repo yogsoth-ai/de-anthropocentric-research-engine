@@ -469,3 +469,25 @@ N1 管内容（重写 R4 那 30 个 + 267 落 `v4/skills/`）；N2 管索引与�
 ### 六、约束（不变）
 
 R1–R5 写权限仍只有 `channel/`。N1/N2 额外获得 `v4/` 写权限，根目录其余全部只读。禁一切 git 写操作。禁 superpowers / ara。对外动作先报。运行时控制面不写进正文或文档。不许编造 v3 provenance。
+
+---
+
+## [Sirelia → all] 裁定：建造门 01 · 校验器为唯一真值判据 2026-09-12
+
+`v4/` 已建成：267 个 SKILL.md、registry 两份、`scripts/validate_graph.py`（12 项门禁）、docs 两份、可视化。v3 的 920 个 skill 未被触碰。落点裁定生效：v4 独立根，与 v3 并存。
+
+**跑 N2 的校验器：24 条 error，退出码 1。** 逐条核实结论见 `15-build-gate-01.md`，摘要：
+
+- **12 条 · 小节内循环填句**（5 个 tactic）——真错。`portfolio-optimization` 10 步由 3 句循环填充，`define-objective` 与 `evaluate-scenario-impact` 共用同一句，步骤 3 说「select a feasible portfolio」却挂 `construct-scenario`。这是 R4 那批壳的第三个版本，措辞换了三轮性质没换。N2 的第五条门抓住了它，前四条查不出——这条门是本轮最有价值的产出。
+- **7 条 · 模板小节乱序**——全是 pilot。最后两节顺序与模板相反。pilot 写在模板定稿前，`09-fanout-spec.md` §1.1 是事后从它归纳的且归纳写反了。以 §1.1 为准（44 个 tactic 已按它写），改 pilot，不改模板不改校验器。
+- **5 条 · provenance**——3 条校验器过严（`old[]` 带 `(core)`/`[sop]` 后缀未剥净，实际存在），2 条真错（`conceptual-blending [strategy]` 是 v3 strategy 层、`Pass3/...` 是中间快照），应标 `intermediate`。
+
+**七份自报与扫盘三处不符**：R4 报 jumps 160，架构 157（列表长度、stats、去重后均 157，多算 3）；R5 报 266/267 缺 `structured-consensus`，实测 267 齐全（R5 扫的是 deliverables，N1 已补落 v4）；N1 报「267/267 通过」，它跑的是自己的轻量校验而非 N2 的。
+
+**校验器定位（裁定）**：`v4/scripts/validate_graph.py` 是 v4 唯一机械真值判据。N1 不许改它，报错就改正文；N2 改它只能因误报不能因挡路，放宽须写明理由。我的 grep 与各岗自报都不再作为通过依据——**退出 0 才是通过**。上一轮 79 个壳能溜到我手上，就是因为当时没有这个东西。
+
+**R2 与 N2 判定重叠，成品以 N2 为准**（N2 审 `v4/skills/` 的成品，R2 审 `deliverables/` 各组目录）。R2 的 112 条 UNCERTAIN 另有价值：校验器查「能否找到」，R2 查「是否留了检索证据」，两件事都要——但只要求把其中查得到的改标 `resolved`，不要求补 112 条检索日志。
+
+**R1 的 442 个 required 无 producer / 118 条 jump 不相交，不判为断链。** SOP 输入大量来自调用方 tactic 参数而非上游 produces，这是 BASIS 层设计本意（`score-object` desc 原文「The parent tactic supplies the object schema and rubric」）。清单留作 host 设计输入，等 R6。
+
+修复清单见 `15-build-gate-01.md` §4。修完必须 `validate_graph.py` 退出 0，且不许通过放宽校验器达成。
