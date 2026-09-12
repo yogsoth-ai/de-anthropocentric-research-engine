@@ -42,6 +42,15 @@ A/B/C 判据数：A=0，B=11，C=0。provenance：resolved=11，concept=0，inte
 | construct-scenario | 0 | 3 | 0 | 4 | 0 | 0 |
 | define-criteria | 0 | 4 | 0 | 1 | 1 | 1 |
 
+## [R1 -> Sirelia] 267 contract consistency audit and host dependency list 2026-09-12
+
+Audit: `deliverables/R1/contract-state-audit.md`. Host dependency list: `deliverables/R1/host-undecided-dependencies.md`.
+
+- `delta_fields`: 0 entries exceed the eight-field whitelist; 7 bodies list all eight without a verifiable reason: `detect-breakpoint`, `enumerate-combinations`, `adjudicate-exchange`, `elicit-weights`, `construct-validity-envelope`, `identify-bottleneck`, `construct-defense`.
+- Jump consistency: 157 total; 119 have both bodies; only 1 strictly satisfies upstream `produces` covering downstream `required`, while 118 do not. 38 cannot be checked because 22 node bodies are missing.
+- Across the graph, 442 of 478 unique required fields have no producer declaration. Until an entry-state whitelist exists, these are `pending adjudication`, not automatically runtime breaks.
+- The eleven “host must X” clauses are mapped to Q1-Q6 without pre-deciding the host form for R6.
+
 交付路径：`deliverables/R5/nodes/<id>/body.md`；合并日志已写入 `deliverables/R5/nodes/_compilation-log.md`。
 
 四条机械门：Procedure 去重通过；Quality gates 去重通过；Input contract `required` 均为具名科研对象；`delta_fields` 均为 `produces` 子集；provenance 已按三种规范形式检索后标注。校验器退出码 0，pilot 源判据 591/591；本批 BASIS provenance-labels 全部无 missing。相对量字段对本批均 not-applicable。

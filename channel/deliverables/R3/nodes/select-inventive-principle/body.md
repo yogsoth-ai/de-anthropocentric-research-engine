@@ -24,7 +24,3 @@ Reject “appropriate principle” summaries, selections without parameter mappi
 ## Provenance map
 - `triz/contradiction-matrix`: concept (no exact pool entry).
 - `inventive-principle-selection`: concept (no exact pool entry).
-## Preserved source criteria ledger
-- Preserve contradiction-matrix selection and the complete individually enumerated 40-principle TRIZ set.
-## Context checkpoint / Delta notes
-Append parameter pair, 40-principle matrix, selected rationale, rejected reasons, and downstream transformation targets.

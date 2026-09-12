@@ -1,0 +1,1029 @@
+{
+  "schema": "dare-v4-capabilities-1",
+  "source": "D:\\YOGSOTH-AI\\file-transfer\\2026-08-23-22-16-dare-v4-architecture.json",
+  "count": 146,
+  "contracts": [
+    {
+      "old_capability": "cold-start / warm-start / hot-start",
+      "family": "DIRECTION",
+      "status": "COVERED_MODE",
+      "new_path": "entry-depth policy → profile / landscape / rank / obstacles / goal",
+      "rationale": "These are entry-depth policies, not scientific algorithms; preserved as optional start depth."
+    },
+    {
+      "old_capability": "actor-profiling",
+      "family": "DIRECTION",
+      "status": "MOVED_RUNTIME",
+      "new_path": "research-context input contract",
+      "rationale": "Background, resources, hard constraints and intent remain inputs; acquisition/elicitation is no longer a scientific Tactic."
+    },
+    {
+      "old_capability": "landscape-reconnaissance",
+      "family": "DIRECTION",
+      "status": "FULLY_COVERED",
+      "new_path": "map-research-landscape",
+      "rationale": "Candidate directions and field panorama preserved; retrieval implementation removed."
+    },
+    {
+      "old_capability": "direction-narrowing",
+      "family": "DIRECTION",
+      "status": "COVERED_MODE",
+      "new_path": "rank-candidates(object=research-direction)",
+      "rationale": "Same criteria/constraints/ranking kernel."
+    },
+    {
+      "old_capability": "obstacle-analysis",
+      "family": "DIRECTION",
+      "status": "COVERED_MODE",
+      "new_path": "analyze-constraints-readiness(mode=obstacle-triage)",
+      "rationale": "Obstacle semantics preserved as a mode."
+    },
+    {
+      "old_capability": "goal-decomposition",
+      "family": "DIRECTION",
+      "status": "FULLY_COVERED",
+      "new_path": "decompose-research-goal",
+      "rationale": "AND/OR decomposition, feasibility, dependencies preserved."
+    },
+    {
+      "old_capability": "north-star-synthesis",
+      "family": "DIRECTION",
+      "status": "COVERED_INLINE",
+      "new_path": "decompose-research-goal → crystallize-north-star",
+      "rationale": "One-SOP wrapper removed, synthesis operation retained."
+    },
+    {
+      "old_capability": "broad-web / deep-web / paper search nodes",
+      "family": "INFRA",
+      "status": "REMOVED_TOOLING",
+      "new_path": "host AI tool choice",
+      "rationale": "Scientific intent remains; MCP/provider-specific execution is deliberately removed."
+    },
+    {
+      "old_capability": "engine-core / context-management / checkpointing",
+      "family": "INFRA",
+      "status": "MOVED_RUNTIME",
+      "new_path": "runtime/control plane",
+      "rationale": "Routing, budget, checkpoint, context recovery are not scientific cognition."
+    },
+    {
+      "old_capability": "subagent-spawning / implementer-dispatch",
+      "family": "INFRA",
+      "status": "MOVED_RUNTIME",
+      "new_path": "host agent runtime",
+      "rationale": "DARE specifies work, not how many agents or which runtime execute it."
+    },
+    {
+      "old_capability": "wiki-* vault/storage operations",
+      "family": "INFRA",
+      "status": "REMOVED_TOOLING",
+      "new_path": "external storage / knowledge tool",
+      "rationale": "Ontology/causal/argument transformations remain; storage implementation is decoupled."
+    },
+    {
+      "old_capability": "gap-prioritization",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MODE",
+      "new_path": "rank-candidates(object=gap)",
+      "rationale": "Gap normalization, criteria, scoring, weighting, sensitivity retained."
+    },
+    {
+      "old_capability": "gap portfolio optimization",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "rank-candidates → portfolio-optimization",
+      "rationale": "Subset optimization remains separate from scalar ranking."
+    },
+    {
+      "old_capability": "gap pairwise comparison",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "rank-candidates → pairwise-ranking",
+      "rationale": "Iterative active comparison preserved."
+    },
+    {
+      "old_capability": "competing hypotheses",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MODE",
+      "new_path": "formulate-hypotheses(mode=competing) → design-discriminating-prediction → compare-hypotheses",
+      "rationale": "The separate Tactic is removed; its full discriminating-comparison branch remains explicit."
+    },
+    {
+      "old_capability": "operationalization / falsifiability",
+      "family": "HYPOTHESIS",
+      "status": "FULLY_COVERED",
+      "new_path": "falsifiability-audit",
+      "rationale": "Operationalize constructs, specify boundaries, falsifiability retained."
+    },
+    {
+      "old_capability": "RQ frameworks PICO/SPIDER/SPICE/ECLIPSE",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MODE",
+      "new_path": "formulate-research-question → apply-question-framework(schema=...)",
+      "rationale": "Frameworks parameterized instead of separate SOPs."
+    },
+    {
+      "old_capability": "question decomposition",
+      "family": "HYPOTHESIS",
+      "status": "FULLY_COVERED",
+      "new_path": "decompose-research-question",
+      "rationale": "Subquestions/dependency workflow preserved."
+    },
+    {
+      "old_capability": "scoping / systematic / deep / narrative survey",
+      "family": "ACQUISITION",
+      "status": "COVERED_MODE",
+      "new_path": "synthesize-literature-evidence(mode=...)",
+      "rationale": "Evidence protocol/extraction/quality/saturation retained without provider coupling."
+    },
+    {
+      "old_capability": "snowball survey / citation chaining",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "synthesize-literature-evidence → trace-citation-neighborhood",
+      "rationale": "Pass 6 lacked explicit citation-neighborhood expansion; restored tool-agnostically."
+    },
+    {
+      "old_capability": "PRISMA-style multistage screening",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "synthesize-literature-evidence → screen-evidence-multistage",
+      "rationale": "Systematic screening methodology restored separately from retrieval."
+    },
+    {
+      "old_capability": "narrative framing",
+      "family": "ACQUISITION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "synthesize-literature-evidence → construct-argument-map",
+      "rationale": "Narrative synthesis is evidence organization plus argument structure, not a search SOP."
+    },
+    {
+      "old_capability": "patent landscape / family / classification",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "mine-patent-landscape",
+      "rationale": "Family and classification structure retained."
+    },
+    {
+      "old_capability": "patent citation network",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "mine-patent-landscape → analyze-patent-citation-network",
+      "rationale": "Topology/lineage capability was missing from family tracing."
+    },
+    {
+      "old_capability": "prior art / claim analysis",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "assess-prior-art-and-claims",
+      "rationale": "Claim parsing, status, evidence independence retained."
+    },
+    {
+      "old_capability": "patent white-space",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "map-patent-white-space",
+      "rationale": "Claim-space gaps retained."
+    },
+    {
+      "old_capability": "benchmark artifact detection",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "audit-benchmark-validity → probe-benchmark-artifact",
+      "rationale": "Active shortcut/artifact probing restored."
+    },
+    {
+      "old_capability": "benchmark contamination / construct validity / protocol variance",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "audit-benchmark-validity",
+      "rationale": "Distinct validity checks retained."
+    },
+    {
+      "old_capability": "pairwise/network meta-analysis",
+      "family": "ACQUISITION",
+      "status": "COVERED_MODE",
+      "new_path": "synthesize-meta-analytic-evidence(mode=pairwise|network)",
+      "rationale": "Effect, heterogeneity, bias, evidence network retained."
+    },
+    {
+      "old_capability": "cumulative meta-analysis",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "synthesize-meta-analytic-evidence → update-cumulative-evidence",
+      "rationale": "Sequential evidence accumulation restored."
+    },
+    {
+      "old_capability": "baseline establishment / discrepancy / headroom",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "establish-empirical-baseline",
+      "rationale": "Performance extraction, normalization, discrepancy/headroom retained."
+    },
+    {
+      "old_capability": "gap identification / validation",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "validate-research-gap",
+      "rationale": "False-gap filtering, independence, persistence retained."
+    },
+    {
+      "old_capability": "gap classification",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "validate-research-gap → classify-research-gap",
+      "rationale": "Typed gap diagnosis was absent in Pass 6."
+    },
+    {
+      "old_capability": "root-cause analysis: 5 Whys / Ishikawa / CRT",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "drill-root-causes",
+      "rationale": "Specialized root-cause operators remain."
+    },
+    {
+      "old_capability": "stakeholder mapping / CSH / JTBD / salience",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "map-stakeholder-system",
+      "rationale": "Pass 6 had generic framing but lost boundary, jobs, and salience semantics."
+    },
+    {
+      "old_capability": "assumption audit",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "assumption-stress-test",
+      "rationale": "Surfacing, vulnerability, challenge, causal validation retained."
+    },
+    {
+      "old_capability": "robustness / alternative models",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "robustness-analysis",
+      "rationale": "Alternative-model and load-bearing-factor analysis retained."
+    },
+    {
+      "old_capability": "validity envelope / boundary analysis",
+      "family": "INSIGHT",
+      "status": "COVERED_MODE",
+      "new_path": "map-validity-envelope(mode=systematic|boundary|critical-case)",
+      "rationale": "Shared perturbation kernel with critical-case selection retained."
+    },
+    {
+      "old_capability": "Morris screening → Sobol variance decomposition",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "sensitivity-analysis → decompose-global-sensitivity",
+      "rationale": "Local sensitivity could not replace global interaction attribution."
+    },
+    {
+      "old_capability": "Monte-Carlo uncertainty cascade",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "sensitivity-analysis → propagate-uncertainty",
+      "rationale": "Distributional uncertainty propagation restored."
+    },
+    {
+      "old_capability": "decision sensitivity / value of information",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "sensitivity-analysis → quantify-information-value",
+      "rationale": "Explicit EVPI/EVSI-style prioritization restored."
+    },
+    {
+      "old_capability": "scaling frontier / regime analysis",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "robustness-analysis / map-validity-envelope → analyze-scaling-regime",
+      "rationale": "Scale-specific regime shifts restored."
+    },
+    {
+      "old_capability": "multi-perspective reframing",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "problem-reframing ↔ problem-reframing(mode=perspective-shift)",
+      "rationale": "Explicit perspective construction/rotation restored."
+    },
+    {
+      "old_capability": "wickedness assessment",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "problem-reframing → assess-problem-wickedness",
+      "rationale": "Determines whether a stable problem/stopping rule exists."
+    },
+    {
+      "old_capability": "appreciative reframing",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "problem-reframing → appreciative-reframe",
+      "rationale": "Positive-deviance/strength-based reframing restored."
+    },
+    {
+      "old_capability": "dialectical escalation",
+      "family": "INSIGHT",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "problem-reframing → adversarial-deliberation",
+      "rationale": "Thesis/antithesis attack and adjudication retained through shared adversarial tactic."
+    },
+    {
+      "old_capability": "cross-domain analogy",
+      "family": "IDEATION",
+      "status": "FULLY_COVERED",
+      "new_path": "analogical-discovery",
+      "rationale": "Abstract structure → mapping → transfer retained."
+    },
+    {
+      "old_capability": "biomimicry / BioTRIZ",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "biomimetic-transfer",
+      "rationale": "Biologize/discover/extract causal strategy restored."
+    },
+    {
+      "old_capability": "conceptual blending / emergent properties",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "conceptual-blending",
+      "rationale": "Generic-space and emergent-property semantics restored."
+    },
+    {
+      "old_capability": "morphological exploration",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "explore-dimensional-space(mode=morphological-generation)",
+      "rationale": "Dimension×value combination kernel retained."
+    },
+    {
+      "old_capability": "TRIZ contradiction/separation",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "resolve-inventive-contradiction",
+      "rationale": "Contradiction matrix/separation semantics cannot be reduced to generic transform."
+    },
+    {
+      "old_capability": "SCAMPER / structural transformation",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "structural-transformation(mode=transformation operator)",
+      "rationale": "SCAMPER operations are parameterized component transforms."
+    },
+    {
+      "old_capability": "Six Hats / role forcing / personal analogy",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "problem-reframing(mode=perspective-shift)",
+      "rationale": "Perspective is explicitly rotated rather than simulated as generic critique."
+    },
+    {
+      "old_capability": "random entry / concept fan / stepping-stone constraints",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "destructive-ideation + restored lateral SOPs",
+      "rationale": "Three distinct lateral divergence operators restored."
+    },
+    {
+      "old_capability": "assumption destruction / provocation",
+      "family": "IDEATION",
+      "status": "FULLY_COVERED",
+      "new_path": "destructive-ideation",
+      "rationale": "Assumption surfacing, provocation, constructive movement retained."
+    },
+    {
+      "old_capability": "evolution strategy / variation-selection",
+      "family": "IDEATION",
+      "status": "RESTORED",
+      "new_path": "evolve-solution-population",
+      "rationale": "Stateful population mutation/selection/diversity restored."
+    },
+    {
+      "old_capability": "white-space search / systematic enumeration",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "coverage-white-space-search ↔ explore-dimensional-space",
+      "rationale": "Coverage gap plus combinatorial enumeration retained."
+    },
+    {
+      "old_capability": "Synectics direct/symbolic/personal/fantasy excursions",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "analogical-discovery + conceptual-blending + problem-reframing(mode=perspective-shift)",
+      "rationale": "Decomposed into underlying analogy/blend/perspective transformations rather than retaining human-method wrapper."
+    },
+    {
+      "old_capability": "critic-defender-judge / courtroom debate",
+      "family": "STRESS",
+      "status": "COVERED_MODE",
+      "new_path": "adversarial-deliberation",
+      "rationale": "Role topology is a mode; spawning agents is runtime."
+    },
+    {
+      "old_capability": "confidence escalation/calibration across debate rounds",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "adversarial-deliberation → calibrate-adversarial-confidence",
+      "rationale": "Epistemic confidence update restored."
+    },
+    {
+      "old_capability": "structured red-team attack campaign",
+      "family": "STRESS",
+      "status": "FULLY_COVERED",
+      "new_path": "structured-red-team",
+      "rationale": "Threat surface, attacks, probes retained."
+    },
+    {
+      "old_capability": "assumption cascade",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "structured-red-team → trace-assumption-cascade",
+      "rationale": "Dependency-propagated failure restored."
+    },
+    {
+      "old_capability": "premortem → FMEA",
+      "family": "STRESS",
+      "status": "COVERED_MODE",
+      "new_path": "fmea-risk-analysis(mode=premortem-seeded)",
+      "rationale": "Failure enumeration/chain/risk/mitigation retained."
+    },
+    {
+      "old_capability": "mitigation validation",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "fmea-risk-analysis → validate-mitigation-effect",
+      "rationale": "Mitigation must be retested, not only designed."
+    },
+    {
+      "old_capability": "factor removal / counterfactual probing",
+      "family": "STRESS",
+      "status": "FULLY_COVERED",
+      "new_path": "counterfactual-causal-analysis",
+      "rationale": "Counterfactual and load-bearing factor analysis retained."
+    },
+    {
+      "old_capability": "minimal-change search",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "counterfactual-causal-analysis → search-minimal-flip",
+      "rationale": "Smallest conclusion-flipping intervention restored."
+    },
+    {
+      "old_capability": "causal necessity/sufficiency testing",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "counterfactual-causal-analysis → evaluate-necessity-sufficiency",
+      "rationale": "Necessary/sufficient cause semantics restored."
+    },
+    {
+      "old_capability": "reductio / contradiction / counterexample",
+      "family": "STRESS",
+      "status": "FULLY_COVERED",
+      "new_path": "reductio-counterexample-analysis",
+      "rationale": "Negation, consequences, contradiction, refinement retained."
+    },
+    {
+      "old_capability": "boundary probing / critical-case design",
+      "family": "STRESS",
+      "status": "COVERED_MODE",
+      "new_path": "map-validity-envelope(mode=boundary|critical-case)",
+      "rationale": "Critical-case operator restored in Pass 6."
+    },
+    {
+      "old_capability": "MCDA best/full/category/veto/weighted",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MODE",
+      "new_path": "rank-candidates(mode=...)",
+      "rationale": "Same criteria→score→aggregate kernel."
+    },
+    {
+      "old_capability": "pairwise active ranking",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "pairwise-ranking",
+      "rationale": "Pair selection, comparison, rating update, consistency retained."
+    },
+    {
+      "old_capability": "Delphi / consensus rounds",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "structured-consensus",
+      "rationale": "Disagreement mapping and convergence rounds retained."
+    },
+    {
+      "old_capability": "probabilistic futures calibration",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "structured-consensus → calibrate-probability-forecast",
+      "rationale": "Restored in Pass 6."
+    },
+    {
+      "old_capability": "readiness / feasibility",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MODE",
+      "new_path": "analyze-constraints-readiness",
+      "rationale": "Readiness, bottleneck, constraints, removability retained."
+    },
+    {
+      "old_capability": "Stage-Gate GO/KILL/RECYCLE",
+      "family": "CONVERGENCE",
+      "status": "RESTORED",
+      "new_path": "analyze-constraints-readiness → apply-stage-gate",
+      "rationale": "Explicit staged decision semantics restored."
+    },
+    {
+      "old_capability": "portfolio Pareto/value selection",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "portfolio-optimization",
+      "rationale": "Pareto, scenario impact, selection retained."
+    },
+    {
+      "old_capability": "portfolio diversity / niche coverage",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "portfolio-optimization → measure-portfolio-diversity",
+      "rationale": "Restored in Pass 6."
+    },
+    {
+      "old_capability": "Real Options / temporal sequencing",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "portfolio-optimization → evaluate-optionality",
+      "rationale": "Restored in Pass 6."
+    },
+    {
+      "old_capability": "robustness under uncertainty / minimax regret",
+      "family": "CONVERGENCE",
+      "status": "RESTORED",
+      "new_path": "portfolio-optimization → evaluate-scenario-robustness(mode=regret)",
+      "rationale": "Not equivalent to Pareto frontier; restored."
+    },
+    {
+      "old_capability": "steelman / resurrection / winner stress",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MODE",
+      "new_path": "adversarial-deliberation(mode=...)",
+      "rationale": "Shared attack/defense/adjudication kernel."
+    },
+    {
+      "old_capability": "ontology concept decomposition / hierarchy / consistency",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "build-domain-ontology",
+      "rationale": "Scientific representation operations retained."
+    },
+    {
+      "old_capability": "causal evidence / feedback / intervention / counterfactual",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "construct-causal-model",
+      "rationale": "Causal model transformations retained."
+    },
+    {
+      "old_capability": "dimensional analysis",
+      "family": "STRUCTURING",
+      "status": "COVERED_MODE",
+      "new_path": "explore-dimensional-space(mode=research-space-mapping)",
+      "rationale": "Dimension/value/compatibility/gap semantics retained."
+    },
+    {
+      "old_capability": "argument mapping / counterclaims / evidence",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "construct-argument-map",
+      "rationale": "Claims, assumptions, evidence, critique retained."
+    },
+    {
+      "old_capability": "knowledge compilation / vault maintenance",
+      "family": "STRUCTURING",
+      "status": "MOVED_RUNTIME",
+      "new_path": "artifact/storage layer",
+      "rationale": "Scientific structure remains; compilation/storage plumbing leaves cognition graph."
+    },
+    {
+      "old_capability": "factorial / ablation / metric / sample-size / statistics design",
+      "family": "EXPERIMENT",
+      "status": "FULLY_COVERED",
+      "new_path": "design-experiment",
+      "rationale": "Distinct experimental design operators retained."
+    },
+    {
+      "old_capability": "constraint analysis",
+      "family": "EXPERIMENT",
+      "status": "COVERED_MODE",
+      "new_path": "analyze-constraints-readiness(mode=resource|causal)",
+      "rationale": "Merged with common blocker/readiness kernel."
+    },
+    {
+      "old_capability": "scenario planning",
+      "family": "EXPERIMENT",
+      "status": "FULLY_COVERED",
+      "new_path": "analyze-future-scenarios",
+      "rationale": "Drivers, compatibility, scenario, impact, robustness, time retained."
+    },
+    {
+      "old_capability": "implementation dependency planning",
+      "family": "EXPERIMENT",
+      "status": "MOVED_RUNTIME",
+      "new_path": "host execution planner",
+      "rationale": "Scientific work/dependency planning retained."
+    },
+    {
+      "old_capability": "critical-path duration / buffering / dispatch / monitoring",
+      "family": "EXPERIMENT",
+      "status": "MOVED_RUNTIME",
+      "new_path": "host execution planner/runtime",
+      "rationale": "Generic project scheduling and agent dispatch are outside scientific cognition."
+    },
+    {
+      "old_capability": "statistical result analysis / reproducibility",
+      "family": "EXPERIMENT",
+      "status": "FULLY_COVERED",
+      "new_path": "analyze-experiment-results",
+      "rationale": "Scientific evaluation retained."
+    },
+    {
+      "old_capability": "deductive hypothesis generation",
+      "family": "HYPOTHESIS",
+      "status": "FULLY_COVERED",
+      "new_path": "formulate-hypotheses(mode=deductive) → falsifiability-audit",
+      "rationale": "Theory→mechanism→variables→relationship remains represented by existing operators."
+    },
+    {
+      "old_capability": "inductive hypothesis generation",
+      "family": "HYPOTHESIS",
+      "status": "RESTORED",
+      "new_path": "formulate-hypotheses(mode=inductive): extract-empirical-regularity → identify-variables → specify-relationship → falsifiability-audit",
+      "rationale": "Pass 7 had no explicit observation→regularity operation, so inductive semantics were not actually covered."
+    },
+    {
+      "old_capability": "abductive hypothesis generation / anomaly-driven-abduction",
+      "family": "HYPOTHESIS",
+      "status": "RESTORED",
+      "new_path": "formulate-hypotheses(mode=abductive): characterize-anomaly → generate-competing-hypotheses → score-object(plausibility) → falsifiability-audit",
+      "rationale": "Restores anomaly characterization and best-explanation ranking while reusing canonical candidate generation/scoring."
+    },
+    {
+      "old_capability": "research-question scope calibration",
+      "family": "HYPOTHESIS",
+      "status": "RESTORED",
+      "new_path": "formulate-research-question → adjust-abstraction-scope → assess-question-quality",
+      "rationale": "Explicit scope movement was missing; restored."
+    },
+    {
+      "old_capability": "comparative research question",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MODE",
+      "new_path": "formulate-research-question(mode=comparative) → apply-question-framework → define-criteria",
+      "rationale": "Comparator and outcome schema are parameters, not a distinct cognitive primitive."
+    },
+    {
+      "old_capability": "feasibility-constrained research question",
+      "family": "HYPOTHESIS",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "formulate-research-question → analyze-constraints-readiness → adjust-abstraction-scope",
+      "rationale": "Feasibility is preserved through an explicit cross-tactic path rather than duplicated in question formulation."
+    },
+    {
+      "old_capability": "tension-mining / polarity mapping",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "problem-reframing → map-productive-polarity",
+      "rationale": "Persistent polarities must be managed rather than solved; Pass 7 lacked this distinction."
+    },
+    {
+      "old_capability": "question-reformulation / abstraction laddering",
+      "family": "INSIGHT",
+      "status": "RESTORED",
+      "new_path": "problem-reframing → adjust-abstraction-scope → formulate-research-question",
+      "rationale": "Restores deliberate Why-up / How-down movement across abstraction levels."
+    },
+    {
+      "old_capability": "evaporating-cloud conflict dissolution",
+      "family": "INSIGHT",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "problem-reframing → extract-core-conflict → surface-assumptions → design-mitigation",
+      "rationale": "Core conflict and hidden assumption dissolution are already reachable; no separate branded SOP needed."
+    },
+    {
+      "old_capability": "Socratic probing",
+      "family": "INSIGHT",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "problem-reframing → surface-assumptions → challenge-assumption → construct-critique",
+      "rationale": "Questioning method compiles to existing assumption/challenge operations."
+    },
+    {
+      "old_capability": "How-Might-We reframing",
+      "family": "INSIGHT",
+      "status": "COVERED_INLINE",
+      "new_path": "problem-reframing output contract(mode=generative-question)",
+      "rationale": "The output shape is a framing schema, not an irreducible transformation."
+    },
+    {
+      "old_capability": "boundary critique / CSH inclusion-exclusion",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "map-stakeholder-system → assess-system-boundary",
+      "rationale": "Restored in Pass 7 and retained."
+    },
+    {
+      "old_capability": "uncertainty propagation / Monte Carlo",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "sensitivity-analysis → propagate-uncertainty",
+      "rationale": "Distribution propagation remains explicit."
+    },
+    {
+      "old_capability": "decision sensitivity / value of information",
+      "family": "INSIGHT",
+      "status": "FULLY_COVERED",
+      "new_path": "sensitivity-analysis → quantify-information-value",
+      "rationale": "EVPI/EVSI-style prioritization remains explicit."
+    },
+    {
+      "old_capability": "falsification-first-stress-test campaign",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "falsification-first-audit",
+      "rationale": "Current repo capability was absent from Pass 7; restored as truth-seeking entry tactic with reversed success criterion."
+    },
+    {
+      "old_capability": "adversarial-debate-truthseeking",
+      "family": "STRESS",
+      "status": "COVERED_MODE",
+      "new_path": "falsification-first-audit(mode=truthseeking-debate) → adversarial-deliberation as needed",
+      "rationale": "Steelman/critic mechanics reused, but verdict and objective come from falsification-first semantics."
+    },
+    {
+      "old_capability": "red-team-truthseeking",
+      "family": "STRESS",
+      "status": "COVERED_MODE",
+      "new_path": "falsification-first-audit(mode=truthseeking-red-team) → structured-red-team as needed",
+      "rationale": "Threat-surface mechanics reused while each attack must specify a falsifier and resilience scoring is disabled."
+    },
+    {
+      "old_capability": "isomorphism-falsification",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "audit-structural-equivalence",
+      "rationale": "Structural equivalence falsification and downgrade ladder restored as dedicated tactic."
+    },
+    {
+      "old_capability": "circular-validation-audit",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "audit-validator-independence",
+      "rationale": "Restores claim×validator assumption matrix and PASS-by-construction detection."
+    },
+    {
+      "old_capability": "independent-convergence-audit",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "audit-convergence-independence",
+      "rationale": "Restores shared-prior/error dependence and effective N semantics."
+    },
+    {
+      "old_capability": "elegance-trap-probe",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "audit-explanatory-compression",
+      "rationale": "Restores earned-vs-decorative simplicity and risky-prediction test."
+    },
+    {
+      "old_capability": "BROKEN / CORROBORATED / UNFALSIFIABLE truth-seeking verdict",
+      "family": "STRESS",
+      "status": "RESTORED",
+      "new_path": "classify-falsification-verdict",
+      "rationale": "Explicitly prevents unfalsifiable claims from being counted as robust survivors."
+    },
+    {
+      "old_capability": "patent claim breadth / vulnerability analysis",
+      "family": "ACQUISITION",
+      "status": "RESTORED",
+      "new_path": "assess-prior-art-and-claims → assess-patent-claim-scope",
+      "rationale": "Claim parsing/status alone did not preserve protection breadth and design-around vulnerability."
+    },
+    {
+      "old_capability": "benchmark saturation / ceiling analysis",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "audit-benchmark-validity → analyze-leaderboard-dynamics",
+      "rationale": "Existing operator explicitly covers compression/saturation, anomalies and regime shifts."
+    },
+    {
+      "old_capability": "patent competitive-intelligence portfolio profile",
+      "family": "ACQUISITION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "mine-patent-landscape → categorize-evidence → analyze-patent-citation-network → analyze-temporal-trajectory",
+      "rationale": "Portfolio profiling is composition/output, while provider-specific retrieval remains removed."
+    },
+    {
+      "old_capability": "snowball seed selection",
+      "family": "ACQUISITION",
+      "status": "COVERED_MODE",
+      "new_path": "synthesize-literature-evidence → select-seed-evidence → trace-citation-neighborhood",
+      "rationale": "Seed validation/ranking retained in tool-agnostic form."
+    },
+    {
+      "old_capability": "taxonomy mapping of literature",
+      "family": "ACQUISITION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "synthesize-literature-evidence → categorize-evidence → build-domain-ontology",
+      "rationale": "Taxonomy generation is evidence categorization plus ontology construction."
+    },
+    {
+      "old_capability": "thematic coding",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "synthesize-literature-evidence → categorize-evidence",
+      "rationale": "The categorization SOP accepts qualitative coding schema/mode."
+    },
+    {
+      "old_capability": "negative-space gap identification from literature",
+      "family": "ACQUISITION",
+      "status": "FULLY_COVERED",
+      "new_path": "synthesize-literature-evidence → detect-coverage-gap",
+      "rationale": "Canonical coverage-gap basis preserves the method."
+    },
+    {
+      "old_capability": "stress-scenario / worst-case construction",
+      "family": "EXPERIMENT",
+      "status": "COVERED_MODE",
+      "new_path": "analyze-future-scenarios → construct-scenario(mode=worst-case)",
+      "rationale": "Worst-case semantics remain mandatory mode fields: breaking point, failure cascade, recovery assumptions and distinguishing observables."
+    },
+    {
+      "old_capability": "morphological scenario planning",
+      "family": "EXPERIMENT",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "analyze-future-scenarios → define-analysis-dimensions → enumerate-dimension-values → evaluate-compatibility",
+      "rationale": "Morphological future-space construction uses existing dimensional-space basis."
+    },
+    {
+      "old_capability": "competitive scenario",
+      "family": "EXPERIMENT",
+      "status": "FULLY_COVERED",
+      "new_path": "analyze-future-scenarios → predict-competitive-move",
+      "rationale": "Dedicated competitive prediction operator retained."
+    },
+    {
+      "old_capability": "temporal scenario",
+      "family": "EXPERIMENT",
+      "status": "FULLY_COVERED",
+      "new_path": "analyze-future-scenarios → analyze-temporal-trajectory",
+      "rationale": "Trajectory and inflection semantics retained."
+    },
+    {
+      "old_capability": "narrative scenario consistency",
+      "family": "EXPERIMENT",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "analyze-future-scenarios → construct-scenario → evaluate-compatibility",
+      "rationale": "Narrative is output representation; consistency filtering remains scientific operation."
+    },
+    {
+      "old_capability": "experiment-running agent dispatch / monitoring",
+      "family": "EXPERIMENT",
+      "status": "MOVED_RUNTIME",
+      "new_path": "host runtime / coding agent / scheduler",
+      "rationale": "Execution orchestration is deliberately outside scientific graph."
+    },
+    {
+      "old_capability": "collective adjudication / independent judge ballots",
+      "family": "CONVERGENCE",
+      "status": "RESTORED",
+      "new_path": "pairwise-ranking → collect-independent-judgments → aggregate-ranking",
+      "rationale": "Pass 7 lacked contamination-controlled independent ballot collection."
+    },
+    {
+      "old_capability": "social-choice aggregation (Condorcet/Schulze/Borda/Kemeny/Copeland)",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MODE",
+      "new_path": "aggregate-ranking(rule=...)",
+      "rationale": "Aggregation rule is a parameter of the canonical ranking operator."
+    },
+    {
+      "old_capability": "disagreement mapping",
+      "family": "CONVERGENCE",
+      "status": "FULLY_COVERED",
+      "new_path": "structured-consensus → map-disagreement",
+      "rationale": "Preserved explicitly."
+    },
+    {
+      "old_capability": "argument crystallization",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "structured-consensus → construct-argument-map",
+      "rationale": "Argument structure is delegated to the canonical structuring tactic."
+    },
+    {
+      "old_capability": "appropriateness bounding / stop criteria",
+      "family": "CONVERGENCE",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "structured-consensus → set-threshold + runtime stopping policy",
+      "rationale": "Scientific threshold remains; loop bookkeeping belongs to runtime."
+    },
+    {
+      "old_capability": "evidence hierarchy / evidence weighing",
+      "family": "STRUCTURING",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "construct-argument-map → attach-evidence-to-relation → score-object(object=evidence) → update-confidence-from-evidence",
+      "rationale": "Evidence quality/directness/independence and confidence update remain reachable without a branded evidence-weighing wrapper."
+    },
+    {
+      "old_capability": "ontology alias/merge",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "build-domain-ontology → canonicalize-entity",
+      "rationale": "Canonical entity merge/alias semantics preserved."
+    },
+    {
+      "old_capability": "causal feedback loops",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "construct-causal-model → detect-feedback-loop",
+      "rationale": "Explicit loop detector retained."
+    },
+    {
+      "old_capability": "causal intervention reasoning",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "construct-causal-model → analyze-intervention",
+      "rationale": "Explicit intervention analysis retained."
+    },
+    {
+      "old_capability": "argument counterclaim / defeater mapping",
+      "family": "STRUCTURING",
+      "status": "FULLY_COVERED",
+      "new_path": "construct-argument-map → document-counterclaim → attach-defeater",
+      "rationale": "Counterargument structure retained."
+    },
+    {
+      "old_capability": "ablation brainstorming",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "structural-transformation(mode=remove) → evaluate-compatibility",
+      "rationale": "Removal is a structural transformation mode; contribution can jump to robustness/experiment ablation."
+    },
+    {
+      "old_capability": "anti-benchmark / benchmark inversion",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "audit-benchmark-validity → destructive-ideation → coverage-white-space-search",
+      "rationale": "Benchmark critique plus inversion/gap search preserves the capability."
+    },
+    {
+      "old_capability": "forced bridge / direct analogy / design-by-analogy",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "analogical-discovery(mode=direct|forced-bridge|design-transfer)",
+      "rationale": "Surface method names collapse into different mapping constraints."
+    },
+    {
+      "old_capability": "ecosystem-pattern transfer",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "biomimetic-transfer(mode=ecosystem)",
+      "rationale": "Restored biomimetic tactic covers organism and ecosystem scales."
+    },
+    {
+      "old_capability": "excursion method",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "generate-provocation(mode=random-entry) → problem-reframing(mode=perspective-shift) → analogical-discovery",
+      "rationale": "The same excursion capability remains after recompiling two restored wrappers into parameterized canonical operations."
+    },
+    {
+      "old_capability": "failure-taxonomy ideation",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "enumerate-failure-modes → coverage-white-space-search → fmea-risk-analysis",
+      "rationale": "Failure enumeration and systematic coverage remain available."
+    },
+    {
+      "old_capability": "function combination / trimming",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "structural-transformation(mode=combine|trim|redistribute)",
+      "rationale": "These are parameterized system-structure transformations."
+    },
+    {
+      "old_capability": "factorial/design-space ideation",
+      "family": "IDEATION",
+      "status": "FULLY_COVERED",
+      "new_path": "explore-dimensional-space",
+      "rationale": "Combinatorial design-space operation retained."
+    },
+    {
+      "old_capability": "reverse brainstorming / sacred-cow challenge",
+      "family": "IDEATION",
+      "status": "COVERED_MODE",
+      "new_path": "destructive-ideation(mode=reverse|sacred-cow)",
+      "rationale": "Provocation modes preserved without separate tactics."
+    },
+    {
+      "old_capability": "symbolic analogy / compressed-conflict ideation",
+      "family": "IDEATION",
+      "status": "COVERED_MULTI_PATH",
+      "new_path": "conceptual-blending → resolve-inventive-contradiction",
+      "rationale": "Blending plus contradiction resolution covers this high-information path."
+    }
+  ]
+}
