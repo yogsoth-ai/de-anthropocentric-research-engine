@@ -1,5 +1,27 @@
 # R2 GROUP B compilation log
 
+## Redistribution: CONVERGENCE + STRUCTURING SOPs
+
+### Batch 1 — 2026-09-12
+
+Nodes: `apply-stage-gate`, `apply-veto-filter`, `assess-ranking-consistency`, `assess-readiness-dimension`, `assess-removability`, `calibrate-probability-forecast`, `classify-constraint`, `collect-independent-judgments`, `compare-pair`, `define-objective`.
+
+- A criteria: 6 (`apply-stage-gate`, `assess-readiness-dimension`, `assess-removability`, `calibrate-probability-forecast`, `collect-independent-judgments`, `define-objective`).
+- B criteria: 4.
+- C criteria: 0.
+- Provenance: resolved 12, concept 1, intermediate 0.
+- Four mechanical gates: PASS — distinct procedures; named input fields; delta subset matches emitted artifacts; provenance checked against v3 names before classification.
+
+### Batch 2 — 2026-09-12
+
+Nodes: `evaluate-optionality`, `optimize-pareto-frontier`, `run-convergence-round`, `select-from-frontier`, `select-next-pair`, `update-pairwise-rating`, `represent-mechanism-edge`, `scope-domain`, `type-relation`, `update-confidence-from-evidence`, `validate-axis-independence`.
+
+- A criteria: 1 (`run-convergence-round`).
+- B criteria: 10.
+- C criteria: 0.
+- Provenance: resolved 13, concept 0, intermediate 0.
+- Four mechanical gates: PASS — distinct procedures; named input fields; delta subset matches emitted artifacts; provenance checked against v3 names before classification.
+
 ## Batch 1 — 2026-09-12
 
 Nodes: `adversarial-deliberation`, `audit-convergence-independence`, `audit-explanatory-compression`, `audit-structural-equivalence`, `audit-validator-independence`, `counterfactual-causal-analysis`, `explore-dimensional-space`, `falsification-first-audit`, `fmea-risk-analysis`, `map-validity-envelope`.

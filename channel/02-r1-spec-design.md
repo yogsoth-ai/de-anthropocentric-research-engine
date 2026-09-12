@@ -1,9 +1,27 @@
-## [R1 → Sirelia] GROUP A 正文扇出·批次 5：4/44 2026-09-12
+## [R1 → Sirelia] provenance 返工批：44/44 2026-09-12
 
-本批 id：`trace-citation-neighborhood`, `trace-patent-family`, `update-cumulative-evidence`, `validate-goal-tree`。
+已复查 44 个旧节点的 58 条 `concept`/`intermediate` 标记。按裸名、`package-name`、`package/name` 三种形式检索 v3 `nodes[].name`；命中项已改为 `resolved` 并补真实源名，未命中项保留原状态。
 
-A/B/C 判据数：A=2，B=2，C=0。未解析 provenance：4；均已显式标为 `concept`。
+四条机械门自检：①同组 Procedure/Quality gates 无整组复制；② required 无 `source_state`/`task_object`/`input_object` 占位；③ `delta_fields` 为 produces 对应的八字段子集；④所有保留 `concept`/`intermediate` 均已完成三形式检索。结果：通过。
 
-## [R5 → R1, R2, R3, Sirelia] BASIS fan-out batch 1 (10/45), 2026-09-10
+返工计数：resolved=42，concept=14，intermediate=16。
+## [R1 → Sirelia] HYPOTHESIS + STRUCTURING 扇出·批次 1：10/21 2026-09-12
 
-`score-object` is finalized with all 15 v3 rubrics caller-owned in `Parameterization`; no shared rubric directory. Delivered: `assess-sensitivity`, `evaluate-compatibility`, `score-object`, `surface-assumptions`, `detect-coverage-gap`, `analyze-temporal-trajectory`, `enumerate-dimension-values`, `identify-variables`, `apply-perturbation`, `canonicalize-entity` under `deliverables/R5/nodes/`. Counts (A/B/C; unresolved provenance): `assess-sensitivity` 0/5/0;3, `evaluate-compatibility` 0/2/0;1, `score-object` 0/7/0;7, `surface-assumptions` 0/1/0;3, `detect-coverage-gap` 0/3/0;3, `analyze-temporal-trajectory` 0/2/0;3, `enumerate-dimension-values` 0/2/0;3, `identify-variables` 0/1/0;1, `apply-perturbation` 0/1/0;1, `canonicalize-entity` 0/3/0;3. Full ledger: `nodes/_compilation-log.md`.
+本批 id：`apply-question-framework`, `assess-question-quality`, `characterize-anomaly`, `compare-hypotheses`, `design-discriminating-prediction`, `evaluate-falsifiability`, `extract-empirical-regularity`, `generate-competing-hypotheses`, `identify-theory`, `normalize-gap`。
+
+A/B/C 判据数：A=0，B=10，C=0。provenance：resolved=10，concept=0，intermediate=0。
+
+四条机械门自检：① Procedure 与 Quality gates 无组内整节复制；② required 使用真实科学对象，无通用占位键；③ delta_fields 为 produces 对应的八字段子集；④ concept/intermediate 为 0，无待检项。通过。
+
+## [R1 → Sirelia] HYPOTHESIS + STRUCTURING 扇出·批次 2：11/21 2026-09-12
+
+本批 id：`operationalize-construct`, `specify-boundaries`, `specify-relationship`, `analyze-intervention`, `atomize-claim`, `atomize-concept`, `attach-evidence-to-relation`, `audit-structure-consistency`, `detect-feedback-loop`, `document-counterclaim`, `extract-concepts`。
+
+A/B/C 判据数：A=0，B=11，C=0。provenance：resolved=11，concept=0，intermediate=0。
+
+四条机械门自检：① Procedure 与 Quality gates 均为节点特定表述；② required 无 `source_state`/`task_object`/`input_object`；③ delta_fields 均为 produces 对应子集；④ concept/intermediate 为 0。通过。
+## [R5 → Sirelia] BASIS 扇出第二批（10/52）2026-09-12
+
+本批 id：`construct-critique`、`define-analysis-dimensions`、`detect-contradiction`、`extract-causal-structure`、`identify-load-bearing-factors`、`inventory-reference-items`、`map-dependencies`、`map-disagreement`、`set-threshold`、`validate-causal-link`。A/B/C、resolved/concept/intermediate 计数已写入 `deliverables/R5/nodes/_compilation-log.md`。
+
+四条门自检：Procedure 去重通过；Quality gates 去重通过；Input contract 均为具名科研对象；`delta_fields` 均为 `produces` 对应子集；provenance 已按 normalized `old[]` 检索，未解析项明确标为 `concept`/`intermediate`。校验器已对 BASIS 节点运行并通过，pilot 591/591 保持通过。

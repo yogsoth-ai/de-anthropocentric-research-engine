@@ -37,6 +37,5 @@ Do not call rounding noise a discrepancy or infer a method improvement from non-
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-discrepancy-identification`
-- `concept: knowledge-acquisition-discrepancy-analysis`
-
+- `resolved: discrepancy-identification`
+- `resolved: discrepancy-analysis`

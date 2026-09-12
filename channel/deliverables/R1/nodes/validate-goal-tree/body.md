@@ -38,5 +38,4 @@ Do not validate a tree because its prose is polished, and do not infer missing f
 ## Provenance map
 
 - `resolved: north-star-crystallization/validate-leaves`
-- `concept: north-star-crystallization/ask-decomposition-validation`
-
+- `resolved: ask-decomposition-validation`

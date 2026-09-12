@@ -38,11 +38,11 @@ Reject niche lists with no evidence, maturity claims based on publication volume
 
 ## Provenance map
 
-- `concept: north-star-crystallization/landscape-reconnaissance`
+- `resolved: landscape-reconnaissance`
 - `resolved: north-star-crystallization-generate-candidate-fields`
 - `resolved: north-star-crystallization-landscape-synthesis`
-- `concept: broad-web-search [tool import removed]`
-- `concept: broad-paper-search [tool import removed]`
+- `resolved: broad-web-search`
+- `resolved: broad-paper-search`
 - `resolved: north-star-crystallization-deep-web-search`
 
 ## Preserved source criteria ledger

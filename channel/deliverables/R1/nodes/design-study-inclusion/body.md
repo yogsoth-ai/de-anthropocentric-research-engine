@@ -37,4 +37,4 @@ Do not make inclusion depend on favorable findings or exclude a study solely bec
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-inclusion-criteria-design`
+- `resolved: inclusion-criteria-design`

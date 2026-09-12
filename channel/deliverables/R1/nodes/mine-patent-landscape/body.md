@@ -41,7 +41,7 @@ Do not count family members as independent inventions, equate assignee name vari
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/patent-mining`
+- `resolved: patent-mining`
 - `resolved: knowledge-acquisition-landscape-survey`
 - `resolved: knowledge-acquisition-competitive-intelligence`
 - `resolved: knowledge-acquisition-patent-family-tracing`

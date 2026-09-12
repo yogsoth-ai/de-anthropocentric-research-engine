@@ -37,5 +37,5 @@ Do not label ordinary measurement noise as a causal subgroup effect, and do not 
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/heterogeneity-source-analysis`
-- `concept: knowledge-acquisition/heterogeneity-investigation`
+- `resolved: heterogeneity-source-analysis`
+- `resolved: heterogeneity-investigation`

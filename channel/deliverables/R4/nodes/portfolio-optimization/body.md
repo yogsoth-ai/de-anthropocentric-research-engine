@@ -2,66 +2,55 @@
 
 ## Purpose
 
-Formalize objectives/constraints, construct a Pareto frontier, stress across scenarios, and select a robust portfolio.
+Coordinate portfolio optimization with explicit dependencies, evidence, uncertainty, and decision boundaries.
 
 ## Input contract
 
-~~~yaml
-required: [source_state, task_object]
-optional: [constraints, prior_evidence]
-constraints: [typed inputs, provenance-bearing evidence, explicit uncertainty]
-~~~
+```yaml
+required: [research_object, evidence_records, decision_objective]
+optional: [constraints, prior_artifacts, uncertainty_register]
+constraints: [typed fields, traceable provenance, no unsupported post hoc changes]
+```
 
 ## Execution protocol
 
-1. Apply `define-objective` and record its typed result.
-2. Apply `optimize-pareto-frontier` and record its typed result.
-3. Apply `construct-scenario` and record its typed result.
-4. Apply `evaluate-scenario-impact` and record its typed result.
-5. Apply `select-from-frontier` and record its typed result.
-6. Apply `measure-portfolio-diversity` and record its typed result.
-7. Apply `map-dependencies` and record its typed result.
-8. Apply `sequence-work` and record its typed result.
-9. Apply `evaluate-optionality` and record its typed result.
-10. Apply `evaluate-scenario-robustness` and record its typed result.
+1. Freeze the declared inputs and establish the decision target. (`define-objective`)
+2. Transform the current artifact while preserving its provenance and uncertainty. (`optimize-pareto-frontier`)
+3. Transform the current artifact while preserving its provenance and uncertainty. (`construct-scenario`)
+4. Transform the current artifact while preserving its provenance and uncertainty. (`evaluate-scenario-impact`)
+5. Integrate the preceding artifacts and state the stopping rationale. (`select-from-frontier`)
 
-Deviation: Skip a step only when its artifact is already present or the decision objective excludes it; record the reason and uncertainty.
+Deviation: Skip only a step whose artifact is already present or outside the declared objective; record the reason and residual uncertainty.
 
 ## Output contract
 
-~~~yaml
-produces: [analysis_artifact, decision_rationale]
-delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_updates, uncertainties, decisions, open_questions, recommended_jumps]
-~~~
+```yaml
+produces: [structured_artifact, decision_record]
+delta_fields: [findings, evidence_updates, uncertainties, decisions]
+```
 
 ## Thresholds and quality gates
 
-- Tie each conclusion to evidence, assumptions, or uncertainty.
-- Coverage gates declare universe, numerator, denominator, batch increment, stopping reason, and source references.
-- Fixed statistical values remain fixed where applicable, including α 0.05 and power 0.8.
+- Every claim is linked to evidence or a named assumption.
+- Coverage gates state universe, numerator, denominator, batch increment, stopping reason, and source references.
+- Statistical nodes retain fixed α 0.05 and power 0.8 where applicable.
+- Stop only when the declared decision criterion is met or an unresolved blocker is recorded.
 
 ## Failure and counterexamples
 
-Reject unsupported, circular, untyped, or out-of-scope conclusions; preserve counterexamples.
+Preserve contradictory evidence, null results, boundary cases, and out-of-scope inputs; do not silently convert them into support.
 
 ## Provenance map
 
-- concept: portfolio-optimization <- portfolio-optimization [campaign]
-- concept: value-maximization <- value-maximization [strategy]
-- concept: diversity-maximization <- diversity-maximization [strategy]
-- concept: risk-balancing <- risk-balancing [strategy]
-- concept: temporal-sequencing <- temporal-sequencing [strategy]
-- concept: robustness-under-uncertainty <- robustness-under-uncertainty [strategy]
-- concept: pareto-frontier-construction <- pareto-frontier-construction [tactic]
-- concept: scenario-stress-testing <- scenario-stress-testing [tactic]
-- concept: niche-coverage-analysis <- niche-coverage-analysis [tactic]
+- resolved: portfolio-optimization <- v3 refactory_source.json nodes[].name (normalized lookup)
+- concept: portfolio/optimization <- architecture semantic consolidation
 
 ## Preserved source criteria ledger
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| v3 refactory source | n/a | textual | Exact normalized provenance retained; unresolved entries remain marked. |
+| v3 refactory_source.json | nodes[].name | textual | Preserve source transformation and its stated decision boundaries. |
 
 ## Context checkpoint / Delta notes
 
-Append artifacts, evidence updates, assumptions, uncertainties, decisions, open questions, and recommended jumps.
+Append findings, evidence updates, uncertainties, decisions, and recommended jumps.

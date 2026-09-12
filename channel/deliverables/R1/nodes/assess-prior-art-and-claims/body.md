@@ -41,11 +41,11 @@ Do not call a claim novel because no result was found; mark search coverage and 
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/prior-art-search`
+- `resolved: prior-art-search`
 - `resolved: knowledge-acquisition-claim-analysis`
-- `concept: claim-decomposition`
-- `concept: claim-parsing`
-- `concept: legal-status-assessment`
+- `resolved: knowledge-acquisition-claim-decomposition`
+- `resolved: claim-parsing`
+- `resolved: legal-status-assessment`
 
 ## Preserved source criteria ledger
 

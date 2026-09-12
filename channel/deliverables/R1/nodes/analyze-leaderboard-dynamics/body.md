@@ -37,4 +37,4 @@ Do not treat rank order as progress when metric definitions or evaluation condit
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/leaderboard-dynamics-analysis`
+- `resolved: leaderboard-dynamics-analysis`

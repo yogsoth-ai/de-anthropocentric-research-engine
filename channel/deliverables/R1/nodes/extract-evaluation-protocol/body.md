@@ -37,5 +37,4 @@ Do not fill omitted protocol values from common practice without an inference la
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-protocol-element-extraction`
-
+- `resolved: protocol-element-extraction`

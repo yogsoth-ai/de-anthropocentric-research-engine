@@ -37,5 +37,5 @@ Do not use provider names as a protocol, and do not declare coverage from search
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-define-search-protocol`
-- `concept: knowledge-acquisition-inclusion-criteria-design`
+- `resolved: define-search-protocol`
+- `resolved: inclusion-criteria-design`

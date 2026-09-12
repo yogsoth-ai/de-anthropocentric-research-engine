@@ -37,5 +37,5 @@ Do not broaden the scope until unlike outcomes appear comparable or define a met
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-pico-formulation`
-- `concept: hypothesis-formation/pico-application`
+- `resolved: pico-formulation`
+- `resolved: pico-application`

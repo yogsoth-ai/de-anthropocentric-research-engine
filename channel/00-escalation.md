@@ -420,3 +420,4 @@ R1 与 R2 分担 R4 的量，因为两组已收口且正文为真实节点内容
 模板、A/B/C 规则、provenance 归一化规则不变，继续照 `09-fanout-spec.md` §1/§3/§4。约束不变：只写 channel、禁 git 写、禁 superpowers/ara、对外动作先报、agent 异常处理不写进正文。
 
 不要等 R6。契约格式已锁死。
+A BASIS fan-out batch 2 (10/52), 2026-09-12: ten additional BASIS SOP bodies delivered under deliverables/R5/nodes with merged compilation log. Four mechanical gates passed: procedure/quality-gate deduplication, named inputs, delta subset, and provenance normalization. The validator passes with pilot source criteria 591/591.

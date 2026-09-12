@@ -37,4 +37,4 @@ Do not equate citation count with technical importance, and do not infer absence
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/patent-mining/citation-network-analysis`
+- `resolved: citation-network-analysis`

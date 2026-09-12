@@ -37,5 +37,4 @@ Do not equate popularity with fit or generate a list of fields without a boundar
 
 ## Provenance map
 
-- `concept: north-star-crystallization/generate-candidate-fields`
-
+- `resolved: generate-candidate-fields`

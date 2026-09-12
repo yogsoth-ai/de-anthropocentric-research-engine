@@ -37,5 +37,4 @@ Do not infer metric meaning from its name or ignore nonlinear aggregation and cl
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-metric-decomposition`
-
+- `resolved: metric-decomposition`

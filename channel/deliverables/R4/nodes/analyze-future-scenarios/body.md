@@ -2,64 +2,58 @@
 
 ## Purpose
 
-Construct and compare plausible future/competitive/temporal/stress scenarios and test whether the research path remains robust across them.
+Coordinate analyze future scenarios with explicit dependencies, evidence, uncertainty, and decision boundaries.
 
 ## Input contract
 
-~~~yaml
-required: [source_state, task_object]
-optional: [constraints, prior_evidence]
-constraints: [typed inputs, provenance-bearing evidence, explicit uncertainty]
-~~~
+```yaml
+required: [research_object, evidence_records, decision_objective]
+optional: [constraints, prior_artifacts, uncertainty_register]
+constraints: [typed fields, traceable provenance, no unsupported post hoc changes]
+```
 
 ## Execution protocol
 
-1. Apply `identify-scenario-drivers` and record its typed result.
-2. Apply `enumerate-dimension-values` and record its typed result.
-3. Apply `evaluate-compatibility` and record its typed result.
-4. Apply `construct-scenario` and record its typed result.
-5. Apply `evaluate-scenario-impact` and record its typed result.
-6. Apply `evaluate-scenario-robustness` and record its typed result.
-7. Apply `predict-competitive-move` and record its typed result.
-8. Apply `analyze-temporal-trajectory` and record its typed result.
+1. Freeze the declared inputs and establish the decision target. (`identify-scenario-drivers`)
+2. Transform the current artifact while preserving its provenance and uncertainty. (`enumerate-dimension-values`)
+3. Transform the current artifact while preserving its provenance and uncertainty. (`construct-scenario`)
+4. Transform the current artifact while preserving its provenance and uncertainty. (`evaluate-scenario-impact`)
+5. Integrate the preceding artifacts and state the stopping rationale. (`evaluate-scenario-robustness`)
 
-Deviation: Skip a step only when its artifact is already present or the decision objective excludes it; record the reason and uncertainty.
+Deviation: Skip only a step whose artifact is already present or outside the declared objective; record the reason and residual uncertainty.
 
 ## Output contract
 
-~~~yaml
-produces: [analysis_artifact, decision_rationale]
-delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_updates, uncertainties, decisions, open_questions, recommended_jumps]
-~~~
+```yaml
+produces: [structured_artifact, decision_record]
+delta_fields: [findings, evidence_updates, uncertainties, decisions]
+```
 
 ## Thresholds and quality gates
 
-- Tie each conclusion to evidence, assumptions, or uncertainty.
-- Coverage gates declare universe, numerator, denominator, batch increment, stopping reason, and source references.
-- Fixed statistical values remain fixed where applicable, including α 0.05 and power 0.8.
+- Every claim is linked to evidence or a named assumption.
+- Coverage gates state universe, numerator, denominator, batch increment, stopping reason, and source references.
+- Statistical nodes retain fixed α 0.05 and power 0.8 where applicable.
+- Stop only when the declared decision criterion is met or an unresolved blocker is recorded.
 
 ## Failure and counterexamples
 
-Reject unsupported, circular, untyped, or out-of-scope conclusions; preserve counterexamples.
+Preserve contradictory evidence, null results, boundary cases, and out-of-scope inputs; do not silently convert them into support.
 
 ## Provenance map
 
-- concept: experiment-execution-scenario-planning <- experiment-execution/scenario-planning [campaign]
-- concept: morphological-scenario <- morphological-scenario [strategy]
-- concept: narrative-scenario <- narrative-scenario [strategy]
-- concept: stress-scenario <- stress-scenario [strategy]
-- concept: competitive-scenario <- competitive-scenario [strategy]
-- concept: temporal-scenario <- temporal-scenario [strategy]
-- concept: parameter-space-construction <- parameter-space-construction [tactic]
-- concept: cross-consistency-filtering <- cross-consistency-filtering [tactic]
-- concept: strategy-robustness-testing <- strategy-robustness-testing [tactic]
+- resolved: morphological-scenario <- morphological-scenario [strategy]
+- resolved: narrative-scenario <- narrative-scenario [strategy]
+- resolved: stress-scenario <- stress-scenario [strategy]
+- resolved: competitive-scenario <- competitive-scenario [strategy]
+- resolved: temporal-scenario <- temporal-scenario [strategy]
 
 ## Preserved source criteria ledger
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| v3 refactory source | n/a | textual | Exact normalized provenance retained; unresolved entries remain marked. |
+| v3 refactory_source.json | nodes[].name | textual | Preserve source transformation and its stated decision boundaries. |
 
 ## Context checkpoint / Delta notes
 
-Append artifacts, evidence updates, assumptions, uncertainties, decisions, open questions, and recommended jumps.
+Append findings, evidence updates, uncertainties, decisions, and recommended jumps.

@@ -38,5 +38,4 @@ Do not call a benchmark invalid because one perturbation lowers scores, and do n
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/benchmark-archaeology/artifact-detection`
-
+- `resolved: artifact-detection`

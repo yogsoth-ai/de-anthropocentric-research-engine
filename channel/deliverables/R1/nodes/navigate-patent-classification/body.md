@@ -37,5 +37,4 @@ Do not treat a shared keyword as classification equivalence or infer technical a
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/classification-navigation`
-
+- `resolved: classification-navigation`

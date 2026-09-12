@@ -38,11 +38,10 @@ Do not infer unreported baselines or merge records from different study versions
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-extract-data`
-- `concept: knowledge-acquisition-score-extraction`
-- `concept: knowledge-acquisition-condition-cataloging`
+- `resolved: extract-data`
+- `resolved: score-extraction`
+- `resolved: condition-cataloging`
 - `intermediate: Pass4/extract-study-data`
-- `concept: knowledge-acquisition-performance-extraction`
+- `resolved: performance-extraction`
 - `intermediate: Pass4/extract-performance-record`
 - `intermediate: Pass4/catalog-evaluation-conditions`
-

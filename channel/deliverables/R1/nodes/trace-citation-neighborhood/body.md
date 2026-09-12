@@ -39,5 +39,4 @@ Do not treat citation presence as evidence relevance or count versions of one st
 ## Provenance map
 
 - `concept: knowledge-acquisition/snowball-survey`
-- `concept: citation-chaining`
-
+- `resolved: citation-chaining`

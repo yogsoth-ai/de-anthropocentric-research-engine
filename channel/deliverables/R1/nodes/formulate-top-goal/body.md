@@ -37,4 +37,4 @@ Do not accept “understand the topic” as a top goal without an outcome or dec
 
 ## Provenance map
 
-- `concept: north-star-crystallization/formulate-top-goal`
+- `resolved: formulate-top-goal`

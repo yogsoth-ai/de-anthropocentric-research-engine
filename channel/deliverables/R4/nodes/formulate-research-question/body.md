@@ -2,59 +2,54 @@
 
 ## Purpose
 
-Convert a hypothesis into a precise research question with fit-for-purpose framework, scope, feasibility, and success criteria.
+Coordinate formulate research question with explicit dependencies, evidence, uncertainty, and decision boundaries.
 
 ## Input contract
 
-~~~yaml
-required: [source_state, task_object]
-optional: [constraints, prior_evidence]
-constraints: [typed inputs, provenance-bearing evidence, explicit uncertainty]
-~~~
+```yaml
+required: [research_object, evidence_records, decision_objective]
+optional: [constraints, prior_artifacts, uncertainty_register]
+constraints: [typed fields, traceable provenance, no unsupported post hoc changes]
+```
 
 ## Execution protocol
 
-1. Apply `apply-question-framework` and record its typed result.
-2. Apply `assess-question-quality` and record its typed result.
-3. Apply `define-criteria` and record its typed result.
-4. Apply `set-threshold` and record its typed result.
-5. Apply `adjust-abstraction-scope` and record its typed result.
+1. Freeze the declared inputs and establish the decision target. (`apply-question-framework`)
+2. Transform the current artifact while preserving its provenance and uncertainty. (`assess-question-quality`)
+3. Transform the current artifact while preserving its provenance and uncertainty. (`define-criteria`)
+4. Integrate the preceding artifacts and state the stopping rationale. (`adjust-abstraction-scope`)
 
-Deviation: Skip a step only when its artifact is already present or the decision objective excludes it; record the reason and uncertainty.
+Deviation: Skip only a step whose artifact is already present or outside the declared objective; record the reason and residual uncertainty.
 
 ## Output contract
 
-~~~yaml
-produces: [analysis_artifact, decision_rationale]
-delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_updates, uncertainties, decisions, open_questions, recommended_jumps]
-~~~
+```yaml
+produces: [structured_artifact, decision_record]
+delta_fields: [findings, evidence_updates, uncertainties, decisions]
+```
 
 ## Thresholds and quality gates
 
-- Tie each conclusion to evidence, assumptions, or uncertainty.
-- Coverage gates declare universe, numerator, denominator, batch increment, stopping reason, and source references.
-- Fixed statistical values remain fixed where applicable, including α 0.05 and power 0.8.
+- Every claim is linked to evidence or a named assumption.
+- Coverage gates state universe, numerator, denominator, batch increment, stopping reason, and source references.
+- Statistical nodes retain fixed α 0.05 and power 0.8 where applicable.
+- Stop only when the declared decision criterion is met or an unresolved blocker is recorded.
 
 ## Failure and counterexamples
 
-Reject unsupported, circular, untyped, or out-of-scope conclusions; preserve counterexamples.
+Preserve contradictory evidence, null results, boundary cases, and out-of-scope inputs; do not silently convert them into support.
 
 ## Provenance map
 
-- concept: research-question <- research-question [campaign]
-- concept: framework-guided-formulation <- framework-guided-formulation [strategy]
-- concept: scope-calibration <- scope-calibration [strategy]
-- concept: comparative-formulation <- comparative-formulation [strategy]
-- concept: feasibility-constrained-formulation <- feasibility-constrained-formulation [strategy]
-- concept: framework-selection-and-application <- framework-selection-and-application [tactic]
-- concept: question-refinement-loop <- question-refinement-loop [tactic]
+- resolved: formulate-research-question <- v3 refactory_source.json nodes[].name (normalized lookup)
+- concept: formulate/research/question <- architecture semantic consolidation
 
 ## Preserved source criteria ledger
 
 | source | source line | kind | source criterion |
 |---|---:|---|---|
-| v3 refactory source | n/a | textual | Exact normalized provenance retained; unresolved entries remain marked. |
+| v3 refactory_source.json | nodes[].name | textual | Preserve source transformation and its stated decision boundaries. |
 
 ## Context checkpoint / Delta notes
 
-Append artifacts, evidence updates, assumptions, uncertainties, decisions, open questions, and recommended jumps.
+Append findings, evidence updates, uncertainties, decisions, and recommended jumps.

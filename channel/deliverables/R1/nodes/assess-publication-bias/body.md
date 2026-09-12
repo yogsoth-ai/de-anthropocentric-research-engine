@@ -38,5 +38,4 @@ Do not equate small samples with publication bias or treat absence from one inde
 ## Provenance map
 
 - `resolved: knowledge-acquisition-publication-bias-assessment`
-- `concept: knowledge-acquisition-bias-detection`
-
+- `resolved: bias-detection`

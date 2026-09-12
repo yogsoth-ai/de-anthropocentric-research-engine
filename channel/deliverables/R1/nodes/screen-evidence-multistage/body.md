@@ -37,6 +37,5 @@ Do not hide duplicate removal or use a final included count without the exclusio
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/systematic-survey`
-- `concept: prisma-screening`
-
+- `resolved: systematic-survey`
+- `resolved: prisma-screening`

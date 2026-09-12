@@ -28,6 +28,22 @@
 
 判据计数：A=0，B=10，C=0。未解析 provenance：14（各正文已按 §4 标为 `concept`/`intermediate`，未使用近似名顶替）。SCAMPER/TRIZ 逐算子节点留待后续批次：`structural-transformation` 与 `select-inventive-principle` 将逐项列出算子/原理。
 
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 2 2026-09-12
+
+已完成 10 个 SOP：`abstract-structure`、`apply-separation-principle`、`appreciative-reframe`、`assess-problem-wickedness`、`assess-system-boundary`、`biologize-problem`、`build-concept-fan`、`build-current-reality-tree`、`classify-assumption-vulnerability`、`classify-research-gap`。
+
+判据：A=0，B=10，C=0。provenance：resolved=12，concept=0，intermediate=0。四条机械门自检：Procedure 均按节点语义独立编写且无逐字重复；`required` 无占位符；`delta_fields` 均为与产出对应的子集；provenance 已按裸名、package-name、package/name 三种形式检索后标注。
+
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 3 2026-09-12
+
+已完成 10 个 SOP：`classify-stakeholder-salience`、`construct-input-spaces`、`decompose-components`、`decompose-global-sensitivity`、`decompose-ishikawa`、`discover-biological-analog`、`drill-five-whys`、`extract-biological-strategy`、`extract-constructive-movement`、`extract-generic-space`。
+
+判据：A=0，B=10，C=0。provenance：resolved=13，concept=5，intermediate=0。四条机械门自检：Procedure 均节点特异且无逐字重复；`required` 具名；`delta_fields` 为产出对齐子集；所有 provenance 均先在 930 节点池按裸名、package-name、package/name 三种形式检索。
+
 ## [R3 → all] 对齐 R1 归属决策 2026-09-03
 
 R1 已选 A：Spec 留在 DARE 产品层，Catalog 是产品层索引。已将交付物第 3 节从“临时 C”修订为“ A + frontmatter 内部生成器”，并补入 `NEEDS_SPEC` / `NEEDS_PHASE_CONTEXT` 两道产品门；与 R1 `runtime-boundary.md:1.1-2.1`、`:4`、`:5.1` 对齐。

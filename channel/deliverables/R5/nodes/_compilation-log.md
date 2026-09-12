@@ -39,3 +39,43 @@ Fan-in 3. Merged controlled variation, assumption perturbation, ablation, and si
 ## canonicalize-entity
 
 Fan-in 3. Merged concept aliasing, near-duplicate merging, and assignee normalization. A=0, B=3, C=0; unresolved provenance=3 (`Pass3/*` and `Pass4/*`). Preserved scan-at-least-10 and score >7.0 candidate flag.
+
+## construct-critique
+
+Fan-in 3. Merged debate, convergence, and perspective critique. A=0, B=1, C=0; unresolved provenance=0. Preserved ≥3 attacks, severity labels, evidence, and strongest-point attack.
+
+## define-analysis-dimensions
+
+Fan-in 3. Merged variation-axis, parameter-space, and parameter-identification transforms. A=0, B=1, C=0; unresolved provenance=2 (`Pass3/*`).
+
+## detect-contradiction
+
+Fan-in 3. Merged derivation contradiction and support/contradict evidence flagging. A=0, B=1, C=0; unresolved provenance=3 (one concept, two `Pass3/*`).
+
+## extract-causal-structure
+
+Fan-in 3. Merged mechanism-chain, biological mechanism, and causal-claim extraction. A=0, B=1, C=0; unresolved provenance=2 (`Pass3/*`). Preserved ≥1 chain per theory and ≥2 total where applicable.
+
+## identify-load-bearing-factors
+
+Fan-in 3. Merged load-bearing, fragility, and critical-path factor identification. A=0, B=0, C=0; unresolved provenance=0.
+
+## inventory-reference-items
+
+Fan-in 3. Merged benchmark and known-solution inventory schemas without fabricating unresolved sources. A=0, B=0, C=0; unresolved provenance=4 (two concepts, two `Pass4/*`).
+
+## map-dependencies
+
+Fan-in 3. Merged dependency mapping and critical-component dependency identification. A=0, B=1, C=0; unresolved provenance=0. Preserved ≥2-subproblem gate.
+
+## map-disagreement
+
+Fan-in 3. Merged convergence disagreement mapping and multi-perspective divergence detection. A=0, B=1, C=0; unresolved provenance=0. Preserved >70% consensus and >50% disagreement thresholds.
+
+## set-threshold
+
+Fan-in 3. Merged justified non-compensatory threshold setting. A=0, B=1, C=0; unresolved provenance=1 (`Pass4/*`).
+
+## validate-causal-link
+
+Fan-in 3. Merged CLR-style causal-link validation. A=0, B=1, C=0; unresolved provenance=0. Preserved eight CLR categories.

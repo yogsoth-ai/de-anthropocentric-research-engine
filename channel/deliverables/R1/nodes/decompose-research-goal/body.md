@@ -41,7 +41,7 @@ Reject trees with circular dependencies, vague leaves, or branches that cannot b
 
 ## Provenance map
 
-- `concept: north-star-crystallization/goal-decomposition`
+- `resolved: goal-decomposition`
 - `resolved: north-star-crystallization-formulate-top-goal`
 - `resolved: north-star-crystallization-and-or-decompose`
 - `resolved: north-star-crystallization-validate-leaves`

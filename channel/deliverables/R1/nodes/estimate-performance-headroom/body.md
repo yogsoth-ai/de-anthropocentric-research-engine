@@ -37,5 +37,4 @@ Do not use an upper-bound theorem as a practical ceiling or equate benchmark max
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-headroom-estimation`
-
+- `resolved: headroom-estimation`

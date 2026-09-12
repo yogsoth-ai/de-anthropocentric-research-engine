@@ -40,4 +40,3 @@ Do not force records into categories whose definitions do not fit, and do not co
 - `resolved: knowledge-acquisition-categorize-papers`
 - `concept: knowledge-structuring/source-categorization-patterns`
 - `intermediate: Pass4/map-field-taxonomy`
-

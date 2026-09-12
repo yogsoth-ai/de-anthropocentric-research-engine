@@ -37,4 +37,4 @@ Do not add fields that cannot affect the synthesis, and do not collapse incompar
 
 ## Provenance map
 
-- `concept: knowledge-acquisition-data-extraction-form`
+- `resolved: data-extraction-form`

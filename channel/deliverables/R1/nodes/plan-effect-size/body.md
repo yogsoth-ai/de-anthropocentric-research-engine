@@ -37,4 +37,4 @@ Do not convert incompatible constructs into a common effect size merely to incre
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/effect-size-planning`
+- `resolved: effect-size-planning`

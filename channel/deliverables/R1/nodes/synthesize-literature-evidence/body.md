@@ -43,7 +43,7 @@ Do not call a synthesis systematic without an auditable screening flow, deep wit
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/literature-survey`
+- `resolved: literature-survey`
 - `resolved: knowledge-acquisition-scoping-survey`
 - `resolved: knowledge-acquisition-systematic-survey`
 - `resolved: knowledge-acquisition-deep-survey`

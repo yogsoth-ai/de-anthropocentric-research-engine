@@ -38,5 +38,4 @@ Do not treat a numerical update as substantive change without uncertainty compar
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/meta-analysis/cumulative-tracking`
-
+- `resolved: cumulative-tracking`

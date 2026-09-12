@@ -38,5 +38,4 @@ Do not infer construct validity from a high score, face validity, or agreement w
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/construct-validity-assessment`
-
+- `resolved: construct-validity-assessment`

@@ -2,38 +2,40 @@
 
 ## Purpose
 
-Identify randomness sources and define seed/repetition/propagation rules sufficient for the intended reproducibility level.
+Perform design randomness protocol as a bounded experimental transformation.
 
 ## Input contract
 
-~~~yaml
-required: [source_state, task_object]
-optional: [constraints, prior_evidence]
-constraints: [typed inputs, provenance-bearing evidence, explicit uncertainty]
-~~~
+```yaml
+required: [randomness_sources, seed_policy, repetition_target]
+optional: [provenance, assumptions, uncertainty_register]
+constraints: [inputs are typed, units and conditions are explicit, provenance is retained]
+```
 
 ## Procedure
 
-1. Parse the typed input and identify the transformation target.
-2. Apply the operation while preserving assumptions and provenance.
-3. Emit the result with unresolved uncertainty explicit.
+1. Validate the required fields and normalize units without changing their meaning.
+2. Apply the operation specific to design randomness protocol: Record all stochastic sources, fixed seed policy, and repetition count.
+3. Emit seed_protocol, variance_plan with each decision tied to evidence, assumptions, or uncertainty.
 
 ## Output contract
 
-~~~yaml
-produces: [analysis_artifact, decision_rationale]
-delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_updates, uncertainties, decisions, open_questions, recommended_jumps]
-~~~
+```yaml
+produces: [seed_protocol, variance_plan]
+delta_fields: [findings, evidence_updates, uncertainties, decisions]
+```
 
 ## Quality gates
 
-- Output is typed, traceable to inputs, and complete for the declared scope.
-- No unsupported numeric threshold or mechanism is introduced.
+- Record all stochastic sources, fixed seed policy, and repetition count.
+- Preserve nulls, contradictions, and boundary cases instead of smoothing them away.
+- Record the stopping condition and unresolved questions when the operation cannot conclude.
 
 ## Failure and counterexamples
 
-Mark the result unresolved when evidence is missing, contradictory, or outside scope; retain counterexamples.
+Mark the artifact unresolved when required fields conflict, provenance is absent, or the result exceeds scope. Retain counterexamples and failed checks.
 
 ## Provenance map
 
-- concept: experiment-execution-seed-protocol-design <- experiment-execution/seed-protocol-design
+- resolved: design-randomness-protocol <- v3 refactory_source.json nodes[].name (normalized lookup)
+- concept: experiment-execution/design-randomness-protocol <- architecture semantic consolidation

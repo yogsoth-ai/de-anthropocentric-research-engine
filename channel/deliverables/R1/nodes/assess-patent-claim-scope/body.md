@@ -39,5 +39,4 @@ Do not infer broad protection from a title or abstract, and do not treat technic
 ## Provenance map
 
 - `resolved: knowledge-acquisition-claim-analysis`
-- `concept: quality-scoring`
-
+- `resolved: quality-scoring`

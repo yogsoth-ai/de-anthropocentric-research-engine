@@ -39,9 +39,9 @@ Do not infer unprotected status from an empty search result, a single family, or
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/white-space-analysis`
+- `resolved: white-space-analysis`
 - `resolved: knowledge-acquisition-white-space-mapping`
-- `concept: claim-decomposition`
+- `resolved: knowledge-acquisition-claim-decomposition`
 
 ## Preserved source criteria ledger
 

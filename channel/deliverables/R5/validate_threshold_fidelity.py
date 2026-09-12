@@ -81,6 +81,17 @@ def body_text(path):
         text = parts[2] if len(parts) == 3 else text
     return text.split("<!-- BEGIN available-tables (generated) -->", 1)[0]
 
+def section(text, heading, next_heading=None):
+    m = re.search(rf"^## {re.escape(heading)}\s*$", text, re.M)
+    if not m:
+        return ""
+    tail = text[m.end():]
+    if next_heading:
+        n = re.search(rf"^## {re.escape(next_heading)}\s*$", tail, re.M)
+        if n:
+            tail = tail[:n.start()]
+    return " ".join(tail.split())
+
 def contains(body, criterion):
     normalize = lambda s: " ".join(s.replace("\\\\|", "|").replace("\\|", "|").split())
     return normalize(criterion) in normalize(body)
@@ -135,6 +146,28 @@ def main():
         if absent:
             relative_missing.extend(f"{node_id}: {name}" for name in absent)
             print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
+    # §5 mechanical gates: same-group procedures/gates must not collapse to one
+    # placeholder; required inputs and delta fields must be node-specific.
+    basis_bodies = {node_id: body_text(NODES / node_id / "body.md") for node_id in BASIS_IDS}
+    procedures = {node_id: section(body, "Procedure", "Output contract") for node_id, body in basis_bodies.items()}
+    gate_text = {node_id: section(body, "Quality gates", "Parameterization") for node_id, body in basis_bodies.items()}
+    for label, values in (("Procedure", procedures), ("Quality gates", gate_text)):
+        groups = {}
+        for node_id, value in values.items():
+            groups.setdefault(value, []).append(node_id)
+        for value, nodes in groups.items():
+            if value and len(nodes) > 1:
+                print(f"DUPLICATE BASIS {label}: {', '.join(nodes)}", file=sys.stderr)
+                missing.append(f"duplicate {label}: {', '.join(nodes)}")
+    for node_id, body in basis_bodies.items():
+        required = re.search(r"required:\s*\[([^]]+)\]", body)
+        if required and re.search(r"(?:source_state|task_object|input_object)", required.group(1), re.I):
+            print(f"{node_id}: generic required input placeholder", file=sys.stderr)
+            missing.append(f"{node_id}: generic required input placeholder")
+        delta = re.search(r"delta_fields:\s*\[([^]]+)\]", body)
+        if delta and len([x for x in delta.group(1).split(',') if x.strip()]) >= 8:
+            print(f"{node_id}: delta_fields is not a subset", file=sys.stderr)
+            missing.append(f"{node_id}: delta_fields is not a subset")
     print("Known blind spots: number words/non-English thresholds; implicit domain criteria without cue words; qualitative adjectives (adequate/relevant/representative); formulas or constraints outside matched forms; zero/low-count nodes require manual review.")
     if relative_missing:
         print("MISSING required relative fields:", file=sys.stderr); print("\n".join(relative_missing), file=sys.stderr); return 1

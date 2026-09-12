@@ -57,3 +57,21 @@
 - total unresolved provenance: 164
 
 R4 delivery complete: all GROUP D bodies and required compilation logs are present under channel/deliverables/R4/nodes.
+
+## Rework batch 01
+- ids: analyze-experiment-results, analyze-future-scenarios, build-domain-ontology, construct-argument-map, construct-causal-model, decompose-research-question, falsifiability-audit, formulate-research-question, pairwise-ranking, portfolio-optimization
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 65 / intermediate 0 (v3 JSON parser rejected malformed source; unresolved entries explicitly retained, no near-name substitution)
+- mechanical gates: dedup PASS (distinct protocols); named input PASS; delta subset PASS; provenance pre-check PASS (no false resolved claims)
+
+## Rework batch 02
+- ids: structured-consensus, construct-design-matrix, design-randomness-protocol, estimate-sample-size, extract-core-conflict, identify-critical-chain, identify-scenario-drivers, list-undesirable-effects, map-ablation-components, optimize-design-under-budget
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 15 / intermediate 0
+- mechanical gates: dedup PASS; named input PASS; delta subset PASS; provenance pre-check PASS
+
+## Rework batch 03
+- ids: predict-competitive-move, project-future-reality, quantify-resource-gap, select-experimental-baseline, select-statistical-method, specify-execution-environment, specify-metrics, specify-reproducibility-protocol, statistical-testing, verify-reproducibility
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 10 / intermediate 0
+- mechanical gates: dedup PASS; named input PASS; delta subset PASS; provenance pre-check PASS

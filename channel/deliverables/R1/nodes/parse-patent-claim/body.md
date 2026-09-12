@@ -37,6 +37,5 @@ Do not paraphrase away limiting language or treat a dependent claim as independe
 
 ## Provenance map
 
-- `concept: knowledge-acquisition/claim-parsing`
-- `concept: knowledge-acquisition/claim-decomposition`
-
+- `resolved: claim-parsing`
+- `resolved: knowledge-acquisition-claim-decomposition`
