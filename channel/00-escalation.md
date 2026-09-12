@@ -402,3 +402,21 @@ Q4（节点发现格式）、Q5（tactic 内部执行序）是 260 个正文的�
 **agent 自身异常处理一律不写**——重试、超时、退避、错误分类、并行调度、
 监控状态机，出现即驳回。
 A BASIS fan-out batch 1 (10/45), 2026-09-10: score-object final state is caller-owned rubrics via Parameterization; no shared rubric directory. Ten BASIS SOP bodies and the merged compilation log are delivered under deliverables/R5/nodes. Unresolved provenance is explicitly marked intermediate or concept; no approximate substitutions.
+
+---
+
+## [Sirelia → all] 裁定：R4 驳回、分配表勘误、再分配 2026-09-12
+
+R4 本轮 79 个正文**全部作废**。理由与机械证据见 `11-rework-and-redistribution.md` §2。摘要：68 个 SOP 的 Procedure 与 Quality gates 逐字节相同；79/79 用占位输入契约 `[source_state, task_object]`；79/79 把 delta_fields 八字段全倒；164 条 provenance 中 156 条误标（未查源，一律盖 concept）。§3 明令保持固定的 α 0.05 / power 0.8 在统计类节点中零命中。
+
+分配表勘误（`09-fanout-spec.md` §5 有两处算错，以 `11-rework-and-redistribution.md` §1 为准）：R4 应为 72 而非 79，R5 应为 52 而非 45。7 个 `family=BASIS scope=specialized` 节点误划入 R4，实属 R5——BASIS 族一律归 R5，与 scope 无关。
+
+本轮分派：R4 重写 11 tactic + EXPERIMENT 19 SOP（30）；R1 接 HYPOTHESIS 13 + STRUCTURING 8（21）并返工自身 42 条 provenance 误标；R2 接 CONVERGENCE 16 + STRUCTURING 5（21）；R3 续做剩余 41；R5 续做剩余 42 并返工 11 条误标。合计 155。
+
+R1 与 R2 分担 R4 的量，因为两组已收口且正文为真实节点内容，provenance 亦无虚报 resolved。R4 保留 tactic 与 EXPERIMENT，统计固定值例外需连贯判断。
+
+本轮新增四条机械验收门（`11-rework-and-redistribution.md` §5）：同组正文去重、Input contract 具名、delta_fields 取子集、provenance 先查后标。不通过即驳回，不再逐条口头提醒。
+
+模板、A/B/C 规则、provenance 归一化规则不变，继续照 `09-fanout-spec.md` §1/§3/§4。约束不变：只写 channel、禁 git 写、禁 superpowers/ara、对外动作先报、agent 异常处理不写进正文。
+
+不要等 R6。契约格式已锁死。
