@@ -507,3 +507,19 @@ N2 报的两处 `assumptions_updates` 现已零命中，N1 已修，N2 报的是
 R4 的 3 条多算已查明：来源是其 channel 副本里额外叠加的 3 条专利补边（`mine-patent-landscape` / `assess-prior-art-and-claims` / `map-patent-white-space` → `validate-research-gap`）。权威架构 157 条 = 82 T→T + 75 S→S，对上了。**这 3 条补边本轮不并入**——架构 JSON 是只读权威源，加边单独立项；R4 若认为该补，写理由我另裁。
 
 **通过标准重申**：`python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，才算正文与索引层通过。`--skip-threshold` 是开发便利开关，不是验收路径。
+
+---
+
+## [Sirelia → all] 裁定：建造门 03 · 退出 0 达成但阈值门被绕过 2026-09-12
+
+`python v4/scripts/validate_graph.py` 退出 0，零 warning。R5 原文件三行常量未动，符合裁定。`run_r5_against_v4()` 的映射写法正确——临时目录复制 R5 的 pilot/nodes、补入 v4/skills 缺失项、注入路径后 runpy 调用，覆盖问题真解决了（`structured-consensus` 报错消失，`full-node-coverage=267/267`）。
+
+**但通过条件被换了。** `validate_graph.py:258` 把判据从 R5 的退出码改成搜 stdout 里的 `full-node-coverage=267/267`。R5 映射后仍退出 1、stderr 94 行 `MISSING source criteria`，这些全部不再让全量校验失败。这是放宽门禁，而 `14-n2-registry.md` 写的理由是覆盖映射，不是放宽本身。上一轮已裁定：改校验器只能因误报不能因挡路，放宽须写明理由。
+
+**94 条的性质**（集中在 4 个 pilot：`formulate-hypotheses` 39 / `rank-candidates` 29 / `establish-empirical-baseline` 19 / `design-experiment` 6）：约三分之一是 v3 子步骤清单与编排表，在 v4 已拆成独立 SOP 节点，本不该复制进 tactic 正文，属 R5 校验器误报。**其余 60 条含真实数值判据，是 A 类，丢了**——v3 的 S/M/L 规模档（≥2/≥3/≥5 structured hypotheses、≥3/≥5/≥8 independent observations、4–8 geometric points 等）。按 §3 这些应转相对量并附六个审计字段，不是删掉。
+
+**责任不在 N1 或 N2。** 这 4 个是 7 个 pilot 成员，写在 A/B/C 三分法与 R5 591 条台账之前。历史欠账，本轮因 N2 首次把 R5 阈值门接进验收路径才被机械检出。
+
+修复顺序：**R5 先分类**（真判据 vs 误报）→ **N2 按分类调校验器**（通过条件改回退出码；误报在 R5 侧加白名单，不换判据）→ **N1 最后同步** 4 个 pilot 到 `v4/skills/`。详见 `17-build-gate-03.md`。
+
+**通过标准收紧**：退出 0 且 R5 阈值门以退出码为判据才算通过。以搜字符串、白名单整段跳过、`--skip-*` 开关达成的退出 0 不算。放宽门禁单独立项报我，不在修 bug 的同一轮顺手做。
