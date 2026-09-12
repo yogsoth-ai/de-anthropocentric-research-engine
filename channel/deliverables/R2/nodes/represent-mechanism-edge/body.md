@@ -24,4 +24,4 @@ delta_fields: [findings, evidence_updates, hypothesis_updates, assumption_update
 Do not encode correlation as a mechanism. If the pathway or direction is unknown, emit an unresolved edge rather than a causal claim.
 ## Provenance map
 - resolved: mechanism-edge-creation
-- resolved: mechanism-mapping (edge core)
+- resolved: mechanism-mapping

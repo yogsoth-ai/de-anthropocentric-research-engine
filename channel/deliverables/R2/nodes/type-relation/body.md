@@ -24,4 +24,4 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 Do not infer relation type from entity names. If multiple relation types remain plausible, preserve the alternatives.
 ## Provenance map
 - resolved: relation-typing
-- resolved: edge-batch-creation (semantic core)
+- resolved: edge-batch-creation
