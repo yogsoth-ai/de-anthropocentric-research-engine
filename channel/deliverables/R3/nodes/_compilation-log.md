@@ -50,3 +50,20 @@ Mechanical gates: (1) Procedure texts are node-specific and pairwise non-identic
 | extract-generic-space | B | 0 | 1 | 0 |
 
 Batch 3 total: 10 SOP, A=0, B=10, C=0; provenance resolved=13, concept=5, intermediate=0. Mechanical gates 1–4: pass.
+
+## Batch 4 — SOP
+
+| node | judgment | resolved | concept | intermediate |
+|---|---:|---:|---:|---:|
+| filter-false-gap | B | 1 | 0 | 0 |
+| generate-alternative-model | B | 1 | 0 | 0 |
+| identify-dominant-frame | B | 3 | 0 | 0 |
+| identify-inventive-contradiction | B | 1 | 0 | 0 |
+| instantiate-transfer | B | 3 | 0 | 0 |
+| map-analogy | B | 3 | 0 | 0 |
+| map-productive-polarity | B | 2 | 0 | 0 |
+| map-stakeholder-jobs | B | 0 | 2 | 0 |
+| mutate-solution-population | B | 0 | 1 | 0 |
+| propagate-uncertainty | B | 1 | 1 | 0 |
+
+Batch 4 total: 10 SOP, A=0, B=10, C=0; provenance resolved=15, concept=4, intermediate=0. Mechanical gates 1–4: pass.

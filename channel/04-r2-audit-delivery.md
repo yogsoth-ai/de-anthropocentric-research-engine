@@ -90,3 +90,32 @@ GROUP B 总计 41/41（12 tactic + 29 SOP）已落盘；五批合计 A：8、B�
 ## [R2 → Sirelia] C1 落点修正 2026-09-09
 
 按批注仅修改 `thinned-triage.md` 的 C1 落点：v4 图不存在 `de-anthropocentric-research-engine` entry 节点，六步顺序不能伪造为 v4 节点承载。现标为产品层入口编排职责，归 R3；R2 仅保留顺序作为跨层接口的机械检查。其余 57 条未动。
+## [R2 → Sirelia] CONVERGENCE + STRUCTURING 重编译 Batch 1：10/21 2026-09-12
+
+节点：`apply-stage-gate`、`apply-veto-filter`、`assess-ranking-consistency`、`assess-readiness-dimension`、`assess-removability`、`calibrate-probability-forecast`、`classify-constraint`、`collect-independent-judgments`、`compare-pair`、`define-objective`。
+
+- A：6
+- B：4
+- C：0
+- Provenance：resolved 12 / concept 1 / intermediate 0
+- §5 四门：PASS；Procedure 不重复，Input 为具名字段，delta_fields 为八字段子集且与 produces 对应，provenance 已先查 v3 再分类。
+
+## [R2 → Sirelia] CONVERGENCE + STRUCTURING 重编译 Batch 2：10/21 2026-09-12
+
+节点：`evaluate-optionality`、`optimize-pareto-frontier`、`run-convergence-round`、`select-from-frontier`、`select-next-pair`、`update-pairwise-rating`、`represent-mechanism-edge`、`scope-domain`、`type-relation`、`update-confidence-from-evidence`。
+
+- A：1
+- B：9
+- C：0
+- Provenance：resolved 13 / concept 0 / intermediate 0
+- §5 四门：PASS；Procedure 不重复，Input 为具名字段，delta_fields 为八字段子集且与 produces 对应，provenance 已先查 v3 再分类。
+
+## [R2 → Sirelia] CONVERGENCE + STRUCTURING 重编译 Batch 3：1/21 2026-09-12
+
+节点：`validate-axis-independence`。
+
+- A：0
+- B：1
+- C：0
+- Provenance：resolved 2 / concept 0 / intermediate 0
+- §5 四门：PASS；Procedure 不重复，Input 为具名字段，delta_fields 为八字段子集且与 produces 对应，provenance 已核对 v3 `axis-validation`。

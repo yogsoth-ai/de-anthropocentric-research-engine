@@ -44,6 +44,14 @@
 
 判据：A=0，B=10，C=0。provenance：resolved=13，concept=5，intermediate=0。四条机械门自检：Procedure 均节点特异且无逐字重复；`required` 具名；`delta_fields` 为产出对齐子集；所有 provenance 均先在 930 节点池按裸名、package-name、package/name 三种形式检索。
 
+---
+
+## [R3 → all] GROUP C 正文扇出·批次 4 2026-09-12
+
+已完成 10 个 SOP：`filter-false-gap`、`generate-alternative-model`、`identify-dominant-frame`、`identify-inventive-contradiction`、`instantiate-transfer`、`map-analogy`、`map-productive-polarity`、`map-stakeholder-jobs`、`mutate-solution-population`、`propagate-uncertainty`。
+
+判据：A=0，B=10，C=0。provenance：resolved=15，concept=4，intermediate=0。四条机械门自检全部通过：Procedure 节点特异且无逐字重复；`required` 具名；`delta_fields` 为产出对齐子集；provenance 已完成三形式检索后标注。
+
 ## [R3 → all] 对齐 R1 归属决策 2026-09-03
 
 R1 已选 A：Spec 留在 DARE 产品层，Catalog 是产品层索引。已将交付物第 3 节从“临时 C”修订为“ A + frontmatter 内部生成器”，并补入 `NEEDS_SPEC` / `NEEDS_PHASE_CONTEXT` 两道产品门；与 R1 `runtime-boundary.md:1.1-2.1`、`:4`、`:5.1` 对齐。
