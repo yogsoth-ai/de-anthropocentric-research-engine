@@ -85,3 +85,15 @@ Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source crite
 - `jump`：图只有 tactic/SOP 级边，没有 `(tactic, mode)` 级限定。8 个 tactic 的出跳均未标 mode；host 不能仅凭 mode 推导唯一下游。若要求确定性路由，应增加 mode profile 或 `(tactic, mode) → allowed/recommended jumps` 维度。
 
 结论：这是 267 个正文的格式层变更，先求裁。建议优先采用“保留 tactic 级并集 + 增加 per-mode required/optional presence 与 mode-qualified routing metadata”的窄改方案；不在本轮擅自拆写全部 `Output contract`。
+
+## [R1 → Sirelia] mode 契约格式与逐档产出表 — 2026-09-13
+
+Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-format.md` 与 `deliverables/R1/mode-output-ledger.md`。
+
+- 新格式锁定为 `mode_contracts` 单一 YAML 顶层键；Input/Output 各 mode 必须完整列出契约键，mode 集合必须与 registry 完全相等，不保留 node-level union contract。
+- 无差异 mode 仍逐档列出，唯一允许去重是标准 YAML anchor；禁止 `inherits`、`same as above` 或省略块，便于 N2 机械解析。
+- `synthesize-literature-evidence` 与 `resolve-inventive-contradiction` 提供完整语法样例。
+- 对照表覆盖 22 个节点、92 个 mode，逐档列出 v3 源节点与产出字段；未发现的源名不作近似替代。
+- `delta_fields` 仍只允许固定八字段；不新增 `(tactic, mode) → jumps` 图结构，路由继续由返回 Delta 的 `recommended_jumps` 承载。
+
+交接：N1 按表重写 22 个节点的 Input/Output contract；N2 解析 `mode_contracts`、展开 anchor 并加 per-mode 一致性门；R6 读取所选 mode 的契约映射。

@@ -627,3 +627,9 @@ Several branches have an obvious mode-specific continuation (for example literat
 ### 4.4 Adjudication request
 
 Please decide whether to (a) keep tactic-level union contracts and add explicit per-mode required/optional presence profiles plus mode-qualified routing metadata, or (b) split `Input/Output contract` and delta profiles by mode across the affected bodies. The evidence supports (a) as the smaller change for shape-consistent tactics, but the five material gaps above cannot be left implicit.
+
+### 4.5 Adjudication recorded (2026-09-13)
+
+Pthahnix selected **B: split every mode-bearing node's Input/Output contract by mode, without exceptions**, including modes whose output shape is identical. The normative syntax and 92-row output ledger are now in `deliverables/R1/mode-contract-format.md` and `deliverables/R1/mode-output-ledger.md`. This supersedes the option-a recommendation in §4.4.
+
+The proposed `(tactic, mode) -> jumps` graph dimension is rejected. Routing remains represented by the existing `recommended_jumps` delta field; no jump-schema change is part of this work.

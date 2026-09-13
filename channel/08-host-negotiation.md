@@ -154,50 +154,57 @@ Q6 给出组件清单和调用顺序，不要伪代码堆砌。
 
 ### Q4 267 个节点如何被 host 发现和调用
 
-**选择**：采用现有单一路径：正文 `## Input contract` / `## Output contract` 是 contract 权威；产品层按 R3 既有卡片契约生成 catalog 投影；`v4/registry/capabilities.json` 提供 146 条能力回归索引与 `source_ref` 缓存；`v4/registry/graph.json` 把卡片映射到 tactic/SOP 节点。host 不自行扫描正文猜测节点，也不新增索引。
+**选择**：采用现有 discovery 路径，但按 R1 B 路读取 mode contract：无 mode 节点仍以正文 `## Input contract` / `## Output contract` 的单一 YAML contract 为权威；有 mode 的 22 个节点必须从对应小节的 `mode_contracts[选定 mode]` 读取完整契约，不保留 node-level union contract。产品层按 R3 卡片投影，`v4/registry/capabilities.json` 提供 146 条能力回归索引与 `source_ref` 缓存，`v4/registry/graph.json` 提供 mode 枚举并把卡片映射到 tactic/SOP 节点。host 不自行扫描正文猜测节点，也不新增索引。
 
-**理由**：frontmatter 已被校验器锁定为 `name` + `description`，不能承载 `requires`/`produces`。`capabilities.json` 的真实角色是 146-row v3 -> v4 capability regression matrix，不是第二份 contract；R3 定义的产品层卡片从正文 contract、graph desc 和既有 registry 索引投影。代价是卡片只作索引摘要，不得反过来成为权威。
+**理由**：frontmatter 已被校验器锁定为 `name` + `description`，不能承载 `requires`/`produces`。R1 已锁定 `mode_contracts` 的完整逐 mode 结构，且禁止并集 contract；`capabilities.json` 仍只是 146-row v3 -> v4 capability regression matrix，不是第二份 contract。mode-bearing 卡片不投影任何具体 mode 或并集的 `requires`/`produces`，只列 `modes`；否则即使标为摘要，也会重新引入 B 路已拒绝的并集语义。代价是 host 在选 mode 后必须再读正文对应映射，卡片本身不能完成输入/输出判定。
 
-**影响**：267 个正文必须保持机器可解析的两个 contract 小节；产品层卡片固定为 `id, user_label, description, when_to_use, requires, produces, confidence, source_ref, next_call`。host 先做产品层 catalog discovery，再用 `source_ref` 定位正文节点，用 `next_call` 进入 graph 的合法 calls/jump。若卡片摘要与正文冲突，停止该卡片路由并交 N1/N2 修复生成链，不另造运行时机制。
+**影响**：267 个正文必须保持机器可解析的两个 contract 小节；其中 22 个 mode-bearing 节点的两个小节各自只有一个 `mode_contracts` 顶层键，键集合与 graph `modes` 完全相等。无 mode 卡片沿用 R3 字段；mode-bearing 卡片以 `modes` 取代 `requires`/`produces`。host 先做 catalog discovery，再用 `source_ref` 定位正文，校验计划已指定的 mode 属于 graph 列表，随后读取正文 `mode_contracts[mode]` 的 `required`/`produces`。mode 未指定、未知或对应映射缺失时，报错并不进入科研节点；不猜默认值、不静默回退。下游路由只使用 Delta 的 `recommended_jumps`，不从 `(tactic, mode)` 图边推导。
 
-**证据**：`v4/scripts/validate_graph.py:211-245`；`v4/docs/runtime-boundary.md:50-58,114-122`；`channel/deliverables/R3/entry-ux-spec.md:63-78,101-107`；`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:7091-7097`。
+**证据**：`channel/deliverables/R1/mode-contract-format.md:5-34,120-122`；`channel/deliverables/R1/mode-output-ledger.md:119-121`；`v4/scripts/validate_graph.py:211-245`；`v4/docs/runtime-boundary.md:50-58,114-122`；`channel/deliverables/R3/entry-ux-spec.md:63-78,101-107`；`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:7091-7097`。
 
 **格式样例**：
 
 ````markdown
 ---
-name: formulate-hypotheses
-description: "Generate testable hypotheses from theory, empirical regularity, anomaly, or explicit explanatory competition."
+name: resolve-inventive-contradiction
+description: "Resolve technical and physical contradictions."
 ---
 
 ## Input contract
 
 ```yaml
-required: [research_gap_or_observation]
-optional: [theory, anomaly, candidate_explanations, variables, prior_evidence]
-constraints: [at least one observable consequence]
+mode_contracts:
+  technical-contradiction: &contradiction_input
+    required: [contradiction_statement, conflicting_requirements, system_components]
+    optional: [operating_conditions, target_metrics, known_principles]
+    constraints: [improvement_and_worsening_parameters_must_be_explicit]
+  physical-contradiction: *contradiction_input
+  separation: *contradiction_input
 ```
 
 ## Output contract
 
 ```yaml
-produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
-delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
+mode_contracts:
+  technical-contradiction: &contradiction_output
+    produces: [contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+  physical-contradiction: *contradiction_output
+  separation: *contradiction_output
 ```
 ````
 
-对应卡片沿用既有 `capabilities.json` 形状：
+对应 mode-bearing 卡片只声明可选 mode，不投影 `requires`/`produces`：
 
 ```yaml
-id: formulate-hypotheses
-user_label: Formulate hypotheses
-description: Generate and refine testable hypotheses.
-when_to_use: when a research gap or observation can be stated
-requires: [research_gap_or_observation]
-produces: [hypothesis_set, predictions, falsification_conditions]
+id: resolve-inventive-contradiction
+user_label: Resolve inventive contradiction
+description: Resolve technical and physical contradictions.
+when_to_use: when conflicting requirements must be reconciled
+modes: [technical-contradiction, physical-contradiction, separation]
 confidence: registry
-source_ref: v4/skills/formulate-hypotheses/SKILL.md
-next_call: [falsifiability-audit, falsification-first-audit]
+source_ref: v4/skills/resolve-inventive-contradiction/SKILL.md
+next_call: []
 ```
 
 ### Q5 tactic 内部执行顺序
@@ -318,14 +325,25 @@ Open questions: []
 
 ## R6 Q4 mode 权威源裁决（2026-09-13）
 
-**选择**：mode 不算 `Input contract` / `Output contract` 的字段；mode 是 tactic 的 graph 执行元数据，允许值与节点归属以 `v4/registry/graph.json` 的 `modes` 为权威。host 选定 tactic 后必须读取该节点的 `modes`，再用 active item / `decision_rule` 中已明确的 mode 选择执行路径；没有显式 mode 时不得猜测或从 catalog description 推导。
+**选择**：mode 仍是 tactic 的 graph 执行元数据，不是 contract 字段；但 R1 B 路要求 mode-bearing tactic 的 `Input contract` / `Output contract` 各自用 `mode_contracts` 完整列出每个 mode。允许值与节点归属以 `v4/registry/graph.json` 的 `modes` 为权威；host 先确认显式 mode，再读取正文中同名映射。没有显式 mode 时不得猜测或从 catalog description 推导。
 
-**理由**：实测 4 个 tactic——`rank-candidates`、`analyze-constraints-readiness`、`map-stakeholder-system`、`resolve-inventive-contradiction`——在 graph 有 `modes`，正文没有 `## Mode branches`；校验器也没有把 `Mode branches` 列入 tactic 必需小节（`v4/scripts/validate_graph.py:216-245`）。强行把 mode 定为 contract 会要求 N1 为这 4 个节点返工，并把执行选择复制进正文；把它留在 graph 与现状、架构的“graph authoritative”定义一致。代价是 host 不能只读正文：节点 contract 读取正文，mode 枚举读取 graph，计划项必须携带明确 mode。
+**理由**：R1 已锁定 22 个 mode-bearing 节点的逐 mode contract 格式，并要求键集合与 graph 完全相等；因此 graph 负责 mode 枚举与权威拼写，正文负责所选 mode 的输入/输出语义。mode 不再靠缺失的通用 `Mode branches` 小节承载，避免把执行元数据和单一 union contract 混在一起。代价是 host 必须同时读取 graph 的 mode 列表和正文的 `mode_contracts` 映射。
 
-**影响**：Q4 的“正文 contract 唯一权威”限定为输入/输出 contract；改为“正文 contract + graph execution metadata”双源。catalog 卡片仍不新增 `modes` 字段；host 通过 `source_ref` 定位节点后读取 graph `modes`，并校验计划中的 `mode`/`decision_rule` 是该列表成员。Q6 的 `direction-selection` 正是该规则：它来自 `rank-candidates` 的 graph `modes`，不是正文小节。mode 缺失时不进入科研节点，保留当前计划的 open question/decision 路径，不擅自选默认值。
+**影响**：Q4 的“正文 contract 唯一权威”限定为所选 mode 的输入/输出 contract；graph 同时是 mode 枚举的权威源。mode-bearing catalog 卡片声明 `modes`，不携带 `requires`/`produces`；host 通过 `source_ref` 定位正文，校验计划中的 `mode`/`decision_rule` 是 graph 列表成员，再读取同名 `mode_contracts`。Q6 的 `direction-selection` 先从 graph 确认 mode，再读正文映射。mode 缺失、未知或映射缺失时不进入科研节点，不擅自选默认值。
 
-**代价**：host 多读取一份已存在的 registry；graph 与正文之间存在 mode 语义漂移风险，且当前 14 项校验器只验证节点/边/正文模板，不验证 mode 是否有正文分支。收益是零正文返工、与 267 个已落盘节点一致，并避免把 graph 已有的执行元数据复制成第四类 contract。
+**代价**：host 多读取一份已存在的 registry，并承担 graph 与正文 mode 键集合一致性校验；catalog 不能独立完成契约判定。收益是每个 mode 的输入/输出保证明确，避免并集列表过度承诺，并与 R1/N1/N2 的机械解析格式一致。
 
 **证据**：`v4/docs/architecture.md:7-14,32-36`（graph authoritative、calls/jump 语义、registry 角色）；`v4/registry/graph.json` 的 `modes`（`rank-candidates` 及上述 4 个节点）；`v4/scripts/validate_graph.py:216-245`（正文必需小节无 `Mode branches`）；`v4/skills/rank-candidates/SKILL.md:12-24`（现有 Input contract 与通用 Execution protocol）。
 
-**Q4 mode 规则补充**：mode 属可选分支参数，权威源是 `graph.json` 的 `modes` 字段；有 mode 的 tactic 其正文必须有 `## Mode branches` 与之一致（第 15 项门已机械保证），host 选 mode 时读正文该小节；小节缺失而 graph 有 mode 是正文缺陷，报错而非静默回退。
+**Q4 mode 规则补充（已由 R1 B 路格式取代）**：mode 属可选分支参数，权威源是 `graph.json` 的 `modes` 字段；有 mode 的 tactic 其 `Input contract`/`Output contract` 必须以 `mode_contracts` 逐档与之一致，host 选 mode 时读取同名映射；映射缺失或键集合不一致是正文缺陷，报错而非静默回退。
+
+## R6 Q4 按 mode 拆分契约跟进（2026-09-13）
+
+R1 已锁定 B 路全拆格式（`deliverables/R1/mode-contract-format.md` 与 `mode-output-ledger.md`），本段 supersede 本回帖此前关于“单一 produces 列表”的 Q4 表述：
+
+- 对 registry 有 `modes` 的 22 个 tactic，正文 `## Input contract` 与 `## Output contract` 各只允许一个 `mode_contracts` YAML 顶层键；其键集合必须与 `graph.json` 的 `modes` 完全相等。host 先从执行计划确认一个合法 mode，再读取对应的 `mode_contracts[mode]`；该映射的 `required` 是本次必需输入，`produces` 是本次成功必须产出，`delta_fields` 仍受固定八字段白名单约束。
+- mode 未指定、未知、缺失映射或正文与 graph 的 mode 集合不一致时，host 报错并不进入科研节点；不猜默认值、不静默回退。无 mode 的节点继续读取原有扁平 contract。
+- mode-bearing catalog 卡片不含 `requires`/`produces`，只声明 graph 提供的 `modes`；无 mode 卡片沿用 R3 卡片字段。host 选定 mode 后一律回到正文映射读取。
+- mode 的下游路由不增加 `(tactic, mode)` 图维度；host 将节点返回的 `recommended_jumps` 写入八字段 Delta，并由该字段承载下一跳建议。Q5 的 `Execution protocol` 编号顺序不变。
+
+代价：mode-bearing 节点每次调用多一次映射选择与完整契约读取，catalog 不能独立完成契约判定；收益是每个 mode 的输入/输出保证明确，避免并集列表造成过度承诺，并与 R1/N1/N2 的机械解析格式一致。
