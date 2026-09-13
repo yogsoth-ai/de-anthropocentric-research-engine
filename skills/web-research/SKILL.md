@@ -43,6 +43,7 @@ provider is equally valid.
 
 - Brave — see Provider Details (Discovery) § Brave
 - Tavily — see Provider Details (Discovery) § Tavily
+- You.com — see Provider Details (Discovery) § You.com (keyless free profile; no API key required)
 
 For full-page content fetching (Step 3), always use `apify/rag-web-browser`.
 This is not configurable — apify is the only supported content fetcher.
@@ -160,6 +161,27 @@ Use for URL discovery only — not for content analysis.
 
 ```
 tavily_search(query="model context protocol MCP server development guide 2025", max_results=10)
+```
+
+### You.com
+
+Use for URL discovery only — not for content analysis. Keyless free profile —
+the `you` MCP server at `https://api.you.com/mcp?profile=free` needs no API key.
+An authenticated profile adds URL content extraction via `you-contents`, but
+per the HARD-GATE above, full-page analysis still goes through `apify/rag-web-browser`.
+
+| Tool | Role | Returns |
+|------|------|---------|
+| `you-search` | General URL discovery | URL, title, snippet, date |
+
+**Key parameters:**
+- `query` (required): search terms
+- `count`: number of results (default 10)
+
+**Examples:**
+
+```
+you-search(query="model context protocol MCP server development guide 2025", count=10)
 ```
 
 ## Tool-Specific Notes
