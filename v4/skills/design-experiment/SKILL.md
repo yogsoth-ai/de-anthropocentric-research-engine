@@ -28,6 +28,14 @@ constraints: [pre-registered analysis plan]
 3. Select statistical method before observing outcomes; specify sample, power, and stopping rule.
 4. Write reproducibility, resource, and failure checks; return a runnable design matrix.
 
+## Mode branches
+
+- `factorial`: vary multiple factors in a structured design so main effects and interactions are estimable within the declared resource envelope.
+- `ablation`: remove or replace components systematically to attribute the outcome to individual parts and suspected interactions.
+- `comparison`: evaluate a target against controlled baselines with matched confounds, compute, tuning effort, and preregistered tests.
+- `scaling`: instantiate geometric or otherwise justified scale points to test how the outcome changes across the declared regime.
+- `robustness`: perturb relevant conditions or inputs and measure whether the claimed effect survives the defined stress space.
+
 ## Output contract
 
 ```yaml

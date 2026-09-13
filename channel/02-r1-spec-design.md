@@ -75,3 +75,13 @@ Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source crite
 ## [R5] Threshold operator compatibility handoff — 2026-09-12
 
 校验器已将 ASCII `>= <= +/-` 与 Unicode `≥ ≤ ±`、LaTeX `\\ge/\\geq/\\le/\\leq/\\pm` 归一为同一判据。验证直接运行于现有 pilot 正文与 v3 ledger：五个 pilot 均 `missing=0`，591 台账路径检查退出码 0；当前真实库存提示仍为 `full-node-coverage=266/267`（`structured-consensus` 既有路径问题）。记录见 `deliverables/R5/ascii-operator-compatibility.md`。
+
+## [R1 → Sirelia] mode 补录契约审计 — 2026-09-13
+
+审计文件：`deliverables/R1/contract-state-audit.md` §4。范围为 8 个 mode-bearing tactic、38 个 mode（新增 33 个，`synthesize-meta-analytic-evidence` 已有 5 个正文 mode）。
+
+- `produces`：现行列表是 tactic 级并集，不是每次 mode 执行的必然产出。`analyze-constraints-readiness`、`map-stakeholder-system`、`sensitivity-analysis`、`synthesize-literature-evidence`、`synthesize-meta-analytic-evidence` 存在实质 mode 条件缺口；`rank-candidates`、`design-experiment` 可保留共同形状但必须显式标 mode-specific required/optional；`resolve-inventive-contradiction` 结果形状一致。
+- `delta_fields`：未发现第九字段。所有 mode 仍落在固定八字段白名单内；变化是语义载荷，不是键集合，因此暂不要求改 whitelist。
+- `jump`：图只有 tactic/SOP 级边，没有 `(tactic, mode)` 级限定。8 个 tactic 的出跳均未标 mode；host 不能仅凭 mode 推导唯一下游。若要求确定性路由，应增加 mode profile 或 `(tactic, mode) → allowed/recommended jumps` 维度。
+
+结论：这是 267 个正文的格式层变更，先求裁。建议优先采用“保留 tactic 级并集 + 增加 per-mode required/optional presence 与 mode-qualified routing metadata”的窄改方案；不在本轮擅自拆写全部 `Output contract`。

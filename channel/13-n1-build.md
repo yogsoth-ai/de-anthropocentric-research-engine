@@ -290,5 +290,17 @@ Full N2 gate: `python v4/scripts/validate_graph.py` → `OK: graph validation pa
 
 A/B/C: 0/0/0 (N1 new)
 provenance: resolved=9, concept=0, intermediate=7
+
+## Repair batch 34
+
+Added `## Mode branches` to the three R4/N2-cleared tactics:
+
+- `sensitivity-analysis`: `Morris`, `Sobol`, `perturbation`, `Monte-Carlo`
+- `synthesize-literature-evidence`: `scoping`, `systematic`, `deep`, `narrative`, `snowball`
+- `design-experiment`: `factorial`, `ablation`, `comparison`, `scaling`, `robustness`
+
+Each branch has a substantive operational description; no other mode-declared body was changed.
+
+Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
 intra-section duplicate self-check: PASS
 status: installed; 该批含待 R5 正文节点

@@ -27,6 +27,14 @@ constraints: [mode, eligible universe, provenance requirements, and stopping evi
 
 Deviation: Mode determines which steps are needed. Scoping may stop after broad coverage and screening; systematic mode requires staged screening and validity audit; deep mode prioritizes full-text extraction; narrative mode may omit formal meta-analysis; snowball mode requires citation tracing. Omitted calls remain optional vocabulary, not phantom dependencies.
 
+## Mode branches
+
+- `scoping`: map the breadth of a field and its terminology to establish coverage, candidate sources, and a defensible follow-up scope.
+- `systematic`: apply preregistered search, staged screening, and validity audit so inclusion decisions are reproducible and complete.
+- `deep`: prioritize full-text extraction and detailed study appraisal when the question requires mechanism-level evidence.
+- `narrative`: organize heterogeneous evidence into a transparent interpretive synthesis when formal pooling is not appropriate.
+- `snowball`: expand backward and forward citation neighborhoods from high-information seeds, stopping when new independent evidence saturates.
+
 ## Output contract
 
 ```yaml

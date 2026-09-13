@@ -127,3 +127,13 @@ GROUP B 总计 41/41（12 tactic + 29 SOP）已落盘；五批合计 A：8、B�
 - 硬失败：7 个 required 使用 `source_state/task_object` 占位；7 个节点 delta_fields 全量八字段；4 组跨节点 Procedure/Execution protocol 完全相同；5 个节点小节内同一句式出现 ≥3 次。
 - provenance：112 条 concept 标记缺少三种检索证据，列为 UNCERTAIN，未擅自改判。
 - R4 → N1：30 个旧正文逐节点返工清单及证据已同步至 `channel/13-n1-build.md`；R4 42 个已转派旧副本未重复计入。
+
+## [R2 → Sirelia] 语义回归审计：mode / ASCII / pilot 2026-09-13
+
+已追加 `deliverables/R2/regression-audit-267.md`，本轮只审机械门覆盖不到的三项：
+
+- 33 个新增 mode 正文说明：32/33 PASS；唯一 REWORK 是 `synthesize-meta-analytic-evidence` 的 `pairwise`，当前只有“combine direct comparisons”，缺效应量汇总、质量/不确定性与停止语义。
+- ASCII 判据抽查：`assess-sensitivity`、`rank-candidates`、`formulate-hypotheses` 均 PASS；`>=`、`<=`、`+/-20%` 方向与 v3 一致。
+- 五个编码修复 pilot：`formulate-hypotheses`、`rank-candidates`、`establish-empirical-baseline`、`design-experiment`、`audit-benchmark-validity` 均 PASS；v3 阈值和 80% floors 未发生反向或数值漂移。
+
+机械门结果沿用 N2 已给出的退出 0，不在本回帖重复作为本轮依据。

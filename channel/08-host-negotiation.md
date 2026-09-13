@@ -327,3 +327,5 @@ Open questions: []
 **代价**：host 多读取一份已存在的 registry；graph 与正文之间存在 mode 语义漂移风险，且当前 14 项校验器只验证节点/边/正文模板，不验证 mode 是否有正文分支。收益是零正文返工、与 267 个已落盘节点一致，并避免把 graph 已有的执行元数据复制成第四类 contract。
 
 **证据**：`v4/docs/architecture.md:7-14,32-36`（graph authoritative、calls/jump 语义、registry 角色）；`v4/registry/graph.json` 的 `modes`（`rank-candidates` 及上述 4 个节点）；`v4/scripts/validate_graph.py:216-245`（正文必需小节无 `Mode branches`）；`v4/skills/rank-candidates/SKILL.md:12-24`（现有 Input contract 与通用 Execution protocol）。
+
+**Q4 mode 规则补充**：mode 属可选分支参数，权威源是 `graph.json` 的 `modes` 字段；有 mode 的 tactic 其正文必须有 `## Mode branches` 与之一致（第 15 项门已机械保证），host 选 mode 时读正文该小节；小节缺失而 graph 有 mode 是正文缺陷，报错而非静默回退。

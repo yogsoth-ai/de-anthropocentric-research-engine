@@ -21,6 +21,14 @@ constraints: [ranges, dependencies, and selected mode must be declared]
 6. Propagate uncertainty (`propagate-uncertainty`).
 7. Quantify information value for unresolved drivers (`quantify-information-value`).
 Deviation: `local-perturbation`, `Morris`, `Sobol`, `Monte-Carlo`, and decision-value modes select subsets, but mode and omitted analyses must be recorded.
+
+## Mode branches
+
+- `Morris`: screen many uncertain inputs with elementary effects to identify influential factors and interactions before expensive global analysis.
+- `Sobol`: decompose output variance into first-order and total-order contributions when the model can support global sampling.
+- `perturbation`: vary declared inputs around a baseline to expose local directional sensitivity and threshold crossings.
+- `Monte-Carlo`: propagate input distributions through repeated draws to quantify outcome uncertainty rather than relying on a point estimate.
+
 ## Output contract
 ```yaml
 produces: [sensitivity_profile, interaction_effects, uncertainty_contributions, information_value_ranking]

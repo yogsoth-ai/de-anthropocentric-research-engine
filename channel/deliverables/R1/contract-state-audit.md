@@ -579,3 +579,51 @@
 - `window`
 - `worsening_effect`
 - `worsening_parameter`
+
+## 4. Mode-conditioned contract audit (2026-09-13)
+
+Scope: eight mode-bearing tactics and 38 declared modes (the first seven add 33 modes; `synthesize-meta-analytic-evidence` already had five body modes). Evidence was checked against the mode branches in `v4/skills/*/SKILL.md`, the registry mode lists, the `calls` map, and outgoing jump edges in `deliverables/R4/graph.json`.
+
+### 4.1 Produces
+
+The current `produces` arrays are tactic-level unions. They are not per-invocation guarantees: a selected mode may populate only a strict subset. This is a semantic contract gap, with severity varying by tactic.
+
+| tactic | mode-sensitive result fields | single list adequate? | finding |
+|---|---|---|---|
+| `rank-candidates` (8) | `ranking_or_categories`, `scores`, `weights`, `eliminated_candidates`, `sensitivity_results`, `recommendation` | Shape: yes; guarantees: no | category/non-compensatory modes produce class or veto outcomes; rapid triage may omit weights/sensitivity. A mode presence profile is needed if consumers require a field. |
+| `analyze-constraints-readiness` (5) | `readiness_profile`, `constraint_register`, `bottlenecks`, `resource_envelope`, `stage_gates`, `mitigation_paths` | No, as a guarantee | obstacle triage, resource envelope, and maturation path have different required result subsets. The union hides absent resource/gate results. |
+| `map-stakeholder-system` (3) | `system_boundary`, `perspective_set`, `stakeholder_job_map`, `salience_map`, `disagreement_map` | No, as a guarantee | critical-systems, jobs-to-be-done, and salience modes center different maps; no mode is obliged to emit all five. |
+| `resolve-inventive-contradiction` (3) | `contradiction_resolution`, `transformed_configuration`, `residual_conflicts`, `candidate_ideas` | Yes for shape | all three modes perform the same transformation/result contract; mode changes method and evidence, not result keys. |
+| `sensitivity-analysis` (4) | `sensitivity_profile`, `interaction_effects`, `uncertainty_contributions`, `information_value_ranking` | No, as a guarantee | Morris/perturbation emphasize screening or local effects; Sobol/Monte-Carlo require global variance or distributional uncertainty. The union is not a per-mode presence contract. |
+| `synthesize-literature-evidence` (5) | `evidence_corpus`, `structured_evidence_records`, `screening_flow`, `quality_assessment`, `synthesis_map`, `saturation_state` | No | scoping can be abstract/coverage-limited; systematic requires staged screening and validity; deep requires full-text records; snowball requires citation expansion. A single list cannot express these obligations. |
+| `design-experiment` (5) | `design_matrix`, `analysis_plan`, `sample_plan`, `preregistered_thresholds`, `reproducibility_checklist` | Shape: yes; guarantees: no | all modes return a design-shaped object, but factor/ablation/comparison/scaling/robustness impose different matrix and threshold contents. |
+| `synthesize-meta-analytic-evidence` (5) | `effect_estimate`, `uncertainty`, `heterogeneity_report`, `bias_report`, `sensitivity_results` | No | pairwise/network/cumulative/heterogeneity/bias have distinct primary outputs; the union masks fields that are inapplicable or mandatory only for one mode. |
+
+Conclusion: five tactics (`analyze-constraints-readiness`, `map-stakeholder-system`, `sensitivity-analysis`, `synthesize-literature-evidence`, `synthesize-meta-analytic-evidence`) have a material mode-conditioned output contract gap. `rank-candidates` and `design-experiment` can retain a common shape only if the schema explicitly marks mode-conditioned optional/required fields; `resolve-inventive-contradiction` is shape-consistent.
+
+This is a format-level change across the 267 bodies. Request adjudication before changing every `Output contract`; do not silently split contracts in this audit.
+
+### 4.2 delta_fields
+
+No mode introduces a ninth delta field. All observed mode branches remain expressible as subsets of the fixed eight-field whitelist. Existing tactic lists are therefore key-valid. However, mode changes the semantic payload: for example literature snowball updates evidence/citation state, while systematic mode adds screening and quality decisions. A mode-specific delta profile is useful for validation, but no whitelist or body format change is required by this audit.
+
+### 4.3 Mode and jump edges
+
+The graph stores jumps at tactic/SOP level, not `(tactic, mode)` level. For the audited tactics, outgoing jump sets are:
+
+| tactic | declared outgoing jumps | mode qualification present? |
+|---|---|---|
+| `rank-candidates` | `formulate-hypotheses`, `pairwise-ranking`, `analyze-constraints-readiness`, `decompose-research-goal`, `portfolio-optimization` | No |
+| `analyze-constraints-readiness` | `portfolio-optimization`, `decompose-research-goal`, `analyze-future-scenarios`, `rank-candidates` | No |
+| `map-stakeholder-system` | `problem-reframing`, `analyze-constraints-readiness` | No |
+| `resolve-inventive-contradiction` | none | N/A; mode-specific continuation can only be carried in the returned delta |
+| `sensitivity-analysis` | `problem-reframing` | No |
+| `synthesize-literature-evidence` | `build-domain-ontology`, `validate-research-gap`, `establish-empirical-baseline`, `construct-argument-map` | No |
+| `design-experiment` | `analyze-constraints-readiness`, `audit-validator-independence`, `analyze-experiment-results` | No |
+| `synthesize-meta-analytic-evidence` | `formulate-hypotheses` | No |
+
+Several branches have an obvious mode-specific continuation (for example literature `snowball` needs citation tracing, meta `cumulative` needs cumulative updating, and sensitivity Sobol/Monte-Carlo need uncertainty propagation), but those are currently `calls` SOPs or descriptive branches, not mode-qualified jump edges. Therefore the host cannot infer a unique downstream from `mode` alone; it must use a mode profile or the returned `recommended_jumps` delta. If routing is required to be deterministic, add a `(tactic, mode) -> allowed/recommended jumps` contract dimension in the adjudicated format change.
+
+### 4.4 Adjudication request
+
+Please decide whether to (a) keep tactic-level union contracts and add explicit per-mode required/optional presence profiles plus mode-qualified routing metadata, or (b) split `Input/Output contract` and delta profiles by mode across the affected bodies. The evidence supports (a) as the smaller change for shape-consistent tactics, but the five material gaps above cannot be left implicit.
