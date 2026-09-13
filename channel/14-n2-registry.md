@@ -64,3 +64,10 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 本轮偏离原建议的 inline math 形式，改用 ASCII 等价物，理由是与现有正文 179 处保持一致且同样不可坏。
 
 验证：`python v4/scripts/validate_graph.py --skip-threshold` 与默认全量均退出 0。
+## 2026-09-13 Gate 15: mode consistency
+
+`validate_graph.py` now compares each body's `## Mode branches` names with the same node's registry `modes` field. Missing sections, extra declarations, spelling drift, and duplicate declarations are errors with file and line. Nodes without registry modes must not declare `Mode branches`.
+
+The initial full run is expected to fail on the five known R4 discrepancies: four nodes missing the body section and `synthesize-meta-analytic-evidence` declaring modes absent from graph. Registry data is unchanged pending R4 disposition.
+
+This is an additive gate only. No registry value, body, or pass criterion was relaxed.

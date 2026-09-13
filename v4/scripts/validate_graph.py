@@ -71,6 +71,24 @@ def block(lines: list[str], sections: dict[str, tuple[int, int]], name: str) -> 
     return "\n".join(lines[start:end]), start + 1
 
 
+def mode_branches(lines: list[str], sections: dict[str, tuple[int, int]]) -> tuple[list[tuple[str, int]], int] | None:
+    """Read declared mode names and their source lines from ## Mode branches."""
+    if "Mode branches" not in sections:
+        return None
+    start, end = sections["Mode branches"]
+    declared: list[tuple[str, int]] = []
+    for index in range(start, end):
+        line = lines[index]
+        match = re.match(r"^\s*[-*]\s+`([^`]+)`", line)
+        if match:
+            declared.append((match.group(1).strip(), index + 1))
+            continue
+        match = re.match(r"^\s*[-*]\s+([A-Za-z0-9][A-Za-z0-9_/-]*)\s*:", line)
+        if match:
+            declared.append((match.group(1).strip(), index + 1))
+    return declared, start
+
+
 def yaml_list(text: str, key: str) -> tuple[list[str], int] | None:
     m = re.search(rf"^\s*{re.escape(key)}:\s*\[([^]]*)\]", text, re.M)
     if not m:
@@ -222,6 +240,29 @@ def main() -> int:
             if name not in sections: c.error(path, 1, f"missing section ## {name}")
             else: positions.append((sections[name][0], name))
         if positions != sorted(positions): c.error(path, 1, "template sections are out of order")
+        # Gate 15: the executable mode vocabulary is shared by graph metadata
+        # and the body.  Missing sections, extra declarations, and spelling
+        # drift all invalidate the node and point back to the body line.
+        declared_modes = mode_branches(lines, sections)
+        graph_modes = [str(mode) for mode in (node.get("modes") or [])]
+        if graph_modes and declared_modes is None:
+            c.error(path, 1, f"Mode branches missing; graph declares modes: {', '.join(graph_modes)}")
+        elif not graph_modes and declared_modes is not None:
+            declarations, heading_line = declared_modes
+            names = [mode for mode, _ in declarations]
+            c.error(path, heading_line, f"Mode branches declares {names}, but graph declares no modes")
+        elif declared_modes is not None:
+            declarations, heading_line = declared_modes
+            declared_names = {mode for mode, _ in declarations}
+            graph_names = set(graph_modes)
+            if len(declared_names) != len(declarations):
+                c.error(path, heading_line, "Mode branches contains duplicate mode names")
+            for mode, line_no in declarations:
+                if mode not in graph_names:
+                    c.error(path, line_no, f"mode {mode!r} is not declared in graph registry")
+            for mode in graph_modes:
+                if mode not in declared_names:
+                    c.error(path, heading_line, f"graph mode {mode!r} missing from Mode branches")
         proc_name = "Execution protocol" if node["type"] == "tactic" else "Procedure"
         proc, proc_line = block(lines, sections, proc_name)
         if node["type"] == "tactic":
