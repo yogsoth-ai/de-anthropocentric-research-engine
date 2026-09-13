@@ -16,10 +16,10 @@ const fullEnv = {
 }
 
 describe('MCP fleet', () => {
-  it('mirrors the seven servers in mcp.example.json', () => {
+  it('mirrors the eight servers in mcp.example.json', () => {
     assert.deepEqual(
       SERVERS.map((s) => s.serverName),
-      ['alphaxiv', 'keenable', 'semantic-scholar', 'brave-search', 'tavily-search', 'wiki-vault', 'apify'],
+      ['alphaxiv', 'keenable', 'you', 'semantic-scholar', 'brave-search', 'tavily-search', 'wiki-vault', 'apify'],
     )
   })
 
@@ -37,7 +37,7 @@ describe('MCP fleet', () => {
 
   it('starts only the credential-free servers on an empty env', () => {
     const { ready, skipped } = partitionServers({})
-    assert.deepEqual(ready.map((s) => s.serverName), ['alphaxiv', 'keenable'])
+    assert.deepEqual(ready.map((s) => s.serverName), ['alphaxiv', 'keenable', 'you'])
     assert.equal(skipped.length, 5)
   })
 

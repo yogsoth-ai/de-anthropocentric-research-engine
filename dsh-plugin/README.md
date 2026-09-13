@@ -32,12 +32,13 @@ The skill row needs no credentials. Drop the `dare-mcp` row to run skills-only.
 
 **Skills.** 920 research skills registered as one provider named `dare`, at bundled rank (600) — a project or user skill of the same name always wins, so this library never shadows your own. Discovery, `SKILL.md` parsing, and relative-resource resolution are delegated to `@deepseek-ai/dsh-skill-filesystem`; 385 skills reference a sibling `prompt.md` through the provider's directory resource base.
 
-**MCP fleet.** Seven research servers, one `dsh-mcp-client` instance each. Tools arrive as `mcp__<serverName>__<rawName>`, matching the names four skills reference literally (`mcp__semantic-scholar__relevanceSearch`, `mcp__wiki-vault__vault_search`, and two more), so those skills work unmodified.
+**MCP fleet.** Eight research servers, one `dsh-mcp-client` instance each. Tools arrive as `mcp__<serverName>__<rawName>`, matching the names four skills reference literally (`mcp__semantic-scholar__relevanceSearch`, `mcp__wiki-vault__vault_search`, and two more), so those skills work unmodified.
 
 | Server | Credential | Notes |
 |---|---|---|
 | `alphaxiv` | — | HTTP |
 | `keenable` | — | HTTP |
+| `you` | — | HTTP, keyless free profile |
 | `semantic-scholar` | `SS_API_KEY` | |
 | `brave-search` | `BRAVE_API_KEY` | |
 | `tavily-search` | `TAVILY_API_KEY` | |
