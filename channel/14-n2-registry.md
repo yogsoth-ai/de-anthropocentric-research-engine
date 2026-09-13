@@ -83,3 +83,13 @@ Negative checks:
 - an empty `Checker` exits 0.
 
 `synthesize-meta-analytic-evidence` now has the five modes `pairwise`, `network`, `cumulative`, `heterogeneity`, and `bias` in `v4/registry/graph.json`. The architecture description explicitly declares these modes while its `modes` field is absent; this is an architecture-internal contradiction resolved in favor of the stronger explicit description, not an inference or gate relaxation. The node records `modes_provenance.source=architecture.desc` and the reason. `v4/scripts/build_registry.py` carries the same narrow override so regeneration preserves the adjudication. The body is unchanged.
+
+## 2026-09-13 R4 provenance-backed mode additions
+
+R4's completed `channel/deliverables/R4/mode-consistency-audit.md` resolves three further empty graph mode fields against v3 source nodes. Added to both `v4/registry/graph.json` and the narrow `DESC_MODE_OVERRIDES` in `v4/scripts/build_registry.py`:
+
+- `sensitivity-analysis`: `Morris`, `Sobol`, `perturbation`, `Monte-Carlo`.
+- `synthesize-literature-evidence`: `scoping`, `systematic`, `deep`, `narrative`, `snowball`.
+- `design-experiment`: `factorial`, `ablation`, `comparison`, `scaling`, `robustness`.
+
+Each node records `modes_provenance.source=architecture.desc`, with `v3_sources` carrying the R4-resolved source node and line evidence. These additions follow the architecture description only where R4 supplied matching v3 provenance; no body text was changed and no gate was relaxed. The four pre-existing body-side Gate 15 errors remain N1's repair scope.

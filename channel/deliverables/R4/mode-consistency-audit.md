@@ -27,6 +27,34 @@ The other 29 empty-mode tactics were checked and have no equivalent explicit mod
 
 ## Mechanical conclusion
 
+## v3 provenance for the four graph omissions
+
+The mode tokens were checked against `scripts/refactory_source.json` using exact-name, hyphen-normalized, and source-name/path variants. Every token has a real v3 node; the table records the canonical source node and line evidence. For compressed tokens, the mapping is semantic only where the v3 node's operation is the named method; no new mode token is invented.
+
+| v4 tactic | mode token | v3 source node(s) | v3 evidence | match status |
+|---|---|---|---:|---|
+| `sensitivity-analysis` | `Morris` | `parameter-screening` (strategy); corroborating `morris-screening` (SOP) | 2384; 2853 | resolved |
+| `sensitivity-analysis` | `Sobol` | `variance-decomposition` (strategy); corroborating `sobol-decomposition` (SOP) | 2391; 2860 | resolved |
+| `sensitivity-analysis` | `perturbation` | `systematic-perturbation` (tactic); corroborating `controlled-perturbation` (SOP) | 2510; 2811 | resolved |
+| `sensitivity-analysis` | `Monte-Carlo` | `uncertainty-propagation` (strategy); corroborating `monte-carlo-sampling` (SOP) | 2405; 2909 | resolved |
+| `synthesize-literature-evidence` | `scoping` | `scoping-survey` (strategy) | 4239 | resolved |
+| `synthesize-literature-evidence` | `systematic` | `systematic-survey` (strategy) | 4246 | resolved |
+| `synthesize-literature-evidence` | `deep` | `deep-survey` (strategy) | 4253 | resolved |
+| `synthesize-literature-evidence` | `narrative` | `narrative-review` (strategy) | 4260 | resolved |
+| `synthesize-literature-evidence` | `snowball` | `snowball` (strategy) | 4267 | resolved |
+| `synthesize-meta-analytic-evidence` | `pairwise` | `pairwise-synthesis` (strategy) | 4652 | resolved |
+| `synthesize-meta-analytic-evidence` | `network` | `network-comparison` (strategy) | 4659 | resolved |
+| `synthesize-meta-analytic-evidence` | `cumulative` | `cumulative-tracking` (strategy) | 4666 | resolved |
+| `synthesize-meta-analytic-evidence` | `heterogeneity` | `heterogeneity-investigation` (strategy) | 4673 | resolved |
+| `synthesize-meta-analytic-evidence` | `bias` | `bias-detection` (strategy) | 4680 | resolved |
+| `design-experiment` | `factorial` | `experiment-execution-factor-level-design` (strategy; renamed source form of factor-level-design) | 3105 | resolved |
+| `design-experiment` | `ablation` | `ablation-design` (strategy) | 3112 | resolved |
+| `design-experiment` | `comparison` | `comparison-design` (strategy) | 3119 | resolved |
+| `design-experiment` | `scaling` | `scaling-design` (strategy) | 3126 | resolved |
+| `design-experiment` | `robustness` | `robustness-design` (strategy) | 3133 | resolved |
+
+The `factorial` token is the compressed label for the factor-level design strategy, not the unrelated creative-ideation node `factorial-ideation`. The same distinction prevents treating `perturbation` as a free-text alias: its v3 operational source is `systematic-perturbation`/`controlled-perturbation`.
+
 - Graph additions required: four description-declared omissions above (one already assigned: `synthesize-meta-analytic-evidence`; three newly found: `sensitivity-analysis`, `synthesize-literature-evidence`, `design-experiment`). N2 should add only the literal values stated in each description and record description provenance. No graph entry is to be inferred from generic variant/scenario wording.
 - Body repairs required: the four missing sections above (`rank-candidates`, `analyze-constraints-readiness`, `map-stakeholder-system`, `resolve-inventive-contradiction`) remain N1 work. `synthesize-meta-analytic-evidence` body branches are retained and do not require deletion.
 - Naming exceptions are not mismatches: `stakeholder/worldview` (slash) and `BioTRIZ` (capitalization) exactly match the authoritative architecture.

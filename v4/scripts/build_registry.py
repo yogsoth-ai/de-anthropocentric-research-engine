@@ -17,11 +17,52 @@ PROVENANCE_ALIASES = {
     "conceptual-blending/generic-space": "generic-space-extraction",
 }
 DESC_MODE_OVERRIDES = {
+    "sensitivity-analysis": {
+        "modes": ["Morris", "Sobol", "perturbation", "Monte-Carlo"],
+        "modes_provenance": {
+            "source": "architecture.desc",
+            "reason": "Architecture desc declares four modes; R4 audit resolves each to v3 source nodes.",
+            "v3_sources": {
+                "Morris": ["parameter-screening (strategy):2384", "morris-screening (SOP):2853"],
+                "Sobol": ["variance-decomposition (strategy):2391", "sobol-decomposition (SOP):2860"],
+                "perturbation": ["systematic-perturbation (tactic):2510", "controlled-perturbation (SOP):2811"],
+                "Monte-Carlo": ["uncertainty-propagation (strategy):2405", "monte-carlo-sampling (SOP):2909"],
+            },
+        },
+    },
+    "synthesize-literature-evidence": {
+        "modes": ["scoping", "systematic", "deep", "narrative", "snowball"],
+        "modes_provenance": {
+            "source": "architecture.desc",
+            "reason": "Architecture desc declares five execution modes; R4 audit resolves each to a v3 survey strategy.",
+            "v3_sources": {
+                "scoping": ["scoping-survey (strategy):4239"],
+                "systematic": ["systematic-survey (strategy):4246"],
+                "deep": ["deep-survey (strategy):4253"],
+                "narrative": ["narrative-review (strategy):4260"],
+                "snowball": ["snowball (strategy):4267"],
+            },
+        },
+    },
     "synthesize-meta-analytic-evidence": {
         "modes": ["pairwise", "network", "cumulative", "heterogeneity", "bias"],
         "modes_provenance": {
             "source": "architecture.desc",
             "reason": "The authoritative desc explicitly declares these modes while the architecture modes field is absent.",
+        },
+    },
+    "design-experiment": {
+        "modes": ["factorial", "ablation", "comparison", "scaling", "robustness"],
+        "modes_provenance": {
+            "source": "architecture.desc",
+            "reason": "Architecture desc declares five design modes; R4 audit resolves each to a v3 design strategy.",
+            "v3_sources": {
+                "factorial": ["experiment-execution-factor-level-design (strategy):3105"],
+                "ablation": ["ablation-design (strategy):3112"],
+                "comparison": ["comparison-design (strategy):3119"],
+                "scaling": ["scaling-design (strategy):3126"],
+                "robustness": ["robustness-design (strategy):3133"],
+            },
         },
     },
 }
