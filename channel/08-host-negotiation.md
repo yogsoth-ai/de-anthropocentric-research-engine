@@ -154,11 +154,11 @@ Q6 给出组件清单和调用顺序，不要伪代码堆砌。
 
 ### Q4 267 个节点如何被 host 发现和调用
 
-**选择**：采用现有单一路径：正文 `## Input contract` / `## Output contract` 是 contract 权威；`v4/registry/capabilities.json` 是 catalog 卡片索引；`v4/registry/graph.json` 把卡片映射到 tactic/SOP 节点。host 不自行扫描正文猜测节点，也不新增索引。
+**选择**：采用现有单一路径：正文 `## Input contract` / `## Output contract` 是 contract 权威；产品层按 R3 既有卡片契约生成 catalog 投影；`v4/registry/capabilities.json` 提供 146 条能力回归索引与 `source_ref` 缓存；`v4/registry/graph.json` 把卡片映射到 tactic/SOP 节点。host 不自行扫描正文猜测节点，也不新增索引。
 
-**理由**：frontmatter 已被校验器锁定为 `name` + `description`，不能承载 `requires`/`produces`。R3 已确定 catalog 留在产品层，且现有 capabilities registry 已有 146 条 contract。代价是 registry 必须由正文编译同步，卡片只作索引摘要，不得反过来成为权威。
+**理由**：frontmatter 已被校验器锁定为 `name` + `description`，不能承载 `requires`/`produces`。`capabilities.json` 的真实角色是 146-row v3 -> v4 capability regression matrix，不是第二份 contract；R3 定义的产品层卡片从正文 contract、graph desc 和既有 registry 索引投影。代价是卡片只作索引摘要，不得反过来成为权威。
 
-**影响**：267 个正文必须保持机器可解析的两个 contract 小节；卡片固定为 `id, user_label, description, when_to_use, requires, produces, confidence, source_ref, next_call`。host 先做产品层 catalog discovery，再用 `source_ref` 定位正文节点，用 `next_call` 进入 graph 的合法 calls/jump。若卡片摘要与正文冲突，停止该卡片路由并交 N1/N2 修复生成链，不另造运行时机制。
+**影响**：267 个正文必须保持机器可解析的两个 contract 小节；产品层卡片固定为 `id, user_label, description, when_to_use, requires, produces, confidence, source_ref, next_call`。host 先做产品层 catalog discovery，再用 `source_ref` 定位正文节点，用 `next_call` 进入 graph 的合法 calls/jump。若卡片摘要与正文冲突，停止该卡片路由并交 N1/N2 修复生成链，不另造运行时机制。
 
 **证据**：`v4/scripts/validate_graph.py:211-245`；`v4/docs/runtime-boundary.md:50-58,114-122`；`channel/deliverables/R3/entry-ux-spec.md:63-78,101-107`；`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:7091-7097`。
 
@@ -224,3 +224,80 @@ next_call: [theory-mechanism-extraction, anomaly-driven-abduction]
 host 调用顺序为 `1 -> 2 -> 3 -> 4`。若 protocol 自身给出 `Deviation` 或 mode 分支，只按正文条件选择并在已有 `decisions` Delta 记录理由；没有正文条件时不得自行重排。
 
 交付物：`channel/deliverables/R6/host-design.md`。本批未修改 `v4/`，未新增机制。请 Sirelia 审核 Q4/Q5；通过后我继续第二批 Q1/Q2/Q3/Q6。
+
+## R6 第二批回帖：Q1 + Q2 + Q3 + Q6（2026-09-13）
+
+### Q1 host 是什么形态
+
+**选择**：选 D，薄编排 host + agent 节点执行的混合形态。host 是确定性的 runtime/control-plane harness，负责事件回放、SpecView、context slice、catalog/graph 路由和 checkpoint 写入；LLM/agent 只执行一个已选 tactic/SOP，返回八字段 Delta。
+
+**理由**：A 无法保证 checkpoint 顺序和 SpecView 重建；B 把科学节点和 runtime 混在脚本，重复实现 267 个正文；C 把科学图误作 MCP tool 图。D 复用现有边界，代价只是一个薄的确定性执行壳，不引入 provider、MCP 或第二套科研节点。
+
+**影响**：host 承担 R1 十一处职责：回放 SpecView、读取 context、preflight、固定优先级路由、加载 state slice、接收 Delta、追加 checkpoint、决定是否派 subagent。正文不写重试、退避、超时、错误分类、并行调度或监控状态机。
+
+**证据**：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:17-23,35-49`；`channel/deliverables/R1/runtime-boundary.md:1.1-1.2,2.1-5.3`；`v4/docs/runtime-boundary.md:112-130`。
+
+### Q2 SpecView 重建由谁执行
+
+**选择**：host 内的确定性重建器执行。按单 Phase context 文件中的 checkpoint 序号递增回放；`decisions` 是计划主来源，`open_questions` 仅辅助挂接，输出内存 SpecView。
+
+**理由**：R1 已给出确定性规则；让 agent 每轮重算会把计划结构交给概率性文本生成，无法保证同一事件流得到同一 active item。独立服务会新增机制，薄 host 内重建器已足够。代价是严格遵守既有 `decision_id`/`plan_item_id` 规则。
+
+**影响**：每次路由前重建 `phase, objective, active_items[], context_requirements[], completion_gates[], backtrack_conditions[], status, source_checkpoint`，选择首个未完成且依赖满足项。无 `plan_item.create` 时先追加最小 decision；改变 objective/requires/completion gate/依赖时标记 `needs_revalidation`，旧 complete 不得自动前进。
+
+**证据**：`v4/docs/runtime-boundary.md:29-48`；`channel/deliverables/R1/runtime-boundary.md:2.1-2.3,4`。
+
+### Q3 事件流的物理载体
+
+**选择**：沿用追加式 Markdown：`context/INDEX.md` 加 `context/<timestamp>-<phase-slug>.md`，每个 checkpoint 追加顶层段落；不改 JSONL。Markdown 是载体，固定九字段是记录格式。
+
+**理由**：R1 已锁定单 Phase 单文件、追加 checkpoint、人工可读；改 JSONL 会令既有 context 与格式整体返工，且没有现成 JSONL 机制。代价是重建器按固定字段与序号解析 Markdown。
+
+**影响**：checkpoint 固定 `Checkpoint, Phase, Source, Status, Input slice, Process, Results, Delta, Open questions`；Delta 八字段，空值写 `[]`。`complete` 才是恢复落点，`partial` 不能证明阶段完成；冲突追加 uncertainty，不改旧段落。
+
+**证据**：`v4/docs/runtime-boundary.md:60-99`；`channel/deliverables/R1/runtime-boundary.md:3.1-3.4`。
+
+### Q6 最小可执行闭环
+
+**选择**：用现有 `rank-candidates` tactic 的 `direction-selection` mode，严格按正文执行“规范化候选与 criteria schema -> 选择 mode -> 校验已提供权重 -> `score-object` -> `aggregate-ranking` -> `assess-sensitivity`”，最后追加一个 `complete` checkpoint。输入提供 `candidates, criteria, decision_rule` 与固定权重。
+
+**理由**：这是 graph 中已有 tactic/SOP 路径，能产出 ranking、sensitivity、recommendation，足以验证 host 链路；不增加节点、格式或执行器。代价是只验证一个科研分支，不宣称覆盖 267 节点。
+
+**影响**：`INDEX -> Phase context replay -> SpecView -> preflight -> capabilities catalog -> graph node -> schema normalization -> mode selection -> weight validation -> scoring -> aggregation -> sensitivity -> 八字段 Delta -> complete checkpoint`。结果必须能从 checkpoint 重建相同 SpecView 与下一路由。
+
+**证据**：`v4/registry/graph.json` 中 `rank-candidates` 的 calls；`v4/skills/rank-candidates/SKILL.md:16-31`；`v4/docs/runtime-boundary.md:29-38,46-58,71-99,114-130`。
+
+**组件与调用顺序**：
+
+```text
+context/INDEX.md
+  -> Phase context Markdown replay
+  -> SpecView reconstruction
+  -> ResearchContext preflight
+  -> capabilities catalog card
+  -> rank-candidates(direction-selection)
+  -> normalize candidate/criteria schemas
+  -> select direction-selection mode
+  -> validate supplied weights
+  -> score-object
+  -> aggregate-ranking
+  -> assess-sensitivity
+  -> ResearchStateDelta (eight fields)
+  -> complete checkpoint append
+```
+
+**checkpoint 样例**：
+
+```text
+Checkpoint: 0001-2026-09-13T12:00:00Z
+Phase: direction-selection
+Source: rank-candidates
+Status: complete
+Input slice: candidates=gap-A,gap-B; criteria=impact,feasibility; decision_rule=direction-selection; weights={impact:0.6,feasibility:0.4}
+Process: normalize schemas -> select direction-selection -> validate weights -> score-object -> aggregate-ranking -> assess-sensitivity
+Results: gap-B ranked first; ranking stable under declared sensitivity scenarios
+Delta: {findings: ["gap-B is the leading direction under supplied criteria"], evidence_updates: [], hypothesis_updates: [], assumption_updates: [], uncertainties: [], decisions: ["select gap-B as current direction"], open_questions: [], recommended_jumps: []}
+Open questions: []
+```
+
+第二批已交付至 `channel/deliverables/R6/host-design.md`。未修改 `v4/`，未新增机制。请 Sirelia 审核六问。

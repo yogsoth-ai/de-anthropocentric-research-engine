@@ -612,6 +612,55 @@ Q4/Q5 优先。不要主动扩范围。
 `python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，
 且 R5 阈值门以退出码为判据。搜字符串、整段白名单、`--skip-*` 达成的退出 0 都不算。
 
+---
+
+## [R6 → Sirelia] 更新完成声明 2026-09-13
+
+上一份声明后的复核已完成：Q6 样例已按 `rank-candidates` 正文改为“schema normalization -> mode selection -> weight validation -> scoring -> aggregation -> sensitivity”，不再把非 protocol 步骤误写成 SOP 调用顺序。
+
+交付物：
+- `channel/deliverables/R6/host-design.md` — Q1-Q6 完整裁决、Q4/Q5 格式样例、Q6 checkpoint 样例。
+- `channel/08-host-negotiation.md` — 两批岗位间回帖。
+
+验收证据：
+
+| 要求 | 当前证据 |
+|---|---|
+| 现状先行 | `python v4/scripts/validate_graph.py` 退出 0，零 warning；已读 validator、registry、R1/R3 规格及已落盘 tactic 正文 |
+| Q4 | 固定正文 contract -> `capabilities.json` catalog -> `graph.json` 节点映射；无新机制 |
+| Q5 | tactic `Execution protocol` 定序；`calls` 仅为可组合词汇；给出 `formulate-hypotheses` 格式样例 |
+| Q1-Q3 | D 混合 host；host 内确定性 SpecView 重建；既有追加式 Markdown checkpoint |
+| Q6 | 既有 `rank-candidates(direction-selection)` 闭环与九字段 checkpoint 样例 |
+| 约束 | 未修改 `v4/`；未执行 git 写操作；未写 agent 重试、退避、超时、错误分类、并行调度或监控状态机 |
+
+自评：纸面设计已完成，真实 host 执行尚未发生；该事实不影响六问的设计交付，但不把它伪称为运行验收。
+
+请审核 `channel/deliverables/R6/host-design.md`。若六问满足要求，请在本文件写入：`[Sirelia → R6] GOAL ACHIEVED`。
+
+## [R6 → Sirelia] 完成声明 2026-09-13
+
+交付物清单：
+- `channel/deliverables/R6/host-design.md` — Q1-Q6 六问的选择、理由、影响、证据；Q4/Q5 格式样例；Q6 最小闭环组件与调用顺序。
+- `channel/08-host-negotiation.md` — 第一批 Q4/Q5 与第二批 Q1/Q2/Q3/Q6 的岗位间回帖。
+
+验收标准对照：
+
+| 要求 | 我的交付 | 证据 |
+|---|---|---|
+| 先验证现状再谈 Q4/Q5 | 运行校验器退出 0，并阅读其 14 项门禁、registry、R3/R1 contract 定义与 tactic 正文 | `v4/scripts/validate_graph.py`；`channel/08-host-negotiation.md` 第一批核验段 |
+| Q4 明确节点发现与调用路径 | 正文 contract -> `capabilities.json` catalog -> `graph.json` 映射；未新增索引 | `channel/deliverables/R6/host-design.md` Q4 |
+| Q5 明确 tactic 执行顺序 | 正文 `Execution protocol` 定序；calls 只作词汇集合；给出 `formulate-hypotheses` 样例 | `channel/deliverables/R6/host-design.md` Q5；`v4/skills/formulate-hypotheses/SKILL.md:24-36` |
+| Q1-Q3 选定 host、SpecView、载体 | D 混合 host；host 内确定性 SpecView 重建；追加式 Markdown checkpoint | `channel/deliverables/R6/host-design.md` Q1-Q3 |
+| Q6 可执行闭环 | `rank-candidates(direction-selection)` 串行调用既有 SOP 并追加 complete checkpoint 样例 | `channel/deliverables/R6/host-design.md` Q6；`v4/registry/graph.json` calls |
+| 不新造机制、不写 agent 异常处理 | 复用 registry、catalog、八字段 Delta、checkpoint；明确排除重试/退避/超时/错误分类/并行/监控状态机 | `channel/08-host-negotiation.md` 两批回帖 |
+
+已知未解决项：
+- Sirelia 尚未在本文件写下 `[Sirelia → R6] GOAL ACHIEVED`，因此岗位 goal 尚未达成。
+- Q6 只证明一个既有 tactic/SOP 路径的纸面闭环，尚无真实 host 执行记录；若验收要求真实运行，需要 Sirelia 指定可用 host 与外部执行边界。
+- N2 仍需把 Q3/Q4 的落锤结论回写 `v4/docs/runtime-boundary.md`，N1 是否返工正文由 Q4/Q5 审核结果决定；我未越权修改 `v4/`。
+
+自评：最弱处是 Q1 的 D 形态尚未经过真实 host 一轮回放验证；Q2-Q6 的边界与现有纸面规范一致，但执行确定性仍需建造岗验证。未把这一点伪装成通过。
+
 约束不变：写权限、禁 git 写、禁 superpowers/ara、对外动作先报、
 运行时控制面不写进正文或文档、不许编造 v3 provenance。
 
