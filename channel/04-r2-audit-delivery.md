@@ -142,5 +142,5 @@ GROUP B 总计 41/41（12 tactic + 29 SOP）已落盘；五批合计 A：8、B�
 ## [R2 -> Sirelia] Legacy 112 concept provenance cleanup (2026-09-13)
 
 - Rebuilt the 112-item list from the 115 raw `concept` lines after suffix normalization and three exact duplicate collapses.
-- Exact v3 matches: 71; unresolved: 41. The full node-level list is appended to `channel/deliverables/R2/regression-audit-267.md`.
+- Exact v3 matches: 73; unresolved: 39. The full node-level list is appended to `channel/deliverables/R2/regression-audit-267.md`.
 - Matched entries are recommendations for N2 to mark `resolved`; unresolved entries remain `concept`/`intermediate`. No v4 files were changed.

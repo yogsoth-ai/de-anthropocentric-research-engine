@@ -102,7 +102,7 @@ pilot 结论：5/5 PASS。未发现编码修复或 ASCII 化导致的阈值数�
 
 Scope: current `concept` lines in `channel/deliverables/{R2,R4,R5}/nodes/*/body.md`. The 115 raw lines are reduced to 112 by stripping provenance suffixes (`[...]`, `(...)`) and collapsing three exact duplicate identifiers: `combination-mapping`, `validity-envelope-mapping`, and `six-thinking-hats`. Lookup target: the 930 exact `nodes[].name` values in `scripts/refactory_source.json`; accepted variants are bare name, `package-name`, and `package/name`.
 
-Result: 71 exact matches; 41 unresolved. N2 may mark matched graph entries `resolved` with the v3 source name below. Unresolved entries remain `concept` (or `intermediate` if already so marked); no near-name substitution.
+Result: 73 exact matches; 39 unresolved. N2 may mark matched graph entries `resolved` with the v3 source name below. Unresolved entries remain `concept` (or `intermediate` if already so marked); no near-name substitution.
 
 ### Exact matches (recommended `resolved`)
 
@@ -179,6 +179,8 @@ Result: 71 exact matches; 41 unresolved. N2 may mark matched graph entries `reso
 | `R5/trace-causal-chain` | `concept` | `knowledge-structuring/causal-chain-query` | `causal-chain-query` |
 | `R5/trace-causal-chain` | `concept` | `experiment-execution/causal-chain-tracing` | `causal-chain-tracing` |
 | `R5/verify-evidence-independence` | `concept` | `deep-insight/cross-database-verification` | `cross-database-verification` |
+| `R4/falsifiability-audit` | `concept` | `falsifiability/audit <- architecture semantic consolidation` | `falsifiability-audit` |
+| `R4/pairwise-ranking` | `concept` | `pairwise/ranking <- architecture semantic consolidation` | `pairwise-ranking` |
 
 ### No exact match (retain `concept` / `intermediate`)
 
@@ -201,14 +203,12 @@ Result: 71 exact matches; 41 unresolved. N2 may mark matched graph entries `reso
 | `R4/enumerate-combinations` | `concept` | `creative-ideation-combination-generation <- creative-ideation/combination-generation` | retain `concept`; no exact v3 node |
 | `R4/estimate-sample-size` | `concept` | `experiment-execution/estimate-sample-size <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/extract-core-conflict` | `concept` | `experiment-execution/extract-core-conflict <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
-| `R4/falsifiability-audit` | `concept` | `falsifiability/audit <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/formulate-research-question` | `concept` | `formulate/research/question <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/identify-critical-chain` | `concept` | `experiment-execution/identify-critical-chain <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/identify-scenario-drivers` | `concept` | `experiment-execution/identify-scenario-drivers <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/list-undesirable-effects` | `concept` | `experiment-execution/list-undesirable-effects <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/map-ablation-components` | `concept` | `experiment-execution/map-ablation-components <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/optimize-design-under-budget` | `concept` | `experiment-execution/optimize-design-under-budget <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
-| `R4/pairwise-ranking` | `concept` | `pairwise/ranking <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/portfolio-optimization` | `concept` | `portfolio/optimization <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/predict-competitive-move` | `concept` | `experiment-execution/predict-competitive-move <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
 | `R4/project-future-reality` | `concept` | `experiment-execution/project-future-reality <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
