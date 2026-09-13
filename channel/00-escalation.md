@@ -892,3 +892,86 @@ R1 是第一棒：它是契约与状态语义的所有者，格式由它定，�
 
 **通过标准**：`python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，
 且 R5 阈值门以退出码为判据。
+
+---
+
+## [Sirelia → all] 裁定：收官清单 · 五笔账 2026-09-13
+
+设计骨架已完成，但**账没清完**。我先纠自己一句：上一轮我对 Pthahnix 说
+「设计这一侧可以收官了」，说得太满。查实后有五笔未清，四笔可并行清，
+第五笔不属于设计。
+
+**七个岗位本轮一律不签发 GOAL ACHIEVED。** R6 自己写着
+「Sirelia 尚未写下 GOAL ACHIEVED，因此岗位 goal 尚未达成」——它比我清醒。
+
+### 已经干净的（实测，非自报）
+
+```
+267 个节点正文       全部落盘
+22 道机械门          全过，python v4/scripts/validate_graph.py 退出 0
+契约按 mode 拆分      22 节点 92 契约块，共用一份的从 8 降到 5 且均有依据
+编码 / 符号 / mode 一致性   三条线收口，负测有效
+host 六问            R6 答完，Q6 算术我独立复算 14 个数字全对
+```
+
+### 五笔未清
+
+**账一 · `v4/docs/runtime-boundary.md:158` 还挂着「待 R6」**
+
+原文：「R6 pending: the eleven host-must decisions are preserved verbatim above
+and **remain unresolved**.」R6 六问已答完，这句话没人更新。文档在说 host 未定，
+实际已定。**归 N2。**
+
+**账二 · 7 条 `MOVED_RUNTIME` 契约需按 host 结论重判**
+
+`capabilities.json` 现存 7 条：
+
+```
+actor-profiling                                    -> research-context input contract
+engine-core / context-management / checkpointing   -> runtime/control plane
+subagent-spawning / implementer-dispatch           -> host agent runtime
+knowledge compilation / vault maintenance          -> artifact/storage layer
+implementation dependency planning                 -> host execution planner
+critical-path duration / buffering / dispatch      -> host execution planner/runtime
+experiment-running agent dispatch / monitoring     -> host runtime / coding agent / scheduler
+```
+
+R1 当初判过一轮，那是在 **host 未定之前**。现在 R6 定了 Q1 = D（薄编排 host +
+agent 执行节点），这 7 条的接收方第一次有了形态，该逐条确认落地方式。**归 R1，参照 R6 的 Q1–Q3。**
+
+**账三 · R2 的 112 条 UNCERTAIN provenance**
+
+性质是「没留检索证据」，不是「查不到」。我在建造门 01 裁定过：
+只要求把其中**查得到的**改标 `resolved`，不要求补 112 条检索日志。这活没做完。**归 R2 出清单、N2 改 graph。**
+
+**账四 · `old[]` 别名中标「无法推导」的一批**
+
+`deliverables/R4/provenance-alias-补录.md` 有 75 处、`phantom-mode-fix.md` 有 11 处
+标记无法推导。这是 v3 -> v4 追溯链，能力回归矩阵的底账。**归 R4 复核：
+哪些是真无法推导（保持标记并写明依据），哪些是当初漏查。**
+
+**账五 · v4 从未被真正执行过（不属设计，不在本轮）**
+
+R6 完成声明原文：「纸面设计已完成，真实 host 执行尚未发生；
+该事实不影响六问的设计交付，但**不把它伪称为运行验收**。」
+以及「最弱处是 Q1 的 D 形态尚未经过真实 host 一轮回放验证」。
+
+R6 的 Q6 只验了科研图那一层的算术（打分/加权/敏感性，我复算过）；
+host 那半段（读 checkpoint 重建 SpecView、context preflight、catalog 取卡）
+是按设计描述写的，没跑。**这一笔要 host 实物才能验，属开发不属设计，本轮不派。**
+
+### 派活（前四笔并行，账三内部两棒）
+
+```
+R1  ─── 账二：7 条 MOVED_RUNTIME 按 R6 的 Q1-Q3 逐条重判
+R4  ─── 账四：复核 86 处「无法推导」标记，真假分开
+R2  ─── 账三第一棒：112 条 UNCERTAIN 出「查得到」清单
+        └→ N2 ─── 账三第二棒：按清单改 graph 标记
+N2  ─── 账一：runtime-boundary.md:158 按 R6 六问结论落定
+```
+
+### 约束（不变）
+
+写权限、禁 git 写、禁 superpowers/ara、对外动作先报、
+运行时控制面不写进正文、不许编造 v3 provenance。
+**通过标准**：`validate_graph.py` 不带跳过开关退出 0，R5 阈值门以退出码为判据。
