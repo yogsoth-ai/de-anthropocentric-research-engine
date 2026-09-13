@@ -121,9 +121,10 @@ R4 delivery complete: all GROUP D bodies and required compilation logs are prese
 
 ## Mode consistency audit - 2026-09-13
 
-Read-only source: `refactory/2026-08-23-22-16-dare-v4-architecture.json`; the requested `file-transfer/...` path is absent. Full determination is in `deliverables/R4/mode-consistency-audit.md`.
+Read-only source correction: both `file-transfer/2026-08-23-22-16-dare-v4-architecture.json` and `refactory/2026-08-23-22-16-dare-v4-architecture.json` exist, are 256318 bytes, and have identical MD5 `9ea41ed855f1937c7192b6cc59882262`. The earlier absence report was a relative-path error. Full determination is in `deliverables/R4/mode-consistency-audit.md`.
 
 - Body missing `## Mode branches` for four tactics: `rank-candidates` (8 authoritative modes), `analyze-constraints-readiness` (5), `map-stakeholder-system` (3), `resolve-inventive-contradiction` (3). These are N1 body repairs; graph already contains the exact arrays.
-- `synthesize-meta-analytic-evidence` body lists five branches, but authoritative graph has no `modes` field. This is a body overstatement, not a graph omission; route to N1.
+- Four empty-mode tactics have explicit mode declarations in their authoritative descriptions and are graph omissions for N2 to record: `sensitivity-analysis` (Morris/Sobol/perturbation/Monte-Carlo, architecture line 380), `synthesize-literature-evidence` (scoping/systematic/deep/narrative/snowball, line 599), `synthesize-meta-analytic-evidence` (pairwise/network/cumulative/heterogeneity/bias, line 667), and `design-experiment` (factorial/ablation/comparison/scaling/robustness, line 756). Keep `synthesize-meta-analytic-evidence` body branches; do not delete them.
+- The other 29 empty-mode tactic descriptions contain no explicit mode declaration; generic variants, scenarios, failure modes, or operation lists do not justify graph additions.
 - `problem-reframing` uses literal architecture form `stakeholder/worldview`; `biomimetic-transfer` uses literal `BioTRIZ`. Both are consistent and require no rename.
-- Result: graph additions 0; N1 body actions 5; naming mismatches 0.
+- Result: graph additions 4 total (N2; 3 newly found in this scan), N1 body actions 4; naming mismatches 0; no body-overstated case.

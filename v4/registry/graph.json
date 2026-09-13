@@ -1298,6 +1298,17 @@
       "folded": [
         "synthesize-meta-analysis-protocol"
       ],
+      "modes": [
+        "pairwise",
+        "network",
+        "cumulative",
+        "heterogeneity",
+        "bias"
+      ],
+      "modes_provenance": {
+        "source": "architecture.desc",
+        "reason": "The authoritative desc explicitly declares these modes while the architecture modes field is absent."
+      },
       "type": "tactic",
       "provenance": [
         "knowledge-acquisition/meta-analysis [campaign]",

@@ -20,6 +20,13 @@ constraints: [improvement and worsening effects must be explicit]
 5. Evaluate compatibility and residual conflict (`evaluate-compatibility`).
 6. Synthesize the candidate resolution (`synthesize-idea`).
 Deviation: use separation before inventive principles only when the contradiction is physical; retain both analyses and state why.
+
+## Mode branches
+
+- `technical-contradiction`: represent the improving and worsening engineering parameters, use the contradiction matrix to select principles, and test the resulting trade-off.
+- `physical-contradiction`: split the conflicting requirement by condition, time, space, or scale so one component can satisfy both demands without averaging them.
+- `separation`: search explicitly for a separation condition, transform the implicated component under that condition, and verify that residual conflicts are reduced.
+
 ## Output contract
 ```yaml
 produces: [contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]

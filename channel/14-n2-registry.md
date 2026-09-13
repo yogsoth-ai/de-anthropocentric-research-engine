@@ -68,6 +68,18 @@ R5 接入：默认调用 `channel/deliverables/R5/validate_threshold_fidelity.py
 
 `validate_graph.py` now compares each body's `## Mode branches` names with the same node's registry `modes` field. Missing sections, extra declarations, spelling drift, and duplicate declarations are errors with file and line. Nodes without registry modes must not declare `Mode branches`.
 
-The initial full run is expected to fail on the five known R4 discrepancies: four nodes missing the body section and `synthesize-meta-analytic-evidence` declaring modes absent from graph. Registry data is unchanged pending R4 disposition.
+The initial full run failed on five known R4 discrepancies: four nodes missing the body section and `synthesize-meta-analytic-evidence` declaring modes absent from graph. The latter is resolved below by the explicit desc-based registry adjudication; four body discrepancies remain with N1.
 
 This is an additive gate only. No registry value, body, or pass criterion was relaxed.
+
+## 2026-09-13 Gate 15 correction and desc-mode adjudication
+
+The CLI boundary now normalizes the validator status: only an explicit zero from `main()` exits 0; a non-zero or missing status exits 1. This closes the reported path where five mode errors were printed while the caller observed `EXIT=0`.
+
+Negative checks:
+
+- the current `--skip-threshold` run reports the four remaining body-side mode errors and exits 1;
+- a synthetic `Checker` containing one error exits 1;
+- an empty `Checker` exits 0.
+
+`synthesize-meta-analytic-evidence` now has the five modes `pairwise`, `network`, `cumulative`, `heterogeneity`, and `bias` in `v4/registry/graph.json`. The architecture description explicitly declares these modes while its `modes` field is absent; this is an architecture-internal contradiction resolved in favor of the stronger explicit description, not an inference or gate relaxation. The node records `modes_provenance.source=architecture.desc` and the reason. `v4/scripts/build_registry.py` carries the same narrow override so regeneration preserves the adjudication. The body is unchanged.

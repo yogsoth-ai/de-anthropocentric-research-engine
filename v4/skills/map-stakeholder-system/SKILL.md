@@ -19,6 +19,13 @@ constraints: [inside/outside boundary and stakeholder claims must be explicit]
 4. Classify salience (`classify-stakeholder-salience`).
 5. Map disagreement (`map-disagreement`).
 Deviation: boundary alternatives may branch; retain each material boundary and its consequences.
+
+## Mode branches
+
+- `critical-systems-heuristics`: test who defines the system boundary, whose interests it serves, and which excluded effects change the feasibility judgment.
+- `jobs-to-be-done`: map each stakeholder's functional, social, and emotional job so the system model reflects the outcomes they actually seek.
+- `stakeholder-salience`: classify stakeholder power, legitimacy, and urgency with evidence, making priority and neglected voices explicit.
+
 ## Output contract
 ```yaml
 produces: [system_boundary, perspective_set, stakeholder_job_map, salience_map, disagreement_map]

@@ -328,4 +328,5 @@ def report(c: Checker) -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    # Normalize every non-zero or missing status to a failing process exit.
+    raise SystemExit(0 if main() == 0 else 1)

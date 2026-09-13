@@ -11,6 +11,19 @@ IDs: rank-candidates, map-validity-envelope, explore-dimensional-space, adversar
 A/B/C: 0/0/0 (N1 new)
 provenance: resolved=33, concept=8, intermediate=6
 intra-section duplicate self-check: PASS
+
+## Repair batch 33
+
+Added authoritative `## Mode branches` sections to the four R4-audited tactics:
+
+- `rank-candidates`: 8 modes
+- `analyze-constraints-readiness`: 5 modes
+- `map-stakeholder-system`: 3 modes
+- `resolve-inventive-contradiction`: 3 modes
+
+Each mode retains the exact architecture spelling and includes a substantive operational purpose. `problem-reframing` and `biomimetic-transfer` were not modified; their `stakeholder/worldview` and `BioTRIZ` forms remain unchanged.
+
+Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
 status: source/rebuilt
 
 ## Batch 2 (10)

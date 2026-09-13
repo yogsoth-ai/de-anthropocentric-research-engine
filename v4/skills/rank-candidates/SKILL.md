@@ -24,6 +24,17 @@ constraints: [criterion direction and missing-value policy explicit]
 3. Elicit/validate weights, score with evidence, aggregate or apply veto/threshold rules.
 4. Run sensitivity scenarios and return ordered or categorized candidates with rationale.
 
+## Mode branches
+
+- `gap-prioritization`: rank research gaps by evidence deficit and expected value so scarce investigation effort reaches the most consequential unknowns first.
+- `direction-selection`: narrow competing research directions against explicit scope, evidence coverage, and feasibility constraints before committing to one.
+- `mcda-best-choice`: combine normalized multi-criteria scores with declared weights to select the strongest feasible option while preserving criterion-level rationale.
+- `full-ranking`: produce a complete ordered list using at least the required comparison methods, exposing incomparable pairs and method disagreement.
+- `category-sorting`: assign candidates to threshold-defined classes when ordinal categories are more defensible than fine-grained ranks.
+- `non-compensatory-screening`: apply hard thresholds and vetoes so a severe failure on one criterion cannot be hidden by strengths elsewhere.
+- `rapid-triage`: use coarse importance and feasibility passes to reduce a large candidate set quickly, retaining elimination reasons for later review.
+- `stakeholder-weighted`: aggregate perspective-specific scores with an explicit consensus rule, showing where stakeholder rankings converge or diverge.
+
 ## Output contract
 
 ```yaml

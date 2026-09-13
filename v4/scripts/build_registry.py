@@ -16,6 +16,15 @@ EXPLICIT_INTERMEDIATE = {
 PROVENANCE_ALIASES = {
     "conceptual-blending/generic-space": "generic-space-extraction",
 }
+DESC_MODE_OVERRIDES = {
+    "synthesize-meta-analytic-evidence": {
+        "modes": ["pairwise", "network", "cumulative", "heterogeneity", "bias"],
+        "modes_provenance": {
+            "source": "architecture.desc",
+            "reason": "The authoritative desc explicitly declares these modes while the architecture modes field is absent.",
+        },
+    },
+}
 
 
 def provenance_variants(value: str) -> set[str]:
@@ -66,6 +75,8 @@ def main() -> None:
     for kind in ("tactics", "sops"):
         for node in source[kind]:
             item = dict(node)
+            if node.get("id") in DESC_MODE_OVERRIDES:
+                item.update(DESC_MODE_OVERRIDES[node["id"]])
             item["type"] = "tactic" if kind == "tactics" else "sop"
             item["provenance"] = item.get("old", [])
             nodes.append(item)

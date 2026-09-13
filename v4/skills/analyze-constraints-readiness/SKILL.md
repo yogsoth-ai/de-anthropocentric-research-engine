@@ -24,6 +24,14 @@ constraints: [evidence attached to each scored dimension]
 3. Score dimensions with evidence, identify binding constraints and dependencies.
 4. Design removal/mitigation paths, stage gates, and a readiness conclusion.
 
+## Mode branches
+
+- `obstacle-triage`: rapidly enumerate and severity-rank the obstacles that could block the target, preserving evidence status for each one.
+- `readiness-assessment`: score the required readiness dimensions with supporting evidence and identify the dimensions that keep the target from being ready.
+- `resource-envelope`: estimate time, cost, and personnel bounds from analogies, then flag low-confidence estimates for investigation.
+- `causal-constraint-analysis`: trace how constraints interact through dependencies and conflicts to identify the binding cause rather than only its symptoms.
+- `maturation-path`: sequence stage gates and milestones that move the target from current readiness to the declared implementation threshold.
+
 ## Output contract
 
 ```yaml
