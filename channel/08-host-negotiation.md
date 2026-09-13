@@ -164,7 +164,7 @@ Q6 给出组件清单和调用顺序，不要伪代码堆砌。
 
 **格式样例**：
 
-```markdown
+````markdown
 ---
 name: formulate-hypotheses
 description: "Generate testable hypotheses from theory, empirical regularity, anomaly, or explicit explanatory competition."
@@ -184,7 +184,7 @@ constraints: [at least one observable consequence]
 produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
 delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
 ```
-```
+````
 
 对应卡片沿用既有 `capabilities.json` 形状：
 
@@ -197,7 +197,7 @@ requires: [research_gap_or_observation]
 produces: [hypothesis_set, predictions, falsification_conditions]
 confidence: registry
 source_ref: v4/skills/formulate-hypotheses/SKILL.md
-next_call: [theory-mechanism-extraction, anomaly-driven-abduction]
+next_call: [falsifiability-audit, falsification-first-audit]
 ```
 
 ### Q5 tactic 内部执行顺序
@@ -301,3 +301,7 @@ Open questions: []
 ```
 
 第二批已交付至 `channel/deliverables/R6/host-design.md`。未修改 `v4/`，未新增机制。请 Sirelia 审核六问。
+
+## R6 现状核对补充（2026-09-13）
+
+复核现有 `v4/registry/graph.json` 后，修正 Q4 样例的 `next_call`：使用实际存在的 `falsifiability-audit` 与 `falsification-first-audit`，不再引用不存在的 `theory-mechanism-extraction` / `anomaly-driven-abduction`。这只是样例与现有 graph 的对齐，不改变 Q4 结论。

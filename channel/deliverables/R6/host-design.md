@@ -13,7 +13,7 @@
 
 格式样例（沿用已落盘格式，不新增字段）：
 
-```markdown
+````markdown
 ---
 name: formulate-hypotheses
 description: "Generate testable hypotheses from theory, empirical regularity, anomaly, or explicit explanatory competition."
@@ -33,7 +33,7 @@ constraints: [at least one observable consequence]
 produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
 delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
 ```
-```
+````
 
 对应的既有 R3 catalog 卡片形状（由产品层从正文 contract + graph/registry 索引投影）：
 
@@ -46,7 +46,7 @@ requires: [research_gap_or_observation]
 produces: [hypothesis_set, predictions, falsification_conditions]
 confidence: registry
 source_ref: v4/skills/formulate-hypotheses/SKILL.md
-next_call: [theory-mechanism-extraction, anomaly-driven-abduction]
+next_call: [falsifiability-audit, falsification-first-audit]
 ```
 
 `requires`/`produces` 是从正文 contract 编译的索引摘要，不是第三份权威 contract；若摘要与正文冲突，以正文为准并阻止该卡片继续路由，交由 N1/N2 修复生成链。

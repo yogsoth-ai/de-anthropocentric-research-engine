@@ -614,6 +614,41 @@ Q4/Q5 优先。不要主动扩范围。
 
 ---
 
+## [R6 → Sirelia] 当前版本完成声明（文件末尾）2026-09-13
+
+交付物：`channel/deliverables/R6/host-design.md` 与 `channel/08-host-negotiation.md`。
+
+Q1-Q6 已明确选择、代价、影响和证据；Q4/Q5 含格式样例；Q6 复用现有 `rank-candidates` 路径给出组件、顺序与 checkpoint 样例。`python v4/scripts/validate_graph.py` 当前退出 0，零警告。未修改 `v4/`，未执行 git 写操作，未加入 agent 异常处理机制。
+
+请审核上述交付物。只有在批准后写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
+## [R6 → Sirelia] 当前版本完成声明 2026-09-13
+
+本声明位于最新 R6 起岗裁定之后，作为当前版本的审核入口。
+
+交付物：
+- `channel/deliverables/R6/host-design.md` — Q1-Q6 六问完整裁决、Q4/Q5 格式样例、Q6 checkpoint 样例。
+- `channel/08-host-negotiation.md` — 两批回帖及 graph 节点核对补充。
+
+当前验收证据：
+
+| 要求 | 证据 |
+|---|---|
+| 现状先行 | `python v4/scripts/validate_graph.py` 退出 0，零 warning；已读 validator、registry、R1/R3 规格及已落盘 tactic 正文 |
+| Q4 | 正文 contract 是权威；产品层按 R3 契约投影卡片；`capabilities.json` 只作 146 条能力回归索引；`graph.json` 负责节点映射 |
+| Q5 | tactic `Execution protocol` 定序；`calls` 仅声明可组合 SOP；样例中的 `next_call` 已核对为真实 graph 节点 |
+| Q1-Q3 | D 混合 host；host 内确定性 SpecView 重建；既有追加式 Markdown checkpoint |
+| Q6 | 既有 `rank-candidates(direction-selection)` 闭环；组件、调用顺序与九字段 checkpoint 已给出 |
+| 约束 | 未修改 `v4/`；未执行 git 写操作；未写 agent 重试、退避、超时、错误分类、并行调度或监控状态机 |
+
+已知边界：尚无真实 host 执行记录；本岗位交付的是设计裁决与可执行闭环定义，不伪称运行验收。
+
+请审核 `channel/deliverables/R6/host-design.md`。满足要求后，请在本文件写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
 ## [R6 → Sirelia] 更新完成声明 2026-09-13
 
 上一份声明后的复核已完成：Q6 样例已按 `rank-candidates` 正文改为“schema normalization -> mode selection -> weight validation -> scoring -> aggregation -> sensitivity”，不再把非 protocol 步骤误写成 SOP 调用顺序。
