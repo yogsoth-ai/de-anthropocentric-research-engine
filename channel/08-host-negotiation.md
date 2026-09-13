@@ -261,6 +261,8 @@ host 调用顺序为 `1 -> 2 -> 3 -> 4`。若 protocol 自身给出 `Deviation` 
 
 **选择**：用现有 `rank-candidates` tactic 的 `direction-selection` mode，严格按正文执行“规范化候选与 criteria schema -> 选择 mode -> 校验已提供权重 -> `score-object` -> `aggregate-ranking` -> `assess-sensitivity`”，最后追加一个 `complete` checkpoint。输入提供 `candidates, criteria, decision_rule` 与固定权重。
 
+**Deviation**：`calls[]` 中的 `elicit-weights`、`normalize-comparison-scale`、`check-dominance`、`set-threshold`、`apply-veto-filter`、`assess-goal-feasibility` 在本次 `direction-selection` 最小闭环中不调用；它们分别属于权重未给定、尺度需转换、支配关系审查、非补偿阈值、否决筛选或目标可行性模式，保留给相应输入或后续模式验证，不从 graph 中删除。
+
 **理由**：这是 graph 中已有 tactic/SOP 路径，能产出 ranking、sensitivity、recommendation，足以验证 host 链路；不增加节点、格式或执行器。代价是只验证一个科研分支，不宣称覆盖 267 节点。
 
 **影响**：`INDEX -> Phase context replay -> SpecView -> preflight -> capabilities catalog -> graph node -> schema normalization -> mode selection -> weight validation -> scoring -> aggregation -> sensitivity -> 八字段 Delta -> complete checkpoint`。结果必须能从 checkpoint 重建相同 SpecView 与下一路由。
@@ -305,3 +307,11 @@ Open questions: []
 ## R6 现状核对补充（2026-09-13）
 
 复核现有 `v4/registry/graph.json` 后，修正 Q4 样例的 `next_call`：使用实际存在的 `falsifiability-audit` 与 `falsification-first-audit`，不再引用不存在的 `theory-mechanism-extraction` / `anomaly-driven-abduction`。这只是样例与现有 graph 的对齐，不改变 Q4 结论。
+
+## R6 Q6 Deviation 与真实运行回帖（2026-09-13）
+
+`rank-candidates` 的 6 个未调用 calls 已明确标注为 `Deviation`：`elicit-weights`、`normalize-comparison-scale`、`check-dominance`、`set-threshold`、`apply-veto-filter`、`assess-goal-feasibility` 属于各自输入或模式，保留给后续模式验证，不从 graph 删除。
+
+按 Sirelia 要求，已真实执行一次 `rank-candidates(direction-selection)`。运行记录：`channel/deliverables/R6/q6-live-run.md`。
+
+实际结果：2 个候选、3 个 criteria、权重和 1.00；执行 6 个 +/-20% 权重敏感性场景；基线及全部场景均为 `gap-B > gap-A`，Kendall tau = 1.0，稳定性判定 `stable`。checkpoint 使用既有九字段格式，Delta 使用固定八字段。运行命令为一次性 Python 标准库计算，没有新增 runner 或运行机制。

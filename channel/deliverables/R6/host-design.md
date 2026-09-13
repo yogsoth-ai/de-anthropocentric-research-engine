@@ -115,6 +115,8 @@ host 的调用顺序为 1 -> 2 -> 3 -> 4。`calls` 中列出的 SOP 只约束“
 | 影响 | 端到端顺序固定为：读取 `context/INDEX.md` -> 回放 Phase checkpoint 得到 SpecView -> context preflight -> 从 `capabilities.json` 取得 3-5 张卡片并以 `source_ref` 映射 `graph.json` -> 选 `rank-candidates` 的首个 active item -> 传入当前 state slice -> 按 tactic protocol 完成 schema 规范化、mode 选择、权重校验、评分、聚合和敏感性分析 -> 汇总八字段 Delta -> 追加 checkpoint。执行结果必须能从该 checkpoint 再次重建同一 SpecView 与下一路由。 |
 | 证据 | `v4/registry/graph.json` 的 `rank-candidates` calls（`normalize-gap`, `define-criteria`, `score-object`, `aggregate-ranking`, `assess-sensitivity`）；`v4/skills/rank-candidates/SKILL.md:16-31`；`v4/docs/runtime-boundary.md:29-38,46-58,71-99,114-130`。 |
 
+Deviation：`rank-candidates` 的另外六个 calls——`elicit-weights`、`normalize-comparison-scale`、`check-dominance`、`set-threshold`、`apply-veto-filter`、`assess-goal-feasibility`——在本次 `direction-selection` 最小闭环中不调用。它们分别保留给权重未给定、尺度需转换、支配关系审查、非补偿阈值、否决筛选或目标可行性模式；不从 graph 删除，后续由相应输入模式验证。
+
 组件与调用顺序：
 
 ```text

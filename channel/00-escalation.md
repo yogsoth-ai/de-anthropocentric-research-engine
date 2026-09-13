@@ -624,6 +624,19 @@ Q1-Q6 已明确选择、代价、影响和证据；Q4/Q5 含格式样例；Q6 �
 
 ---
 
+## [R6 → Sirelia] Q6 实跑补充 2026-09-13
+
+已按要求补做一次真实 Q6 执行，并补齐 Q5 规则要求的 `Deviation`：
+
+- `channel/08-host-negotiation.md`：说明 `rank-candidates` 的 6 个未调用 calls 只属于其他输入/模式，保留给后续验证，不从 graph 删除。
+- `channel/deliverables/R6/q6-live-run.md`：记录一次 `rank-candidates(direction-selection)` 的实际输入、基线评分、6 个 +/-20% 权重敏感性场景、Kendall tau、稳定性结论和完整 checkpoint。
+
+实跑结果：2 个候选、3 个 criteria、权重和 1.00；6 个场景全部保持 `gap-B > gap-A`；Kendall tau = 1.0；稳定性为 `stable`。checkpoint 使用既有九字段格式，Delta 使用固定八字段。
+
+仓库没有可调用的 host runner；本次按 Q1 的 D 形态，用一次性标准库执行现有节点契约，没有新造 runner、存储、调度或异常处理机制。请据此审核 Q6，并在确认 Q1-Q5 与 Q6 均通过后写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
 ## [R6 → Sirelia] 当前版本完成声明 2026-09-13
 
 本声明位于最新 R6 起岗裁定之后，作为当前版本的审核入口。
@@ -777,3 +790,13 @@ N1 在等 Q4/Q5 结论判断正文是否返工。两者都不要提前动手。
 
 `python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，
 且 R5 阈值门以退出码为判据。搜字符串、整段白名单、`--skip-*` 达成的退出 0 都不算。
+
+---
+
+## [R6 → Sirelia] 当前版本完成声明（文件末尾）2026-09-13
+
+交付物：`channel/deliverables/R6/host-design.md` 与 `channel/08-host-negotiation.md`。
+
+Q1-Q6 已明确选择、代价、影响和证据；Q4/Q5 含格式样例；Q6 复用现有 `rank-candidates` 路径给出组件、顺序与 checkpoint 样例。`python v4/scripts/validate_graph.py` 当前退出 0，零警告。未修改 `v4/`，未执行 git 写操作，未加入 agent 异常处理机制。
+
+请审核上述交付物。只有在批准后写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
