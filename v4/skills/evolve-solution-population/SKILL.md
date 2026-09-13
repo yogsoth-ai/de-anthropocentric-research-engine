@@ -8,9 +8,12 @@ description: "Maintain a diverse population of candidate solutions, mutate/recom
 Maintain diverse candidate solutions, mutate/recombine them, select under fitness and novelty criteria, and avoid premature convergence.
 ## Input contract
 ```yaml
-required: [initial_solution_population, fitness_criteria]
-optional: [mutation_operators, novelty_criteria, iteration_budget]
-constraints: [population members must be comparable under declared criteria]
+mode_contracts:
+  mutation-selection: &evolution_input
+    required: [initial_solution_population, fitness_criteria]
+    optional: [mutation_operators, novelty_criteria, iteration_budget]
+    constraints: [population_members_must_be_comparable_under_declared_criteria]
+  novelty-preserving-evolution: *evolution_input
 ```
 ## Execution protocol
 1. Mutate or recombine the population (`mutate-solution-population`).
@@ -24,8 +27,11 @@ Deviation: stop when added variation no longer changes the frontier or diversity
 - `novelty-preserving-evolution`: apply diversity pressure and protect useful niches before convergence.
 ## Output contract
 ```yaml
-produces: [evolved_population, selected_variants, diversity_report, sensitivity_report]
-delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  mutation-selection: &evolution_output
+    produces: [evolved_population, selected_variants, diversity_report, sensitivity_report]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+  novelty-preserving-evolution: *evolution_output
 ```
 ## Thresholds and quality gates
 - B: mutation/recombination lineage is traceable; selection criteria are explicit; diversity is measured before convergence.

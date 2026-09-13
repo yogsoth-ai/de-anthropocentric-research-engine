@@ -8,9 +8,13 @@ description: "Test whether an elegant/simple explanation earns its compression b
 Test whether an elegant explanation earns compression by excluding alternatives, subsuming independent facts, or making risky predictions.
 ## Input contract
 ```yaml
-required: [explanation, covered_facts, alternatives]
-optional: [predictions, evidence]
-constraints: [facts and alternatives must be independently enumerated]
+mode_contracts:
+  earned-simplicity: &compression_audit_input
+    required: [explanation, covered_facts, alternatives]
+    optional: [predictions, evidence]
+    constraints: [facts_and_alternatives_must_be_independently_enumerated]
+  decorative-simplicity: *compression_audit_input
+  risky-prediction: *compression_audit_input
 ```
 ## Execution protocol
 1. Classify the explanation's compression evidence (`classify-simplicity-evidence`).
@@ -19,8 +23,12 @@ constraints: [facts and alternatives must be independently enumerated]
 Deviation: omit prediction testing only when no nontrivial prediction can be derived, and mark the explanation non-discriminating.
 ## Output contract
 ```yaml
-produces: [compression_assessment, risky_prediction_tests, critique, score]
-delta_fields: [findings, evidence_updates, uncertainties, decisions]
+mode_contracts:
+  earned-simplicity: &compression_audit_output
+    produces: [compression_assessment, risky_prediction_tests, critique, score]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions]
+  decorative-simplicity: *compression_audit_output
+  risky-prediction: *compression_audit_output
 ```
 ## Thresholds and quality gates
 - Earned simplicity requires at least one independent fact compressed and one risky alternative-forbidding prediction, each evidence-linked.

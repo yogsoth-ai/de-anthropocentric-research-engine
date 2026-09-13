@@ -8,9 +8,14 @@ description: "Audit whether a validator, benchmark, sandbox, or test can pass by
 Detect validators that pass by construction because they copy the target theory's assumptions.
 ## Input contract
 ```yaml
-required: [target_claim, validator, validator_artifacts]
-optional: [data_generation, metric, oracle, acceptance_rule]
-constraints: [validator assumptions and target assumptions must be separately listed]
+mode_contracts:
+  validator: &validator_audit_input
+    required: [target_claim, validator, validator_artifacts]
+    optional: [data_generation, metric, oracle, acceptance_rule]
+    constraints: [validator_assumptions_and_target_assumptions_must_be_separately_listed]
+  benchmark: *validator_audit_input
+  sandbox: *validator_audit_input
+  simulation: *validator_audit_input
 ```
 ## Execution protocol
 1. Enumerate embedded validator assumptions (`enumerate-validator-assumptions`).
@@ -19,8 +24,13 @@ constraints: [validator assumptions and target assumptions must be separately li
 Deviation: if no non-circular channel is feasible, return blocked validation rather than a pass.
 ## Output contract
 ```yaml
-produces: [assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]
-delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  validator: &validator_audit_output
+    produces: [assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  benchmark: *validator_audit_output
+  sandbox: *validator_audit_output
+  simulation: *validator_audit_output
 ```
 ## Thresholds and quality gates
 - At least one validator path must be independent of the target's defining assumptions.

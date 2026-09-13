@@ -8,9 +8,13 @@ description: "Turn a design or research contradiction into targeted transformati
 Turn a technical or physical contradiction into targeted transformations and test whether the contradiction is resolved without creating a worse one.
 ## Input contract
 ```yaml
-required: [contradiction_statement, conflicting_requirements, system_components]
-optional: [operating_conditions, target_metrics, known_principles]
-constraints: [improvement and worsening effects must be explicit]
+mode_contracts:
+  technical-contradiction: &contradiction_input
+    required: [contradiction_statement, conflicting_requirements, system_components]
+    optional: [operating_conditions, target_metrics, known_principles]
+    constraints: [improvement_and_worsening_parameters_must_be_explicit]
+  physical-contradiction: *contradiction_input
+  separation: *contradiction_input
 ```
 ## Execution protocol
 1. Identify contradiction type and parameters (`identify-inventive-contradiction`).
@@ -29,8 +33,12 @@ Deviation: use separation before inventive principles only when the contradictio
 
 ## Output contract
 ```yaml
-produces: [contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]
-delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+mode_contracts:
+  technical-contradiction: &contradiction_output
+    produces: [contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+  physical-contradiction: *contradiction_output
+  separation: *contradiction_output
 ```
 ## Thresholds and quality gates
 - B: contradiction type, selected principles, transformations, and residual trade-offs are all traceable; resolution must improve the target without violating the other requirement.

@@ -8,9 +8,16 @@ description: "Break fixation by surfacing assumptions and applying deliberate pr
 Break fixation with explicit provocation modes, then extract constructive movement and candidate directions.
 ## Input contract
 ```yaml
-required: [current_frame, target_problem]
-optional: [mode, load_bearing_assumptions, constraints]
-constraints: [provocation must name the frame or assumption it attacks]
+mode_contracts:
+  reverse: &destructive_input
+    required: [current_frame, target_problem]
+    optional: [load_bearing_assumptions, constraints]
+    constraints: [provocation_must_name_the_frame_or_assumption_it_attacks]
+  negation: *destructive_input
+  random-entry: *destructive_input
+  extreme-constraint: *destructive_input
+  sacred-cow: *destructive_input
+  distortion: *destructive_input
 ```
 ## Execution protocol
 1. Surface assumptions (`surface-assumptions`).
@@ -28,8 +35,17 @@ Deviation: mode may be reverse, negation, random-entry, extreme-constraint, sacr
 - `distortion`: exaggerate, compress, or otherwise perturb a salient feature.
 ## Output contract
 ```yaml
-produces: [assumption_targets, provocations, constructive_movements, idea_set, concept_fan]
-delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, recommended_jumps]
+mode_contracts:
+  reverse: &assumption_attack_output
+    produces: [assumption_targets, provocations, constructive_movements, idea_set]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, recommended_jumps]
+  negation: *assumption_attack_output
+  random-entry: &provocation_output
+    produces: [provocations, constructive_movements, idea_set]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, recommended_jumps]
+  extreme-constraint: *assumption_attack_output
+  sacred-cow: *assumption_attack_output
+  distortion: *provocation_output
 ```
 ## Thresholds and quality gates
 - B: selected mode is explicit; each provocation has a constructive movement; candidate ideas retain a trace to the attacked frame.

@@ -8,9 +8,12 @@ description: "Reframe a problem in biological functional terms, discover organis
 Translate a target problem into biological functions, find analogous living systems, extract causal strategies, and transfer them back.
 ## Input contract
 ```yaml
-required: [target_problem, target_function]
-optional: [biological_search_space, compatibility_constraints]
-constraints: [function must be stated independently of the target implementation]
+mode_contracts:
+  biologize-and-discover: &biomimetic_input
+    required: [target_problem, target_function]
+    optional: [biological_search_space, compatibility_constraints]
+    constraints: [function_must_be_stated_independently_of_the_target_implementation]
+  BioTRIZ: *biomimetic_input
 ```
 ## Execution protocol
 1. Biologize the problem (`biologize-problem`).
@@ -24,8 +27,11 @@ Deviation: BioTRIZ mode may branch during strategy extraction, but all five chec
 - `BioTRIZ`: use biological contradiction/principle framing during strategy extraction before transfer.
 ## Output contract
 ```yaml
-produces: [biological_analogs, strategy_extract, transfer_candidate, compatibility_report]
-delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  biologize-and-discover: &biomimetic_output
+    produces: [biological_analogs, strategy_extract, transfer_candidate, compatibility_report]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+  BioTRIZ: *biomimetic_output
 ```
 ## Thresholds and quality gates
 - B: analogs solve the same function; strategy includes mechanism and conditions; target compatibility is explicit.

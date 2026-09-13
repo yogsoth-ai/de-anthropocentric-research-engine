@@ -8,9 +8,14 @@ description: "Audit claims of independent convergence by tracing shared priors, 
 Estimate how much nominally independent convergence remains after shared priors, data, models, prompts, framings, assumptions, and upstream evidence are discounted.
 ## Input contract
 ```yaml
-required: [evidence_paths, claims, provenance_records]
-optional: [dependency_schema, correlation_estimates]
-constraints: [each path must be traceable to its inputs and assumptions]
+mode_contracts:
+  evidence-paths: &convergence_audit_input
+    required: [evidence_paths, claims, provenance_records]
+    optional: [dependency_schema, correlation_estimates]
+    constraints: [each_path_must_be_traceable_to_its_inputs_and_assumptions]
+  agents: *convergence_audit_input
+  models: *convergence_audit_input
+  methods: *convergence_audit_input
 ```
 ## Execution protocol
 1. Enumerate paths and provenance (`identify-shared-priors`).
@@ -19,8 +24,13 @@ constraints: [each path must be traceable to its inputs and assumptions]
 Deviation: use qualitative dependence classes when numeric correlation is unavailable; never count nominal paths as independent by default.
 ## Output contract
 ```yaml
-produces: [dependency_map, independence_audit, effective_evidence_count, sensitivity_report]
-delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  evidence-paths: &convergence_audit_output
+    produces: [dependency_map, independence_audit, effective_evidence_count, sensitivity_report]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  agents: *convergence_audit_output
+  models: *convergence_audit_output
+  methods: *convergence_audit_output
 ```
 ## Thresholds and quality gates
 - A-class sufficiency: declared universe = all claimed evidence/reasoning paths; numerator = paths with complete provenance and independence assessment; batch increment = one newly traced path; stopping reason = effective count stabilizes or remaining paths are dependent/irrelevant; source references = path IDs, source IDs, model/prompt IDs; direction/threshold reason = lower effective count when shared dependencies increase.

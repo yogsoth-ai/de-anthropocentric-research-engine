@@ -12,9 +12,27 @@ Build a reproducible literature evidence base across scoping, systematic, deep, 
 ## Input contract
 
 ```yaml
-required: [research_question, evidence_scope, inclusion_rules]
-optional: [mode, seed_sources, query_set, time_window, quality_rubric]
-constraints: [mode, eligible universe, provenance requirements, and stopping evidence must be explicit]
+mode_contracts:
+  scoping:
+    required: [research_question, evidence_scope, inclusion_rules]
+    optional: [seed_sources, query_set, time_window]
+    constraints: [abstract_or_metadata_orientation_only, declared_universe_and_coverage_ratio]
+  systematic:
+    required: [research_question, evidence_scope, inclusion_rules]
+    optional: [seed_sources, query_set, time_window, quality_rubric]
+    constraints: [preregistered_search_and_staged_screening, validity_audit_required, declared_universe_and_coverage_ratio]
+  deep:
+    required: [research_question, evidence_scope, inclusion_rules]
+    optional: [seed_sources, query_set, time_window, quality_rubric]
+    constraints: [full_text_extraction_required, method_and_result_fields_must_be_traceable]
+  narrative:
+    required: [research_question, evidence_scope, inclusion_rules]
+    optional: [seed_sources, query_set, time_window, quality_rubric]
+    constraints: [heterogeneous_evidence_must_remain_explicit, no_formal_pooling_without_compatibility]
+  snowball:
+    required: [research_question, evidence_scope, inclusion_rules, seed_sources]
+    optional: [query_set, time_window, quality_rubric]
+    constraints: [backward_and_forward_citation_expansion, independent_evidence_saturation_required]
 ```
 
 ## Execution protocol
@@ -38,8 +56,22 @@ Deviation: Mode determines which steps are needed. Scoping may stop after broad 
 ## Output contract
 
 ```yaml
-produces: [evidence_corpus, structured_evidence_records, screening_flow, quality_assessment, synthesis_map, saturation_state]
-delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  scoping:
+    produces: [evidence_corpus, synthesis_map, saturation_state]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  systematic:
+    produces: [evidence_corpus, structured_evidence_records, screening_flow, quality_assessment, synthesis_map, saturation_state]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  deep:
+    produces: [evidence_corpus, structured_evidence_records, quality_assessment, synthesis_map]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  narrative:
+    produces: [evidence_corpus, structured_evidence_records, synthesis_map]
+    delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, open_questions]
+  snowball:
+    produces: [evidence_corpus, structured_evidence_records, synthesis_map, saturation_state]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions, recommended_jumps]
 ```
 
 ## Thresholds and quality gates

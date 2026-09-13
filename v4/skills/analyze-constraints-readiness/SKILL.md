@@ -12,9 +12,15 @@ Assess feasibility and readiness by identifying constraints, resources, dependen
 ## Input contract
 
 ```yaml
-required: [candidate_or_plan, readiness_dimensions]
-optional: [resource_estimates, dependencies, assumptions, target_gates]
-constraints: [evidence attached to each scored dimension]
+mode_contracts:
+  obstacle-triage: &readiness_input
+    required: [candidate_or_plan, readiness_dimensions]
+    optional: [resource_estimates, dependencies, assumptions, target_gates]
+    constraints: [evidence_must_be_attached_to_each_scored_dimension]
+  readiness-assessment: *readiness_input
+  resource-envelope: *readiness_input
+  causal-constraint-analysis: *readiness_input
+  maturation-path: *readiness_input
 ```
 
 ## Execution protocol
@@ -35,8 +41,20 @@ constraints: [evidence attached to each scored dimension]
 ## Output contract
 
 ```yaml
-produces: [readiness_profile, constraint_register, bottlenecks, resource_envelope, stage_gates, mitigation_paths]
-delta_fields: [findings, decisions, uncertainties, open_questions, recommended_jumps]
+mode_contracts:
+  obstacle-triage: &constraint_output
+    produces: [constraint_register, bottlenecks, mitigation_paths]
+    delta_fields: [findings, decisions, uncertainties, open_questions, recommended_jumps]
+  readiness-assessment:
+    produces: [readiness_profile, bottlenecks]
+    delta_fields: [findings, decisions, uncertainties, open_questions, recommended_jumps]
+  resource-envelope:
+    produces: [resource_envelope, bottlenecks, mitigation_paths]
+    delta_fields: [findings, decisions, uncertainties, open_questions, recommended_jumps]
+  causal-constraint-analysis: *constraint_output
+  maturation-path:
+    produces: [readiness_profile, resource_envelope, stage_gates, mitigation_paths]
+    delta_fields: [findings, decisions, uncertainties, open_questions, recommended_jumps]
 ```
 
 ## Thresholds and quality gates

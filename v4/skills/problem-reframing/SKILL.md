@@ -8,9 +8,15 @@ description: "Change the problem representation when the current frame is limiti
 Change a limiting problem representation through frame escape, perspective rotation, polarity, or abstraction/scope shifts.
 ## Input contract
 ```yaml
-required: [problem_statement, current_frame]
-optional: [stakeholders, assumptions, reframe_mode]
-constraints: [each reframe states what changed and what remains invariant]
+mode_contracts:
+  dominant-frame-escape: &reframing_input
+    required: [problem_statement, current_frame]
+    optional: [stakeholders, assumptions]
+    constraints: [each_reframe_must_state_what_changed_and_what_remains_invariant]
+  perspective-shift: *reframing_input
+  stakeholder/worldview: *reframing_input
+  polarity: *reframing_input
+  abstraction-scope: *reframing_input
 ```
 ## Execution protocol
 1. Identify the dominant frame (`identify-dominant-frame`).
@@ -32,8 +38,22 @@ Deviation: mode selects a subset, but every omitted operation must be justified 
 - `abstraction-scope`: move up/down the abstraction or scope ladder and preserve invariants.
 ## Output contract
 ```yaml
-produces: [dominant_frame, reframe_set, consequence_map, perspective_map, polarity_map]
-delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
+mode_contracts:
+  dominant-frame-escape:
+    produces: [dominant_frame, reframe_set, consequence_map]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
+  perspective-shift:
+    produces: [reframe_set, perspective_map, consequence_map]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
+  stakeholder/worldview:
+    produces: [reframe_set, perspective_map]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
+  polarity:
+    produces: [reframe_set, consequence_map, polarity_map]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
+  abstraction-scope:
+    produces: [dominant_frame, reframe_set]
+    delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, open_questions, recommended_jumps]
 ```
 ## Thresholds and quality gates
 - B: at least two materially distinct frames are recorded; invariants, changed assumptions, and downstream consequences are explicit.

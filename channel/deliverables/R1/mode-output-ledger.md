@@ -1,8 +1,8 @@
 # Mode output ledger
 
-Normative companion to `mode-contract-format.md`. Coverage: 22 mode-bearing nodes, 92 registry modes. Every `produces` value is an exact YAML-ready field list. Source references point to the matching v3 `nodes[].name` entry in `scripts/refactory_source.json`; `concept` means no exact v3 node exists and the row is grounded in the named parent source body, not a fabricated provenance match.
+Normative companion to `mode-contract-format.md`. Coverage: 22 mode-bearing nodes, 92 registry modes. Every `produces` value is a YAML-ready field list transcribed from the cited v3 output artifact or execution result. Source references point to the matching v3 `nodes[].name` entry in `scripts/refactory_source.json`; `source-unspecified` means no exact v3 mode node exists and the row is grounded only in the explicitly named corroborating source, not a fabricated provenance match.
 
-The ledger narrows the existing v4 tactic output vocabulary. N1 must not rename fields while copying it. Where several modes share the same list, each mode still receives a separate mapping (YAML anchors allowed).
+N1 must not rename fields while copying this ledger. Where several modes share the same source-published schema, each mode still receives a separate mapping (YAML anchors allowed). A repeated list is not by itself evidence of confirmed sameness; §6 records the determination and its limit.
 
 ## 1. Decision and analysis
 
@@ -53,33 +53,33 @@ The ledger narrows the existing v4 tactic output vocabulary. N1 must not rename 
 | `resolve-inventive-contradiction` | `technical-contradiction` | `[contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]` | `triz-contradiction-resolution` @2160; `contradiction-matrix-lookup` @1299 |
 | | `physical-contradiction` | `[contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]` | `separation-principle` @2013 |
 | | `separation` | `[contradiction_resolution, transformed_configuration, residual_conflicts, candidate_ideas]` | `separation-principle` @2013 |
-| `biomimetic-transfer` | `biologize-and-discover` | `[biological_analogs, strategy_extract, transfer_candidate, compatibility_report]` | `biologize-and-discover` @1068 |
-| | `BioTRIZ` | `[biological_analogs, strategy_extract, transfer_candidate, compatibility_report]` | `biotriz-principle-selection` @1089; `biotriz-resolution` @1096 |
+| `biomimetic-transfer` | `biologize-and-discover` | `[biological_question, biological_candidate_set, biological_strategies, design_principles, technical_solutions]` | `biologize-and-discover` @1068; source stages `problem-biologization -> organism-discovery -> biological-strategy-extraction -> abstraction-to-design -> emulation-generation` |
+| | `BioTRIZ` | `[contradiction, biotriz_principles, biological_case_mapping, biological_strategies, design_principles, technical_solutions]` | `biotriz-principle-selection` @1089; `biotriz-resolution` @1096; source stages `principle selection -> case mapping -> strategy extraction -> abstraction -> emulation` |
 | `conceptual-blending` | `two-space-blend` | `[input_space_set, generic_space, blend_candidates, idea_set]` | `concept-blending` @1215; `blend-construction` @1124 |
 | | `multi-space-blend` | `[input_space_set, generic_space, blend_candidates, idea_set]` | `blend-composition` @1117; `blend-elaboration` @1131 |
 | | `emergent-property-search` | `[input_space_set, blend_candidates, emergent_property_report, idea_set]` | `emergent-property-hunting` @1432 |
-| `evolve-solution-population` | `mutation-selection` | `[evolved_population, selected_variants, diversity_report, sensitivity_report]` | `evolution-strategy` @1481 |
-| | `novelty-preserving-evolution` | `[evolved_population, selected_variants, diversity_report, sensitivity_report]` | `evolution-strategy` @1481; novelty evidence `creative-ideation-novelty-scoring` @1775 |
+| `evolve-solution-population` | `mutation-selection` | `[mechanism_to_design_mapping, generated_solutions, synthesis]` | `evolution-strategy` @1481; source execution ends with a structured evolution-inspired design report |
+| | `novelty-preserving-evolution` | `[novelty_assessment]` | **source-unspecified**: no exact v3 node named `variation-selection` was found; `creative-ideation-novelty-scoring` @1775 is corroborating novelty evidence only, not an exact source for this mode |
 
 ## 3. Evidence and experiment
 
 | node | mode | `produces` | v3 source evidence |
 |---|---|---|---|
-| `synthesize-literature-evidence` | `scoping` | `[evidence_corpus, synthesis_map, saturation_state]` | `scoping-survey` @4239; output body :79-86 |
-| | `systematic` | `[evidence_corpus, structured_evidence_records, screening_flow, quality_assessment, synthesis_map, saturation_state]` | `systematic-survey` @4246; output body :91-98 |
-| | `deep` | `[evidence_corpus, structured_evidence_records, quality_assessment, synthesis_map]` | `deep-survey` @4253; output body :77-84 |
-| | `narrative` | `[evidence_corpus, structured_evidence_records, synthesis_map]` | `narrative-review` @4260; output body :82-89 |
-| | `snowball` | `[evidence_corpus, structured_evidence_records, synthesis_map, saturation_state]` | `snowball` @4267; output body :83-91 |
-| `synthesize-meta-analytic-evidence` | `pairwise` | `[effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]` | `pairwise-synthesis` @4652; output body :86-98 |
-| | `network` | `[effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]` | `network-comparison` @4659; output body :94-113 |
-| | `cumulative` | `[effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]` | `cumulative-tracking` @4666; output body :91-110 |
-| | `heterogeneity` | `[uncertainty, heterogeneity_report, sensitivity_results]` | `heterogeneity-investigation` @4673; output body :91-108 |
-| | `bias` | `[uncertainty, bias_report, sensitivity_results]` | `bias-detection` @4680; output body :93-117 |
-| `design-experiment` | `factorial` | `[design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]` | `experiment-execution-factor-level-design` @3105 |
-| | `ablation` | `[design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]` | `ablation-design` @3112 |
-| | `comparison` | `[design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]` | `comparison-design` @3119 |
-| | `scaling` | `[design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]` | `scaling-design` @3126 |
-| | `robustness` | `[design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]` | `robustness-design` @3133 |
+| `synthesize-literature-evidence` | `scoping` | `[field_taxonomy, key_authors_and_groups, research_trends, open_questions, deep_investigation_entry_points]` | `scoping-survey` @4239; `Field Landscape Map`, output :79-86 |
+| | `systematic` | `[prisma_flow, structured_comparison_tables, per_paper_quality_assessment, evidence_backed_gaps, synthesis_narrative]` | `systematic-survey` @4246; `Comprehensive Systematic Review`, output :91-98 |
+| | `deep` | `[method_comparison, extracted_equations_algorithms, implementation_details, evidence_cited_conclusions, open_questions]` | `deep-survey` @4253; `Detailed Technical Analysis`, output :77-84 |
+| | `narrative` | `[central_thesis, thematic_supporting_evidence, addressed_counterarguments, gap_or_opportunity, narrative_arc]` | `narrative-review` @4260; `Structured Narrative`, output :82-89 |
+| | `snowball` | `[seed_ancestor_map, seed_descendant_map, idea_evolution, branch_points, current_frontier, lineage_dag]` | `snowball` @4267; `Research Lineage Map`, output :83-91 |
+| `synthesize-meta-analytic-evidence` | `pairwise` | `[question, inclusion_criteria, studies_included, effect_size_type, model, heterogeneity_plan, sensitivity_plan, bias_assessment_plan, reporting]` | `pairwise-synthesis` @4652; output format :86-98 (the protocol is the source artifact; no union-only shorthand) |
+| | `network` | `[question, network_geometry, inclusion_criteria, studies_included, effect_size_type, model, transitivity_assessment, ranking_method, heterogeneity_plan, inconsistency_plan, sensitivity_plan, bias_assessment_plan, reporting]` | `network-comparison` @4659; output format :94-113 |
+| | `cumulative` | `[question, temporal_scope, inclusion_criteria, studies_included, chronological_order, effect_size_type, model, temporal_analyses, time_lag_bias, quality_trend, reporting]` | `cumulative-tracking` @4666; output format :91-110 |
+| | `heterogeneity` | `[question, heterogeneity_metrics, moderator_candidates, investigation_plan, a_priori_hypotheses, multiple_testing, reporting]` | `heterogeneity-investigation` @4673; output format :91-108 |
+| | `bias` | `[question, bias_domains, grey_literature_search, grade_assessment, sensitivity_plan, reporting]` | `bias-detection` @4680; output format :93-120 |
+| `design-experiment` | `factorial` | `[factor_level_matrix, factor_level_catalog, estimands_main_effects_interactions, metric_significance_plan, sample_power_plan]` | `experiment-execution-factor-level-design` @3105; source steps identify factors/levels, construct matrix, specify metrics/significance, estimate power |
+| | `ablation` | `[ablation_matrix, baseline_anchors_full_minimal, attribution_contrasts, component_interaction_plan]` | `ablation-design` @3112; source protocol distinguishes systematic/replacement/combinatorial/conditional component removal |
+| | `comparison` | `[controlled_baseline_comparison, matched_confound_controls, seed_environment_protocol, statistical_comparison_plan, reproducibility_protocol]` | `comparison-design` @3119; source steps require matched baselines, seed protocol, environment lock, and statistical comparison |
+| | `scaling` | `[scaling_axes, geometric_scale_points, scaling_experiment_grid, curve_fit_plan, scale_budget_plan]` | `scaling-design` @3126; source requires data/compute/model axes, geometric points (typically 4–8), grid and curve fitting |
+| | `robustness` | `[perturbation_stress_matrix, severity_axes, baseline_comparison, degradation_metrics, survival_criteria]` | `robustness-design` @3133; source requires perturbation conditions, severity levels, baselines, degradation metrics and survival criteria |
 | `formulate-hypotheses` | `deductive` | `[hypothesis_set, operational_definitions, predictions, falsification_conditions]` | `deductive-hypothesis-generation` @3749 |
 | | `inductive` | `[hypothesis_set, operational_definitions, predictions, falsification_conditions]` | `inductive-hypothesis-generation` @3756 |
 | | `abductive` | `[hypothesis_set, operational_definitions, predictions, falsification_conditions]` | `abductive-hypothesis-generation` @3763 |
@@ -96,26 +96,57 @@ The ledger narrows the existing v4 tactic output vocabulary. N1 must not rename 
 | | `criteria-interrogation` | `[attack_record, defense_record, adjudication]` | `adversarial-escalation` @5695 |
 | | `stakeholder-objection` | `[attack_record, defense_record, adjudication, confidence_trace]` | `multi-perspective-attack` @445 |
 | | `counter-thesis` | `[defense_record, adjudication, confidence_trace]` | `steel-manning-synthesis` @851 |
-| `falsification-first-audit` | `sharp-claim` | `[sharp_claim, falsification_program, probe_record, falsification_verdict]` | `falsification-first-stress-test` @6472; output body :107-109 |
-| | `truthseeking-debate` | `[sharp_claim, probe_record, falsification_verdict]` | `adversarial-debate-truthseeking` @6479; output body :63-65 |
-| | `truthseeking-red-team` | `[falsification_program, probe_record, falsification_verdict]` | `red-team-truthseeking` @6486; output body :62-64 |
-| `audit-structural-equivalence` | `isomorphism` | `[structural_mapping, preservation_report, counterexamples, downgraded_claim]` | `isomorphism-falsification` @6493; output body :49-51 |
-| | `substructure` | `[structural_mapping, preservation_report, counterexamples, downgraded_claim]` | same source @6493 |
-| | `homomorphism` | `[structural_mapping, preservation_report, counterexamples, downgraded_claim]` | same source @6493 |
-| | `shared-invariant` | `[structural_mapping, preservation_report, counterexamples, downgraded_claim]` | same source @6493 |
-| | `analogy` | `[structural_mapping, preservation_report, counterexamples, downgraded_claim]` | same source @6493 |
-| `audit-validator-independence` | `validator` | `[assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]` | `circular-validation-audit` @6500; output body :53-55 |
-| | `benchmark` | `[assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]` | same source @6500 |
-| | `sandbox` | `[assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]` | same source @6500 |
-| | `simulation` | `[assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]` | same source @6500 |
-| `audit-convergence-independence` | `evidence-paths` | `[dependency_map, independence_audit, effective_evidence_count, sensitivity_report]` | `independent-convergence-audit` @6507; output body :51-53 |
-| | `agents` | `[dependency_map, independence_audit, effective_evidence_count, sensitivity_report]` | same source @6507 |
-| | `models` | `[dependency_map, independence_audit, effective_evidence_count, sensitivity_report]` | same source @6507 |
-| | `methods` | `[dependency_map, independence_audit, effective_evidence_count, sensitivity_report]` | same source @6507 |
-| `audit-explanatory-compression` | `earned-simplicity` | `[compression_assessment, risky_prediction_tests, critique, score]` | `elegance-trap-probe` @6514; output body :46-48 |
-| | `decorative-simplicity` | `[compression_assessment, risky_prediction_tests, critique, score]` | same source @6514 |
-| | `risky-prediction` | `[compression_assessment, risky_prediction_tests, critique, score]` | same source @6514 |
+| `falsification-first-audit` | `sharp-claim` | `[claim_falsifiability, refutation_condition, attacks_attempted, outcome_bucket, refutation_or_surviving_forbidden_content, honest_residue]` | `falsification-first-stress-test` @6472; `FalsificationLedger`, output :107-109 |
+| | `truthseeking-debate` | `[most_falsifiable_form, committed_refuter, cross_examination_findings, attack_severity, outcome_bucket, refutation_or_forbidden_content]` | `adversarial-debate-truthseeking` @6479; `DebateBucketing`, output :63-65 |
+| | `truthseeking-red-team` | `[claim_load_rank, assumption_classification, refutation_condition, refutation_attempt, outcome_bucket, framing_risk_brief]` | `red-team-truthseeking` @6486; `RefutationSurfaceMap`, output :62-64 |
+| `audit-structural-equivalence` | `isomorphism` | `[claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]` | `source-common-schema`: `isomorphism-falsification` @6493; `IsomorphismVerdict`, output :49-51 |
+| | `substructure` | `[claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]` | `source-common-schema`: same source @6493; mode selects rung 2, not a separate v3 schema |
+| | `homomorphism` | `[claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]` | `source-common-schema`: same source @6493; mode selects rung 3, not a separate v3 schema |
+| | `shared-invariant` | `[claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]` | `source-common-schema`: same source @6493; mode selects rung 4, not a separate v3 schema |
+| | `analogy` | `[claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]` | `source-common-schema`: same source @6493; mode selects rung 5, not a separate v3 schema |
+| `audit-validator-independence` | `validator` | `[noncircularity_matrix, red_cell_actions, validator_verdict, adversarial_ground_truth_set]` | `source-common-schema`: `circular-validation-audit` @6500; `NonCircularityMatrix`, output :53-55 |
+| | `benchmark` | `[noncircularity_matrix, red_cell_actions, validator_verdict, adversarial_ground_truth_set]` | `source-common-schema`: same source @6500; v3 does not publish a benchmark-specific result schema |
+| | `sandbox` | `[noncircularity_matrix, red_cell_actions, validator_verdict, adversarial_ground_truth_set]` | `source-common-schema`: same source @6500; v3 does not publish a sandbox-specific result schema |
+| | `simulation` | `[noncircularity_matrix, red_cell_actions, validator_verdict, adversarial_ground_truth_set]` | `source-common-schema`: same source @6500; v3 does not publish a simulation-specific result schema |
+| `audit-convergence-independence` | `evidence-paths` | `[independence_ledger, effective_evidence_count, common_cause_framing, independent_path_result_or_design, correlated_errors, corrected_confidence_statement]` | `source-common-schema`: `independent-convergence-audit` @6507; `ConvergenceIndependenceReport`, output :51-53 |
+| | `agents` | `[independence_ledger, effective_evidence_count, common_cause_framing, independent_path_result_or_design, correlated_errors, corrected_confidence_statement]` | `source-common-schema`: same source @6507; v3 does not publish an agent-specific result schema |
+| | `models` | `[independence_ledger, effective_evidence_count, common_cause_framing, independent_path_result_or_design, correlated_errors, corrected_confidence_statement]` | `source-common-schema`: same source @6507; v3 does not publish a model-specific result schema |
+| | `methods` | `[independence_ledger, effective_evidence_count, common_cause_framing, independent_path_result_or_design, correlated_errors, corrected_confidence_statement]` | `source-common-schema`: same source @6507; v3 does not publish a method-specific result schema |
+| `audit-explanatory-compression` | `earned-simplicity` | `[forbidden_set, risky_predictions, accommodation_audit, deletion_test_result, elegance_verdict, earning_prediction]` | `source-common-schema`: `elegance-trap-probe` @6514; `EleganceVerdict`, output :46-48 |
+| | `decorative-simplicity` | `[forbidden_set, risky_predictions, accommodation_audit, deletion_test_result, elegance_verdict, earning_prediction]` | `source-common-schema`: same source @6514; mode is a verdict branch, not a separate v3 schema |
+| | `risky-prediction` | `[forbidden_set, risky_predictions, accommodation_audit, deletion_test_result, elegance_verdict, earning_prediction]` | `source-common-schema`: same source @6514; mode is a test emphasis, not a separate v3 schema |
 
 ## 5. Delta rule
 
 For every mode, copy the node's existing `delta_fields` list into that mode's output mapping. The v3 mode sources change artifact shape but do not define a separate research-state namespace. This preserves the fixed eight-field model while satisfying the B-route requirement that every mode owns a complete contract. `synthesize-literature-evidence.snowball` and any other branch that recommends a continuation may include `recommended_jumps`; no graph edge schema is added.
+
+## 6. Determination register
+
+This register is the audit layer for the 92 rows above. `mode-specific` means the listed v3 source has a mode-specific output artifact. `source-common-schema` means the modes are distinct execution/equivalence branches but the only v3 source exposes one result schema; it is not a claim that the modes were independently confirmed identical. `confirmed-same` is reserved for the one case where the three v3 sources differ in method but explicitly return the same result shape. `source-unspecified` means the exact v3 source was not found; the placeholder is not authoritative output and must not be silently promoted.
+
+| node | modes covered (each is one ledger row) | determination and basis |
+|---|---|---|
+| `rank-candidates` | `gap-prioritization`; `direction-selection`; `mcda-best-choice`; `full-ranking`; `category-sorting`; `non-compensatory-screening`; `rapid-triage`; `stakeholder-weighted` | `mode-specific`: separate v3 strategy/SOP sources listed in §1. |
+| `map-validity-envelope` | `systematic-perturbation`; `boundary-value-stress`; `critical-case` | `mode-specific`: separate perturbation, boundary-probing and critical-case sources listed in §1. |
+| `explore-dimensional-space` | `morphological-generation`; `research-space-mapping`; `gap-mapping` | `mode-specific`: morphological-exploration, dimensional-analysis and gap-prioritization sources listed in §1. |
+| `analyze-constraints-readiness` | `obstacle-triage`; `readiness-assessment`; `resource-envelope`; `causal-constraint-analysis`; `maturation-path` | `mode-specific`: obstacle, maturity, resource, constraint and maturation sources listed in §1. |
+| `sensitivity-analysis` | `Morris`; `Sobol`; `perturbation`; `Monte-Carlo` | `mode-specific`: each row has a distinct v3 strategy source and corroborating SOP where available. |
+| `problem-reframing` | `dominant-frame-escape`; `perspective-shift`; `stakeholder/worldview`; `polarity`; `abstraction-scope` | `mode-specific`: distinct reframing sources; slash spelling is registry-literal. |
+| `destructive-ideation` | `reverse`; `negation`; `random-entry`; `extreme-constraint`; `sacred-cow`; `distortion` | `mode-specific` where an exact source exists; `random-entry` and `distortion` use the shared provocation-generation source because v3 does not publish separate output schemas. This is source-common-schema, not confirmed sameness. |
+| `map-stakeholder-system` | `critical-systems-heuristics`; `jobs-to-be-done`; `stakeholder-salience` | `mode-specific` for the named v3 mappings; parent stakeholder-mapping is only corroborating context. |
+| `resolve-inventive-contradiction` | `technical-contradiction`; `physical-contradiction`; `separation` | `confirmed-same`: `triz-contradiction-resolution`, `contradiction-matrix-lookup`, and `separation-principle` differ in method, not result schema; the shared output is deliberate. |
+| `biomimetic-transfer` | `biologize-and-discover`; `BioTRIZ` | `mode-specific`: biologize/discover returns biological problem/candidate/function evidence; BioTRIZ returns principle/case/technical-resolution artifacts. |
+| `conceptual-blending` | `two-space-blend`; `multi-space-blend`; `emergent-property-search` | `mode-specific`: blend construction/composition/elaboration and emergent-property sources are separated in §2. |
+| `evolve-solution-population` | `mutation-selection`; `novelty-preserving-evolution` | `mutation-selection` is `mode-specific` from `evolution-strategy`; `novelty-preserving-evolution` is `source-unspecified` because no exact `variation-selection` source exists. The novelty-scoring node is corroborating only. |
+| `synthesize-literature-evidence` | `scoping`; `systematic`; `deep`; `narrative`; `snowball` | `mode-specific`: five distinct survey/review output formats are cited in §3. |
+| `synthesize-meta-analytic-evidence` | `pairwise`; `network`; `cumulative`; `heterogeneity`; `bias` | `mode-specific`: five distinct protocol output formats are transcribed from the v3 source sections at §3. |
+| `design-experiment` | `factorial`; `ablation`; `comparison`; `scaling`; `robustness` | `mode-specific`: five distinct design protocols are transcribed from their v3 sources at §3; no union list remains. |
+| `formulate-hypotheses` | `deductive`; `inductive`; `abductive`; `competing-hypotheses` | `mode-specific` where separate v3 source is named; `deductive`/`inductive`/`abductive` retain their source-specific hypothesis artifacts, while shared fields are only the common contract intersection. |
+| `adversarial-deliberation` | `critic-defender-judge`; `courtroom`; `winner-stress`; `resurrection-advocacy`; `criteria-interrogation`; `stakeholder-objection`; `counter-thesis` | `mode-specific` for the rows with exact v3 strategy sources; where a source family is reused, the source exposes the same adjudication artifact and is marked source-common-schema in the row evidence rather than asserted identical. |
+| `falsification-first-audit` | `sharp-claim`; `truthseeking-debate`; `truthseeking-red-team` | `mode-specific`: `FalsificationLedger`, `DebateBucketing`, and `RefutationSurfaceMap` source artifacts are distinct. |
+| `audit-structural-equivalence` | `isomorphism`; `substructure`; `homomorphism`; `shared-invariant`; `analogy` | `source-common-schema`: all five rungs are branches of the single v3 `isomorphism-falsification` output `IsomorphismVerdict`; v3 does not publish five independent schemas. |
+| `audit-validator-independence` | `validator`; `benchmark`; `sandbox`; `simulation` | `source-common-schema`: all four validator targets use the single v3 `circular-validation-audit` output `NonCircularityMatrix`; no mode-specific v3 output is published. |
+| `audit-convergence-independence` | `evidence-paths`; `agents`; `models`; `methods` | `source-common-schema`: all four targets use the single v3 `independent-convergence-audit` output `ConvergenceIndependenceReport`; the source does not distinguish result schemas by target. |
+| `audit-explanatory-compression` | `earned-simplicity`; `decorative-simplicity`; `risky-prediction` | `source-common-schema`: all three verdict branches use the single v3 `elegance-trap-probe` output `EleganceVerdict`; branch is a verdict condition, not a separate v3 artifact schema. |
+
+**Coverage check:** 22 nodes, 92 mode rows. No `source-unspecified` row is labeled `confirmed-same`; the only confirmed-same determination is `resolve-inventive-contradiction`, with the source-method/result-schema rationale stated above.

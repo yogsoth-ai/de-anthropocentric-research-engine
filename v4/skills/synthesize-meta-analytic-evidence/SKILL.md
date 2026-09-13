@@ -16,9 +16,15 @@ Use when multiple studies or comparable effect estimates must be combined. Not a
 ## Input contract
 
 ```yaml
-required: [study_records, outcome_definition, effect_measure]
-optional: [comparison_network, subgroup_plan, prior_quality_assessments]
-constraints: [study-level provenance required]
+mode_contracts:
+  pairwise: &meta_input
+    required: [study_records, outcome_definition, effect_measure]
+    optional: [comparison_network, subgroup_plan, prior_quality_assessments]
+    constraints: [study_level_provenance_required]
+  network: *meta_input
+  cumulative: *meta_input
+  heterogeneity: *meta_input
+  bias: *meta_input
 ```
 
 ## Execution protocol
@@ -39,8 +45,18 @@ constraints: [study-level provenance required]
 ## Output contract
 
 ```yaml
-produces: [effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]
-delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  pairwise: &pooled_meta_output
+    produces: [effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  network: *pooled_meta_output
+  cumulative: *pooled_meta_output
+  heterogeneity:
+    produces: [uncertainty, heterogeneity_report, sensitivity_results]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  bias:
+    produces: [uncertainty, bias_report, sensitivity_results]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
 ```
 
 ## Thresholds and quality gates

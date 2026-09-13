@@ -12,9 +12,18 @@ Rank, classify, screen, or select typed candidates under explicit criteria and h
 ## Input contract
 
 ```yaml
-required: [candidates, criteria, decision_rule]
-optional: [weights, evidence, hard_constraints, object_schema]
-constraints: [criterion direction and missing-value policy explicit]
+mode_contracts:
+  gap-prioritization: &rank_input
+    required: [candidates, criteria, decision_rule]
+    optional: [weights, evidence, hard_constraints, object_schema]
+    constraints: [criterion_direction_and_missing_value_policy_must_be_explicit]
+  direction-selection: *rank_input
+  mcda-best-choice: *rank_input
+  full-ranking: *rank_input
+  category-sorting: *rank_input
+  non-compensatory-screening: *rank_input
+  rapid-triage: *rank_input
+  stakeholder-weighted: *rank_input
 ```
 
 ## Execution protocol
@@ -38,8 +47,25 @@ constraints: [criterion direction and missing-value policy explicit]
 ## Output contract
 
 ```yaml
-produces: [ranking_or_categories, scores, weights, eliminated_candidates, sensitivity_results, recommendation]
-delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+mode_contracts:
+  gap-prioritization:
+    produces: [ranking_or_categories, scores, sensitivity_results, recommendation]
+    delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+  direction-selection: &screening_output
+    produces: [ranking_or_categories, scores, eliminated_candidates, recommendation]
+    delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+  mcda-best-choice:
+    produces: [scores, weights, sensitivity_results, recommendation]
+    delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+  full-ranking: &weighted_ranking_output
+    produces: [ranking_or_categories, scores, weights, sensitivity_results, recommendation]
+    delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+  category-sorting:
+    produces: [ranking_or_categories, scores, weights, recommendation]
+    delta_fields: [findings, decisions, uncertainties, recommended_jumps]
+  non-compensatory-screening: *screening_output
+  rapid-triage: *screening_output
+  stakeholder-weighted: *weighted_ranking_output
 ```
 
 ## Thresholds and quality gates

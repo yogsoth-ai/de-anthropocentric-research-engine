@@ -310,3 +310,42 @@ status: installed; 该批含待 R5 正文节点
 Recompiled only the `pairwise` mode description in `synthesize-meta-analytic-evidence` from v3 `pairwise-synthesis`: effect-size pooling, sampling uncertainty, study-quality judgments, sensitivity analysis, and the 80% floor stopping gate are explicit. No contracts or other nodes were changed.
 
 Full N2 gate: `python v4/scripts/validate_graph.py` exited 1 with 136 errors from the newly enabled mode-contract gate across the still-pending 22-node contract migration. Per sequencing order, no contracts were changed in this batch.
+
+## Mode-contract migration batch 1 (10)
+
+| node id | modes | anchor |
+|---|---:|---|
+| rank-candidates | 8 | yes |
+| map-validity-envelope | 3 | yes |
+| explore-dimensional-space | 3 | yes |
+| adversarial-deliberation | 7 | yes |
+| analyze-constraints-readiness | 5 | yes |
+| formulate-hypotheses | 4 | yes |
+| sensitivity-analysis | 4 | yes |
+| problem-reframing | 5 | yes |
+| destructive-ideation | 6 | yes |
+| synthesize-literature-evidence | 5 | no |
+
+## Mode-contract migration batch 2 (10)
+
+| node id | modes | anchor |
+|---|---:|---|
+| synthesize-meta-analytic-evidence | 5 | yes |
+| design-experiment | 5 | yes |
+| map-stakeholder-system | 3 | yes |
+| resolve-inventive-contradiction | 3 | yes |
+| biomimetic-transfer | 2 | yes |
+| conceptual-blending | 3 | yes |
+| evolve-solution-population | 2 | yes |
+| falsification-first-audit | 3 | yes |
+| audit-structural-equivalence | 5 | yes |
+| audit-validator-independence | 4 | yes |
+
+## Mode-contract migration batch 3 (2)
+
+| node id | modes | anchor |
+|---|---:|---|
+| audit-convergence-independence | 4 | yes |
+| audit-explanatory-compression | 3 | yes |
+
+Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.

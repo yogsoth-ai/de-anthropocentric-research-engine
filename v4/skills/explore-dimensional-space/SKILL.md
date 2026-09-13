@@ -8,9 +8,13 @@ description: "Represent a problem/research space as validated dimensions and val
 Represent a problem space as validated dimensions and values, enumerate compatible combinations, map occupancy, detect gaps, and synthesize candidate questions or ideas.
 ## Input contract
 ```yaml
-required: [target_space, dimensions, values]
-optional: [coverage_matrix, compatibility_rules, objective]
-constraints: [dimension semantics and independence posture must be declared]
+mode_contracts:
+  morphological-generation: &dimensional_input
+    required: [target_space, dimensions, values]
+    optional: [coverage_matrix, compatibility_rules, objective]
+    constraints: [dimension_semantics_and_independence_posture_must_be_declared]
+  research-space-mapping: *dimensional_input
+  gap-mapping: *dimensional_input
 ```
 ## Execution protocol
 1. Define dimensions and enumerate meaningful values (`define-analysis-dimensions`, `enumerate-dimension-values`).
@@ -20,8 +24,16 @@ constraints: [dimension semantics and independence posture must be declared]
 Deviation: skip scoring when the task is descriptive mapping; skip subquestions when no research question is in scope.
 ## Output contract
 ```yaml
-produces: [dimension_schema, value_catalog, combination_map, compatibility_report, coverage_gaps, prioritized_regions, subquestions]
-delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+mode_contracts:
+  morphological-generation:
+    produces: [dimension_schema, value_catalog, combination_map, compatibility_report]
+    delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+  research-space-mapping:
+    produces: [dimension_schema, value_catalog, coverage_gaps, prioritized_regions, subquestions]
+    delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, recommended_jumps]
+  gap-mapping:
+    produces: [coverage_gaps, prioritized_regions, subquestions]
+    delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, recommended_jumps]
 ```
 ## Thresholds and quality gates
 - Axis independence, compatibility rules, and gap representation must be inspectable.

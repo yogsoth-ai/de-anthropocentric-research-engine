@@ -97,3 +97,14 @@ Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-
 - `delta_fields` 仍只允许固定八字段；不新增 `(tactic, mode) → jumps` 图结构，路由继续由返回 Delta 的 `recommended_jumps` 承载。
 
 交接：N1 按表重写 22 个节点的 Input/Output contract；N2 解析 `mode_contracts`、展开 anchor 并加 per-mode 一致性门；R6 读取所选 mode 的契约映射。
+
+## [R1 -> Sirelia] mode output ledger 覆盖返工 2026-09-13
+
+已补 `deliverables/R1/mode-output-ledger.md`，覆盖 22 节点、92 mode。
+
+- `design-experiment` 五档已按五个 v3 源拆为不同产出：factor/level 与 estimand、ablation 与 attribution、受控 comparison、scaling grid/curve、robustness stress/degradation；节点内不再保留并集契约。
+- 六个漏审节点已补依据：四个 audit 节点明确标为 `source-common-schema`，只表示 v3 单一源未发布逐 mode schema，不冒充“确认无差异”；`biomimetic-transfer` 两档已拆；`evolve-solution-population.novelty-preserving-evolution` 因无 exact `variation-selection` 源标为 `source-unspecified`。
+- literature 与 meta-analysis 各档已改为 v3 Output Format 的实际产出项；`resolve-inventive-contradiction` 保持唯一 `confirmed-same` 判定，并保留“方法不同、结果 schema 相同”的依据。
+- 判定计数：`mode-specific=70`、`source-common-schema=18`、`confirmed-same=3`、`source-unspecified=1`。查不到差异的行未写成确认无差异。
+
+机械自检：expected=92，actual=92，unique=92，missing=0，extra=0，非 lower_snake_case `produces` 字段=0。

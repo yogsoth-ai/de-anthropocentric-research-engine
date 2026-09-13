@@ -8,9 +8,13 @@ description: "Model the research system from stakeholder and boundary perspectiv
 Model stakeholders and system boundaries, classify salience, and expose conflicts that alter framing or feasibility.
 ## Input contract
 ```yaml
-required: [target_system, stakeholder_set]
-optional: [boundary_candidates, stakeholder_evidence, contested_interests]
-constraints: [inside/outside boundary and stakeholder claims must be explicit]
+mode_contracts:
+  critical-systems-heuristics: &stakeholder_input
+    required: [target_system, stakeholder_set]
+    optional: [boundary_candidates, stakeholder_evidence, contested_interests]
+    constraints: [inside_outside_boundary_and_stakeholder_claims_must_be_explicit]
+  jobs-to-be-done: *stakeholder_input
+  stakeholder-salience: *stakeholder_input
 ```
 ## Execution protocol
 1. Assess system boundary (`assess-system-boundary`).
@@ -28,8 +32,16 @@ Deviation: boundary alternatives may branch; retain each material boundary and i
 
 ## Output contract
 ```yaml
-produces: [system_boundary, perspective_set, stakeholder_job_map, salience_map, disagreement_map]
-delta_fields: [findings, assumption_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  critical-systems-heuristics:
+    produces: [system_boundary, perspective_set, disagreement_map]
+    delta_fields: [findings, assumption_updates, uncertainties, decisions, open_questions]
+  jobs-to-be-done:
+    produces: [stakeholder_job_map, perspective_set]
+    delta_fields: [findings, assumption_updates, uncertainties, decisions, open_questions]
+  stakeholder-salience:
+    produces: [salience_map, perspective_set, disagreement_map]
+    delta_fields: [findings, assumption_updates, uncertainties, decisions, open_questions]
 ```
 ## Thresholds and quality gates
 - B: each stakeholder has a role/job and evidence status; boundary choices expose included and excluded effects; conflicts are not silently averaged.

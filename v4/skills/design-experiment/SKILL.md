@@ -16,9 +16,15 @@ Use after a hypothesis has an operational construct and discriminating predictio
 ## Input contract
 
 ```yaml
-required: [falsifiable_hypothesis, outcome, factors, constraints]
-optional: [baseline, candidate_models, budget, robustness_axes]
-constraints: [pre-registered analysis plan]
+mode_contracts:
+  factorial: &experiment_input
+    required: [falsifiable_hypothesis, outcome, factors, constraints]
+    optional: [baseline, candidate_models, budget, robustness_axes]
+    constraints: [analysis_plan_must_be_preregistered]
+  ablation: *experiment_input
+  comparison: *experiment_input
+  scaling: *experiment_input
+  robustness: *experiment_input
 ```
 
 ## Execution protocol
@@ -39,8 +45,14 @@ constraints: [pre-registered analysis plan]
 ## Output contract
 
 ```yaml
-produces: [design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]
-delta_fields: [findings, decisions, uncertainties, open_questions]
+mode_contracts:
+  factorial: &experiment_output
+    produces: [design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]
+    delta_fields: [findings, decisions, uncertainties, open_questions]
+  ablation: *experiment_output
+  comparison: *experiment_output
+  scaling: *experiment_output
+  robustness: *experiment_output
 ```
 
 ## Thresholds and quality gates

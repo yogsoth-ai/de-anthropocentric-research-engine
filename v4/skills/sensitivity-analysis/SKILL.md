@@ -8,9 +8,14 @@ description: "Quantify which parameters, assumptions, interactions, or uncertain
 Quantify which parameters, assumptions, interactions, or uncertainties dominate a conclusion.
 ## Input contract
 ```yaml
-required: [model_or_reasoning_chain, uncertain_parameters, conclusion_metric]
-optional: [input_distributions, perturbation_bounds, decision_options, sensitivity_mode]
-constraints: [ranges, dependencies, and selected mode must be declared]
+mode_contracts:
+  Morris: &sensitivity_input
+    required: [model_or_reasoning_chain, uncertain_parameters, conclusion_metric]
+    optional: [input_distributions, perturbation_bounds, decision_options]
+    constraints: [ranges_and_dependencies_must_be_declared]
+  Sobol: *sensitivity_input
+  perturbation: *sensitivity_input
+  Monte-Carlo: *sensitivity_input
 ```
 ## Execution protocol
 1. Define analysis dimensions (`define-analysis-dimensions`).
@@ -31,8 +36,17 @@ Deviation: `local-perturbation`, `Morris`, `Sobol`, `Monte-Carlo`, and decision-
 
 ## Output contract
 ```yaml
-produces: [sensitivity_profile, interaction_effects, uncertainty_contributions, information_value_ranking]
-delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended_jumps]
+mode_contracts:
+  Morris: &screening_sensitivity_output
+    produces: [sensitivity_profile, interaction_effects]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended_jumps]
+  Sobol:
+    produces: [sensitivity_profile, interaction_effects, uncertainty_contributions]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended_jumps]
+  perturbation: *screening_sensitivity_output
+  Monte-Carlo:
+    produces: [sensitivity_profile, uncertainty_contributions, information_value_ranking]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, recommended_jumps]
 ```
 ## Thresholds and quality gates
 - B: dominant drivers, interactions, ranges, and uncertainty contributors are separated; local effects are not presented as global effects.

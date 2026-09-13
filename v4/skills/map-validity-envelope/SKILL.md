@@ -8,9 +8,13 @@ description: "Map where a claim, method, or design remains valid by defining var
 Map where a claim, method, or design remains valid by defining axes, probing values, detecting breakpoints, and constructing a multidimensional validity envelope.
 ## Input contract
 ```yaml
-required: [claim_or_method, validity_target, analysis_dimensions]
-optional: [baseline_conditions, critical_case_rule, perturbation_budget]
-constraints: [axes, values, outcome measure, and breakpoint rule must be explicit]
+mode_contracts:
+  systematic-perturbation: &validity_input
+    required: [claim_or_method, validity_target, analysis_dimensions]
+    optional: [baseline_conditions, critical_case_rule, perturbation_budget]
+    constraints: [axes_values_outcome_measure_and_breakpoint_rule_must_be_explicit]
+  boundary-value-stress: *validity_input
+  critical-case: *validity_input
 ```
 ## Execution protocol
 1. Define dimensions and values (`define-analysis-dimensions`, `enumerate-dimension-values`).
@@ -20,8 +24,16 @@ constraints: [axes, values, outcome measure, and breakpoint rule must be explici
 Deviation: use `critical-case` when a decisive case can replace broad probing; otherwise use `systematic-perturbation` or `boundary-value-stress` according to the declared mode and evidence.
 ## Output contract
 ```yaml
-produces: [dimension_schema, perturbation_records, breakpoints, validity_envelope, critical_case_report, scaling_regime]
-delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  systematic-perturbation:
+    produces: [dimension_schema, perturbation_records, breakpoints, validity_envelope]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  boundary-value-stress:
+    produces: [dimension_schema, perturbation_records, breakpoints, validity_envelope, critical_case_report]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  critical-case:
+    produces: [breakpoints, validity_envelope, critical_case_report]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
 ```
 ## Thresholds and quality gates
 - Breakpoints require an explicit outcome criterion and before/after evidence.

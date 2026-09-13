@@ -8,9 +8,13 @@ description: "Construct multiple input spaces, extract a shared generic space, s
 Blend multiple input spaces through a generic space and selective projection to generate emergent research ideas.
 ## Input contract
 ```yaml
-required: [input_spaces]
-optional: [blend_mode, compatibility_constraints]
-constraints: [each input space has explicit entities and relations]
+mode_contracts:
+  two-space-blend: &blending_input
+    required: [input_spaces]
+    optional: [compatibility_constraints]
+    constraints: [each_input_space_must_have_explicit_entities_and_relations]
+  multi-space-blend: *blending_input
+  emergent-property-search: *blending_input
 ```
 ## Execution protocol
 1. Construct input spaces (`construct-input-spaces`).
@@ -25,8 +29,14 @@ Deviation: two-space and multi-space modes change only the number of inputs; gen
 - `emergent-property-search`: prioritize properties absent from every source space alone.
 ## Output contract
 ```yaml
-produces: [input_space_set, generic_space, blend_candidates, emergent_property_report, idea_set]
-delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+mode_contracts:
+  two-space-blend: &space_blend_output
+    produces: [input_space_set, generic_space, blend_candidates, idea_set]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+  multi-space-blend: *space_blend_output
+  emergent-property-search:
+    produces: [input_space_set, blend_candidates, emergent_property_report, idea_set]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
 ```
 ## Thresholds and quality gates
 - B: all source spaces and projected relations are recorded; emergent properties must be absent from each source alone and compatible with target constraints.

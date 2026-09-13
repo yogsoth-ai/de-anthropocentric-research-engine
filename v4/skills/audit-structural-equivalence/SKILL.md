@@ -8,9 +8,15 @@ description: "Audit a claimed isomorphism/equivalence by constructing an explici
 Audit a claimed isomorphism or equivalence and downgrade it to the strongest defensible relation when preservation fails.
 ## Input contract
 ```yaml
-required: [source_structure, target_structure, equivalence_claim]
-optional: [required_invariants, operations, constraints]
-constraints: [mapping domains and preservation obligations must be explicit]
+mode_contracts:
+  isomorphism: &structural_audit_input
+    required: [source_structure, target_structure, equivalence_claim]
+    optional: [required_invariants, operations, constraints]
+    constraints: [mapping_domains_and_preservation_obligations_must_be_explicit]
+  substructure: *structural_audit_input
+  homomorphism: *structural_audit_input
+  shared-invariant: *structural_audit_input
+  analogy: *structural_audit_input
 ```
 ## Execution protocol
 1. Construct object/relation/operation/invariant mapping (`extract-structural-mapping`).
@@ -19,8 +25,14 @@ constraints: [mapping domains and preservation obligations must be explicit]
 Deviation: if the claim is only analogy by scope, run the analogy branch and do not report isomorphism.
 ## Output contract
 ```yaml
-produces: [structural_mapping, preservation_report, counterexamples, downgraded_claim]
-delta_fields: [findings, evidence_updates, uncertainties, decisions]
+mode_contracts:
+  isomorphism: &structural_audit_output
+    produces: [structural_mapping, preservation_report, counterexamples, downgraded_claim]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions]
+  substructure: *structural_audit_output
+  homomorphism: *structural_audit_output
+  shared-invariant: *structural_audit_output
+  analogy: *structural_audit_output
 ```
 ## Thresholds and quality gates
 - All required relations, operations, and invariants must have pass/fail/unknown status.

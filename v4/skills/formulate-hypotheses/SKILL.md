@@ -16,9 +16,14 @@ Use when a research gap or insight can be stated. Select `deductive`, `inductive
 ## Input contract
 
 ```yaml
-required: [research_gap_or_observation]
-optional: [theory, anomaly, candidate_explanations, variables, prior_evidence]
-constraints: [at least one observable consequence]
+mode_contracts:
+  deductive: &hypothesis_input
+    required: [research_gap_or_observation]
+    optional: [theory, anomaly, candidate_explanations, variables, prior_evidence]
+    constraints: [at_least_one_observable_consequence]
+  inductive: *hypothesis_input
+  abductive: *hypothesis_input
+  competing-hypotheses: *hypothesis_input
 ```
 
 ## Execution protocol
@@ -38,8 +43,15 @@ constraints: [at least one observable consequence]
 ## Output contract
 
 ```yaml
-produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
-delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
+mode_contracts:
+  deductive: &single_hypothesis_output
+    produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions]
+    delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
+  inductive: *single_hypothesis_output
+  abductive: *single_hypothesis_output
+  competing-hypotheses:
+    produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
+    delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
 ```
 
 ## Thresholds and quality gates
