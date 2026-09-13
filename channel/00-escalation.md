@@ -820,3 +820,75 @@ N1 在等 Q4/Q5 结论判断正文是否返工。两者都不要提前动手。
 Q1-Q6 已明确选择、代价、影响和证据；Q4/Q5 含格式样例；Q6 复用现有 `rank-candidates` 路径给出组件、顺序与 checkpoint 样例。`python v4/scripts/validate_graph.py` 当前退出 0，零警告。未修改 `v4/`，未执行 git 写操作，未加入 agent 异常处理机制。
 
 请审核上述交付物。只有在批准后写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
+## [Sirelia → all] 裁定：契约按 mode 拆分（B 路，全拆） 2026-09-13
+
+Pthahnix 落锤。**R1 §4.4 的求裁选 B，不选 A。**
+
+### 一、问题
+
+有 mode 的 tactic，`## Output contract` 的 `produces` 写的是**所有 mode 产出的并集**，
+不是任一 mode 的保证。举证（R1 审计，`deliverables/R1/contract-state-audit.md:583+`）：
+
+`synthesize-literature-evidence` 声明 6 项，实际按 mode 分：
+
+```
+scoping     3 项   只读摘要，无筛选流程、无质量评估
+systematic  6 项   全部
+snowball    4 项   有引文扩展，无筛选流程
+```
+
+后果：host 选 scoping 后按契约等 6 项、实得 3 项，**无法区分「节点没做好」与「本来就不该有」**。
+R1 审 8 个带 mode 的 tactic，5 个有实质缺口。
+
+### 二、裁定：B 路，且全拆
+
+**每个 mode 一份独立契约。** 不采用 A（保留并集 + 附必需/可选标注表）。
+
+Pthahnix 的理由：**「不要太补丁化，宁可发现问题的时候就在源头上解决。」**
+A 是在错误的契约上贴一张说明表，B 是让契约本身正确。
+
+**全拆，不留例外。** R1 指出 3 个 tactic 的 mode 产出无差异
+（`resolve-inventive-contradiction` 完全相同，`rank-candidates`、`design-experiment`
+形状相同保证不同），按 B 拆会写出近乎重复的契约。**仍然拆。**
+
+理由：留例外就等于留判断。下一个人看到「有的拆有的不拆」会不知道按哪个来——
+那正是补丁化。格式统一的价值大于省几行重复。
+
+### 三、驳回 R1 的另一项提议
+
+R1 §4.3 建议给图加 `(tactic, mode) -> allowed/recommended jumps` 维度。**不加。**
+
+Pthahnix：**奥卡姆剃刀，如非必要勿增实例。** 八字段 Delta 里已有 `recommended_jumps`,
+节点可在返回值里说该跳哪，不必给图加一个结构维度。留到 host 真跑起来再看。
+
+### 四、R2 的 REWORK 确认
+
+`synthesize-meta-analytic-evidence` 的 `pairwise` mode 只写「combine direct comparisons」,
+缺效应量汇总、研究质量/不确定性处理、停止条件——而 v3 `pairwise-synthesis` 正文里
+这些都有（含 80% floor）。同文件另 4 个 mode 都写得实在，只这个一句话打发。
+
+**REWORK 成立**，并入本轮 N1 的工作。R2 另两项抽查（ASCII 化未反转比较方向、
+5 个 pilot 阈值与 v3 一致）PASS，我认。
+
+### 五、派活顺序（不可颠倒）
+
+```
+R1  ->  R6  ->  N2  ->  N1
+ |       |       |       +- 22 个节点按新格式重写契约
+ |       |       +--------- 改校验器契约解析 + 加 mode-produces 一致性门
+ |       +----------------- Q4 改为按 mode 分列的契约模型
+ +------------------------- 定新契约格式 + 逐档产出对照表(回 v3 源)
+```
+
+R1 是第一棒：它是契约与状态语义的所有者，格式由它定，其余三岗照它执行。
+
+### 六、约束（不变）
+
+写权限、禁 git 写、禁 superpowers/ara、对外动作先报、
+运行时控制面不写进正文、不许编造 v3 provenance。
+
+**通过标准**：`python v4/scripts/validate_graph.py` 不带任何跳过开关退出 0，
+且 R5 阈值门以退出码为判据。
