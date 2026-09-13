@@ -46,13 +46,21 @@ mode_contracts:
 
 ```yaml
 mode_contracts:
-  factorial: &experiment_output
-    produces: [design_matrix, analysis_plan, sample_plan, preregistered_thresholds, reproducibility_checklist]
+  factorial:
+    produces: [factor_level_matrix, factor_level_catalog, estimands_main_effects_interactions, metric_significance_plan, sample_power_plan]
     delta_fields: [findings, decisions, uncertainties, open_questions]
-  ablation: *experiment_output
-  comparison: *experiment_output
-  scaling: *experiment_output
-  robustness: *experiment_output
+  ablation:
+    produces: [ablation_matrix, baseline_anchors_full_minimal, attribution_contrasts, component_interaction_plan]
+    delta_fields: [findings, decisions, uncertainties, open_questions]
+  comparison:
+    produces: [controlled_baseline_comparison, matched_confound_controls, seed_environment_protocol, statistical_comparison_plan, reproducibility_protocol]
+    delta_fields: [findings, decisions, uncertainties, open_questions]
+  scaling:
+    produces: [scaling_axes, geometric_scale_points, scaling_experiment_grid, curve_fit_plan, scale_budget_plan]
+    delta_fields: [findings, decisions, uncertainties, open_questions]
+  robustness:
+    produces: [perturbation_stress_matrix, severity_axes, baseline_comparison, degradation_metrics, survival_criteria]
+    delta_fields: [findings, decisions, uncertainties, open_questions]
 ```
 
 ## Thresholds and quality gates

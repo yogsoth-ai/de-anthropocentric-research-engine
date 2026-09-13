@@ -28,10 +28,12 @@ Deviation: BioTRIZ mode may branch during strategy extraction, but all five chec
 ## Output contract
 ```yaml
 mode_contracts:
-  biologize-and-discover: &biomimetic_output
-    produces: [biological_analogs, strategy_extract, transfer_candidate, compatibility_report]
+  biologize-and-discover:
+    produces: [biological_question, biological_candidate_set, biological_strategies, design_principles, technical_solutions]
     delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
-  BioTRIZ: *biomimetic_output
+  BioTRIZ:
+    produces: [contradiction, biotriz_principles, biological_case_mapping, biological_strategies, design_principles, technical_solutions]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
 ```
 ## Thresholds and quality gates
 - B: analogs solve the same function; strategy includes mechanism and conditions; target compatibility is explicit.

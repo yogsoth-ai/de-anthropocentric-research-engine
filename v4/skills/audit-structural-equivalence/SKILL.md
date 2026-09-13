@@ -27,7 +27,7 @@ Deviation: if the claim is only analogy by scope, run the analogy branch and do 
 ```yaml
 mode_contracts:
   isomorphism: &structural_audit_output
-    produces: [structural_mapping, preservation_report, counterexamples, downgraded_claim]
+    produces: [claimed_sides, maps_attempted, monsters_found, dimension_count_result, highest_defended_rung, required_wording_change]
     delta_fields: [findings, evidence_updates, uncertainties, decisions]
   substructure: *structural_audit_output
   homomorphism: *structural_audit_output

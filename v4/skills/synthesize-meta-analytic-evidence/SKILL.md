@@ -46,16 +46,20 @@ mode_contracts:
 
 ```yaml
 mode_contracts:
-  pairwise: &pooled_meta_output
-    produces: [effect_estimate, uncertainty, heterogeneity_report, bias_report, sensitivity_results]
+  pairwise:
+    produces: [question, inclusion_criteria, studies_included, effect_size_type, model, heterogeneity_plan, sensitivity_plan, bias_assessment_plan, reporting]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
-  network: *pooled_meta_output
-  cumulative: *pooled_meta_output
+  network:
+    produces: [question, network_geometry, inclusion_criteria, studies_included, effect_size_type, model, transitivity_assessment, ranking_method, heterogeneity_plan, inconsistency_plan, sensitivity_plan, bias_assessment_plan, reporting]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
+  cumulative:
+    produces: [question, temporal_scope, inclusion_criteria, studies_included, chronological_order, effect_size_type, model, temporal_analyses, time_lag_bias, quality_trend, reporting]
+    delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   heterogeneity:
-    produces: [uncertainty, heterogeneity_report, sensitivity_results]
+    produces: [question, heterogeneity_metrics, moderator_candidates, investigation_plan, a_priori_hypotheses, multiple_testing, reporting]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   bias:
-    produces: [uncertainty, bias_report, sensitivity_results]
+    produces: [question, bias_domains, grey_literature_search, grade_assessment, sensitivity_plan, reporting]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
 ```
 

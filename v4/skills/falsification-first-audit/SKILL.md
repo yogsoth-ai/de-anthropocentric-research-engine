@@ -26,13 +26,13 @@ Deviation: if no legitimate falsifier can be specified or reached, stop with UNF
 ```yaml
 mode_contracts:
   sharp-claim:
-    produces: [sharp_claim, falsification_program, probe_record, falsification_verdict]
+    produces: [claim_falsifiability, refutation_condition, attacks_attempted, outcome_bucket, refutation_or_surviving_forbidden_content, honest_residue]
     delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions]
   truthseeking-debate:
-    produces: [sharp_claim, probe_record, falsification_verdict]
+    produces: [most_falsifiable_form, committed_refuter, cross_examination_findings, attack_severity, outcome_bucket, refutation_or_forbidden_content]
     delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions]
   truthseeking-red-team:
-    produces: [falsification_program, probe_record, falsification_verdict]
+    produces: [claim_load_rank, assumption_classification, refutation_condition, refutation_attempt, outcome_bucket, framing_risk_brief]
     delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions]
 ```
 ## Thresholds and quality gates

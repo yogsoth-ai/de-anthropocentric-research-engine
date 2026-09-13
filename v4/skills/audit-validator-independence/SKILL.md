@@ -26,7 +26,7 @@ Deviation: if no non-circular channel is feasible, return blocked validation rat
 ```yaml
 mode_contracts:
   validator: &validator_audit_output
-    produces: [assumption_inventory, noncircularity_matrix, circularity_findings, falsification_test]
+    produces: [noncircularity_matrix, red_cell_actions, validator_verdict, adversarial_ground_truth_set]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   benchmark: *validator_audit_output
   sandbox: *validator_audit_output

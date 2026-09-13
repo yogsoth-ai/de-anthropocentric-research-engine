@@ -28,10 +28,12 @@ Deviation: stop when added variation no longer changes the frontier or diversity
 ## Output contract
 ```yaml
 mode_contracts:
-  mutation-selection: &evolution_output
-    produces: [evolved_population, selected_variants, diversity_report, sensitivity_report]
+  mutation-selection:
+    produces: [mechanism_to_design_mapping, generated_solutions, synthesis]
     delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
-  novelty-preserving-evolution: *evolution_output
+  novelty-preserving-evolution:
+    produces: [novelty_assessment]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
 ```
 ## Thresholds and quality gates
 - B: mutation/recombination lineage is traceable; selection criteria are explicit; diversity is measured before convergence.

@@ -26,7 +26,7 @@ Deviation: use qualitative dependence classes when numeric correlation is unavai
 ```yaml
 mode_contracts:
   evidence-paths: &convergence_audit_output
-    produces: [dependency_map, independence_audit, effective_evidence_count, sensitivity_report]
+    produces: [independence_ledger, effective_evidence_count, common_cause_framing, independent_path_result_or_design, correlated_errors, corrected_confidence_statement]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   agents: *convergence_audit_output
   models: *convergence_audit_output

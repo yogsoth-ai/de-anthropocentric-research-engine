@@ -25,7 +25,7 @@ Deviation: omit prediction testing only when no nontrivial prediction can be der
 ```yaml
 mode_contracts:
   earned-simplicity: &compression_audit_output
-    produces: [compression_assessment, risky_prediction_tests, critique, score]
+    produces: [forbidden_set, risky_predictions, accommodation_audit, deletion_test_result, elegance_verdict, earning_prediction]
     delta_fields: [findings, evidence_updates, uncertainties, decisions]
   decorative-simplicity: *compression_audit_output
   risky-prediction: *compression_audit_output

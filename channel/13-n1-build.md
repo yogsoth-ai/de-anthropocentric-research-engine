@@ -24,6 +24,23 @@ Added authoritative `## Mode branches` sections to the four R4-audited tactics:
 Each mode retains the exact architecture spelling and includes a substantive operational purpose. `problem-reframing` and `biomimetic-transfer` were not modified; their `stakeholder/worldview` and `BioTRIZ` forms remain unchanged.
 
 Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
+## Mode-contract output correction batch 4 (10)
+
+R1's completed ledger and determination register were applied to these previously union-output nodes; anchors were retained only for source-common schemas.
+
+| node id | modes | anchor |
+|---|---:|---|
+| biomimetic-transfer | 2 | no |
+| evolve-solution-population | 2 | no |
+| synthesize-literature-evidence | 5 | no |
+| synthesize-meta-analytic-evidence | 5 | no |
+| design-experiment | 5 | no |
+| falsification-first-audit | 3 | no |
+| audit-structural-equivalence | 5 | yes |
+| audit-validator-independence | 4 | yes |
+| audit-convergence-independence | 4 | yes |
+| audit-explanatory-compression | 3 | yes |
 status: source/rebuilt
 
 ## Batch 2 (10)

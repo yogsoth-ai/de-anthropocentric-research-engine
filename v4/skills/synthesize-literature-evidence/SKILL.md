@@ -58,19 +58,19 @@ Deviation: Mode determines which steps are needed. Scoping may stop after broad 
 ```yaml
 mode_contracts:
   scoping:
-    produces: [evidence_corpus, synthesis_map, saturation_state]
+    produces: [field_taxonomy, key_authors_and_groups, research_trends, open_questions, deep_investigation_entry_points]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   systematic:
-    produces: [evidence_corpus, structured_evidence_records, screening_flow, quality_assessment, synthesis_map, saturation_state]
+    produces: [prisma_flow, structured_comparison_tables, per_paper_quality_assessment, evidence_backed_gaps, synthesis_narrative]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   deep:
-    produces: [evidence_corpus, structured_evidence_records, quality_assessment, synthesis_map]
+    produces: [method_comparison, extracted_equations_algorithms, implementation_details, evidence_cited_conclusions, open_questions]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions]
   narrative:
-    produces: [evidence_corpus, structured_evidence_records, synthesis_map]
+    produces: [central_thesis, thematic_supporting_evidence, addressed_counterarguments, gap_or_opportunity, narrative_arc]
     delta_fields: [findings, evidence_updates, hypothesis_updates, uncertainties, decisions, open_questions]
   snowball:
-    produces: [evidence_corpus, structured_evidence_records, synthesis_map, saturation_state]
+    produces: [seed_ancestor_map, seed_descendant_map, idea_evolution, branch_points, current_frontier, lineage_dag]
     delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questions, recommended_jumps]
 ```
 
