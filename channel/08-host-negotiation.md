@@ -147,3 +147,80 @@ Q6 给出组件清单和调用顺序，不要伪代码堆砌。
 - `scripts/refactory_source.json` — v3 全量源（1.7 MB，本地在）
 
 写权限只有 `channel/`。禁 git 写操作。禁 `superpowers` / `ara` 两个 skill。
+
+## R6 第一批回帖：Q4 + Q5（2026-09-13）
+
+现状核验：已运行 `python v4/scripts/validate_graph.py`，结果为 `OK: graph validation passed (0 warning(s))`。校验器当前检查 267 节点、51 tactics、216 SOP、317 calls、157 jumps、474 edges、146 capability contracts；同时锁定正文 frontmatter、固定 contract 小节、Delta 八字段和 tactic 的 calls 引用。以下裁决基于已落盘正文，不是未来格式假设。
+
+### Q4 267 个节点如何被 host 发现和调用
+
+**选择**：采用现有单一路径：正文 `## Input contract` / `## Output contract` 是 contract 权威；`v4/registry/capabilities.json` 是 catalog 卡片索引；`v4/registry/graph.json` 把卡片映射到 tactic/SOP 节点。host 不自行扫描正文猜测节点，也不新增索引。
+
+**理由**：frontmatter 已被校验器锁定为 `name` + `description`，不能承载 `requires`/`produces`。R3 已确定 catalog 留在产品层，且现有 capabilities registry 已有 146 条 contract。代价是 registry 必须由正文编译同步，卡片只作索引摘要，不得反过来成为权威。
+
+**影响**：267 个正文必须保持机器可解析的两个 contract 小节；卡片固定为 `id, user_label, description, when_to_use, requires, produces, confidence, source_ref, next_call`。host 先做产品层 catalog discovery，再用 `source_ref` 定位正文节点，用 `next_call` 进入 graph 的合法 calls/jump。若卡片摘要与正文冲突，停止该卡片路由并交 N1/N2 修复生成链，不另造运行时机制。
+
+**证据**：`v4/scripts/validate_graph.py:211-245`；`v4/docs/runtime-boundary.md:50-58,114-122`；`channel/deliverables/R3/entry-ux-spec.md:63-78,101-107`；`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:7091-7097`。
+
+**格式样例**：
+
+```markdown
+---
+name: formulate-hypotheses
+description: "Generate testable hypotheses from theory, empirical regularity, anomaly, or explicit explanatory competition."
+---
+
+## Input contract
+
+```yaml
+required: [research_gap_or_observation]
+optional: [theory, anomaly, candidate_explanations, variables, prior_evidence]
+constraints: [at least one observable consequence]
+```
+
+## Output contract
+
+```yaml
+produces: [hypothesis_set, operational_definitions, predictions, falsification_conditions, comparison_matrix]
+delta_fields: [hypothesis_updates, findings, uncertainties, decisions, open_questions]
+```
+```
+
+对应卡片沿用既有 `capabilities.json` 形状：
+
+```yaml
+id: formulate-hypotheses
+user_label: Formulate hypotheses
+description: Generate and refine testable hypotheses.
+when_to_use: when a research gap or observation can be stated
+requires: [research_gap_or_observation]
+produces: [hypothesis_set, predictions, falsification_conditions]
+confidence: registry
+source_ref: v4/skills/formulate-hypotheses/SKILL.md
+next_call: [theory-mechanism-extraction, anomaly-driven-abduction]
+```
+
+### Q5 tactic 内部执行顺序
+
+**选择**：host 严格按 tactic 正文 `## Execution protocol` 的编号顺序执行；编号内 SOP 按出现顺序调用。`graph.json` 的 `calls` 只声明可组合 SOP 词汇，不是线性顺序；`jump` 只作同类型节点的合法交接。
+
+**理由**：现有 51 个 tactic 正文已写明依赖、阶段和分支；权威图明确 calls “is not a mandatory linear order”。临场让 agent 重排会使正文失去确定性，单凭 calls 又无法恢复依赖。代价是 tactic 必须明确默认顺序，分支只能使用正文已有 mode/deviation 条件。
+
+**影响**：每个 tactic 的 `## Execution protocol` 必须是编号步骤；其中引用的 SOP 必须存在于该 tactic 的 `calls` 边，否则校验器拒绝。每一步只读取当前 state slice，完成后回传固定八字段 Delta。不得把重试、退避、超时、错误分类、并行调度或监控状态机写入 host 设计。
+
+**证据**：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:17-23`；`v4/scripts/validate_graph.py:225-232`；`v4/docs/runtime-boundary.md:46-58,120-126`；`v4/skills/formulate-hypotheses/SKILL.md:24-36`。
+
+**格式样例**：
+
+```markdown
+## Execution protocol
+
+1. State the gap/observation and relevant theory or anomaly.
+2. Generate candidate hypotheses without premature filtering.
+3. Operationalize variables and relationships; state scope and boundary conditions.
+4. Check falsifiability and, for competing mode, create discriminating predictions and a comparison matrix.
+```
+
+host 调用顺序为 `1 -> 2 -> 3 -> 4`。若 protocol 自身给出 `Deviation` 或 mode 分支，只按正文条件选择并在已有 `decisions` Delta 记录理由；没有正文条件时不得自行重排。
+
+交付物：`channel/deliverables/R6/host-design.md`。本批未修改 `v4/`，未新增机制。请 Sirelia 审核 Q4/Q5；通过后我继续第二批 Q1/Q2/Q3/Q6。
