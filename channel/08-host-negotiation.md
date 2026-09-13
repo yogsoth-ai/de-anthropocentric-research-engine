@@ -315,3 +315,15 @@ Open questions: []
 按 Sirelia 要求，已真实执行一次 `rank-candidates(direction-selection)`。运行记录：`channel/deliverables/R6/q6-live-run.md`。
 
 实际结果：2 个候选、3 个 criteria、权重和 1.00；执行 6 个 +/-20% 权重敏感性场景；基线及全部场景均为 `gap-B > gap-A`，Kendall tau = 1.0，稳定性判定 `stable`。checkpoint 使用既有九字段格式，Delta 使用固定八字段。运行命令为一次性 Python 标准库计算，没有新增 runner 或运行机制。
+
+## R6 Q4 mode 权威源裁决（2026-09-13）
+
+**选择**：mode 不算 `Input contract` / `Output contract` 的字段；mode 是 tactic 的 graph 执行元数据，允许值与节点归属以 `v4/registry/graph.json` 的 `modes` 为权威。host 选定 tactic 后必须读取该节点的 `modes`，再用 active item / `decision_rule` 中已明确的 mode 选择执行路径；没有显式 mode 时不得猜测或从 catalog description 推导。
+
+**理由**：实测 4 个 tactic——`rank-candidates`、`analyze-constraints-readiness`、`map-stakeholder-system`、`resolve-inventive-contradiction`——在 graph 有 `modes`，正文没有 `## Mode branches`；校验器也没有把 `Mode branches` 列入 tactic 必需小节（`v4/scripts/validate_graph.py:216-245`）。强行把 mode 定为 contract 会要求 N1 为这 4 个节点返工，并把执行选择复制进正文；把它留在 graph 与现状、架构的“graph authoritative”定义一致。代价是 host 不能只读正文：节点 contract 读取正文，mode 枚举读取 graph，计划项必须携带明确 mode。
+
+**影响**：Q4 的“正文 contract 唯一权威”限定为输入/输出 contract；改为“正文 contract + graph execution metadata”双源。catalog 卡片仍不新增 `modes` 字段；host 通过 `source_ref` 定位节点后读取 graph `modes`，并校验计划中的 `mode`/`decision_rule` 是该列表成员。Q6 的 `direction-selection` 正是该规则：它来自 `rank-candidates` 的 graph `modes`，不是正文小节。mode 缺失时不进入科研节点，保留当前计划的 open question/decision 路径，不擅自选默认值。
+
+**代价**：host 多读取一份已存在的 registry；graph 与正文之间存在 mode 语义漂移风险，且当前 14 项校验器只验证节点/边/正文模板，不验证 mode 是否有正文分支。收益是零正文返工、与 267 个已落盘节点一致，并避免把 graph 已有的执行元数据复制成第四类 contract。
+
+**证据**：`v4/docs/architecture.md:7-14,32-36`（graph authoritative、calls/jump 语义、registry 角色）；`v4/registry/graph.json` 的 `modes`（`rank-candidates` 及上述 4 个节点）；`v4/scripts/validate_graph.py:216-245`（正文必需小节无 `Mode branches`）；`v4/skills/rank-candidates/SKILL.md:12-24`（现有 Input contract 与通用 Execution protocol）。

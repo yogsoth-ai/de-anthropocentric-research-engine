@@ -111,10 +111,19 @@ R4 delivery complete: all GROUP D bodies and required compilation logs are prese
 - calls present in graph but omitted from these protocols are not explicitly named in their generic Deviation text; report as citation gaps for N2 validator
 - cleanup: removed 42 reassigned R4 SOP shells duplicated in R1/R2 (HYPOTHESIS/STRUCTURING/CONVERGENCE); no graph nodes or source files changed
 
-## Closure audit — count correction
+## Closure audit - count correction
 
 - Authoritative graph counts: 51 tactics / 216 SOP; 317 calls; 157 jumps (82 T→T, 75 S→S; no cross-layer edges).
 - Calls: 317/317 are tactic→SOP; unknown endpoints 0; duplicate edges 0.
 - Jumps: 157/157 are same-layer; unknown endpoints 0; duplicate edges 0.
 - Source of the earlier +3: the R4 channel copy included three repair-overlay patent edges absent from the read-only authoritative architecture: `mine-patent-landscape → validate-research-gap`, `assess-prior-art-and-claims → validate-research-gap`, and `map-patent-white-space → validate-research-gap`. They were mistakenly included in the closure total. No calls were counted as jumps and no edge was double-counted.
 - This corrected block supersedes the earlier 160-edge closure figures above.
+
+## Mode consistency audit - 2026-09-13
+
+Read-only source: `refactory/2026-08-23-22-16-dare-v4-architecture.json`; the requested `file-transfer/...` path is absent. Full determination is in `deliverables/R4/mode-consistency-audit.md`.
+
+- Body missing `## Mode branches` for four tactics: `rank-candidates` (8 authoritative modes), `analyze-constraints-readiness` (5), `map-stakeholder-system` (3), `resolve-inventive-contradiction` (3). These are N1 body repairs; graph already contains the exact arrays.
+- `synthesize-meta-analytic-evidence` body lists five branches, but authoritative graph has no `modes` field. This is a body overstatement, not a graph omission; route to N1.
+- `problem-reframing` uses literal architecture form `stakeholder/worldview`; `biomimetic-transfer` uses literal `BioTRIZ`. Both are consistent and require no rename.
+- Result: graph additions 0; N1 body actions 5; naming mismatches 0.

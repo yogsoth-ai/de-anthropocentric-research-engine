@@ -51,6 +51,8 @@ next_call: [falsifiability-audit, falsification-first-audit]
 
 `requires`/`produces` 是从正文 contract 编译的索引摘要，不是第三份权威 contract；若摘要与正文冲突，以正文为准并阻止该卡片继续路由，交由 N1/N2 修复生成链。
 
+Q4 权威边界补充：`Input contract` / `Output contract` 的权威性不包括 mode 枚举。mode 是 `v4/registry/graph.json` 的 tactic 执行元数据；host 选定节点后读取 graph `modes`，并要求 active item / `decision_rule` 提供其中一个明确值。四个当前存在 graph mode 但正文无 `## Mode branches` 的节点（`rank-candidates`、`analyze-constraints-readiness`、`map-stakeholder-system`、`resolve-inventive-contradiction`）因此不返工正文；代价是 host 读取 contract 与 graph 两个既有来源。
+
 ## Q5 tactic 内部执行顺序
 
 | 字段 | 内容 |
