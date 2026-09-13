@@ -93,3 +93,11 @@ R4's completed `channel/deliverables/R4/mode-consistency-audit.md` resolves thre
 - `design-experiment`: `factorial`, `ablation`, `comparison`, `scaling`, `robustness`.
 
 Each node records `modes_provenance.source=architecture.desc`, with `v3_sources` carrying the R4-resolved source node and line evidence. These additions follow the architecture description only where R4 supplied matching v3 provenance; no body text was changed and no gate was relaxed. The four pre-existing body-side Gate 15 errors remain N1's repair scope.
+
+## 2026-09-13 Mode contract parser and Gate 17
+
+`validate_graph.py` now implements R1's locked B-route contract syntax and R6's host read model. For the 22 mode-bearing nodes, both contract sections must contain one `mode_contracts` mapping; the parser expands YAML anchors/aliases, preserves registry spelling and order, requires every registry mode exactly once, validates the exact per-mode keys and inline-list value types, rejects legacy node-level keys, and checks every per-mode `delta_fields` list against the fixed eight names. The 245 nodes without modes retain the flat `required`/`optional`/`constraints` and `produces`/`delta_fields` syntax, now parsed through the same strict section boundary.
+
+Gate 17 compares `## Mode branches` only with `## Output contract`'s `mode_contracts` keys. A branch without a produces contract reports at the branch line; a contract without a branch reports at the contract line. Gate 15 remains unchanged and separately compares body mode names with `registry/graph.json`.
+
+The parser uses a standard-library implementation of the locked YAML subset, including anchor expansion; no dependency was added. An in-memory positive check covered flat contracts and anchor/alias expansion, and a missing-mode negative check produced a line-addressed error. The current `--skip-threshold` run exits 1 with 136 expected errors confined to the 22 bodies that N1 has not yet converted: 44 legacy contract-shape errors plus 92 missing Output `mode_contracts` entries. All 245 mode-free bodies pass the revised contract parser. No existing gate or pass criterion was relaxed.

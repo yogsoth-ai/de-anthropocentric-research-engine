@@ -304,3 +304,9 @@ Each branch has a substantive operational description; no other mode-declared bo
 Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
 intra-section duplicate self-check: PASS
 status: installed; 该批含待 R5 正文节点
+
+## Repair batch 35
+
+Recompiled only the `pairwise` mode description in `synthesize-meta-analytic-evidence` from v3 `pairwise-synthesis`: effect-size pooling, sampling uncertainty, study-quality judgments, sensitivity analysis, and the 80% floor stopping gate are explicit. No contracts or other nodes were changed.
+
+Full N2 gate: `python v4/scripts/validate_graph.py` exited 1 with 136 errors from the newly enabled mode-contract gate across the still-pending 22-node contract migration. Per sequencing order, no contracts were changed in this batch.

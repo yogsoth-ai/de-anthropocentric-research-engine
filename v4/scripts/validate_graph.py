@@ -89,12 +89,168 @@ def mode_branches(lines: list[str], sections: dict[str, tuple[int, int]]) -> tup
     return declared, start
 
 
-def yaml_list(text: str, key: str) -> tuple[list[str], int] | None:
-    m = re.search(rf"^\s*{re.escape(key)}:\s*\[([^]]*)\]", text, re.M)
-    if not m:
+def inline_yaml_list(value: str) -> list[str] | None:
+    """Parse the locked contract format's inline YAML sequence subset."""
+    value = value.strip()
+    if not (value.startswith("[") and value.endswith("]")):
         return None
-    vals = [x.strip().strip("'\"") for x in m.group(1).split(",") if x.strip()]
-    return vals, text[:m.start()].count("\n") + 1
+    body = value[1:-1].strip()
+    if not body:
+        return []
+    items, current, quote = [], [], None
+    for char in body:
+        if char in "'\"":
+            if quote == char:
+                quote = None
+            elif quote is None and not "".join(current).strip():
+                quote = char
+            else:
+                current.append(char)
+        elif char == "," and quote is None:
+            item = "".join(current).strip()
+            if not item:
+                return None
+            items.append(item.strip("'\""))
+            current = []
+        else:
+            current.append(char)
+    if quote is not None:
+        return None
+    item = "".join(current).strip()
+    if not item:
+        return None
+    items.append(item.strip("'\""))
+    return items
+
+
+def contract_yaml(
+    text: str,
+    base_line: int,
+    path: Path,
+    checker: Checker,
+    field_names: tuple[str, ...],
+    registry_modes: list[str],
+) -> tuple[dict[str, dict[str, list[str]]], dict[str, int], dict[tuple[str, str], int]]:
+    """Parse one locked contract block and return values plus source lines."""
+    lines = text.splitlines()
+    fences = [i for i, line in enumerate(lines) if line.strip().startswith("```")]
+    if len(fences) != 2 or lines[fences[0]].strip() != "```yaml":
+        checker.error(path, base_line, "contract section must contain exactly one ```yaml block")
+        return {}, {}, {}
+    start, end = fences
+    for i, line in enumerate(lines):
+        if (i < start or i > end) and line.strip():
+            checker.error(path, base_line + i, "contract section may contain only one YAML block")
+    body = [(line, base_line + i) for i, line in enumerate(lines[start + 1:end], start + 1) if line.strip()]
+    if not body:
+        checker.error(path, base_line + start, "contract YAML block is empty")
+        return {}, {}, {}
+
+    expected = set(field_names)
+    if not registry_modes:
+        values: dict[str, list[str]] = {}
+        field_lines: dict[tuple[str, str], int] = {}
+        for line, line_no in body:
+            match = re.fullmatch(r"([a-z_]+):\s*(.*)", line)
+            if not match:
+                checker.error(path, line_no, "flat contract entries must be unindented key: [list]")
+                continue
+            key, raw = match.groups()
+            if key in values:
+                checker.error(path, line_no, f"duplicate contract key {key!r}")
+                continue
+            parsed = inline_yaml_list(raw)
+            if parsed is None:
+                checker.error(path, line_no, f"contract field {key!r} must be an inline list")
+                continue
+            values[key] = parsed
+            field_lines[("", key)] = line_no
+        missing, extra = expected - set(values), set(values) - expected
+        if missing:
+            checker.error(path, base_line + start, f"flat contract missing keys: {sorted(missing)}")
+        if extra:
+            checker.error(path, field_lines.get(("", sorted(extra)[0]), base_line + start), f"flat contract has extra keys: {sorted(extra)}")
+        return {"": values}, {"": base_line + start + 1}, field_lines
+
+    first, first_line = body[0]
+    if first != "mode_contracts:":
+        checker.error(path, first_line, "mode-bearing contract must have only the top-level key mode_contracts")
+        return {}, {}, {}
+
+    contracts: dict[str, dict[str, list[str]]] = {}
+    mode_lines: dict[str, int] = {}
+    field_lines: dict[tuple[str, str], int] = {}
+    anchors: dict[str, tuple[dict[str, list[str]], dict[str, int]]] = {}
+    order: list[str] = []
+    i = 1
+    while i < len(body):
+        line, line_no = body[i]
+        match = re.fullmatch(r"  ([A-Za-z0-9][A-Za-z0-9_/-]*):(?:\s*([&*][A-Za-z0-9_-]+))?", line)
+        if not match:
+            checker.error(path, line_no, "mode contract entry must use two-space indentation")
+            i += 1
+            continue
+        mode, marker = match.groups()
+        if mode in contracts:
+            checker.error(path, line_no, f"duplicate mode contract {mode!r}")
+        else:
+            order.append(mode)
+            mode_lines[mode] = line_no
+        i += 1
+        if marker and marker.startswith("*"):
+            anchor = marker[1:]
+            if anchor not in anchors:
+                checker.error(path, line_no, f"unknown YAML contract alias {marker!r}")
+                values, source_lines = {}, {}
+            else:
+                values, source_lines = anchors[anchor]
+                values, source_lines = dict(values), dict(source_lines)
+            contracts.setdefault(mode, values)
+            for key in values:
+                field_lines[(mode, key)] = line_no
+            continue
+
+        values: dict[str, list[str]] = {}
+        source_lines: dict[str, int] = {}
+        while i < len(body) and body[i][0].startswith("    "):
+            child, child_line = body[i]
+            child_match = re.fullmatch(r"    ([a-z_]+):\s*(.*)", child)
+            if not child_match:
+                checker.error(path, child_line, "mode contract field must use four-space indentation")
+                i += 1
+                continue
+            key, raw = child_match.groups()
+            if key in values:
+                checker.error(path, child_line, f"duplicate contract key {key!r} in mode {mode!r}")
+                i += 1
+                continue
+            parsed = inline_yaml_list(raw)
+            if parsed is None:
+                checker.error(path, child_line, f"contract field {key!r} in mode {mode!r} must be an inline list")
+            else:
+                values[key] = parsed
+                source_lines[key] = child_line
+                field_lines[(mode, key)] = child_line
+            i += 1
+        contracts.setdefault(mode, values)
+        if marker and marker.startswith("&"):
+            anchors[marker[1:]] = (dict(values), dict(source_lines))
+
+    actual = set(contracts)
+    missing, extra = set(registry_modes) - actual, actual - set(registry_modes)
+    if missing:
+        checker.error(path, first_line, f"mode_contracts missing registry modes: {sorted(missing)}")
+    if extra:
+        checker.error(path, mode_lines.get(sorted(extra)[0], first_line), f"mode_contracts has modes absent from registry: {sorted(extra)}")
+    if not missing and not extra and order != registry_modes:
+        checker.error(path, first_line, "mode_contracts keys must follow registry mode order")
+    for mode, values in contracts.items():
+        missing_fields, extra_fields = expected - set(values), set(values) - expected
+        if missing_fields:
+            checker.error(path, mode_lines.get(mode, first_line), f"mode {mode!r} contract missing keys: {sorted(missing_fields)}")
+        if extra_fields:
+            checker.error(path, field_lines.get((mode, sorted(extra_fields)[0]), mode_lines.get(mode, first_line)), f"mode {mode!r} contract has extra keys: {sorted(extra_fields)}")
+    return contracts, mode_lines, field_lines
 
 
 def frontmatter(lines: list[str]) -> tuple[dict[str, str], int]:
@@ -275,15 +431,40 @@ def main() -> int:
             c.error(path, 1, "shared-basis SOP requires ## Parameterization")
         inp, inp_line = block(lines, sections, "Input contract")
         out, out_line = block(lines, sections, "Output contract")
-        req = yaml_list(inp, "required")
-        if req and any(GENERIC.search(x) for x in req[0]): c.error(path, inp_line + req[1] - 1, "generic required input placeholder")
-        delta = yaml_list(out, "delta_fields")
-        prod = yaml_list(out, "produces")
-        if delta:
-            if "assumptions_updates" in delta[0]:
-                c.error(path, out_line + delta[1] - 1, "delta_fields uses assumptions_updates; use assumption_updates (singular)")
-            bad = set(delta[0]) - DELTA
-            if bad: c.error(path, out_line + delta[1] - 1, f"delta_fields outside fixed eight: {sorted(bad)}")
+        if inp:
+            input_contracts, input_mode_lines, input_field_lines = contract_yaml(inp, inp_line, path, c, ("required", "optional", "constraints"), graph_modes)
+        else:
+            input_contracts, input_mode_lines, input_field_lines = {}, {}, {}
+        if out:
+            output_contracts, output_mode_lines, output_field_lines = contract_yaml(out, out_line, path, c, ("produces", "delta_fields"), graph_modes)
+        else:
+            output_contracts, output_mode_lines, output_field_lines = {}, {}, {}
+
+        for mode, fields in input_contracts.items():
+            required = fields.get("required", [])
+            line_no = input_field_lines.get((mode, "required"), input_mode_lines.get(mode, inp_line))
+            if any(GENERIC.search(x) for x in required):
+                c.error(path, line_no, "generic required input placeholder")
+        for mode, fields in output_contracts.items():
+            delta = fields.get("delta_fields", [])
+            line_no = output_field_lines.get((mode, "delta_fields"), output_mode_lines.get(mode, out_line))
+            if "assumptions_updates" in delta:
+                c.error(path, line_no, "delta_fields uses assumptions_updates; use assumption_updates (singular)")
+            bad = set(delta) - DELTA
+            if bad:
+                c.error(path, line_no, f"delta_fields outside fixed eight: {sorted(bad)}")
+
+        # Gate 17: the output contract is the executable per-mode result map.
+        # Keep this separate from Gate 15, which compares body vocabulary to graph metadata.
+        if graph_modes:
+            declarations = declared_modes[0] if declared_modes is not None else []
+            branch_names = {mode for mode, _ in declarations}
+            contract_names = set(output_contracts)
+            for mode, line_no in declarations:
+                if mode not in contract_names:
+                    c.error(path, line_no, f"Mode branches mode {mode!r} has no Output contract mode_contracts entry")
+            for mode in sorted(contract_names - branch_names):
+                c.error(path, output_mode_lines.get(mode, out_line), f"Output contract mode {mode!r} has no Mode branches declaration")
         sentences = [normalize_sentence(x) for x in proc.splitlines() if normalize_sentence(x)]
         counts_sent = Counter(sentences)
         for sent, n in counts_sent.items():

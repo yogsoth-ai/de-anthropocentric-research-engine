@@ -30,7 +30,7 @@ constraints: [study-level provenance required]
 
 ## Mode branches
 
-- `pairwise`: combine direct comparisons.
+- `pairwise`: pool directly comparable effect sizes, report sampling uncertainty and study-quality judgments with sensitivity analyses, and stop only after at least 80% of every declared pairwise floor is met.
 - `network`: compare N>=3 methods using direct and indirect evidence.
 - `cumulative`: update the estimate as studies arrive; retain order and stopping state.
 - `heterogeneity`: investigate between-study variation; preserve I2 interpretation bands.
