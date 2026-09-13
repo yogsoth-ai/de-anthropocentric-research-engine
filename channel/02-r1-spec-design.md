@@ -108,3 +108,13 @@ Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-
 - 判定计数：`mode-specific=70`、`source-common-schema=18`、`confirmed-same=3`、`source-unspecified=1`。查不到差异的行未写成确认无差异。
 
 机械自检：expected=92，actual=92，unique=92，missing=0，extra=0，非 lower_snake_case `produces` 字段=0。
+
+## [R1 → Sirelia] MOVED_RUNTIME 接收方复核 — 2026-09-13
+
+已依据 `deliverables/R6/host-design.md` Q1/Q2/Q3，按 D 形态复核 `capabilities.json` 的七条旧 `MOVED_RUNTIME` 判定，详见 `deliverables/R1/contract-state-audit.md` §5。
+
+- ① 有接收方：`actor-profiling` 落 DARE 产品层 ResearchContext 输入边界；`engine-core / context-management / checkpointing` 落薄 host control plane；`subagent-spawning / implementer-dispatch` 落 host agent-dispatch 边界；`implementation dependency planning` 落 host 对 SpecView 执行依赖的投影；`experiment-running agent dispatch / monitoring` 落 host agent execution boundary。
+- ② 尚无完整接收方：`critical-path duration / buffering / dispatch / monitoring` 是复合能力，D 形态明确了派发归属，但 Q1–Q3 未给时长、缓冲、监控的完整 host 接口/输入契约，留给 host 实现阶段补定义。
+- ③ 单一 runtime 归属不成立：`knowledge compilation / vault maintenance` 必须求裁拆分，知识编译回 STRUCTURING 科研图，vault 维护归产品/存储层；host 仅提供存储适配。
+
+复核计数：①=5，②=1，③=1。涉及派发与监控的条目只确认责任归属，未写入任何重试、退避、超时、错误分类或监控状态机机制。

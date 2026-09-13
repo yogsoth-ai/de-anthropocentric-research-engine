@@ -633,3 +633,19 @@ Please decide whether to (a) keep tactic-level union contracts and add explicit 
 Pthahnix selected **B: split every mode-bearing node's Input/Output contract by mode, without exceptions**, including modes whose output shape is identical. The normative syntax and 92-row output ledger are now in `deliverables/R1/mode-contract-format.md` and `deliverables/R1/mode-output-ledger.md`. This supersedes the option-a recommendation in §4.4.
 
 The proposed `(tactic, mode) -> jumps` graph dimension is rejected. Routing remains represented by the existing `recommended_jumps` delta field; no jump-schema change is part of this work.
+
+## 5. MOVED_RUNTIME 接收方复核（R6 D 形态，2026-09-13）
+
+依据 `deliverables/R6/host-design.md` Q1/Q2/Q3：D 形态为薄编排 host（确定性 control plane）+ agent 执行节点；host 负责事件回放、SpecView/context slice、catalog/graph 路由、checkpoint 写入，并决定是否派发 agent。Q2 将 `active_items[]` 的 `requires`/`depends_on` 纳入 SpecView；Q3 将 checkpoint 事件流落在单 Phase Markdown context 文件。下表只判断“谁接收”，不替 R6 规定实现机制。
+
+| 原 capability | 结论 | D 形态下的接收方或缺口 | 后续归属判断 |
+|---|---|---|---|
+| `actor-profiling -> research-context input contract` | ① 有接收方 | 接收方是 DARE 产品层的 ResearchContext 输入边界，由 host 在 context/preflight 前置读取并投影为 context slice。背景、资源、硬约束和意图属于输入，不是科研图节点的研究变换。 | `MOVED_PRODUCT` 可落地；不回 runtime。 |
+| `engine-core / context-management / checkpointing -> runtime/control plane` | ① 有接收方 | 接收方是薄 host control plane：Q1 的事件回放/SpecView/context slice，Q2 的确定性重建，Q3 的单 Phase Markdown checkpoint 追加与恢复入口。 | `MOVED_RUNTIME` 保持。 |
+| `subagent-spawning / implementer-dispatch -> host agent runtime` | ① 有接收方 | 接收方是 host 的 agent-dispatch 边界：host 决定是否派发，agent 只执行所选节点并回传结果 Delta，持久化仍由 host 统一接收。 | `MOVED_RUNTIME` 保持；本表不规定代理异常处理。 |
+| `knowledge compilation / vault maintenance -> artifact/storage layer` | ③ 作为单一 runtime 能力无完整接收方 | Q3 只确定 context/checkpoint 的 Markdown 载体，不能承接“知识编译”这一科研结构变换，也没有把通用 vault 维护定义为 control-plane 职责。知识编译应回 STRUCTURING 科研图；vault 维护应归 DARE 产品/存储层；host 只提供所需的存储适配，不拥有研究语义。 | **求裁：拆成 `knowledge compilation -> research graph` 与 `vault maintenance -> product/storage`，不要继续以一条 MOVED_RUNTIME 通过。** |
+| `implementation dependency planning -> host execution planner` | ① 有接收方 | 接收方是 host 对 SpecView `active_items[].requires/depends_on` 的执行依赖投影与选择。科研图仍声明科学依赖；host 只编排已声明的执行依赖，不创造或改写研究关系。 | `SPLIT` 保持：科研依赖在图/Spec，执行依赖在 runtime。 |
+| `critical-path duration / buffering / dispatch / monitoring -> host execution planner/runtime` | ② 当前无完整接收方 | D 形态明确了 host 对派发的归属，但 Q1/Q2/Q3 尚未给“时长、缓冲、监控”这一复合能力一个完整的 host 接口/输入契约。因此不能把整条当作已落地；host 实现阶段仍需补齐责任边界和记录所需输入。 | **待 host 实现阶段补定义；本审计不写具体容错、时序或监控机制。** |
+| `experiment-running agent dispatch / monitoring -> host runtime / coding agent / scheduler` | ① 有接收方 | 接收方是 host 的 agent execution boundary（必要时由 scheduler/coding-agent 适配）：host 编排实验执行节点，接收其结果并写入 checkpoint；科研 tactic 只消费结果 Delta。 | `MOVED_RUNTIME` 保持；本表只确认责任归属，不规定代理异常处理。 |
+
+复核计数：① 有接收方 5 条（其中 `actor-profiling` 属产品输入），② 尚无完整接收方 1 条，③ 单一 runtime 归属不成立 1 条（需拆分求裁）。七条均已按 D 形态重新判断，未沿用 host 未定前的 MOVED_RUNTIME 结论。

@@ -129,3 +129,11 @@ Read-only source correction: both `file-transfer/2026-08-23-22-16-dare-v4-archit
 - `problem-reframing` uses literal architecture form `stakeholder/worldview`; `biomimetic-transfer` uses literal `BioTRIZ`. Both are consistent and require no rename.
 - Result: graph additions 4 total (N2; 3 newly found in this scan), N1 body actions 4; naming mismatches 0; no body-overstated case.
 - v3 provenance check: all 19 mode tokens resolve to real `scripts/refactory_source.json` nodes. Literature modes resolve exactly to `scoping-survey` (4239), `systematic-survey` (4246), `deep-survey` (4253), `narrative-review` (4260), and `snowball` (4267). Meta-analysis modes resolve exactly to `pairwise-synthesis` (4652), `network-comparison` (4659), `cumulative-tracking` (4666), `heterogeneity-investigation` (4673), and `bias-detection` (4680). Sensitivity modes resolve to `parameter-screening`/`morris-screening`, `variance-decomposition`/`sobol-decomposition`, `systematic-perturbation`/`controlled-perturbation`, and `uncertainty-propagation`/`monte-carlo-sampling`. Experiment modes resolve to `experiment-execution-factor-level-design` (factorial), `ablation-design`, `comparison-design`, `scaling-design`, and `robustness-design` (3105-3133). Full table and line evidence are in the audit.
+
+## Provenance alias 86 条复核 — 2026-09-13
+
+- 复核文件：`deliverables/R4/provenance-alias-补录.md`，追加章节「86 条旧账复核」。
+- 检索口径：剥除 `[sop]` / `[strategy]` / `[tactic]` / `[campaign]` 后，依次检索裸名、包名-裸名、包名/裸名，再以架构 `old` 与 `capability_audit` 判定落点。
+- Alias 73：resolved 4（`anti-benchmark`→`audit-benchmark-validity → destructive-ideation → coverage-white-space-search`；`seed-concept-search`→`extract-concepts`；`synectics`→`analogical-discovery + conceptual-blending + problem-reframing`；`web-search`→`map-research-landscape`），无法推导 69。后 69 均命中 v3 源名，但无唯一 v4 落点，未把“映射查不到”写成“节点不存在”。
+- Phantom mode：原表标为「无法推导」的 12 行（C019 按 5 个 mode 展开）均已由架构 description / `capability_audit` 找到明确 provenance；C038、C052、C069、C087、C102 属原记录的「不改/不确定」项，仍不提升为 resolved。C140/C141 的 provenance 路径由架构 `capability_audit` 明示；不据此改动 graph `modes` 字段。
+- 已补真实 v3 源名与 `refactory_source.json` 行号；精确 token 缺失或多路径无法唯一归属的条目保留原标记。仅判定，未改架构 JSON 或 graph。

@@ -101,3 +101,9 @@ Each node records `modes_provenance.source=architecture.desc`, with `v3_sources`
 Gate 17 compares `## Mode branches` only with `## Output contract`'s `mode_contracts` keys. A branch without a produces contract reports at the branch line; a contract without a branch reports at the contract line. Gate 15 remains unchanged and separately compares body mode names with `registry/graph.json`.
 
 The parser uses a standard-library implementation of the locked YAML subset, including anchor expansion; no dependency was added. An in-memory positive check covered flat contracts and anchor/alias expansion, and a missing-mode negative check produced a line-addressed error. The current `--skip-threshold` run exits 1 with 136 expected errors confined to the 22 bodies that N1 has not yet converted: 44 legacy contract-shape errors plus 92 missing Output `mode_contracts` entries. All 245 mode-free bodies pass the revised contract parser. No existing gate or pass criterion was relaxed.
+
+## 2026-09-13 Runtime boundary: R6 resolution
+
+Replaced the obsolete `R6 pending` note in `v4/docs/runtime-boundary.md` with the settled Q1-Q3 boundary. The eleven existing host responsibilities remain unchanged: a thin orchestration host owns the control plane, its deterministic in-host reconstruction step rebuilds the in-memory SpecView before routing, and checkpoint persistence remains append-only Markdown rather than JSONL. The note remains host-neutral and does not select providers, tools, retry/backoff/timeout behavior, error classification, or monitoring state machines.
+
+After N1's 22 mode-contract bodies landed, `python v4/scripts/validate_graph.py` completed with exit 0 and zero warnings, including the R5 threshold gate. The R2 concept-to-resolved provenance list has not yet been delivered; no provenance status was changed in this section.

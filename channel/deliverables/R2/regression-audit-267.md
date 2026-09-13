@@ -97,3 +97,131 @@ mode 结论：32/33 PASS，1/33 REWORK。REWORK 仅针对 `pairwise` 的说明�
 | `audit-benchmark-validity` | benchmark-audit、saturation、validity-probing、coverage-mapping、protocol-forensics 的源 80% floors 与 HARD-GATE 均保留；正文改为相对 benchmark/evidence coverage，不改通过方向。 | PASS |
 
 pilot 结论：5/5 PASS。未发现编码修复或 ASCII 化导致的阈值数值、比较方向或端点变化。
+
+## Legacy 112 concept provenance lookup (2026-09-13)
+
+Scope: current `concept` lines in `channel/deliverables/{R2,R4,R5}/nodes/*/body.md`. The 115 raw lines are reduced to 112 by stripping provenance suffixes (`[...]`, `(...)`) and collapsing three exact duplicate identifiers: `combination-mapping`, `validity-envelope-mapping`, and `six-thinking-hats`. Lookup target: the 930 exact `nodes[].name` values in `scripts/refactory_source.json`; accepted variants are bare name, `package-name`, and `package/name`.
+
+Result: 71 exact matches; 41 unresolved. N2 may mark matched graph entries `resolved` with the v3 source name below. Unresolved entries remain `concept` (or `intermediate` if already so marked); no near-name substitution.
+
+### Exact matches (recommended `resolved`)
+
+| Body node id | Current marker | Body provenance | v3 source name |
+|---|---|---|---|
+| `R4/adjudicate-exchange` | `concept` | `stress-test-debate-judge <- stress-test/debate-judge` | `debate-judge` |
+| `R4/adjudicate-exchange` | `concept` | `convergence-judge-verdict <- convergence/judge-verdict` | `judge-verdict` |
+| `R4/construct-defense` | `concept` | `stress-test-debate-defender <- stress-test/debate-defender` | `debate-defender` |
+| `R4/construct-defense` | `concept` | `convergence-advocate-construction <- convergence/advocate-construction` | `advocate-construction` |
+| `R4/construct-validity-envelope` | `concept` | `deep-insight-validity-envelope-construction <- deep-insight/validity-envelope-construction` | `deep-insight-validity-envelope-construction` |
+| `R4/construct-validity-envelope` | `concept` | `stress-test-validity-envelope-construction <- stress-test/validity-envelope-construction` | `stress-test-validity-envelope-construction` |
+| `R4/detect-breakpoint` | `concept` | `stress-test-breakpoint-detection <- stress-test/breakpoint-detection` | `breakpoint-detection` |
+| `R4/detect-breakpoint` | `concept` | `deep-insight-controlled-perturbation (threshold detection output) <- deep-insight/controlled-perturbation (threshold detection output)` | `controlled-perturbation` |
+| `R4/elicit-weights` | `concept` | `hypothesis-formation-ahp-weighting <- hypothesis-formation/ahp-weighting` | `ahp-weighting` |
+| `R4/elicit-weights` | `concept` | `convergence-weight-elicitation-sop <- convergence/weight-elicitation-sop` | `weight-elicitation-sop` |
+| `R4/enumerate-combinations` | `concept` | `creative-ideation-matrix-construction <- creative-ideation/matrix-construction` | `matrix-construction` |
+| `R4/enumerate-combinations` | `concept` | `creative-ideation-recombination-generation <- creative-ideation/recombination-generation` | `recombination-generation` |
+| `R4/identify-bottleneck` | `concept` | `convergence-bottleneck-identification <- convergence/bottleneck-identification` | `convergence-bottleneck-identification` |
+| `R4/identify-bottleneck` | `concept` | `deep-insight-critical-path-identification (limiting-input interpretation) <- deep-insight/critical-path-identification (limiting-input interpretation)` | `critical-path-identification` |
+| `R5/adjudicate-exchange` | `concept` | `stress-test/debate-judge` | `debate-judge` |
+| `R5/adjudicate-exchange` | `concept` | `convergence/judge-verdict` | `judge-verdict` |
+| `R5/apply-perturbation` | `concept` | `creative-ideation/assumption-perturbation` | `creative-ideation-assumption-perturbation` |
+| `R5/challenge-assumption` | `concept` | `convergence/assumption-challenge` | `convergence-assumption-challenge` |
+| `R5/construct-defense` | `concept` | `stress-test/debate-defender` | `debate-defender` |
+| `R5/construct-defense` | `concept` | `convergence/advocate-construction` | `advocate-construction` |
+| `R5/construct-perspective-set` | `concept` | `multi-worldview-comparison` | `multi-worldview-comparison` |
+| `R5/construct-perspective-set` | `concept` | `stakeholder-objection-simulation` | `stakeholder-objection-simulation` |
+| `R5/construct-validity-envelope` | `concept` | `deep-insight/validity-envelope-construction` | `deep-insight-validity-envelope-construction` |
+| `R5/construct-validity-envelope` | `concept` | `stress-test/validity-envelope-construction` | `stress-test-validity-envelope-construction` |
+| `R5/define-criteria` | `concept` | `hypothesis-formation/scoring-matrix-construction (criteria-extraction core)` | `hypothesis-formation-scoring-matrix-construction` |
+| `R5/derive-consequences` | `concept` | `stress-test/deductive-chain` | `deductive-chain` |
+| `R5/derive-consequences` | `concept` | `deep-insight/consequence-following` | `consequence-following` |
+| `R5/design-mitigation` | `concept` | `stress-test/mitigation-design-sop` | `mitigation-design-sop` |
+| `R5/design-mitigation` | `concept` | `stress-test/re-scoring` | `re-scoring` |
+| `R5/design-mitigation` | `concept` | `convergence/removal-path` | `removal-path` |
+| `R5/detect-breakpoint` | `concept` | `stress-test/breakpoint-detection` | `breakpoint-detection` |
+| `R5/detect-breakpoint` | `concept` | `deep-insight/controlled-perturbation` | `controlled-perturbation` |
+| `R5/elicit-weights` | `concept` | `hypothesis-formation/ahp-weighting` | `ahp-weighting` |
+| `R5/elicit-weights` | `concept` | `convergence/weight-elicitation-sop` | `weight-elicitation-sop` |
+| `R5/enumerate-combinations` | `concept` | `creative-ideation/matrix-construction` | `matrix-construction` |
+| `R5/enumerate-combinations` | `concept` | `creative-ideation/recombination-generation` | `recombination-generation` |
+| `R5/evaluate-compatibility` | `concept` | `creative-ideation/consistency-pair-evaluation` | `creative-ideation-consistency-pair-evaluation` |
+| `R5/evaluate-scenario-impact` | `concept` | `convergence/portfolio-evaluation-per-scenario` | `portfolio-evaluation-per-scenario` |
+| `R5/evaluate-scenario-impact` | `concept` | `experiment-execution/scenario-impact-assessment` | `scenario-impact-assessment` |
+| `R5/evaluate-scenario-robustness` | `concept` | `experiment-execution/robustness-scoring` | `robustness-scoring` |
+| `R5/evaluate-scenario-robustness` | `concept` | `experiment-execution/strategy-robustness-testing` | `strategy-robustness-testing` |
+| `R5/evaluate-scenario-robustness` | `concept` | `convergence/portfolio-optimization/robustness-under-uncertainty` | `robustness-under-uncertainty` |
+| `R5/generate-provocation` | `concept` | `creative-ideation/po-provocation` | `po-provocation` |
+| `R5/generate-provocation` | `concept` | `deep-insight/provocation-generation` | `deep-insight-provocation-generation` |
+| `R5/generate-provocation` | `concept` | `creative-ideation/random-word-stimulus` | `random-word-stimulus` |
+| `R5/generate-subquestions` | `concept` | `hypothesis-formation/sub-question-generation` | `sub-question-generation` |
+| `R5/identify-bottleneck` | `concept` | `convergence/bottleneck-identification` | `convergence-bottleneck-identification` |
+| `R5/identify-bottleneck` | `concept` | `deep-insight/critical-path-identification` | `critical-path-identification` |
+| `R5/identify-obstacles` | `concept` | `north-star-crystallization/identify-obstacles` | `identify-obstacles` |
+| `R5/identify-obstacles` | `concept` | `experiment-execution/obstacle-identification` | `obstacle-identification` |
+| `R5/identify-variables` | `concept` | `hypothesis-formation/variable-identification` | `hypothesis-formation-variable-identification` |
+| `R5/inventory-reference-items` | `concept` | `knowledge-acquisition/benchmark-inventory` | `knowledge-acquisition-benchmark-inventory` |
+| `R5/inventory-reference-items` | `concept` | `creative-ideation/benchmark-inventory` | `creative-ideation-benchmark-inventory` |
+| `R5/map-coverage-space` | `concept` | `creative-ideation/method-problem-crossing` | `method-problem-crossing` |
+| `R5/map-coverage-space` | `concept` | `knowledge-acquisition/capability-taxonomy-mapping` | `capability-taxonomy-mapping` |
+| `R5/measure-portfolio-diversity` | `concept` | `convergence/diversity-maximization` | `diversity-maximization` |
+| `R5/measure-portfolio-diversity` | `concept` | `convergence/niche-coverage-analysis` | `niche-coverage-analysis` |
+| `R5/normalize-comparison-scale` | `concept` | `convergence/normalization` | `normalization` |
+| `R5/normalize-comparison-scale` | `concept` | `knowledge-acquisition/compute-normalization` | `compute-normalization` |
+| `R5/rotate-perspective` | `concept` | `personal-analogy` | `personal-analogy` |
+| `R5/score-object` | `concept` | `hypothesis-formation/novelty-scoring` | `hypothesis-formation-novelty-scoring` |
+| `R5/score-object` | `concept` | `deep-insight/multi-criteria-scoring` | `deep-insight-multi-criteria-scoring` |
+| `R5/score-object` | `concept` | `knowledge-structuring/novelty-scoring` | `knowledge-structuring-novelty-scoring` |
+| `R5/score-object` | `concept` | `knowledge-structuring/gap-prioritization` | `knowledge-structuring-gap-prioritization` |
+| `R5/sequence-work` | `concept` | `hypothesis-formation/answering-sequence-design` | `answering-sequence-design` |
+| `R5/surface-assumptions` | `concept` | `creative-ideation/assumption-surfacing` | `creative-ideation-assumption-surfacing` |
+| `R5/surface-assumptions` | `concept` | `deep-insight/assumption-enumeration` | `deep-insight-assumption-enumeration` |
+| `R5/surface-assumptions` | `concept` | `convergence/assumption-extraction` | `convergence-assumption-extraction` |
+| `R5/trace-causal-chain` | `concept` | `knowledge-structuring/causal-chain-query` | `causal-chain-query` |
+| `R5/trace-causal-chain` | `concept` | `experiment-execution/causal-chain-tracing` | `causal-chain-tracing` |
+| `R5/verify-evidence-independence` | `concept` | `deep-insight/cross-database-verification` | `cross-database-verification` |
+
+### No exact match (retain `concept` / `intermediate`)
+
+| Body node id | Current marker | Body provenance | Disposition |
+|---|---|---|---|
+| `R2/apply-stage-gate` | `concept` | `convergence/feasibility-assessment/stage-gate [strategy/tactic]` | retain `concept`; no exact v3 node |
+| `R2/calibrate-adversarial-confidence` | `concept` | `confidence-escalation [sop]` | retain `concept`; no exact v3 node |
+| `R2/explore-dimensional-space` | `concept` | `combination-mapping [tactic]` | retain `concept`; no exact v3 node |
+| `R2/explore-dimensional-space` | `concept` | `consistency-checking [tactic]` | retain `concept`; no exact v3 node |
+| `R2/explore-dimensional-space` | `concept` | `axis-identification [strategy]` | retain `concept`; no exact v3 node |
+| `R2/explore-dimensional-space` | `concept` | `gap-prioritization [strategy]` | retain `concept`; no exact v3 node |
+| `R2/map-validity-envelope` | `concept` | `validity-envelope-mapping [strategy]` | retain `concept`; no exact v3 node |
+| `R2/map-validity-envelope` | `concept` | `validity-envelope-construction [sop]` | retain `concept`; no exact v3 node |
+| `R4/build-domain-ontology` | `concept` | `build/domain/ontology <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/construct-argument-map` | `concept` | `construct/argument/map <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/construct-causal-model` | `concept` | `construct/causal/model <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/construct-design-matrix` | `concept` | `experiment-execution/construct-design-matrix <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/decompose-research-question` | `concept` | `decompose/research/question <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/design-randomness-protocol` | `concept` | `experiment-execution/design-randomness-protocol <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/enumerate-combinations` | `concept` | `creative-ideation-combination-generation <- creative-ideation/combination-generation` | retain `concept`; no exact v3 node |
+| `R4/estimate-sample-size` | `concept` | `experiment-execution/estimate-sample-size <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/extract-core-conflict` | `concept` | `experiment-execution/extract-core-conflict <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/falsifiability-audit` | `concept` | `falsifiability/audit <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/formulate-research-question` | `concept` | `formulate/research/question <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/identify-critical-chain` | `concept` | `experiment-execution/identify-critical-chain <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/identify-scenario-drivers` | `concept` | `experiment-execution/identify-scenario-drivers <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/list-undesirable-effects` | `concept` | `experiment-execution/list-undesirable-effects <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/map-ablation-components` | `concept` | `experiment-execution/map-ablation-components <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/optimize-design-under-budget` | `concept` | `experiment-execution/optimize-design-under-budget <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/pairwise-ranking` | `concept` | `pairwise/ranking <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/portfolio-optimization` | `concept` | `portfolio/optimization <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/predict-competitive-move` | `concept` | `experiment-execution/predict-competitive-move <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/project-future-reality` | `concept` | `experiment-execution/project-future-reality <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/quantify-resource-gap` | `concept` | `experiment-execution/quantify-resource-gap <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/select-experimental-baseline` | `concept` | `experiment-execution/select-experimental-baseline <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/select-statistical-method` | `concept` | `experiment-execution/select-statistical-method <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/specify-execution-environment` | `concept` | `experiment-execution/specify-execution-environment <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/specify-metrics` | `concept` | `experiment-execution/specify-metrics <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/specify-reproducibility-protocol` | `concept` | `experiment-execution/specify-reproducibility-protocol <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R4/verify-reproducibility` | `concept` | `experiment-execution/verify-reproducibility <- architecture semantic consolidation` | retain `concept`; no exact v3 node |
+| `R5/analyze-scaling-regime` | `concept` | `deep-insight/scaling-analysis` | retain `concept`; no exact v3 node |
+| `R5/construct-perspective-set` | `concept` | `six-thinking-hats` | retain `concept`; no exact v3 node |
+| `R5/construct-perspective-set` | `concept` | `role-storming` | retain `concept`; no exact v3 node |
+| `R5/detect-contradiction` | `concept` | `stress-test/detect-contradiction` | retain `concept`; no exact v3 node |
+| `R5/enumerate-combinations` | `concept` | `creative-ideation/combination-generation` | retain `concept`; no exact v3 node |
+| `R5/rotate-perspective` | `concept` | `perspective-rotation` | retain `concept`; no exact v3 node |
