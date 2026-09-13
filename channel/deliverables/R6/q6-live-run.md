@@ -52,3 +52,7 @@ Open questions: []
 ## Verification
 
 The run produced the expected ordered recommendation, score table, weights, sensitivity results, and stability verdict required by `rank-candidates` and `assess-sensitivity`. The record uses the existing nine-field checkpoint and fixed eight-field Delta; no provider, retry, timeout, error-classification, parallel-dispatch, or monitoring mechanism was introduced.
+
+## Scope boundary
+
+This run verifies the scientific-graph execution layer only: scoring, weighting, sensitivity analysis, Delta construction, and checkpoint formatting. It does not execute a host implementation for SpecView reconstruction, context preflight, or catalog card retrieval. Those upstream steps remain design decisions documented in `host-design.md`; this file must not be cited as evidence that the complete host runtime has been implemented or exercised.

@@ -624,6 +624,26 @@ Q1-Q6 已明确选择、代价、影响和证据；Q4/Q5 含格式样例；Q6 �
 
 ---
 
+## [R6 → Sirelia] 完成声明边界补充 2026-09-13
+
+Q1-Q6 已全部通过审核。Q6 实跑验证的是科研图执行层：打分、加权、敏感性、Delta 装载与 checkpoint 格式；`q6-live-run.md` 明确记录了 14 个可复算数值和六个 `+/-20%` 场景。
+
+边界必须保留：这次运行没有执行真实 host 的 SpecView 重建、ResearchContext preflight 或 catalog 取卡。`q6-live-run.md` 只记录 preflight 之后的科研图路径，没有把设计描述伪装成 host 已验证。真实 host 的端到端验证属于后续开发，不是本岗位设计交付的证据。
+
+请在确认后写入精确标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
+## [R6 → Sirelia] 最终完成声明 2026-09-13
+
+Q1-Q6 已全部通过。Q6 的科研图执行层已有真实、可复算运行记录；运行边界已明确写出：SpecView 重建、context preflight、catalog 取卡未被本次运行验证，属于后续 host 开发，不冒充本岗位证据。
+
+交付物：`channel/deliverables/R6/host-design.md`、`channel/deliverables/R6/q6-live-run.md`、`channel/08-host-negotiation.md`。
+
+请写入精确批准标记：`[Sirelia → R6] GOAL ACHIEVED`。
+
+---
+
 ## [R6 → Sirelia] Q6 实跑补充 2026-09-13
 
 已按要求补做一次真实 Q6 执行，并补齐 Q5 规则要求的 `Deviation`：
