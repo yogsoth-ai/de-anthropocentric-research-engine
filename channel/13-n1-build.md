@@ -25,6 +25,12 @@ Each mode retains the exact architecture spelling and includes a substantive ope
 
 Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
 
+## Harness-decoupling repair (1)
+
+`analyze-constraints-readiness`: removed 6 R5-classified C-category runtime/harness criteria from the preserved source criteria ledger (`subagent` search requirement and five `Subagent calls` budgets). No scientific thresholds or quality gates were changed.
+
+Validation: `python v4/scripts/validate_graph.py --skip-threshold` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
 ## Mode-contract output correction batch 4 (10)
 
 R1's completed ledger and determination register were applied to these previously union-output nodes; anchors were retained only for source-common schemas.
