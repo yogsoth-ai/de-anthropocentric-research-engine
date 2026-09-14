@@ -121,3 +121,9 @@ Counts remain 267 nodes, 317 calls, 157 jumps, 474 total edges, and 146 capabili
 Applied the approved split of the former `knowledge compilation / vault maintenance` capability. `knowledge compilation` is now a `FULLY_COVERED` STRUCTURING contract mapped to `build-domain-ontology / construct-causal-model / construct-argument-map`; it remains a scientific structure transformation in the research graph. `vault maintenance` is now a `MOVED_ARTIFACT` contract mapped to `product/storage layer`; it covers storage read/write adaptation only and does not assign research semantics to the host.
 
 The split increases `capabilities.json` from 146 to 147 contracts. The separate `critical-path duration / buffering / dispatch / monitoring` contract remains unchanged as `MOVED_RUNTIME`; no host implementation decision was added. Graph counts are unchanged: 267 nodes, 317 calls, 157 jumps, and 474 edges. `python v4/scripts/validate_graph.py` exits 0 with zero warnings, including the full R5 threshold gate.
+
+## 2026-09-14 Gate 16 harness-decoupling coverage fix
+
+The reported leak had a broader root cause than either proposed branch: the current validator contained no Gate 16 scan, so both lowercase and uppercase harness language passed everywhere. Gate 16 now scans every line of every `v4/skills/*/SKILL.md`, including `## Preserved source criteria ledger`, and matches `subagent`/`subagents` plus `Pause and report partial` case-insensitively. Each match is an error with its file and line number; multiple forbidden phrases on one line produce one error.
+
+No body or existing gate was changed. The expected validation result is six errors at `analyze-constraints-readiness/SKILL.md:140,145,153,158,162,166` and exit 1 pending R5's classification and N1's body repair.

@@ -28,6 +28,7 @@ SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
 PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
 CJK_OR_REPLACEMENT = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002fa1f\ufffd]")
 NON_ASCII_TYPO = re.compile(r"[≥≤≠≈±×→←—–“”‘’•…]")
+HARNESS_CONTROL = re.compile(r"\bsubagents?\b|\bpause\s+and\s+report\s+partial\b", re.I)
 
 
 class Checker:
@@ -304,6 +305,12 @@ def check_text_encoding(path: Path, checker: Checker) -> None:
             checker.error(path, no, "non-ASCII mathematical/typographic symbol; use ASCII equivalents (>=, <=, +/-, *, ->, <-, - or ...)")
 
 
+def check_harness_decoupling(path: Path, lines: list[str], checker: Checker) -> None:
+    for no, line in enumerate(lines, 1):
+        if HARNESS_CONTROL.search(line):
+            checker.error(path, no, "runtime/harness control is not allowed in v4 skill bodies")
+
+
 def run_r5_against_v4() -> tuple[int, str, str]:
     """Run unchanged R5 against its own ledgers, adding only missing v4 bodies."""
     with tempfile.TemporaryDirectory(prefix="v4-r5-") as temp_name:
@@ -382,6 +389,7 @@ def main() -> int:
         if not path.exists(): continue
         check_text_encoding(path, c)
         lines, sections = lines_and_sections(path)
+        check_harness_decoupling(path, lines, c)
         fm, fm_end = frontmatter(lines)
         if set(fm) != {"name", "description"}:
             c.error(path, 1, f"frontmatter keys must be name + description, got {sorted(fm)}")
