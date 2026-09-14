@@ -127,3 +127,7 @@ The split increases `capabilities.json` from 146 to 147 contracts. The separate 
 The reported leak had a broader root cause than either proposed branch: the current validator contained no Gate 16 scan, so both lowercase and uppercase harness language passed everywhere. Gate 16 now scans every line of every `v4/skills/*/SKILL.md`, including `## Preserved source criteria ledger`, and matches `subagent`/`subagents` plus `Pause and report partial` case-insensitively. Each match is an error with its file and line number; multiple forbidden phrases on one line produce one error.
 
 No body or existing gate was changed. The expected validation result is six errors at `analyze-constraints-readiness/SKILL.md:140,145,153,158,162,166` and exit 1 pending R5's classification and N1's body repair.
+
+## 2026-09-14 Gate 16 token-budget coverage
+
+Gate 16 now also rejects `context tokens`, `token budget`, `spawn fresh`, `summarize and spawn`, and token-scale limits matching `<=NNk`, case-insensitively. The scan remains line-based over the complete body, so escaped ledger separators such as `\\|` do not affect detection.

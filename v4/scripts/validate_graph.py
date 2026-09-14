@@ -28,7 +28,12 @@ SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
 PROV_SUFFIX = re.compile(r"\s*(?:\([^)]*\)|\[[^]]*\])\s*$")
 CJK_OR_REPLACEMENT = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002fa1f\ufffd]")
 NON_ASCII_TYPO = re.compile(r"[≥≤≠≈±×→←—–“”‘’•…]")
-HARNESS_CONTROL = re.compile(r"\bsubagents?\b|\bpause\s+and\s+report\s+partial\b", re.I)
+HARNESS_CONTROL = re.compile(
+    r"\bsubagents?\b|\bpause\s+and\s+report\s+partial\b|"
+    r"\bcontext\s+tokens\b|\btoken\s+budget\b|\bspawn\s+fresh\b|"
+    r"\bsummarize\s+and\s+spawn\b|<=\s*\d+\s*k\b",
+    re.I,
+)
 
 
 class Checker:
