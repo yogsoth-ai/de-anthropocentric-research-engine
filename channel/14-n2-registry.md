@@ -106,4 +106,12 @@ The parser uses a standard-library implementation of the locked YAML subset, inc
 
 Replaced the obsolete `R6 pending` note in `v4/docs/runtime-boundary.md` with the settled Q1-Q3 boundary. The eleven existing host responsibilities remain unchanged: a thin orchestration host owns the control plane, its deterministic in-host reconstruction step rebuilds the in-memory SpecView before routing, and checkpoint persistence remains append-only Markdown rather than JSONL. The note remains host-neutral and does not select providers, tools, retry/backoff/timeout behavior, error classification, or monitoring state machines.
 
-After N1's 22 mode-contract bodies landed, `python v4/scripts/validate_graph.py` completed with exit 0 and zero warnings, including the R5 threshold gate. The R2 concept-to-resolved provenance list has not yet been delivered; no provenance status was changed in this section.
+After N1's 22 mode-contract bodies landed, `python v4/scripts/validate_graph.py` completed with exit 0 and zero warnings, including the R5 threshold gate.
+
+## 2026-09-14 R2 provenance resolution and R4 alias adjudication
+
+Applied R2's `regression-audit-267.md` ledger to `v4/registry/graph.json`. All 73 exact-match audit rows are represented as `resolved` and carry their exact v3 `nodes[].name` in `provenance_sources`; repeated v4 body nodes account for 59 unique graph source records. The 39 no-match rows remain `concept` or `intermediate`, with no near-name substitution.
+
+R2's body-side ledger remains separate from R4's old-alias ledger. Added only R4's four adjudicated aliases (`anti-benchmark`, `seed-concept-search`, `synectics`, and `web-search`) to `provenance_aliases`; the other 69 remain unassigned because v3 existence does not establish a unique v4 destination. The same narrow R2 source map and R4 four-alias list are encoded in `v4/scripts/build_registry.py` so regeneration cannot discard them.
+
+Counts remain 267 nodes, 317 calls, 157 jumps, 474 total edges, and 146 capability contracts. `python v4/scripts/validate_graph.py` completed with exit 0 and zero warnings, including the R5 threshold gate. No validator gate was changed or relaxed.

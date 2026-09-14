@@ -484,6 +484,9 @@
       "provenance_status": {
         "falsifiability-audit [tactic]": "resolved",
         "hypothesis-operationalization [strategy, audit portion]": "resolved"
+      },
+      "provenance_sources": {
+        "falsifiability/audit <- architecture semantic consolidation": "falsifiability-audit"
       }
     },
     {
@@ -669,10 +672,22 @@
         "source": "architecture.desc",
         "reason": "Architecture desc declares four modes; R4 audit resolves each to v3 source nodes.",
         "v3_sources": {
-          "Morris": ["parameter-screening (strategy):2384", "morris-screening (SOP):2853"],
-          "Sobol": ["variance-decomposition (strategy):2391", "sobol-decomposition (SOP):2860"],
-          "perturbation": ["systematic-perturbation (tactic):2510", "controlled-perturbation (SOP):2811"],
-          "Monte-Carlo": ["uncertainty-propagation (strategy):2405", "monte-carlo-sampling (SOP):2909"]
+          "Morris": [
+            "parameter-screening (strategy):2384",
+            "morris-screening (SOP):2853"
+          ],
+          "Sobol": [
+            "variance-decomposition (strategy):2391",
+            "sobol-decomposition (SOP):2860"
+          ],
+          "perturbation": [
+            "systematic-perturbation (tactic):2510",
+            "controlled-perturbation (SOP):2811"
+          ],
+          "Monte-Carlo": [
+            "uncertainty-propagation (strategy):2405",
+            "monte-carlo-sampling (SOP):2909"
+          ]
         }
       },
       "type": "tactic",
@@ -1018,6 +1033,9 @@
         "collective-adjudication [strategy]": "resolved",
         "adaptive-pair-selection [tactic]": "resolved",
         "consistency-audit-loop [tactic]": "resolved"
+      },
+      "provenance_sources": {
+        "pairwise/ranking <- architecture semantic consolidation": "pairwise-ranking"
       }
     },
     {
@@ -1176,11 +1194,21 @@
         "source": "architecture.desc",
         "reason": "Architecture desc declares five execution modes; R4 audit resolves each to a v3 survey strategy.",
         "v3_sources": {
-          "scoping": ["scoping-survey (strategy):4239"],
-          "systematic": ["systematic-survey (strategy):4246"],
-          "deep": ["deep-survey (strategy):4253"],
-          "narrative": ["narrative-review (strategy):4260"],
-          "snowball": ["snowball (strategy):4267"]
+          "scoping": [
+            "scoping-survey (strategy):4239"
+          ],
+          "systematic": [
+            "systematic-survey (strategy):4246"
+          ],
+          "deep": [
+            "deep-survey (strategy):4253"
+          ],
+          "narrative": [
+            "narrative-review (strategy):4260"
+          ],
+          "snowball": [
+            "snowball (strategy):4267"
+          ]
         }
       },
       "type": "tactic",
@@ -1549,11 +1577,21 @@
         "source": "architecture.desc",
         "reason": "Architecture desc declares five design modes; R4 audit resolves each to a v3 design strategy.",
         "v3_sources": {
-          "factorial": ["experiment-execution-factor-level-design (strategy):3105"],
-          "ablation": ["ablation-design (strategy):3112"],
-          "comparison": ["comparison-design (strategy):3119"],
-          "scaling": ["scaling-design (strategy):3126"],
-          "robustness": ["robustness-design (strategy):3133"]
+          "factorial": [
+            "experiment-execution-factor-level-design (strategy):3105"
+          ],
+          "ablation": [
+            "ablation-design (strategy):3112"
+          ],
+          "comparison": [
+            "comparison-design (strategy):3119"
+          ],
+          "scaling": [
+            "scaling-design (strategy):3126"
+          ],
+          "robustness": [
+            "robustness-design (strategy):3133"
+          ]
         }
       },
       "type": "tactic",
@@ -1975,6 +2013,9 @@
         "convergence/criterion-definition": "resolved",
         "hypothesis-formation/scoring-matrix-construction (criteria-extraction core)": "resolved",
         "Pass4/define-success-criteria [decomposed capability]": "intermediate"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/scoring-matrix-construction (criteria-extraction core)": "hypothesis-formation-scoring-matrix-construction"
       }
     },
     {
@@ -2002,6 +2043,10 @@
       "provenance_status": {
         "hypothesis-formation/ahp-weighting": "resolved",
         "convergence/weight-elicitation-sop": "resolved"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/ahp-weighting": "ahp-weighting",
+        "convergence/weight-elicitation-sop": "weight-elicitation-sop"
       }
     },
     {
@@ -2087,6 +2132,9 @@
         "hypothesis-formation/variable-identification": "resolved",
         "stress-test/factor-enumeration": "resolved",
         "creative-ideation/parameter-identification": "resolved"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/variable-identification": "hypothesis-formation-variable-identification"
       }
     },
     {
@@ -2346,6 +2394,9 @@
       ],
       "provenance_status": {
         "hypothesis-formation/sub-question-generation": "resolved"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/sub-question-generation": "sub-question-generation"
       }
     },
     {
@@ -2400,6 +2451,9 @@
       ],
       "provenance_status": {
         "hypothesis-formation/answering-sequence-design": "resolved"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/answering-sequence-design": "answering-sequence-design"
       }
     },
     {
@@ -2426,6 +2480,9 @@
       ],
       "provenance_status": {
         "deep-insight/cross-database-verification": "resolved"
+      },
+      "provenance_sources": {
+        "deep-insight/cross-database-verification": "cross-database-verification"
       }
     },
     {
@@ -2487,6 +2544,11 @@
         "deep-insight/assumption-enumeration": "resolved",
         "convergence/assumption-extraction": "resolved",
         "stress-test/key-assumptions-check": "resolved"
+      },
+      "provenance_sources": {
+        "creative-ideation/assumption-surfacing": "creative-ideation-assumption-surfacing",
+        "deep-insight/assumption-enumeration": "deep-insight-assumption-enumeration",
+        "convergence/assumption-extraction": "convergence-assumption-extraction"
       }
     },
     {
@@ -2542,6 +2604,9 @@
         "convergence/assumption-challenge": "resolved",
         "creative-ideation/benchmark-challenge": "resolved",
         "deep-insight/counter-assumption-generation": "resolved"
+      },
+      "provenance_sources": {
+        "convergence/assumption-challenge": "convergence-assumption-challenge"
       }
     },
     {
@@ -2576,6 +2641,9 @@
         "creative-ideation/assumption-perturbation": "resolved",
         "creative-ideation/ablation-execution": "resolved",
         "stress-test/single-factor-removal": "resolved"
+      },
+      "provenance_sources": {
+        "creative-ideation/assumption-perturbation": "creative-ideation-assumption-perturbation"
       }
     },
     {
@@ -2683,6 +2751,10 @@
       "provenance_status": {
         "stress-test/breakpoint-detection": "resolved",
         "deep-insight/controlled-perturbation (threshold detection output)": "resolved"
+      },
+      "provenance_sources": {
+        "stress-test/breakpoint-detection": "breakpoint-detection",
+        "deep-insight/controlled-perturbation (threshold detection output)": "controlled-perturbation"
       }
     },
     {
@@ -2710,6 +2782,10 @@
       "provenance_status": {
         "deep-insight/validity-envelope-construction": "resolved",
         "stress-test/validity-envelope-construction": "resolved"
+      },
+      "provenance_sources": {
+        "deep-insight/validity-envelope-construction": "deep-insight-validity-envelope-construction",
+        "stress-test/validity-envelope-construction": "stress-test-validity-envelope-construction"
       }
     },
     {
@@ -2871,6 +2947,10 @@
       "provenance_status": {
         "stress-test/debate-defender": "resolved",
         "convergence/advocate-construction": "resolved"
+      },
+      "provenance_sources": {
+        "stress-test/debate-defender": "debate-defender",
+        "convergence/advocate-construction": "advocate-construction"
       }
     },
     {
@@ -2898,6 +2978,10 @@
       "provenance_status": {
         "stress-test/debate-judge": "resolved",
         "convergence/judge-verdict": "resolved"
+      },
+      "provenance_sources": {
+        "stress-test/debate-judge": "debate-judge",
+        "convergence/judge-verdict": "judge-verdict"
       }
     },
     {
@@ -3161,6 +3245,10 @@
       "provenance_status": {
         "stress-test/deductive-chain": "resolved",
         "deep-insight/consequence-following": "resolved"
+      },
+      "provenance_sources": {
+        "stress-test/deductive-chain": "deductive-chain",
+        "deep-insight/consequence-following": "consequence-following"
       }
     },
     {
@@ -3308,6 +3396,10 @@
         "creative-ideation/matrix-construction": "resolved",
         "creative-ideation/recombination-generation": "resolved",
         "creative-ideation/combination-generation": "concept"
+      },
+      "provenance_sources": {
+        "creative-ideation/matrix-construction": "matrix-construction",
+        "creative-ideation/recombination-generation": "recombination-generation"
       }
     },
     {
@@ -3340,6 +3432,9 @@
         "creative-ideation/consistency-pair-evaluation": "resolved",
         "creative-ideation/solution-space-reduction": "resolved",
         "creative-ideation/combination-evaluation": "resolved"
+      },
+      "provenance_sources": {
+        "creative-ideation/consistency-pair-evaluation": "creative-ideation-consistency-pair-evaluation"
       }
     },
     {
@@ -3371,6 +3466,11 @@
         "creative-ideation/po-provocation": "resolved",
         "deep-insight/provocation-generation": "resolved",
         "creative-ideation/random-word-stimulus": "resolved"
+      },
+      "provenance_sources": {
+        "creative-ideation/po-provocation": "po-provocation",
+        "deep-insight/provocation-generation": "deep-insight-provocation-generation",
+        "creative-ideation/random-word-stimulus": "random-word-stimulus"
       }
     },
     {
@@ -3756,6 +3856,10 @@
       "provenance_status": {
         "convergence/bottleneck-identification": "resolved",
         "deep-insight/critical-path-identification (limiting-input interpretation)": "resolved"
+      },
+      "provenance_sources": {
+        "convergence/bottleneck-identification": "convergence-bottleneck-identification",
+        "deep-insight/critical-path-identification (limiting-input interpretation)": "critical-path-identification"
       }
     },
     {
@@ -3985,6 +4089,10 @@
       "provenance_status": {
         "north-star-crystallization/identify-obstacles": "resolved",
         "experiment-execution/obstacle-identification": "resolved"
+      },
+      "provenance_sources": {
+        "north-star-crystallization/identify-obstacles": "identify-obstacles",
+        "experiment-execution/obstacle-identification": "obstacle-identification"
       }
     },
     {
@@ -4984,6 +5092,10 @@
       "provenance_status": {
         "knowledge-structuring/causal-chain-query": "resolved",
         "experiment-execution/causal-chain-tracing": "resolved"
+      },
+      "provenance_sources": {
+        "knowledge-structuring/causal-chain-query": "causal-chain-query",
+        "experiment-execution/causal-chain-tracing": "causal-chain-tracing"
       }
     },
     {
@@ -5735,6 +5847,11 @@
         "convergence/removal-path": "resolved",
         "Pass3/design-mitigation": "intermediate",
         "Pass3/design-removal-path": "intermediate"
+      },
+      "provenance_sources": {
+        "stress-test/mitigation-design-sop": "mitigation-design-sop",
+        "stress-test/re-scoring": "re-scoring",
+        "convergence/removal-path": "removal-path"
       }
     },
     {
@@ -5773,6 +5890,10 @@
         "experiment-execution/scenario-impact-assessment": "resolved",
         "Pass3/evaluate-scenario": "intermediate",
         "Pass3/assess-scenario-impact": "intermediate"
+      },
+      "provenance_sources": {
+        "convergence/portfolio-evaluation-per-scenario": "portfolio-evaluation-per-scenario",
+        "experiment-execution/scenario-impact-assessment": "scenario-impact-assessment"
       }
     },
     {
@@ -6082,6 +6203,10 @@
         "knowledge-acquisition/capability-taxonomy-mapping": "resolved",
         "Pass3/map-method-problem-space": "intermediate",
         "Pass3/map-capability-coverage": "intermediate"
+      },
+      "provenance_sources": {
+        "creative-ideation/method-problem-crossing": "method-problem-crossing",
+        "knowledge-acquisition/capability-taxonomy-mapping": "capability-taxonomy-mapping"
       }
     },
     {
@@ -6214,6 +6339,10 @@
         "Pass4/normalize-scores": "intermediate",
         "knowledge-acquisition/compute-normalization": "resolved",
         "Pass4/normalize-compute-budget": "intermediate"
+      },
+      "provenance_sources": {
+        "convergence/normalization": "normalization",
+        "knowledge-acquisition/compute-normalization": "compute-normalization"
       }
     },
     {
@@ -6289,6 +6418,12 @@
         "Pass4/score-claim-strength": "intermediate",
         "north-star-crystallization/assess-obstacle-severity": "resolved",
         "Pass4/assess-obstacle-severity": "resolved"
+      },
+      "provenance_sources": {
+        "hypothesis-formation/novelty-scoring": "hypothesis-formation-novelty-scoring",
+        "deep-insight/multi-criteria-scoring": "deep-insight-multi-criteria-scoring",
+        "knowledge-structuring/novelty-scoring": "knowledge-structuring-novelty-scoring",
+        "knowledge-structuring/gap-prioritization [strategy]": "knowledge-structuring-gap-prioritization"
       }
     },
     {
@@ -6327,6 +6462,10 @@
         "Pass4/inventory-benchmarks": "intermediate",
         "creative-ideation/benchmark-inventory": "resolved",
         "Pass4/inventory-known-solutions": "intermediate"
+      },
+      "provenance_sources": {
+        "knowledge-acquisition/benchmark-inventory": "knowledge-acquisition-benchmark-inventory",
+        "creative-ideation/benchmark-inventory": "creative-ideation-benchmark-inventory"
       }
     },
     {
@@ -6430,6 +6569,10 @@
       "provenance_status": {
         "convergence/diversity-maximization [strategy]": "resolved",
         "convergence/niche-coverage-analysis [tactic]": "resolved"
+      },
+      "provenance_sources": {
+        "convergence/diversity-maximization [strategy]": "diversity-maximization",
+        "convergence/niche-coverage-analysis [tactic]": "niche-coverage-analysis"
       }
     },
     {
@@ -6566,6 +6709,10 @@
         "six-thinking-hats [strategy]": "intermediate",
         "role-storming [strategy]": "intermediate",
         "stakeholder-objection-simulation [strategy]": "resolved"
+      },
+      "provenance_sources": {
+        "multi-worldview-comparison [tactic]": "multi-worldview-comparison",
+        "stakeholder-objection-simulation [strategy]": "stakeholder-objection-simulation"
       }
     },
     {
@@ -6596,6 +6743,9 @@
         "perspective-rotation [tactic]": "concept",
         "six-thinking-hats [strategy]": "intermediate",
         "personal-analogy [synectics tactic]": "resolved"
+      },
+      "provenance_sources": {
+        "personal-analogy [synectics tactic]": "personal-analogy"
       }
     },
     {
@@ -7904,6 +8054,11 @@
         "convergence/portfolio-optimization/robustness-under-uncertainty [strategy]": "resolved",
         "Pass8/score-scenario-robustness": "intermediate",
         "Pass8/evaluate-regret-robustness": "intermediate"
+      },
+      "provenance_sources": {
+        "experiment-execution/robustness-scoring": "robustness-scoring",
+        "experiment-execution/strategy-robustness-testing [tactic]": "strategy-robustness-testing",
+        "convergence/portfolio-optimization/robustness-under-uncertainty [strategy]": "robustness-under-uncertainty"
       }
     }
   ],
@@ -12651,6 +12806,32 @@
       "type": "jump",
       "source": "design-experiment",
       "target": "analyze-experiment-results"
+    }
+  ],
+  "provenance_aliases": [
+    {
+      "v3_id": "anti-benchmark",
+      "v4_id": "audit-benchmark-validity",
+      "compression_type": "many-to-1",
+      "notes": "R4 resolved alias; capability-audit chain continues through destructive-ideation and coverage-white-space-search."
+    },
+    {
+      "v3_id": "seed-concept-search",
+      "v4_id": "extract-concepts",
+      "compression_type": "many-to-1",
+      "notes": "R4 resolved alias; mapped to extract-concepts."
+    },
+    {
+      "v3_id": "synectics",
+      "v4_id": "analogical-discovery",
+      "compression_type": "many-to-1",
+      "notes": "R4 resolved alias; capability-audit chain also covers conceptual-blending and problem-reframing perspective-shift."
+    },
+    {
+      "v3_id": "web-search",
+      "v4_id": "map-research-landscape",
+      "compression_type": "many-to-1",
+      "notes": "R4 resolved alias; broad/deep web-search imports are covered by map-research-landscape."
     }
   ],
   "counts": {

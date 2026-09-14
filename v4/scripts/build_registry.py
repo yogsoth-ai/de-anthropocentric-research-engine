@@ -66,6 +66,46 @@ DESC_MODE_OVERRIDES = {
         },
     },
 }
+R2_PROVENANCE_SOURCES = {
+    "falsifiability-audit": {"falsifiability/audit <- architecture semantic consolidation": "falsifiability-audit"},
+    "pairwise-ranking": {"pairwise/ranking <- architecture semantic consolidation": "pairwise-ranking"},
+    "define-criteria": {"hypothesis-formation/scoring-matrix-construction (criteria-extraction core)": "hypothesis-formation-scoring-matrix-construction"},
+    "elicit-weights": {"hypothesis-formation/ahp-weighting": "ahp-weighting", "convergence/weight-elicitation-sop": "weight-elicitation-sop"},
+    "identify-variables": {"hypothesis-formation/variable-identification": "hypothesis-formation-variable-identification"},
+    "generate-subquestions": {"hypothesis-formation/sub-question-generation": "sub-question-generation"},
+    "sequence-work": {"hypothesis-formation/answering-sequence-design": "answering-sequence-design"},
+    "verify-evidence-independence": {"deep-insight/cross-database-verification": "cross-database-verification"},
+    "surface-assumptions": {"creative-ideation/assumption-surfacing": "creative-ideation-assumption-surfacing", "deep-insight/assumption-enumeration": "deep-insight-assumption-enumeration", "convergence/assumption-extraction": "convergence-assumption-extraction"},
+    "challenge-assumption": {"convergence/assumption-challenge": "convergence-assumption-challenge"},
+    "apply-perturbation": {"creative-ideation/assumption-perturbation": "creative-ideation-assumption-perturbation"},
+    "detect-breakpoint": {"stress-test/breakpoint-detection": "breakpoint-detection", "deep-insight/controlled-perturbation (threshold detection output)": "controlled-perturbation"},
+    "construct-validity-envelope": {"deep-insight/validity-envelope-construction": "deep-insight-validity-envelope-construction", "stress-test/validity-envelope-construction": "stress-test-validity-envelope-construction"},
+    "construct-defense": {"stress-test/debate-defender": "debate-defender", "convergence/advocate-construction": "advocate-construction"},
+    "adjudicate-exchange": {"stress-test/debate-judge": "debate-judge", "convergence/judge-verdict": "judge-verdict"},
+    "derive-consequences": {"stress-test/deductive-chain": "deductive-chain", "deep-insight/consequence-following": "consequence-following"},
+    "enumerate-combinations": {"creative-ideation/matrix-construction": "matrix-construction", "creative-ideation/recombination-generation": "recombination-generation"},
+    "evaluate-compatibility": {"creative-ideation/consistency-pair-evaluation": "creative-ideation-consistency-pair-evaluation"},
+    "generate-provocation": {"creative-ideation/po-provocation": "po-provocation", "deep-insight/provocation-generation": "deep-insight-provocation-generation", "creative-ideation/random-word-stimulus": "random-word-stimulus"},
+    "identify-bottleneck": {"convergence/bottleneck-identification": "convergence-bottleneck-identification", "deep-insight/critical-path-identification (limiting-input interpretation)": "critical-path-identification"},
+    "identify-obstacles": {"north-star-crystallization/identify-obstacles": "identify-obstacles", "experiment-execution/obstacle-identification": "obstacle-identification"},
+    "trace-causal-chain": {"knowledge-structuring/causal-chain-query": "causal-chain-query", "experiment-execution/causal-chain-tracing": "causal-chain-tracing"},
+    "design-mitigation": {"stress-test/mitigation-design-sop": "mitigation-design-sop", "stress-test/re-scoring": "re-scoring", "convergence/removal-path": "removal-path"},
+    "evaluate-scenario-impact": {"convergence/portfolio-evaluation-per-scenario": "portfolio-evaluation-per-scenario", "experiment-execution/scenario-impact-assessment": "scenario-impact-assessment"},
+    "map-coverage-space": {"creative-ideation/method-problem-crossing": "method-problem-crossing", "knowledge-acquisition/capability-taxonomy-mapping": "capability-taxonomy-mapping"},
+    "normalize-comparison-scale": {"convergence/normalization": "normalization", "knowledge-acquisition/compute-normalization": "compute-normalization"},
+    "score-object": {"hypothesis-formation/novelty-scoring": "hypothesis-formation-novelty-scoring", "deep-insight/multi-criteria-scoring": "deep-insight-multi-criteria-scoring", "knowledge-structuring/novelty-scoring": "knowledge-structuring-novelty-scoring", "knowledge-structuring/gap-prioritization [strategy]": "knowledge-structuring-gap-prioritization"},
+    "inventory-reference-items": {"knowledge-acquisition/benchmark-inventory": "knowledge-acquisition-benchmark-inventory", "creative-ideation/benchmark-inventory": "creative-ideation-benchmark-inventory"},
+    "measure-portfolio-diversity": {"convergence/diversity-maximization [strategy]": "diversity-maximization", "convergence/niche-coverage-analysis [tactic]": "niche-coverage-analysis"},
+    "construct-perspective-set": {"multi-worldview-comparison [tactic]": "multi-worldview-comparison", "stakeholder-objection-simulation [strategy]": "stakeholder-objection-simulation"},
+    "rotate-perspective": {"personal-analogy [synectics tactic]": "personal-analogy"},
+    "evaluate-scenario-robustness": {"experiment-execution/robustness-scoring": "robustness-scoring", "experiment-execution/strategy-robustness-testing [tactic]": "strategy-robustness-testing", "convergence/portfolio-optimization/robustness-under-uncertainty [strategy]": "robustness-under-uncertainty"},
+}
+R4_RESOLVED_ALIASES = [
+    {"v3_id": "anti-benchmark", "v4_id": "audit-benchmark-validity", "compression_type": "many-to-1", "notes": "R4 resolved alias; capability-audit chain continues through destructive-ideation and coverage-white-space-search."},
+    {"v3_id": "seed-concept-search", "v4_id": "extract-concepts", "compression_type": "many-to-1", "notes": "R4 resolved alias; mapped to extract-concepts."},
+    {"v3_id": "synectics", "v4_id": "analogical-discovery", "compression_type": "many-to-1", "notes": "R4 resolved alias; capability-audit chain also covers conceptual-blending and problem-reframing perspective-shift."},
+    {"v3_id": "web-search", "v4_id": "map-research-landscape", "compression_type": "many-to-1", "notes": "R4 resolved alias; broad/deep web-search imports are covered by map-research-landscape."},
+]
 
 
 def provenance_variants(value: str) -> set[str]:
@@ -108,6 +148,12 @@ def provenance_statuses(nodes: list[dict]) -> None:
             else:
                 statuses[old] = "concept"
         node["provenance_status"] = statuses
+        sources = R2_PROVENANCE_SOURCES.get(node["id"])
+        if sources:
+            node["provenance_sources"] = sources
+            for old in sources:
+                if old in statuses:
+                    statuses[old] = "resolved"
 
 
 def main() -> None:
@@ -141,6 +187,7 @@ def main() -> None:
         "edges": calls + jumps,
         "calls": calls,
         "jumps": jumps,
+        "provenance_aliases": R4_RESOLVED_ALIASES,
         "counts": {
             "nodes": len(nodes),
             "tactics": len(source["tactics"]),
