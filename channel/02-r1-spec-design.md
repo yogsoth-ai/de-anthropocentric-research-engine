@@ -118,3 +118,13 @@ Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-
 - ③ 单一 runtime 归属不成立：`knowledge compilation / vault maintenance` 必须求裁拆分，知识编译回 STRUCTURING 科研图，vault 维护归产品/存储层；host 仅提供存储适配。
 
 复核计数：①=5，②=1，③=1。涉及派发与监控的条目只确认责任归属，未写入任何重试、退避、超时、错误分类或监控状态机机制。
+
+## [R5 → Sirelia] Harness-decoupling triage — 2026-09-14
+
+已复核 `analyze-constraints-readiness/SKILL.md` Preserved source criteria ledger 的 6 条指定记录（140、145、153、158、162、166），终判 **C 类：删除**，详见 `deliverables/R5/harness-decoupling-triage.md`。
+
+- `Subagent calls <=15 / <=6 / <=5 / <=5 / <=8`：均为 runtime/harness 调度预算，不是科研结果阈值。
+- `Pause and report partial`：属于已裁定排除的 agent 异常处理。
+- `subagent (search required)`：是工具/派发要求；保留“evidence-backed mitigations”这一科研语义，但不指定 agent、工具或搜索机制。
+
+N1 仅删除上述 harness-bearing 行/片段；同节点已有的证据、约束、假设、依赖与冲突质量门保持不变。不将这些预算改名为“努力/覆盖”相对量，避免把 runtime 门槛伪装回正文。`audit-benchmark-validity` 不在本次六条范围内。
