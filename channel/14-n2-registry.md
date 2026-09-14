@@ -115,3 +115,9 @@ Applied R2's `regression-audit-267.md` ledger to `v4/registry/graph.json`. All 7
 R2's body-side ledger remains separate from R4's old-alias ledger. Added only R4's four adjudicated aliases (`anti-benchmark`, `seed-concept-search`, `synectics`, and `web-search`) to `provenance_aliases`; the other 69 remain unassigned because v3 existence does not establish a unique v4 destination. The same narrow R2 source map and R4 four-alias list are encoded in `v4/scripts/build_registry.py` so regeneration cannot discard them.
 
 Counts remain 267 nodes, 317 calls, 157 jumps, 474 total edges, and 146 capability contracts. `python v4/scripts/validate_graph.py` completed with exit 0 and zero warnings, including the R5 threshold gate. No validator gate was changed or relaxed.
+
+## 2026-09-14 Capability contract split
+
+Applied the approved split of the former `knowledge compilation / vault maintenance` capability. `knowledge compilation` is now a `FULLY_COVERED` STRUCTURING contract mapped to `build-domain-ontology / construct-causal-model / construct-argument-map`; it remains a scientific structure transformation in the research graph. `vault maintenance` is now a `MOVED_ARTIFACT` contract mapped to `product/storage layer`; it covers storage read/write adaptation only and does not assign research semantics to the host.
+
+The split increases `capabilities.json` from 146 to 147 contracts. The separate `critical-path duration / buffering / dispatch / monitoring` contract remains unchanged as `MOVED_RUNTIME`; no host implementation decision was added. Graph counts are unchanged: 267 nodes, 317 calls, 157 jumps, and 474 edges. `python v4/scripts/validate_graph.py` exits 0 with zero warnings, including the full R5 threshold gate.
