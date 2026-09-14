@@ -1,7 +1,7 @@
 {
   "schema": "dare-v4-capabilities-1",
   "source": "D:\\YOGSOTH-AI\\file-transfer\\2026-08-23-22-16-dare-v4-architecture.json",
-  "count": 146,
+  "count": 147,
   "contracts": [
     {
       "old_capability": "cold-start / warm-start / hot-start",
@@ -592,11 +592,18 @@
       "rationale": "Claims, assumptions, evidence, critique retained."
     },
     {
-      "old_capability": "knowledge compilation / vault maintenance",
+      "old_capability": "knowledge compilation",
       "family": "STRUCTURING",
-      "status": "MOVED_RUNTIME",
-      "new_path": "artifact/storage layer",
-      "rationale": "Scientific structure remains; compilation/storage plumbing leaves cognition graph."
+      "status": "FULLY_COVERED",
+      "new_path": "build-domain-ontology / construct-causal-model / construct-argument-map",
+      "rationale": "Scientific knowledge compilation is a research-structure transformation retained in the graph."
+    },
+    {
+      "old_capability": "vault maintenance",
+      "family": "STRUCTURING",
+      "status": "MOVED_ARTIFACT",
+      "new_path": "product/storage layer",
+      "rationale": "Vault read/write maintenance is storage plumbing; host provides storage adaptation without owning research semantics."
     },
     {
       "old_capability": "factorial / ablation / metric / sample-size / statistics design",

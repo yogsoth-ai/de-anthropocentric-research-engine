@@ -25,7 +25,7 @@
     "call_edges": 317,
     "jump_edges": 157,
     "total_edges": 474,
-    "capability_contracts": 146
+    "capability_contracts": 147
   },
   "nodes": [
     {
@@ -12841,6 +12841,6 @@
     "calls": 317,
     "jumps": 157,
     "edges": 474,
-    "capability_contracts": 146
+    "capability_contracts": 147
   }
 }

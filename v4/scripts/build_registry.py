@@ -106,6 +106,32 @@ R4_RESOLVED_ALIASES = [
     {"v3_id": "synectics", "v4_id": "analogical-discovery", "compression_type": "many-to-1", "notes": "R4 resolved alias; capability-audit chain also covers conceptual-blending and problem-reframing perspective-shift."},
     {"v3_id": "web-search", "v4_id": "map-research-landscape", "compression_type": "many-to-1", "notes": "R4 resolved alias; broad/deep web-search imports are covered by map-research-landscape."},
 ]
+SPLIT_KNOWLEDGE_CAPABILITY = "knowledge compilation / vault maintenance"
+
+
+def capability_contracts(source: dict) -> list[dict]:
+    contracts = []
+    for item in source["capability_audit"]:
+        if item.get("old_capability") != SPLIT_KNOWLEDGE_CAPABILITY:
+            contracts.append(item)
+            continue
+        contracts.extend([
+            {
+                "old_capability": "knowledge compilation",
+                "family": "STRUCTURING",
+                "status": "FULLY_COVERED",
+                "new_path": "build-domain-ontology / construct-causal-model / construct-argument-map",
+                "rationale": "Scientific knowledge compilation is a research-structure transformation retained in the graph.",
+            },
+            {
+                "old_capability": "vault maintenance",
+                "family": "STRUCTURING",
+                "status": "MOVED_ARTIFACT",
+                "new_path": "product/storage layer",
+                "rationale": "Vault read/write maintenance is storage plumbing; host provides storage adaptation without owning research semantics.",
+            },
+        ])
+    return contracts
 
 
 def provenance_variants(value: str) -> set[str]:
@@ -177,12 +203,15 @@ def main() -> None:
         {"type": "jump", "source": edge[0], "target": edge[1]}
         for edge in source["jumps"]
     ]
+    contracts = capability_contracts(source)
+    stats = dict(source["stats"])
+    stats["capability_contracts"] = len(contracts)
     graph = {
         "schema": "dare-v4-graph-1",
         "source": str(ARCH),
         "node_model": source["node_model"],
         "edge_semantics": source["edge_semantics"],
-        "stats": source["stats"],
+        "stats": stats,
         "nodes": nodes,
         "edges": calls + jumps,
         "calls": calls,
@@ -195,14 +224,14 @@ def main() -> None:
             "calls": len(calls),
             "jumps": len(jumps),
             "edges": len(calls) + len(jumps),
-            "capability_contracts": len(source["capability_audit"]),
+            "capability_contracts": len(contracts),
         },
     }
     capabilities = {
         "schema": "dare-v4-capabilities-1",
         "source": str(ARCH),
-        "count": len(source["capability_audit"]),
-        "contracts": source["capability_audit"],
+        "count": len(contracts),
+        "contracts": contracts,
     }
     REG.mkdir(parents=True, exist_ok=True)
     (REG / "graph.json").write_text(json.dumps(graph, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

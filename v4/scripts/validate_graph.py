@@ -356,7 +356,7 @@ def main() -> int:
     actual = {"nodes": len(nodes), "tactics": len(tactics), "sops": len(sops), "calls": len(graph.get("calls", [])), "jumps": len(graph.get("jumps", [])), "edges": len(graph.get("edges", [])), "capability_contracts": caps.get("count")}
     for k, v in actual.items():
         if counts.get(k) != v: c.error(GRAPH, 1, f"count {k}={counts.get(k)!r}, actual {v}")
-    if actual != {"nodes": 267, "tactics": 51, "sops": 216, "calls": 317, "jumps": 157, "edges": 474, "capability_contracts": 146}:
+    if actual != {"nodes": 267, "tactics": 51, "sops": 216, "calls": 317, "jumps": 157, "edges": 474, "capability_contracts": 147}:
         c.error(GRAPH, 1, f"authoritative counts mismatch: {actual}")
 
     for i, e in enumerate(graph.get("calls", []), 1):
