@@ -128,3 +128,9 @@ Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-
 - `subagent (search required)`：是工具/派发要求；保留“evidence-backed mitigations”这一科研语义，但不指定 agent、工具或搜索机制。
 
 N1 仅删除上述 harness-bearing 行/片段；同节点已有的证据、约束、假设、依赖与冲突质量门保持不变。不将这些预算改名为“努力/覆盖”相对量，避免把 runtime 门槛伪装回正文。`audit-benchmark-validity` 不在本次六条范围内。
+
+### Whole-ledger follow-up
+
+整段 ledger 逐行复查后，新增判定同为 **C 类：删除**：`constraint-analysis` 的 `Context tokens <=80k per strategy` 与 `Summarize and spawn fresh`（token 上限及上下文压缩/派发）；同组 `Wall-clock time <=30 min per strategy` / `Checkpoint and continue`、`Total campaign <=5 strategies` / `Skip if constraint already resolved`；以及 `resource-constraint`、`assumption-constraint`、`dependency-constraint`、`conflict-resolution` 各自的 `Iterations` 上限与 `Output size <=3000 tokens`。这些均属 runtime/provider 预算或调度，不是科研结果判据。详见 triage 文件追加表。保留 estimate precision、证据覆盖、约束/假设/依赖/冲突质量门等科研标准。
+
+补充：当前 ledger 第 140 行已显示为 “must use imported skills to validate feasibility”。该强制工具依赖与此前 `subagent (search required)` 同属 C 类；删除机制要求，保留可行性验证及证据要求。
