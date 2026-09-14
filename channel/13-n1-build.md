@@ -31,6 +31,12 @@ Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validati
 
 Validation: `python v4/scripts/validate_graph.py --skip-threshold` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
 
+## Harness-decoupling follow-up (1)
+
+Applied R5's whole-ledger C classification to `analyze-constraints-readiness`: removed the remaining tooling/runtime/provider criteria (the mandatory imported-skills row plus 11 budget rows for wall-clock, context tokens, campaign count, iteration caps, and output-token caps). Scientific criteria and neighboring quality gates remain unchanged.
+
+Validation: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
 ## Mode-contract output correction batch 4 (10)
 
 R1's completed ledger and determination register were applied to these previously union-output nodes; anchors were retained only for source-common schemas.

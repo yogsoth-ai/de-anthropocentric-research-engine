@@ -137,29 +137,17 @@ Append dimension scores/evidence, constraint IDs, bottleneck rationale, resource
 | staged-gate-evaluation | 31 | numeric-table | \\| feasibility-synthesis \\| 3 \\| Synthesize into final recommendation \\| |
 | staged-gate-evaluation | 35 | numeric | - Stage 1 should define >= 3 gates (e.g., concept feasibility, technical feasibility, implementation readiness) |
 | staged-gate-evaluation | 42 | textual | ## Minimum Yield |
-| propose-mitigations | 29 | textual | **Required** - must use imported skills to validate feasibility: |
 | constraint-analysis | 44 | textual | ## HARD-GATE |
 | constraint-analysis | 46 | textual | Before entering this campaign, the following must be true: |
 | constraint-analysis | 78 | textual | ## Budget Gate |
-| constraint-analysis | 83 | numeric | \\| Wall-clock time \\| <=30 min per strategy \\| Checkpoint and continue \\| |
-| constraint-analysis | 84 | numeric | \\| Context tokens \\| <=80k per strategy \\| Summarize and spawn fresh \\| |
-| constraint-analysis | 85 | numeric | \\| Total campaign \\| <=5 strategies \\| Skip if constraint already resolved \\| |
 | constraint-analysis | 94 | textual | ## Minimum Yield |
 | constraint-analysis | 97 | numeric | - At least 1 binding constraint identified and characterized |
 | constraint-analysis | 100 | numeric | - No unresolved conflicts between top-3 constraints |
 | resource-constraint | 63 | textual | ## Budget Gate |
-| resource-constraint | 68 | numeric | \\| Iterations \\| <=2 \\| Re-quantify if estimates change \\| |
-| resource-constraint | 69 | numeric | \\| Output size \\| <=3000 tokens \\| Gap table + recommendation \\| |
 | assumption-constraint | 55 | numeric | - Top-5 fragile assumptions with validation paths |
 | assumption-constraint | 58 | textual | ## Budget Gate |
-| assumption-constraint | 63 | numeric | \\| Iterations \\| <=2 \\| Re-rank if new assumptions surface \\| |
-| assumption-constraint | 64 | numeric | \\| Output size \\| <=3000 tokens \\| Ranked table + validation plan \\| |
 | dependency-constraint | 60 | textual | ## Budget Gate |
-| dependency-constraint | 65 | numeric | \\| Iterations \\| <=2 \\| Re-build if tasks change \\| |
-| dependency-constraint | 66 | numeric | \\| Output size \\| <=3000 tokens \\| Graph summary + critical chain \\| |
 | conflict-resolution | 66 | textual | ## Budget Gate |
-| conflict-resolution | 71 | numeric | \\| Iterations \\| <=3 \\| May need multiple injection attempts \\| |
-| conflict-resolution | 72 | numeric | \\| Output size \\| <=3000 tokens \\| EC + injection + FRT summary \\| |
 | constraint-tree-building | 25 | textual | - Minimum 5 UDEs for a meaningful tree |
 | constraint-tree-building | 42 | numeric | - **When to escalate**: If >10 UDEs found, prioritize top-5 by severity before tracing |
 | constraint-tree-building | 43 | textual | - **Quality gate**: Every causal link must have a BECAUSE clause (the underlying assumption) |
