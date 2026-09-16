@@ -40,7 +40,7 @@ This repository is the **single-clone distribution** of the entire [Yogsoth AI](
 - 🔬 **Convergence & synthesis** — multi-criteria scoring, Pareto frontier construction, pairwise ranking, structured consensus, dialectical synthesis across competing threads
 - 📏 **Executable Research Specs** — machine-readable documents with checkbox progress tracking, quantified completion criteria, backtrack conditions, and session recovery. Another CC instance picks up where you left off
 - 🧪 **Experiment design** — full experimental methodology generation (factor-level design, parameter screening, sensitivity analysis) ready for execution
-- 🌐 **8 MCP integrations** — Semantic Scholar, Brave Search, Tavily, Keenable, You.com, AlphaXiv, Apify web scraping, and Wiki Vault for persistent knowledge graphs
+- 🌐 **7 MCP integrations** — Semantic Scholar, Brave Search, Tavily, Keenable, AlphaXiv, Apify web scraping, and Wiki Vault for persistent knowledge graphs
 
 ---
 
@@ -190,9 +190,8 @@ Inside every package, the skills are organized into exactly four layers. The rul
 │  hypothesis-formulation · analogy-extraction · pairwise-comparison        │
 │  assumption-audit · falsifiability-check · monte-carlo-sampling · ...     │
 ├───────────────────────────────────────────────────────────────────────────┤
-│  MCP LAYER (8 servers — external tool access)                             │
-│  semantic-scholar · brave · tavily · keenable · you · alphaxiv · apify ·   │
-│  wiki                                                                       │
+│  MCP LAYER (7 servers — external tool access)                             │
+│  semantic-scholar · brave · tavily · keenable · alphaxiv · apify · wiki   │
 └───────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -260,7 +259,7 @@ de-anthropocentric-research-engine/
 | **brave-search** | `@brave/brave-search-mcp-server` | stdio | Web search, news search, local search, LLM context |
 | **tavily-search** | `tavily-mcp` | stdio | Web search optimized for LLMs (opt-in alternative to Brave Search) |
 | **keenable** | — | http | Web search + page fetch, keyless by default (no API key; hosted remote server) |
-| **you** | — | http | Web search + URL content extraction, keyless free profile (no API key; hosted remote server) |
+| **you** | — | http | Web search, keyless free profile (no API key; hosted remote server). Available in the template; not yet used by any SOP — see below |
 | **apify** | `@apify/actors-mcp-server` | stdio | Full-page web scraping, Google Scholar |
 | **alphaxiv** | — | http | arXiv paper search, Q&A, PDF queries, code exploration |
 
@@ -481,13 +480,7 @@ No configuration needed. Connects directly to `https://api.keenable.ai/mcp` and 
 
 #### you (HTTP — no local install)
 
-Keyless by default. The example config connects to the free profile at `https://api.you.com/mcp?profile=free`, which needs no API key (public endpoint, rate-limited) and provides web search. For the full toolset — web search plus URL content extraction (`you-contents`) — set a key and point the server at the authenticated profile:
-
-| Variable | Description |
-| -------- | ----------- |
-| `YDC_API_KEY` | [You.com API key](https://you.com/platform/api-keys) — optional; unlocks `you-search` + `you-contents` at `https://api.you.com/mcp` |
-
-The key is passed as a bearer token (`Authorization: Bearer <key>`), so it belongs in your MCP client's per-server auth configuration, never in committed files.
+No configuration needed. Connects to `https://api.you.com/mcp?profile=free` and is **keyless** (public endpoint, rate-limited). Offered in the template as an extra general web-search option; the research SOPs do not route through it yet, so nothing changes if you leave it out. Full-path evaluation is deferred to the unified retrieval layer.
 
 #### apify (`@apify/actors-mcp-server`)
 

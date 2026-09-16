@@ -36,11 +36,6 @@ export const SERVERS = [
     base: { transport: 'streamable-http', url: 'https://api.keenable.ai/mcp' },
   },
   {
-    serverName: 'you',
-    requiredEnv: [],
-    base: { transport: 'streamable-http', url: 'https://api.you.com/mcp?profile=free' },
-  },
-  {
     serverName: 'semantic-scholar',
     requiredEnv: ['SS_API_KEY'],
     base: { transport: 'stdio', command: 'npx', args: ['-y', '@yogsoth-ai/semantic-scholar-mcp'] },

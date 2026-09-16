@@ -16,10 +16,13 @@ const fullEnv = {
 }
 
 describe('MCP fleet', () => {
-  it('mirrors the eight servers in mcp.example.json', () => {
+  // `mcp.example.json` also offers `you` (You.com, keyless). It is deliberately
+  // not in the fleet: the template is opt-in per user, whereas a requiredEnv-free
+  // fleet entry would open an outbound connection for every plugin user.
+  it('carries the seven fleet servers', () => {
     assert.deepEqual(
       SERVERS.map((s) => s.serverName),
-      ['alphaxiv', 'keenable', 'you', 'semantic-scholar', 'brave-search', 'tavily-search', 'wiki-vault', 'apify'],
+      ['alphaxiv', 'keenable', 'semantic-scholar', 'brave-search', 'tavily-search', 'wiki-vault', 'apify'],
     )
   })
 
@@ -37,7 +40,7 @@ describe('MCP fleet', () => {
 
   it('starts only the credential-free servers on an empty env', () => {
     const { ready, skipped } = partitionServers({})
-    assert.deepEqual(ready.map((s) => s.serverName), ['alphaxiv', 'keenable', 'you'])
+    assert.deepEqual(ready.map((s) => s.serverName), ['alphaxiv', 'keenable'])
     assert.equal(skipped.length, 5)
   })
 
