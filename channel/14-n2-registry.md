@@ -131,3 +131,11 @@ No body or existing gate was changed. The expected validation result is six erro
 ## 2026-09-14 Gate 16 token-budget coverage
 
 Gate 16 now also rejects `context tokens`, `token budget`, `spawn fresh`, `summarize and spawn`, and token-scale limits matching `<=NNk`, case-insensitively. The scan remains line-based over the complete body, so escaped ledger separators such as `\\|` do not affect detection.
+
+## 2026-09-16 R6 Q1/Q2 host adjudication
+
+Updated `v4/docs/runtime-boundary.md` from the superseded Q1=D model to R6's final Q1=A model. An existing agent harness now directly serves as host; the current agent performs the eleven preserved responsibilities. SpecView reconstruction is direct checkpoint replay by that agent under fixed projection rules, not a thin DARE host or a separate deterministic reconstruction component. Q3 remains append-only Markdown, and no provider, wrapper, adapter, daemon, retry policy, or monitoring state machine was added.
+
+Rejudged the six capability records that still inherited the architecture's original `MOVED_RUNTIME` labels. `actor-profiling` is now `MOVED_PRODUCT`; `implementation dependency planning` is `SPLIT`. The other four remain `MOVED_RUNTIME` because they are outside the scientific graph, but their receiver is now explicitly the existing agent harness rather than a host awaiting implementation. In particular, the critical-path/buffering/dispatch/monitoring record no longer carries a future host implementation dependency. `build_registry.py` contains the same six narrow adjudications so regeneration preserves the result. Contract count remains 147.
+
+Verification: capability regeneration parity is 147/147; `python v4/scripts/validate_graph.py` exits 0 with zero warnings. Graph counts remain 267 nodes, 317 calls, 157 jumps, and 474 edges.

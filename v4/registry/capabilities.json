@@ -13,9 +13,9 @@
     {
       "old_capability": "actor-profiling",
       "family": "DIRECTION",
-      "status": "MOVED_RUNTIME",
-      "new_path": "research-context input contract",
-      "rationale": "Background, resources, hard constraints and intent remain inputs; acquisition/elicitation is no longer a scientific Tactic."
+      "status": "MOVED_PRODUCT",
+      "new_path": "ResearchContext input contract",
+      "rationale": "Background, resources, hard constraints, and intent are product inputs consumed by the agent harness, not a scientific tactic or a future host component."
     },
     {
       "old_capability": "landscape-reconnaissance",
@@ -63,15 +63,15 @@
       "old_capability": "engine-core / context-management / checkpointing",
       "family": "INFRA",
       "status": "MOVED_RUNTIME",
-      "new_path": "runtime/control plane",
-      "rationale": "Routing, budget, checkpoint, context recovery are not scientific cognition."
+      "new_path": "agent harness control plane",
+      "rationale": "The existing agent harness performs routing, context handling, checkpoint append, and recovery; DARE does not add a runtime component."
     },
     {
       "old_capability": "subagent-spawning / implementer-dispatch",
       "family": "INFRA",
       "status": "MOVED_RUNTIME",
-      "new_path": "host agent runtime",
-      "rationale": "DARE specifies work, not how many agents or which runtime execute it."
+      "new_path": "agent harness dispatch",
+      "rationale": "The existing agent harness decides whether to dispatch agents and receives their results; DARE specifies no separate host implementation."
     },
     {
       "old_capability": "wiki-* vault/storage operations",
@@ -629,16 +629,16 @@
     {
       "old_capability": "implementation dependency planning",
       "family": "EXPERIMENT",
-      "status": "MOVED_RUNTIME",
-      "new_path": "host execution planner",
-      "rationale": "Scientific work/dependency planning retained."
+      "status": "SPLIT",
+      "new_path": "research graph / SpecView dependencies / agent harness routing",
+      "rationale": "Scientific dependencies remain in the graph and SpecView; the existing agent harness orders execution without creating research semantics."
     },
     {
       "old_capability": "critical-path duration / buffering / dispatch / monitoring",
       "family": "EXPERIMENT",
       "status": "MOVED_RUNTIME",
-      "new_path": "host execution planner/runtime",
-      "rationale": "Generic project scheduling and agent dispatch are outside scientific cognition."
+      "new_path": "agent harness execution control",
+      "rationale": "Generic scheduling, buffering, dispatch, and monitoring remain harness responsibilities outside the scientific graph; no DARE host is pending implementation."
     },
     {
       "old_capability": "statistical result analysis / reproducibility",
@@ -889,8 +889,8 @@
       "old_capability": "experiment-running agent dispatch / monitoring",
       "family": "EXPERIMENT",
       "status": "MOVED_RUNTIME",
-      "new_path": "host runtime / coding agent / scheduler",
-      "rationale": "Execution orchestration is deliberately outside scientific graph."
+      "new_path": "agent harness execution",
+      "rationale": "The existing agent harness dispatches execution and records results; scientific tactics consume result deltas without owning orchestration."
     },
     {
       "old_capability": "collective adjudication / independent judge ballots",

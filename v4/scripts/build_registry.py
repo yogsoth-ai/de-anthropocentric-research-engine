@@ -107,13 +107,45 @@ R4_RESOLVED_ALIASES = [
     {"v3_id": "web-search", "v4_id": "map-research-landscape", "compression_type": "many-to-1", "notes": "R4 resolved alias; broad/deep web-search imports are covered by map-research-landscape."},
 ]
 SPLIT_KNOWLEDGE_CAPABILITY = "knowledge compilation / vault maintenance"
+R6_CAPABILITY_ADJUDICATIONS = {
+    "actor-profiling": {
+        "status": "MOVED_PRODUCT",
+        "new_path": "ResearchContext input contract",
+        "rationale": "Background, resources, hard constraints, and intent are product inputs consumed by the agent harness, not a scientific tactic or a future host component.",
+    },
+    "engine-core / context-management / checkpointing": {
+        "status": "MOVED_RUNTIME",
+        "new_path": "agent harness control plane",
+        "rationale": "The existing agent harness performs routing, context handling, checkpoint append, and recovery; DARE does not add a runtime component.",
+    },
+    "subagent-spawning / implementer-dispatch": {
+        "status": "MOVED_RUNTIME",
+        "new_path": "agent harness dispatch",
+        "rationale": "The existing agent harness decides whether to dispatch agents and receives their results; DARE specifies no separate host implementation.",
+    },
+    "implementation dependency planning": {
+        "status": "SPLIT",
+        "new_path": "research graph / SpecView dependencies / agent harness routing",
+        "rationale": "Scientific dependencies remain in the graph and SpecView; the existing agent harness orders execution without creating research semantics.",
+    },
+    "critical-path duration / buffering / dispatch / monitoring": {
+        "status": "MOVED_RUNTIME",
+        "new_path": "agent harness execution control",
+        "rationale": "Generic scheduling, buffering, dispatch, and monitoring remain harness responsibilities outside the scientific graph; no DARE host is pending implementation.",
+    },
+    "experiment-running agent dispatch / monitoring": {
+        "status": "MOVED_RUNTIME",
+        "new_path": "agent harness execution",
+        "rationale": "The existing agent harness dispatches execution and records results; scientific tactics consume result deltas without owning orchestration.",
+    },
+}
 
 
 def capability_contracts(source: dict) -> list[dict]:
     contracts = []
     for item in source["capability_audit"]:
         if item.get("old_capability") != SPLIT_KNOWLEDGE_CAPABILITY:
-            contracts.append(item)
+            contracts.append(item | R6_CAPABILITY_ADJUDICATIONS.get(item.get("old_capability"), {}))
             continue
         contracts.extend([
             {

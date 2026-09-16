@@ -136,16 +136,16 @@ host 负责决定是否派发 subagent。代理不得直接修改 context/INDEX 
 | 原 capability | 新归属 | status | 接收方与验收条件 |
 |---|---|---|---|
 | actor-profiling | DARE 产品层输入 | MOVED_PRODUCT | preflight 生成 `ResearchContext`，至少含 `intent` 与一个 `scope_anchor`；提供的背景/资源/硬约束与 inferred/missing 标记写入当前 Phase checkpoint 的 `decisions`（`context.preflight`）及必要的 `assumption_updates`，缺必需字段返回 `NEEDS_CONTEXT`，不依赖另行存储的 Spec 字段 |
-| engine-core / context-management / checkpointing | runtime control plane | MOVED_RUNTIME | 可创建单 Phase 文件、追加 checkpoint、校验序号并从最近 complete 点恢复 |
-| subagent-spawning / implementer-dispatch | runtime control plane | MOVED_RUNTIME | host 按隔离条件派发，代理只回传 Delta，host 统一落盘 |
+| engine-core / context-management / checkpointing | agent harness control plane | MOVED_RUNTIME | 当前 harness 中的 agent 创建单 Phase 文件、追加 checkpoint、校验序号并从最近 complete 点恢复；不新增 DARE runtime |
+| subagent-spawning / implementer-dispatch | agent harness dispatch | MOVED_RUNTIME | 当前 harness 中的 agent 决定是否派发；被派发代理只回传 Delta，由当前 agent 统一落盘 |
 | knowledge compilation / vault maintenance | artifact/storage layer | MOVED_ARTIFACT | 科研结构输出与存储适配分离；存储失败不改变科研结论 |
-| implementation dependency planning | 拆分：科研图 + runtime | SPLIT | 科研依赖仍由 `plan-experiment-implementation` 表达；通用任务依赖、资源排程由 runtime 表达，二者有引用 ID 但不合并节点 |
-| critical-path duration / buffering / dispatch / monitoring | runtime control plane | MOVED_RUNTIME | runtime 计算关键路径、缓冲、状态与派发记录，不改实验语义 |
-| experiment-running agent dispatch / monitoring | runtime control plane | MOVED_RUNTIME | host/scheduler 编排执行代理并记录状态；科研 tactic 只消费结果 Delta |
+| implementation dependency planning | 拆分：科研图 + agent harness | SPLIT | 科研依赖仍由 `plan-experiment-implementation` 与 SpecView 表达；当前 harness 中的 agent 只按已声明依赖排序执行，不创造研究关系 |
+| critical-path duration / buffering / dispatch / monitoring | agent harness execution control | MOVED_RUNTIME | 通用排程、缓冲、派发与监控属于 harness 既有运行职责，不改实验语义，也不等待 DARE host 实现 |
+| experiment-running agent dispatch / monitoring | agent harness execution | MOVED_RUNTIME | 当前 harness 中的 agent 编排执行并记录结果；科研 tactic 只消费结果 Delta |
 
 因此，七条原标签中 4 条保持纯 `MOVED_RUNTIME`，1 条按科学/通用边界拆分，actor-profiling 改为产品输入，knowledge compilation 改为 artifact。原 capability 若在审计表中与另一条合并，按本表最细粒度拆开统计，禁止以“runtime”笼统通过。
 
-## 7. 实现验收清单
+## 7. 执行验收清单
 
 - [ ] 能从 checkpoint 事件流重建 `SpecView`，定位首个未完成 active item，并拒绝缺失 context 输入。
 - [ ] 一个 Phase 不会创建第二个 context 文件；checkpoint 追加且可校验。
@@ -155,4 +155,4 @@ host 负责决定是否派发 subagent。代理不得直接修改 context/INDEX 
 
 证据源：`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:21-33`（state_semantics）、`:35-49`（boundaries）、`:6076`（actor-profiling）、`:6125`（engine-core/context-management/checkpointing）、`:6657`（knowledge compilation/vault maintenance）、`:6685-6692`（implementation dependency planning 与 critical-path）、`:6944`（experiment-running dispatch/monitoring）；`file-transfer/2026-08-24-14-22-dare-v4-capability-coverage-audit.md:14-16,206-212,446`；v3 历史来源（v4 已移除）：`context-init`、`context-checkpoint`、`writing-specs`、`executing-specs` SKILL.md。
 
-> R6 resolved: the eleven host responsibilities preserved above are settled. Under Q1, a thin orchestration host owns the control-plane responsibilities while an agent executes the selected tactic/SOP. Under Q2, the host's deterministic reconstruction step replays checkpoint events to produce the in-memory SpecView before routing. Under Q3, checkpoints remain append-only Markdown records in the existing Phase context file; JSONL is not introduced. This status assigns responsibilities only and does not choose providers, tools, retry/backoff/timeout behavior, error classification, or monitoring state machines.
+> R6 resolved: under Q1, an existing agent harness directly serves as the host; host names a set of responsibilities performed by the current agent, not a DARE runtime, wrapper, adapter, daemon, or other component to build. Under Q2, that agent replays checkpoint events according to the specified projection rules to produce the in-memory SpecView before routing; determinism comes from the rules, not from a separate reconstruction program. Under Q3, checkpoints remain append-only Markdown records in the existing Phase context file; JSONL is not introduced. These decisions do not choose a provider or add retry/backoff/timeout behavior, error classification, or monitoring state machines.
