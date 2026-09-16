@@ -45,6 +45,7 @@ equally valid.
 - Brave — see Provider Details § Brave
 - Tavily — see Provider Details § Tavily
 - Keenable — see Provider Details § Keenable (keyless; no API key required)
+- You.com — see Provider Details § You.com (keyless free profile; no API key required)
 
 Set the result count to ~10 per call (provider-specific parameter named in
 each Provider Details subsection).
@@ -199,6 +200,36 @@ Landscape scan then deep read:
 ```
 search_web_pages(query="MCP server frameworks comparison 2025")
 fetch_page_content(url="https://...")
+```
+
+### You.com
+
+Keyless free profile — the `you` MCP server at `https://api.you.com/mcp?profile=free`
+needs no API key. An authenticated profile (a You.com API key) adds URL content
+extraction via `you-contents`; the keyless profile carries `you-search` only.
+
+**Available tools:**
+
+| Tool | Purpose | Returns |
+|------|---------|---------|
+| `you-search` | Web search | URL, title, description snippet, date |
+
+**Key parameters:**
+
+- `you-search`:
+  - `query` (required): search terms
+  - `count`: number of results (default 10)
+
+**Examples:**
+
+Quick fact check:
+```
+you-search(query="Claude 3.5 Sonnet release date", count=5)
+```
+
+Landscape scan:
+```
+you-search(query="MCP server frameworks comparison 2025", count=10)
 ```
 
 <!-- BEGIN available-tables (generated) -->

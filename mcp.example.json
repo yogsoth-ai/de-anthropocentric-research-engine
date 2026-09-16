@@ -31,6 +31,10 @@
       "type": "http",
       "url": "https://api.keenable.ai/mcp"
     },
+    "you": {
+      "type": "http",
+      "url": "https://api.you.com/mcp?profile=free"
+    },
     "wiki-vault": {
       "type": "stdio",
       "command": "npx",
