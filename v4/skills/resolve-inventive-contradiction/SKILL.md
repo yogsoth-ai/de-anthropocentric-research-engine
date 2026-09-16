@@ -17,19 +17,20 @@ mode_contracts:
   separation: *contradiction_input
 ```
 ## Execution protocol
-1. Identify contradiction type and parameters (`identify-inventive-contradiction`).
-2. Select applicable TRIZ principles (`select-inventive-principle`).
-3. Apply separation options (`apply-separation-principle`).
-4. Transform implicated components (`transform-component`).
-5. Evaluate compatibility and residual conflict (`evaluate-compatibility`).
-6. Synthesize the candidate resolution (`synthesize-idea`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `identify-inventive-contradiction` to identify the contradiction type and parameters.
+2. Apply the principle-selection or separation operations required by the selected mode.
+3. You MUST load skill `transform-component` to transform the implicated components.
+4. You MUST load skill `evaluate-compatibility` to evaluate compatibility and residual conflict.
+5. You MUST load skill `synthesize-idea` to synthesize the candidate resolution.
 Deviation: use separation before inventive principles only when the contradiction is physical; retain both analyses and state why.
 
 ## Mode branches
 
-- `technical-contradiction`: represent the improving and worsening engineering parameters, use the contradiction matrix to select principles, and test the resulting trade-off.
-- `physical-contradiction`: split the conflicting requirement by condition, time, space, or scale so one component can satisfy both demands without averaging them.
-- `separation`: search explicitly for a separation condition, transform the implicated component under that condition, and verify that residual conflicts are reduced.
+- `technical-contradiction`: represent the improving and worsening engineering parameters, use the contradiction matrix to select principles, and test the resulting trade-off. You MUST load skill `select-inventive-principle` to select the applicable principles.
+- `physical-contradiction`: split the conflicting requirement by condition, time, space, or scale so one component can satisfy both demands without averaging them. You MUST load skill `apply-separation-principle` to apply the separation options. You MUST load skill `select-inventive-principle` to retain the required principle analysis.
+- `separation`: search explicitly for a separation condition, transform the implicated component under that condition, and verify that residual conflicts are reduced. You MUST load skill `apply-separation-principle` to search and apply that condition.
 
 ## Output contract
 ```yaml

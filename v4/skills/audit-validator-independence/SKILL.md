@@ -18,9 +18,11 @@ mode_contracts:
   simulation: *validator_audit_input
 ```
 ## Execution protocol
-1. Enumerate embedded validator assumptions (`enumerate-validator-assumptions`).
-2. Cross-tabulate target and validator assumptions (`build-noncircularity-matrix`).
-3. Detect copied assumptions and design an independent failure channel (`detect-pass-by-construction`, `design-falsification-test`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `enumerate-validator-assumptions` to enumerate embedded validator assumptions.
+2. You MUST load skill `build-noncircularity-matrix` to cross-tabulate target and validator assumptions.
+3. You MUST load skill `detect-pass-by-construction` to detect copied assumptions. You MUST load skill `design-falsification-test` to design an independent failure channel.
 Deviation: if no non-circular channel is feasible, return blocked validation rather than a pass.
 ## Output contract
 ```yaml

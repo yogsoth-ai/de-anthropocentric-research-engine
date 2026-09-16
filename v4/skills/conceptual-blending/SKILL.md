@@ -17,11 +17,14 @@ mode_contracts:
   emergent-property-search: *blending_input
 ```
 ## Execution protocol
-1. Construct input spaces (`construct-input-spaces`).
-2. Extract the generic space (`extract-generic-space`).
-3. Simulate emergent properties (`simulate-emergent-properties`).
-4. Check compatibility (`evaluate-compatibility`).
-5. Synthesize an idea (`synthesize-idea`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `construct-input-spaces` to construct the input spaces.
+2. You MUST load skill `extract-generic-space` to extract the generic space.
+3. You MUST load skill `simulate-emergent-properties` to simulate emergent properties.
+4. You MUST load skill `evaluate-compatibility` to check compatibility.
+5. You MUST load skill `synthesize-idea` to synthesize the blend.
+   If the blend should be explored across a systematic combination space, consider `explore-dimensional-space`. If its claimed structural transfer needs formal testing, consider `audit-structural-equivalence`.
 Deviation: two-space and multi-space modes change only the number of inputs; generic-space extraction is mandatory.
 ## Mode branches
 - `two-space-blend`: blend two explicit input spaces.

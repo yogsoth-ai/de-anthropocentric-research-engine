@@ -19,15 +19,18 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Freeze the domain question, inclusion boundary, granularity, and reopening trigger before extracting any entities. (`scope-domain`)
-2. Capture source-defined concepts and relation candidates while retaining aliases, qualifiers, and unresolved meanings. (`extract-concepts`)
-3. Split broad concepts into mechanism-, function-, level-, or context-specific facets so later typing has clear boundaries. (`atomize-concept`)
-4. Type each in-scope relation against its ontology, preserving direction, rejected alternatives, and evidence. (`type-relation`)
-5. Insert supported edges into an acyclic hierarchy and quarantine cycles, orphans, and missing levels. (`construct-hierarchy`)
-6. Check node and relation schemas together with hierarchy, dependency, cardinality, and cycle constraints. (`audit-structure-consistency`)
-7. Compare the resulting representation with its eligible feature space to prioritize absent, thin, disconnected, or weak regions. (`detect-coverage-gap`)
-8. Merge only semantically identical aliases and near-duplicates, redirecting dependent edges and retaining rejected merges. (`canonicalize-entity`)
-9. Update confidence from classified supporting or contradicting evidence after the ontology?s identities and structure are stable. (`update-confidence-from-evidence`)
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `scope-domain` to freeze the domain question, inclusion boundary, granularity, and reopening trigger before extracting entities.
+2. You MUST load skill `extract-concepts` to capture source-defined concepts and relation candidates while retaining aliases, qualifiers, and unresolved meanings.
+3. You MUST load skill `atomize-concept` to split broad concepts into mechanism-, function-, level-, or context-specific facets.
+4. You MUST load skill `type-relation` to type each in-scope relation while preserving direction, rejected alternatives, and evidence.
+5. You MUST load skill `construct-hierarchy` to insert supported edges into an acyclic hierarchy and quarantine cycles, orphans, and missing levels.
+6. You MUST load skill `audit-structure-consistency` to check node and relation schemas with hierarchy, dependency, cardinality, and cycle constraints.
+7. You MUST load skill `detect-coverage-gap` to prioritize absent, thin, disconnected, or weak regions.
+8. You MUST load skill `canonicalize-entity` to merge only semantically identical aliases and near-duplicates while retaining rejected merges.
+9. You MUST load skill `update-confidence-from-evidence` to update confidence after identities and structure are stable.
+   If the ontology is ready to express directed mechanisms, consider `construct-causal-model` as the next tactic.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

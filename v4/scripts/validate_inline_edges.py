@@ -117,6 +117,7 @@ def check_body(
 
 def validate(selected: set[str] | None) -> int:
     nodes, calls, jumps = load_graph()
+    graph = json.loads(GRAPH.read_text(encoding="utf-8"))
     if not BASELINE.exists():
         print(f"ERROR: baseline missing; run {Path(__file__).name} --capture-baseline first", file=sys.stderr)
         return 1
@@ -146,8 +147,19 @@ def validate(selected: set[str] | None) -> int:
             path = SKILLS / node_id / "SKILL.md"
             if digest(path.read_bytes()) != expected:
                 errors.append(f"{path}: SOP file changed")
-        if call_total != 317 or jump_total != 157:
-            errors.append(f"registry totals differ: calls={call_total}/317, jumps={jump_total}/157")
+        tactic_jump_total = sum(
+            1 for edge in graph["jumps"] if nodes[edge["source"]]["type"] == "tactic"
+        )
+        if len(graph["calls"]) != 317 or len(graph["jumps"]) != 157:
+            errors.append(
+                f"full registry totals differ: calls={len(graph['calls'])}/317, "
+                f"jumps={len(graph['jumps'])}/157"
+            )
+        if call_total != len(graph["calls"]) or jump_total != tactic_jump_total:
+            errors.append(
+                f"tactic inline totals differ: calls={call_total}/{len(graph['calls'])}, "
+                f"jumps={jump_total}/{tactic_jump_total}"
+            )
     if errors:
         print("\n".join(f"ERROR: {error}" for error in errors), file=sys.stderr)
         print(f"FAIL: {len(errors)} error(s)", file=sys.stderr)

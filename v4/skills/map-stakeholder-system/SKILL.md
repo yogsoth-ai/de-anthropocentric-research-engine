@@ -17,18 +17,20 @@ mode_contracts:
   stakeholder-salience: *stakeholder_input
 ```
 ## Execution protocol
-1. Assess system boundary (`assess-system-boundary`).
-2. Construct perspective set (`construct-perspective-set`).
-3. Map stakeholder jobs (`map-stakeholder-jobs`).
-4. Classify salience (`classify-stakeholder-salience`).
-5. Map disagreement (`map-disagreement`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `assess-system-boundary` to assess the system boundary.
+2. You MUST load skill `construct-perspective-set` to construct the stakeholder perspective set.
+3. Apply the selected mode's stakeholder analysis operation.
+4. You MUST load skill `map-disagreement` to map substantive disagreement and neglected voices.
+   If a stakeholder worldview requires changing the problem frame, consider `problem-reframing`. If stakeholder constraints determine feasibility or readiness, consider `analyze-constraints-readiness`.
 Deviation: boundary alternatives may branch; retain each material boundary and its consequences.
 
 ## Mode branches
 
 - `critical-systems-heuristics`: test who defines the system boundary, whose interests it serves, and which excluded effects change the feasibility judgment.
-- `jobs-to-be-done`: map each stakeholder's functional, social, and emotional job so the system model reflects the outcomes they actually seek.
-- `stakeholder-salience`: classify stakeholder power, legitimacy, and urgency with evidence, making priority and neglected voices explicit.
+- `jobs-to-be-done`: map each stakeholder's functional, social, and emotional job so the system model reflects the outcomes they actually seek. You MUST load skill `map-stakeholder-jobs` to map those functional, social, and emotional jobs.
+- `stakeholder-salience`: classify stakeholder power, legitimacy, and urgency with evidence, making priority and neglected voices explicit. You MUST load skill `classify-stakeholder-salience` to classify power, legitimacy, and urgency.
 
 ## Output contract
 ```yaml

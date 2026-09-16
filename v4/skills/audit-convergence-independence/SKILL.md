@@ -18,9 +18,11 @@ mode_contracts:
   methods: *convergence_audit_input
 ```
 ## Execution protocol
-1. Enumerate paths and provenance (`identify-shared-priors`).
-2. Verify independence and mark shared dependencies (`verify-evidence-independence`).
-3. Estimate effective evidence count and perturb dependence assumptions (`estimate-effective-evidence-count`, `assess-sensitivity`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `identify-shared-priors` to enumerate paths, provenance, and shared priors.
+2. You MUST load skill `verify-evidence-independence` to verify independence and mark shared dependencies.
+3. You MUST load skill `estimate-effective-evidence-count` to estimate the effective evidence count. You MUST load skill `assess-sensitivity` to perturb dependence assumptions.
 Deviation: use qualitative dependence classes when numeric correlation is unavailable; never count nominal paths as independent by default.
 ## Output contract
 ```yaml

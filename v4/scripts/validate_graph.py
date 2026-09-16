@@ -22,6 +22,7 @@ SKILLS = V4 / "skills"
 ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
 SOURCE = ROOT / "scripts" / "refactory_source.json"
 R5 = ROOT / "channel" / "deliverables" / "R5" / "validate_threshold_fidelity.py"
+INLINE_EDGES = V4 / "scripts" / "validate_inline_edges.py"
 DELTA = {"findings", "evidence_updates", "hypothesis_updates", "assumption_updates", "uncertainties", "decisions", "open_questions", "recommended_jumps"}
 GENERIC = re.compile(r"\b(?:source_state|task_object|input_object)\b", re.I)
 SOP_ID = re.compile(r"\(([A-Za-z0-9][\w-]*)\)")
@@ -504,6 +505,14 @@ def main() -> int:
                     c.error(GRAPH, 1, f"provenance is searchable but still marked concept: {old}")
     if caps.get("count") != len(caps.get("contracts", [])):
         c.error(CAPS, 1, "capability count does not match contracts")
+    if INLINE_EDGES.exists():
+        inline_stdout = io.StringIO()
+        inline_stderr = io.StringIO()
+        with contextlib.redirect_stdout(inline_stdout), contextlib.redirect_stderr(inline_stderr):
+            inline_result = runpy.run_path(str(INLINE_EDGES), run_name="_dare_inline_edges")["validate"](None)
+        if inline_result:
+            c.error(INLINE_EDGES, 1, "inline call/jump edge gate failed; see its output")
+            sys.stderr.write(inline_stdout.getvalue() + inline_stderr.getvalue())
     if not args.skip_threshold and R5.exists():
         result_code, result_stdout, result_stderr = run_r5_against_v4()
         if result_code:

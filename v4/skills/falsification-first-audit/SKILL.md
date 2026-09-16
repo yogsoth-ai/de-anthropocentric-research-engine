@@ -17,10 +17,13 @@ mode_contracts:
   truthseeking-red-team: *falsification_input
 ```
 ## Execution protocol
-1. Sharpen the claim and expose assumptions (`sharpen-falsifiable-claim`, `surface-assumptions`).
-2. Design the cheapest decisive falsification test (`design-falsification-test`).
-3. Execute the most informative probe (`execute-probe`).
-4. Classify only the permitted truth-seeking verdict (`classify-falsification-verdict`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `sharpen-falsifiable-claim` to sharpen the claim. You MUST load skill `surface-assumptions` to expose its assumptions.
+2. You MUST load skill `design-falsification-test` to design the cheapest decisive falsification test.
+3. You MUST load skill `execute-probe` to execute the most informative probe.
+4. You MUST load skill `classify-falsification-verdict` to classify only the permitted truth-seeking verdict.
+   If the claim depends on a structural mapping, consider `audit-structural-equivalence`. If the test or oracle may be circular, consider `audit-validator-independence`. If agreement among paths may not be independent, consider `audit-convergence-independence`. If simplicity is carrying the claim, consider `audit-explanatory-compression`. If survival is confined to an uncertain region, consider `map-validity-envelope`.
 Deviation: if no legitimate falsifier can be specified or reached, stop with UNFALSIFIABLE; do not substitute a resilience score.
 ## Output contract
 ```yaml

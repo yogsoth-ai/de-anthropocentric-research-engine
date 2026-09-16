@@ -19,8 +19,11 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `statistical-testing` on its named scientific object and record the evidence or decision it contributes.
-2. Use `verify-reproducibility` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `statistical-testing` to run the preregistered statistical tests and retain effect uncertainty.
+2. You MUST load skill `verify-reproducibility` to verify the declared reproduction level.
+   If the results must be assembled into claims, evidence, and counterclaims, consider `construct-argument-map`. If several interventions or methods require comparative selection, consider `rank-candidates`.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

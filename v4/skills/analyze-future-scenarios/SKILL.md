@@ -19,14 +19,16 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Rank the horizon?s high-impact uncertainties so later scenarios vary the drivers most capable of changing the research path. (`identify-scenario-drivers`)
-2. Enumerate representative, boundary, and adversarial values for each retained driver before combining them. (`enumerate-dimension-values`)
-3. Prune combinations that violate explicit compatibility rules while retaining near-boundary cases for inspection. (`evaluate-compatibility`)
-4. Assemble the surviving driver values into distinct baseline, counterfactual, and extreme-but-plausible worlds. (`construct-scenario`)
-5. Score the research path inside each fixed world, recording tradeoffs, failure triggers, and affected outputs. (`evaluate-scenario-impact`)
-6. Aggregate those per-world results under the declared robust-decision rule and expose fragile assumptions. (`evaluate-scenario-robustness`)
-7. Forecast credible competitor moves from observed signals, capability assumptions, and timing ranges to expose preemption risk. (`predict-competitive-move`)
-8. Order the scenario outcomes through time to reveal persistence, inflection points, regime changes, and optional extrapolation. (`analyze-temporal-trajectory`)
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `identify-scenario-drivers` to rank the horizon's high-impact uncertainties.
+2. You MUST load skill `enumerate-dimension-values` to enumerate representative, boundary, and adversarial driver values.
+3. You MUST load skill `evaluate-compatibility` to prune incompatible combinations while retaining near-boundary cases.
+4. You MUST load skill `construct-scenario` to assemble distinct baseline, counterfactual, and extreme-but-plausible worlds.
+5. You MUST load skill `evaluate-scenario-impact` to score the research path inside each fixed world and record failure triggers.
+6. You MUST load skill `evaluate-scenario-robustness` to aggregate per-world results and expose fragile assumptions.
+7. You MUST load skill `predict-competitive-move` to forecast credible competitor moves and preemption risk.
+8. You MUST load skill `analyze-temporal-trajectory` to order outcomes through time and reveal regime changes.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

@@ -19,17 +19,20 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Inventory outcomes, factors, mediators, moderators, confounders, and assumptions before drawing any edge. (`identify-variables`)
-2. Extract directed cause?mediator?effect chains with temporal order, boundary conditions, and evidence anchors. (`extract-causal-structure`)
-3. Encode each mechanism edge with pathway, sign, enabling conditions, falsifier, and strength. (`represent-mechanism-edge`)
-4. Attach independent supporting and contradicting evidence to those typed edges, retaining alternative interpretations. (`attach-evidence-to-relation`)
-5. Compare opposing causal claims under common scope so conflicts are recorded before model validation. (`detect-contradiction`)
-6. Search the directed structure for reinforcing and balancing cycles, delays, uncertain edges, and testable loop implications. (`detect-feedback-loop`)
-7. Trace the validated graph from each target outcome through intermediate nodes, branches, and because-links. (`trace-causal-chain`)
-8. Map intervention components, dose, timing, implementation fidelity, comparators, and heterogeneous effects onto the model. (`analyze-intervention`)
-9. Freeze declared invariants, propagate the intervention through the graph, and classify the counterfactual outcome. (`construct-counterfactual`)
-10. Apply CLR-style checks to each causal link for existence, connection, sufficiency, omitted conditions, and alternatives. (`validate-causal-link`)
-11. Reweight confidence using the complete evidence ledger, preserving unresolved conflicts and permitted bounds. (`update-confidence-from-evidence`)
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `identify-variables` to inventory outcomes, factors, mediators, moderators, confounders, and assumptions before drawing any edge.
+2. You MUST load skill `extract-causal-structure` to extract directed cause-mediator-effect chains with temporal order, boundary conditions, and evidence anchors.
+3. You MUST load skill `represent-mechanism-edge` to encode each mechanism edge with pathway, sign, enabling conditions, falsifier, and strength.
+4. You MUST load skill `attach-evidence-to-relation` to attach independent supporting and contradicting evidence while retaining alternative interpretations.
+5. You MUST load skill `detect-contradiction` to compare opposing causal claims under common scope before validation.
+6. You MUST load skill `detect-feedback-loop` to find reinforcing and balancing cycles, delays, uncertain edges, and testable loop implications.
+7. You MUST load skill `trace-causal-chain` to trace target outcomes through intermediate nodes, branches, and because-links.
+8. You MUST load skill `analyze-intervention` to map intervention components, dose, timing, implementation fidelity, comparators, and heterogeneous effects.
+9. You MUST load skill `construct-counterfactual` to propagate a declared intervention and classify the counterfactual outcome.
+10. You MUST load skill `validate-causal-link` to apply CLR-style checks for existence, connection, sufficiency, omitted conditions, and alternatives.
+11. You MUST load skill `update-confidence-from-evidence` to reweight confidence while preserving unresolved conflicts and permitted bounds.
+    If the model should generate testable explanations, consider `formulate-hypotheses`. If a specific intervention needs minimal-flip and necessity analysis, consider `counterfactual-causal-analysis`.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

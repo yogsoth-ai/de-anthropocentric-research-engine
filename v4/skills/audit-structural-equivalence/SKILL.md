@@ -19,9 +19,11 @@ mode_contracts:
   analogy: *structural_audit_input
 ```
 ## Execution protocol
-1. Construct object/relation/operation/invariant mapping (`extract-structural-mapping`).
-2. Test preservation and search minimal counterexamples (`test-structure-preservation`, `generate-counterexample`).
-3. Downgrade the claim and record lost invariants (`downgrade-equivalence-claim`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `extract-structural-mapping` to construct the object, relation, operation, and invariant mapping.
+2. You MUST load skill `test-structure-preservation` to test preservation. You MUST load skill `generate-counterexample` to search minimal counterexamples.
+3. You MUST load skill `downgrade-equivalence-claim` to downgrade the claim and record lost invariants.
 Deviation: if the claim is only analogy by scope, run the analogy branch and do not report isomorphism.
 ## Output contract
 ```yaml

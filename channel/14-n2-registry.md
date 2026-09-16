@@ -139,3 +139,18 @@ Updated `v4/docs/runtime-boundary.md` from the superseded Q1=D model to R6's fin
 Rejudged the six capability records that still inherited the architecture's original `MOVED_RUNTIME` labels. `actor-profiling` is now `MOVED_PRODUCT`; `implementation dependency planning` is `SPLIT`. The other four remain `MOVED_RUNTIME` because they are outside the scientific graph, but their receiver is now explicitly the existing agent harness rather than a host awaiting implementation. In particular, the critical-path/buffering/dispatch/monitoring record no longer carries a future host implementation dependency. `build_registry.py` contains the same six narrow adjudications so regeneration preserves the result. Contract count remains 147.
 
 Verification: capability regeneration parity is 147/147; `python v4/scripts/validate_graph.py` exits 0 with zero warnings. Graph counts remain 267 nodes, 317 calls, 157 jumps, and 474 edges.
+
+## 2026-09-16 Gate 18: inline call and jump edges
+
+Injected the R5-final inline wording into all 51 tactic bodies. Each tactic contains the terminal rule exactly once. Every graph call target appears as `You MUST load skill` at its applicable execution step or mode branch; every tactic jump remains conditional and uses `consider` or `may be` wording. Existing mode descriptions were retained verbatim, with mode-specific commands appended. No frontmatter or new body section was added.
+
+Added `v4/scripts/validate_inline_edges.py` and the locked SHA-256 baseline `v4/registry/inline-edge-baseline.json`. The checker enforces exact per-tactic call sets, exact per-tactic jump sets, no jump target in the MUST set, one terminal rule per tactic, byte identity of the five protected sections, and whole-file identity of all 216 SOP bodies. It is wired into `v4/scripts/validate_graph.py`, so the default validator remains the single mechanical pass criterion.
+
+The task brief's "157 jump" line combines two graph layers. The authoritative registry contains 82 tactic-to-tactic jumps and 75 SOP-to-SOP jumps. Because this task also requires all 216 SOP bodies to remain byte-identical, the 51 tactic bodies inline exactly 82 jumps; the checker separately requires the full registry to remain at 157. This is a count-scope correction, not a relaxed set check.
+
+Verification:
+
+- `python v4/scripts/validate_inline_edges.py`: 51 tactics, 317 calls, 82 tactic jumps, exit 0; all 216 SOP hashes unchanged.
+- Negative checks reject a missing call, a missing terminal rule, and a jump rewritten as MUST.
+- `python v4/scripts/validate_graph.py`: exit 0, zero warnings, including Gate 18 and the full R5 threshold gate.
+- Registry counts remain 267 nodes, 317 calls, 157 jumps, 474 edges, and 147 capability contracts.

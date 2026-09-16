@@ -17,9 +17,11 @@ mode_contracts:
   risky-prediction: *compression_audit_input
 ```
 ## Execution protocol
-1. Classify the explanation's compression evidence (`classify-simplicity-evidence`).
-2. Derive and test risky predictions (`test-risky-prediction`).
-3. Attack the explanation and score the remaining support (`construct-critique`, `score-object`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `classify-simplicity-evidence` to classify the explanation's compression evidence.
+2. You MUST load skill `test-risky-prediction` to derive and test risky predictions.
+3. You MUST load skill `construct-critique` to attack the explanation. You MUST load skill `score-object` to score its remaining support.
 Deviation: omit prediction testing only when no nontrivial prediction can be derived, and mark the explanation non-discriminating.
 ## Output contract
 ```yaml

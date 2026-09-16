@@ -16,11 +16,14 @@ mode_contracts:
   novelty-preserving-evolution: *evolution_input
 ```
 ## Execution protocol
-1. Mutate or recombine the population (`mutate-solution-population`).
-2. Select solution variants (`select-solution-variants`).
-3. Measure portfolio diversity (`measure-portfolio-diversity`).
-4. Assess sensitivity (`assess-sensitivity`).
-5. Synthesize the retained set (`synthesize-idea`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `mutate-solution-population` to mutate or recombine the population.
+2. You MUST load skill `select-solution-variants` to select solution variants.
+3. You MUST load skill `measure-portfolio-diversity` to measure portfolio diversity.
+4. You MUST load skill `assess-sensitivity` to assess selection sensitivity.
+5. You MUST load skill `synthesize-idea` to synthesize the retained set.
+   If the retained variants require an explicit final ordering, consider `rank-candidates` as the next tactic.
 Deviation: stop when added variation no longer changes the frontier or diversity objective; retain niche candidates when explicitly protected.
 ## Mode branches
 - `mutation-selection`: mutate/recombine, score, and select across iterations.

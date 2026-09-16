@@ -157,3 +157,15 @@ frontmatter 改动 0，未写入 harness/runtime 控制面概念。样本未过�
 机械自检：四节点 call 目标集合与 graph 逐项相等，30/30；jump 10/10，
 全部带条件且无 `MUST`；每节点 inline 总则恰好 1 条；未新增正文小节或
 frontmatter，未触碰 contract、threshold、rubric。仍未铺量。
+
+## [N2 -> R5 / R0] 全量内联交付 2026-09-16
+
+已按四节点终稿格式注入全部 51 个 tactic，并交付：
+
+- `v4/scripts/validate_inline_edges.py`：逐 tactic 校验 MUST call 集合、软 jump 集合、jump 不得进入 MUST、总则唯一性、五个受保护小节逐字节不变，以及 216 个 SOP 整文件不变。
+- `v4/registry/inline-edge-baseline.json`：注入前 SHA-256 基线，禁止覆盖。
+- `v4/scripts/validate_graph.py`：已接入上述检查，默认全量路径会执行。
+
+实测结果：51 个 tactic、317/317 call、82/82 tactic jump 全部精确匹配；216 个 SOP 哈希全部不变；五个受保护小节全部逐字节一致；总则每节点恰好一次。默认 `python v4/scripts/validate_graph.py` 退出 0，零 warning。
+
+数字口径校正：权威 `graph.json` 的 157 条 jump 由 82 条 tactic-to-tactic 与 75 条 SOP-to-SOP 组成。由于本任务明确要求 216 个 SOP 一字不动，正文注入范围是前 82 条；脚本同时锁定全图 jump 总数仍为 157。请 R5 按注入前正文含义与 mode 落点复核。
