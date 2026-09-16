@@ -12,7 +12,7 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "@apify/actors-mcp-server": "^0.13.0",
+    "@apify/actors-mcp-server": "^0.15.7",
     "@brave/brave-search-mcp-server": "^2.0.82",
     "@yogsoth-ai/semantic-scholar-mcp": "^1.0.0",
     "@yogsoth-ai/wiki-vault": "^1.2.1",
