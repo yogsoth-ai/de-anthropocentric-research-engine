@@ -295,6 +295,26 @@ Plus the infrastructure that every package draws on:
 
 Requires Node.js 22 or newer.
 
+For Claude Code, you can install the published npm package directly into your
+own project without cloning this repository:
+
+```bash
+# Run from your own project directory
+npx @yogsoth-ai/dare install
+```
+
+This copies the bundled skills into `./.claude/skills/` and creates a
+`.mcp.json` template only if one does not already exist. Existing same-name
+skill directories are skipped, so re-running adds missing skills but does not
+upgrade installed skills. Existing `.mcp.json` files are left untouched.
+
+Fill in the API keys and vault path in `.mcp.json` as needed, then continue
+with [external dependencies and invocation](#external-dependencies-and-invocation)
+below. See the [CLI README](cli/README.md) for details. The npm package contains
+the skills and template bundled at publication time; use the clone workflow
+below when you need the current repository contents. For Codex, use the
+clone-based installer below.
+
 1. Clone and install dependencies:
 
    ```bash
@@ -340,6 +360,9 @@ Requires Node.js 22 or newer.
 
 ### Claude Code
 
+The following manual installation steps use the clone created above. If you
+used the npm installer, skip to the external dependencies below.
+
 1. Copy `mcp.example.json` to `.mcp.json` and fill in your API keys:
 
    ```bash
@@ -363,7 +386,9 @@ Requires Node.js 22 or newer.
    Copy-Item -Recurse skills\* .claude\skills\
    ```
 
-3. Install the required external dependencies. Two packages call skills that
+#### External dependencies and invocation
+
+1. Install the required external dependencies. Two packages call skills that
    live outside this repo — install them before running those packages:
 
    - **experiment-execution** drives experiments through the `superpowers` and
@@ -383,7 +408,7 @@ Requires Node.js 22 or newer.
      npx @ara-commons/ara-skills
      ```
 
-4. Invoke the entry point:
+2. Invoke the entry point:
 
    ```bash
    /de-anthropocentric-research-engine
