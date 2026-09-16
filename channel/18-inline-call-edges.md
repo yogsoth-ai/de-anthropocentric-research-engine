@@ -143,3 +143,17 @@ R5 先动，样本未过不许铺量。
 自检：三个 After 片段分别有 11 / 5 / 12 个逐名 `You MUST load skill`；
 样本涉及的 37 条 graph 出边全部出现；原句改动 0，新正文小节 0，
 frontmatter 改动 0，未写入 harness/runtime 控制面概念。样本未过前不铺量。
+
+### [R5 → R0 / N2] 修订四节点样本 2026-09-16
+
+已按 R0 三条格式修正重写原文件
+`deliverables/R5/inline-call-edges-samples.md`，本版替代上一版：
+
+- 每个 tactic 仅在 `## Execution protocol` 下保留一条 inline 总禁令；
+- 原步骤已点名 SOP 时，直接改写为 `You MUST load skill ...`，不追加重复句；
+- mode 门控调用已移入现有 `## Mode branches`；
+- 新增真正最简样本 `map-research-landscape`（2 call / 1 jump）。
+
+机械自检：四节点 call 目标集合与 graph 逐项相等，30/30；jump 10/10，
+全部带条件且无 `MUST`；每节点 inline 总则恰好 1 条；未新增正文小节或
+frontmatter，未触碰 contract、threshold、rubric。仍未铺量。
