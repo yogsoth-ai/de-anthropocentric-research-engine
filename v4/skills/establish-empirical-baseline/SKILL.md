@@ -19,10 +19,13 @@ constraints: [comparability fields and source provenance required]
 
 ## Execution protocol
 
-1. Inventory methods and define the comparison condition schema.
-2. Extract performance data and normalize units, data, compute, and evaluation protocol.
-3. Analyze discrepancies, progress trajectory, leaderboard state, and headroom.
-4. Synthesize baseline with uncertainty and known incomparable records.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `inventory-reference-items` to inventory methods and comparison records.
+2. You MUST load skill `extract-evidence-record` to extract performance evidence. You MUST load skill `audit-reporting-quality` to audit missing or ambiguous reporting. You MUST load skill `normalize-comparison-scale` to normalize units, data, compute, and evaluation protocol.
+3. You MUST load skill `detect-performance-discrepancy` to detect comparison discrepancies. You MUST load skill `estimate-performance-headroom` to estimate headroom. You MUST load skill `analyze-temporal-trajectory` to analyze progress and leaderboard dynamics. You MUST load skill `check-dominance` to identify dominated and incomparable records.
+4. Synthesize the baseline with uncertainty and known incomparable records.
+   If the resulting methods or baselines require explicit comparative selection, consider `rank-candidates` as the next tactic.
 
 ## Output contract
 

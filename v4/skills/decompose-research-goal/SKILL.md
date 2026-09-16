@@ -19,11 +19,13 @@ constraints: [goal wording, constraints, and source context must be explicit]
 
 ## Execution protocol
 
-1. Formalize the top goal and desired effect (`formulate-top-goal`).
-2. Recursively construct AND/OR branches and executable leaves (`decompose-and-or-goal`).
-3. Check leaf specificity, testability, coverage, and dependency consistency (`validate-goal-tree`).
-4. Annotate feasibility and alternatives (`assess-goal-feasibility`).
-5. Map dependencies and compress the result into a North Star (`map-dependencies`, `crystallize-north-star`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `formulate-top-goal` to formalize the top goal and desired effect.
+2. You MUST load skill `decompose-and-or-goal` to recursively construct AND/OR branches and executable leaves.
+3. You MUST load skill `validate-goal-tree` to check leaf specificity, testability, coverage, and dependency consistency.
+4. You MUST load skill `assess-goal-feasibility` to annotate feasibility and alternatives.
+5. You MUST load skill `map-dependencies` to map the goal dependencies. You MUST load skill `crystallize-north-star` to compress the result into a North Star.
 
 Deviation: Omit feasibility annotations when no actor, resource, or timeline constraints are supplied; mark the tree provisional rather than inventing constraints. Re-run only the affected branch after a decision changes its parent goal.
 

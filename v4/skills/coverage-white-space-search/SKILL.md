@@ -13,10 +13,13 @@ optional: [performance_records, eligibility_rules]
 constraints: [reference items and dimension values must be identifiable]
 ```
 ## Execution protocol
-1. Inventory references (`inventory-reference-items`).
-2. Map coverage (`map-coverage-space`).
-3. Detect uncovered regions (`detect-coverage-gap`).
-4. Synthesize candidates (`synthesize-idea`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `inventory-reference-items` to inventory references.
+2. You MUST load skill `map-coverage-space` to map coverage.
+3. You MUST load skill `detect-coverage-gap` to detect uncovered regions.
+4. You MUST load skill `synthesize-idea` to synthesize candidates.
+   If a candidate gap is ready to become a testable explanation, consider `formulate-hypotheses`. If the gap itself still requires evidence validation, consider `validate-research-gap`.
 Deviation: acquisition is runtime-selected; do not infer coverage from missing records.
 ## Output contract
 ```yaml

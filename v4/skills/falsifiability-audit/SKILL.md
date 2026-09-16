@@ -19,9 +19,12 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `evaluate-falsifiability` on its named scientific object and record the evidence or decision it contributes.
-2. Use `operationalize-construct` on its named scientific object and record the evidence or decision it contributes.
-3. Use `specify-boundaries` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `evaluate-falsifiability` to evaluate the claim's reachable falsifiers.
+2. You MUST load skill `operationalize-construct` to operationalize every construct used by the claim.
+3. You MUST load skill `specify-boundaries` to state the scope and boundary conditions.
+   If the audit exposes an ill-formed question, consider `formulate-research-question`. If the claim is ready for an empirical test, consider `design-experiment`. If a broader falsification program is required, `falsification-first-audit` may be the better next tactic.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

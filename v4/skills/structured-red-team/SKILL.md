@@ -13,9 +13,12 @@ optional: [access_assumptions, severity_scale]
 constraints: [attack surface and probe authority must be explicit]
 ```
 ## Execution protocol
-1. Map attackable dimensions and exposure (`map-threat-surface`).
-2. Generate concrete attack vectors (`generate-attack-vector`).
-3. Execute probes and trace downstream assumption failures (`execute-probe`, `trace-assumption-cascade`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `map-threat-surface` to map attackable dimensions and exposure.
+2. You MUST load skill `generate-attack-vector` to generate concrete attack vectors.
+3. You MUST load skill `execute-probe` to execute the probes. You MUST load skill `trace-assumption-cascade` to trace downstream assumption failures.
+   If the exposed failures require severity and mitigation analysis, consider `fmea-risk-analysis`. If they can support a decisive claim verdict, `falsification-first-audit` may be the better next tactic.
 Deviation: stop a probe when its scope is exhausted; record untested attack surface and do not infer resilience.
 ## Output contract
 ```yaml

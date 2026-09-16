@@ -13,9 +13,12 @@ optional: [failure_history, severity_scale, occurrence_scale, detectability_scal
 constraints: [scales and scoring direction must be declared]
 ```
 ## Execution protocol
-1. Enumerate failure modes and chains (`enumerate-failure-modes`, `build-failure-chain`).
-2. Score severity, occurrence, detectability, and priority (`score-fmea-risk`).
-3. Design mitigations and re-run the relevant test (`design-mitigation`, `validate-mitigation-effect`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `enumerate-failure-modes` to enumerate failure modes. You MUST load skill `build-failure-chain` to construct their propagation chains.
+2. You MUST load skill `score-fmea-risk` to score severity, occurrence, detectability, and priority.
+3. You MUST load skill `design-mitigation` to design mitigations. You MUST load skill `validate-mitigation-effect` to re-run the relevant test and validate the effect.
+   If a failure chain requires explicit intervention counterfactuals, consider `counterfactual-causal-analysis` as the next tactic.
 Deviation: omit an unavailable score dimension only with an explicit unknown and no hidden imputation.
 ## Output contract
 ```yaml

@@ -13,9 +13,12 @@ optional: [mechanism_graph, baseline_world, comparison_conditions]
 constraints: [intervention and outcome must be measurable or explicitly qualitative]
 ```
 ## Execution protocol
-1. Extract causal structure and variables (`extract-causal-structure`, `identify-variables`).
-2. Construct the counterfactual and identify load-bearing factors (`construct-counterfactual`, `identify-load-bearing-factors`).
-3. Search the minimal conclusion flip and test necessity/sufficiency (`search-minimal-flip`, `evaluate-necessity-sufficiency`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `extract-causal-structure` to extract the causal structure. You MUST load skill `identify-variables` to type its variables.
+2. You MUST load skill `construct-counterfactual` to construct the counterfactual. You MUST load skill `identify-load-bearing-factors` to identify load-bearing factors.
+3. You MUST load skill `search-minimal-flip` to search the minimal conclusion flip. You MUST load skill `evaluate-necessity-sufficiency` to test necessity and sufficiency.
+   If the conclusion should instead be tested by contradiction and counterexample, consider `reductio-counterexample-analysis` as the next tactic.
 Deviation: use qualitative counterfactuals when intervention data are unavailable, but mark the inference uncertainty.
 ## Output contract
 ```yaml

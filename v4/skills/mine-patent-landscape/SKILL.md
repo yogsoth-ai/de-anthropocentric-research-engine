@@ -19,11 +19,14 @@ constraints: [family identity, classification, assignee, date, and source proven
 
 ## Execution protocol
 
-1. Trace priority, family, and citation relationships (`trace-patent-family`).
-2. Expand or delimit the technical neighborhood (`navigate-patent-classification`).
-3. Canonicalize assignees and entities (`canonicalize-entity`).
-4. Analyze filing dynamics and temporal regimes (`analyze-temporal-trajectory`).
-5. Identify coverage gaps and citation structure (`detect-coverage-gap`, `analyze-patent-citation-network`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `trace-patent-family` to trace priority, family, and citation relationships.
+2. You MUST load skill `navigate-patent-classification` to expand or delimit the technical neighborhood.
+3. You MUST load skill `canonicalize-entity` to canonicalize assignees and entities.
+4. You MUST load skill `analyze-temporal-trajectory` to analyze filing dynamics and temporal regimes.
+5. You MUST load skill `detect-coverage-gap` to identify coverage gaps. You MUST load skill `analyze-patent-citation-network` to analyze the citation structure.
+   If the landscape is ready for claim-level white-space analysis, consider `map-patent-white-space` as the next tactic.
 
 Deviation: Skip entity canonicalization when records already carry a stable canonical key. Skip temporal analysis when no time field exists, and mark the missing dimension instead of imputing it.
 

@@ -18,21 +18,22 @@ mode_contracts:
   Monte-Carlo: *sensitivity_input
 ```
 ## Execution protocol
-1. Define analysis dimensions (`define-analysis-dimensions`).
-2. Run bounded perturbations (`apply-perturbation`).
-3. Estimate local/global effects (`assess-sensitivity`).
-4. Identify load-bearing factors (`identify-load-bearing-factors`).
-5. Decompose interactions (`decompose-global-sensitivity`).
-6. Propagate uncertainty (`propagate-uncertainty`).
-7. Quantify information value for unresolved drivers (`quantify-information-value`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `define-analysis-dimensions` to define the analysis dimensions.
+2. Apply the selected mode's perturbation, decomposition, or propagation operation.
+3. You MUST load skill `assess-sensitivity` to estimate the declared sensitivity effects.
+4. You MUST load skill `identify-load-bearing-factors` to identify load-bearing factors.
+5. You MUST load skill `quantify-information-value` to quantify information value for unresolved drivers.
+   If the dominant sensitivity is caused by an unstable problem frame rather than an input value, consider `problem-reframing` as the next tactic.
 Deviation: `local-perturbation`, `Morris`, `Sobol`, `Monte-Carlo`, and decision-value modes select subsets, but mode and omitted analyses must be recorded.
 
 ## Mode branches
 
-- `Morris`: screen many uncertain inputs with elementary effects to identify influential factors and interactions before expensive global analysis.
-- `Sobol`: decompose output variance into first-order and total-order contributions when the model can support global sampling.
-- `perturbation`: vary declared inputs around a baseline to expose local directional sensitivity and threshold crossings.
-- `Monte-Carlo`: propagate input distributions through repeated draws to quantify outcome uncertainty rather than relying on a point estimate.
+- `Morris`: screen many uncertain inputs with elementary effects to identify influential factors and interactions before expensive global analysis. You MUST load skill `apply-perturbation` to generate elementary-effect trajectories. You MUST load skill `decompose-global-sensitivity` to separate influential factors and interactions.
+- `Sobol`: decompose output variance into first-order and total-order contributions when the model can support global sampling. You MUST load skill `decompose-global-sensitivity` to compute the variance decomposition. You MUST load skill `propagate-uncertainty` to propagate the declared input distributions.
+- `perturbation`: vary declared inputs around a baseline to expose local directional sensitivity and threshold crossings. You MUST load skill `apply-perturbation` to execute the bounded variations.
+- `Monte-Carlo`: propagate input distributions through repeated draws to quantify outcome uncertainty rather than relying on a point estimate. You MUST load skill `propagate-uncertainty` to run and summarize the repeated draws.
 
 ## Output contract
 ```yaml

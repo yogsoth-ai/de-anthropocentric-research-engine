@@ -20,11 +20,14 @@ mode_contracts:
   distortion: *destructive_input
 ```
 ## Execution protocol
-1. Surface assumptions (`surface-assumptions`).
-2. Generate a deliberate provocation (`generate-provocation`).
-3. Extract constructive movement (`extract-constructive-movement`).
-4. Synthesize an idea (`synthesize-idea`).
-5. Expand the concept fan (`build-concept-fan`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `surface-assumptions` to surface assumptions.
+2. You MUST load skill `generate-provocation` to generate the mode-specific provocation.
+3. You MUST load skill `extract-constructive-movement` to extract constructive movement.
+4. You MUST load skill `synthesize-idea` to synthesize an idea.
+5. You MUST load skill `build-concept-fan` to expand the concept fan.
+   If the idea now requires explicit component transformation, consider `structural-transformation`. If it exposes a technical or physical contradiction, consider `resolve-inventive-contradiction`.
 Deviation: mode may be reverse, negation, random-entry, extreme-constraint, sacred-cow, or distortion; record the selected mode.
 ## Mode branches
 - `reverse`: invert the current desired/undesired relation.

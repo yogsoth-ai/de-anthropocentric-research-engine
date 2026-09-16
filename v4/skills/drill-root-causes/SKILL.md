@@ -13,10 +13,13 @@ optional: [evidence, system_boundary, known_causes]
 constraints: [each causal edge needs an evidence or assumption label]
 ```
 ## Execution protocol
-1. Drill repeated whys (`drill-five-whys`).
-2. Decompose six causal categories (`decompose-ishikawa`).
-3. Build a current-reality tree (`build-current-reality-tree`).
-4. Validate causal links (`validate-causal-link`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `drill-five-whys` to drill repeated whys.
+2. You MUST load skill `decompose-ishikawa` to decompose six causal categories.
+3. You MUST load skill `build-current-reality-tree` to build the current-reality tree.
+4. You MUST load skill `validate-causal-link` to validate its causal links.
+   If the root-cause chain depends on untested assumptions, consider `assumption-stress-test` as the next tactic.
 Deviation: use fewer representations only when the input explicitly limits scope; record omitted views and reason.
 ## Output contract
 ```yaml

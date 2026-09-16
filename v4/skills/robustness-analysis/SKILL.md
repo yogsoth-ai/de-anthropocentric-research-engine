@@ -13,11 +13,14 @@ optional: [evidence, alternative_models, sensitivity_dimensions]
 constraints: [variants must preserve the declared target question]
 ```
 ## Execution protocol
-1. Surface assumptions (`surface-assumptions`).
-2. Generate plausible alternatives (`generate-alternative-model`).
-3. Compare sensitivity across variants (`assess-sensitivity`).
-4. Identify load-bearing factors (`identify-load-bearing-factors`).
-5. Check scaling regimes (`analyze-scaling-regime`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `surface-assumptions` to surface assumptions.
+2. You MUST load skill `generate-alternative-model` to generate plausible alternatives.
+3. You MUST load skill `assess-sensitivity` to compare sensitivity across variants.
+4. You MUST load skill `identify-load-bearing-factors` to identify load-bearing factors.
+5. You MUST load skill `analyze-scaling-regime` to check scaling regimes.
+   If the result needs explicit validity boundaries, consider `map-validity-envelope`. If apparent agreement may reuse evidence or priors, consider `audit-convergence-independence`.
 Deviation: omit scaling analysis only when the model has no scale variable; document the reason.
 ## Output contract
 ```yaml

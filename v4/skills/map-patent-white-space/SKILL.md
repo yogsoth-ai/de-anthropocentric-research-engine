@@ -19,9 +19,11 @@ constraints: [feature provenance and claim scope must be retained, unprotected m
 
 ## Execution protocol
 
-1. Parse claims into comparable elements (`parse-patent-claim`).
-2. Align family and jurisdiction evidence (`trace-patent-family`).
-3. Identify absent, thin, or disconnected feature combinations (`detect-coverage-gap`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `parse-patent-claim` to parse claims into comparable elements.
+2. You MUST load skill `trace-patent-family` to align family and jurisdiction evidence.
+3. You MUST load skill `detect-coverage-gap` to identify absent, thin, or disconnected feature combinations.
 
 Deviation: If claim records are already normalized, reuse them and skip reparsing. If family evidence is incomplete, label the white-space candidate provisional rather than treating absence as freedom to operate.
 

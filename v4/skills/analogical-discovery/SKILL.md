@@ -13,9 +13,12 @@ optional: [candidate_sources, transfer_constraints]
 constraints: [source and target roles must be explicit]
 ```
 ## Execution protocol
-1. Abstract relational structure (`abstract-structure`).
-2. Map source relations to target (`map-analogy`).
-3. Instantiate and test the transferred mechanism (`instantiate-transfer`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `abstract-structure` to abstract the relational structure.
+2. You MUST load skill `map-analogy` to map source relations to the target.
+3. You MUST load skill `instantiate-transfer` to instantiate and test the transferred mechanism.
+   If the analogy should be expanded across a typed combination space, consider `explore-dimensional-space`. If biological mechanisms are the relevant source domain, consider `biomimetic-transfer`. If several source structures must be composed, consider `conceptual-blending`. If the claimed mapping requires a formal preservation audit, `audit-structural-equivalence` may be the better next tactic.
 Deviation: skip source search only when a supplied source is structurally specified; never skip mapping or transfer validation.
 ## Output contract
 ```yaml

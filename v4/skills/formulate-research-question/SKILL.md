@@ -19,11 +19,14 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `apply-question-framework` on its named scientific object and record the evidence or decision it contributes.
-2. Use `assess-question-quality` on its named scientific object and record the evidence or decision it contributes.
-3. Use `define-criteria` on its named scientific object and record the evidence or decision it contributes.
-4. Use `set-threshold` on its named scientific object and record the evidence or decision it contributes.
-5. Use `adjust-abstraction-scope` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `apply-question-framework` to construct the question under the selected framework.
+2. You MUST load skill `assess-question-quality` to assess answerability, significance, and precision.
+3. You MUST load skill `define-criteria` to define the question-quality criteria.
+4. You MUST load skill `set-threshold` to set the acceptance thresholds.
+5. You MUST load skill `adjust-abstraction-scope` to correct the abstraction level and scope.
+   If the accepted question contains dependent subproblems, consider `decompose-research-question` as the next tactic.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

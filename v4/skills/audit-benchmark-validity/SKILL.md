@@ -19,10 +19,13 @@ constraints: [claims must be linked to benchmark evidence]
 
 ## Execution protocol
 
-1. Reconstruct benchmark construct, task boundary, metric, data coverage, and protocol versions.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `inventory-reference-items` to inventory benchmark components and versions. You MUST load skill `decompose-evaluation-metric` to decompose the evaluation metric. You MUST load skill `assess-construct-validity` to assess the benchmark construct. You MUST load skill `extract-evaluation-protocol` to reconstruct protocol versions.
 2. Select validity, contamination, saturation, coverage, protocol-forensics, or evaluation-comparison mode.
-3. Probe artifacts and shortcut paths; compare protocol/metric variants.
-4. Return validity verdict with threats, evidence, and required repairs.
+3. You MUST load skill `audit-data-contamination` to audit contamination. You MUST load skill `map-coverage-space` to map data and task coverage. You MUST load skill `analyze-leaderboard-dynamics` to analyze saturation and temporal dynamics. You MUST load skill `compare-evaluation-protocols` to compare protocol and metric variants. You MUST load skill `probe-benchmark-artifact` to probe artifacts and shortcut paths.
+4. You MUST load skill `audit-reporting-quality` to audit reporting quality and return the validity verdict with threats, evidence, and required repairs.
+   If the audit exposes systematic coverage gaps, consider `coverage-white-space-search`. If the benchmark or metric may share assumptions with the tested system, consider `audit-validator-independence`.
 
 ## Output contract
 

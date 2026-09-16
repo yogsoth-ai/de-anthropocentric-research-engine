@@ -19,16 +19,19 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Declare outcome directions, hard constraints, stakeholder scope, horizon, and permissible tradeoffs before comparing candidates. (`define-objective`)
-2. Remove infeasible candidates and retain only points not dominated across the normalized objective dimensions. (`optimize-pareto-frontier`)
-3. Stress each surviving candidate or portfolio under a fixed scenario to expose impact, tradeoffs, and failure triggers. (`construct-scenario`)
-4. Evaluate the current portfolio inside each scenario using stable criteria, explicit missingness, and counterexamples. (`evaluate-scenario-impact`)
-5. Apply the preference policy to the current frontier and document the chosen point, sacrificed objectives, and nearest alternatives. (`select-from-frontier`)
-6. Quantify coverage across the declared feature or failure-mode dimensions to reveal concentration and niche collapse. (`measure-portfolio-diversity`)
-7. Map dependencies, cycles, critical paths, and independent branches before committing to an execution order. (`map-dependencies`)
-8. Topologically order the dependent work while surfacing fail-fast and high-risk branches for the decision record. (`sequence-work`)
-9. Compare immediate, deferred, staged, and information-gathering actions by reversibility, delay cost, and trigger conditions. (`evaluate-optionality`)
-10. Aggregate scenario results under the declared robust-decision rule and state which portfolio assumptions remain fragile. (`evaluate-scenario-robustness`)
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `define-objective` to declare outcome directions, hard constraints, stakeholder scope, horizon, and permissible tradeoffs before comparing candidates.
+2. You MUST load skill `optimize-pareto-frontier` to remove infeasible candidates and retain only points not dominated across the normalized objective dimensions.
+3. You MUST load skill `construct-scenario` to stress each surviving candidate or portfolio under a fixed scenario and expose impact, tradeoffs, and failure triggers.
+4. You MUST load skill `evaluate-scenario-impact` to evaluate the current portfolio inside each scenario using stable criteria, explicit missingness, and counterexamples.
+5. You MUST load skill `select-from-frontier` to apply the preference policy and document the chosen point, sacrificed objectives, and nearest alternatives.
+6. You MUST load skill `measure-portfolio-diversity` to quantify coverage and reveal concentration and niche collapse.
+7. You MUST load skill `map-dependencies` to map dependencies, cycles, critical paths, and independent branches before committing to an execution order.
+8. You MUST load skill `sequence-work` to topologically order the dependent work while surfacing fail-fast and high-risk branches.
+9. You MUST load skill `evaluate-optionality` to compare immediate, deferred, staged, and information-gathering actions by reversibility, delay cost, and trigger conditions.
+10. You MUST load skill `evaluate-scenario-robustness` to aggregate scenario results and state which portfolio assumptions remain fragile.
+    If the selected portfolio needs a strong challenge before commitment, consider `adversarial-deliberation` as the next tactic.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

@@ -19,23 +19,19 @@ mode_contracts:
   abstraction-scope: *reframing_input
 ```
 ## Execution protocol
-1. Identify the dominant frame (`identify-dominant-frame`).
-2. Generate a targeted provocation (`generate-provocation`).
-3. Derive consequences (`derive-consequences`).
-4. Assess wickedness (`assess-problem-wickedness`).
-5. Apply appreciative reframe (`appreciative-reframe`).
-6. Construct perspectives (`construct-perspective-set`).
-7. Rotate perspectives (`rotate-perspective`).
-8. Map productive polarity (`map-productive-polarity`).
-9. Adjust abstraction/scope (`adjust-abstraction-scope`).
-10. Map disagreement (`map-disagreement`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. Select the reframe mode that matches the declared failure in the current frame.
+2. Execute the mode-specific operations below without deleting the original frame or its evidence.
+3. Record the transformed frame, derived consequences, invariants, and unresolved disagreement.
+   If a reframed question is ready to generate testable explanations, consider `formulate-hypotheses`. If opposing frames require a structured exchange, `adversarial-deliberation` may be the better next tactic.
 Deviation: mode selects a subset, but every omitted operation must be justified by the declared reframe mode and input.
 ## Mode branches
-- `dominant-frame-escape`: identify and challenge the frame governing the current question.
-- `perspective-shift`: rotate explicit reviewer, practitioner, theorist, time, or novice views.
-- `stakeholder/worldview`: reframe around stakeholder interests and lived assumptions.
-- `polarity`: expose productive opposition and map its consequences.
-- `abstraction-scope`: move up/down the abstraction or scope ladder and preserve invariants.
+- `dominant-frame-escape`: identify and challenge the frame governing the current question. You MUST load skill `identify-dominant-frame` to identify that frame. You MUST load skill `generate-provocation` to challenge it. You MUST load skill `derive-consequences` to trace the resulting consequences. You MUST load skill `appreciative-reframe` to retain generative strengths while escaping the dominant frame.
+- `perspective-shift`: rotate explicit reviewer, practitioner, theorist, time, or novice views. You MUST load skill `construct-perspective-set` to construct the explicit views. You MUST load skill `rotate-perspective` to rotate them. You MUST load skill `map-disagreement` to retain their substantive disagreements.
+- `stakeholder/worldview`: reframe around stakeholder interests and lived assumptions. You MUST load skill `construct-perspective-set` to construct stakeholder worldviews. You MUST load skill `rotate-perspective` to apply each worldview. You MUST load skill `assess-problem-wickedness` to assess conflicts that prevent a single stable frame. You MUST load skill `map-disagreement` to preserve unresolved interests.
+- `polarity`: expose productive opposition and map its consequences. You MUST load skill `map-productive-polarity` to map the opposing poles. You MUST load skill `derive-consequences` to derive their consequences.
+- `abstraction-scope`: move up/down the abstraction or scope ladder and preserve invariants. You MUST load skill `adjust-abstraction-scope` to move the frame while preserving declared invariants.
 ## Output contract
 ```yaml
 mode_contracts:

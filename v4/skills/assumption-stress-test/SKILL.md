@@ -13,11 +13,14 @@ optional: [evidence, causal_graph, perturbation_bounds]
 constraints: [each assumption must be traceable to a claim or causal link]
 ```
 ## Execution protocol
-1. Surface load-bearing assumptions (`surface-assumptions`).
-2. Classify vulnerability (`classify-assumption-vulnerability`).
-3. Challenge each material assumption (`challenge-assumption`).
-4. Apply bounded perturbations (`apply-perturbation`).
-5. Re-check causal links (`validate-causal-link`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `surface-assumptions` to surface load-bearing assumptions.
+2. You MUST load skill `classify-assumption-vulnerability` to classify their vulnerability.
+3. You MUST load skill `challenge-assumption` to challenge each material assumption.
+4. You MUST load skill `apply-perturbation` to apply bounded perturbations.
+5. You MUST load skill `validate-causal-link` to re-check affected causal links.
+   If the surviving result requires broader model and scaling variants, consider `robustness-analysis` as the next tactic.
 Deviation: omit perturbation only when the assumption is purely definitional; still record and classify it.
 ## Output contract
 ```yaml

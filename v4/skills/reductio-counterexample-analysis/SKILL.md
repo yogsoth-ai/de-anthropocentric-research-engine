@@ -13,9 +13,12 @@ optional: [known_counterexamples, boundary_conditions]
 constraints: [negation must preserve the stated scope]
 ```
 ## Execution protocol
-1. Negate the claim and derive consequences (`negate-claim`, `derive-consequences`).
-2. Detect contradictions and generate counterexamples (`detect-contradiction`, `generate-counterexample`).
-3. Refine the claim without deleting surviving evidence (`refine-claim`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `negate-claim` to negate the claim. You MUST load skill `derive-consequences` to derive the consequences.
+2. You MUST load skill `detect-contradiction` to detect contradictions. You MUST load skill `generate-counterexample` to generate counterexamples.
+3. You MUST load skill `refine-claim` to refine the claim without deleting surviving evidence.
+   If the surviving claim needs an explicit region of validity, consider `map-validity-envelope` as the next tactic.
 Deviation: if negation is outside the claim scope, mark it out-of-scope rather than a failure.
 ## Output contract
 ```yaml

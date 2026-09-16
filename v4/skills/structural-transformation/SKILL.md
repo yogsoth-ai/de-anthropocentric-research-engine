@@ -13,10 +13,13 @@ optional: [component_inventory, constraints, operator_sequence]
 constraints: [operator and affected component must be named for every variant]
 ```
 ## Execution protocol
-1. Decompose components and functions (`decompose-components`).
-2. Apply exactly named SCAMPER operators (`transform-component`): Substitute, Combine, Adapt, Modify (including magnify/minify variants), Put to another use, Eliminate, Reverse (including rearrange variants).
-3. Evaluate compatibility of each variant (`evaluate-compatibility`).
-4. Synthesize viable transformations (`synthesize-idea`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `decompose-components` to decompose components and functions.
+2. You MUST load skill `transform-component` to apply exactly named SCAMPER operators: Substitute, Combine, Adapt, Modify (including magnify/minify variants), Put to another use, Eliminate, Reverse (including rearrange variants).
+3. You MUST load skill `evaluate-compatibility` to evaluate each variant's compatibility.
+4. You MUST load skill `synthesize-idea` to synthesize viable transformations.
+   If the variants expose systematic uncovered regions, consider `coverage-white-space-search`. If progress is blocked by a contradiction, consider `resolve-inventive-contradiction`.
 Deviation: operators may be selected or sequenced by the design question, but the record must state which of the seven operators were considered, applied, rejected, and why; "appropriate operator" is invalid.
 ## Output contract
 ```yaml

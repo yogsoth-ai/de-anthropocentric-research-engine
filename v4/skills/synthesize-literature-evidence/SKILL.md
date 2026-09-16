@@ -37,21 +37,23 @@ mode_contracts:
 
 ## Execution protocol
 
-1. Define scope, queries, inclusion/exclusion rules, provenance, and stopping evidence (`define-evidence-protocol`).
-2. Select high-information seeds and categorize the corpus (`select-seed-evidence`, `categorize-evidence`).
-3. Extract structured records and audit study validity (`extract-evidence-record`, `audit-study-validity`).
-4. Canonicalize entities, build the evidence hierarchy, and screen in stages (`canonicalize-entity`, `construct-hierarchy`, `screen-evidence-multistage`).
-5. Expand citations and assess evidence saturation (`trace-citation-neighborhood`, `assess-evidence-saturation`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `define-evidence-protocol` to define scope, queries, inclusion and exclusion rules, provenance, and stopping evidence.
+2. You MUST load skill `select-seed-evidence` to select high-information seeds. You MUST load skill `categorize-evidence` to categorize the corpus.
+3. Apply the selected mode's extraction, appraisal, normalization, hierarchy, screening, or citation operations.
+4. You MUST load skill `assess-evidence-saturation` to assess whether new independent evidence has saturated.
+   If the synthesis needs a formal domain structure, consider `build-domain-ontology`. If an apparent absence needs validation as a research gap, consider `validate-research-gap`. If the evidence should define a quantitative comparison baseline, consider `establish-empirical-baseline`. If claims and counterclaims need explicit support relations, `construct-argument-map` may be the better next tactic.
 
 Deviation: Mode determines which steps are needed. Scoping may stop after broad coverage and screening; systematic mode requires staged screening and validity audit; deep mode prioritizes full-text extraction; narrative mode may omit formal meta-analysis; snowball mode requires citation tracing. Omitted calls remain optional vocabulary, not phantom dependencies.
 
 ## Mode branches
 
-- `scoping`: map the breadth of a field and its terminology to establish coverage, candidate sources, and a defensible follow-up scope.
-- `systematic`: apply preregistered search, staged screening, and validity audit so inclusion decisions are reproducible and complete.
-- `deep`: prioritize full-text extraction and detailed study appraisal when the question requires mechanism-level evidence.
-- `narrative`: organize heterogeneous evidence into a transparent interpretive synthesis when formal pooling is not appropriate.
-- `snowball`: expand backward and forward citation neighborhoods from high-information seeds, stopping when new independent evidence saturates.
+- `scoping`: map the breadth of a field and its terminology to establish coverage, candidate sources, and a defensible follow-up scope. You MUST load skill `canonicalize-entity` to normalize entities and terminology. You MUST load skill `construct-hierarchy` to organize the mapped breadth. You MUST load skill `screen-evidence-multistage` to apply the declared broad screening stages.
+- `systematic`: apply preregistered search, staged screening, and validity audit so inclusion decisions are reproducible and complete. You MUST load skill `screen-evidence-multistage` to perform staged screening. You MUST load skill `extract-evidence-record` to extract the included studies. You MUST load skill `audit-study-validity` to audit their validity.
+- `deep`: prioritize full-text extraction and detailed study appraisal when the question requires mechanism-level evidence. You MUST load skill `extract-evidence-record` to extract full-text records. You MUST load skill `audit-study-validity` to perform detailed study appraisal.
+- `narrative`: organize heterogeneous evidence into a transparent interpretive synthesis when formal pooling is not appropriate. You MUST load skill `extract-evidence-record` to retain structured source records. You MUST load skill `canonicalize-entity` to align recurring entities. You MUST load skill `construct-hierarchy` to organize the narrative evidence.
+- `snowball`: expand backward and forward citation neighborhoods from high-information seeds, stopping when new independent evidence saturates. You MUST load skill `trace-citation-neighborhood` to expand the citation neighborhoods. You MUST load skill `extract-evidence-record` to preserve each retained source.
 
 ## Output contract
 

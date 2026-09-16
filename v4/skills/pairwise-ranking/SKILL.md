@@ -19,12 +19,15 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `select-next-pair` on its named scientific object and record the evidence or decision it contributes.
-2. Use `compare-pair` on its named scientific object and record the evidence or decision it contributes.
-3. Use `assess-ranking-consistency` on its named scientific object and record the evidence or decision it contributes.
-4. Use `aggregate-ranking` on its named scientific object and record the evidence or decision it contributes.
-5. Use `update-pairwise-rating` on its named scientific object and record the evidence or decision it contributes.
-6. Use `collect-independent-judgments` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `select-next-pair` to select the next informative pair.
+2. You MUST load skill `compare-pair` to compare that pair under the declared criteria.
+3. You MUST load skill `assess-ranking-consistency` to assess cycle and consistency evidence.
+4. You MUST load skill `aggregate-ranking` to aggregate the pairwise results.
+5. You MUST load skill `update-pairwise-rating` to update the current rating state.
+6. You MUST load skill `collect-independent-judgments` to collect contamination-controlled judgments.
+   If unresolved disagreement requires iterative convergence rather than another pair comparison, consider `structured-consensus` as the next tactic.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

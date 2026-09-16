@@ -19,9 +19,11 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `generate-subquestions` on its named scientific object and record the evidence or decision it contributes.
-2. Use `map-dependencies` on its named scientific object and record the evidence or decision it contributes.
-3. Use `sequence-work` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `generate-subquestions` to generate answerable subquestions.
+2. You MUST load skill `map-dependencies` to map their evidence and logical dependencies.
+3. You MUST load skill `sequence-work` to sequence the dependent research work.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

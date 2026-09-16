@@ -29,18 +29,21 @@ mode_contracts:
 
 ## Execution protocol
 
-1. Define outcome, effect measure, inclusion boundary, and study-level quality fields.
-2. Extract or calculate effect sizes and record condition, sample, uncertainty, and provenance.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `formulate-meta-analysis-scope` to define outcome, effect measure, and inclusion boundary. You MUST load skill `design-study-inclusion` to define study-level inclusion and quality fields.
+2. You MUST load skill `plan-effect-size` to plan effect-size calculation. You MUST load skill `design-data-extraction` to extract condition, sample, uncertainty, and provenance. You MUST load skill `audit-study-validity` to retain study-validity judgments.
 3. Select one mode: pairwise, network, cumulative, heterogeneity, or bias.
-4. Run sensitivity checks and synthesize estimates with uncertainty and exclusions.
+4. You MUST load skill `assess-sensitivity` to run sensitivity checks and synthesize estimates with uncertainty and exclusions.
+   If the synthesis exposes a mechanism-level explanatory gap, consider `formulate-hypotheses` as the next tactic.
 
 ## Mode branches
 
 - `pairwise`: pool directly comparable effect sizes, report sampling uncertainty and study-quality judgments with sensitivity analyses, and stop only after at least 80% of every declared pairwise floor is met.
-- `network`: compare N>=3 methods using direct and indirect evidence.
-- `cumulative`: update the estimate as studies arrive; retain order and stopping state.
-- `heterogeneity`: investigate between-study variation; preserve I2 interpretation bands.
-- `bias`: test publication, selection, and small-study bias; do not treat absence of evidence as absence of bias.
+- `network`: compare N>=3 methods using direct and indirect evidence. You MUST load skill `construct-evidence-network` to construct the direct and indirect evidence network.
+- `cumulative`: update the estimate as studies arrive; retain order and stopping state. You MUST load skill `update-cumulative-evidence` to perform the ordered cumulative updates.
+- `heterogeneity`: investigate between-study variation; preserve I2 interpretation bands. You MUST load skill `analyze-heterogeneity` to analyze between-study variation.
+- `bias`: test publication, selection, and small-study bias; do not treat absence of evidence as absence of bias. You MUST load skill `assess-publication-bias` to assess publication, selection, and small-study bias.
 
 ## Output contract
 

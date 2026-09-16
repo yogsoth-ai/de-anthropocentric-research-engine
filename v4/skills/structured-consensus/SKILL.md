@@ -19,10 +19,13 @@ constraints: [consume named scientific objects; preserve provenance; keep unreso
 
 ## Execution protocol
 
-1. Use `map-disagreement` on its named scientific object and record the evidence or decision it contributes.
-2. Use `run-convergence-round` on its named scientific object and record the evidence or decision it contributes.
-3. Use `calibrate-probability-forecast` on its named scientific object and record the evidence or decision it contributes.
-4. Use `set-threshold` on its named scientific object and record the evidence or decision it contributes.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `map-disagreement` to map substantive disagreement and shared premises.
+2. You MUST load skill `run-convergence-round` to run the declared convergence round.
+3. You MUST load skill `calibrate-probability-forecast` to calibrate probability forecasts.
+4. You MUST load skill `set-threshold` to set the stopping and acceptance thresholds.
+   If agreement cannot be acted on because readiness is uncertain, consider `analyze-constraints-readiness`. If apparent convergence may share evidence, priors, or methods, consider `audit-convergence-independence`.
 
 Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 

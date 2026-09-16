@@ -19,11 +19,14 @@ constraints: [claim text and source provenance required, jurisdiction and observ
 
 ## Execution protocol
 
-1. Parse independent/dependent claims and map elements to technical functions (`parse-patent-claim`).
-2. Trace priority, family, continuation, and citation relationships (`trace-patent-family`).
-3. Assess breadth, limiting elements, overlap, and design-around vulnerability (`assess-patent-claim-scope`).
-4. Classify observed status by jurisdiction and date (`assess-patent-legal-status`).
-5. Check source independence before synthesizing novelty findings (`verify-evidence-independence`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `parse-patent-claim` to parse independent and dependent claims and map elements to technical functions.
+2. You MUST load skill `trace-patent-family` to trace priority, family, continuation, and citation relationships.
+3. You MUST load skill `assess-patent-claim-scope` to assess breadth, limiting elements, overlap, and design-around vulnerability.
+4. You MUST load skill `assess-patent-legal-status` to classify observed status by jurisdiction and date.
+5. You MUST load skill `verify-evidence-independence` to check source independence before synthesizing novelty findings.
+   If the retained claims expose absent feature combinations, consider `map-patent-white-space` as the next tactic.
 
 Deviation: Skip status or independence checks only when the corresponding input is absent; record the omission as an open question. Do not infer legal status from an undated or single-source record.
 

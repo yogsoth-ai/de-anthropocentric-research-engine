@@ -13,10 +13,13 @@ optional: [independent_sources, time_slices, candidate_gap_types]
 constraints: [absence claims require an explicit scope and retrieval record]
 ```
 ## Execution protocol
-1. Check source independence (`verify-evidence-independence`).
-2. Filter false gaps (`filter-false-gap`).
-3. Test persistence across time (`analyze-temporal-trajectory`).
-4. Classify the validated gap (`classify-research-gap`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `verify-evidence-independence` to check source independence.
+2. You MUST load skill `filter-false-gap` to filter false gaps.
+3. You MUST load skill `analyze-temporal-trajectory` to test persistence across time.
+4. You MUST load skill `classify-research-gap` to classify the validated gap.
+   If several validated gaps require comparative priority, consider `rank-candidates`. If stakeholder boundaries determine whether the gap matters, consider `map-stakeholder-system`.
 Deviation: if temporal data are unavailable, return persistence unknown rather than infer stability.
 ## Output contract
 ```yaml
