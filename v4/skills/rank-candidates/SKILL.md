@@ -28,19 +28,26 @@ mode_contracts:
 
 ## Execution protocol
 
-1. Normalize candidate and criterion schemas; separate hard constraints from preferences.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. Normalize the candidate schema and separate hard constraints from preferences. You MUST load skill `define-criteria` to derive explicit criteria and criterion directions from the objective and candidate set.
+   If the candidates cannot be made comparable because the research goal still contains unresolved branches, consider `decompose-research-goal` before ranking.
 2. Select `gap-prioritization`, `direction-selection`, `mcda-best-choice`, `full-ranking`, `category-sorting`, `non-compensatory-screening`, `rapid-triage`, or `stakeholder-weighted`.
-3. Elicit/validate weights, score with evidence, aggregate or apply veto/threshold rules.
-4. Run sensitivity scenarios and return ordered or categorized candidates with rationale.
+   If candidates are better compared pairwise than scored absolutely, consider `pairwise-ranking`. If the decision requires selecting a jointly feasible subset rather than ordering independent candidates, `portfolio-optimization` may be the better next tactic. If feasibility is the binding uncertainty rather than relative merit, consider `analyze-constraints-readiness`.
+3. You MUST load skill `normalize-comparison-scale` to put heterogeneous criterion values on a declared comparable scale. You MUST load skill `score-object` to score every typed candidate against the supplied rubric and evidence. You MUST load skill `aggregate-ranking` to combine the criterion or comparison outputs under the declared rule.
+4. You MUST load skill `assess-sensitivity` to perturb the declared weights or decision inputs, report stability, and return ordered or categorized candidates with rationale.
+   If a prioritized gap or direction is ready to become a testable proposition, consider `formulate-hypotheses` as the next tactic.
 
 ## Mode branches
 
-- `gap-prioritization`: rank research gaps by evidence deficit and expected value so scarce investigation effort reaches the most consequential unknowns first.
-- `direction-selection`: narrow competing research directions against explicit scope, evidence coverage, and feasibility constraints before committing to one.
+For `mcda-best-choice`, `full-ranking`, `category-sorting`, or `stakeholder-weighted`, You MUST load skill `elicit-weights` to produce and validate the criterion-weight vector. For `category-sorting` or `non-compensatory-screening`, You MUST load skill `set-threshold` to justify the decision boundaries.
+
+- `gap-prioritization`: rank research gaps by evidence deficit and expected value so scarce investigation effort reaches the most consequential unknowns first. You MUST load skill `normalize-gap` to normalize heterogeneous gap records before ranking.
+- `direction-selection`: narrow competing research directions against explicit scope, evidence coverage, and feasibility constraints before committing to one. You MUST load skill `assess-goal-feasibility` to test candidate directions against resources, obstacles, and timeline.
 - `mcda-best-choice`: combine normalized multi-criteria scores with declared weights to select the strongest feasible option while preserving criterion-level rationale.
 - `full-ranking`: produce a complete ordered list using at least the required comparison methods, exposing incomparable pairs and method disagreement.
 - `category-sorting`: assign candidates to threshold-defined classes when ordinal categories are more defensible than fine-grained ranks.
-- `non-compensatory-screening`: apply hard thresholds and vetoes so a severe failure on one criterion cannot be hidden by strengths elsewhere.
+- `non-compensatory-screening`: apply hard thresholds and vetoes so a severe failure on one criterion cannot be hidden by strengths elsewhere. You MUST load skill `apply-veto-filter` to enforce hard failures. You MUST load skill `check-dominance` to expose dominated and non-dominated alternatives.
 - `rapid-triage`: use coarse importance and feasibility passes to reduce a large candidate set quickly, retaining elimination reasons for later review.
 - `stakeholder-weighted`: aggregate perspective-specific scores with an explicit consensus rule, showing where stakeholder rankings converge or diverge.
 

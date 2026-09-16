@@ -19,8 +19,11 @@ constraints: [candidate fields require evidence references and declared comparis
 
 ## Execution protocol
 
-1. Generate diverse candidate fields and deliberate boundary crossings (`generate-candidate-directions`).
-2. Synthesize maturity, competition, entry-barrier, tractability, and opportunity evidence (`synthesize-field-panorama`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `generate-candidate-directions` to generate diverse candidate fields and deliberate boundary crossings.
+2. You MUST load skill `synthesize-field-panorama` to synthesize maturity, competition, entry-barrier, tractability, and opportunity evidence.
+   If the resulting fields must be ordered, screened, or selected under explicit criteria, consider `rank-candidates` as the next tactic.
 
 Deviation: Evidence acquisition is host-selected; do not invoke removed tool wrappers. Re-run candidate generation only when intent or scope changes materially.
 

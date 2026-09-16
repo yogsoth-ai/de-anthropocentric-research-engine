@@ -17,10 +17,13 @@ mode_contracts:
   gap-mapping: *dimensional_input
 ```
 ## Execution protocol
-1. Define dimensions and enumerate meaningful values (`define-analysis-dimensions`, `enumerate-dimension-values`).
-2. Enumerate combinations and prune incompatibilities (`enumerate-combinations`, `evaluate-compatibility`).
-3. Validate axis independence and inspect gaps (`validate-axis-independence`, `detect-coverage-gap`).
-4. Score regions and derive questions (`score-object`, `generate-subquestions`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `define-analysis-dimensions` to define the exploration axes. You MUST load skill `enumerate-dimension-values` to enumerate meaningful values.
+2. Apply the selected mode's combination, compatibility, and coverage operations.
+3. Retain axis dependencies and uncovered regions exposed by the selected mode.
+4. When the task is not descriptive mapping, You MUST load skill `score-object` to score the retained regions. When a research question is in scope, You MUST load skill `generate-subquestions` to derive questions from those regions.
+   If deliberate disruption is needed to escape the declared axes, consider `destructive-ideation`. If the main objective becomes systematic coverage repair, `coverage-white-space-search` may be the better next tactic.
 Deviation: skip scoring when the task is descriptive mapping; skip subquestions when no research question is in scope.
 ## Output contract
 ```yaml
@@ -61,6 +64,6 @@ Do not call a sparse matrix a white space until compatibility and coverage seman
 Append dimensions, values, combinations, pruned regions, gaps, scores, and derived questions.
 
 ## Mode branches
-- `morphological-generation`: emphasize unconstrained combination generation before pruning.
-- `research-space-mapping`: emphasize typed dimensions, occupancy, and coverage.
-- `gap-mapping`: emphasize absent/thin/disconnected regions and their implications.
+- `morphological-generation`: emphasize unconstrained combination generation before pruning. You MUST load skill `enumerate-combinations` to enumerate the combinations. You MUST load skill `evaluate-compatibility` to prune incompatible combinations.
+- `research-space-mapping`: emphasize typed dimensions, occupancy, and coverage. You MUST load skill `validate-axis-independence` to identify dependent axes.
+- `gap-mapping`: emphasize absent/thin/disconnected regions and their implications. You MUST load skill `detect-coverage-gap` to identify absent, thin, and disconnected regions.

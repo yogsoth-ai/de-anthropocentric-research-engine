@@ -21,10 +21,13 @@ mode_contracts:
   counter-thesis: *deliberation_input
 ```
 ## Execution protocol
-1. Construct the strongest attack and defensible case (`construct-critique`, `construct-defense`).
-2. Expose assumptions and alternate perspectives (`surface-assumptions`, `construct-perspective-set`).
-3. Cross-examine each exchange and perturb load-bearing choices (`cross-examine`, `assess-sensitivity`).
-4. Adjudicate against declared criteria and update calibrated confidence (`adjudicate-exchange`, `calibrate-adversarial-confidence`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `construct-critique` to construct the strongest attack. You MUST load skill `construct-defense` to construct the strongest defensible case.
+2. You MUST load skill `surface-assumptions` to expose load-bearing assumptions. You MUST load skill `construct-perspective-set` to construct alternate perspectives.
+3. You MUST load skill `cross-examine` to cross-examine each exchange. You MUST load skill `assess-sensitivity` to perturb load-bearing choices.
+4. You MUST load skill `adjudicate-exchange` to adjudicate against declared criteria. You MUST load skill `calibrate-adversarial-confidence` to update calibrated confidence.
+   If the task shifts from balanced exchange to direct attack-surface probing, consider `structured-red-team`. If an exposed assumption requires focused perturbation, consider `assumption-stress-test`. If the surviving claim needs a decisive falsification program, `falsification-first-audit` may be the better next tactic.
 Deviation: skip defense only when the target is explicitly exploratory; skip sensitivity only when no perturbable input is declared; otherwise retain all steps.
 ## Output contract
 ```yaml

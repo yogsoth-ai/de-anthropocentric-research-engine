@@ -28,17 +28,20 @@ mode_contracts:
 
 ## Execution protocol
 
-1. State the gap/observation and relevant theory or anomaly.
-2. Generate candidate hypotheses without premature filtering.
-3. Operationalize variables and relationships; state scope and boundary conditions.
-4. Check falsifiability and, for competing mode, create discriminating predictions and a comparison matrix.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. State the gap or observation and select the declared mode.
+2. Generate candidate hypotheses without premature filtering using the mode-specific operations below.
+3. You MUST load skill `identify-variables` to operationalize the variables. You MUST load skill `specify-relationship` to state their relationships, scope, and boundary conditions.
+4. You MUST load skill `score-object` to score each hypothesis against the declared evidence and rubric.
+   If the resulting hypotheses need a focused falsifiability review, consider `falsifiability-audit`. If the strongest claim is ready for a decisive truth-seeking program, `falsification-first-audit` may be the better next tactic.
 
 ## Mode branches
 
-- `deductive`: derive predictions from an existing theoretical framework.
-- `inductive`: generalize a pattern where theory is weak or absent.
-- `abductive`: explain a precisely described anomaly and retain competing explanations.
-- `competing-hypotheses`: require mutually discriminating predictions.
+- `deductive`: derive predictions from an existing theoretical framework. You MUST load skill `identify-theory` to identify the governing theory. You MUST load skill `extract-causal-structure` to derive its causal structure.
+- `inductive`: generalize a pattern where theory is weak or absent. You MUST load skill `extract-empirical-regularity` to extract the recurring empirical pattern.
+- `abductive`: explain a precisely described anomaly and retain competing explanations. You MUST load skill `characterize-anomaly` to characterize the anomaly. You MUST load skill `generate-competing-hypotheses` to retain distinct explanations.
+- `competing-hypotheses`: require mutually discriminating predictions. You MUST load skill `generate-competing-hypotheses` to generate mechanism-distinct alternatives. You MUST load skill `design-discriminating-prediction` to derive discriminating predictions. You MUST load skill `compare-hypotheses` to construct the comparison matrix.
 
 ## Output contract
 

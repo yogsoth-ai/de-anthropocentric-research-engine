@@ -17,10 +17,13 @@ mode_contracts:
   critical-case: *validity_input
 ```
 ## Execution protocol
-1. Define dimensions and values (`define-analysis-dimensions`, `enumerate-dimension-values`).
-2. Apply perturbations and select decisive cases (`apply-perturbation`, `select-critical-case`).
-3. Detect breakpoints and construct the envelope (`detect-breakpoint`, `construct-validity-envelope`).
-4. Analyze scale-dependent regime changes (`analyze-scaling-regime`).
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `define-analysis-dimensions` to define the validity axes. You MUST load skill `enumerate-dimension-values` to enumerate representative and boundary values.
+2. Apply the probes required by the selected mode and retain their evidence.
+3. You MUST load skill `detect-breakpoint` to locate validity transitions. You MUST load skill `construct-validity-envelope` to construct the supported envelope.
+4. You MUST load skill `analyze-scaling-regime` to analyze scale-dependent regime changes.
+   If global effect decomposition is needed beyond the envelope, consider `sensitivity-analysis`. If the resulting boundary claim lacks a reachable falsifier, consider `falsifiability-audit`.
 Deviation: use `critical-case` when a decisive case can replace broad probing; otherwise use `systematic-perturbation` or `boundary-value-stress` according to the declared mode and evidence.
 ## Output contract
 ```yaml
@@ -61,6 +64,6 @@ Do not infer an envelope from a single favorable case. Mark extrapolation outsid
 Append axes, values, perturbations, breakpoints, envelope, critical cases, scaling findings, and untested regions.
 
 ## Mode branches
-- `systematic-perturbation`: broad controlled variation across declared axes.
-- `boundary-value-stress`: emphasize boundary, pathological, and adversarial values.
-- `critical-case`: select inference-maximizing cases and document selection logic.
+- `systematic-perturbation`: broad controlled variation across declared axes. You MUST load skill `apply-perturbation` to vary the declared axes systematically.
+- `boundary-value-stress`: emphasize boundary, pathological, and adversarial values. You MUST load skill `apply-perturbation` to probe boundary and pathological values.
+- `critical-case`: select inference-maximizing cases and document selection logic. You MUST load skill `select-critical-case` to select and justify the decisive cases.

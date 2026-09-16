@@ -29,15 +29,22 @@ mode_contracts:
 
 ## Execution protocol
 
-1. Operationalize outcome and factors; identify levels, controls, and comparison baseline.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `identify-variables` to operationalize the outcome, factors, controls, and their functional roles. You MUST load skill `enumerate-dimension-values` to define admissible levels or perturbation values.
+   If the resource envelope or feasibility constraints cannot support an executable design, consider `analyze-constraints-readiness` before committing to a mode.
 2. Choose `factorial`, `ablation`, `comparison`, `scaling`, or `robustness` mode.
-3. Select statistical method before observing outcomes; specify sample, power, and stopping rule.
-4. Write reproducibility, resource, and failure checks; return a runnable design matrix.
+3. You MUST load skill `specify-metrics` to preregister metrics, estimands, directionality, and decision thresholds. You MUST load skill `estimate-sample-size` to derive the sample or repetition requirement. You MUST load skill `select-statistical-method` to select the inference or estimation method before observing outcomes; specify power and the stopping rule.
+   If the proposed metric or validator may share artifacts, labels, or assumptions with the system under test, consider `audit-validator-independence` before freezing the analysis plan.
+4. You MUST load skill `construct-design-matrix` to construct the runnable matrix for the selected mode. You MUST load skill `design-randomness-protocol` to define seeds, repetitions, and propagation rules. You MUST load skill `specify-execution-environment` to capture interpretation-relevant hardware, software, data, configuration, and versions. You MUST load skill `specify-reproducibility-protocol` to define and test the intended reproduction level. You MUST load skill `optimize-design-under-budget` to select a feasible information-efficient design under the declared resource envelope; include resource and failure checks.
+   Once the design has produced observations and the task changes from planning to inference, `analyze-experiment-results` may be the better next tactic.
 
 ## Mode branches
 
+For `comparison` or `robustness`, You MUST load skill `select-experimental-baseline` to choose a controlled baseline matched to the claim.
+
 - `factorial`: vary multiple factors in a structured design so main effects and interactions are estimable within the declared resource envelope.
-- `ablation`: remove or replace components systematically to attribute the outcome to individual parts and suspected interactions.
+- `ablation`: remove or replace components systematically to attribute the outcome to individual parts and suspected interactions. You MUST load skill `map-ablation-components` to define ablatable units, dependencies, and legal removal or replacement operations.
 - `comparison`: evaluate a target against controlled baselines with matched confounds, compute, tuning effort, and preregistered tests.
 - `scaling`: instantiate geometric or otherwise justified scale points to test how the outcome changes across the declared regime.
 - `robustness`: perturb relevant conditions or inputs and measure whether the claimed effect survives the defined stress space.

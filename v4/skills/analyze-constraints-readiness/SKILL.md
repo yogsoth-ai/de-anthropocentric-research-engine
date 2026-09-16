@@ -25,18 +25,21 @@ mode_contracts:
 
 ## Execution protocol
 
-1. Define candidate, dimensions, hard constraints, and target gates.
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. Define candidate, dimensions, hard constraints, and target gates. You MUST load skill `classify-constraint` to classify each declared constraint.
 2. Select `obstacle-triage`, `readiness-assessment`, `resource-envelope`, `causal-constraint-analysis`, or `maturation-path`.
-3. Score dimensions with evidence, identify binding constraints and dependencies.
-4. Design removal/mitigation paths, stage gates, and a readiness conclusion.
+3. You MUST load skill `score-object` to score the selected dimensions with evidence. You MUST load skill `identify-bottleneck` to identify binding constraints and dependencies.
+4. You MUST load skill `assess-removability` to test whether binding constraints can be removed. You MUST load skill `design-mitigation` to design removal or mitigation paths and return a readiness conclusion.
+   If several feasible responses must be balanced as a joint set, consider `portfolio-optimization`. If the target goal remains too broad to assess, consider `decompose-research-goal`. If external change dominates present readiness, consider `analyze-future-scenarios`. If several candidate paths are ready for comparative selection, `rank-candidates` may be the better next tactic.
 
 ## Mode branches
 
-- `obstacle-triage`: rapidly enumerate and severity-rank the obstacles that could block the target, preserving evidence status for each one.
-- `readiness-assessment`: score the required readiness dimensions with supporting evidence and identify the dimensions that keep the target from being ready.
-- `resource-envelope`: estimate time, cost, and personnel bounds from analogies, then flag low-confidence estimates for investigation.
-- `causal-constraint-analysis`: trace how constraints interact through dependencies and conflicts to identify the binding cause rather than only its symptoms.
-- `maturation-path`: sequence stage gates and milestones that move the target from current readiness to the declared implementation threshold.
+- `obstacle-triage`: rapidly enumerate and severity-rank the obstacles that could block the target, preserving evidence status for each one. You MUST load skill `identify-obstacles` to enumerate the obstacles. You MUST load skill `list-undesirable-effects` to retain their observed consequences.
+- `readiness-assessment`: score the required readiness dimensions with supporting evidence and identify the dimensions that keep the target from being ready. You MUST load skill `assess-readiness-dimension` to assess every required dimension.
+- `resource-envelope`: estimate time, cost, and personnel bounds from analogies, then flag low-confidence estimates for investigation. You MUST load skill `quantify-resource-gap` to quantify the gap. You MUST load skill `identify-critical-chain` to expose the binding resource sequence.
+- `causal-constraint-analysis`: trace how constraints interact through dependencies and conflicts to identify the binding cause rather than only its symptoms. You MUST load skill `trace-causal-chain` to trace constraint propagation. You MUST load skill `extract-core-conflict` to isolate the core conflict. You MUST load skill `challenge-assumption` to test the assumptions that sustain it.
+- `maturation-path`: sequence stage gates and milestones that move the target from current readiness to the declared implementation threshold. You MUST load skill `project-future-reality` to project the proposed path. You MUST load skill `apply-stage-gate` to apply its stage gates.
 
 ## Output contract
 

@@ -16,11 +16,15 @@ mode_contracts:
   BioTRIZ: *biomimetic_input
 ```
 ## Execution protocol
-1. Biologize the problem (`biologize-problem`).
-2. Discover biological analogs (`discover-biological-analog`).
-3. Extract the causal strategy (`extract-biological-strategy`).
-4. Instantiate the target transfer (`instantiate-transfer`).
-5. Check compatibility (`evaluate-compatibility`).
+
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `biologize-problem` to biologize the problem.
+2. You MUST load skill `discover-biological-analog` to discover biological analogs.
+3. You MUST load skill `extract-biological-strategy` to extract the causal strategy.
+4. You MUST load skill `instantiate-transfer` to instantiate the target transfer.
+5. You MUST load skill `evaluate-compatibility` to check compatibility.
+   If a viable transfer requires composing mechanisms from multiple biological analogs rather than applying one causal strategy, consider `conceptual-blending` as the next tactic.
 Deviation: BioTRIZ mode may branch during strategy extraction, but all five checks remain required.
 ## Mode branches
 - `biologize-and-discover`: translate function, search biological analogs, then extract mechanism.
