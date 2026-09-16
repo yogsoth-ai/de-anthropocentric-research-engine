@@ -12,6 +12,8 @@ output: 'framed_question (dict — schema-specific slot names to values)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Question Framing

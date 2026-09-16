@@ -12,6 +12,8 @@ output: 'deep_read_notes (string)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Third Pass Deep Read

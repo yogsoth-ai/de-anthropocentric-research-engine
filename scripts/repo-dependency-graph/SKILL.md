@@ -9,6 +9,8 @@ description: >-
   tactic→sop skills connect. Trigger even if the user just says "给这个 package
   做个图" without naming pyvis or HTML. Goes straight to HTML — never write an
   intermediate mermaid markdown first.
+metadata:
+  internal: true
 ---
 
 # repo-dependency-graph

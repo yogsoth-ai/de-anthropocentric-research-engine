@@ -1,6 +1,8 @@
 ---
 name: formated-specs
 description: Spec-slot skill for the research-executor. Emit the 4-layer DARE orchestration of the assigned topic as one research-graph JSON fenced block in your reply. Replaces the generic spec-writing step.
+metadata:
+  internal: true
 ---
 
 # formated-specs

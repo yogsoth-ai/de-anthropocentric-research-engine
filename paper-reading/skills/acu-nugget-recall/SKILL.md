@@ -18,6 +18,8 @@ dependencies:
   - atomic-unit-writing
   - atomic-unit-matching
   - atomic-unit-recall-aggregate
+metadata:
+  internal: true
 ---
 
 # ACU / Nugget Recall

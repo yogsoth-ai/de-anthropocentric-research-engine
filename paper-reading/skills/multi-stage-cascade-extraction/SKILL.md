@@ -12,6 +12,8 @@ output: 'extraction_graph (dict — mentions, clusters, optional saliency_labels
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Multi-Stage Cascade Extraction

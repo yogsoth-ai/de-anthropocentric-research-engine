@@ -11,6 +11,8 @@ output: 'atomic_claim (string, or list of strings if the citance was compound)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Claim Writing

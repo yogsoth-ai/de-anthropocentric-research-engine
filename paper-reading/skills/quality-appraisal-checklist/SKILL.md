@@ -12,6 +12,8 @@ output: 'checklist_result (list of {item, judgment}), overall_appraisal (string,
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Quality Appraisal Checklist

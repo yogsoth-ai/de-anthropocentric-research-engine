@@ -12,6 +12,8 @@ output: 'checklist_result (list of {item, category, reason})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Dual Column Self-Check

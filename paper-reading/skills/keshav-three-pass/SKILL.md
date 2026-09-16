@@ -18,6 +18,8 @@ dependencies:
   - first-pass-skim
   - second-pass-grasp
   - third-pass-deep-read
+metadata:
+  internal: true
 ---
 
 # Keshav Three-Pass

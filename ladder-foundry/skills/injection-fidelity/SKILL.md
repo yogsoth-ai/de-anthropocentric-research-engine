@@ -1,6 +1,8 @@
 ---
 name: injection-fidelity
 description: Loss-1 judge (codex role). Given one sample's de-identified dialogue and its PolicyCard, decide axis-by-axis whether the user-simulator enacted the card's per-axis pressure. Judge enactment of the card, never whether the research is good.
+metadata:
+  internal: true
 ---
 
 # injection-fidelity (loss-1)

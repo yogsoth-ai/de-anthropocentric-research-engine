@@ -12,6 +12,8 @@ output: 'grading_result (list of {item, grade, justification})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Engineering Config Grading (Proposal)

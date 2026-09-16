@@ -12,6 +12,8 @@ output: 'qalmri_worksheet (dict — six string fields: question, alternatives, l
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # QALMRI

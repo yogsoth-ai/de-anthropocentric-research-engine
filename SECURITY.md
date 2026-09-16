@@ -2,9 +2,9 @@
 
 ## Supported Versions
 
-Security fixes are applied to the latest release of the skill library and the
-published `@yogsoth-ai/dare` CLI. Older tags are not patched; please update
-before reporting an issue against an outdated version.
+Security fixes are applied to the latest state of `main` and the published
+`@yogsoth-ai/dare-dsh` plugin. Older tags are not patched; please update before
+reporting an issue against an outdated version.
 
 | Version | Supported |
 | ------- | --------- |
@@ -34,10 +34,10 @@ available.
 
 ## Scope
 
-This repository is a library of markdown skills plus a small Node.js installer
-CLI and a DeepSeek Harness plugin. The following are in scope:
+This repository is a library of markdown skills plus a DeepSeek Harness plugin
+and shell installers. The following are in scope:
 
-- the installer CLI (`cli/`) and the DSH plugin (`dsh-plugin/`);
+- the DSH plugin (`dsh-plugin/`) and the Codex installers (`install/`);
 - repository automation under `.github/workflows/`;
 - any skill that instructs an agent to execute commands, write files, or reach
   external services.

@@ -1,6 +1,8 @@
 ---
 name: ladder-quality-order
 description: Loss-2 judge (codex role). Over one topic's 6 shuffled research-design samples, pairwise-rank by quality using the D1–D5 standard. Emit the pairwise log; the harness computes the order and the ladder verdicts. Judge quality difference, never against academic standards.
+metadata:
+  internal: true
 ---
 
 # ladder-quality-order (loss-2)

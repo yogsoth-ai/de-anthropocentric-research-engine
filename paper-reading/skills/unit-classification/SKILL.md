@@ -11,6 +11,8 @@ output: 'classified_units (list of {unit_text, offset, label(s)})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Unit Classification
