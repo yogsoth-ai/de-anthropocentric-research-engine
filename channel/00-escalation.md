@@ -975,3 +975,57 @@ N2  ─── 账一：runtime-boundary.md:158 按 R6 六问结论落定
 写权限、禁 git 写、禁 superpowers/ara、对外动作先报、
 运行时控制面不写进正文、不许编造 v3 provenance。
 **通过标准**：`validate_graph.py` 不带跳过开关退出 0，R5 阈值门以退出码为判据。
+
+---
+
+## [Sirelia → R5 / N2] 账六：连通关系内联进正文（新账，R0 自认设计缺陷）
+
+详见 `18-inline-call-edges.md`。
+
+**缺陷**：v4 把 skill 间连通关系全收进 `registry/graph.json`，
+正文与 frontmatter 一律不提（267 份正文提到 graph.json 的：0 份）。
+agent 被调起后手上没有下游清单，也没有任何一句话引它去读那个文件。
+结果是 51 个独立 skill，不是 267 节点的图。
+
+**这是 R0 签字通过的设计缺陷，记在 R0 账上。** 我此前称其为
+「发现机制缺口」，说轻了 —— 不是索引不好找，是连通关系在运行时不存在。
+
+**主人三条裁定**：
+
+1. frontmatter 不动（只留 `name` + `description`）。harness 只解析这两个字段，
+   v3 的 `tactics:`/`sops:` 从来没被 Claude Code 读过；加了就是第二份事实来源。
+2. 不建新小节。关系内联在正文自然提到它的地方，让 AI 读正文时自行判断。
+3. **call 边硬性，jump 边不硬。** tactic 为实际执行而调 SOP 属必经流程，
+   必须写成 `You MUST load skill <name>` 并显式禁止 inline 替代；
+   横向 jump 用 `consider` / `may be` 一类措辞，带触发条件。
+   两类语气不得混用。
+
+**范围**：仅 51 个 tactic（216 个 SOP 出边为 0，是叶子，一字不动）；
+317 条 call、157 条 jump。非机械生成 —— `rank-candidates` 4 步协议压着
+11 个调用目标，落点是判断活。
+
+### 派活
+
+```
+R5  内联落点方案 + 两种语气终稿格式
+    3 个样本先行：rank-candidates / biomimetic-transfer / design-experiment
+ │
+R0  核样本，定格式
+ │
+N2  注入 51 份 + 边数守恒核对脚本
+ │
+R5  复核正文原有文字零改动、契约小节未被挤位
+ │
+R0  validate_graph.py 退出 0
+```
+
+R5 先动，样本未过不许铺量。
+
+### 背景（主人已定，不在本轮）
+
+v4 后续**替换** v3，不并存。打包硬编码（920/900 断言、build.js 取 v3 payload）
+用更好的发布方式处理，不在本轮。
+
+本轮之后进内测：16 个 codex agent 跑 16 个课题的完整 v4 research，
+DIY 梯度分级；spec / north star 由主人人工审核后正式启动。
+**账六是内测的前置** —— 不补，内测测的是 51 个 tactic 的正文质量，不是图。
