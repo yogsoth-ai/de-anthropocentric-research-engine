@@ -92,19 +92,23 @@ host 的调用顺序为 1 -> 2 -> 3 -> 4。`calls` 中列出的 SOP 只约束“
 
 | 字段 | 内容 |
 |---|---|
-| 选择 | 选 D：薄编排 host + agent 节点执行的混合形态。host 是确定性的 runtime/control-plane harness，负责事件回放、SpecView、context slice、catalog/graph 路由和 checkpoint 写入；LLM/agent 只执行一个已选 tactic/SOP，返回八字段 Delta。 |
-| 理由 | A 让现有 agent harness 同时承担事件回放和持久化，无法保证 `checkpoint` 顺序及 `SpecView` 重建；B 把科学节点和 runtime 混在脚本，重复实现 267 个正文；C 把科学图误作 MCP tool 图。D 正好复用现有边界：科研图只含 tactic/SOP，host runtime 承担控制面。代价是需要一个很薄的确定性执行壳，但不引入 provider、MCP 或第二套科研节点。 |
-| 影响 | host 必须实现 R1 的十一处职责：从 checkpoint 重建 SpecView、读取 context、做 preflight、按固定优先级路由、加载当前 state slice、接收 tactic/SOP Delta、追加 checkpoint、决定是否派 subagent。科研正文不写 provider、tool、重试、退避、超时、错误分类、并行调度或监控状态机。 |
-| 证据 | `file-transfer/2026-08-23-22-16-dare-v4-architecture.json:17-23,35-49`（edge/state/boundary）；`channel/deliverables/R1/runtime-boundary.md:1.1-1.2,2.1-5.3`；`v4/docs/runtime-boundary.md:112-130`。 |
+| 选择 | 选 A：Claude Code、Codex、opencode、openclaw、pi、dsh、cline 等现成 agent harness 直接充当 host。host 是 harness 在一次 DARE 会话中承担的职责，不是 DARE 要开发、部署或适配的运行时构件；同一 agent 读取仓库文件，执行控制面规则与选定的 tactic/SOP。 |
+| 理由 | DARE 的产品定位是纯 skill：没有 application code、runtime 或 framework，现成 harness 本身就是 runtime；选 D 会引入 clone 后还须部署的中间层，直接破坏 zero-infrastructure。B 同样新增脚本运行时，C 则把科研图误作 MCP tool 图。A 的代价是执行正确性依赖 harness 忠实遵循文本契约，不能靠单独程序提供机械保证。 |
+| 影响 | R1 的十一处 host 职责不删减，只由当前 harness 中的 agent 直接完成：读取和追加 Markdown checkpoint、重建 SpecView、读取 context、做 preflight、按既有优先级及 catalog/graph 路由、加载 state slice、执行节点并写入八字段 Delta。不得要求 DARE runtime、wrapper、adapter、daemon 或 provider-specific 配置。科研图仍只有 tactic/SOP 两种可执行节点。 |
+| 证据 | `README.md:123`（“There is no application code, no runtime, no framework”及“runtime is CC itself”）；`README.md:208`（zero infrastructure、clone and go）；`file-transfer/2026-08-23-22-16-dare-v4-architecture.json:17-23,35-49`（edge/state/boundary）；`v4/docs/runtime-boundary.md:4-24,112-130`。 |
 
 ## Q2 SpecView 重建由谁执行
 
 | 字段 | 内容 |
 |---|---|
-| 选择 | 由 host 内的确定性重建器执行：按单 Phase context 文件中的 checkpoint 序号递增回放，`decisions` 是计划主来源，`open_questions` 仅挂接辅助信息，输出内存 SpecView。 |
-| 理由 | R1 已给出确定性规则；让 agent 每轮重算会把计划结构交给概率性文本生成，无法保证同一事件流得到同一 active item。把它做成独立服务又新增部署机制，薄 host 内重建器足够。代价是 host 必须严格遵守既有 decision_id/plan_item_id 规则，并保留被替换决定及原因。 |
-| 影响 | host 每次路由前重建 `phase, objective, active_items[], context_requirements[], completion_gates[], backtrack_conditions[], status, source_checkpoint`；选择首个未完成且依赖满足的 active item。没有 `plan_item.create` 时先追加最小 decision；改变 objective/requires/completion gate/依赖时将 complete 项标为 `needs_revalidation`，不得以旧 complete 自动前进。 |
-| 证据 | `v4/docs/runtime-boundary.md:29-48`；`channel/deliverables/R1/runtime-boundary.md:2.1-2.3,4`。 |
+| 选择 | 由直接充当 host 的 agent 按规范回放 checkpoint 并重建；不使用脚本、服务或“确定性重建器”构件。确定性来自同一事件流上的无歧义投影规则，而不是执行者的实现形态。 |
+| 理由 | Q1=A 后再要求脚本会暗中恢复 D 路。SpecView 是既有 Markdown 事件的投影，不需要新持久化对象：任何 harness 只要逐条执行同一规则，就必须得到同一字段值、active item 和下一路由。代价是每次回放占用 agent context，且一致性只能通过输入/输出复算验收，不能由独立二进制实现担保。 |
+| 影响 | agent 严格按 checkpoint 数字序号、再按同一 checkpoint 中 `decisions` 的出现顺序回放；只有五类显式 decision 可改变 SpecView，`open_questions` 只能按 `plan_item_id` 挂接，其余 Delta 字段不得推断计划结构。同一 `decision_id` 取序号最新的明确决定并保留替换原因；`plan_item.update` 不改变创建顺序，`plan_item.retire` 只移出 active 集合。输出固定八个 SpecView 字段，active item 取创建顺序中首个未完成且依赖满足者。缺少所需 ID/显式决定或存在未裁决冲突时不猜值、不进入科研节点。objective、requires、completion gate 或依赖被明确改变时，旧 complete 变为 `needs_revalidation`；描述、排序或注释变化不触发。 |
+| 证据 | `v4/docs/runtime-boundary.md:29-48,91-99,103-110,118-126`；`channel/deliverables/R1/runtime-boundary.md:2.1-2.3,3.3-4,5.1-5.2`。 |
+
+### host-neutral 对 267 份正文的影响
+
+host-neutral 的含义是：任一能读取仓库文件并执行 Markdown 指令的 agent harness，都能直接消费 DARE 的正文、registry、context 与 checkpoint，不需要 DARE 中间层；它不只是“不绑定某个 provider”。这不对 267 份正文提出新要求，也不需要正文返工：现有正文已经使用通用 Markdown/YAML、固定 contract 与 `Execution protocol`，harness 名称和 host 配置路径均为 0 命中。6 份含 `provider` 字样的正文都在禁止 provider 绑定或记录已压缩的 provenance，不构成依赖。后续正文只需继续遵守既有禁令：不加入 harness/provider 专用调用语法、配置路径或科研图 tool edge。
 
 ## Q3 事件流的物理载体
 
@@ -120,7 +124,7 @@ host 的调用顺序为 1 -> 2 -> 3 -> 4。`calls` 中列出的 SOP 只约束“
 | 字段 | 内容 |
 |---|---|
 | 选择 | 用现有 `rank-candidates` tactic 的 `direction-selection` mode，按其正文顺序执行：规范化候选与 criteria schema -> 选择 mode -> 校验已提供权重 -> `score-object` -> `aggregate-ranking` -> `assess-sensitivity`，最后由 host 追加一个 `complete` checkpoint。输入提供 `candidates, criteria, decision_rule` 与固定权重，避免引入额外机制。 |
-| 理由 | 这是一个已在 graph 中存在的 tactic 与下游 SOP 路径；它能从明确输入产生 ranking、sensitivity 和 recommendation，足以验证 Q1-Q5 的 host 链路。没有新节点、新格式或伪造执行器。代价是只验证一个科研分支，不声称覆盖全部 267 节点。 |
+| 理由 | 这是一个已在 graph 中存在的 tactic 与下游 SOP 路径；它能从明确输入产生 ranking、sensitivity 和 recommendation，足以验证科研图执行层。没有新节点、新格式或伪造执行器。代价是只验证一个科研分支；SpecView 重建、preflight 与 catalog 取卡仍未实跑，不把它们冒充为 host 验收。 |
 | 影响 | 端到端顺序固定为：读取 `context/INDEX.md` -> 回放 Phase checkpoint 得到 SpecView -> context preflight -> 从 `capabilities.json` 取得 3-5 张卡片并以 `source_ref` 映射 `graph.json` -> 选 `rank-candidates` 的首个 active item -> 传入当前 state slice -> 按 tactic protocol 完成 schema 规范化、mode 选择、权重校验、评分、聚合和敏感性分析 -> 汇总八字段 Delta -> 追加 checkpoint。执行结果必须能从该 checkpoint 再次重建同一 SpecView 与下一路由。 |
 | 证据 | `v4/registry/graph.json` 的 `rank-candidates` calls（`normalize-gap`, `define-criteria`, `score-object`, `aggregate-ranking`, `assess-sensitivity`）；`v4/skills/rank-candidates/SKILL.md:16-31`；`v4/docs/runtime-boundary.md:29-38,46-58,71-99,114-130`。 |
 

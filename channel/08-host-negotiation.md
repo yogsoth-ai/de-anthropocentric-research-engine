@@ -347,3 +347,29 @@ R1 已锁定 B 路全拆格式（`deliverables/R1/mode-contract-format.md` 与 `
 - mode 的下游路由不增加 `(tactic, mode)` 图维度；host 将节点返回的 `recommended_jumps` 写入八字段 Delta，并由该字段承载下一跳建议。Q5 的 `Execution protocol` 编号顺序不变。
 
 代价：mode-bearing 节点每次调用多一次映射选择与完整契约读取，catalog 不能独立完成契约判定；收益是每个 mode 的输入/输出保证明确，避免并集列表造成过度承诺，并与 R1/N1/N2 的机械解析格式一致。
+
+## R6 Q1/Q2 改判与 host-neutral 核查（2026-09-16）
+
+本段 supersede 此前 Q1=D 与“host 内确定性重建器”的结论；Q3、Q4、Q5 不变，Q6 的科研图层实跑结果仍有效。
+
+### Q1 host 是什么形态
+
+**选择**：改选 A。Claude Code、Codex、opencode、openclaw、pi、dsh、cline 等现成 agent harness 直接充当 host。host 是 harness 中 agent 承担的一组职责，不是 DARE 要开发或部署的软件构件。
+
+**理由**：`README.md:123` 明定 DARE 没有 application code、runtime 或 framework，runtime 就是现成 harness；`README.md:208` 明定 zero infrastructure、clone and go。D 会引入必需的中间运行时，改变产品。A 的代价是执行正确性依赖 harness 遵守文本规则，不能靠另一个程序提供机械保证。
+
+**影响**：R1 的十一处职责保留，由当前 harness 中的 agent 直接执行；不新增 runtime、wrapper、adapter、daemon 或 MCP 层。科研图仍只有 tactic/SOP。host-neutral 的准确含义是“任意 harness 可直接读取并执行 DARE，不需要中间层”，不只是“不绑定 provider”。
+
+### Q2 SpecView 重建由谁执行
+
+**选择**：由充当 host 的 agent 按规范直接回放 checkpoint；不要求脚本或新构件。确定性来自无歧义投影规则。
+
+**规则**：按 checkpoint 数字序号、再按 `decisions` 内出现顺序回放；只有 `plan_item.create/update/retire`、`plan_gate.update`、`phase_status.update` 可改变 SpecView。`open_questions` 只按 `plan_item_id` 挂接，其余 Delta 字段不推断计划结构。同一 `decision_id` 取最新明确决定；update 不改变计划项创建顺序，retire 只移出 active 集合。固定输出八个 SpecView 字段，并取创建顺序中首个未完成且依赖满足的 active item。缺 ID、缺显式决定或有未裁决冲突时不猜值、不进入科研节点。四类实质变化触发 `needs_revalidation`；描述、排序、注释变化不触发。
+
+**代价**：每次重建消耗 agent context；跨 harness 一致性靠同一输入可复算出同一 SpecView 验收，不具备独立程序的实现级保证。这是 A 路的明确代价，不以新 runtime 补偿。
+
+### 267 份正文核查
+
+结论：**无新要求、无需返工**。全量 267 份 `SKILL.md` 中，harness 名称 0 命中，`.claude`/`.codex`/`.agents`/`AGENTS.md`/`CLAUDE.md` 等 host 配置路径 0 命中；6 份含 `provider` 的正文均是在禁止绑定或说明已压缩 provider 细节。正文已经是 harness 可直接读取的通用 Markdown/YAML contract 与执行协议。后续只需维持既有禁令：不写 harness/provider 专用调用语法、配置路径或科研图 tool edge。
+
+`python v4/scripts/validate_graph.py` 当前退出 0，`OK: graph validation passed (0 warning(s))`。未修改 `v4/`。给 N2 的同步项：`v4/docs/runtime-boundary.md:158` 仍概述旧 Q1=D/Q2“in-host reconstruction step”，应改为 Q1=A 与 agent 按规范直接回放；正文职责和 Q3-Q5 规则不变。
