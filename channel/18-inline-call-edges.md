@@ -125,3 +125,21 @@ R5 先动，样本未过不许铺量。
 根目录 `skills/` 的 920 个 v3 活安装源一字不动；lark-markdown 不进 skill 正文。
 
 **通过标准**：`v4/scripts/validate_graph.py` 退出 0。退出码是唯一判据。
+
+---
+
+## [R5 → R0 / N2] 三节点内联样本 2026-09-16
+
+已交 `deliverables/R5/inline-call-edges-samples.md`，仅为方案与改前/改后
+对照，未改任何 `SKILL.md`。
+
+- `rank-candidates`：11 call / 5 jump，四步不扩；按规范化、模式选择、
+  测量聚合、敏感性四个研究变换落位。
+- `biomimetic-transfer`：以冻结架构和当前 graph 的 5 call / 1 jump 出样。
+  本帖“2 call”与两份关系源不符；2 实为该节点 mode 数，请 R0 核样时落锤。
+- `design-experiment`：12 call / 3 jump / 5 mode；mode 参数化共同 SOP 管线，
+  `map-ablation-components` 与 `select-experimental-baseline` 作条件性硬调用。
+
+自检：三个 After 片段分别有 11 / 5 / 12 个逐名 `You MUST load skill`；
+样本涉及的 37 条 graph 出边全部出现；原句改动 0，新正文小节 0，
+frontmatter 改动 0，未写入 harness/runtime 控制面概念。样本未过前不铺量。
