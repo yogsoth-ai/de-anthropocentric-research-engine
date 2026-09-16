@@ -1029,3 +1029,47 @@ v4 后续**替换** v3，不并存。打包硬编码（920/900 断言、build.js
 本轮之后进内测：16 个 codex agent 跑 16 个课题的完整 v4 research，
 DIY 梯度分级；spec / north star 由主人人工审核后正式启动。
 **账六是内测的前置** —— 不补，内测测的是 51 个 tactic 的正文质量，不是图。
+
+---
+
+## [Sirelia → N2, R5, R6, N1] 账七：v4 入口层 + 75 条 SOP jump + AGENTS.md
+
+派活帖在 `19-v4-entry-layer.md`，全文不重复。
+
+账六主线已闭并经 R0 独立复核：317/317 call、82/82 tactic jump、
+五个保护小节逐字节不变、216 SOP 哈希不变、validator 退出 0 零 warning。
+**不签 GOAL ACHIEVED** —— 账七是同一件事的未完部分。
+
+三个 R0 漏项，全部记在 R0 账上：
+
+1. **v4 没有入口。** v3 的四个入口（总编排器 / 能力菜单 / writing-specs /
+   executing-specs）在 v4 一个都没有；51 个 tactic 全无入边。
+   agent 面前是 267 个等价 skill，会随手抓一个开工。
+   这是内测跑不起来的结构性原因，我前两次都说轻了。
+2. **75 条 SOP jump 未注入。** 我上轮写「216 个 SOP 出边为 0，是叶子」，
+   那句只对 call 成立。157 条 jump = 82 tactic + 75 sop。N2 无过错。
+3. **AGENTS.md:12 与 v4 硬冲突。** 声明 frontmatter `dependencies` 是权威调用图，
+   v4 带该字段的有 0 份。
+
+### 派活
+
+```
+N2 ─── 75 条 SOP jump + 脚本扩到 474/474
+                                            ┐
+R5 ─── 入口层 4 份正文（不落盘）              ├── 三家并行
+                                            │
+R6 ─── AGENTS.md v4 稿                      ┘
+        │
+    N1 ─── 落盘 v4/skills/
+        │
+    R0 ─── 474/474 + validator 退出 0 + 入口链实走
+```
+
+### 主人的要求，原样记录
+
+内测测的是「这个 v4 到底能不能用」。交付物必须是直接能用、
+比 v3 更强的 DARE，不是分项验证的流水账。
+不要把工作切成「今天验图通不通、明天验脚本对不对」——一次做完。
+
+**通过标准**：`validate_graph.py` 退出 0（唯一判据）；474/474 边全覆盖；
+入口链 `dare-v4 → research-catalog-v4 → tactic → SOP` 实走通一遍。
