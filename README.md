@@ -11,6 +11,8 @@
 
 # De-Anthropocentric Research Engine (DARE)
 
+[![Plugin Security Scan](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/actions/workflows/plugin-security-scan.yml/badge.svg)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/actions/workflows/plugin-security-scan.yml)
+
 *The complete research orchestration system for AI-native science.*
 
 - [What It Does](#-what-it-does)

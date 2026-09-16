@@ -1,6 +1,8 @@
 # Folders starting with a dot
 **.*/
 !**/.test/
+!.github/
+!.github/**
 
 # Node
 node_modules/
