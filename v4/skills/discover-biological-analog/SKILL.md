@@ -16,6 +16,9 @@ constraints: [candidate must demonstrate the function, not merely resemble the t
 1. Search across organism, process, and ecosystem levels using the function formulation.
 2. Verify the candidate's observed function and environmental constraints.
 3. Rank candidates by mechanism evidence and transfer relevance.
+
+If an analog matches the target function under relevant constraints, consider `extract-biological-strategy` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [biological_candidate_set, function_evidence, relevance_ranking]

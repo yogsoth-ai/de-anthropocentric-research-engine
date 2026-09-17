@@ -24,6 +24,8 @@ constraints: [effect interpretation must retain implementation and comparison co
 3. Compare outcomes with the declared comparator and plausible alternatives.
 4. Summarize mechanism evidence, effect heterogeneity, and unresolved attribution.
 
+If the intervention analysis yields a causal attribution that needs an explicit validity check, consider `validate-causal-link` as the next tactic.
+
 ## Output contract
 
 ```yaml

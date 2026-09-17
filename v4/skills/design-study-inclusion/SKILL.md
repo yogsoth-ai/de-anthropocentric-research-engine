@@ -24,6 +24,8 @@ constraints: [criteria must be observable from source records]
 3. Specify borderline-case adjudication and missing-information handling.
 4. Test criteria against representative included, excluded, and ambiguous records.
 
+If eligible designs, populations, interventions, and outcomes are fixed, consider `plan-effect-size` as the next tactic.
+
 ## Output contract
 
 ```yaml

@@ -24,6 +24,8 @@ constraints: [evidence must support the relation type and direction claimed]
 3. Assess quality, independence, consistency, and alternative interpretations.
 4. Emit an evidence-linked relation with confidence rationale.
 
+If attached evidence supports incompatible relation states under the same scope, consider `detect-contradiction` as the next tactic.
+
 ## Output contract
 
 ```yaml

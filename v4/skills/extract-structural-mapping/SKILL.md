@@ -16,6 +16,9 @@ constraints: [mapping must preserve identity and provenance of mapped elements]
 1. Enumerate source and target elements.
 2. Map objects, relations, operations, constraints, and invariants.
 3. Mark unmatched, ambiguous, and many-to-one mappings.
+
+If source-target correspondences are explicit, consider `test-structure-preservation` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [structural_mapping, unmatched_elements, ambiguity_report, invariant_inventory]

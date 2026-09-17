@@ -24,6 +24,8 @@ constraints: [each component must have a declared direction and interpretation]
 3. Map rewarded shortcuts and construct-irrelevant incentives.
 4. State interpretation limits and diagnostic needs.
 
+If metric components are explicit but their link to the intended construct remains uncertain, consider `assess-construct-validity` as the next tactic.
+
 ## Output contract
 
 ```yaml

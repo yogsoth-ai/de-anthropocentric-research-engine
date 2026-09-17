@@ -24,6 +24,8 @@ constraints: [preserve applicability, status, limitations, key attributes, and p
 3. Deduplicate items without merging distinct benchmarks or methods.
 4. Return the inventory with exclusions and unresolved provenance.
 
+If reference items expose the metrics used for comparison, consider `decompose-evaluation-metric` as the next tactic.
+
 ## Output contract
 
 ```yaml

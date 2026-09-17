@@ -25,6 +25,8 @@ constraints: [records are ordered by time; metric direction is explicit; extrapo
 4. If forecast mode is enabled, extrapolate with confidence bands and explicit caveats.
 5. Return trajectory data, regime annotations, and uncertainty.
 
+If the trajectory suggests an abrupt regime change rather than smooth variation, consider `detect-breakpoint` as the next tactic.
+
 ## Output contract
 
 ```yaml

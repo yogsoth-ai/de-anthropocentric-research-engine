@@ -24,6 +24,8 @@ constraints: [goal wording must identify an observable outcome and relevant boun
 3. Separate goal content from proposed methods and assumptions.
 4. Emit a testable top-goal statement with unresolved choices.
 
+If the top goal has explicit success conditions but remains too broad to execute, consider `decompose-and-or-goal` as the next tactic.
+
 ## Output contract
 
 ```yaml

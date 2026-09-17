@@ -24,6 +24,8 @@ constraints: [include explicit and implicit factors; each variable has a role, p
 3. Classify functional roles such as causal variable, factor, design dimension, mediator, moderator, or confounder.
 4. Attach provenance and suspected importance and return the structured variable list.
 
+If variables and their roles are defined well enough to assert directional relations, consider `represent-mechanism-edge` as the next tactic.
+
 ## Output contract
 
 ```yaml

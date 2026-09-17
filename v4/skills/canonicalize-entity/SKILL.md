@@ -24,6 +24,8 @@ constraints: [the entity schema is explicit; merge requires semantic identity ev
 3. Merge only semantically identical entities into a canonical record and redirect dependent edges.
 4. Preserve rejected-merge pairs and rationale, then return the canonicalized register.
 
+If canonical entities are stable enough to compare against the target domain, consider `map-coverage-space` as the next tactic.
+
 ## Output contract
 
 ```yaml

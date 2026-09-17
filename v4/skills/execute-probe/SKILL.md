@@ -16,6 +16,9 @@ constraints: [probe scope and interpretation rule must be fixed before execution
 1. Verify target and probe conditions.
 2. Run the probe and capture observations.
 3. Classify outcome against the predeclared conditions.
+
+If probe observations and protocol deviations are recorded, consider `classify-falsification-verdict` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [probe_record, observations, outcome, severity]

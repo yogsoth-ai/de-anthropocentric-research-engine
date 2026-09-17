@@ -24,6 +24,8 @@ constraints: [each extracted value is source-linked and missing or ambiguous fie
 3. Record units, uncertainty, provenance links, and missing/ambiguous fields.
 4. Run schema and consistency checks before releasing the record.
 
+If the evidence record contains enough design and method detail for appraisal, consider `audit-study-validity` as the next tactic.
+
 ## Output contract
 
 ```yaml

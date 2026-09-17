@@ -24,6 +24,8 @@ constraints: [each candidate must state fit, boundary crossing, and evidence nee
 3. Record the transfer or boundary-crossing rationale for each candidate.
 4. Remove duplicates while preserving materially different mechanisms.
 
+If candidate fields are diverse enough for comparative characterization, consider `synthesize-field-panorama` as the next tactic.
+
 ## Output contract
 
 ```yaml

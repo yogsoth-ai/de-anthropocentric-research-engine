@@ -25,6 +25,9 @@ constraints: [values are typed to the dimension; mode determines representative,
 4. Deduplicate and annotate rationale, provenance, and expected coverage.
 5. Return the value set per dimension.
 
+If the dimension values are ready for controlled combination, consider `construct-design-matrix` as the next tactic.
+If the values define plausible perturbations around a conclusion, consider `assess-sensitivity` as the next tactic.
+
 ## Output contract
 
 ```yaml

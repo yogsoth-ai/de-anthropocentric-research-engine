@@ -24,6 +24,8 @@ constraints: [each validity judgment requires an observable indicator, compariso
 3. Compare convergent and discriminant evidence where available, preserving missing comparisons.
 4. Test confound hypotheses with controlled contrasts or artifact probes and record residual uncertainty.
 
+If construct validity depends on whether the operationalization covers the intended domain, consider `map-coverage-space` as the next tactic.
+
 ## Output contract
 
 ```yaml

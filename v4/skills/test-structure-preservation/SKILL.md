@@ -16,6 +16,9 @@ constraints: [obligations must be enumerated before testing]
 1. Evaluate each relation, operation, and invariant.
 2. Search for the smallest preservation failure.
 3. Record pass, fail, unknown, and counterexample evidence.
+
+If material relations fail to survive the mapping, consider `downgrade-equivalence-claim` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [preservation_matrix, counterexample, failed_obligations, uncertainty]

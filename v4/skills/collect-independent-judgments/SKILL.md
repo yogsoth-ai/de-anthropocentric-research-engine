@@ -17,6 +17,9 @@ constraints: [evaluators receive no peer judgments; each ballot preserves ration
 2. Obtain one sealed judgment and rationale per evaluator, recording abstentions and unavailable evidence.
 3. Check for shared data, model, prompt, or deliberation leakage before unblinding.
 4. Unblind only after collection, then return ballots, independence flags, and an aggregation-ready dataset.
+
+If independent judgments are complete and their provenance is preserved, consider `aggregate-ranking` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [sealed_ballots, independence_audit, rationale_set, aggregation_dataset]

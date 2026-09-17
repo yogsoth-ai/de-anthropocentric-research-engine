@@ -17,6 +17,9 @@ constraints: [relation type, direction, scope, and evidence are explicit]
 2. Enumerate candidate relation types and test each against its defining conditions.
 3. Select the best-supported type or record ambiguity, then state direction and evidence.
 4. Emit the typed relation, rejected types, and follow-up evidence needed to resolve uncertainty.
+
+If typed relations include stable broader-narrower or part-whole structure, consider `construct-hierarchy` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [typed_relation, rejected_relation_types, evidence_links, unresolved_relation_questions]

@@ -24,6 +24,8 @@ constraints: [extracted values must distinguish stated, inferred, and missing]
 3. Mark ambiguity, omission, and any inference made from context.
 4. Emit a normalized protocol record with comparability notes.
 
+If multiple protocols can now be represented on the same comparison schema, consider `compare-evaluation-protocols` as the next tactic.
+
 ## Output contract
 
 ```yaml

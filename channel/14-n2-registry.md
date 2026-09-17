@@ -154,3 +154,11 @@ Verification:
 - Negative checks reject a missing call, a missing terminal rule, and a jump rewritten as MUST.
 - `python v4/scripts/validate_graph.py`: exit 0, zero warnings, including Gate 18 and the full R5 threshold gate.
 - Registry counts remain 267 nodes, 317 calls, 157 jumps, 474 edges, and 147 capability contracts.
+
+## 2026-09-17 Account seven: SOP jump completion
+
+Completed the 75 SOP-to-SOP jumps omitted by the account-six task scope. This was R0's specification omission, not an execution defect in the prior 51-tactic delivery. The 75 conditional handoffs now appear in the `## Procedure` sections of their 71 source SOPs. Every handoff has a research-state trigger and uses only soft `consider` wording; no SOP jump target appears in a `MUST` call.
+
+Extended `validate_inline_edges.py` from tactic-only coverage to all 267 graph nodes. It now enforces exact sets for 317 tactic calls, 82 tactic jumps, and 75 SOP jumps, and reports the 474-edge total. The baseline was migrated once from whole-file SOP hashes to schema 2: for all 216 SOPs it locks the byte hash of each existing protected section and also locks section absence, allowing only the required Procedure insertion. The migration first verified every old SOP whole-file hash and cannot be rerun against schema 2.
+
+Negative checks reject a missing SOP jump, a SOP jump rewritten as `MUST`, and a changed protected SOP section. `python v4/scripts/validate_graph.py` without skip switches exits 0 with zero warnings. Registry counts remain 267 nodes, 317 calls, 157 jumps, 474 edges, and 147 capability contracts.

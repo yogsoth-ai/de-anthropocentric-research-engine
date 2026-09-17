@@ -16,6 +16,9 @@ constraints: [shared dependency identity and path membership must be explicit]
 1. Inventory each path's inputs and assumptions.
 2. Match shared priors, data, models, prompts, framing, and upstream evidence.
 3. Produce dependency clusters and unresolved provenance.
+
+If shared priors and dependence groups are explicit, consider `estimate-effective-evidence-count` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [shared_prior_map, dependency_clusters, unresolved_links]

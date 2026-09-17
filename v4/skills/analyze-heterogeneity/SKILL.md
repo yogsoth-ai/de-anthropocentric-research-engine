@@ -24,6 +24,8 @@ constraints: [heterogeneity claims require record-level conditions and provenanc
 3. Identify plausible moderators, outliers, and confounding condition differences.
 4. Prioritize subgroup or meta-regression investigations and record uncertainty.
 
+If unexplained variation may reflect selective reporting rather than substantive moderators, consider `assess-publication-bias` as the next tactic.
+
 ## Output contract
 
 ```yaml

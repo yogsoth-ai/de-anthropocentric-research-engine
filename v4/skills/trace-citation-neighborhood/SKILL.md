@@ -24,6 +24,8 @@ constraints: [citation direction, source identity, independence, and stopping ev
 3. Prioritize high-information and critical nodes for full evidence review.
 4. Compare each batch's new independent evidence and stop when marginal gain meets the declared saturation rationale.
 
+If the citation neighborhood is broad enough to contain many weak or irrelevant records, consider `screen-evidence-multistage` as the next tactic.
+
 ## Output contract
 
 ```yaml

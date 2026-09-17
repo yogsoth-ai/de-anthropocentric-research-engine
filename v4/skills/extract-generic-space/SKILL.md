@@ -16,6 +16,9 @@ constraints: [generic relations must be present in at least two input spaces]
 1. Compare roles and relations across the input spaces.
 2. Keep only shared structure and mark source-specific attributes.
 3. Validate the generic space against the blend goal before projection.
+
+If the generic space supports a coherent candidate blend, consider `simulate-emergent-properties` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [generic_space, shared_relations, excluded_attributes]

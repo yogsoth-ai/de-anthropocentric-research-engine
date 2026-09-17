@@ -24,6 +24,8 @@ constraints: [the graph contains at least 2 items when the source protocol appli
 3. Detect cycles, compute critical paths, and identify independent branches.
 4. Return the dependency graph and unresolved relation questions.
 
+If dependency types and blocking relations are explicit, consider `sequence-work` as the next tactic.
+
 ## Output contract
 
 ```yaml

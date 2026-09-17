@@ -16,6 +16,9 @@ constraints: [assumptions must be classified by source and role]
 1. Inspect data generation, measurement, simulator, oracle, metric, initialization, and acceptance.
 2. Record each assumption and its relation to the target.
 3. Mark evidence, uncertainty, and potential circularity.
+
+If validator assumptions and dependencies are explicit, consider `build-noncircularity-matrix` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [validator_assumption_inventory, dependency_links, circularity_candidates]

@@ -16,6 +16,9 @@ constraints: [each cascade edge must identify dependency and failure mechanism]
 1. Identify the assumption and immediate dependents.
 2. Propagate invalidation through claims, methods, and conclusions.
 3. Distinguish local from cascading failure and record recovery points.
+
+If the cascade identifies conclusions controlled by a small assumption set, consider `search-minimal-flip` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [assumption_cascade, affected_claims, local_failures, cascading_failures, recovery_points]

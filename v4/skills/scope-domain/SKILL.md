@@ -17,6 +17,9 @@ constraints: [scope boundaries, inclusion criteria, granularity, and intended us
 2. Set inclusion/exclusion boundaries and the target granularity for entities and relations.
 3. Test boundary examples, record out-of-scope items, and freeze the initial scope ledger.
 4. Emit the scoped domain specification and a trigger for reopening it.
+
+If the domain boundary and exclusions are stable, consider `extract-concepts` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [domain_scope, inclusion_rules, exclusion_rules, granularity_spec, scope_ledger]

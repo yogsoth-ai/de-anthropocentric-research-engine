@@ -25,6 +25,8 @@ constraints: [the parent tactic supplies the object schema and rubric; every dim
 4. Apply the caller-supplied aggregation rule and preserve the dimension scores, composite score, and unresolved uncertainty.
 5. Return the scored object and a traceable rationale.
 
+If scoring exposes a material weakness that can be acted on, consider `design-mitigation` as the next tactic.
+
 ## Output contract
 
 ```yaml

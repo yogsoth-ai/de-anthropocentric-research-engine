@@ -16,6 +16,9 @@ constraints: [each pole must have a valued upside and a harmful overuse pattern]
 1. State the upside and downside of over-focusing each pole.
 2. Identify warning signs that the system has over-corrected toward either pole.
 3. Map practices that manage the polarity without falsely resolving it.
+
+If the polarity map reveals a tension sustained by implicit premises, consider `surface-assumptions` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [polarity_map, upside_downside_register, warning_signs, management_practices]

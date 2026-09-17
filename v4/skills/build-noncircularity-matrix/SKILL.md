@@ -16,6 +16,9 @@ constraints: [each cell is independent/shared/derived-from-target/unknown]
 1. Enumerate both assumption sets.
 2. Populate dependency cells with evidence.
 3. Identify copied assumptions and independent failure channels.
+
+If the matrix exposes shared premises or dependent validation paths, consider `detect-pass-by-construction` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [noncircularity_matrix, dependency_summary, independent_channels]

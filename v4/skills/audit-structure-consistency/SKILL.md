@@ -24,6 +24,8 @@ constraints: [each inconsistency identifies nodes, relation, and violated rule]
 3. Compare versions or source structure where supplied.
 4. Emit inconsistencies, valid exceptions, and repair questions.
 
+If the structure is internally consistent but leaves required areas unrepresented, consider `detect-coverage-gap` as the next tactic.
+
 ## Output contract
 
 ```yaml

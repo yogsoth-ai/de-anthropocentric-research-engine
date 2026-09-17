@@ -24,6 +24,8 @@ constraints: [element boundaries, dependency links, and source spans must be ret
 3. Map elements to technical functions and preserve alternative interpretations.
 4. Emit a source-linked claim-element graph.
 
+If claim elements, dependencies, and limiting language are parsed, consider `assess-patent-claim-scope` as the next tactic.
+
 ## Output contract
 
 ```yaml

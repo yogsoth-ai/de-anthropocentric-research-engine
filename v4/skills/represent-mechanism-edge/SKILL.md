@@ -17,6 +17,9 @@ constraints: [source and target are typed; direction, pathway, evidence, and fal
 2. State the mechanism pathway and direction, including enabling conditions and assumptions.
 3. Attach supporting and contradicting evidence, assign strength on the declared scale, and define a falsifier.
 4. Emit the edge record with provenance and unresolved mechanism questions.
+
+If a mechanism edge is typed but its support and contradiction records are not linked, consider `attach-evidence-to-relation` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [mechanism_edge, evidence_links, assumption_list, falsifier, unresolved_questions]

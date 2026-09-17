@@ -24,6 +24,8 @@ constraints: [each axis has semantics, type, direction, and measurement rule; co
 3. Define each dimension's domain, units, direction, and observability.
 4. Return the dimension set with exclusions and unresolved dependencies.
 
+If each analysis dimension has a clear meaning and admissible type, consider `enumerate-dimension-values` as the next tactic.
+
 ## Output contract
 
 ```yaml

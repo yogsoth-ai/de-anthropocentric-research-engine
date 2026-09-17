@@ -24,6 +24,8 @@ constraints: [each validation judgment cites the affected node and criterion]
 3. Check coverage, feasibility annotations, and unresolved branches against the declared constraints.
 4. Return node-level revisions and a validation summary without silently repairing the graph.
 
+If the goal tree is logically valid but resource or timing constraints remain unresolved, consider `assess-goal-feasibility` as the next tactic.
+
 ## Output contract
 
 ```yaml

@@ -24,6 +24,8 @@ constraints: [regularity claims require multiple comparable observations or an e
 3. Test exceptions, alternative explanations, and measurement artifacts.
 4. State the regularity with scope and uncertainty boundaries.
 
+If the regularity is stable enough to express through measurable factors and outcomes, consider `identify-variables` as the next tactic.
+
 ## Output contract
 
 ```yaml

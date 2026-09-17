@@ -24,6 +24,8 @@ constraints: [branch semantics, dependencies, and leaf criteria must be explicit
 3. Attach actors, dependencies, constraints, and unresolved feasibility to each branch.
 4. Preserve shared subgoals as DAG nodes rather than duplicating them.
 
+If the AND/OR decomposition is complete enough to test necessity and coverage, consider `validate-goal-tree` as the next tactic.
+
 ## Output contract
 
 ```yaml

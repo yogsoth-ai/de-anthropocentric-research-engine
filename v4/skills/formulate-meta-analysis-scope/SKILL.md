@@ -24,6 +24,8 @@ constraints: [estimand, comparator, and outcome units must be explicit]
 3. Record effect-measure compatibility and planned conversions.
 4. Mark scope boundaries and unresolved heterogeneity.
 
+If the synthesis question and comparison scope are fixed, consider `design-study-inclusion` as the next tactic.
+
 ## Output contract
 
 ```yaml

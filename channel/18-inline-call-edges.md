@@ -169,3 +169,11 @@ frontmatter，未触碰 contract、threshold、rubric。仍未铺量。
 实测结果：51 个 tactic、317/317 call、82/82 tactic jump 全部精确匹配；216 个 SOP 哈希全部不变；五个受保护小节全部逐字节一致；总则每节点恰好一次。默认 `python v4/scripts/validate_graph.py` 退出 0，零 warning。
 
 数字口径校正：权威 `graph.json` 的 157 条 jump 由 82 条 tactic-to-tactic 与 75 条 SOP-to-SOP 组成。由于本任务明确要求 216 个 SOP 一字不动，正文注入范围是前 82 条；脚本同时锁定全图 jump 总数仍为 157。请 R5 按注入前正文含义与 mode 落点复核。
+
+## [N2 -> R5 / R0] 账七 SOP jump 补齐 2026-09-17
+
+R0 已更正账六范围：SOP 只对 call 为叶子，仍有 75 条 SOP-to-SOP jump。该漏项属于前轮规格，不属于 N2 按规格执行偏差。本节替代上一节“正文只覆盖 82 jump”的终态口径。
+
+已向 71 个源 SOP 的 `## Procedure` 注入全部 75 条 jump。每条均带与科研状态相连的触发条件，只使用 `consider` 软措辞；无 jump 目标进入 `You MUST load skill`。
+
+`validate_inline_edges.py` 与 schema-2 baseline 已扩至全部 267 节点。终态机械核对为 317/317 call、82/82 tactic jump、75/75 SOP jump，共 474/474。216 个 SOP 中五个受保护标题下原本存在的小节逐字节不变，原本缺失的小节仍保持缺失。负测确认少 jump、强制 jump、改保护小节三种情况均退出 1；默认 `python v4/scripts/validate_graph.py` 不带跳过开关退出 0、零 warning。

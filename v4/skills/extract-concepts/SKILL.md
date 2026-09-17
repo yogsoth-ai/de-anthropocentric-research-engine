@@ -24,6 +24,8 @@ constraints: [each concept requires a source span and an uncertainty state]
 3. Link candidate relations only when the source expresses them.
 4. Emit a deduplicated concept set with unresolved meanings retained.
 
+If candidate concepts are identified but still bundle multiple meanings or operations, consider `atomize-concept` as the next tactic.
+
 ## Output contract
 
 ```yaml

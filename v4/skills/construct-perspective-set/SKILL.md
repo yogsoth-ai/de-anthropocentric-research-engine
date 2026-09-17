@@ -17,6 +17,9 @@ constraints: [each perspective must have a distinct warrant and scope]
 2. Select a coverage-complete set and state inclusion rationale.
 3. Record each lens's assumptions, objectives, and blind spots.
 4. Return the set with mapping to the target object.
+
+If the perspective set is sufficiently distinct and bounded, consider `rotate-perspective` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [perspective_set, selection_rationale, assumption_map, blind_spot_map]

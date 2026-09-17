@@ -17,6 +17,9 @@ constraints: [residual risk and validation evidence must be explicit]
 2. Generate prevention, detection, response, removal, and relaxation options.
 3. Sequence selected actions with resources and validation tests.
 4. Estimate residual risk and define escalation conditions.
+
+If the mitigation has an explicit mechanism and measurable target, consider `validate-mitigation-effect` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [mitigation_plan, validation_tests, residual_risk, success_criteria]

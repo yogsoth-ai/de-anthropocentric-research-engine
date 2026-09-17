@@ -17,6 +17,9 @@ constraints: [dimension semantics and coverage states are declared]
 2. Assign each item to supported, partial, or unsupported regions.
 3. Merge duplicate coverage and identify uncovered or weakly supported regions.
 4. Return the map with evidence and confidence annotations.
+
+If expected and observed coverage are represented on the same space, consider `detect-coverage-gap` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [coverage_map, redundancy_clusters, gap_register, confidence_annotations]

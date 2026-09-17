@@ -24,6 +24,8 @@ constraints: [anomaly status requires a defined comparison and condition context
 3. Test plausible data, protocol, and mechanism explanations.
 4. Classify the anomaly and identify discriminating follow-up evidence.
 
+If the anomaly is reproducible and not explained by a recording artifact, consider `generate-competing-hypotheses` as the next tactic.
+
 ## Output contract
 
 ```yaml

@@ -24,6 +24,8 @@ constraints: [eligible universe, provenance fields, and stopping evidence must b
 3. Specify batch boundaries, novelty dimensions, and relative stopping evidence.
 4. Record unresolved scope choices before acquisition begins.
 
+If the protocol fixes inclusion, exclusion, and stopping rules, consider `select-seed-evidence` as the next tactic.
+
 ## Output contract
 
 ```yaml

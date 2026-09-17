@@ -17,6 +17,9 @@ constraints: [criteria, units, and scenario assumptions remain fixed during eval
 2. Compute or qualitatively assess each declared criterion.
 3. Identify tradeoffs, vulnerabilities, and failure triggers.
 4. Return impact evidence and unresolved uncertainties.
+
+If the impact estimate depends on uncertain drivers or parameter choices, consider `assess-sensitivity` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [impact_assessment, metric_results, tradeoffs, vulnerabilities, failure_triggers]

@@ -24,6 +24,8 @@ constraints: [facets must be non-duplicate and retain the parent concept boundar
 3. Compare neighboring concepts and mark overlaps or gaps.
 4. Emit a facet hierarchy with definitions and boundary examples.
 
+If the atomic concepts are stable enough to connect semantically, consider `type-relation` as the next tactic.
+
 ## Output contract
 
 ```yaml

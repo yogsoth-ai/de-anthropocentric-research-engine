@@ -21,6 +21,8 @@ constraints: [each branch must have explicit resource, obstacle, and deadline ch
 3. Test schedule against dependencies and deadline; assign feasible/stretch/infeasible.
 4. For infeasible branches, construct OR alternatives that relax a declared constraint.
 
+If the goal is feasible and its remaining tradeoffs are resolved, consider `crystallize-north-star` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [feasibility_matrix, blocking_obstacles, alternative_branches, timeline_rationale]

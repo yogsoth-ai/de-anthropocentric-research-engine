@@ -24,6 +24,8 @@ constraints: [field definitions and missing-data states must be explicit]
 3. Specify unknown, not reported, not applicable, and ambiguous states.
 4. Pilot the form on boundary records and revise only documented ambiguities.
 
+If the extraction schema is fixed and studies are ready for methodological appraisal, consider `audit-study-validity` as the next tactic.
+
 ## Output contract
 
 ```yaml

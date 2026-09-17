@@ -16,6 +16,9 @@ constraints: [each source needs entities, relations, goals, and constraints or a
 1. Partition each source domain into entities, relations, goals, constraints, and dynamics.
 2. Normalize equivalent roles without erasing source-specific structure.
 3. Record the blend goal and the items eligible for projection.
+
+If the input spaces and their correspondences are explicit, consider `extract-generic-space` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [input_space_set, normalized_roles, projection_candidates]

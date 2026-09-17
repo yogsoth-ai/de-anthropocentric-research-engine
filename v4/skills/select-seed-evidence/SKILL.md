@@ -24,6 +24,8 @@ constraints: [rank rationale and source independence must be explicit]
 3. Select seeds covering distinct mechanisms, populations, or evidence gaps.
 4. Record expected expansion value and unresolved selection uncertainty.
 
+If the seed set spans the protocol's main evidence types, consider `categorize-evidence` as the next tactic.
+
 ## Output contract
 
 ```yaml

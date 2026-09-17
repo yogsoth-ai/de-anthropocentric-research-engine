@@ -16,6 +16,9 @@ constraints: [both sides must refer to the same design decision or parameter]
 1. State the desired improvement and the resulting worsening effect.
 2. Determine whether distinct system states or one parameter must satisfy opposing properties.
 3. Classify technical versus physical contradiction and record the implicated parameters.
+
+If improving and worsening parameters are explicit, consider `select-inventive-principle` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [contradiction_statement, contradiction_type, implicated_parameters]

@@ -16,6 +16,9 @@ constraints: [strengthening may not add unsupported commitments]
 1. Expose hidden quantifiers, variables, mechanisms, and boundaries.
 2. Remove ambiguity while preserving the strongest evidence-supported meaning.
 3. State observable consequences and candidate falsifiers.
+
+If the claim now states a risky observation and failure condition, consider `design-falsification-test` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [sharp_claim, quantifiers, scope, mechanisms, falsifiers]

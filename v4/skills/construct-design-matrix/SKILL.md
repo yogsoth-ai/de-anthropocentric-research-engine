@@ -23,6 +23,8 @@ constraints: [use named scientific objects; retain provenance and missingness; $
 2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
 3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
 
+If the design cells are fixed but their outcomes and estimands are not, consider `specify-metrics` as the next tactic.
+
 ## Output contract
 
 ```yaml

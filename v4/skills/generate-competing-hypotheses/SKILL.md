@@ -24,6 +24,8 @@ constraints: [each hypothesis must imply a differentiating prediction or assumpt
 3. Translate each explanation into predictions, assumptions, and disconfirming observations.
 4. Deduplicate equivalent explanations and retain the comparison set.
 
+If competing hypotheses have explicit predictions and evidence links, consider `score-object` as the next tactic.
+
 ## Output contract
 
 ```yaml

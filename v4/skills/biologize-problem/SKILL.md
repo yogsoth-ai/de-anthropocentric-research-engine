@@ -16,6 +16,9 @@ constraints: [function must be implementation-independent and testable]
 1. Remove target-domain nouns and restate the desired function.
 2. State environmental pressures, resources, and failure constraints.
 3. Produce biological search terms at function, process, and adaptation levels.
+
+If the problem has been expressed as biological functions and constraints, consider `discover-biological-analog` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [biological_problem_statement, function_terms, constraint_terms]

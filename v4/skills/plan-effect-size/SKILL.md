@@ -24,6 +24,8 @@ constraints: [estimand, direction, and conversion assumptions must be explicit]
 3. Record unavailable statistics and assumptions for any conversion.
 4. Produce a harmonized effect-size plan with incompatibilities.
 
+If the effect measure and transformation rules are fixed, consider `design-data-extraction` as the next tactic.
+
 ## Output contract
 
 ```yaml

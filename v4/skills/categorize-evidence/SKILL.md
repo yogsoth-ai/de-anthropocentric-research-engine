@@ -24,6 +24,8 @@ constraints: [category assignments require record evidence and allow explicit mu
 3. Review boundary cases and preserve multi-label or unresolved assignments.
 4. Summarize category coverage and representative records.
 
+If categorized sources now need claim-level structured records, consider `extract-evidence-record` as the next tactic.
+
 ## Output contract
 
 ```yaml

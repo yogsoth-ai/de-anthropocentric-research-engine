@@ -16,6 +16,9 @@ constraints: [test must identify a failure condition and measurement rule]
 1. Enumerate claim commitments and possible failure observations.
 2. Rank tests by information value and cost.
 3. Specify the cheapest decisive test with pass/fail interpretation.
+
+If the falsification test has an executable intervention and verdict rule, consider `execute-probe` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [falsification_test, failure_condition, measurement_plan, priority_rationale]

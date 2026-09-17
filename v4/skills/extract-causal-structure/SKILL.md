@@ -24,6 +24,8 @@ constraints: [preserve direction and scope; distinguish observed association fro
 3. Record assumptions, boundary conditions, and evidence for each edge.
 4. Assemble the causal graph and flag unsupported or ambiguous links.
 
+If the extracted causal relations contain incompatible directions or effects under shared scope, consider `detect-contradiction` as the next tactic.
+
 ## Output contract
 
 ```yaml

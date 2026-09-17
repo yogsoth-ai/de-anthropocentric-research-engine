@@ -16,6 +16,9 @@ constraints: [facts and alternatives must be independently listed]
 1. Check whether independent facts are compressed.
 2. Check whether alternatives are forbidden and predictions constrained.
 3. Classify earned, weak, or decorative and preserve rationale.
+
+If simplicity provides discriminating support only through a vulnerable consequence, consider `test-risky-prediction` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [simplicity_class, compression_evidence, missing_constraints]

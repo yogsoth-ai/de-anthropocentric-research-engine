@@ -24,6 +24,9 @@ constraints: [distinguish formal, empirical, scope-dependent, and unresolved con
 3. Classify the conflict and record the exact conflicting statements.
 4. Create a contradiction record and identify the evidence needed for adjudication.
 
+If the contradiction concerns treatment, component, or effect attribution, consider `analyze-intervention` as the next tactic.
+If the contradiction rests on a shared but untested premise, consider `challenge-assumption` as the next tactic.
+
 ## Output contract
 
 ```yaml

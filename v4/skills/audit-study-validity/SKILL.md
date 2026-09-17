@@ -24,6 +24,10 @@ constraints: [rubric applicability and judgment rationale must be explicit]
 3. Record signaling evidence, uncertainty, and direction of likely bias.
 4. Aggregate domain judgments without hiding critical domain failures.
 
+If the validity-screened corpus may already support a stopping decision, consider `assess-evidence-saturation` as the next tactic.
+If validity differs materially across designs, populations, or conditions, consider `analyze-heterogeneity` as the next tactic.
+If the conclusion depends on study exclusions or uncertain validity judgments, consider `assess-sensitivity` as the next tactic.
+
 ## Output contract
 
 ```yaml

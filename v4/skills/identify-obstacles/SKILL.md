@@ -17,6 +17,9 @@ constraints: [each obstacle has type, evidence, and blocking relation]
 2. Enumerate technical, evidential, resource, temporal, and dependency obstacles.
 3. Link each obstacle to blocked outcomes and supporting evidence.
 4. Return severity, uncertainty, and candidate removal questions.
+
+If obstacles have comparable evidence, severity, and tractability fields, consider `score-object` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [obstacle_register, blocking_relations, evidence_links, removal_questions]

@@ -24,6 +24,8 @@ constraints: [bias claims require an observable missingness or selection pattern
 3. Apply design-appropriate diagnostics and record assumptions.
 4. Distinguish detected bias, plausible bias, and unassessed domains.
 
+If the conclusion may change under plausible missing-study or selection-bias scenarios, consider `assess-sensitivity` as the next tactic.
+
 ## Output contract
 
 ```yaml

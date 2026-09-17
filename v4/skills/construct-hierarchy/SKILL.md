@@ -21,6 +21,8 @@ constraints: [relations use declared types; cycles are invalid]
 3. Detect cycles, orphan nodes, missing intermediate levels, and root violations.
 4. Repair or quarantine invalid edges, then emit roots, depth, and edge rationale.
 
+If the hierarchy is complete enough to test for cycles, orphans, and incompatible parentage, consider `audit-structure-consistency` as the next tactic.
+
 ## Output contract
 ```yaml
 produces: [hierarchy_graph, roots, depth_report, cycle_report, edge_rationales]
