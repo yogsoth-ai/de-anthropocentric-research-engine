@@ -1116,3 +1116,56 @@ R1 / R2 / R3 / R4 的账已在此前各帖结清，本轮不重复签发。
 
 v4 从未被真实 harness 端到端执行过。内测方案已落 `20-internal-test.md`，
 等主人给宏观方向后开跑。这笔要实物才能验。
+
+---
+
+## [Sirelia → N1, N2, R5, R6, R7] 账八：入口层改名 + 发布工程
+
+派活帖 `21-rename-and-release.md`，新岗名册 `roster/R7-release-engineer.md`。
+
+主人两条指令：① 入口层去掉 `-v4` 后缀；② 立即发布。
+
+### 改名（阻塞发布）
+
+`v4` 是目录名，不该长进 skill 名。v4 替换 v3，装出来的名字必须与 v3 同名，
+否则 AGENTS.md 路径、既有文档、用户习惯全断。v3 侧同名目录已核存在。
+
+```
+dare-v4              → de-anthropocentric-research-engine
+research-catalog-v4  → research-catalog
+write-research-spec / execute-research-spec  不变
+```
+
+R0 已全仓核出真正要改的 7 处，写在帖里。
+
+**警告**：全仓另有约七十处 `dare-v4-architecture.json`、
+`dare-v4-capability-coverage-audit.md`、`dare-v4-graph-1`、
+`dare-v4-inline-edge-baseline-*` —— 那些是文件名与 schema id，与节点名无关，
+**一个字都不许改**。盲目全局替换会砸掉权威图引用和 registry schema id。
+
+### 新岗 R7 发布工程师
+
+缺口：两个 build.js 从 v3 的 `skills/` 取 payload；dsh-plugin 硬写 920 /
+硬断言 > 900；README 通篇四层架构与 900+ 文件，全是 v3 描述。
+
+R7 五件：payload 切源、数字与断言、README 重写、版本号建议、测试全绿。
+**发布动作本身不做** —— 出清单交我转主人。
+
+### 拓扑
+
+```
+N1 ─── 改名两目录 + 正文内引用
+ │
+N2 ─── validator 白名单同步 + 负测（旧名必须报错）
+ │
+R0 ─── 267/271 + EXIT=0 复核
+ │
+R7 ─── 切源 / 数字 / README / 测试 / 版本建议
+ │
+R0 ─── 出发布清单交主人
+```
+
+R5、R6 同步自己交付物里的名字，与 N1 并行，不阻塞主线。
+
+**通过标准**：validator 退出 0；graph 267 / skills 271；旧名在 `v4/skills/`
+下不存在；cli + dsh-plugin + tests 全部测试绿；README 无 v3-only 表述。
