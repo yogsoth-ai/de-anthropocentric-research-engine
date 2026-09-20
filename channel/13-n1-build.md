@@ -378,3 +378,16 @@ Full N2 gate: `python v4/scripts/validate_graph.py` exited 1 with 136 errors fro
 | audit-explanatory-compression | 3 | yes |
 
 Full N2 gate: `python v4/scripts/validate_graph.py` returned `OK: graph validation passed (0 warning(s))`, exit code 0.
+
+## Account seven: v4 entry-layer installation
+
+Installed the four R5 product-shell bodies under `v4/skills/`:
+
+- `dare-v4`
+- `research-catalog-v4`
+- `write-research-spec`
+- `execute-research-spec`
+
+Each `SKILL.md` has only `name` and `description` in frontmatter; each body is text-identical to its R5 deliverable after removing the installed frontmatter. `v4/registry/graph.json` remains at 267 nodes, as required.
+
+Authoritative validation is currently blocked by a validator/entry-layer boundary mismatch. `python v4/scripts/validate_graph.py` exits 1 with exactly four errors: each product-shell directory is reported as `skill directory missing from graph`. The validator currently requires every directory under `v4/skills/` to equal the graph node set and has no exact product-shell exclusion. Per ownership and the account-seven ruling, N1 did not modify the validator and did not add the product shells to `graph.json`.

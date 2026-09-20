@@ -162,3 +162,17 @@ Completed the 75 SOP-to-SOP jumps omitted by the account-six task scope. This wa
 Extended `validate_inline_edges.py` from tactic-only coverage to all 267 graph nodes. It now enforces exact sets for 317 tactic calls, 82 tactic jumps, and 75 SOP jumps, and reports the 474-edge total. The baseline was migrated once from whole-file SOP hashes to schema 2: for all 216 SOPs it locks the byte hash of each existing protected section and also locks section absence, allowing only the required Procedure insertion. The migration first verified every old SOP whole-file hash and cannot be rerun against schema 2.
 
 Negative checks reject a missing SOP jump, a SOP jump rewritten as `MUST`, and a changed protected SOP section. `python v4/scripts/validate_graph.py` without skip switches exits 0 with zero warnings. Registry counts remain 267 nodes, 317 calls, 157 jumps, 474 edges, and 147 capability contracts.
+
+## 2026-09-20 Account seven: product-shell boundary
+
+Updated `validate_graph.py` to distinguish the four product shells from the 267 research graph nodes through an exact hard-coded whitelist: `dare-v4`, `research-catalog-v4`, `write-research-spec`, and `execute-research-spec`. No prefix or wildcard matching is used. Non-whitelisted skill directories must still map exactly to graph nodes in both directions, and any whitelisted shell appearing in `graph.json` is an error. Each shell must also contain `SKILL.md` whose frontmatter has exactly `name` and `description`.
+
+The graph-membership gate itself was not relaxed. Invalid shell membership or a missing graph-node directory now returns the accumulated validation error before the downstream inline-edge checker reads an invalid file set; this prevents a traceback from substituting for the gate's explicit failure.
+
+Negative checks, each restored immediately afterward:
+
+- added `v4/skills/zzz-fake/`: reported `skill directory missing from graph`, exit 1;
+- inserted `dare-v4` into `graph.json` nodes: reported `product shell 'dare-v4' must not appear in graph`, exit 1;
+- removed the real `rank-candidates` tactic directory: reported `node 'rank-candidates' missing skill directory`, exit 1.
+
+Final default validation uses no skip switch and exits 0 with zero warnings.

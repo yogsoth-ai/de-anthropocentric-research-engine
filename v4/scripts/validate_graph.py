@@ -19,6 +19,12 @@ V4 = ROOT / "v4"
 GRAPH = V4 / "registry" / "graph.json"
 CAPS = V4 / "registry" / "capabilities.json"
 SKILLS = V4 / "skills"
+PRODUCT_SHELLS = {
+    "dare-v4",
+    "research-catalog-v4",
+    "write-research-spec",
+    "execute-research-spec",
+}
 ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
 SOURCE = ROOT / "scripts" / "refactory_source.json"
 R5 = ROOT / "channel" / "deliverables" / "R5" / "validate_threshold_fidelity.py"
@@ -358,11 +364,25 @@ def main() -> int:
     tactics = {n["id"] for n in nodes if n.get("type") == "tactic"}
     sops = {n["id"] for n in nodes if n.get("type") == "sop"}
     if len(by_id) != len(nodes): c.error(GRAPH, 1, "duplicate node id")
-    expected = {p.name for p in SKILLS.iterdir() if p.is_dir()} if SKILLS.exists() else set()
-    if expected:
-        if expected != set(by_id):
-            for x in sorted(expected - set(by_id)): c.error(SKILLS / x, 1, "skill directory missing from graph")
-            for x in sorted(set(by_id) - expected): c.error(GRAPH, 1, f"node {x!r} missing skill directory")
+    skill_dirs = {p.name for p in SKILLS.iterdir() if p.is_dir()} if SKILLS.exists() else set()
+    if skill_dirs:
+        node_dirs = skill_dirs - PRODUCT_SHELLS
+        graph_ids = set(by_id)
+        for x in sorted(node_dirs - graph_ids): c.error(SKILLS / x, 1, "skill directory missing from graph")
+        missing_node_dirs = graph_ids - node_dirs - PRODUCT_SHELLS
+        for x in sorted(missing_node_dirs): c.error(GRAPH, 1, f"node {x!r} missing skill directory")
+        forbidden_shells = graph_ids & PRODUCT_SHELLS
+        for x in sorted(forbidden_shells): c.error(GRAPH, 1, f"product shell {x!r} must not appear in graph")
+        for x in sorted(PRODUCT_SHELLS):
+            path = SKILLS / x / "SKILL.md"
+            if not path.is_file():
+                c.error(path, 1, "product shell must contain SKILL.md")
+                continue
+            fm, _ = frontmatter(path.read_text(encoding="utf-8").splitlines())
+            if set(fm) != {"name", "description"}:
+                c.error(path, 1, f"product shell frontmatter keys must be name + description, got {sorted(fm)}")
+        if forbidden_shells or missing_node_dirs:
+            return report(c)
     else:
         c.warn(SKILLS, 1, "v4 skills are not present yet; registry-only validation")
     counts = graph.get("counts", {})

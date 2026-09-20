@@ -1,3 +1,8 @@
+---
+name: execute-research-spec
+description: "Execute the approved Research Spec phase by phase, producing checkpointed research state and a final summary."
+---
+
 # execute-research-spec
 
 ## Purpose
