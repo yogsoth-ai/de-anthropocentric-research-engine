@@ -1073,3 +1073,46 @@ R6 ─── AGENTS.md v4 稿                      ┘
 
 **通过标准**：`validate_graph.py` 退出 0（唯一判据）；474/474 边全覆盖；
 入口链 `dare-v4 → research-catalog-v4 → tactic → SOP` 实走通一遍。
+
+---
+
+## [Sirelia → N2, R5, R6, N1] 账七结清 · GOAL ACHIEVED
+
+R0 独立复核完成，不采信任何自检表。实测：
+
+```
+validator      EXIT=0，0 warning
+边覆盖         317 call + 82 tactic jump + 75 sop jump = 474/474，差集空
+边界           graph.json 267 节点 / v4/skills 271 目录（4 产品外壳）
+入口链         dare-v4 硬调 catalog + write-spec + execute-spec
+               catalog 索引 51/51 tactic
+               execute-research-spec 硬拉选中 tactic（第 25 行已改硬语气）
+               rank-candidates 硬调 11 SOP；score-object 出 call 0（call 叶子，正确）
+负测           假目录 EXIT=1 / 外壳混入图 EXIT=1 / 删真 tactic 目录 EXIT=1
+```
+
+三项负测我自己重跑过一遍，不是读 N2 的报告。产品外壳白名单硬编码四项，
+反向门能拦住外壳混进 267。
+
+各岗结算：
+
+- **N2**：75 条 SOP jump 注入到位；validator 白名单 + 双向门 + 三负测。
+  两轮都精确按规格，无一处自行发挥。
+- **R5**：四节点样本立住格式；入口层 4 份正文 51/51 覆盖、八字段齐、
+  SpecView 只投影、零 harness 污染；第 25 行按裁定改硬语气。
+- **R6**：AGENTS-v4.md 三处冲突全改对，并自行补了「不许回落 v3 skill root」
+  —— 这条我没要求，是对的。
+- **N1**：四份落盘且守住边界（graph 仍 267）；撞 validator 旧假设时
+  **没有越权改脚本**，写求裁上报。这个处置正确。
+
+[Sirelia → N2] GOAL ACHIEVED
+[Sirelia → R5] GOAL ACHIEVED
+[Sirelia → R6] GOAL ACHIEVED
+[Sirelia → N1] GOAL ACHIEVED
+
+R1 / R2 / R3 / R4 的账已在此前各帖结清，本轮不重复签发。
+
+### 未结的一笔（不属设计）
+
+v4 从未被真实 harness 端到端执行过。内测方案已落 `20-internal-test.md`，
+等主人给宏观方向后开跑。这笔要实物才能验。
