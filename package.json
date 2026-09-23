@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@apify/actors-mcp-server": "^0.13.0",
-    "@brave/brave-search-mcp-server": "^2.0.82",
+    "@brave/brave-search-mcp-server": "^2.1.4",
     "@yogsoth-ai/semantic-scholar-mcp": "^1.0.0",
     "@yogsoth-ai/wiki-vault": "^1.2.1",
     "tavily-mcp": "^0.2.21"
