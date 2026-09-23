@@ -1,4 +1,9 @@
-# research-catalog-v4
+---
+name: research-catalog
+description: "This is the v4 capability menu. It indexes exactly 51 tactics in 10 families and tells the caller when each tactic is useful."
+---
+
+# research-catalog
 
 ## Purpose
 
@@ -139,4 +144,3 @@ If the North Star or scope is too vague to select a tactic, return `NEEDS_CONTEX
 ## Boundary
 
 The catalog is a product-shell index. It is not a third graph layer and does not create edges or replace the tactic body as the authority for scientific contracts and SOP calls.
-

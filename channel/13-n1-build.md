@@ -391,3 +391,16 @@ Installed the four R5 product-shell bodies under `v4/skills/`:
 Each `SKILL.md` has only `name` and `description` in frontmatter; each body is text-identical to its R5 deliverable after removing the installed frontmatter. `v4/registry/graph.json` remains at 267 nodes, as required.
 
 Authoritative validation is currently blocked by a validator/entry-layer boundary mismatch. `python v4/scripts/validate_graph.py` exits 1 with exactly four errors: each product-shell directory is reported as `skill directory missing from graph`. The validator currently requires every directory under `v4/skills/` to equal the graph node set and has no exact product-shell exclusion. Per ownership and the account-seven ruling, N1 did not modify the validator and did not add the product shells to `graph.json`.
+
+## Account eight: entry-layer rename
+
+Renamed only the two assigned product shells:
+
+- `dare-v4` -> `de-anthropocentric-research-engine`
+- `research-catalog-v4` -> `research-catalog`
+
+Updated both installed `SKILL.md` frontmatter names and H1 headings, plus the catalog references in `de-anthropocentric-research-engine/SKILL.md` and `write-research-spec/SKILL.md`. No architecture filename, schema id, baseline name, registry entry, or v3 source was changed.
+
+Boundary check: `graph.json` remains 267 nodes; `v4/skills/` remains 271 directories; both old directories are absent.
+
+Authoritative validation currently exits 1 with exactly four errors because `v4/scripts/validate_graph.py` still names `dare-v4` and `research-catalog-v4` in `PRODUCT_SHELLS`. It therefore treats the two new directories as graph nodes and requires the two removed directories to contain `SKILL.md`. Per the account-eight ownership split, N1 did not modify N2's validator.

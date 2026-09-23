@@ -16,7 +16,7 @@ constraints:
 
 ## Execution Protocol
 
-1. You MUST load skill `research-catalog-v4` and select candidate tactics from its 51-item index. Use the cards' `requires` and `produces` fields to test stage fit; do not enumerate SOPs in the Spec.
+1. You MUST load skill `research-catalog` and select candidate tactics from its 51-item index. Use the cards' `requires` and `produces` fields to test stage fit; do not enumerate SOPs in the Spec.
 2. Clarify scope, evidence depth, constraints, and stopping conditions from the user input. Preserve unresolved items as explicit open questions rather than guessing.
 3. Draft a 5-10 stage outline. Each stage names a tactic and its research transformation; stage order must follow dependencies and the North Star.
 4. For each stage, write: objective, expected input, focus areas, recommended tactic and mode, completion criteria, backtrack condition, and execution steps. Completion criteria must be numeric or objectively verifiable.
@@ -68,4 +68,3 @@ Missing North Star or ResearchBrief blocks spec writing. An unanswerable constra
 ## Boundary
 
 This skill creates the plan projection used by execution. It does not execute tactics, write scientific findings, or persist a second copy of the plan outside the checkpoint event stream.
-

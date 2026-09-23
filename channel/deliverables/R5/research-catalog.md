@@ -1,9 +1,4 @@
----
-name: research-catalog-v4
-description: "This is the v4 capability menu. It indexes exactly 51 tactics in 10 families and tells the caller when each tactic is useful."
----
-
-# research-catalog-v4
+# research-catalog
 
 ## Purpose
 

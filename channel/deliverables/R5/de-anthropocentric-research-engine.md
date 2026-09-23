@@ -1,4 +1,4 @@
-# dare-v4
+# de-anthropocentric-research-engine
 
 ## Purpose
 
@@ -19,7 +19,7 @@ constraints:
 DARE enforces this order and does not skip a phase:
 
 1. **North Star**: if a confirmed North Star and ResearchBrief are absent, collect and crystallize them from the user request. If they are present, verify that they still describe the request.
-2. **Spec**: You MUST load skill `research-catalog-v4` to expose the available tactics. You MUST load skill `write-research-spec` to turn the confirmed North Star, ResearchBrief, and user constraints into an executable Research Spec. Do not execute research while this phase is incomplete.
+2. **Spec**: You MUST load skill `research-catalog` to expose the available tactics. You MUST load skill `write-research-spec` to turn the confirmed North Star, ResearchBrief, and user constraints into an executable Research Spec. Do not execute research while this phase is incomplete.
 3. **Execution**: after the user approves the Spec, You MUST load skill `execute-research-spec` to execute its phases and checkpoints. Do not select a tactic directly from the flat skill directory.
 
 At every phase boundary, record the decision and its reason in the current Phase checkpoint event stream. A plan change is an appended `decisions` event, never an edit to an earlier checkpoint. The product shell may present progress, but scientific conclusions remain in tactic/SOP Delta fields.
@@ -58,4 +58,3 @@ Missing intent or scope blocks entry to specification and returns `NEEDS_CONTEXT
 ## Boundary
 
 This entry layer is installed under `v4/skills/` by the build owner. It is not added to `graph.json`, does not create a third scientific layer, and does not replace tactic or SOP contracts.
-

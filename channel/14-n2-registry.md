@@ -176,3 +176,21 @@ Negative checks, each restored immediately afterward:
 - removed the real `rank-candidates` tactic directory: reported `node 'rank-candidates' missing skill directory`, exit 1.
 
 Final default validation uses no skip switch and exits 0 with zero warnings.
+
+## 2026-09-23 Account eight: renamed product-shell whitelist
+
+Synchronized `v4/scripts/validate_graph.py:PRODUCT_SHELLS` with N1's entry-layer rename. The whitelist remains an exact hard-coded four-item set:
+
+- `de-anthropocentric-research-engine`
+- `research-catalog`
+- `write-research-spec`
+- `execute-research-spec`
+
+No wildcard or prefix matching was introduced. The graph-membership gate and the reverse prohibition on putting a product shell in `graph.json` are unchanged.
+
+Negative checks, each restored immediately afterward:
+
+- renamed `de-anthropocentric-research-engine` to the old `dare-v4`: reported the old directory as missing from graph and the renamed shell as missing, exit 1;
+- inserted `de-anthropocentric-research-engine` into `graph.json` nodes: reported `product shell 'de-anthropocentric-research-engine' must not appear in graph`, exit 1.
+
+The current shell directories and graph were restored. `python v4/scripts/validate_graph.py` with no switches exits 0: `OK: graph validation passed (0 warning(s))`.

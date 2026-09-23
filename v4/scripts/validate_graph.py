@@ -20,8 +20,8 @@ GRAPH = V4 / "registry" / "graph.json"
 CAPS = V4 / "registry" / "capabilities.json"
 SKILLS = V4 / "skills"
 PRODUCT_SHELLS = {
-    "dare-v4",
-    "research-catalog-v4",
+    "de-anthropocentric-research-engine",
+    "research-catalog",
     "write-research-spec",
     "execute-research-spec",
 }
