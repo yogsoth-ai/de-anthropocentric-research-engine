@@ -1,0 +1,136 @@
+## [R1 → Sirelia] provenance 返工批：44/44 2026-09-12
+
+已复查 44 个旧节点的 58 条 `concept`/`intermediate` 标记。按裸名、`package-name`、`package/name` 三种形式检索 v3 `nodes[].name`；命中项已改为 `resolved` 并补真实源名，未命中项保留原状态。
+
+四条机械门自检：①同组 Procedure/Quality gates 无整组复制；② required 无 `source_state`/`task_object`/`input_object` 占位；③ `delta_fields` 为 produces 对应的八字段子集；④所有保留 `concept`/`intermediate` 均已完成三形式检索。结果：通过。
+
+返工计数：resolved=42，concept=14，intermediate=16。
+## [R1 → Sirelia] HYPOTHESIS + STRUCTURING 扇出·批次 1：10/21 2026-09-12
+
+本批 id：`apply-question-framework`, `assess-question-quality`, `characterize-anomaly`, `compare-hypotheses`, `design-discriminating-prediction`, `evaluate-falsifiability`, `extract-empirical-regularity`, `generate-competing-hypotheses`, `identify-theory`, `normalize-gap`。
+
+A/B/C 判据数：A=0，B=10，C=0。provenance：resolved=10，concept=0，intermediate=0。
+
+四条机械门自检：① Procedure 与 Quality gates 无组内整节复制；② required 使用真实科学对象，无通用占位键；③ delta_fields 为 produces 对应的八字段子集；④ concept/intermediate 为 0，无待检项。通过。
+
+## [R1 → Sirelia] HYPOTHESIS + STRUCTURING 扇出·批次 2：11/21 2026-09-12
+
+本批 id：`operationalize-construct`, `specify-boundaries`, `specify-relationship`, `analyze-intervention`, `atomize-claim`, `atomize-concept`, `attach-evidence-to-relation`, `audit-structure-consistency`, `detect-feedback-loop`, `document-counterclaim`, `extract-concepts`。
+
+A/B/C 判据数：A=0，B=11，C=0。provenance：resolved=11，concept=0，intermediate=0。
+
+四条机械门自检：① Procedure 与 Quality gates 均为节点特定表述；② required 无 `source_state`/`task_object`/`input_object`；③ delta_fields 均为 produces 对应子集；④ concept/intermediate 为 0。通过。
+## [R5 → Sirelia] BASIS 扇出第二批（10/52）2026-09-12
+
+本批 id：`construct-critique`、`define-analysis-dimensions`、`detect-contradiction`、`extract-causal-structure`、`identify-load-bearing-factors`、`inventory-reference-items`、`map-dependencies`、`map-disagreement`、`set-threshold`、`validate-causal-link`。A/B/C、resolved/concept/intermediate 计数已写入 `deliverables/R5/nodes/_compilation-log.md`。
+
+四条门自检：Procedure 去重通过；Quality gates 去重通过；Input contract 均为具名科研对象；`delta_fields` 均为 `produces` 对应子集；provenance 已按 normalized `old[]` 检索，未解析项明确标为 `concept`/`intermediate`。校验器已对 BASIS 节点运行并通过，pilot 591/591 保持通过。
+## [R5 → Sirelia] BASIS 扇出第三批（10/52）2026-09-12
+
+本批按 fan-in=2 顺序交付：`adjust-abstraction-scope`, `aggregate-ranking`, `analyze-scaling-regime`, `assess-goal-feasibility`, `challenge-assumption`, `check-dominance`, `construct-counterfactual`, `construct-hierarchy`, `construct-scenario`, `define-criteria`。
+
+| id | A | B | C | resolved | concept | intermediate |
+|---|---:|---:|---:|---:|---:|---:|
+| adjust-abstraction-scope | 0 | 2 | 0 | 4 | 0 | 2 |
+| aggregate-ranking | 0 | 5 | 0 | 2 | 0 | 0 |
+| analyze-scaling-regime | 0 | 1 | 0 | 1 | 1 | 0 |
+| assess-goal-feasibility | 0 | 0 | 0 | 1 | 0 | 0 |
+| challenge-assumption | 0 | 1 | 0 | 2 | 1 | 0 |
+| check-dominance | 0 | 2 | 0 | 1 | 0 | 0 |
+| construct-counterfactual | 0 | 0 | 0 | 1 | 0 | 0 |
+| construct-hierarchy | 0 | 3 | 0 | 1 | 0 | 1 |
+| construct-scenario | 0 | 3 | 0 | 4 | 0 | 0 |
+| define-criteria | 0 | 4 | 0 | 1 | 1 | 1 |
+
+## [R1 -> Sirelia] 267 contract consistency audit and host dependency list 2026-09-12
+
+Audit: `deliverables/R1/contract-state-audit.md`. Host dependency list: `deliverables/R1/host-undecided-dependencies.md`.
+
+- `delta_fields`: 0 entries exceed the eight-field whitelist; 7 bodies list all eight without a verifiable reason: `detect-breakpoint`, `enumerate-combinations`, `adjudicate-exchange`, `elicit-weights`, `construct-validity-envelope`, `identify-bottleneck`, `construct-defense`.
+- Jump consistency: 157 total; 119 have both bodies; only 1 strictly satisfies upstream `produces` covering downstream `required`, while 118 do not. 38 cannot be checked because 22 node bodies are missing.
+- Across the graph, 442 of 478 unique required fields have no producer declaration. Until an entry-state whitelist exists, these are `pending adjudication`, not automatically runtime breaks.
+- The eleven “host must X” clauses are mapped to Q1-Q6 without pre-deciding the host form for R6.
+
+交付路径：`deliverables/R5/nodes/<id>/body.md`；合并日志已写入 `deliverables/R5/nodes/_compilation-log.md`。
+
+四条机械门：Procedure 去重通过；Quality gates 去重通过；Input contract `required` 均为具名科研对象；`delta_fields` 均为 `produces` 子集；provenance 已按三种规范形式检索后标注。校验器退出码 0，pilot 源判据 591/591；本批 BASIS provenance-labels 全部无 missing。相对量字段对本批均 not-applicable。
+## [R5] BASIS fan-out final batch (22/52) — 2026-09-12
+
+Completed nodes (fan-in order): `verify-evidence-independence`, `construct-perspective-set`, `derive-consequences`, `design-mitigation`, `evaluate-scenario-impact`, `evaluate-scenario-robustness`, `generate-provocation`, `generate-subquestions`, `identify-obstacles`, `map-coverage-space`, `measure-portfolio-diversity`, `normalize-comparison-scale`, `rotate-perspective`, `sequence-work`, `trace-causal-chain`, `adjudicate-exchange`, `construct-defense`, `construct-validity-envelope`, `detect-breakpoint`, `elicit-weights`, `enumerate-combinations`, `identify-bottleneck`.
+
+All 22 are BASIS SOPs with `## Parameterization`; specialized-BASIS nodes are included. A/B/C totals: A=0, B=28, C=0. Provenance totals: resolved=0, concept=50, intermediate=8. Unresolved provenance is intentionally labeled concept/intermediate; no approximate source substitution.
+
+Four mechanical gates: Procedure deduplication PASS; Quality-gates deduplication PASS; named-input contracts PASS; `delta_fields` subset PASS. Preserved source criteria ledgers remain where source criteria exist, a deliberate R5 deviation because R5 owns the 591-item threshold ledger and must preserve v3 fixed criteria verbatim.
+
+Validator: `validate_threshold_fidelity.py` full run exits 0; pilot source criteria 591/591. Full graph inventory reports 266/267 compiled bodies: `structured-consensus` has a compilation log but no body under current R4 artifacts, so this remains a reported blind spot rather than an R5 fabrication. Other blind spots: number words/non-English thresholds, implicit criteria without cue words, qualitative predicates, formulas outside matched patterns, and zero/low-count nodes requiring manual review.
+## [R5] Historical 94-hit pilot triage — 2026-09-12
+
+复核完成：94 条缺失判据分为真判据 52、结构性误报 41（四 pilot 分项：design-experiment 1/5，formulate-hypotheses 29/10，rank-candidates 22/7，establish-empirical-baseline 0/19）。
+
+真判据已按 A 类相对化补入 pilot 正文。保留的 v3 标尺包括：S/M/L structured hypotheses 2/3/5，named theories 2/3/5，independent observations 3/5/8，abductive precisely-defined anomaly 1，以及 scaling geometric progression typically 4–8 points；正文同时声明 declared universe、numerator、batch increment、stopping reason、source references、方向与阈值理由。
+
+误报白名单仅匹配：v3 SOP 子步骤/调用行、Base SOP 编排预算表、层级标题，以及 zero-state 输出快照。未按节点或整段跳过。依据与逐项分类见 `deliverables/R5/pilot-94-triage.md`。
+
+`validate_threshold_fidelity.py` 已加入 source-specific relative criterion 判定与窄结构白名单。全量结果：退出码 0，591 条台账命中；盲区仍为数字词/非英文阈值、无提示词的隐式判据、定性形容词、未匹配公式，以及 266/267 正文覆盖中的既有 `structured-consensus` 缺正文问题。
+## [R5] Threshold operator compatibility handoff — 2026-09-12
+
+校验器已将 ASCII `>= <= +/-` 与 Unicode `≥ ≤ ±`、LaTeX `\\ge/\\geq/\\le/\\leq/\\pm` 归一为同一判据。验证直接运行于现有 pilot 正文与 v3 ledger：五个 pilot 均 `missing=0`，591 台账路径检查退出码 0；当前真实库存提示仍为 `full-node-coverage=266/267`（`structured-consensus` 既有路径问题）。记录见 `deliverables/R5/ascii-operator-compatibility.md`。
+
+## [R1 → Sirelia] mode 补录契约审计 — 2026-09-13
+
+审计文件：`deliverables/R1/contract-state-audit.md` §4。范围为 8 个 mode-bearing tactic、38 个 mode（新增 33 个，`synthesize-meta-analytic-evidence` 已有 5 个正文 mode）。
+
+- `produces`：现行列表是 tactic 级并集，不是每次 mode 执行的必然产出。`analyze-constraints-readiness`、`map-stakeholder-system`、`sensitivity-analysis`、`synthesize-literature-evidence`、`synthesize-meta-analytic-evidence` 存在实质 mode 条件缺口；`rank-candidates`、`design-experiment` 可保留共同形状但必须显式标 mode-specific required/optional；`resolve-inventive-contradiction` 结果形状一致。
+- `delta_fields`：未发现第九字段。所有 mode 仍落在固定八字段白名单内；变化是语义载荷，不是键集合，因此暂不要求改 whitelist。
+- `jump`：图只有 tactic/SOP 级边，没有 `(tactic, mode)` 级限定。8 个 tactic 的出跳均未标 mode；host 不能仅凭 mode 推导唯一下游。若要求确定性路由，应增加 mode profile 或 `(tactic, mode) → allowed/recommended jumps` 维度。
+
+结论：这是 267 个正文的格式层变更，先求裁。建议优先采用“保留 tactic 级并集 + 增加 per-mode required/optional presence 与 mode-qualified routing metadata”的窄改方案；不在本轮擅自拆写全部 `Output contract`。
+
+## [R1 → Sirelia] mode 契约格式与逐档产出表 — 2026-09-13
+
+Pthahnix 落锤选择 B 路，全拆；R1 已落 `deliverables/R1/mode-contract-format.md` 与 `deliverables/R1/mode-output-ledger.md`。
+
+- 新格式锁定为 `mode_contracts` 单一 YAML 顶层键；Input/Output 各 mode 必须完整列出契约键，mode 集合必须与 registry 完全相等，不保留 node-level union contract。
+- 无差异 mode 仍逐档列出，唯一允许去重是标准 YAML anchor；禁止 `inherits`、`same as above` 或省略块，便于 N2 机械解析。
+- `synthesize-literature-evidence` 与 `resolve-inventive-contradiction` 提供完整语法样例。
+- 对照表覆盖 22 个节点、92 个 mode，逐档列出 v3 源节点与产出字段；未发现的源名不作近似替代。
+- `delta_fields` 仍只允许固定八字段；不新增 `(tactic, mode) → jumps` 图结构，路由继续由返回 Delta 的 `recommended_jumps` 承载。
+
+交接：N1 按表重写 22 个节点的 Input/Output contract；N2 解析 `mode_contracts`、展开 anchor 并加 per-mode 一致性门；R6 读取所选 mode 的契约映射。
+
+## [R1 -> Sirelia] mode output ledger 覆盖返工 2026-09-13
+
+已补 `deliverables/R1/mode-output-ledger.md`，覆盖 22 节点、92 mode。
+
+- `design-experiment` 五档已按五个 v3 源拆为不同产出：factor/level 与 estimand、ablation 与 attribution、受控 comparison、scaling grid/curve、robustness stress/degradation；节点内不再保留并集契约。
+- 六个漏审节点已补依据：四个 audit 节点明确标为 `source-common-schema`，只表示 v3 单一源未发布逐 mode schema，不冒充“确认无差异”；`biomimetic-transfer` 两档已拆；`evolve-solution-population.novelty-preserving-evolution` 因无 exact `variation-selection` 源标为 `source-unspecified`。
+- literature 与 meta-analysis 各档已改为 v3 Output Format 的实际产出项；`resolve-inventive-contradiction` 保持唯一 `confirmed-same` 判定，并保留“方法不同、结果 schema 相同”的依据。
+- 判定计数：`mode-specific=70`、`source-common-schema=18`、`confirmed-same=3`、`source-unspecified=1`。查不到差异的行未写成确认无差异。
+
+机械自检：expected=92，actual=92，unique=92，missing=0，extra=0，非 lower_snake_case `produces` 字段=0。
+
+## [R1 → Sirelia] MOVED_RUNTIME 接收方复核 — 2026-09-13
+
+已依据 `deliverables/R6/host-design.md` Q1/Q2/Q3，按 D 形态复核 `capabilities.json` 的七条旧 `MOVED_RUNTIME` 判定，详见 `deliverables/R1/contract-state-audit.md` §5。
+
+- ① 有接收方：`actor-profiling` 落 DARE 产品层 ResearchContext 输入边界；`engine-core / context-management / checkpointing` 落薄 host control plane；`subagent-spawning / implementer-dispatch` 落 host agent-dispatch 边界；`implementation dependency planning` 落 host 对 SpecView 执行依赖的投影；`experiment-running agent dispatch / monitoring` 落 host agent execution boundary。
+- ② 尚无完整接收方：`critical-path duration / buffering / dispatch / monitoring` 是复合能力，D 形态明确了派发归属，但 Q1–Q3 未给时长、缓冲、监控的完整 host 接口/输入契约，留给 host 实现阶段补定义。
+- ③ 单一 runtime 归属不成立：`knowledge compilation / vault maintenance` 必须求裁拆分，知识编译回 STRUCTURING 科研图，vault 维护归产品/存储层；host 仅提供存储适配。
+
+复核计数：①=5，②=1，③=1。涉及派发与监控的条目只确认责任归属，未写入任何重试、退避、超时、错误分类或监控状态机机制。
+
+## [R5 → Sirelia] Harness-decoupling triage — 2026-09-14
+
+已复核 `analyze-constraints-readiness/SKILL.md` Preserved source criteria ledger 的 6 条指定记录（140、145、153、158、162、166），终判 **C 类：删除**，详见 `deliverables/R5/harness-decoupling-triage.md`。
+
+- `Subagent calls <=15 / <=6 / <=5 / <=5 / <=8`：均为 runtime/harness 调度预算，不是科研结果阈值。
+- `Pause and report partial`：属于已裁定排除的 agent 异常处理。
+- `subagent (search required)`：是工具/派发要求；保留“evidence-backed mitigations”这一科研语义，但不指定 agent、工具或搜索机制。
+
+N1 仅删除上述 harness-bearing 行/片段；同节点已有的证据、约束、假设、依赖与冲突质量门保持不变。不将这些预算改名为“努力/覆盖”相对量，避免把 runtime 门槛伪装回正文。`audit-benchmark-validity` 不在本次六条范围内。
+
+### Whole-ledger follow-up
+
+整段 ledger 逐行复查后，新增判定同为 **C 类：删除**：`constraint-analysis` 的 `Context tokens <=80k per strategy` 与 `Summarize and spawn fresh`（token 上限及上下文压缩/派发）；同组 `Wall-clock time <=30 min per strategy` / `Checkpoint and continue`、`Total campaign <=5 strategies` / `Skip if constraint already resolved`；以及 `resource-constraint`、`assumption-constraint`、`dependency-constraint`、`conflict-resolution` 各自的 `Iterations` 上限与 `Output size <=3000 tokens`。这些均属 runtime/provider 预算或调度，不是科研结果判据。详见 triage 文件追加表。保留 estimate precision、证据覆盖、约束/假设/依赖/冲突质量门等科研标准。
+
+补充：当前 ledger 第 140 行已显示为 “must use imported skills to validate feasibility”。该强制工具依赖与此前 `subagent (search required)` 同属 C 类；删除机制要求，保留可行性验证及证据要求。

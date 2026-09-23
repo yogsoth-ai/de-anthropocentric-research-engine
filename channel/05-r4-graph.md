@@ -1,0 +1,139 @@
+# R4 正文扇出交付
+
+## Batch 01
+
+- nodes: analyze-experiment-results, analyze-future-scenarios, build-domain-ontology, construct-argument-map, construct-causal-model, decompose-research-question, falsifiability-audit, formulate-research-question, pairwise-ranking, portfolio-optimization
+- A/B/C: 0/0/0
+- unresolved provenance: 65
+
+## Batch 02
+
+- nodes: structured-consensus, adjudicate-exchange, analyze-intervention, apply-question-framework, apply-stage-gate, apply-veto-filter, assess-question-quality, assess-ranking-consistency, assess-readiness-dimension, assess-removability
+- A/B/C: 0/0/0
+- unresolved provenance: 23
+
+## Batch 03
+
+- nodes: atomize-claim, atomize-concept, attach-evidence-to-relation, audit-structure-consistency, calibrate-probability-forecast, characterize-anomaly, classify-constraint, collect-independent-judgments, compare-hypotheses, compare-pair
+- A/B/C: 0/0/0
+- unresolved provenance: 14
+
+## Batch 04
+
+- nodes: construct-defense, construct-design-matrix, construct-validity-envelope, define-objective, design-discriminating-prediction, design-randomness-protocol, detect-breakpoint, detect-feedback-loop, document-counterclaim, elicit-weights
+- A/B/C: 0/0/0
+- unresolved provenance: 15
+
+## Batch 05
+
+- nodes: enumerate-combinations, estimate-sample-size, evaluate-falsifiability, evaluate-optionality, extract-concepts, extract-core-conflict, extract-empirical-regularity, generate-competing-hypotheses, identify-bottleneck, identify-critical-chain
+- A/B/C: 0/0/0
+- unresolved provenance: 14
+
+## Batch 06
+
+- nodes: identify-scenario-drivers, identify-theory, list-undesirable-effects, map-ablation-components, normalize-gap, operationalize-construct, optimize-design-under-budget, optimize-pareto-frontier, predict-competitive-move, project-future-reality
+- A/B/C: 0/0/0
+- unresolved provenance: 10
+
+## Batch 07
+
+- nodes: quantify-resource-gap, represent-mechanism-edge, run-convergence-round, scope-domain, select-experimental-baseline, select-from-frontier, select-next-pair, select-statistical-method, specify-boundaries, specify-execution-environment
+- A/B/C: 0/0/0
+- unresolved provenance: 12
+
+## Batch 08
+
+- nodes: specify-metrics, specify-relationship, specify-reproducibility-protocol, statistical-testing, type-relation, update-confidence-from-evidence, update-pairwise-rating, validate-axis-independence, verify-reproducibility
+- A/B/C: 0/0/0
+- unresolved provenance: 11
+
+## Final batch correction
+
+- nodes: specify-metrics, specify-relationship, specify-reproducibility-protocol, statistical-testing, type-relation, update-confidence-from-evidence, update-pairwise-rating, validate-axis-independence, verify-reproducibility
+- A/B/C: 0/0/0
+- unresolved provenance: 11
+- total nodes: 79
+- total unresolved provenance: 164
+
+R4 delivery complete: all GROUP D bodies and required compilation logs are present under channel/deliverables/R4/nodes.
+
+## Rework batch 01
+- ids: analyze-experiment-results, analyze-future-scenarios, build-domain-ontology, construct-argument-map, construct-causal-model, decompose-research-question, falsifiability-audit, formulate-research-question, pairwise-ranking, portfolio-optimization
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 65 / intermediate 0 (v3 JSON parser rejected malformed source; unresolved entries explicitly retained, no near-name substitution)
+- mechanical gates: dedup PASS (distinct protocols); named input PASS; delta subset PASS; provenance pre-check PASS (no false resolved claims)
+
+## Rework batch 02
+- ids: structured-consensus, construct-design-matrix, design-randomness-protocol, estimate-sample-size, extract-core-conflict, identify-critical-chain, identify-scenario-drivers, list-undesirable-effects, map-ablation-components, optimize-design-under-budget
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 15 / intermediate 0
+- mechanical gates: dedup PASS; named input PASS; delta subset PASS; provenance pre-check PASS
+
+## Rework batch 03
+- ids: predict-competitive-move, project-future-reality, quantify-resource-gap, select-experimental-baseline, select-statistical-method, specify-execution-environment, specify-metrics, specify-reproducibility-protocol, statistical-testing, verify-reproducibility
+- A/B/C: 0/0/0 (criteria compiled as substantive gates, no legacy numeric counts)
+- provenance: resolved 0 / concept 10 / intermediate 0
+- mechanical gates: dedup PASS; named input PASS; delta subset PASS; provenance pre-check PASS
+
+## Rework batch 01 final
+- ids: analyze-experiment-results, analyze-future-scenarios, build-domain-ontology, construct-argument-map, construct-causal-model, decompose-research-question, falsifiability-audit, formulate-research-question, pairwise-ranking, portfolio-optimization
+- A/B/C: 0/0/0
+- provenance: resolved 6 / concept 2 / intermediate 0
+- gates: dedup PASS; named inputs PASS; delta subset PASS; provenance pre-check PASS
+
+## Rework batch 02 final
+- ids: structured-consensus, construct-design-matrix, design-randomness-protocol, estimate-sample-size, extract-core-conflict, identify-critical-chain, identify-scenario-drivers, list-undesirable-effects, map-ablation-components, optimize-design-under-budget
+- A/B/C: 0/0/0
+- provenance: resolved 0 / concept 15 / intermediate 0
+- gates: dedup PASS; named inputs PASS; delta subset PASS; provenance pre-check PASS
+
+## Rework batch 03 final
+- ids: predict-competitive-move, project-future-reality, quantify-resource-gap, select-experimental-baseline, select-statistical-method, specify-execution-environment, specify-metrics, specify-reproducibility-protocol, statistical-testing, verify-reproducibility
+- A/B/C: 0/0/0
+- provenance: resolved 1 / concept 9 / intermediate 0
+- gates: dedup PASS; named inputs PASS; delta subset PASS; provenance pre-check PASS
+
+## Closure audit — 2026-09-12
+- graph counts: 51 tactics / 216 SOP; 317 calls; 157 jumps (82 T→T, 75 S→S; no cross-layer edges)
+- calls: 317/317 are tactic→SOP; unknown endpoints 0; duplicate edges 0
+- jumps: 157/157 are same-layer; unknown endpoints 0; duplicate edges 0
+- tactic-origin reachability: 267/267 nodes reachable; isolated nodes 0
+- protocol citation gaps (R4 tactic bodies):
+  - analyze-future-scenarios: evaluate-compatibility, predict-competitive-move, analyze-temporal-trajectory
+  - build-domain-ontology: construct-hierarchy, detect-coverage-gap, canonicalize-entity
+  - construct-argument-map: surface-assumptions, score-object, construct-critique
+  - construct-causal-model: detect-contradiction, trace-causal-chain, construct-counterfactual, validate-causal-link, update-confidence-from-evidence
+  - formulate-research-question: set-threshold
+  - pairwise-ranking: aggregate-ranking
+  - portfolio-optimization: measure-portfolio-diversity, map-dependencies, sequence-work, evaluate-optionality, evaluate-scenario-robustness
+  - complete: analyze-experiment-results, decompose-research-question, falsifiability-audit
+- calls present in graph but omitted from these protocols are not explicitly named in their generic Deviation text; report as citation gaps for N2 validator
+- cleanup: removed 42 reassigned R4 SOP shells duplicated in R1/R2 (HYPOTHESIS/STRUCTURING/CONVERGENCE); no graph nodes or source files changed
+
+## Closure audit - count correction
+
+- Authoritative graph counts: 51 tactics / 216 SOP; 317 calls; 157 jumps (82 T→T, 75 S→S; no cross-layer edges).
+- Calls: 317/317 are tactic→SOP; unknown endpoints 0; duplicate edges 0.
+- Jumps: 157/157 are same-layer; unknown endpoints 0; duplicate edges 0.
+- Source of the earlier +3: the R4 channel copy included three repair-overlay patent edges absent from the read-only authoritative architecture: `mine-patent-landscape → validate-research-gap`, `assess-prior-art-and-claims → validate-research-gap`, and `map-patent-white-space → validate-research-gap`. They were mistakenly included in the closure total. No calls were counted as jumps and no edge was double-counted.
+- This corrected block supersedes the earlier 160-edge closure figures above.
+
+## Mode consistency audit - 2026-09-13
+
+Read-only source correction: both `file-transfer/2026-08-23-22-16-dare-v4-architecture.json` and `refactory/2026-08-23-22-16-dare-v4-architecture.json` exist, are 256318 bytes, and have identical MD5 `9ea41ed855f1937c7192b6cc59882262`. The earlier absence report was a relative-path error. Full determination is in `deliverables/R4/mode-consistency-audit.md`.
+
+- Body missing `## Mode branches` for four tactics: `rank-candidates` (8 authoritative modes), `analyze-constraints-readiness` (5), `map-stakeholder-system` (3), `resolve-inventive-contradiction` (3). These are N1 body repairs; graph already contains the exact arrays.
+- Four empty-mode tactics have explicit mode declarations in their authoritative descriptions and are graph omissions for N2 to record: `sensitivity-analysis` (Morris/Sobol/perturbation/Monte-Carlo, architecture line 380), `synthesize-literature-evidence` (scoping/systematic/deep/narrative/snowball, line 599), `synthesize-meta-analytic-evidence` (pairwise/network/cumulative/heterogeneity/bias, line 667), and `design-experiment` (factorial/ablation/comparison/scaling/robustness, line 756). Keep `synthesize-meta-analytic-evidence` body branches; do not delete them.
+- The other 29 empty-mode tactic descriptions contain no explicit mode declaration; generic variants, scenarios, failure modes, or operation lists do not justify graph additions.
+- `problem-reframing` uses literal architecture form `stakeholder/worldview`; `biomimetic-transfer` uses literal `BioTRIZ`. Both are consistent and require no rename.
+- Result: graph additions 4 total (N2; 3 newly found in this scan), N1 body actions 4; naming mismatches 0; no body-overstated case.
+- v3 provenance check: all 19 mode tokens resolve to real `scripts/refactory_source.json` nodes. Literature modes resolve exactly to `scoping-survey` (4239), `systematic-survey` (4246), `deep-survey` (4253), `narrative-review` (4260), and `snowball` (4267). Meta-analysis modes resolve exactly to `pairwise-synthesis` (4652), `network-comparison` (4659), `cumulative-tracking` (4666), `heterogeneity-investigation` (4673), and `bias-detection` (4680). Sensitivity modes resolve to `parameter-screening`/`morris-screening`, `variance-decomposition`/`sobol-decomposition`, `systematic-perturbation`/`controlled-perturbation`, and `uncertainty-propagation`/`monte-carlo-sampling`. Experiment modes resolve to `experiment-execution-factor-level-design` (factorial), `ablation-design`, `comparison-design`, `scaling-design`, and `robustness-design` (3105-3133). Full table and line evidence are in the audit.
+
+## Provenance alias 86 条复核 — 2026-09-13
+
+- 复核文件：`deliverables/R4/provenance-alias-补录.md`，追加章节「86 条旧账复核」。
+- 检索口径：剥除 `[sop]` / `[strategy]` / `[tactic]` / `[campaign]` 后，依次检索裸名、包名-裸名、包名/裸名，再以架构 `old` 与 `capability_audit` 判定落点。
+- Alias 73：resolved 4（`anti-benchmark`→`audit-benchmark-validity → destructive-ideation → coverage-white-space-search`；`seed-concept-search`→`extract-concepts`；`synectics`→`analogical-discovery + conceptual-blending + problem-reframing`；`web-search`→`map-research-landscape`），无法推导 69。后 69 均命中 v3 源名，但无唯一 v4 落点，未把“映射查不到”写成“节点不存在”。
+- Phantom mode：原表标为「无法推导」的 12 行（C019 按 5 个 mode 展开）均已由架构 description / `capability_audit` 找到明确 provenance；C038、C052、C069、C087、C102 属原记录的「不改/不确定」项，仍不提升为 resolved。C140/C141 的 provenance 路径由架构 `capability_audit` 明示；不据此改动 graph `modes` 字段。
+- 已补真实 v3 源名与 `refactory_source.json` 行号；精确 token 缺失或多路径无法唯一归属的条目保留原标记。仅判定，未改架构 JSON 或 graph。

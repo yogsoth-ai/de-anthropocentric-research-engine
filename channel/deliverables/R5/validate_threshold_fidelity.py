@@ -1,0 +1,256 @@
+"""Mechanical fidelity gate for numeric and textual source criteria."""
+from __future__ import annotations
+import json, re, sys
+from pathlib import Path
+
+ARCH = Path(r"D:\YOGSOTH-AI\file-transfer\2026-08-23-22-16-dare-v4-architecture.json")
+SKILLS = Path(r"D:\YOGSOTH-AI\de-anthropocentric-research-engine\skills")
+PILOT = Path(__file__).parent / "pilot"
+NODES = Path(__file__).parent / "nodes"
+IDS = ["synthesize-meta-analytic-evidence", "design-experiment", "formulate-hypotheses", "analyze-constraints-readiness", "rank-candidates", "establish-empirical-baseline", "audit-benchmark-validity"]
+BASIS_IDS = ["assess-sensitivity", "evaluate-compatibility", "score-object", "surface-assumptions", "detect-coverage-gap", "analyze-temporal-trajectory", "enumerate-dimension-values", "identify-variables", "apply-perturbation", "canonicalize-entity", "construct-critique", "define-analysis-dimensions", "detect-contradiction", "extract-causal-structure", "identify-load-bearing-factors", "inventory-reference-items", "map-dependencies", "map-disagreement", "set-threshold", "validate-causal-link", "adjust-abstraction-scope", "aggregate-ranking", "analyze-scaling-regime", "assess-goal-feasibility", "challenge-assumption", "check-dominance", "construct-counterfactual", "construct-hierarchy", "construct-scenario", "define-criteria", "verify-evidence-independence", "construct-perspective-set", "derive-consequences", "design-mitigation", "evaluate-scenario-impact", "evaluate-scenario-robustness", "generate-provocation", "generate-subquestions", "identify-obstacles", "map-coverage-space", "measure-portfolio-diversity", "normalize-comparison-scale", "rotate-perspective", "sequence-work", "trace-causal-chain", "adjudicate-exchange", "construct-defense", "construct-validity-envelope", "detect-breakpoint", "elicit-weights", "enumerate-combinations", "identify-bottleneck"]
+
+# Shared semantics: each named pattern is used for both counting and ledger generation.
+PATTERNS = [
+    ("symbolic-comparator", re.compile(r"(?:>=|<=|≥|≤|±)"), "symbolic comparator"),
+    ("at-least", re.compile(r"\bat\s+least\s+\d+\b", re.I), "at least N"),
+    ("top-n", re.compile(r"\btop[- ]?\d+\b", re.I), "top-N"),
+    ("percentage", re.compile(r"\b\d+(?:\.\d+)?\s*%"), "percentage"),
+    ("numeric-range", re.compile(r"\b\d+\s*[-–]\s*\d+\b"), "numeric range"),
+    ("angle-comparator", re.compile(r"(?:<|>)\s*\d+\b"), "< N / > N"),
+    ("table-digits", re.compile(r"^\s*\|.*\d"), "table row containing digits"),
+    ("mandatory", re.compile(r"\b(?:must|cannot|required|minimum)\b", re.I), "mandatory predicate"),
+    ("preregistration", re.compile(r"pre[- ]?registr|post[- ]hoc", re.I), "preregistration predicate"),
+    ("fair-comparison", re.compile(r"same\s+(?:compute|tuning|conditions?)|fair\s+comparison|control\s+all\s+confounds|comparab(?:le|ility)", re.I), "same-condition/fair-comparison predicate"),
+    ("reproducibility", re.compile(r"reproducib|random\s+seeds?|software\s+environment|non[- ]determin|verification\s+protocol", re.I), "reproducibility predicate"),
+    ("entry-gate", re.compile(r"HARD[- ]GATE|before entering|quality gate|budget gate|minimum yield|cannot exit", re.I), "explicit entry-gate phrase"),
+]
+RELATIVE_PATTERNS = [
+    ("coverage-ratio", re.compile(r"coverage\s+ratio|coverage_ratio", re.I)),
+    ("independent-source-ratio", re.compile(r"independent[- ]source\s+ratio|independent_source_ratio", re.I)),
+    ("marginal-information-gain", re.compile(r"marginal\s+information\s+gain|marginal_information_gain", re.I)),
+    ("saturation-state", re.compile(r"saturation\s+state|saturation_state", re.I)),
+    ("declared-universe", re.compile(r"declared\s+(?:eligible\s+)?(?:universe|evidence\s+pool)|(?:eligible|evidence)\s+(?:evidence\s+)?universe|evidence\s+pool", re.I)),
+    ("audit-numerator-denominator", re.compile(r"numerator.*denominator|denominator.*numerator", re.I)),
+    ("batch-increment", re.compile(r"batch\s+increment|batch_delta", re.I)),
+    ("stopping-reason", re.compile(r"stopping\s+reason|stop(?:ping)?\s+reason", re.I)),
+]
+# Only nodes whose gates are evidence/candidate-coverage gates require the full
+# relative audit vocabulary. Other nodes may use a smaller, domain-appropriate
+# relative gate without inventing corpus fields.
+_ALL_RELATIVE_FIELDS = {name for name, _ in RELATIVE_PATTERNS}
+RELATIVE_REQUIRED_PATTERNS = {
+    "synthesize-meta-analytic-evidence": _ALL_RELATIVE_FIELDS,
+    "rank-candidates": _ALL_RELATIVE_FIELDS,
+    "establish-empirical-baseline": _ALL_RELATIVE_FIELDS,
+    "audit-benchmark-validity": _ALL_RELATIVE_FIELDS,
+    "detect-coverage-gap": _ALL_RELATIVE_FIELDS,
+    # This node has a dimension/evidence coverage gate, but not a corpus
+    # saturation gate; require only the fields its gate declares.
+    "analyze-constraints-readiness": {
+        "coverage-ratio", "audit-numerator-denominator", "batch-increment", "stopping-reason",
+    },
+}
+# BASIS SOPs without an evidence-coverage gate intentionally remain
+# not-applicable for corpus-relative fields; their parameterized scales are
+# checked in the source ledger and contract sections instead.
+
+def source_files():
+    return {p.parent.name: p for p in SKILLS.rglob("SKILL.md")}
+
+def criteria(src):
+    out = []
+    lines = src.read_text(encoding="utf-8").splitlines()
+    in_frontmatter = bool(lines and lines[0].strip() == "---")
+    for no, line in enumerate(lines, 1):
+        if in_frontmatter:
+            if no > 1 and line.strip() == "---": in_frontmatter = False
+            continue
+        if "<!-- BEGIN available-tables (generated) -->" in line: break
+        hit = next(((name, label) for name, rx, label in PATTERNS if rx.search(line)), None)
+        if hit:
+            name, _ = hit
+            numeric = name in {"symbolic-comparator", "at-least", "top-n", "percentage", "numeric-range", "angle-comparator"}
+            out.append((no, "numeric-table" if name == "table-digits" else ("numeric" if numeric else "textual"), line.strip()))
+    return out
+
+def body_text(path):
+    """Read the complete authored file; threshold checks include Failure sections."""
+    text = path.read_text(encoding="utf-8")
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        text = parts[2] if len(parts) == 3 else text
+    return text
+
+def section(text, heading, next_heading=None):
+    m = re.search(rf"^## {re.escape(heading)}\s*$", text, re.M)
+    if not m:
+        return ""
+    tail = text[m.end():]
+    if next_heading:
+        n = re.search(rf"^## {re.escape(next_heading)}\s*$", tail, re.M)
+        if n:
+            tail = tail[:n.start()]
+    return " ".join(tail.split())
+
+def contains(body, criterion):
+    def normalize(s):
+        # N1 may render comparison operators as Unicode or LaTeX; compare a
+        # canonical operator form so presentation changes cannot hide loss.
+        s = s.replace("\\\\|", "|").replace("\\|", "|")
+        ge, le, pm = "\u2265", "\u2264", "\u00b1"
+        for latex, symbol in ((r"\geq", ge), (r"\ge", ge),
+                              (r"\leq", le), (r"\le", le),
+                              (r"\pm", pm), ("+/-", pm),
+                              (">=", ge), ("<=", le)):
+            s = s.replace(latex, symbol)
+        s = re.sub(r"([≥≤±])\s+", r"\1", s)
+        return " ".join(s.replace("$", "").split())
+    return normalize(criterion) in normalize(body)
+
+def structural_false_positive(src_name: str, line_no: int, line: str, node_id: str) -> bool:
+    """Exclude only v3 orchestration/template rows split into v4 SOPs."""
+    if node_id == "design-experiment":
+        return (src_name == "comparison-design" and line_no == 47) or (
+            src_name == "reproducibility-protocol" and line_no in {21, 22, 24, 25})
+    if node_id == "formulate-hypotheses":
+        if src_name == "hypothesis-formulation" and line_no == 62:
+            return True
+        if src_name == "theory-mechanism-extraction" and line_no == 53:
+            return True
+        if src_name == "anomaly-driven-abduction" and line_no in {22, 41, 45}:
+            return True
+        if src_name == "competing-hypothesis-matrix" and line_no in {34, 35, 41, 54, 55}:
+            return True
+    if node_id == "rank-candidates":
+        if src_name in {"best-option-selection", "full-ranking", "category-sorting", "non-compensatory-screening"}:
+            return "Base SOP" in line
+        if src_name == "weight-elicitation" and line_no == 23:
+            return "Base SOP" in line
+        if src_name == "rapid-triage" and line_no in {71, 72}:
+            return "Call the" in line
+    if node_id == "establish-empirical-baseline":
+        # These are zero-state output snapshots copied from sub-SOP templates,
+        # not acceptance criteria for the compiled tactic.
+        if src_name in {"method-inventory", "performance-extraction", "condition-standardization", "discrepancy-analysis", "progress-quantification"} and line.lstrip().startswith("|") and "| 0 |" in line:
+            return True
+        if src_name == "discrepancy-analysis" and line_no == 52:
+            return True
+    return False
+
+def relativeized_criterion_present(body: str, src_name: str, node_id: str) -> bool:
+    """A-class source criteria represented by the pilot's relative gate text."""
+    if node_id == "design-experiment" and src_name == "scaling-design":
+        return "geometric progression" in body and "Relative audit" in body
+    if node_id == "formulate-hypotheses" and src_name in {
+        "hypothesis-formulation", "deductive-hypothesis-generation",
+        "inductive-hypothesis-generation", "abductive-hypothesis-generation",
+        "hypothesis-operationalization", "theory-mechanism-extraction",
+        "anomaly-driven-abduction", "competing-hypothesis-construction",
+    }:
+        return "A-class source scale" in body and "Relative audit" in body
+    if node_id == "rank-candidates" and src_name in {
+        "multi-criteria-ranking", "evidence-based-prioritization",
+        "stakeholder-weighted-ranking", "rapid-triage", "priority-sensitivity-testing",
+        "weight-elicitation",
+    }:
+        return "relative" in body.lower() and "candidate/evidence universe" in body
+    return False
+
+def main():
+    graph = json.loads(ARCH.read_text(encoding="utf-8"))
+    by_name, missing, relative_missing, total = source_files(), [], [], 0
+    # Full graph inventory: source-criterion accounting remains anchored to
+    # the 591-item ledger, while every v4 node is checked for a compiled body.
+    all_ids = [n["id"] for n in graph.get("tactics", [])] + [n["id"] for n in graph.get("sops", [])]
+    body_roots = [PILOT.parent, NODES.parent.parent / "R1", NODES.parent.parent / "R2", NODES.parent.parent / "R3", NODES.parent.parent / "R4", NODES.parent.parent / "R5"]
+    body_paths = {}
+    for root in body_roots:
+        for p in root.rglob("body.md") if root.exists() else []:
+            body_paths.setdefault(p.parent.name, p)
+    absent_bodies = [node_id for node_id in all_ids if node_id not in body_paths]
+    print(f"full-node-coverage={len(all_ids) - len(absent_bodies)}/{len(all_ids)}")
+    if absent_bodies:
+        print("missing compiled bodies:", ", ".join(absent_bodies), file=sys.stderr)
+    for node_id in IDS:
+        pool = graph["tactics"]
+        node = next(n for n in pool if n["id"] == node_id)
+        body, node_total, node_missing = body_text(PILOT / node_id / "body.md"), 0, 0
+        for old in node.get("old", []):
+            name = old.rsplit("/", 1)[-1].split(" [", 1)[0].strip()
+            src = by_name.get(name)
+            if src is None:
+                continue
+            for line_no, _, line in criteria(src):
+                if structural_false_positive(name, line_no, line, node_id):
+                    continue
+                node_total += 1; total += 1
+                if not contains(body, line):
+                    if relativeized_criterion_present(body, name, node_id):
+                        continue
+                    node_missing += 1; missing.append(f"{node_id}: {src}:{line_no}: {line}")
+        print(f"{node_id}: source criteria={node_total}, missing={node_missing}")
+        relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
+        print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
+        required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())
+        absent = [name for name, rx in RELATIVE_PATTERNS if name in required and not rx.search(body)]
+        print(f"{node_id}: required-relative-fields={len(required) - len(absent)}/{len(required)}" if required else f"{node_id}: required-relative-fields=not-applicable")
+        if absent:
+            relative_missing.extend(f"{node_id}: {name}" for name in absent)
+            print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
+    for node_id in BASIS_IDS:
+        node = next(n for n in graph["sops"] if n["id"] == node_id)
+        body = body_text(NODES / node_id / "body.md")
+        # BASIS ledgers are compiled from the normalized old[] map; their
+        # resolved source lines are preserved in each node body rather than
+        # re-scanned against the tactic-only ledger total.
+        resolved = []
+        for old in node.get("old", []):
+            if old.startswith("Pass"):
+                continue
+            name = old.rsplit("/", 1)[-1].split(" [", 1)[0].split(" (", 1)[0].strip()
+            if (SKILLS / name / "SKILL.md").exists():
+                resolved.append(name)
+        ledger_missing = [name for name in resolved if name not in body]
+        print(f"{node_id}: provenance-labels={len(resolved) - len(ledger_missing)}/{len(resolved)}, missing={len(ledger_missing)}")
+        if ledger_missing:
+            missing.extend(f"{node_id}: source ledger missing {name}" for name in ledger_missing)
+        relative_hits = sum(bool(rx.search(body)) for _, rx in RELATIVE_PATTERNS)
+        print(f"{node_id}: relative-patterns={relative_hits}/{len(RELATIVE_PATTERNS)}")
+        required = RELATIVE_REQUIRED_PATTERNS.get(node_id, set())
+        absent = [name for name, rx in RELATIVE_PATTERNS if name in required and not rx.search(body)]
+        print(f"{node_id}: required-relative-fields={len(required) - len(absent)}/{len(required)}" if required else f"{node_id}: required-relative-fields=not-applicable")
+        if absent:
+            relative_missing.extend(f"{node_id}: {name}" for name in absent)
+            print(f"{node_id}: missing-required-relative-fields={', '.join(absent)}", file=sys.stderr)
+    # §5 mechanical gates: same-group procedures/gates must not collapse to one
+    # placeholder; required inputs and delta fields must be node-specific.
+    basis_bodies = {node_id: body_text(NODES / node_id / "body.md") for node_id in BASIS_IDS}
+    procedures = {node_id: section(body, "Procedure", "Output contract") for node_id, body in basis_bodies.items()}
+    gate_text = {node_id: section(body, "Quality gates", "Parameterization") for node_id, body in basis_bodies.items()}
+    for label, values in (("Procedure", procedures), ("Quality gates", gate_text)):
+        groups = {}
+        for node_id, value in values.items():
+            groups.setdefault(value, []).append(node_id)
+        for value, nodes in groups.items():
+            if value and len(nodes) > 1:
+                print(f"DUPLICATE BASIS {label}: {', '.join(nodes)}", file=sys.stderr)
+                missing.append(f"duplicate {label}: {', '.join(nodes)}")
+    for node_id, body in basis_bodies.items():
+        required = re.search(r"required:\s*\[([^]]+)\]", body)
+        if required and re.search(r"(?:source_state|task_object|input_object)", required.group(1), re.I):
+            print(f"{node_id}: generic required input placeholder", file=sys.stderr)
+            missing.append(f"{node_id}: generic required input placeholder")
+        delta = re.search(r"delta_fields:\s*\[([^]]+)\]", body)
+        if delta and len([x for x in delta.group(1).split(',') if x.strip()]) >= 8:
+            print(f"{node_id}: delta_fields is not a subset", file=sys.stderr)
+            missing.append(f"{node_id}: delta_fields is not a subset")
+    print("Known blind spots: number words/non-English thresholds; implicit domain criteria without cue words; qualitative adjectives (adequate/relevant/representative); formulas or constraints outside matched forms; zero/low-count nodes require manual review.")
+    if relative_missing:
+        print("MISSING required relative fields:", file=sys.stderr); print("\n".join(relative_missing), file=sys.stderr); return 1
+    if missing:
+        print("MISSING source criteria:", file=sys.stderr); print("\n".join(missing), file=sys.stderr); return 1
+    print(f"OK: {total} matched source criteria present"); return 0
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,651 @@
+# R1 ??????????
+
+??????? 267 ????????? 245???? 22???? `produces ? downstream.required` ?? 157 ? jump?
+
+## 1. delta_fields
+
+- ??????0?
+- ??????7???????????????????????detect-breakpoint?enumerate-combinations?adjudicate-exchange?elicit-weights?construct-validity-envelope?identify-bottleneck?construct-defense
+
+## 2. Jump ?? contract
+
+- ??????119 ???? 1 ??required ???? produces ?? 118 ??
+- ??????????38 ????????analyze-constraints-readiness?audit-benchmark-validity?construct-perspective-set?derive-consequences?design-experiment?design-mitigation?establish-empirical-baseline?evaluate-scenario-impact?evaluate-scenario-robustness?formulate-hypotheses?generate-provocation?generate-subquestions?identify-obstacles?map-coverage-space?measure-portfolio-diversity?normalize-comparison-scale?rank-candidates?rotate-perspective?sequence-work?synthesize-meta-analytic-evidence?trace-causal-chain?verify-evidence-independence
+
+### ??????
+
+- `falsifiability-audit ? formulate-research-question`???? `decision_objective, evidence_records, research_object`??? produces=`decision_record, structured_artifact`?
+- `formulate-research-question ? decompose-research-question`???? `decision_objective, evidence_records, research_object`??? produces=`decision_record, structured_artifact`?
+- `drill-root-causes ? assumption-stress-test`???? `assumptions, claim_or_model`??? produces=`current_reality_tree, ishikawa_map, root_cause_set, why_chain`?
+- `assumption-stress-test ? robustness-analysis`???? `base_model, conclusion, load_bearing_assumptions`??? produces=`assumption_register, causal_recheck, perturbation_results, vulnerability_map`?
+- `robustness-analysis ? map-validity-envelope`???? `analysis_dimensions, claim_or_method, validity_target`??? produces=`convergence_assessment, fragility_flags, load_bearing_factors, model_variant_set`?
+- `map-validity-envelope ? sensitivity-analysis`???? `conclusion_metric, model_or_reasoning_chain, uncertain_parameters`??? produces=`breakpoints, critical_case_report, dimension_schema, perturbation_records, scaling_regime, validity_envelope`?
+- `sensitivity-analysis ? problem-reframing`???? `current_frame, problem_statement`??? produces=`information_value_ranking, interaction_effects, sensitivity_profile, uncertainty_contributions`?
+- `adversarial-deliberation ? structured-red-team`???? `artifact, probe_scope, threat_model`??? produces=`adjudication, attack_record, confidence_trace, defense_record`?
+- `structured-red-team ? fmea-risk-analysis`???? `functions, operating_conditions, system_or_process`??? produces=`attack_vectors, probe_records, resilience_picture, threat_surface, weakness_aggregate`?
+- `fmea-risk-analysis ? counterfactual-causal-analysis`???? `causal_claim, intervention_target, variables`??? produces=`failure_chains, failure_mode_register, mitigation_plan, residual_risk_report, risk_scores`?
+- `counterfactual-causal-analysis ? reductio-counterexample-analysis`???? `claim, scope, supporting_reasoning`??? produces=`causal_structure, counterfactual_map, load_bearing_factors, minimal_flip, necessity_sufficiency_report`?
+- `reductio-counterexample-analysis ? map-validity-envelope`???? `analysis_dimensions, claim_or_method, validity_target`??? produces=`consequence_chain, contradiction_report, counterexamples, negated_claim, refined_claim`?
+- `map-validity-envelope ? falsifiability-audit`???? `decision_objective, evidence_records, research_object`??? produces=`breakpoints, critical_case_report, dimension_schema, perturbation_records, scaling_regime, validity_envelope`?
+- `analogical-discovery ? explore-dimensional-space`???? `dimensions, target_space, values`??? produces=`abstract_structure, structural_mapping, transfer_candidate`?
+- `explore-dimensional-space ? destructive-ideation`???? `current_frame, target_problem`??? produces=`combination_map, compatibility_report, coverage_gaps, dimension_schema, prioritized_regions, subquestions, value_catalog`?
+- `destructive-ideation ? structural-transformation`???? `system_or_design, transformation_target`??? produces=`assumption_targets, concept_fan, constructive_movements, idea_set, provocations`?
+- `structural-transformation ? coverage-white-space-search`???? `coverage_dimensions, reference_items`??? produces=`compatibility_report, component_decomposition, operator_variants, transformed_designs`?
+- `pairwise-ranking ? structured-consensus`???? `decision_objective, evidence_records, research_object`??? produces=`consistency_report, ranking_state`?
+- `portfolio-optimization ? adversarial-deliberation`???? `claim_or_candidate, criteria, target`??? produces=`decision_record, structured_artifact`?
+- `adversarial-deliberation ? assumption-stress-test`???? `assumptions, claim_or_model`??? produces=`adjudication, attack_record, confidence_trace, defense_record`?
+- `synthesize-literature-evidence ? build-domain-ontology`???? `decision_objective, evidence_records, research_object`??? produces=`evidence_corpus, quality_assessment, saturation_state, screening_flow, structured_evidence_records, synthesis_map`?
+- `synthesize-literature-evidence ? validate-research-gap`???? `evidence_set, gap_claim, search_scope`??? produces=`evidence_corpus, quality_assessment, saturation_state, screening_flow, structured_evidence_records, synthesis_map`?
+- `mine-patent-landscape ? map-patent-white-space`???? `feature_schema, jurisdiction_scope, patent_records`??? produces=`assignee_profile, citation_network, classification_neighborhood, coverage_gaps, filing_trajectory, patent_family_map`?
+- `assess-prior-art-and-claims ? map-patent-white-space`???? `feature_schema, jurisdiction_scope, patent_records`??? produces=`claim_element_map, legal_status_observations, novelty_findings, prior_art_family_map, scope_assessment`?
+- `build-domain-ontology ? construct-causal-model`???? `decision_objective, evidence_records, research_object`??? produces=`decision_record, structured_artifact`?
+- `construct-causal-model ? counterfactual-causal-analysis`???? `causal_claim, intervention_target, variables`??? produces=`decision_record, structured_artifact`?
+- `explore-dimensional-space ? coverage-white-space-search`???? `coverage_dimensions, reference_items`??? produces=`combination_map, compatibility_report, coverage_gaps, dimension_schema, prioritized_regions, subquestions, value_catalog`?
+- `construct-argument-map ? adversarial-deliberation`???? `claim_or_candidate, criteria, target`??? produces=`decision_record, structured_artifact`?
+- `analyze-experiment-results ? construct-argument-map`???? `decision_objective, evidence_records, research_object`??? produces=`decision_record, structured_artifact`?
+- `generate-candidate-directions ? synthesize-field-panorama`???? `candidate_fields, comparison_dimensions, evidence_records`??? produces=`boundary_crossings, candidate_directions, evidence_questions, fit_rationales`?
+- `formulate-top-goal ? decompose-and-or-goal`???? `constraints`??? produces=`constraint_set, desired_effect, goal_assumptions, open_goal_questions, top_goal`?
+- `decompose-and-or-goal ? validate-goal-tree`???? `top_goal, validation_criteria`??? produces=`branch_semantics, dependency_edges, executable_leaves, feasibility_questions, goal_dag`?
+- `validate-goal-tree ? assess-goal-feasibility`???? `goal_branches, obstacle_register, resource_profile, timeline`??? produces=`coverage_assessment, dependency_audit, feasibility_gaps, leaf_validation, validation_summary`?
+- `assess-goal-feasibility ? crystallize-north-star`???? `constraints, goal_tree, intended_effect`??? produces=`alternative_branches, blocking_obstacles, feasibility_matrix, timeline_rationale`?
+- `define-evidence-protocol ? select-seed-evidence`???? `candidate_sources, research_question, selection_criteria`??? produces=`eligible_universe, evidence_protocol, provenance_requirements, query_concepts, screening_rules, stopping_evidence`?
+- `select-seed-evidence ? categorize-evidence`???? `category_schema, evidence_records`??? produces=`diversity_coverage, expansion_questions, ranking_rationale, seed_set`?
+- `categorize-evidence ? extract-evidence-record`???? `extraction_schema, source`??? produces=`boundary_cases, categorized_corpus, category_definitions, coverage_summary`?
+- `extract-evidence-record ? audit-study-validity`???? `study_record, validity_rubric`??? produces=`condition_record, evidence_record, extraction_notes, missing_field_log, source_links`?
+- `audit-study-validity ? assess-evidence-saturation`???? `current_corpus, novelty_schema, prior_comparable_batch`??? produces=`applicability_notes, domain_judgments, evidence_basis, overall_confidence, risk_of_bias_profile`?
+- `inventory-reference-items ? decompose-evaluation-metric`???? `metric_definition, scored_outputs`??? produces=`applicability_map, limitation_register, provenance_index, reference_inventory`?
+- `decompose-evaluation-metric ? assess-construct-validity`???? `benchmark_specification, construct_claim, evaluation_records`??? produces=`aggregation_map, ceiling_analysis, goodhart_risks, metric_components, polarity_and_scale`?
+- `extract-evaluation-protocol ? compare-evaluation-protocols`???? `comparison_target, metric_schema, protocol_records`??? produces=`ambiguity_log, comparability_notes, protocol_record, source_links`?
+- `formulate-meta-analysis-scope ? design-study-inclusion`???? `eligible_population, research_question, study_scope`??? produces=`compatibility_constraints, eligibility_scope, estimand, typed_meta_analysis_question`?
+- `design-study-inclusion ? plan-effect-size`???? `comparison_target, outcome_schema, study_designs`??? produces=`borderline_rules, exclusion_reasons, inclusion_criteria, pilot_adjudications`?
+- `plan-effect-size ? design-data-extraction`???? `evidence_question, record_schema`??? produces=`conversion_rules, estimand_plan, incompatibility_log, variance_requirements`?
+- `design-data-extraction ? audit-study-validity`???? `study_record, validity_rubric`??? produces=`coding_rules, extraction_schema, missing_data_policy, pilot_issues`?
+- `audit-study-validity ? analyze-heterogeneity`???? `comparison_context, evidence_records, outcome_schema`??? produces=`applicability_notes, domain_judgments, evidence_basis, overall_confidence, risk_of_bias_profile`?
+- `analyze-heterogeneity ? assess-publication-bias`???? `evidence_records, inclusion_frame, outcome_schema`??? produces=`heterogeneity_sources, investigation_priorities, moderator_candidates, outlier_list`?
+- `assess-publication-bias ? assess-sensitivity`???? `baseline_input, comparison_metric, output, perturbation_axes`??? produces=`bias_domain_assessments, diagnostic_results, sensitivity_implications, unassessed_domains`?
+- `scope-domain ? extract-concepts`???? `extraction_scope, source`??? produces=`domain_scope, exclusion_rules, granularity_spec, inclusion_rules, scope_ledger`?
+- `extract-concepts ? atomize-concept`???? `concept_definition, domain_context`??? produces=`alias_map, ambiguity_log, concept_records, definition_map, relation_candidates`?
+- `atomize-concept ? type-relation`???? `entity_pair, evidence_register, relation_ontology`??? produces=`boundary_examples, concept_facets, facet_definitions, overlap_map`?
+- `type-relation ? construct-hierarchy`???? `entity_set, hierarchy_scope, relation_assertions`??? produces=`evidence_links, rejected_relation_types, typed_relation, unresolved_relation_questions`?
+- `construct-hierarchy ? audit-structure-consistency`???? `consistency_rules, relation_schema, structure`??? produces=`cycle_report, depth_report, edge_rationales, hierarchy_graph, roots`?
+- `audit-structure-consistency ? detect-coverage-gap`???? `coverage_evidence, coverage_representation, universe_definition`??? produces=`consistency_report, repair_questions, valid_exceptions, violated_rules`?
+- `identify-variables ? represent-mechanism-edge`???? `direction, evidence_register, mechanism_pathway, source_entity, target_entity`??? produces=`importance_notes, provenance_links, role_annotations, variable_register`?
+- `represent-mechanism-edge ? attach-evidence-to-relation`???? `evidence_records, relation, relation_schema`??? produces=`assumption_list, evidence_links, falsifier, mechanism_edge, unresolved_questions`?
+- `attach-evidence-to-relation ? detect-contradiction`???? `claims_or_derivation, evidence_relations, scope_context`??? produces=`confidence_rationale, directness_assessment, evidence_relation, independence_assessment, support_records`?
+- `detect-contradiction ? analyze-intervention`???? `intervention, outcome_records, target_system`??? produces=`adjudication_questions, classification, conflicting_relations, contradiction_register`?
+- `analyze-intervention ? validate-causal-link`???? `boundary_conditions, causal_relation, source_evidence`??? produces=`attribution_limits, implementation_profile, intervention_map, mechanism_assessment, outcome_comparison`?
+- `enumerate-dimension-values ? construct-design-matrix`???? `blocking_plan, factor_schema, randomization_unit`??? produces=`boundary_cases, coverage_rationale, dimension_value_sets, spacing_annotations`?
+- `construct-design-matrix ? specify-metrics`???? `decision_thresholds, estimand, outcome_variables`??? produces=`allocation_record, design_matrix`?
+- `specify-metrics ? estimate-sample-size`???? `alpha, detectable_effect, power, variance_model`??? produces=`metric_specification`?
+- `estimate-sample-size ? select-statistical-method`???? `design, outcome_type, sample_structure`??? produces=`sample_size_plan`?
+- `select-statistical-method ? specify-reproducibility-protocol`???? `comparison_rule, controls, reproduction_target`??? produces=`analysis_method`?
+- `statistical-testing ? verify-reproducibility`???? `original_result, reproduction_protocol, rerun_results`??? produces=`test_result`?
+- `define-analysis-dimensions ? enumerate-dimension-values`???? `dimensions, mode, value_schema`??? produces=`axis_definitions, coverage_scope, dimension_set, independence_notes`?
+- `enumerate-dimension-values ? assess-sensitivity`???? `baseline_input, comparison_metric, output, perturbation_axes`??? produces=`boundary_cases, coverage_rationale, dimension_value_sets, spacing_annotations`?
+- `extract-causal-structure ? detect-contradiction`???? `claims_or_derivation, evidence_relations, scope_context`??? produces=`boundary_conditions, causal_claims, causal_graph, evidence_links, mechanism_chains`?
+- `detect-contradiction ? challenge-assumption`???? `assumption, claim_or_decision, supporting_evidence`??? produces=`adjudication_questions, classification, conflicting_relations, contradiction_register`?
+- `analyze-temporal-trajectory ? detect-breakpoint`???? `source_state, task_object`??? produces=`fitted_model, forecast, inflection_points, regime_labels, trajectory_series, uncertainty_notes`?
+- `audit-study-validity ? assess-sensitivity`???? `baseline_input, comparison_metric, output, perturbation_axes`??? produces=`applicability_notes, domain_judgments, evidence_basis, overall_confidence, risk_of_bias_profile`?
+- `analogical-discovery ? biomimetic-transfer`???? `target_function, target_problem`??? produces=`abstract_structure, structural_mapping, transfer_candidate`?
+- `analogical-discovery ? conceptual-blending`???? `input_spaces`??? produces=`abstract_structure, structural_mapping, transfer_candidate`?
+- `biomimetic-transfer ? conceptual-blending`???? `input_spaces`??? produces=`biological_analogs, compatibility_report, strategy_extract, transfer_candidate`?
+- `conceptual-blending ? explore-dimensional-space`???? `dimensions, target_space, values`??? produces=`blend_candidates, emergent_property_report, generic_space, idea_set, input_space_set`?
+- `destructive-ideation ? resolve-inventive-contradiction`???? `conflicting_requirements, contradiction_statement, system_components`??? produces=`assumption_targets, concept_fan, constructive_movements, idea_set, provocations`?
+- `structural-transformation ? resolve-inventive-contradiction`???? `conflicting_requirements, contradiction_statement, system_components`??? produces=`compatibility_report, component_decomposition, operator_variants, transformed_designs`?
+- `problem-reframing ? adversarial-deliberation`???? `claim_or_candidate, criteria, target`??? produces=`consequence_map, dominant_frame, perspective_map, polarity_map, reframe_set`?
+- `map-stakeholder-system ? problem-reframing`???? `current_frame, problem_statement`??? produces=`disagreement_map, perspective_set, salience_map, stakeholder_job_map, system_boundary`?
+- `synthesize-literature-evidence ? construct-argument-map`???? `decision_objective, evidence_records, research_object`??? produces=`evidence_corpus, quality_assessment, saturation_state, screening_flow, structured_evidence_records, synthesis_map`?
+- `coverage-white-space-search ? validate-research-gap`???? `evidence_set, gap_claim, search_scope`??? produces=`candidate_ideas, coverage_map, reference_inventory, white_space_gaps`?
+- `validate-research-gap ? map-stakeholder-system`???? `stakeholder_set, target_system`??? produces=`gap_validity_verdict, independence_check, persistence_assessment, typed_gap`?
+- `identify-inventive-contradiction ? select-inventive-principle`???? `improvement_parameter, worsening_parameter`??? produces=`contradiction_statement, contradiction_type, implicated_parameters`?
+- `select-inventive-principle ? apply-separation-principle`???? `conflicting_requirements, contradiction`??? produces=`principle_applicability_matrix, selected_principles, selection_rationale`?
+- `biologize-problem ? discover-biological-analog`???? `biological_constraints, biological_function`??? produces=`biological_problem_statement, constraint_terms, function_terms`?
+- `discover-biological-analog ? extract-biological-strategy`???? `biological_analog`??? produces=`biological_candidate_set, function_evidence, relevance_ranking`?
+- `extract-generic-space ? simulate-emergent-properties`???? `blend_projection, selected_structures`??? produces=`excluded_attributes, generic_space, shared_relations`?
+- `trace-assumption-cascade ? search-minimal-flip`???? `baseline_state, target_conclusion, variables_or_assumptions`??? produces=`affected_claims, assumption_cascade, cascading_failures, local_failures, recovery_points`?
+- `trace-citation-neighborhood ? screen-evidence-multistage`???? `candidate_records, exclusion_reasons, inclusion_rules`??? produces=`citation_neighborhood, critical_node_set, independent_evidence_rate, lineage_edges, saturation_assessment`?
+- `falsifiability-audit ? falsification-first-audit`???? `available_evidence, claim, scope`??? produces=`decision_record, structured_artifact`?
+- `adversarial-deliberation ? falsification-first-audit`???? `available_evidence, claim, scope`??? produces=`adjudication, attack_record, confidence_trace, defense_record`?
+- `structured-red-team ? falsification-first-audit`???? `available_evidence, claim, scope`??? produces=`attack_vectors, probe_records, resilience_picture, threat_surface, weakness_aggregate`?
+- `falsification-first-audit ? audit-structural-equivalence`???? `equivalence_claim, source_structure, target_structure`??? produces=`falsification_program, falsification_verdict, probe_record, sharp_claim`?
+- `falsification-first-audit ? audit-validator-independence`???? `target_claim, validator, validator_artifacts`??? produces=`falsification_program, falsification_verdict, probe_record, sharp_claim`?
+- `falsification-first-audit ? audit-convergence-independence`???? `claims, evidence_paths, provenance_records`??? produces=`falsification_program, falsification_verdict, probe_record, sharp_claim`?
+- `falsification-first-audit ? audit-explanatory-compression`???? `alternatives, covered_facts, explanation`??? produces=`falsification_program, falsification_verdict, probe_record, sharp_claim`?
+- `falsification-first-audit ? map-validity-envelope`???? `analysis_dimensions, claim_or_method, validity_target`??? produces=`falsification_program, falsification_verdict, probe_record, sharp_claim`?
+- `analogical-discovery ? audit-structural-equivalence`???? `equivalence_claim, source_structure, target_structure`??? produces=`abstract_structure, structural_mapping, transfer_candidate`?
+- `conceptual-blending ? audit-structural-equivalence`???? `equivalence_claim, source_structure, target_structure`??? produces=`blend_candidates, emergent_property_report, generic_space, idea_set, input_space_set`?
+- `structured-consensus ? audit-convergence-independence`???? `claims, evidence_paths, provenance_records`??? produces=`decision_record, structured_artifact`?
+- `robustness-analysis ? audit-convergence-independence`???? `claims, evidence_paths, provenance_records`??? produces=`convergence_assessment, fragility_flags, load_bearing_factors, model_variant_set`?
+- `construct-argument-map ? audit-explanatory-compression`???? `alternatives, covered_facts, explanation`??? produces=`decision_record, structured_artifact`?
+- `characterize-anomaly ? generate-competing-hypotheses`???? `observations, problem_statement, scope_constraints`??? produces=`anomaly_description, comparison_basis, discriminating_evidence, explanation_set`?
+- `generate-competing-hypotheses ? score-object`???? `evidence, object, object_schema, rubric, uncertainty_policy`??? produces=`assumption_register, hypothesis_set, mechanism_descriptions, prediction_set`?
+- `extract-empirical-regularity ? identify-variables`???? `artifact_or_system, target_claim_or_outcome`??? produces=`exception_set, regularity_statement, scope_conditions, supporting_records`?
+- `map-productive-polarity ? surface-assumptions`???? `artifact, claim_or_decision, context`??? produces=`management_practices, polarity_map, upside_downside_register, warning_signs`?
+- `parse-patent-claim ? assess-patent-claim-scope`???? `cited_support, jurisdiction_scope, parsed_claim`??? produces=`claim_element_map, dependency_graph, function_map, interpretation_alternatives`?
+- `collect-independent-judgments ? aggregate-ranking`???? `aggregation_rule, candidate_set, criterion_results`??? produces=`aggregation_dataset, independence_audit, rationale_set, sealed_ballots`?
+- `sharpen-falsifiable-claim ? design-falsification-test`???? `candidate_observables`??? produces=`falsifiers, mechanisms, quantifiers, scope, sharp_claim`?
+- `design-falsification-test ? execute-probe`???? `probe_spec, success_and_failure_conditions, target`??? produces=`failure_condition, falsification_test, measurement_plan, priority_rationale`?
+- `execute-probe ? classify-falsification-verdict`???? `adequacy_assessment, claim, falsifier, test_result`??? produces=`observations, outcome, probe_record, severity`?
+- `extract-structural-mapping ? test-structure-preservation`???? `mapping, preservation_obligations, source_and_target`??? produces=`ambiguity_report, invariant_inventory, structural_mapping, unmatched_elements`?
+- `test-structure-preservation ? downgrade-equivalence-claim`???? `counterexamples, equivalence_claim, preservation_report`??? produces=`counterexample, failed_obligations, preservation_matrix, uncertainty`?
+- `enumerate-validator-assumptions ? build-noncircularity-matrix`???? `target_assumptions, target_claims, validator_assumptions`??? produces=`circularity_candidates, dependency_links, validator_assumption_inventory`?
+- `build-noncircularity-matrix ? detect-pass-by-construction`???? `target_claim, validator`??? produces=`dependency_summary, independent_channels, noncircularity_matrix`?
+- `identify-shared-priors ? estimate-effective-evidence-count`???? `dependence_structure, evidence_paths`??? produces=`dependency_clusters, shared_prior_map, unresolved_links`?
+- `classify-simplicity-evidence ? test-risky-prediction`???? `alternatives, available_evidence, explanation`??? produces=`compression_evidence, missing_constraints, simplicity_class`?
+
+## 3. ??????? required ??
+
+?????????required ?? 480?produces ?? 783???? produces ? required 442?????????????????????????????????????
+
+- `abstract_principle`
+- `abstraction_level`
+- `access_context`
+- `aggregation_rule`
+- `alias_evidence`
+- `alpha`
+- `alternative_set`
+- `alternatives`
+- `analysis_dimensions`
+- `analysis_plan`
+- `anchor_definition`
+- `applicability_rules`
+- `artifact`
+- `artifact_or_system`
+- `assumption`
+- `attack_constraints`
+- `available_evidence`
+- `base_model`
+- `baseline_artifact`
+- `baseline_input`
+- `baseline_risk`
+- `baseline_state`
+- `benchmark`
+- `benchmark_specification`
+- `biological_analog`
+- `biological_constraints`
+- `biological_function`
+- `blend_goal`
+- `blend_projection`
+- `blocking_plan`
+- `boundary_candidate`
+- `calibration_rule`
+- `candidate_axes`
+- `candidate_baselines`
+- `candidate_combination`
+- `candidate_fields`
+- `candidate_observables`
+- `candidate_record`
+- `candidate_records`
+- `candidate_set`
+- `candidate_sources`
+- `case_universe`
+- `category_schema`
+- `causal_claim`
+- `causal_evidence`
+- `causal_model`
+- `causal_relation`
+- `causal_schema`
+- `cause_families`
+- `cause_or_mechanism`
+- `ceiling_reference`
+- `citation_edges`
+- `cited_support`
+- `claim`
+- `claim_or_candidate`
+- `claim_or_decision`
+- `claim_or_mechanism`
+- `claim_or_method`
+- `claim_or_model`
+- `claim_or_question`
+- `claim_set`
+- `claim_text`
+- `claimed_conclusion`
+- `claims`
+- `claims_or_arguments`
+- `claims_or_derivation`
+- `comparability_fields`
+- `comparator`
+- `comparison_budget`
+- `comparison_conditions`
+- `comparison_context`
+- `comparison_criteria`
+- `comparison_criterion`
+- `comparison_dimensions`
+- `comparison_metric`
+- `comparison_model`
+- `comparison_rule`
+- `comparison_target`
+- `compatibility_rules`
+- `competing_claims`
+- `competitor_signals`
+- `completed_experiment`
+- `component`
+- `component_schema`
+- `compound_claim`
+- `concept_definition`
+- `conclusion`
+- `conclusion_metric`
+- `condition_records`
+- `condition_schema`
+- `configuration`
+- `conflicting_requirements`
+- `consequence_model`
+- `consistency_rules`
+- `constraint_candidates`
+- `constraint_record`
+- `constraint_relations`
+- `constraints`
+- `construct_claim`
+- `construct_definition`
+- `construct_definitions`
+- `context`
+- `contradiction`
+- `controls`
+- `convergence_rule`
+- `cost_model`
+- `counterclaim`
+- `coverage_dimensions`
+- `coverage_evidence`
+- `coverage_representation`
+- `covered_facts`
+- `criteria`
+- `criterion_directions`
+- `criterion_results`
+- `critique_perspective`
+- `current_corpus`
+- `current_evidence`
+- `current_frame`
+- `current_performance`
+- `current_ratings`
+- `current_representation`
+- `current_scope`
+- `current_state`
+- `data_versions`
+- `dataset_partitions`
+- `decision_context`
+- `decision_objective`
+- `decision_options`
+- `decision_problem`
+- `decision_thresholds`
+- `decomposition_purpose`
+- `dependence_structure`
+- `dependency_evidence`
+- `dependent_claims`
+- `design`
+- `detectability_scale`
+- `detectable_effect`
+- `dimension_ontology`
+- `dimensions`
+- `direction`
+- `domain_context`
+- `domain_question`
+- `downstream_claims`
+- `driver_candidates`
+- `edge_polarity`
+- `effect_statement`
+- `eligible_population`
+- `entity_pair`
+- `entity_schema`
+- `entity_set`
+- `entity_type`
+- `equivalence_claim`
+- `evaluation_records`
+- `evaluator_roster`
+- `evidence`
+- `evidence_context`
+- `evidence_paths`
+- `evidence_question`
+- `evidence_records`
+- `evidence_relations`
+- `evidence_scope`
+- `evidence_set`
+- `explanation`
+- `extraction_granularity`
+- `extraction_scope`
+- `factor_or_assumption_set`
+- `factor_schema`
+- `failure_mode`
+- `failure_modes`
+- `failure_or_counterexample`
+- `family_identifiers`
+- `family_keys`
+- `feature_schema`
+- `fitness_criteria`
+- `focal_claim`
+- `forecast_records`
+- `framework`
+- `functioning_exceptions`
+- `functions`
+- `functions_or_process`
+- `functions_or_steps`
+- `gap_claim`
+- `gap_records`
+- `gap_schema`
+- `gap_statement`
+- `gate_criteria`
+- `goal_branches`
+- `goal_tree`
+- `hard_constraints`
+- `hardware`
+- `hierarchy_scope`
+- `hypotheses`
+- `idea_fragments`
+- `impact_scores`
+- `improvement_parameter`
+- `improvement_target`
+- `inclusion_frame`
+- `independence_rule`
+- `independence_rules`
+- `initial_solution_population`
+- `input_spaces`
+- `intended_effect`
+- `intended_outcomes`
+- `intended_use`
+- `intervention`
+- `intervention_nodes`
+- `intervention_specification`
+- `intervention_target`
+- `item_a`
+- `item_b`
+- `item_schema`
+- `items`
+- `judgment_prompt`
+- `jurisdiction`
+- `jurisdiction_scope`
+- `leaderboard_records`
+- `leverage_failure`
+- `load_bearing_assumptions`
+- `mapping`
+- `mapping_basis`
+- `mapping_claim`
+- `measured_values`
+- `mechanism_pathway`
+- `method_key`
+- `metric`
+- `metric_definition`
+- `metric_schema`
+- `mitigation`
+- `mode`
+- `model`
+- `model_or_reasoning_chain`
+- `mutation_or_recombination_rules`
+- `new_evidence`
+- `new_evidence_block`
+- `node_semantics`
+- `novelty_schema`
+- `object`
+- `object_schema`
+- `observation`
+- `observation_context`
+- `observation_date`
+- `observation_domain`
+- `observations_or_measurements`
+- `observed_effects`
+- `obstacle_register`
+- `occurrence_scale`
+- `operator`
+- `original_result`
+- `outcome_records`
+- `outcome_schema`
+- `outcome_series`
+- `outcome_type`
+- `outcome_variables`
+- `output`
+- `output_metric`
+- `output_variables`
+- `pairwise_judgments`
+- `pairwise_outcome`
+- `parsed_claim`
+- `participant_judgments`
+- `patent_record`
+- `patent_records`
+- `performance_records`
+- `perspectives`
+- `perturbation_axes`
+- `perturbation_axis`
+- `perturbation_evidence`
+- `perturbation_target`
+- `polarity_statement`
+- `pole_a`
+- `pole_b`
+- `population_or_exposure`
+- `power`
+- `predictions`
+- `preference_policy`
+- `preservation_obligations`
+- `prior_comparable_batch`
+- `prior_confidence`
+- `prior_estimate`
+- `prior_ratings`
+- `priority_links`
+- `probe_scope`
+- `probe_spec`
+- `problem_or_artifact`
+- `problem_statement`
+- `protocol_records`
+- `protocol_schema`
+- `provenance_records`
+- `provocation`
+- `question`
+- `questions`
+- `randomization_unit`
+- `randomness_sources`
+- `ranked_items`
+- `rating_model`
+- `raw_entities`
+- `readiness_dimension`
+- `record_schema`
+- `reference_items`
+- `reference_pattern`
+- `relation`
+- `relation_assertions`
+- `relation_ontology`
+- `relation_schema`
+- `relationship_claim`
+- `relevance_rules`
+- `removal_options`
+- `repetition_target`
+- `reporting_checklist`
+- `reproduction_target`
+- `rerun_results`
+- `research_context`
+- `research_direction`
+- `research_intent`
+- `research_object`
+- `research_objective`
+- `research_problem`
+- `research_question`
+- `research_target`
+- `resource_budget`
+- `resource_demand`
+- `resource_limits`
+- `resource_profile`
+- `resource_supply`
+- `response`
+- `response_metric`
+- `revision_prompt`
+- `round_records`
+- `rubric`
+- `run_costs`
+- `salience_schema`
+- `sample_structure`
+- `scale_variable`
+- `scenario_mode`
+- `scope_anchor`
+- `scope_constraints`
+- `scope_context`
+- `score_matrix`
+- `scored_outputs`
+- `search_record`
+- `search_scope`
+- `seed_classifications`
+- `seed_concepts`
+- `seed_policy`
+- `seed_sources`
+- `selected_structures`
+- `selection_criteria`
+- `selection_logic`
+- `severity_scale`
+- `software`
+- `solution_population`
+- `source`
+- `source_and_target`
+- `source_case`
+- `source_domain`
+- `source_domains`
+- `source_entity`
+- `source_evidence`
+- `source_material`
+- `source_record`
+- `source_state`
+- `source_structure`
+- `stakeholder_preferences`
+- `stakeholder_set`
+- `stakeholder_views`
+- `status_sources`
+- `structure`
+- `study_designs`
+- `study_record`
+- `study_scope`
+- `subject_record`
+- `success_and_failure_conditions`
+- `supporting_reasoning`
+- `symptom_statement`
+- `symptoms_or_undesirable_effects`
+- `system_components`
+- `system_context`
+- `system_or_design`
+- `system_or_process`
+- `system_requirements`
+- `target`
+- `target_assumptions`
+- `target_claim`
+- `target_claim_or_artifact`
+- `target_claim_or_outcome`
+- `target_claims`
+- `target_comparison`
+- `target_conclusion`
+- `target_constraints`
+- `target_context`
+- `target_domain`
+- `target_entity`
+- `target_function`
+- `target_goal`
+- `target_outcome`
+- `target_problem`
+- `target_record`
+- `target_space`
+- `target_structure`
+- `target_system`
+- `task_key`
+- `task_object`
+- `technical_domain`
+- `temporal_context`
+- `threat_model`
+- `time_horizon`
+- `time_indexed_records`
+- `time_or_version_field`
+- `timeline`
+- `training_sources`
+- `transformation_target`
+- `uncertain_inputs`
+- `uncertain_parameters`
+- `uncertain_variables`
+- `uncertainty_matrix`
+- `uncertainty_policy`
+- `uncertainty_register`
+- `uncertainty_scores`
+- `uncertainty_set`
+- `undesirable_effects`
+- `universe_definition`
+- `update_parameters`
+- `update_rule`
+- `validation_criteria`
+- `validation_test`
+- `validator`
+- `validator_artifact`
+- `validator_artifacts`
+- `validator_assumptions`
+- `validity_constraints`
+- `validity_rubric`
+- `validity_target`
+- `value_domains`
+- `value_schema`
+- `values`
+- `variable_schema`
+- `variables`
+- `variables_or_assumptions`
+- `variance_model`
+- `window`
+- `worsening_effect`
+- `worsening_parameter`
+
+## 4. Mode-conditioned contract audit (2026-09-13)
+
+Scope: eight mode-bearing tactics and 38 declared modes (the first seven add 33 modes; `synthesize-meta-analytic-evidence` already had five body modes). Evidence was checked against the mode branches in `v4/skills/*/SKILL.md`, the registry mode lists, the `calls` map, and outgoing jump edges in `deliverables/R4/graph.json`.
+
+### 4.1 Produces
+
+The current `produces` arrays are tactic-level unions. They are not per-invocation guarantees: a selected mode may populate only a strict subset. This is a semantic contract gap, with severity varying by tactic.
+
+| tactic | mode-sensitive result fields | single list adequate? | finding |
+|---|---|---|---|
+| `rank-candidates` (8) | `ranking_or_categories`, `scores`, `weights`, `eliminated_candidates`, `sensitivity_results`, `recommendation` | Shape: yes; guarantees: no | category/non-compensatory modes produce class or veto outcomes; rapid triage may omit weights/sensitivity. A mode presence profile is needed if consumers require a field. |
+| `analyze-constraints-readiness` (5) | `readiness_profile`, `constraint_register`, `bottlenecks`, `resource_envelope`, `stage_gates`, `mitigation_paths` | No, as a guarantee | obstacle triage, resource envelope, and maturation path have different required result subsets. The union hides absent resource/gate results. |
+| `map-stakeholder-system` (3) | `system_boundary`, `perspective_set`, `stakeholder_job_map`, `salience_map`, `disagreement_map` | No, as a guarantee | critical-systems, jobs-to-be-done, and salience modes center different maps; no mode is obliged to emit all five. |
+| `resolve-inventive-contradiction` (3) | `contradiction_resolution`, `transformed_configuration`, `residual_conflicts`, `candidate_ideas` | Yes for shape | all three modes perform the same transformation/result contract; mode changes method and evidence, not result keys. |
+| `sensitivity-analysis` (4) | `sensitivity_profile`, `interaction_effects`, `uncertainty_contributions`, `information_value_ranking` | No, as a guarantee | Morris/perturbation emphasize screening or local effects; Sobol/Monte-Carlo require global variance or distributional uncertainty. The union is not a per-mode presence contract. |
+| `synthesize-literature-evidence` (5) | `evidence_corpus`, `structured_evidence_records`, `screening_flow`, `quality_assessment`, `synthesis_map`, `saturation_state` | No | scoping can be abstract/coverage-limited; systematic requires staged screening and validity; deep requires full-text records; snowball requires citation expansion. A single list cannot express these obligations. |
+| `design-experiment` (5) | `design_matrix`, `analysis_plan`, `sample_plan`, `preregistered_thresholds`, `reproducibility_checklist` | Shape: yes; guarantees: no | all modes return a design-shaped object, but factor/ablation/comparison/scaling/robustness impose different matrix and threshold contents. |
+| `synthesize-meta-analytic-evidence` (5) | `effect_estimate`, `uncertainty`, `heterogeneity_report`, `bias_report`, `sensitivity_results` | No | pairwise/network/cumulative/heterogeneity/bias have distinct primary outputs; the union masks fields that are inapplicable or mandatory only for one mode. |
+
+Conclusion: five tactics (`analyze-constraints-readiness`, `map-stakeholder-system`, `sensitivity-analysis`, `synthesize-literature-evidence`, `synthesize-meta-analytic-evidence`) have a material mode-conditioned output contract gap. `rank-candidates` and `design-experiment` can retain a common shape only if the schema explicitly marks mode-conditioned optional/required fields; `resolve-inventive-contradiction` is shape-consistent.
+
+This is a format-level change across the 267 bodies. Request adjudication before changing every `Output contract`; do not silently split contracts in this audit.
+
+### 4.2 delta_fields
+
+No mode introduces a ninth delta field. All observed mode branches remain expressible as subsets of the fixed eight-field whitelist. Existing tactic lists are therefore key-valid. However, mode changes the semantic payload: for example literature snowball updates evidence/citation state, while systematic mode adds screening and quality decisions. A mode-specific delta profile is useful for validation, but no whitelist or body format change is required by this audit.
+
+### 4.3 Mode and jump edges
+
+The graph stores jumps at tactic/SOP level, not `(tactic, mode)` level. For the audited tactics, outgoing jump sets are:
+
+| tactic | declared outgoing jumps | mode qualification present? |
+|---|---|---|
+| `rank-candidates` | `formulate-hypotheses`, `pairwise-ranking`, `analyze-constraints-readiness`, `decompose-research-goal`, `portfolio-optimization` | No |
+| `analyze-constraints-readiness` | `portfolio-optimization`, `decompose-research-goal`, `analyze-future-scenarios`, `rank-candidates` | No |
+| `map-stakeholder-system` | `problem-reframing`, `analyze-constraints-readiness` | No |
+| `resolve-inventive-contradiction` | none | N/A; mode-specific continuation can only be carried in the returned delta |
+| `sensitivity-analysis` | `problem-reframing` | No |
+| `synthesize-literature-evidence` | `build-domain-ontology`, `validate-research-gap`, `establish-empirical-baseline`, `construct-argument-map` | No |
+| `design-experiment` | `analyze-constraints-readiness`, `audit-validator-independence`, `analyze-experiment-results` | No |
+| `synthesize-meta-analytic-evidence` | `formulate-hypotheses` | No |
+
+Several branches have an obvious mode-specific continuation (for example literature `snowball` needs citation tracing, meta `cumulative` needs cumulative updating, and sensitivity Sobol/Monte-Carlo need uncertainty propagation), but those are currently `calls` SOPs or descriptive branches, not mode-qualified jump edges. Therefore the host cannot infer a unique downstream from `mode` alone; it must use a mode profile or the returned `recommended_jumps` delta. If routing is required to be deterministic, add a `(tactic, mode) -> allowed/recommended jumps` contract dimension in the adjudicated format change.
+
+### 4.4 Adjudication request
+
+Please decide whether to (a) keep tactic-level union contracts and add explicit per-mode required/optional presence profiles plus mode-qualified routing metadata, or (b) split `Input/Output contract` and delta profiles by mode across the affected bodies. The evidence supports (a) as the smaller change for shape-consistent tactics, but the five material gaps above cannot be left implicit.
+
+### 4.5 Adjudication recorded (2026-09-13)
+
+Pthahnix selected **B: split every mode-bearing node's Input/Output contract by mode, without exceptions**, including modes whose output shape is identical. The normative syntax and 92-row output ledger are now in `deliverables/R1/mode-contract-format.md` and `deliverables/R1/mode-output-ledger.md`. This supersedes the option-a recommendation in §4.4.
+
+The proposed `(tactic, mode) -> jumps` graph dimension is rejected. Routing remains represented by the existing `recommended_jumps` delta field; no jump-schema change is part of this work.
+
+## 5. MOVED_RUNTIME 接收方复核（R6 D 形态，2026-09-13）
+
+依据 `deliverables/R6/host-design.md` Q1/Q2/Q3：D 形态为薄编排 host（确定性 control plane）+ agent 执行节点；host 负责事件回放、SpecView/context slice、catalog/graph 路由、checkpoint 写入，并决定是否派发 agent。Q2 将 `active_items[]` 的 `requires`/`depends_on` 纳入 SpecView；Q3 将 checkpoint 事件流落在单 Phase Markdown context 文件。下表只判断“谁接收”，不替 R6 规定实现机制。
+
+| 原 capability | 结论 | D 形态下的接收方或缺口 | 后续归属判断 |
+|---|---|---|---|
+| `actor-profiling -> research-context input contract` | ① 有接收方 | 接收方是 DARE 产品层的 ResearchContext 输入边界，由 host 在 context/preflight 前置读取并投影为 context slice。背景、资源、硬约束和意图属于输入，不是科研图节点的研究变换。 | `MOVED_PRODUCT` 可落地；不回 runtime。 |
+| `engine-core / context-management / checkpointing -> runtime/control plane` | ① 有接收方 | 接收方是薄 host control plane：Q1 的事件回放/SpecView/context slice，Q2 的确定性重建，Q3 的单 Phase Markdown checkpoint 追加与恢复入口。 | `MOVED_RUNTIME` 保持。 |
+| `subagent-spawning / implementer-dispatch -> host agent runtime` | ① 有接收方 | 接收方是 host 的 agent-dispatch 边界：host 决定是否派发，agent 只执行所选节点并回传结果 Delta，持久化仍由 host 统一接收。 | `MOVED_RUNTIME` 保持；本表不规定代理异常处理。 |
+| `knowledge compilation / vault maintenance -> artifact/storage layer` | ③ 作为单一 runtime 能力无完整接收方 | Q3 只确定 context/checkpoint 的 Markdown 载体，不能承接“知识编译”这一科研结构变换，也没有把通用 vault 维护定义为 control-plane 职责。知识编译应回 STRUCTURING 科研图；vault 维护应归 DARE 产品/存储层；host 只提供所需的存储适配，不拥有研究语义。 | **求裁：拆成 `knowledge compilation -> research graph` 与 `vault maintenance -> product/storage`，不要继续以一条 MOVED_RUNTIME 通过。** |
+| `implementation dependency planning -> host execution planner` | ① 有接收方 | 接收方是 host 对 SpecView `active_items[].requires/depends_on` 的执行依赖投影与选择。科研图仍声明科学依赖；host 只编排已声明的执行依赖，不创造或改写研究关系。 | `SPLIT` 保持：科研依赖在图/Spec，执行依赖在 runtime。 |
+| `critical-path duration / buffering / dispatch / monitoring -> host execution planner/runtime` | ② 当前无完整接收方 | D 形态明确了 host 对派发的归属，但 Q1/Q2/Q3 尚未给“时长、缓冲、监控”这一复合能力一个完整的 host 接口/输入契约。因此不能把整条当作已落地；host 实现阶段仍需补齐责任边界和记录所需输入。 | **待 host 实现阶段补定义；本审计不写具体容错、时序或监控机制。** |
+| `experiment-running agent dispatch / monitoring -> host runtime / coding agent / scheduler` | ① 有接收方 | 接收方是 host 的 agent execution boundary（必要时由 scheduler/coding-agent 适配）：host 编排实验执行节点，接收其结果并写入 checkpoint；科研 tactic 只消费结果 Delta。 | `MOVED_RUNTIME` 保持；本表只确认责任归属，不规定代理异常处理。 |
+
+复核计数：① 有接收方 5 条（其中 `actor-profiling` 属产品输入），② 尚无完整接收方 1 条，③ 单一 runtime 归属不成立 1 条（需拆分求裁）。七条均已按 D 形态重新判断，未沿用 host 未定前的 MOVED_RUNTIME 结论。
