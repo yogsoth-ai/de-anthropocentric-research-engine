@@ -1,30 +1,47 @@
 ---
 name: formulate-top-goal
-description: 'Express the user''s chosen research direction as a formal goal statement
-  in the format: ''Achieve [what], such that [effect], under [constraints]''. Confirm
-  with user before proceeding to decomposition.'
-execution: dialogue
+description: "Formalize a research goal as an outcome, desired effect, and explicit constraints."
 ---
 
-# Formulate Top Goal
+# formulate-top-goal
 
-Crystallize the user's direction into a formal, confirmable goal statement.
+## Purpose
 
-## Execution
+Formalize a research goal as an outcome, desired effect, and explicit constraints.
 
-Dialogue — inline, no subagent.
+## Input contract
 
-## Format
+```yaml
+required: [research_intent]
+optional: [actor_profile, constraints, evidence_context]
+constraints: [goal wording must identify an observable outcome and relevant boundary conditions]
+```
 
-"Achieve [what], such that [effect], under [constraints]"
+## Procedure
 
-## Process
+1. State the outcome that should change and the desired direction of change.
+2. Identify scope, actors, resources, time, and non-negotiable constraints.
+3. Separate goal content from proposed methods and assumptions.
+4. Emit a testable top-goal statement with unresolved choices.
 
-1. Draft the goal statement based on accumulated context (direction + ActorProfile + obstacles accepted)
-2. Present to user
-3. Ask: "Is this what you want to achieve? Should I adjust anything?"
-4. Iterate until user confirms
+If the top goal has explicit success conditions but remains too broad to execute, consider `decompose-and-or-goal` as the next tactic.
 
-## Output
+## Output contract
 
-Confirmed top-level goal statement.
+```yaml
+produces: [top_goal, desired_effect, constraint_set, goal_assumptions, open_goal_questions]
+delta_fields: [findings, hypothesis_updates, assumption_updates, decisions, uncertainties, open_questions]
+```
+
+## Quality gates
+
+- Outcome and desired direction are observable.
+- Constraints are not hidden in method wording.
+
+## Failure and counterexamples
+
+Do not accept "understand the topic" as a top goal without an outcome or decision target.
+
+## Provenance map
+
+- `resolved: formulate-top-goal`

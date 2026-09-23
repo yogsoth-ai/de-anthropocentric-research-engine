@@ -1,88 +1,65 @@
 ---
 name: de-anthropocentric-research-engine
-description: Top-level orchestrator for the yogsoth-ai research ecosystem. Drives
-  the full research lifecycle from direction crystallization through experiment design.
-execution: sequential
-dependencies:
-  sops:
-  - executing-specs
-  - research-catalog
-  - writing-specs
+description: "DARE v4 is the product-level orchestrator for a research run. It turns a user request into a controlled sequence of North Star crystallization, executable specification, and phase-by-phase execution."
 ---
 
-# De-Anthropocentric Research Engine
+# de-anthropocentric-research-engine
 
-You are the orchestrator of a complete research pipeline. Your job is to guide the user from a vague research interest to a fully executable Research Spec.
+## Purpose
 
-## Pipeline
+DARE v4 is the product-level orchestrator for a research run. It turns a user request into a controlled sequence of North Star crystallization, executable specification, and phase-by-phase execution. It is not a scientific graph node and must not be counted among the 267 tactic/SOP nodes.
 
-Phase 1: North Star Crystallization (mandatory)
-Phase 2: Research Spec Generation (writing-specs)
+## Input Contract
 
-Phase 3 (Spec Execution) is invoked separately by the user after reviewing the spec.
+```yaml
+required: [user_request]
+optional: [existing_context, north_star, research_brief, constraints]
+constraints:
+  - a run may start with an existing North Star only when it is explicit and user-confirmed
+  - execution requires a current SpecView reconstructed from checkpoint events
+```
 
-## Capability Menu (custom workflow routing)
+## Execution Protocol
 
-If the user's request is a customized workflow that does not follow the standard
-North Star → Spec pipeline (e.g., user specifies exact campaigns to run, provides
-their own spec, or requests a non-standard combination of research activities),
-invoke `research-catalog` immediately to understand the full capability landscape and
-route accordingly.
+DARE enforces this order and does not skip a phase:
 
-## Phase 1: North Star Crystallization
+1. **North Star**: if a confirmed North Star and ResearchBrief are absent, collect and crystallize them from the user request. If they are present, verify that they still describe the request.
+2. **Spec**: You MUST load skill `research-catalog` to expose the available tactics. You MUST load skill `write-research-spec` to turn the confirmed North Star, ResearchBrief, and user constraints into an executable Research Spec. Do not execute research while this phase is incomplete.
+3. **Execution**: after the user approves the Spec, You MUST load skill `execute-research-spec` to execute its phases and checkpoints. Do not select a tactic directly from the flat skill directory.
 
-Before anything else, you must establish a clear research direction.
+At every phase boundary, record the decision and its reason in the current Phase checkpoint event stream. A plan change is an appended `decisions` event, never an edit to an earlier checkpoint. The product shell may present progress, but scientific conclusions remain in tactic/SOP Delta fields.
 
-**Assess the user's input:**
-- If the user has NO direction → invoke `cold-start`
-- If the user has a GENERAL direction → invoke `warm-start`  
-- If the user has a SPECIFIC topic/question → invoke `hot-start`
+## Output Contract
 
-**Hard gate:** Do NOT proceed to Phase 2 until you have:
-1. A one-sentence North Star statement
-2. A structured ResearchBrief
+```yaml
+produces:
+  - confirmed_north_star
+  - research_brief
+  - spec_view
+  - phase_execution_results
+  - final_research_summary
+state_delta_fields:
+  - findings
+  - evidence_updates
+  - hypothesis_updates
+  - assumption_updates
+  - uncertainties
+  - decisions
+  - open_questions
+  - recommended_jumps
+```
 
-**Context protocol:**
-- Invoke `context-init` at the start of crystallization
-- Invoke `context-checkpoint` after crystallization completes (preserve North Star + ResearchBrief)
+## Completion Criteria
 
-## Phase 2: Research Spec Generation
+- A confirmed North Star and ResearchBrief exist before spec construction.
+- The Spec has explicit stages, inputs, tactics, completion gates, and backtrack conditions.
+- Execution reaches a complete checkpoint for every required stage, or reports the first unmet gate with its evidence.
+- The final summary cites the context files and checkpoints that support it.
 
-Once the North Star is confirmed, transition to spec generation:
+## Failure and Backtrack
 
-### Capability Menu Loading
+Missing intent or scope blocks entry to specification and returns `NEEDS_CONTEXT`. An unmet completion gate keeps the current stage active. A triggered backtrack condition is presented for user confirmation and, if approved, is recorded as a new decision before execution returns to the target stage. DARE never treats an empty result, elapsed time, or an execution interruption as stage completion.
 
-Before invoking `writing-specs`, invoke `research-catalog` to load the capability
-menu. This ensures the Research Spec leverages the complete arsenal of
-available campaigns, strategies, tactics, and SOPs — not just the obvious defaults.
+## Boundary
 
-1. Invoke `writing-specs` strategy
-2. This will read `research-catalog`, ask clarifying questions, and produce a Research Spec
-3. The spec is saved to `docs/de-anthropocentric/specs/`
-
-**Your role in Phase 2:** Hand off to `writing-specs`. Do not generate the spec yourself.
-
-## Phase 3: Spec Execution (separate invocation)
-
-After the user reviews and approves the spec, they invoke `executing-specs` in a new session. This is NOT your responsibility — just inform the user that the next step is to invoke `executing-specs` with the spec file path.
-
-## What You Do NOT Do
-
-- Execute any research campaigns
-- Generate the spec yourself (delegate to writing-specs)
-- Skip North Star crystallization
-- Proceed without user confirmation at phase boundaries
-
-<!-- BEGIN available-tables (generated) -->
-
-## Available SOPs
-
-Optional, no fixed order; the final leaf is always a sop.
-
-| SOP | When to use |
-| --- | --- |
-| executing-specs | Execute a Research Spec step by step, respecting context protocol, deviation limits, and backtrack rules. Supports multi-session recovery. |
-| research-catalog | Capability menu for the research engine. Lists the 10 freely-composable research packages, what each does, when to reach for it, and a pointer to its full skill table. Read this after north-star crystallization to decide which packages to use — no fixed order. Also serves as the skill-index (capability map). |
-| writing-specs | Generate a complete, executable Research Spec from North Star + user input. Strategy-level skill that orchestrates questioning, outline, and spec writing. |
-
-<!-- END available-tables (generated) -->
+This entry layer is installed under `v4/skills/` by the build owner. It is not added to `graph.json`, does not create a third scientific layer, and does not replace tactic or SOP contracts.

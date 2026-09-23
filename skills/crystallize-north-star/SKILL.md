@@ -1,37 +1,46 @@
 ---
 name: crystallize-north-star
-description: 'Fuse the GoalTree root node and user motivation into a single crystallized
-  North Star statement. Format: ''[verb] [specific goal], through [method/path], solving
-  [what problem], ultimately [what impact]''. Quality checks: specific? ambitious?
-  achievable?'
-execution: dialogue
+description: "Compress the goal structure and intentionality into a specific, ambitious, achievable one-sentence research North Star."
 ---
 
-# Crystallize North Star
+# crystallize-north-star
 
-Produce the one-sentence North Star that captures the user's research direction.
+## Purpose
 
-## Execution
+Compress a validated goal structure into one specific, ambitious, achievable research North Star.
 
-Dialogue — inline, CC synthesizes and presents.
+## Input contract
 
-## Format
+```yaml
+required: [goal_tree, constraints, intended_effect]
+optional: [feasibility_annotations, actor_profile, evidence_context]
+constraints: [the statement must preserve the declared outcome and limiting constraints]
+```
 
-"[verb] [specific goal], through [method/path], solving [what problem], ultimately [what impact]"
+## Procedure
 
-## Quality Checks Before Presenting
+1. Identify the highest-value outcome and the mechanism or capability it should change.
+2. Remove branch detail that does not distinguish the intended direction.
+3. Draft one sentence with outcome, scope, and constraint boundaries.
+4. Check traceability back to the goal tree and record unresolved tension.
 
-- **Specific**: not vague or generic
-- **Ambitious**: worth pursuing at a top venue
-- **Achievable**: within user's capabilities + mitigations
+## Output contract
 
-## Process
+```yaml
+produces: [north_star_statement, research_brief, traceability_map, unresolved_tensions]
+delta_fields: [findings, hypothesis_updates, decisions, uncertainties, open_questions]
+```
 
-1. Draft the North Star based on all accumulated context
-2. Self-check against quality criteria
-3. Present to user
-4. Iterate if needed
+## Quality gates
 
-## Output
+- The statement is testable and scoped.
+- Every essential term traces to a goal or constraint.
 
-Confirmed North Star statement.
+## Failure and counterexamples
+
+Do not turn a slogan into a North Star or omit constraints merely to make the sentence aspirational.
+
+## Provenance map
+
+- `resolved: north-star-crystallization-crystallize-north-star`
+

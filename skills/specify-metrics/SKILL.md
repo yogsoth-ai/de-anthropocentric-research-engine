@@ -1,0 +1,47 @@
+---
+name: specify-metrics
+description: "Define primary/secondary metrics, estimands, directionality, uncertainty reporting, and decision thresholds before analysis."
+---
+
+# specify-metrics
+
+## Purpose
+
+Define primary/secondary metrics, estimands, directionality, uncertainty reporting, and decision thresholds before analysis.
+
+## Input contract
+
+```yaml
+required: [estimand, outcome_schema, decision_thresholds]
+optional: [evidence, assumptions, prior_results]
+constraints: [use named scientific objects; retain provenance and missingness; $\alpha$ = 0.05 and power = 0.8 where applicable]
+```
+
+## Procedure
+
+1. Validate the typed inputs and state the decision this operation must support.
+2. Apply the declared operation to the named object; record intermediate values that affect interpretation.
+3. Check boundary conditions and counterexamples, then emit the result with uncertainty and source links.
+
+If estimands, metrics, and decision thresholds are fixed, consider `estimate-sample-size` as the next tactic.
+
+## Output contract
+
+```yaml
+produces: [specify_metrics_result, evidence_trace, uncertainties]
+delta_fields: [evidence_updates, uncertainties]
+```
+
+## Quality gates
+
+- Inputs are named scientific objects with compatible schemas.
+- Every material result has a derivation or source reference.
+- Fixed statistical criteria remain exact where applicable: $\alpha$ 0.05 and power 0.8.
+
+## Failure and counterexamples
+
+Return a failed operation with the violated precondition when inputs are incomplete, assumptions are unsupported, or a counterexample defeats the result.
+
+## Provenance map
+
+- intermediate: experiment-execution/metric-specification

@@ -1,96 +1,146 @@
 ---
 name: research-catalog
-description: Capability menu for the research engine. Lists the 10 freely-composable
-  research packages, what each does, when to reach for it, and a pointer to its full
-  skill table. Read this after north-star crystallization to decide which packages
-  to use — no fixed order. Also serves as the skill-index (capability map).
-execution: reference
+description: "This is the v4 capability menu. It indexes exactly 51 tactics in 10 families and tells the caller when each tactic is useful."
 ---
 
-# Research Catalog
+# research-catalog
 
-These 10 packages are freely-composable capability domains. There is **no prescribed order** and no pipeline. After your research direction is crystallized, decide which packages to invoke, in what sequence, and whether to loop back — based on the current research task. Each package is a self-contained research engine with its own campaigns, strategies, tactics, and SOPs.
+## Purpose
 
-To use a package, read its reference table under `references/<package>.md` for the full skill list (sorted by layer, then name). Pick the package whose purpose matches your current need; open its table; select the skills you need.
+This is the v4 capability menu. It indexes exactly 51 tactics in 10 families and tells the caller when each tactic is useful. It does not list SOPs. A selected tactic owns its SOP calls through `You MUST load skill ...` instructions in the tactic body.
 
-The 10 packages are listed alphabetically below — the order carries **no** sequencing meaning.
+## Input Contract
 
-## ara-from-context
+```yaml
+required: [confirmed_north_star, research_brief]
+optional: [current_spec_view, state_slice, constraints]
+constraints:
+  - return tactic cards, not SOP cards
+  - preserve the tactic id exactly as listed
+```
 
-Research-to-artifact compilation engine: compiles a completed `context/` research record into an ARA (Agent-Native Research Artifact) — a 4-layer machine-executable knowledge package (PAPER.md + logic/ + src/ + trace/ + evidence/), not a LaTeX narrative paper — then runs a Level-2 epistemic rigor review. One campaign — ara-from-context.
+## Execution Protocol
 
-**Reach for it when:** a research arc (typically after experiment-execution) has produced results worth packaging for agents to reproduce/extend → compile context into an ARA + epistemic review. Requires the external `compiler` / `rigor-reviewer` skills (`npx @ara-commons/ara-skills`).
+Read the North Star, ResearchBrief, current SpecView, and relevant state slice. Select 3-5 candidate tactics whose purpose and prerequisites match the current objective. Return their family, id, why-now condition, required inputs, expected outputs, and next call. Do not invent an order for tactics that the Spec has not ordered. Once a tactic is selected, the caller MUST load that tactic skill; its body is authoritative for SOP calls and thresholds.
 
-**Skills:** see `references/ara-from-context.md`
+## Tactic Index
 
-## convergence
+### ACQUISITION
 
-Universal convergence engine: turns an unstructured candidate set into ranked selections, balanced portfolios, and validated decisions. Six campaigns — multi-criteria-scoring, pairwise-ranking, structured-consensus, feasibility-assessment, portfolio-optimization, steel-manning.
+| Tactic | When to use |
+| --- | --- |
+| `synthesize-literature-evidence` | When the question needs a structured synthesis of literature claims and evidence. |
+| `mine-patent-landscape` | When patents, assignees, classifications, or filing trends define the search space. |
+| `assess-prior-art-and-claims` | When a proposed contribution must be tested against prior art and claim boundaries. |
+| `map-patent-white-space` | When patent coverage and uncrowded opportunity regions must be compared. |
+| `audit-benchmark-validity` | When benchmark metrics, datasets, or comparison protocols may distort conclusions. |
+| `synthesize-meta-analytic-evidence` | When multiple studies provide comparable effect estimates requiring pooled interpretation. |
+| `establish-empirical-baseline` | When a new method needs a reproducible baseline and a defensible comparison reference. |
 
-**Reach for it when:** score/rank candidates against multiple criteria; produce a global ranking via pairwise comparisons; multiple perspectives disagree and need convergence; assess feasibility/readiness; select a balanced portfolio; verify rejected candidates or stress-test winners.
+### CONVERGENCE
 
-**Skills:** see `references/convergence.md`
+| Tactic | When to use |
+| --- | --- |
+| `pairwise-ranking` | When candidates are easier to compare two at a time than on a shared absolute scale. |
+| `structured-consensus` | When several judgments must be reconciled with explicit disagreement and evidence. |
+| `portfolio-optimization` | When the result should be a balanced subset rather than one winner. |
 
-## creative-ideation
+### CROSS
 
-Creative generation engine: transforms hypotheses and research questions into diverse solution spaces. Ten parallel creativity campaigns spanning structural, analogical, destructive, and combinatorial methods.
+| Tactic | When to use |
+| --- | --- |
+| `rank-candidates` | When typed candidates must be scored, screened, classified, or selected under stated criteria. |
+| `map-validity-envelope` | When the conditions under which a claim or design remains valid are unknown. |
+| `explore-dimensional-space` | When a design space needs axes, combinations, and coverage gaps. |
+| `adversarial-deliberation` | When a consequential decision needs structured opposing cases before commitment. |
+| `analyze-constraints-readiness` | When constraints, dependencies, conflicts, and readiness determine whether work can proceed. |
 
-**Reach for it when:** SCAMPER / TRIZ / component surgery / structural transformation / function trimming → structural-deconstruction; cross-domain / analogical transfer / bisociation / random stimulus → cross-domain-discovery; assumption negation / reverse brainstorming / worst method → assumption-destruction; biomimicry / biological analogy / BioTRIZ → biomimicry; analogy / metaphor / excursion method → synectics; morphological analysis / Zwicky box / design space → morphological-exploration; PO / lateral thinking / concept fan → lateral-thinking; concept blending / blending / emergence → combinatorial-creativity; perspective switching / six hats / role-play → perspective-forcing; enumeration / coverage analysis / method matrix → systematic-enumeration.
+### DIRECTION
 
-**Skills:** see `references/creative-ideation.md`
+| Tactic | When to use |
+| --- | --- |
+| `map-research-landscape` | When fields or subfields must be compared by maturity, competition, barriers, and opportunity. |
+| `decompose-research-goal` | When a broad goal must become ordered, testable objectives and dependencies. |
 
-## deep-insight
+### EXPERIMENT
 
-Deep insight engine: from surface phenomena to root causes, boundaries, assumptions, and the problem itself. Five campaigns — gap-analysis, insight, boundary-analysis, sensitivity-analysis, problem-reformulation.
+| Tactic | When to use |
+| --- | --- |
+| `design-experiment` | When hypotheses need factors, variables, controls, measurements, and analysis plans. |
+| `analyze-future-scenarios` | When a design or strategy must be tested against plausible future conditions. |
+| `analyze-experiment-results` | When observations must be interpreted against the preregistered design and gates. |
 
-**Reach for it when:** gap identification / white-space classification / evidence map / prioritization → gap-analysis; root-cause analysis / stakeholders / tensions / HMW / 5 Whys → insight; validity boundaries / method failure / robustness / distribution shift → boundary-analysis; assumption ranking / sensitivity / variance decomposition / critical path → sensitivity-analysis; redefining the problem / dominant ideas / multiple perspectives / wicked problems → problem-reformulation.
+### HYPOTHESIS
 
-**Skills:** see `references/deep-insight.md`
+| Tactic | When to use |
+| --- | --- |
+| `formulate-hypotheses` | When observations or gaps must become structured, named, testable hypotheses. |
+| `falsifiability-audit` | When a hypothesis needs explicit disconfirmation conditions and observable consequences. |
+| `formulate-research-question` | When an intent must become a precise, bounded research question. |
+| `decompose-research-question` | When one question contains separable subquestions with distinct evidence needs. |
 
-## experiment-execution
+### IDEATION
 
-Experiment execution engine: from validated hypotheses/approaches through experiment design, constraint analysis, scenario planning, implementation planning, to actual execution and result collection. Four campaigns — experiment-design, constraint-analysis, scenario-planning, implementation-planning.
+| Tactic | When to use |
+| --- | --- |
+| `analogical-discovery` | When another domain may provide a transferable mechanism or design pattern. |
+| `destructive-ideation` | When assumptions should be inverted or deliberately broken to expose alternatives. |
+| `structural-transformation` | When an existing concept should be decomposed and recombined structurally. |
+| `coverage-white-space-search` | When the candidate space is incomplete and missing regions need systematic search. |
+| `resolve-inventive-contradiction` | When requirements conflict and a solution must preserve both sides. |
+| `biomimetic-transfer` | When biological functions or mechanisms may transfer to the target problem. |
+| `conceptual-blending` | When two or more concept spaces should be combined to produce emergent candidates. |
+| `evolve-solution-population` | When iterative variation and selection are more useful than one-shot ideation. |
 
-**Reach for it when:** experiment design / factors / variables / ablation / baseline comparison / statistical methods → experiment-design; bottleneck / constraint / insufficient resources / dependencies / conflicts → constraint-analysis; scenarios / future / robustness / worst case / competitors / timeline → scenario-planning; planning / execution / implementation / running experiments / result analysis / reproducibility → implementation-planning.
+### INSIGHT
 
-**Skills:** see `references/experiment-execution.md`
+| Tactic | When to use |
+| --- | --- |
+| `validate-research-gap` | When an alleged gap needs evidence, novelty, and boundary verification. |
+| `drill-root-causes` | When surface symptoms must be traced to mechanisms and contributing conditions. |
+| `assumption-stress-test` | When hidden assumptions may determine whether a conclusion survives. |
+| `robustness-analysis` | When conclusions must be checked across perturbations, alternatives, or distributions. |
+| `sensitivity-analysis` | When priority depends on which inputs or assumptions drive the result. |
+| `problem-reframing` | When the current problem statement may encode an unhelpful framing or boundary. |
+| `map-stakeholder-system` | When actors, incentives, dependencies, and tensions shape the research problem. |
 
-## hypothesis-formation
+### STRESS
 
-Goal-driven hypothesis & research-question formation engine: turns upstream gaps and insights into testable hypotheses and precise research questions. Three campaigns — gap-prioritization, hypothesis-formulation, research-question.
+| Tactic | When to use |
+| --- | --- |
+| `structured-red-team` | When an artifact needs organized attacks from distinct critical perspectives. |
+| `fmea-risk-analysis` | When failure modes should be enumerated, rated, and mitigated before execution. |
+| `counterfactual-causal-analysis` | When causal necessity or sufficiency must be tested by counterfactual changes. |
+| `reductio-counterexample-analysis` | When a claim can be challenged by deriving consequences or counterexamples. |
+| `falsification-first-audit` | When the fastest route to confidence is to seek decisive disconfirmation. |
+| `audit-structural-equivalence` | When two artifacts may be equivalent in structure despite different wording. |
+| `audit-validator-independence` | When a validator may share assumptions or evidence with the artifact it checks. |
+| `audit-convergence-independence` | When multiple routes to a conclusion may not be genuinely independent. |
+| `audit-explanatory-compression` | When a compact explanation may be hiding unsupported jumps or omitted variables. |
 
-**Reach for it when:** gap ranking / prioritization / which is worth doing / multi-dimensional scoring / portfolio → gap-prioritization; hypothesis generation / theoretical derivation / falsifiability / If-then / variables / mechanisms / competing hypothesis → hypothesis-formulation; research question / PICO / SPIDER / FINER / scope / sub-question decomposition / success criteria → research-question.
+### STRUCTURING
 
-**Skills:** see `references/hypothesis-formation.md`
+| Tactic | When to use |
+| --- | --- |
+| `build-domain-ontology` | When concepts and relations need a stable hierarchy and vocabulary. |
+| `construct-causal-model` | When variables, mechanisms, and causal dependencies need explicit structure. |
+| `construct-argument-map` | When claims, reasons, objections, and evidence need an inspectable argument graph. |
 
-## knowledge-acquisition
+## Output Contract
 
-Systematic research-knowledge acquisition engine: academic literature, patent landscapes, benchmark evaluations, cross-study statistical synthesis, and SOTA baselines. Five campaigns — literature-survey, patent-mining, benchmark-archaeology, meta-analysis, baseline-establishment.
+```yaml
+produces: [tactic_cards, selection_rationale, next_call]
+tactic_card_fields: [id, family, when_to_use, requires, produces, source_ref, next_call]
+```
 
-**Reach for it when:** literature review / survey / paper search / PRISMA / snowball → literature-survey; patent analysis / prior art / white space / claims / IPC → patent-mining; benchmark analysis / evaluation methods / metric flaws / leaderboards / saturation → benchmark-archaeology; cross-study statistical synthesis / effect size / heterogeneity / publication bias / GRADE → meta-analysis; SOTA compilation / performance comparison / baseline reproduction / progress curves → baseline-establishment.
+## Completion Criteria
 
-**Skills:** see `references/knowledge-acquisition.md`
+The response contains only valid tactic ids from the 51-item index, gives a reason for each selected card, and maps each card to its source body. No SOP is presented as a menu choice.
 
-## knowledge-structuring
+## Failure and Backtrack
 
-Knowledge-structuring engine: compiles findings into structured artifacts in the wiki vault. Four campaigns — ontology-building (concept hierarchies), causal-modeling (causal graphs), dimensional-analysis (design-space maps), argument-mapping (argument graphs).
+If the North Star or scope is too vague to select a tactic, return `NEEDS_CONTEXT` and list the missing fields. If no card meets the current gate, retain the Spec stage and report the mismatch; do not substitute a generic prompt or silently choose an unrelated tactic.
 
-**Reach for it when:** building a domain ontology — concept extraction, relation typing, taxonomy construction → ontology-building; identifying variables and mapping mechanisms into a causal graph → causal-modeling; discovering the dimensions/axes of a design space and enumerating combinations to find gaps → dimensional-analysis; extracting claims, linking evidence, assessing argument strength → argument-mapping.
+## Boundary
 
-**Skills:** see `references/knowledge-structuring.md`
-
-## north-star-crystallization
-
-Research intent crystallization engine: transforms vague research interests into precise, actionable North Star statements through structured dialogue, producing a North Star plus a structured ResearchBrief. One campaign with three strategies — cold-start, warm-start, hot-start — chosen by the user's existing clarity.
-
-**Reach for it when:** the research direction needs to be (re)crystallized — no direction at all → cold-start; a general direction but not specific → warm-start; a specific topic/problem needing structure → hot-start. Reach for it whenever the current direction feels fuzzy and you want to re-anchor before composing other packages.
-
-**Skills:** see `references/north-star-crystallization.md`
-
-## stress-test
-
-Research-artifact stress-testing engine: adversarially validates any artifact — hypotheses, claims, experiment designs, approaches, research questions, gaps, or ideas — until every claim survives or is annotated. Five campaigns — multiagent-debate, red-teaming, failure-anticipation, counterfactual-probing, adversarial-stress-testing.
-
-**Reach for it when:** adversarial debate / multi-perspective review → multiagent-debate; systematic attack / assumption challenge → red-teaming; failure-mode prediction / risk assessment → failure-anticipation; critical-dependency probing / causal necessity → counterfactual-probing; logical falsification / boundary testing → adversarial-stress-testing.
-
-**Skills:** see `references/stress-test.md`
+The catalog is a product-shell index. It is not a third graph layer and does not create edges or replace the tactic body as the authority for scientific contracts and SOP calls.

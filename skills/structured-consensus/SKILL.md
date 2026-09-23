@@ -1,126 +1,68 @@
 ---
 name: structured-consensus
-description: Structured Consensus Campaign — converge multiple perspectives into shared
-  agreement through iterative structured dialogue using Delphi variants, NGT, RAND/UCLA,
-  Consensus Conference methods.
-execution: campaign
-dependencies:
-  strategies:
-  - appropriateness-bounding
-  - argument-crystallization
-  - convergence-distillation
-  - disagreement-cartography
-  - futures-calibration
-  campaigns:
-  - convergence-multi-criteria-scoring
-  sops:
-  - context-checkpoint
-  - context-init
-  - convergence-multi-stakeholder-simulation
-  - convergence-saturation-detection
+description: "Map disagreement, iterate evidence/argument refinement, and terminate with an output contract containing stable consensus, unresolved disagreements, confidence/probabilities, and threshold/stop rationale."
 ---
 
-# Structured Consensus
+# structured-consensus
 
-Converge multiple independent perspectives into shared agreement through iterative structured dialogue. This campaign orchestrates Delphi variants, Nominal Group Technique, RAND/UCLA Appropriateness Method, and Consensus Conference protocols to systematically reduce disagreement while preserving legitimate dissent.
+## Purpose
 
-## Strategy Routing
+Map disagreement, iterate evidence/argument refinement, and terminate with an output contract containing stable consensus, unresolved disagreements, confidence/probabilities, and threshold/stop rationale.
 
-| Signal | Strategy |
-|--------|----------|
-| Iterative convergence to single answer / establish guidelines / determine threshold | convergence-distillation |
-| Map disagreement structure / wicked problems / value conflicts | disagreement-cartography |
-| Aggregate probability judgments / technology timeline / market forecast | futures-calibration |
-| Establish acceptability standards / medical guidelines / regulatory standards | appropriateness-bounding |
-| Distill strongest arguments / policy deliberation / interdisciplinary dispute | argument-crystallization |
+## Input contract
 
-## Manifest
+```yaml
+required: [judgment_records, evidence_records, stopping_rule]
+optional: [assumptions, prior_findings, evidence_updates]
+constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
+```
 
-### Strategies
+## Execution protocol
 
-| Strategy | Method Family | Purpose |
-|----------|--------------|---------|
-| convergence-distillation | Classic Delphi, Modified Delphi, NGT | Iterative convergence to single answer |
-| disagreement-cartography | Policy Delphi, Argument Delphi, SAST | Map disagreement structure |
-| futures-calibration | Real-Time Delphi, Prediction Markets | Aggregate probability judgments |
-| appropriateness-bounding | RAND/UCLA Appropriateness, Consensus Conference | Establish acceptability standards |
-| argument-crystallization | Argument Delphi, Dialectical Delphi | Distill strongest arguments |
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
 
-### Tactics
+1. You MUST load skill `map-disagreement` to map substantive disagreement and shared premises.
+2. You MUST load skill `run-convergence-round` to run the declared convergence round.
+3. You MUST load skill `calibrate-probability-forecast` to calibrate probability forecasts.
+4. You MUST load skill `set-threshold` to set the stopping and acceptance thresholds.
+   If agreement cannot be acted on because readiness is uncertain, consider `analyze-constraints-readiness`. If apparent convergence may share evidence, priors, or methods, consider `audit-convergence-independence`.
 
-| Tactic | Purpose | SOPs |
-|--------|---------|------|
-| iterative-convergence-round | Collect → feedback → revise → check → decide | judgment-collection, feedback-distribution, consensus-measurement, round-decision |
-| disagreement-mapping | Collect → cluster → extract arguments → visualize | judgment-collection, cluster-analysis, argument-extraction, disagreement-visualization |
-| threshold-calibration | Adjust thresholds → observe consensus changes | threshold-sweep, consensus-classification, consensus-measurement |
+Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
-### SOPs
+## Output contract
 
-| SOP | Input | Output |
-|-----|-------|--------|
-| judgment-collection | question, perspectives[] | judgments[] |
-| feedback-distribution | judgments[], round_n | feedback_report |
-| consensus-measurement | judgments[] | consensus_score, method_used |
-| round-decision | consensus_score, round_n, stability | continue/stop |
-| cluster-analysis | judgments[] | clusters[], cluster_characterization[] |
-| argument-extraction | cluster, judgments[] | arguments[] |
-| disagreement-visualization | clusters[], arguments[] | disagreement_map |
-| threshold-sweep | judgments[], threshold_range | threshold_curve |
-| consensus-classification | judgments[], threshold | consensus_items[], dissensus_items[] |
-| consensus-synthesis | rounds_history, final_judgments | consensus_report |
+```yaml
+produces: [consensus_report, unresolved_disagreements, confidence_summary]
+delta_fields: [findings, decisions]
+```
 
-## Budget Table (M Tier)
+## Thresholds and quality gates
 
-| Parameter | Constraint |
-|-----------|-----------|
-| Perspectives/experts | >=4 independent perspectives |
-| Iteration rounds | 2-4 rounds (until consensus threshold or stability) |
-| Consensus threshold | >=70% agreement or IQR <= 1 |
-| Dissent documentation | All non-consensus items must document reasons |
+- Each output is traceable to an input object, operation, and evidence reference.
+- Scope, assumptions, and unresolved alternatives remain explicit.
+- Retain $\alpha$ 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
-## MCP Tools
+## Failure and counterexamples
 
-- `mcp__semantic-scholar__relevanceSearch` — find methodological references
-- `mcp__wiki-vault__vault_search` — retrieve prior consensus results from vault
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
-## Context Management
+## Provenance map
 
-- Each round's judgments are stored in state and passed forward
-- Feedback reports summarize prior round without exposing individual identities
-- Final synthesis aggregates all rounds into a single consensus report
-- Non-consensus items are explicitly documented with dissent rationale
+- resolved: structured-consensus
+- resolved: convergence-distillation
+- resolved: disagreement-cartography
+- resolved: argument-crystallization
+- resolved: disagreement-mapping
+- resolved: iterative-convergence-round
 
-<!-- BEGIN available-tables (generated) -->
+## Preserved source criteria ledger
 
-## Available Strategies
+| source | criterion | treatment |
+|---|---|---|
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
+| experiment-execution/statistical-testing | $\alpha$ = 0.05 | fixed value retained where applicable |
+| experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
-Optional, no fixed order; the final leaf is always a sop.
+## Context checkpoint / Delta notes
 
-| Strategy | When to use |
-| --- | --- |
-| appropriateness-bounding | Establish acceptability standards through RAND/UCLA Appropriateness Method or Consensus Conference protocols. |
-| argument-crystallization | Distill the strongest arguments from each perspective through Argument Delphi or Dialectical Delphi methods. |
-| convergence-distillation | Iterative convergence to a single answer through Classic Delphi, Modified Delphi, or Nominal Group Technique rounds. |
-| disagreement-cartography | Map the structure of disagreement across perspectives using Policy Delphi, Argument Delphi, or SAST methods. |
-| futures-calibration | Aggregate probability judgments across perspectives using Real-Time Delphi or prediction market mechanisms. |
-
-## Available SOPs
-
-Optional, no fixed order; the final leaf is always a sop.
-
-| SOP | When to use |
-| --- | --- |
-| context-checkpoint | Append research process and results to the current Phase's context file. Covers both process and results with genuine substance. Use this skill at plan-designated checkpoint points — typically after each strategy completes or at key decision nodes within a research Phase. |
-| context-init | Create a new context file for a research Phase. Called once at Phase start to initialize the file that subsequent context-checkpoint calls will append to. Use this skill whenever a new research Phase begins and a fresh context file is needed. |
-| convergence-multi-stakeholder-simulation | Simulates diverse stakeholder perspectives and their strongest objections/support arguments. Shared across steel-manning and consensus campaigns. |
-| convergence-saturation-detection | Determines when to stop iterating — coverage threshold met or marginal returns diminishing. Shared across all campaigns. |
-
-## Available Campaigns
-
-Optional, no fixed order; the final leaf is always a sop.
-
-| Campaign | When to use |
-| --- | --- |
-| convergence-multi-criteria-scoring | Multi-Criteria Scoring Campaign — evaluate and rank candidates against multiple weighted criteria using AHP, BWM, TOPSIS, VIKOR, ELECTRE, PROMETHEE, MAUT methods. |
-
-<!-- END available-tables (generated) -->
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

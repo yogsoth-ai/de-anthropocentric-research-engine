@@ -1,46 +1,38 @@
 ---
 name: identify-obstacles
-description: Enumerate barriers to pursuing the chosen research direction — knowledge
-  barriers, resource barriers, capability barriers, competition barriers. May optionally
-  use search tools to discover obstacles the user hasn't mentioned.
-execution: subagent
-prompt: ./prompt.md
-input: chosen_direction (string), actor_profile (string), ranked_candidates (string)
-dependencies:
-  sops:
-  - spawn-agent
+description: "Enumerate obstacles that block a target goal/direction, with type, evidence, and blocking relation."
 ---
 
-# Identify Obstacles
+# identify-obstacles
+## Purpose
+Enumerate obstacles blocking a target goal or direction, with evidence and blocking relations.
+## Input contract
+```yaml
+required: [target_goal, current_state, domain_context]
+optional: [timeline, resource_inventory, prior_failures]
+constraints: [each obstacle has type, evidence, and blocking relation]
+```
+## Procedure
+1. Compare target requirements with current capabilities and constraints.
+2. Enumerate technical, evidential, resource, temporal, and dependency obstacles.
+3. Link each obstacle to blocked outcomes and supporting evidence.
+4. Return severity, uncertainty, and candidate removal questions.
 
-Enumerate all barriers between the user and their chosen direction.
+If obstacles have comparable evidence, severity, and tractability fields, consider `score-object` as the next tactic.
 
-## Execution
-
-Subagent — spawned via `subagent-spawning/spawn-agent` skill.
-
-## Input
-
-- Chosen research direction
-- ActorProfile
-- RankedCandidates context
-
-## Search
-
-Optional — may use web-search, web-research, literature-overview, literature-search, literature-research to discover obstacles the user hasn't mentioned.
-
-## Output
-
-Categorized list of obstacles (knowledge / resource / capability / competition).
-
-<!-- BEGIN available-tables (generated) -->
-
-## Available SOPs
-
-Optional, no fixed order; the final leaf is always a sop.
-
-| SOP | When to use |
-| --- | --- |
-| spawn-agent | Spawn a customized CC subagent with full MCP tool access. Used by SOPs that declare execution: subagent. |
-
-<!-- END available-tables (generated) -->
+## Output contract
+```yaml
+produces: [obstacle_register, blocking_relations, evidence_links, removal_questions]
+delta_fields: [findings, uncertainties, open_questions]
+```
+## Quality gates
+- Every listed obstacle has a blocking relation and evidence or an explicit uncertainty label.
+- Duplicate obstacles are merged only when mechanism and remedy coincide.
+- Obstacles are separated from symptoms and desired outcomes.
+## Parameterization
+Caller supplies goal schema, obstacle taxonomy, evidence fields, severity scale, and merge policy.
+## Failure and counterexamples
+Reject generic risks, unsupported blockers, or lists with no relation to the target goal.
+## Provenance map
+- concept: north-star-crystallization/identify-obstacles
+- concept: experiment-execution/obstacle-identification

@@ -1,81 +1,63 @@
 ---
 name: falsifiability-audit
-description: 'Tactic: hypothesis quality assurance — check falsifiability, repair
-  failing hypotheses, complete operationalization and boundary-condition specification'
-version: 1.0.0
-category: hypothesis-formation
-type: tactic
-campaign: hypothesis-formulation
-sops:
-- falsifiability-check
-- operationalization
-- boundary-condition-specification
-dependencies:
-  sops:
-  - boundary-condition-specification
-  - falsifiability-check
-  - operationalization
+description: "Gate a hypothesis on falsifiability, operational definition, and boundary conditions; can be entered from any hypothesis-generation path."
 ---
 
-# Falsifiability Audit
+# falsifiability-audit
 
-Hypothesis quality assurance — check each hypothesis in the set for falsifiability, repair failing hypotheses, complete operational definitions, and specify boundary conditions, ensuring every hypothesis can be tested by experiment or observation.
+## Purpose
 
-## Orchestration Intent
+Gate a hypothesis on falsifiability, operational definition, and boundary conditions; can be entered from any hypothesis-generation path.
 
-The final gate of hypothesis formation. No matter how good the theoretical foundation, if the resulting hypotheses cannot be falsified, they are not scientific hypotheses. This tactic's job is "quality control," not "generation": the input is a set of existing hypothesis candidates, and the output is the proof document that each hypothesis has passed QC.
+## Input contract
 
-The three SOPs form a pipeline: falsifiability-check identifies problems → operationalization converts variables into measurable form → boundary-condition-specification delimits the range within which the hypothesis holds. No step skipping is allowed, and advancing directly when falsifiability-check fails is not allowed.
+```yaml
+required: [hypothesis, operational_definition, boundary_conditions]
+optional: [assumptions, prior_findings, evidence_updates]
+constraints: [consume named scientific objects; preserve provenance; keep unresolved uncertainty visible]
+```
 
-## Available SOPs
+## Execution protocol
 
-| SOP | Responsibility | When to call |
-|-----|------|---------|
-| falsifiability-check | Run a falsifiability check on each hypothesis, identify unfalsifiable hypotheses, and propose fixes | Required in all modes, executed first; if any hypothesis fails, iterate the fix and re-check |
-| operationalization | Provide operational definitions for each hypothesis's variables — how to measure, with what instrument, under what conditions | Required in all modes, executed after falsifiability-check passes |
-| boundary-condition-specification | Specify the preconditions, scope of applicability, and known limitations under which the hypothesis holds | Required in all modes, executed last |
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
 
-## Orchestration Pattern
+1. You MUST load skill `evaluate-falsifiability` to evaluate the claim's reachable falsifiers.
+2. You MUST load skill `operationalize-construct` to operationalize every construct used by the claim.
+3. You MUST load skill `specify-boundaries` to state the scope and boundary conditions.
+   If the audit exposes an ill-formed question, consider `formulate-research-question`. If the claim is ready for an empirical test, consider `design-experiment`. If a broader falsification program is required, `falsification-first-audit` may be the better next tactic.
 
-**Simplified (S tier, ≤3 hypotheses)**
-- Sequential execution: falsifiability-check → operationalization → boundary-condition-specification
-- If any hypothesis fails falsifiability-check, CC immediately repairs and re-checks it (at most 2 iterations)
-- Suited to: few hypotheses, expected to be of higher quality
+Deviation: reorder only when a dependency is already satisfied or unavailable; record the reason and confidence effect.
 
-**Standard (M tier, 4-6 hypotheses)**
-- falsifiability-check runs in batch over all hypotheses, compiling a failure list; CC repairs in batch; re-check the repaired hypotheses
-- operationalization and boundary-condition-specification run in series
-- Suited to: medium-sized hypothesis sets needing systematic QC
+## Output contract
 
-**Deep (L tier, ≥7 hypotheses)**
-- All 3 SOPs run; falsifiability-check additionally outputs the "strongest counterexample scenario" for each hypothesis; operationalization additionally requires ≥2 measurement methods per variable (primary + alternative); boundary-condition-specification additionally requires listing known exceptions
-- Suited to: large hypothesis sets needing production-grade quality assurance
+```yaml
+produces: [falsifiability_verdict, operational_definition, boundary_conditions]
+delta_fields: [findings, decisions]
+```
 
-## Minimum Yield
+## Thresholds and quality gates
 
-- Every input hypothesis has passed falsifiability-check (or has been repaired until it passes)
-- Every variable of every hypothesis has an operational definition (including measurement instrument/method)
-- Every hypothesis has explicit boundary conditions (the preconditions under which it holds + the situations where it does not apply)
-- A complete QC record: which hypotheses passed on the first try, which passed after repair, and what the repairs were
+- Each output is traceable to an input object, operation, and evidence reference.
+- Scope, assumptions, and unresolved alternatives remain explicit.
+- Retain $\alpha$ 0.05 and power 0.8 wherever the predeclared statistical design requires them.
 
-## Yield Report
+## Failure and counterexamples
 
-After execution, report to the calling strategy:
-- Number of input hypotheses / first-pass count / post-repair pass count / final fail count
-- The most common type of falsifiability problem (to help the upstream strategy improve hypothesis generation)
-- Operationalization difficulty: which variables are hard to measure (requiring special instruments or datasets)
-- Boundary-condition coverage: which hypotheses have a narrow scope of applicability (high risk, easily overturned by counterexamples)
+Stop synthesis when a required object is absent, a precondition is violated, or a counterexample invalidates the proposed conclusion; return the partial delta with the failure recorded.
 
-<!-- BEGIN available-tables (generated) -->
+## Provenance map
 
-## Available SOPs
+- resolved: falsifiability-audit
+- resolved: hypothesis-operationalization
 
-Optional, no fixed order; the final leaf is always a sop.
+## Preserved source criteria ledger
 
-| SOP | When to use |
-| --- | --- |
-| boundary-condition-specification | SOP: Specify the boundary conditions under which a hypothesis holds |
-| falsifiability-check | SOP: check whether a hypothesis meets the falsifiability criterion |
-| operationalization | SOP: operationalize abstract concepts into measurable indicators and methods |
+| source | criterion | treatment |
+|---|---|---|
+| resolved v3 entries above | node-specific criteria | retained and specialized to the v4 object contract |
+| experiment-execution/statistical-testing | $\alpha$ = 0.05 | fixed value retained where applicable |
+| experiment-execution/sample-size-estimation | power = 0.8 | fixed value retained where applicable |
 
-<!-- END available-tables (generated) -->
+## Context checkpoint / Delta notes
+
+Return the node-specific research-state delta and preserve findings, evidence updates, uncertainties, decisions, open questions, and recommended jumps as applicable.

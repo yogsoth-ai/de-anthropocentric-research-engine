@@ -1,59 +1,40 @@
 ---
 name: assumption-stress-test
-description: Systematic stress testing of assumptions — surface, classify by vulnerability,
-  attack, assess fragility. Combines assumption-surfacing (shared), abp-vulnerability-classification,
-  and clr-validation SOPs.
-execution: tactic
-dependencies:
-  sops:
-  - abp-vulnerability-classification
-  - clr-validation
-  - deep-insight-assumption-surfacing
-  - deep-insight-paper-research
+description: "Surface load-bearing assumptions, classify vulnerability, challenge or perturb them, and re-check causal logic."
 ---
 
-# Assumption Stress Test
-
-Systematically stress-test assumptions to find dangerous ones.
-
-## Operations
-
-- assumption-surfacing (shared) — extract all implicit assumptions
-- abp-vulnerability-classification — classify by load-bearing × vulnerable
-- clr-validation — validate causal logic of critical assumptions
-
-## Available SOPs
-
-**Shared:** assumption-surfacing
-**Subagent:** abp-vulnerability-classification, clr-validation
-**Import:** paper-research
-
-## Execution Guidance
-
-Surface all assumptions (shared SOP). Classify each by load-bearing × vulnerable matrix. Validate causal logic of most critical assumptions (High-Load × High-Vulnerable quadrant).
-
-## Minimum Yield
-
+# assumption-stress-test
+## Purpose
+Expose load-bearing assumptions, classify their vulnerability, perturb them, and re-check causal validity.
+## Input contract
+```yaml
+required: [claim_or_model, assumptions]
+optional: [evidence, causal_graph, perturbation_bounds]
+constraints: [each assumption must be traceable to a claim or causal link]
 ```
-<HARD-GATE>
-- assumptions surfaced: >= 5
-- vulnerability classifications: >= 5
-- CLR validations on critical assumptions: >= 2
-- dangerous assumptions identified: >= 1
-</HARD-GATE>
+## Execution protocol
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `surface-assumptions` to surface load-bearing assumptions.
+2. You MUST load skill `classify-assumption-vulnerability` to classify their vulnerability.
+3. You MUST load skill `challenge-assumption` to challenge each material assumption.
+4. You MUST load skill `apply-perturbation` to apply bounded perturbations.
+5. You MUST load skill `validate-causal-link` to re-check affected causal links.
+   If the surviving result requires broader model and scaling variants, consider `robustness-analysis` as the next tactic.
+Deviation: omit perturbation only when the assumption is purely definitional; still record and classify it.
+## Output contract
+```yaml
+produces: [assumption_register, vulnerability_map, perturbation_results, causal_recheck]
+delta_fields: [findings, assumption_updates, uncertainties, decisions, open_questions]
 ```
-
-<!-- BEGIN available-tables (generated) -->
-
-## Available SOPs
-
-Optional, no fixed order; the final leaf is always a sop.
-
-| SOP | When to use |
-| --- | --- |
-| abp-vulnerability-classification | Classify assumptions on 2 axes — load-bearing (how much conclusion depends on it) × vulnerable (how likely to be false). Focuses attention on High-Load × High-Vulnerable quadrant. |
-| clr-validation | Apply Goldratt's 8 Categories of Legitimate Reservation to validate causal claims. Tests clarity, existence, sufficiency, and logical integrity. |
-| deep-insight-assumption-surfacing | Systematically extract implicit assumptions from methods, frameworks, or arguments. Identifies what is taken for granted without explicit justification. |
-| deep-insight-paper-research | Full-text paper reading via three-pass Keshav method. Import of literature-engine/literature-research skill. Authoritative source for claims about paper content. |
-
-<!-- END available-tables (generated) -->
+## Thresholds and quality gates
+- B: all load-bearing assumptions are classified; every challenged assumption has a perturbation or explicit non-perturbability reason; causal links are rechecked.
+## Failure and counterexamples
+Do not call a model robust when an untested high-vulnerability assumption carries the conclusion or when perturbation bounds are unstated.
+## Provenance map
+- `assumption-audit`, `assumption-stress-test`, `assumption-criticality`, `assumption-perturbation`: resolved/concept according to exact v3 lookup; no near-name substitution.
+- Status: `assumption-audit`, `assumption-stress-test`, `assumption-criticality` resolved; `assumption-perturbation` concept (only package-prefixed variants found).
+## Preserved source criteria ledger
+- Preserve assumption surfacing, vulnerability classification, perturbation, and causal-link validation.
+## Context checkpoint / Delta notes
+Append changed assumptions, perturbation deltas, causal failures, and unresolved questions.

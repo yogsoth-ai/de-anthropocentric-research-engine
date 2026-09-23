@@ -1,0 +1,52 @@
+---
+name: biomimetic-transfer
+description: "Reframe a problem in biological functional terms, discover organisms/systems solving analogous functions, extract the causal biological strategy, and transfer the mechanism back into the target domain."
+---
+
+# biomimetic-transfer
+## Purpose
+Translate a target problem into biological functions, find analogous living systems, extract causal strategies, and transfer them back.
+## Input contract
+```yaml
+mode_contracts:
+  biologize-and-discover: &biomimetic_input
+    required: [target_problem, target_function]
+    optional: [biological_search_space, compatibility_constraints]
+    constraints: [function_must_be_stated_independently_of_the_target_implementation]
+  BioTRIZ: *biomimetic_input
+```
+## Execution protocol
+
+Do not perform called SOP operations inline; each loaded SOP owns its contract and thresholds.
+
+1. You MUST load skill `biologize-problem` to biologize the problem.
+2. You MUST load skill `discover-biological-analog` to discover biological analogs.
+3. You MUST load skill `extract-biological-strategy` to extract the causal strategy.
+4. You MUST load skill `instantiate-transfer` to instantiate the target transfer.
+5. You MUST load skill `evaluate-compatibility` to check compatibility.
+   If a viable transfer requires composing mechanisms from multiple biological analogs rather than applying one causal strategy, consider `conceptual-blending` as the next tactic.
+Deviation: BioTRIZ mode may branch during strategy extraction, but all five checks remain required.
+## Mode branches
+- `biologize-and-discover`: translate function, search biological analogs, then extract mechanism.
+- `BioTRIZ`: use biological contradiction/principle framing during strategy extraction before transfer.
+## Output contract
+```yaml
+mode_contracts:
+  biologize-and-discover:
+    produces: [biological_question, biological_candidate_set, biological_strategies, design_principles, technical_solutions]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+  BioTRIZ:
+    produces: [contradiction, biotriz_principles, biological_case_mapping, biological_strategies, design_principles, technical_solutions]
+    delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_questions]
+```
+## Thresholds and quality gates
+- B: analogs solve the same function; strategy includes mechanism and conditions; target compatibility is explicit.
+## Failure and counterexamples
+Reject organism-by-appearance analogies, transfers without mechanism, and proposals violating target constraints.
+## Provenance map
+- `creative-ideation/biomimicry`, `biologize-and-discover`, `biotriz`, `biological-analogy`: resolved/concept only when exact v3 node is found.
+- Status: `creative-ideation/biomimicry`, `biologize-and-discover` resolved; `biotriz`, `biological-analogy` concept.
+## Preserved source criteria ledger
+- Preserve biologize -> discover -> extract strategy -> transfer workflow and BioTRIZ branching.
+## Context checkpoint / Delta notes
+Append function translation, analog evidence, mechanism, transfer assumptions, and compatibility failures.
