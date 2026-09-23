@@ -12,6 +12,8 @@ output: 'finer_appraisal (dict — feasible, interesting, novel, ethical, releva
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Research Question Appraisal

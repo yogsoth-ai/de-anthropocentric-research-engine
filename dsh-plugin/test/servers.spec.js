@@ -16,7 +16,10 @@ const fullEnv = {
 }
 
 describe('MCP fleet', () => {
-  it('mirrors the seven servers in mcp.example.json', () => {
+  // `mcp.example.json` also offers `you` (You.com, keyless). It is deliberately
+  // not in the fleet: the template is opt-in per user, whereas a requiredEnv-free
+  // fleet entry would open an outbound connection for every plugin user.
+  it('carries the seven fleet servers', () => {
     assert.deepEqual(
       SERVERS.map((s) => s.serverName),
       ['alphaxiv', 'keenable', 'semantic-scholar', 'brave-search', 'tavily-search', 'wiki-vault', 'apify'],

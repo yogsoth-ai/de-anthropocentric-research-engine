@@ -11,6 +11,8 @@ output: 'label (string: "SUPPORTS" | "REFUTES" | "NOINFO")'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Claim Label Prediction

@@ -12,6 +12,8 @@ output: 'filled_template (dict — attribute name to value or null+reason)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Template Slot Filling

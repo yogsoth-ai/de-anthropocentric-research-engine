@@ -12,6 +12,8 @@ output: 'signalling_answers (list of {domain, question, answer})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Signalling Question Answering

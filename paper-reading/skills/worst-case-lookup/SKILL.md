@@ -11,6 +11,8 @@ output: 'overall_judgment (string), which_algorithm (string)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Worst Case Lookup

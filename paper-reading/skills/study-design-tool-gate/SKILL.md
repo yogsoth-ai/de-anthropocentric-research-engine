@@ -12,6 +12,8 @@ output: 'study_design (string), dispatched_tool (string), applicability_reasonin
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Study Design Tool Gate

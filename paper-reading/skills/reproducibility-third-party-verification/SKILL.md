@@ -11,6 +11,8 @@ output: 'verification_result (list of {claim, reproducible, notes})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Reproducibility Third-Party Verification (Proposal)

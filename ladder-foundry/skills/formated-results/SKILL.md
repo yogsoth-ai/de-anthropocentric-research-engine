@@ -1,6 +1,8 @@
 ---
 name: formated-results
 description: Closing skill for the research-executor, loaded as the last step of formated-specs. Summarize the design just produced into one research-result JSON fenced block in your reply. Do not execute the research.
+metadata:
+  internal: true
 ---
 
 # formated-results

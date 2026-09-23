@@ -11,6 +11,8 @@ output: 'recall_score (float) OR {v_strict, a_strict, run_rank} depending on whi
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Atomic Unit Recall Aggregate

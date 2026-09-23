@@ -11,6 +11,8 @@ output: 'total_stars (integer), nos_grade (string: "good" | "fair" | "poor")'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Sum Threshold Scoring

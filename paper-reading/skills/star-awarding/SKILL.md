@@ -12,6 +12,8 @@ output: 'star_results (list of {item, stars_awarded})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Star Awarding

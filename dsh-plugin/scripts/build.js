@@ -1,7 +1,7 @@
 /**
  * Regenerate `payload/skills` from the repository skill library.
  *
- * Mirrors `cli/scripts/build.js`. Runs on `prepublishOnly` so a published
+ * Runs on `prepublishOnly` so a published
  * tarball always carries the library that matched its commit; `payload/` is
  * gitignored and never hand-edited.
  *

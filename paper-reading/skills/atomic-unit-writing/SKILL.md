@@ -12,6 +12,8 @@ output: 'atomic_units (list of {text, importance})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Atomic Unit Writing

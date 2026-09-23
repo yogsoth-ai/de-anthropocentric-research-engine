@@ -12,6 +12,8 @@ output: 'skim_notes (string), read_deeper (boolean)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # First Pass Skim

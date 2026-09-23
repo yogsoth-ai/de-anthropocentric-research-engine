@@ -12,6 +12,8 @@ output: 'checklist_result (list of {item, sub_item, judgment, location})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Reporting Standard Checklist

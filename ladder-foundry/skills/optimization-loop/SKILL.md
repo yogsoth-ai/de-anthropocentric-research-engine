@@ -1,6 +1,8 @@
 ---
 name: optimization-loop
 description: The optimizer brain for the ladder-foundry pretraining loop. Runs the two-level nested batch loop, delegates gating to gate_eval, attributes a failing batch to one weight (attribute-first), and recovers from disk after compaction. Control flow is fully scripted; only the backprop attribution is a judgment call.
+metadata:
+  internal: true
 ---
 
 # optimization-loop

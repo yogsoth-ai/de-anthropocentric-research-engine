@@ -11,6 +11,8 @@ output: 'match_results (list of {unit_text, judgment})'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Atomic Unit Matching

@@ -11,6 +11,8 @@ output: 'domain_judgments (list of {domain, judgment} or, for QUADAS-2, {domain,
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Domain Level Judgment

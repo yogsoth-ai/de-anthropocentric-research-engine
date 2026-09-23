@@ -12,6 +12,8 @@ output: 'rationale_sentences (list of strings, 0-3 items)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Rationale Selection

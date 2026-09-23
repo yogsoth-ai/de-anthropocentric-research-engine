@@ -11,6 +11,8 @@
 
 # De-Anthropocentric Research Engine (DARE)
 
+[![Plugin Security Scan](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/actions/workflows/plugin-security-scan.yml/badge.svg)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/actions/workflows/plugin-security-scan.yml)
+
 *The complete research orchestration system for AI-native science.*
 
 - [What It Does](#-what-it-does)
@@ -257,6 +259,7 @@ de-anthropocentric-research-engine/
 | **brave-search** | `@brave/brave-search-mcp-server` | stdio | Web search, news search, local search, LLM context |
 | **tavily-search** | `tavily-mcp` | stdio | Web search optimized for LLMs (opt-in alternative to Brave Search) |
 | **keenable** | — | http | Web search + page fetch, keyless by default (no API key; hosted remote server) |
+| **you** | — | http | Web search, keyless free profile (no API key; hosted remote server). Available in the template; not yet used by any SOP — see below |
 | **apify** | `@apify/actors-mcp-server` | stdio | Full-page web scraping, Google Scholar |
 | **alphaxiv** | — | http | arXiv paper search, Q&A, PDF queries, code exploration |
 
@@ -293,75 +296,136 @@ Plus the infrastructure that every package draws on:
 
 Requires Node.js 22 or newer.
 
-1. Clone and install dependencies:
+### Any agent — `skills` (recommended)
 
-   ```bash
-   git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
-   cd de-anthropocentric-research-engine
-   npm install
-   ```
+DARE is a plain [Agent Skills](https://agentskills.io) library, so
+[`skills`](https://github.com/vercel-labs/skills) installs it into whichever
+coding agent you use. Run this from **your own project directory**:
 
-2. Pick your runtime.
+```bash
+npx skills add yogsoth-ai/de-anthropocentric-research-engine
+```
 
-### Codex
+It detects the agents you have installed and prompts you to pick if it finds
+none. Skills are symlinked to a single canonical copy by default, so one
+`npx skills update` refreshes every agent at once.
 
-1. Install the DARE project instructions and knowledge base from this clone:
+```bash
+# Choose the agents explicitly
+npx skills add yogsoth-ai/de-anthropocentric-research-engine -a claude-code -a cursor -a opencode
 
-   ```bash
-   # Install into this repository
-   ./install/codex.sh
+# Install for your user instead of this project
+npx skills add yogsoth-ai/de-anthropocentric-research-engine -a claude-code -g
 
-   # Or install DARE into another project
-   ./install/codex.sh --target /path/to/your/project
-   ```
+# See the catalogue without installing (920 skills)
+npx skills add yogsoth-ai/de-anthropocentric-research-engine --list
 
-   Windows PowerShell:
+# Take the whole library without being prompted per skill
+npx skills add yogsoth-ai/de-anthropocentric-research-engine -a claude-code -s '*' -y
+```
 
-   ```powershell
-   .\install\codex.ps1
-   .\install\codex.ps1 --target C:\path\to\your\project
-   ```
+> Use `-s '*'` for the whole library, not `--all` — `--all` means *every skill
+> into every agent it detects*, which ignores your `-a` choices. Installing 920
+> skills takes a minute or two, and noticeably longer on Windows.
 
-   The installer creates or updates a marked DARE section in the target project's `AGENTS.md` without replacing its other project instructions. That section directs Codex to treat `.dare/skills` as an on-demand research knowledge base, read the DARE orchestrator first, and follow YAML `dependencies` as the authoritative call graph. It does not install a `.agents/skills` adapter or register all DARE files as Codex-discovered skills.
+Where the skills land:
 
-   - Default behavior copies the DARE knowledge base into `.dare/skills`, so the target project still works if this clone is deleted.
-   - Use `--link` only when you explicitly want `.dare/skills` to point back to this clone.
-   - Re-running the installer updates only the marked DARE block in `AGENTS.md`; existing instructions outside that block are preserved.
-   - Use `--dry-run` to preview changes.
-   - MCP is not configured by this installer; add Codex MCP servers later in `.codex/config.toml` if needed.
+| `-a` flag | This project | Your user (`-g`) |
+| --------- | ------------ | ---------------- |
+| `claude-code` | `.claude/skills/` | `~/.claude/skills/` |
+| `cursor` | `.agents/skills/` | `~/.cursor/skills/` |
+| `opencode` | `.agents/skills/` | `~/.config/opencode/skills/` |
+| `cline` | `.agents/skills/` | `~/.agents/skills/` |
+| `pi` | `.pi/skills/` | `~/.pi/agent/skills/` |
+| `openclaw` | `skills/` | `~/.openclaw/skills/` |
 
-2. Ask Codex to use DARE for a research task:
+`skills` supports [75+ agents](https://github.com/vercel-labs/skills#supported-agents)
+beyond these — the whole library is `SKILL.md` files, so anything that reads the
+Agent Skills format works.
 
-   ```text
-   Use DARE to turn this research direction into an executable Research Spec: ...
-   ```
+> **OpenClaw:** its project path is `skills/` with no leading dot, which collides
+> with this repository's own `skills/` directory. Install from your project, not
+> from a DARE clone. `-g` avoids the question entirely.
 
-### Claude Code
+Then jump to [external dependencies and invocation](#external-dependencies-and-invocation).
 
-1. Copy `mcp.example.json` to `.mcp.json` and fill in your API keys:
+### Codex — use the clone-based installer
 
-   ```bash
-   cp mcp.example.json .mcp.json
-   ```
+Codex cannot enumerate this library. Its skill listing budget is 2% of the
+context window, or 8,000 characters when the window is unknown, and it
+[silently omits skills past that](https://developers.openai.com/codex/skills).
+DARE's catalogue is ~135,000 characters of names and descriptions — 17× over —
+so installing into `.agents/skills/` would drop most of the library without
+telling you.
 
-2. Install the skills so Claude Code can discover them. Skills are auto-discovered from a `.claude/skills/` directory — there is no `settings.json` path option. Copy (or symlink) every skill into your project's `.claude/skills/` (or the user-level `~/.claude/skills/`):
+Instead, `install/codex.sh` keeps the skills **out** of the discovery path and
+points Codex at them on demand, which costs nothing against that budget:
 
-   ```bash
-   # macOS / Linux — copy
-   mkdir -p .claude/skills && cp -R skills/* .claude/skills/
+```bash
+git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
+cd de-anthropocentric-research-engine
 
-   # macOS / Linux — symlink instead (keeps a single source of truth)
-   mkdir -p .claude/skills
-   for dir in skills/*/; do ln -s "$(pwd)/$dir" ".claude/skills/$(basename "$dir")"; done
-   ```
+# Install into another project
+./install/codex.sh --target /path/to/your/project
 
-   ```powershell
-   # Windows PowerShell — copy
-   New-Item -ItemType Directory -Force .claude\skills | Out-Null
-   Copy-Item -Recurse skills\* .claude\skills\
-   ```
+# Or into this clone
+./install/codex.sh
+```
 
-3. Install the required external dependencies. Two packages call skills that
+```powershell
+# Windows PowerShell
+.\install\codex.ps1 --target C:\path\to\your\project
+```
+
+The installer writes a marked DARE block into the target's `AGENTS.md` without
+touching your other project instructions, and copies the knowledge base into
+`.dare/skills/` so the target keeps working if this clone is removed.
+
+- `--link` points `.dare/skills` back at this clone instead of copying.
+- `--dry-run` previews every change.
+- Re-running updates only the marked block.
+- MCP is not configured here; add servers in `.codex/config.toml` if you want them.
+
+Making Codex a first-class harness needs a skill-loading mechanism rather than
+an installer — tracked in [#30](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/issues/30).
+
+Then ask Codex to use DARE:
+
+```text
+Use DARE to turn this research direction into an executable Research Spec: ...
+```
+
+### DeepSeek Harness
+
+DSH loads DARE as a plugin, not as a skills directory:
+
+```bash
+npm i @yogsoth-ai/dare-dsh \
+      @deepseek-ai/dsh-skill@next \
+      @deepseek-ai/dsh-skill-filesystem@next
+
+npx @deepseek-ai/dsh web --patch ./cordis.example.yml
+```
+
+See the [DSH plugin README](dsh-plugin/README.md) for the optional MCP fleet.
+
+### MCP servers (optional)
+
+Skills work without MCP; the research SOPs simply use fewer tools. To wire the
+servers up, grab the template and fill in your keys:
+
+```bash
+curl -fsSLO https://raw.githubusercontent.com/yogsoth-ai/de-anthropocentric-research-engine/main/mcp.example.json
+cp mcp.example.json .mcp.json
+```
+
+See [Configuration](#️-configuration) for what each server needs.
+
+### External dependencies and invocation
+
+These apply to every install path above.
+
+1. Install the required external dependencies. Two packages call skills that
    live outside this repo — install them before running those packages:
 
    - **experiment-execution** drives experiments through the `superpowers` and
@@ -381,7 +445,7 @@ Requires Node.js 22 or newer.
      npx @ara-commons/ara-skills
      ```
 
-4. Invoke the entry point:
+2. Invoke the entry point:
 
    ```bash
    /de-anthropocentric-research-engine
@@ -449,6 +513,10 @@ You: /executing-specs docs/de-anthropocentric/specs/2026-05-19-cot-faithfulness-
 #### keenable (HTTP — no local install)
 
 No configuration needed. Connects directly to `https://api.keenable.ai/mcp` and is **keyless by default** (public endpoint, rate-limited). Setting an optional `KEENABLE_API_KEY` only lifts the rate limit; it is never required. Provides web search plus page fetch (clean markdown).
+
+#### you (HTTP — no local install)
+
+No configuration needed. Connects to `https://api.you.com/mcp?profile=free` and is **keyless** (public endpoint, rate-limited). Offered in the template as an extra general web-search option; the research SOPs do not route through it yet, so nothing changes if you leave it out. Full-path evaluation is deferred to the unified retrieval layer.
 
 #### apify (`@apify/actors-mcp-server`)
 

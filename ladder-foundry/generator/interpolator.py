@@ -13,7 +13,7 @@ def _round_strategy(t):
     return round(t * (_L - 1))
 
 
-GRANULARITY = {"round": _round_strategy}   # name->curve dispatch, NO eval()
+GRANULARITY = {"round": _round_strategy}   # name->curve dispatch, no dynamic code execution
 
 
 def ladder_levels(w, n=6):

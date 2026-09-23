@@ -14,6 +14,8 @@ dependencies:
   sops:
   - paper-fetch
   - qalmri
+metadata:
+  internal: true
 ---
 
 # QALMRI Worksheet

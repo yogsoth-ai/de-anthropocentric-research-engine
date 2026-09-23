@@ -16,6 +16,8 @@ dependencies:
   - paper-fetch
   - unit-segmentation
   - unit-classification
+metadata:
+  internal: true
 ---
 
 # Argumentative Zoning

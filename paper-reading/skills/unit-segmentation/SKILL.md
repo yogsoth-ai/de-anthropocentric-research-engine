@@ -12,6 +12,8 @@ reads: 'exactly the range named by scope'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Unit Segmentation

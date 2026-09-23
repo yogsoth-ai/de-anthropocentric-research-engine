@@ -12,6 +12,8 @@ output: 'grasp_summary (string)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Second Pass Grasp

@@ -11,6 +11,8 @@ output: 'status (string: "found" | "not_found"), cache_hit (boolean), source_pat
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Paper Fetch

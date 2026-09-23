@@ -11,6 +11,8 @@ output: 'argument_relations (list of {label_a, label_b, relation_holds, justific
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # Rhetorical Structure Quality (Proposal)

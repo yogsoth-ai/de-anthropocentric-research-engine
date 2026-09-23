@@ -12,6 +12,8 @@ output: 'answer (string), evidence_spans (list of strings)'
 dependencies:
   sops:
   - spawn-agent
+metadata:
+  internal: true
 ---
 
 # QASPER Evidence QA
