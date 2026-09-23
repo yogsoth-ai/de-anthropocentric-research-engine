@@ -1,5 +1,0 @@
-# sandbox runtime is local-only — never commit CC config, logs, or transcripts
-.claude/
-runs/
-transcripts/
-*.jsonl

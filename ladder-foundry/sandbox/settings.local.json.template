@@ -1,6 +1,0 @@
-{
-  "permissions": {
-    "defaultMode": "bypassPermissions",
-    "deny": ["Read(//**)"]
-  }
-}
