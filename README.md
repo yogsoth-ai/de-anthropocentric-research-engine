@@ -33,13 +33,9 @@
 
 DARE is not a tool that helps you do research. It is the research procedure itself, written down in a form an agent can execute. You set the direction. DARE crystallizes it into a North Star, turns that into an executable Research Spec, and then runs the spec phase by phase against explicit completion gates and backtrack conditions.
 
-![DARE: The Research Engine — control plane, research graph, and append-only state](assets/the-research-engine.png)
-
----
+![No DARE runtime: 271 SKILL.md files executed by any capable agent, instead of a seven-layer framework stack](assets/no-dare-runtime.png)
 
 ## Install
-
-![No DARE runtime: 271 SKILL.md files executed by any capable agent, instead of a seven-layer framework stack](assets/no-dare-runtime.png)
 
 ```bash
 npx skills add yogsoth-ai/de-anthropocentric-research-engine --skill '*'
