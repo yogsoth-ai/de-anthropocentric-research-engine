@@ -31,7 +31,7 @@ delta_fields: [findings, hypothesis_updates, uncertainties, decisions, open_ques
 Reject transfers whose causal/relational roles do not map, whose target constraints are violated, or whose claimed mechanism is only lexical resemblance.
 ## Provenance map
 - `creative-ideation/cross-domain-discovery`, `analogical-transfer`, `design-by-analogy`, `functional-analogy`, `analogy-extraction`, `bridge-validation`: resolved where exact v3 node exists; campaign/strategy labels remain concept provenance.
-- Status: all six exact names resolved in `scripts/refactory_source.json`.
+- Status: all six exact names resolved against the v3 source graph.
 ## Preserved source criteria ledger
 - Preserve deep structural correspondence and transfer viability; do not collapse to keyword similarity.
 ## Context checkpoint / Delta notes

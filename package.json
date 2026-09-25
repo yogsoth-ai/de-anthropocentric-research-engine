@@ -1,21 +1,11 @@
 {
   "name": "de-anthropocentric-research-engine",
-  "version": "3.2.2",
-  "description": "Complete research orchestration system — MCP dependencies for the yogsoth-ai research pipeline",
+  "version": "4.0.0",
+  "description": "De-anthropocentric Research Engine v4 — a 267-node research skill graph in pure markdown",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git"
   },
-  "license": "Apache-2.0",
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "dependencies": {
-    "@apify/actors-mcp-server": "^0.13.0",
-    "@brave/brave-search-mcp-server": "^2.0.82",
-    "@yogsoth-ai/semantic-scholar-mcp": "^1.0.0",
-    "@yogsoth-ai/wiki-vault": "^1.2.1",
-    "tavily-mcp": "^0.2.21"
-  }
+  "license": "Apache-2.0"
 }

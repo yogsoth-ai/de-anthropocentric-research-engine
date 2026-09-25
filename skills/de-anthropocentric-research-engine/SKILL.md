@@ -62,4 +62,4 @@ Missing intent or scope blocks entry to specification and returns `NEEDS_CONTEXT
 
 ## Boundary
 
-This entry layer is installed under `v4/skills/` by the build owner. It is not added to `graph.json`, does not create a third scientific layer, and does not replace tactic or SOP contracts.
+This entry layer is installed under `skills/` alongside the 267 tactic and SOP nodes. It is not a graph node, does not create a third scientific layer, and does not replace tactic or SOP contracts.

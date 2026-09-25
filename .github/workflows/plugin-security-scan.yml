@@ -1,4 +1,4 @@
-name: Plugin Security Scan
+name: Skill Guard
 
 on:
   pull_request:
@@ -9,15 +9,13 @@ permissions:
   contents: read
 
 jobs:
-  scan:
-    name: HOL AI Plugin Scanner
+  guard:
+    name: Markdown Skill Guard
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-      - uses: hashgraph-online/ai-plugin-scanner-action@caba2e96aa8ad2feb6cf6fca52442b52e22e779f # v1.2.635
-        with:
-          plugin_dir: "."
-          min_score: 80
-          fail_on_severity: high
+
+      - name: Scan skills
+        run: python3 .github/scripts/skill_guard.py
