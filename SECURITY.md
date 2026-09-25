@@ -2,9 +2,8 @@
 
 ## Supported Versions
 
-Security fixes are applied to the latest state of `main` and the published
-`@yogsoth-ai/dare-dsh` plugin. Older tags are not patched; please update before
-reporting an issue against an outdated version.
+Security fixes are applied to the latest state of `main`. Older tags are not
+patched; please update before reporting an issue against an outdated version.
 
 | Version | Supported |
 | ------- | --------- |
@@ -34,16 +33,18 @@ available.
 
 ## Scope
 
-This repository is a library of markdown skills plus a DeepSeek Harness plugin
-and shell installers. The following are in scope:
+This repository ships no executable code. It is 271 markdown skills plus the
+repository's own automation, so the attack surface is what a skill body tells an
+agent to do. In scope:
 
-- the DSH plugin (`dsh-plugin/`) and the Codex installers (`install/`);
-- repository automation under `.github/workflows/`;
-- any skill that instructs an agent to execute commands, write files, or reach
-  external services.
+- any skill that instructs an agent to execute commands, write files, delete
+  data, or reach external services;
+- prompt injection carried in a skill body — text that redirects an agent away
+  from the contract the skill states;
+- repository automation under `.github/`.
 
-Out of scope: vulnerabilities in third-party MCP servers referenced by
-`mcp.example.json`, and issues in the AI models or harnesses that run these
+Out of scope: third-party MCP servers, including any listed as recommendations
+in the README, and issues in the AI models or harnesses that execute these
 skills. Please report those to their respective maintainers.
 
 ## Safe Harbour
