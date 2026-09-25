@@ -33,9 +33,13 @@
 
 DARE is not a tool that helps you do research. It is the research procedure itself, written down in a form an agent can execute. You set the direction. DARE crystallizes it into a North Star, turns that into an executable Research Spec, and then runs the spec phase by phase against explicit completion gates and backtrack conditions.
 
+![DARE: The Research Engine — control plane, research graph, and append-only state](assets/the-research-engine.png)
+
 ---
 
 ## Install
+
+![No DARE runtime: 271 SKILL.md files executed by any capable agent, instead of a seven-layer framework stack](assets/no-dare-runtime.png)
 
 ```bash
 npx skills add yogsoth-ai/de-anthropocentric-research-engine --skill '*'
@@ -67,6 +71,8 @@ The human's role shifts to oracle (intuition when consulted) and guardian (ethic
 
 ### Arsenal, Not Pipeline
 
+![Research is not a pipeline: a fixed linear pipeline compared with DARE's navigable arsenal of research operations](assets/research-is-not-a-pipeline.png)
+
 Fixed-pipeline research systems — AI Scientist v2, AI-Researcher, Agent Laboratory, Dolphin, ARIS — execute stages in a predetermined order. Their backtracking, where it exists, means retrying the current step, not returning from experiment design to literature review because the evidence base turned out to be insufficient.
 
 DARE prescribes no order. The catalog exposes 51 tactics; the Spec commits to a sequence and records the conditions under which that sequence is abandoned. Inside the approved plan the executing agent holds full routing authority: read current state, take the next item whose dependencies are satisfied, escalate when a backtrack condition fires.
@@ -74,6 +80,8 @@ DARE prescribes no order. The catalog exposes 51 tactics; the Spec commits to a 
 Pipelines assume the research process is predictable. Arsenals assume it is not.
 
 ### Contracts, Not Prose
+
+![Prompts ask, contracts define completion — the five-part structure of a DARE tactic](assets/contracts-define-completion.png)
 
 Every node carries the same five parts: input contract, procedure, output contract, quality gates, failure clause.
 
@@ -224,7 +232,11 @@ de-anthropocentric-research-engine/
 ├── .github/                                  # CI: structural and safety checks
 ├── assets/
 │   ├── yogsoth-logo.svg
-│   └── DE-ANTHROPOCENTRIC.md                 # the philosophical argument in full
+│   ├── the-research-engine.png            # figure: control plane, graph, state
+│   ├── research-is-not-a-pipeline.png     # figure: arsenal vs pipeline
+│   ├── contracts-define-completion.png    # figure: the five parts of a tactic
+│   ├── no-dare-runtime.png                # figure: the agent is the runtime
+│   └── DE-ANTHROPOCENTRIC.md              # the philosophical argument in full
 ├── skills.sh.json                            # skill grouping for the skills.sh listing
 ├── package.json                              # metadata only; no dependencies
 ├── README.md
