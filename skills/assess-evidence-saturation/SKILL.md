@@ -36,6 +36,7 @@ delta_fields: [findings, evidence_updates, uncertainties, decisions, open_questi
 - Numerator, denominator, batch increment, source references, direction, and rationale are reproducible.
 - The comparison uses the same novelty schema for both batches.
 - Saturation is not declared from corpus size alone.
+- Saturation describes acquisition only: it states that further retrieval adds little, never that the question the evidence addresses is answered.
 
 ## Failure and counterexamples
 
