@@ -15,6 +15,9 @@
 
 - [De-Anthropocentric Research Engine (DARE)](#de-anthropocentric-research-engine-dare)
   - [Install](#install)
+  - [Quick Start](#quick-start)
+    - [Guided: the full engine](#guided-the-full-engine)
+    - [Custom: the catalog as a toolbox](#custom-the-catalog-as-a-toolbox)
   - [Design Philosophy](#design-philosophy)
     - [Why De-Anthropocentric](#why-de-anthropocentric)
     - [Arsenal, Not Pipeline](#arsenal-not-pipeline)
@@ -47,13 +50,29 @@ The only install path. DARE is a plain [Agent Skills](https://agentskills.io) li
 
 Nothing else to configure - no `npm install`, no API keys, no MCP config file. The library is 271 `SKILL.md` files and the agent reads them off disk.
 
-Then invoke the entry point:
+## Quick Start
+
+### Guided: the full engine
 
 ```text
 /de-anthropocentric-research-engine
 ```
 
-Or state the intent in plain language and let the agent route: *"Use DARE to turn this research direction into an executable Research Spec."*
+Give it a research direction in plain language. DARE crystallizes a North Star and ResearchBrief, drafts a staged Research Spec for your approval, then executes it phase by phase with append-only checkpoints. Nothing runs before you approve the Spec, and an interrupted run resumes from the last complete checkpoint.
+
+Use this by default.
+
+### Custom: the catalog as a toolbox
+
+```text
+/research-catalog
+```
+
+No North Star, no Spec. The agent reads the 51-tactic index, plans its own route, and loads whichever tactics fit. A prompt that works:
+
+> DARE ships a large library of research skills. Use them wherever they fit. Before you start, tell me your research plan: which tactics you intend to use, in what order, and why.
+
+Each tactic still runs its own SOPs and quality gates. What you give up is the approval step and the checkpoint log, so the agent's plan is the only plan and an interrupted run does not resume.
 
 ## Design Philosophy
 
