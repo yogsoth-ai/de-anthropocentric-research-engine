@@ -231,6 +231,7 @@ A starting point, not a dependency list. DARE requires none of them and reads no
 | **you** | — (HTTP, keyless) | Web search on the free profile. No install, no key |
 | **apify** | `@apify/actors-mcp-server` | Full-page scraping and sources a search API will not reach |
 | **wiki-vault** | [`@yogsoth-ai/wiki-vault`](https://github.com/yogsoth-ai/wiki-vault) | Persistent research knowledge graph — BM25 search, typed edges, traversal. Pairs with the STRUCTURING family |
+| **cohesivity** | [`@cohesivity/mcp`](https://github.com/cohesivity-org/cohesivity-mcp) | On-the-fly backend — Postgres, file storage, and hosting for research artifacts. No account or API keys required |
 
 Keenable and You.com need neither an install nor a credential, so an otherwise unconfigured agent still has working web retrieval. If your work routes through `trace-citation-neighborhood`, check that at least one configured server returns citations and references as edges rather than metadata alone.
 
