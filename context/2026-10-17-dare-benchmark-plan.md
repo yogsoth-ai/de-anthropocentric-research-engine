@@ -1,5 +1,7 @@
 # DARE Evaluation Plan (Draft v2)
 
+> Superseded on 2026-10-19 by `2026-10-19-dare-run-plan-deepseek-glm.md` and `2026-10-19-dare-run-plan-baselines.md`. FrontierScience and SciPredict were dropped; SciΠvot and PaperGym-Design were added.
+
 ## 1. Goal
 
 Test whether the same agent on the same backbone model, at the same token budget, does better research ideation and judgment with the full DARE engine loaded. Then place DARE against existing AI scientist systems.
