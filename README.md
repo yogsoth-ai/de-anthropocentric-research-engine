@@ -1,5 +1,9 @@
 <!-- markdownlint-disable MD033 MD041 MD045 -->
 <p align="center">
+  <strong>English</strong> | <a href="README.zh-CN.md">简体中文</a>
+</p>
+
+<p align="center">
   <img src="assets/yogsoth-logo.svg" width="240" />
 </p>
 
@@ -255,6 +259,7 @@ de-anthropocentric-research-engine/
 ├── skills.sh.json                            # skill grouping for the skills.sh listing
 ├── package.json                              # metadata only; no dependencies
 ├── README.md
+├── README.zh-CN.md                            # Simplified Chinese README
 ├── SECURITY.md
 └── LICENSE
 ```
