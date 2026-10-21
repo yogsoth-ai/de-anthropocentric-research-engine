@@ -17,6 +17,10 @@
 
 *A research skill graph for AI-native science. 271 markdown files. No runtime, no dependencies, no build step.*
 
+<p align="center">
+  <a href="https://hol.org/registry/plugins/yogsoth-ai/de-anthropocentric-research-engine"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dyogsoth-ai%252Fde-anthropocentric-research-engine%26metric%3Dtrust%26style%3Dfor-the-badge%26label%3DDARE" alt="HOL Registry trust score" /></a>
+</p>
+
 - [De-Anthropocentric Research Engine (DARE)](#de-anthropocentric-research-engine-dare)
   - [Install](#install)
   - [Quick Start](#quick-start)

@@ -17,6 +17,10 @@
 
 *面向 AI 原生科学的研究技能图谱。271 个 Markdown 文件。无需运行时、无需依赖、无需构建。*
 
+<p align="center">
+  <a href="https://hol.org/registry/plugins/yogsoth-ai/de-anthropocentric-research-engine"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhol.org%2Fapi%2Fregistry%2Fbadges%2Fplugin%3Fslug%3Dyogsoth-ai%252Fde-anthropocentric-research-engine%26metric%3Dtrust%26style%3Dfor-the-badge%26label%3DDARE" alt="HOL Registry 信任分" /></a>
+</p>
+
 - [去人类中心化研究引擎 DARE](#去人类中心化研究引擎-dare)
   - [安装](#安装)
   - [快速开始](#快速开始)
