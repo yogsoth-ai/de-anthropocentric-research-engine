@@ -1,9 +1,9 @@
 ---
-name: de-anthropocentric-research-engine
+name: dare
 description: "DARE v4 is the product-level orchestrator for a research run. It turns a user request into a controlled sequence of North Star crystallization, executable specification, and phase-by-phase execution."
 ---
 
-# de-anthropocentric-research-engine
+# dare
 
 ## Purpose
 

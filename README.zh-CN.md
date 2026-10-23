@@ -65,7 +65,7 @@ npx skills add yogsoth-ai/de-anthropocentric-research-engine --skill '*'
 ### 引导模式：完整引擎
 
 ```text
-/de-anthropocentric-research-engine
+/dare
 ```
 
 用自然语言给出研究方向。DARE 会凝练北极星目标和研究简报（ResearchBrief），起草分阶段的 Research Spec 供你审批，然后逐阶段执行，并以仅追加的方式记录检查点。你批准 Spec 之前，不会执行任何研究；运行中断后，会从最近一个完整检查点恢复。
@@ -178,7 +178,7 @@ consider `x`              软跳转      146 条边，107 个不同目标
 ### 产品外壳
 
 ```text
-de-anthropocentric-research-engine   入口；强制遵循阶段顺序
+dare                                 入口；强制遵循阶段顺序
   ├─ research-catalog                以卡片形式展示 51 项策略
   ├─ write-research-spec             北极星目标 + 简报 → 可执行的 Spec
   └─ execute-research-spec           执行 Spec，追加检查点
@@ -247,7 +247,7 @@ Keenable 和 You.com 既无需安装，也无需凭证，因此即使智能体�
 ```text
 de-anthropocentric-research-engine/
 ├── skills/                                   # 271 个技能，扁平结构，每个技能一个目录
-│   ├── de-anthropocentric-research-engine/    # 入口外壳
+│   ├── dare/                                  # 入口外壳
 │   ├── research-catalog/                     # 51 项策略的能力菜单
 │   ├── write-research-spec/                  # 编写规格
 │   ├── execute-research-spec/                # 执行规格并记录检查点

@@ -65,7 +65,7 @@ Nothing else to configure - no `npm install`, no API keys, no MCP config file. T
 ### Guided: the full engine
 
 ```text
-/de-anthropocentric-research-engine
+/dare
 ```
 
 Give it a research direction in plain language. DARE crystallizes a North Star and ResearchBrief, drafts a staged Research Spec for your approval, then executes it phase by phase with append-only checkpoints. Nothing runs before you approve the Spec, and an interrupted run resumes from the last complete checkpoint.
@@ -180,7 +180,7 @@ Both registers are verified closed on every push: every referenced target resolv
 ### The Product Shell
 
 ```text
-de-anthropocentric-research-engine   entry; enforces phase order
+dare                                 entry; enforces phase order
   ├─ research-catalog                exposes the 51 tactics as cards
   ├─ write-research-spec             North Star + brief → executable Spec
   └─ execute-research-spec           runs the Spec, appends checkpoints
@@ -249,7 +249,7 @@ Keenable and You.com need neither an install nor a credential, so an otherwise u
 ```text
 de-anthropocentric-research-engine/
 ├── skills/                                   # 271 skills, flat, one directory each
-│   ├── de-anthropocentric-research-engine/   # entry shell
+│   ├── dare/                                 # entry shell
 │   ├── research-catalog/                     # 51-tactic capability menu
 │   ├── write-research-spec/                  # spec construction
 │   ├── execute-research-spec/                # spec execution + checkpoints
