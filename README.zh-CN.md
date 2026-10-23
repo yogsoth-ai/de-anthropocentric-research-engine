@@ -247,7 +247,7 @@ Keenable 和 You.com 既无需安装，也无需凭证，因此即使智能体�
 ```text
 de-anthropocentric-research-engine/
 ├── skills/                                   # 271 个技能，扁平结构，每个技能一个目录
-│   ├── dare/                                  # 入口外壳
+│   ├── dare/                                 # 入口外壳
 │   ├── research-catalog/                     # 51 项策略的能力菜单
 │   ├── write-research-spec/                  # 编写规格
 │   ├── execute-research-spec/                # 执行规格并记录检查点
